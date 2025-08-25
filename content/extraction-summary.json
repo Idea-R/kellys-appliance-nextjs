@@ -1,0 +1,26 @@
+{
+  "extraction_date": "2025-08-25T19:10:39.660Z",
+  "source_url": "https://kellysappliancerepair.com",
+  "stats": {
+    "posts": 6,
+    "pages": 25,
+    "media": 109,
+    "errors": 0
+  },
+  "wordpress_info": {
+    "api_available": true,
+    "endpoints_tested": [
+      "posts",
+      "pages",
+      "media"
+    ],
+    "rest_api_url": "https://kellysappliancerepair.com/wp-json/wp/v2"
+  },
+  "directories": {
+    "posts": "./extracted-content/posts",
+    "pages": "./extracted-content/pages",
+    "media": "./extracted-content/media",
+    "images": "./extracted-content/images",
+    "markdown": "./extracted-content/markdown"
+  }
+}
