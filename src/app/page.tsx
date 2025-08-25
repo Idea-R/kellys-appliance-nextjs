@@ -52,7 +52,7 @@ export default function HomePage() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section className="relative bg-gradient-to-r from-green-800 via-green-700 to-green-600 text-white py-20">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -78,7 +78,7 @@ export default function HomePage() {
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center bg-white text-blue-900 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
+                  className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
                 >
                   Book Appointment Now!
                 </Link>
@@ -190,7 +190,7 @@ export default function HomePage() {
                   </p>
                   <Link
                     href={service.href}
-                    className="inline-block bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700 transition-colors"
+                    className="inline-block bg-green-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-green-700 transition-colors"
                   >
                     Learn More
                   </Link>
@@ -227,7 +227,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">
             Need Appliance Repair Service?
@@ -245,7 +245,7 @@ export default function HomePage() {
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-white text-blue-900 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
               Book Appointment Online
             </Link>

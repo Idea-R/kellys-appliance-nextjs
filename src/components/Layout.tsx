@@ -50,7 +50,7 @@ export default function Layout({ children }: LayoutProps) {
         {/* Header */}
         <header className="bg-white shadow-lg">
           {/* Top Bar */}
-          <div className="bg-blue-900 text-white py-2">
+          <div className="bg-green-700 text-white py-2">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center text-sm">
                 <div className="flex items-center space-x-6">
@@ -96,7 +96,7 @@ export default function Layout({ children }: LayoutProps) {
                   <div key={item.name} className="relative group">
                     <Link
                       href={item.href}
-                      className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+                      className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium"
                     >
                       {item.name}
                     </Link>
@@ -107,7 +107,7 @@ export default function Layout({ children }: LayoutProps) {
                             <Link
                               key={child.name}
                               href={child.href}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600"
                             >
                               {child.name}
                             </Link>
@@ -122,7 +122,7 @@ export default function Layout({ children }: LayoutProps) {
               <div className="flex items-center space-x-4">
                 <Link
                   href="/contact"
-                  className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
+                  className="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors"
                 >
                   Book Appointment
                 </Link>
@@ -173,10 +173,10 @@ export default function Layout({ children }: LayoutProps) {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Services</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/services/refrigerator-repair" className="text-gray-300 hover:text-blue-400">Refrigerator Repair</Link></li>
-                  <li><Link href="/services/oven-repair" className="text-gray-300 hover:text-blue-400">Oven Repair</Link></li>
-                  <li><Link href="/services/washer-dryer-repair" className="text-gray-300 hover:text-blue-400">Washer & Dryer Repair</Link></li>
-                  <li><Link href="/services/dishwasher-repair" className="text-gray-300 hover:text-blue-400">Dishwasher Repair</Link></li>
+                  <li><Link href="/services/refrigerator-repair" className="text-gray-300 hover:text-green-400">Refrigerator Repair</Link></li>
+                  <li><Link href="/services/oven-repair" className="text-gray-300 hover:text-green-400">Oven Repair</Link></li>
+                  <li><Link href="/services/washer-dryer-repair" className="text-gray-300 hover:text-green-400">Washer & Dryer Repair</Link></li>
+                  <li><Link href="/services/dishwasher-repair" className="text-gray-300 hover:text-green-400">Dishwasher Repair</Link></li>
                 </ul>
               </div>
 
@@ -184,11 +184,11 @@ export default function Layout({ children }: LayoutProps) {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/service-locations/santa-rosa" className="text-gray-300 hover:text-blue-400">Santa Rosa</Link></li>
-                  <li><Link href="/service-locations/petaluma" className="text-gray-300 hover:text-blue-400">Petaluma</Link></li>
-                  <li><Link href="/service-locations/rohnert-park" className="text-gray-300 hover:text-blue-400">Rohnert Park</Link></li>
-                  <li><Link href="/service-locations/sonoma" className="text-gray-300 hover:text-blue-400">Sonoma</Link></li>
-                  <li><Link href="/service-locations/marin-county" className="text-gray-300 hover:text-blue-400">Marin County</Link></li>
+                  <li><Link href="/service-locations/santa-rosa" className="text-gray-300 hover:text-green-400">Santa Rosa</Link></li>
+                  <li><Link href="/service-locations/petaluma" className="text-gray-300 hover:text-green-400">Petaluma</Link></li>
+                  <li><Link href="/service-locations/rohnert-park" className="text-gray-300 hover:text-green-400">Rohnert Park</Link></li>
+                  <li><Link href="/service-locations/sonoma" className="text-gray-300 hover:text-green-400">Sonoma</Link></li>
+                  <li><Link href="/service-locations/marin-county" className="text-gray-300 hover:text-green-400">Marin County</Link></li>
                 </ul>
               </div>
 
@@ -196,12 +196,12 @@ export default function Layout({ children }: LayoutProps) {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/about-us" className="text-gray-300 hover:text-blue-400">About Us</Link></li>
-                  <li><Link href="/about-us/our-team" className="text-gray-300 hover:text-blue-400">Our Team</Link></li>
-                  <li><Link href="/pricing" className="text-gray-300 hover:text-blue-400">Pricing</Link></li>
-                  <li><Link href="/blog" className="text-gray-300 hover:text-blue-400">Blog</Link></li>
-                  <li><Link href="/contact" className="text-gray-300 hover:text-blue-400">Contact</Link></li>
-                  <li><Link href="/privacy-policy" className="text-gray-300 hover:text-blue-400">Privacy Policy</Link></li>
+                  <li><Link href="/about-us" className="text-gray-300 hover:text-green-400">About Us</Link></li>
+                  <li><Link href="/about-us/our-team" className="text-gray-300 hover:text-green-400">Our Team</Link></li>
+                  <li><Link href="/pricing" className="text-gray-300 hover:text-green-400">Pricing</Link></li>
+                  <li><Link href="/blog" className="text-gray-300 hover:text-green-400">Blog</Link></li>
+                  <li><Link href="/contact" className="text-gray-300 hover:text-green-400">Contact</Link></li>
+                  <li><Link href="/privacy-policy" className="text-gray-300 hover:text-green-400">Privacy Policy</Link></li>
                 </ul>
               </div>
             </div>
