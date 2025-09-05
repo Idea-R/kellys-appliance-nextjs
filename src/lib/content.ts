@@ -9,7 +9,14 @@ const contentDir = path.join(process.cwd(), 'content');
 export async function getAllPages(): Promise<WordPressPage[]> {
   const { promises: fs } = await import('fs');
   const pagesDir = path.join(contentDir, 'pages');
-  const files = await fs.readdir(pagesDir);
+  let files: string[] = []
+  try {
+    files = await fs.readdir(pagesDir)
+  } catch (e) {
+    const err = e as { code?: string }
+    if (err?.code === 'ENOENT') return []
+    throw e
+  }
   
   const pages = await Promise.all(
     files
@@ -26,7 +33,14 @@ export async function getAllPages(): Promise<WordPressPage[]> {
 export async function getAllPosts(): Promise<WordPressPost[]> {
   const { promises: fs } = await import('fs');
   const postsDir = path.join(contentDir, 'posts');
-  const files = await fs.readdir(postsDir);
+  let files: string[] = []
+  try {
+    files = await fs.readdir(postsDir)
+  } catch (e) {
+    const err = e as { code?: string }
+    if (err?.code === 'ENOENT') return []
+    throw e
+  }
   
   const posts = await Promise.all(
     files
