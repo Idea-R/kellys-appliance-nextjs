@@ -34,11 +34,11 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Appliance Repair Excellence for Over 40 Years
+                Appliance Repair Excellence for Over 50 Years
               </h2>
               <div className="prose prose-lg text-gray-700 space-y-6">
                 <p>
-                  We have been providing appliance services to the North Bay area for over 30 years and with that much experience, you know you can count on us. Kelly&apos;s Appliance Center provides a full range of appliance services on all the most popular brands. Mark Kelly, owner of Kelly&apos;s Appliance Center, takes great pride in making each of his clients a satisfied customer.
+                  We have been providing appliance services to the North Bay area for over 50 years and with that much experience, you know you can count on us. Kelly&apos;s Appliance Center provides a full range of appliance services on all the most popular brands. Mark Kelly, owner of Kelly&apos;s Appliance Center, takes great pride in making each of his clients a satisfied customer.
                 </p>
                 <p>
                   Bob Kelly started Kelly&apos;s Appliance in 1975. His son, Mark Kelly joined the company in 1983. The business strategy was simple: provide excellent personal service at a fair price. Kelly&apos;s Appliance moved to Sonoma County in 1987 and continues to provide personal service to every customer. Mark Kelly took over full ownership of the business in 1990 maintaining customer service as the number one priority.
@@ -47,7 +47,7 @@ export default function AboutUsPage() {
                   Kelly&apos;s Appliance Center provides services on dishwashers, refrigerators, ovens, stoves, washers, dryers, garbage disposals and any other major household appliance. Kelly&apos;s services all makes and models including Maytag, Kenmore, Whirlpool, Jenn-Air, GE, LG and more!
                 </p>
                 <p>
-                  Give us a call and we&apos;ll show you why we&apos;ve been around for over 30 years! Serving customers throughout Sonoma and Marin counties, Kelly&apos;s Appliance Center is the name you can count on to get the job done right – on time!
+                  Give us a call and we&apos;ll show you why we&apos;ve been around for over 50 years! Serving customers throughout Sonoma and Marin counties, Kelly&apos;s Appliance Center is the name you can count on to get the job done right – on time!
                 </p>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function AboutUsPage() {
                 <CheckCircleIcon className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Local Family Business</h3>
-              <p className="text-gray-600">Family-owned and operated, serving the community for over 40 years</p>
+              <p className="text-gray-600">Family-owned and operated, serving the community for over 50 years</p>
             </div>
           </div>
         </div>

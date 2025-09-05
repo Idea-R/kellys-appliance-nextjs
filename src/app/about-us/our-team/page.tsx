@@ -5,6 +5,7 @@ import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import { Playfair_Display } from 'next/font/google';
+import TeamGrid, { TeamMember } from './TeamGrid'
 
 const companyInfo = getCompanyInfo();
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['700'] });
@@ -14,7 +15,7 @@ export const metadata = {
   description: 'Meet the experienced team at Kelly\'s Appliance Center. Our skilled technicians and friendly staff are here to help with all your appliance repair needs.',
 };
 
-const teamMembers = [
+const teamMembers: TeamMember[] = [
   {
     name: 'Mark Kelly',
     role: 'Owner',
@@ -52,20 +53,20 @@ const teamMembers = [
     bio: 'Lead technician supporting complex diagnostics and service excellence.'
   },
   {
-    name: 'Ricardo',
+    name: 'Ricardo Ramos',
     role: 'Service Technician',
     image: '/images/Ricardo-1-23-scaled.jpg',
     bio: 'Dedicated service technician with experience in dishwasher and appliance diagnostics.'
   },
   {
-    name: 'Joe',
+    name: 'Joe Denning',
     role: 'Service Technician',
     image: '/images/Joe-23-scaled.jpg',
     bio: 'Skilled service technician with expertise in washer and dryer repair services.'
   },
   {
-    name: 'Sean',
-    role: 'Field Technician',
+    name: 'Sean Foley',
+    role: 'Service Technician',
     image: '/images/Sean-23-scaled.jpg',
     bio: 'Professional field technician serving customers throughout the Bay Area.'
   },
@@ -133,35 +134,7 @@ export default function OurTeamPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="relative w-full h-80">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-top rounded-none"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-3 text-center">
-                    <div className={`${playfair.className} text-white text-2xl leading-none`}>{member.name.split(' ')[0]}</div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-green-600 font-semibold mb-3">
-                    {member.role}
-                  </p>
-                  <p className="text-gray-600 text-sm">
-                    {member.bio}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TeamGrid members={teamMembers} />
         </div>
       </section>
 

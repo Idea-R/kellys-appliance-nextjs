@@ -338,7 +338,7 @@ export default function HomePage() {
 
       {/* Service Area Map Section with diagonally clipped scenic background */}
       <section className="relative py-16 bg-gray-50 overflow-hidden">
-        <div className="absolute inset-0" aria-hidden style={{ zIndex: 0, pointerEvents: 'none' }}>
+        <div className="absolute inset-0" aria-hidden="true" style={{ zIndex: 0, pointerEvents: 'none' }}>
           <div className="flex h-full w-full">
             {[
               { src: '/images/Scenic/Vineyard.png', label: 'Napa Vineyards' },

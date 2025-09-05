@@ -72,6 +72,10 @@ Thumbs.db
 # Content directory (extracted WordPress content - too large for git)
 /content/
 
+# Archives and internal docs (keep local, do not track)
+/archive/
+/docs/
+
 # Scraper and development tools
 scraper.js
 analyze-content.js

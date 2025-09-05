@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import dwContent from '../../../../content/pages/80-dishwasher-repair.json';
+import dwContent from '@/content/pages/80-dishwasher-repair.json';
 
 const companyInfo = getCompanyInfo();
 
@@ -143,7 +143,7 @@ export default function DishwasherRepairPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-            <div className="lg:col-span-2 bg-white rounded-xl shadow p-6 prose prose-green max-w-none">
+            <div className="lg:col-span-2 bg-white rounded-xl shadow p-6 wp-legacy-content">
               <div dangerouslySetInnerHTML={{ __html: dwContent.content }} />
             </div>
             <aside className="space-y-6">

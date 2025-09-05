@@ -8,7 +8,10 @@ export const metadata = {
 
 const guides = [
   { title: 'Refrigerator', tips: ['Inside fresh food compartment on side wall', 'Ceiling of the compartment', 'Behind lower crisper drawer', 'On door frame (when door is open)'], image: '/images/model-locations/refrigerator.png' },
-  { title: 'Oven / Range', tips: ['Behind the door on frame', 'Under cooktop (raise top)', 'Bottom drawer frame', 'Back panel'], image: '/images/model-locations/range.png' },
+  { title: 'Oven', tips: ['Behind the door on frame', 'Bottom drawer frame', 'Back panel', 'On the door hinge area'], image: '/images/model-locations/oven.png' },
+  { title: 'Range', tips: ['Behind the door on frame', 'Under cooktop (raise top)', 'Bottom drawer frame', 'Back panel'], image: '/images/model-locations/range.png' },
+  { title: 'Cooktop', tips: ['Under the burner box (remove grates/burners)', 'On the underside near a corner', 'Bottom of the unit (visible from cabinet below)'], image: '/images/model-locations/cooktop.png' },
+  { title: 'Microwave', tips: ['Inside the door on the cavity frame', 'Back panel label', 'On the control panel flange (door open)'], image: '/images/model-locations/microwave.png' },
   { title: 'Dishwasher', tips: ['Inside door on side wall', 'Door frame (when door is open)', 'Top edge of the door'], image: '/images/model-locations/dishwasher.png' },
   { title: 'Washer', tips: ['Back panel', 'Under lid/door frame', 'Inside door on front-loaders'], image: '/images/model-locations/washer.png' },
   { title: 'Dryer', tips: ['Door frame', 'Back panel', 'Inside door pocket'], image: '/images/model-locations/dryer.png' },

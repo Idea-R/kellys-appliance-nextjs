@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import wdContent from '../../../../content/pages/79-washer-and-dryer-repair.json';
+import wdContent from '@/content/pages/79-washer-and-dryer-repair.json';
 
 const companyInfo = getCompanyInfo();
 

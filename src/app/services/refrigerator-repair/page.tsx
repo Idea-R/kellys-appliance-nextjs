@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import fridgeContent from '../../../../content/pages/75-refrigerator-repair.json';
+import fridgeContent from '@/content/pages/75-refrigerator-repair.json';
 
 const companyInfo = getCompanyInfo();
 
