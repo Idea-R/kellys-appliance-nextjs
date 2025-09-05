@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
@@ -40,12 +38,14 @@ export default function NovatoPage() {
                 <PhoneIcon className="h-5 w-5 mr-2" />
                 Call {companyInfo.phone}
               </a>
-              <Link
-                href="/contact"
+              <a
+                href="https://booking.rossware.com/schedule/4588"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
-                Schedule Service
-              </Link>
+                Book Appointment
+              </a>
             </div>
           </div>
         </div>
@@ -92,6 +92,35 @@ export default function NovatoPage() {
             <PhoneIcon className="h-6 w-6 mr-2" />
             Call {companyInfo.phone} Now
           </a>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex items-start">
+              <CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
+              <div>
+                <strong>Factory Authorized</strong>
+                <div className="text-gray-600 text-sm">Certified repair using genuine parts</div>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
+              <div>
+                <strong>Fast Response</strong>
+                <div className="text-gray-600 text-sm">Same-day or next-day service</div>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
+              <div>
+                <strong>Local Experts</strong>
+                <div className="text-gray-600 text-sm">Trusted in Novato for decades</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>

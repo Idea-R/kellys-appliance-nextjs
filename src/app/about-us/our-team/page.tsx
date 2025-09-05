@@ -4,8 +4,10 @@ import Link from 'next/link';
 import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import { Playfair_Display } from 'next/font/google';
 
 const companyInfo = getCompanyInfo();
+const playfair = Playfair_Display({ subsets: ['latin'], weight: ['700'] });
 
 export const metadata = {
   title: 'Our Team - Kelly\'s Appliance Center',
@@ -21,15 +23,39 @@ const teamMembers = [
   },
   {
     name: 'Shane Spencer',
-    role: 'Senior Technician',
+    role: 'Tech Service Manager',
     image: '/images/Shane-23-scaled.jpg',
-    bio: 'Experienced appliance repair technician specializing in all major appliance brands and models.'
+    bio: 'Experienced leader and technician specializing in all major appliance brands and models.'
   },
   {
-    name: 'Dane Marcy',
+    name: 'Kendra Hoetger',
+    role: 'Office Manager',
+    image: '/images/Kendra-23-scaled.jpg',
+    bio: 'Office manager handling appointments, billing, and customer communications.'
+  },
+  {
+    name: 'Abby Jensen',
+    role: 'Parts Coordinator/CSR',
+    image: '/images/Abby-2-23-scaled.jpg',
+    bio: 'Coordinating parts logistics and customer scheduling to ensure excellent service.'
+  },
+  {
+    name: 'Laura Losh',
+    role: 'Customer Service Representative',
+    image: '/images/laura.jpg',
+    bio: 'Customer service representative dedicated to great scheduling and support.'
+  },
+  {
+    name: 'Bianca Bonila',
     role: 'Lead Technician',
-    image: '/images/Dane-23-scaled.jpg',
-    bio: 'Expert technician with extensive experience in refrigerator and oven repairs.'
+    image: '/images/Bianca-scaled.jpg',
+    bio: 'Lead technician supporting complex diagnostics and service excellence.'
+  },
+  {
+    name: 'Ricardo',
+    role: 'Service Technician',
+    image: '/images/Ricardo-1-23-scaled.jpg',
+    bio: 'Dedicated service technician with experience in dishwasher and appliance diagnostics.'
   },
   {
     name: 'Joe',
@@ -44,28 +70,16 @@ const teamMembers = [
     bio: 'Professional field technician serving customers throughout the Bay Area.'
   },
   {
-    name: 'Ricardo',
+    name: 'James Shwago',
     role: 'Service Technician',
-    image: '/images/Ricardo-1-23-scaled.jpg',
-    bio: 'Dedicated service technician with experience in dishwasher and appliance diagnostics.'
+    image: '/images/james.jpg',
+    bio: 'Professional service technician focused on timely, high-quality repairs.'
   },
   {
-    name: 'Abby Jensen',
-    role: 'Customer Service Manager',
-    image: '/images/Abby-2-23-scaled.jpg',
-    bio: 'Customer service manager ensuring excellent service and scheduling coordination.'
-  },
-  {
-    name: 'Kendra Hoetger',
-    role: 'Office Manager',
-    image: '/images/Kendra-23-scaled.jpg',
-    bio: 'Office manager handling appointments, billing, and customer communications.'
-  },
-  {
-    name: 'Bianca Bonila',
-    role: 'Customer Service Representative',
-    image: '/images/Bianca-scaled.jpg',
-    bio: 'Customer service representative providing support and assistance to our valued customers.'
+    name: 'Anthony Porter',
+    role: 'Service Technician',
+    image: '/images/anthony.jpg',
+    bio: 'Experienced technician delivering reliable service across all major brands.'
   }
 ];
 
@@ -122,14 +136,17 @@ export default function OurTeamPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="aspect-w-4 aspect-h-5">
+                <div className="relative w-full h-80">
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={400}
-                    height={500}
-                    className="w-full h-80 object-cover"
+                    fill
+                    className="object-cover object-top rounded-none"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-3 text-center">
+                    <div className={`${playfair.className} text-white text-2xl leading-none`}>{member.name.split(' ')[0]}</div>
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -211,12 +228,14 @@ export default function OurTeamPage() {
               <PhoneIcon className="h-6 w-6 mr-2" />
               Call {companyInfo.phone}
             </a>
-            <Link
-              href="/contact"
+            <a
+              href="https://booking.rossware.com/schedule/4588"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
-              Contact Us Today
-            </Link>
+              Book Online
+            </a>
           </div>
         </div>
       </section>

@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import { PhoneIcon } from '@heroicons/react/24/solid';
+import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 
@@ -18,9 +17,43 @@ export default function SebastopolPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Sebastopol</h1>
           <p className="text-xl mb-8">Professional appliance repair services in Sebastopol, CA.</p>
-          <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-            <PhoneIcon className="h-5 w-5 mr-2" />Call {companyInfo.phone}
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+              <PhoneIcon className="h-5 w-5 mr-2" />Call {companyInfo.phone}
+            </a>
+            <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex items-start">
+              <CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
+              <div>
+                <strong>Factory Authorized</strong>
+                <div className="text-gray-600 text-sm">Certified repair using genuine parts</div>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
+              <div>
+                <strong>Fast Response</strong>
+                <div className="text-gray-600 text-sm">Same-day or next-day service</div>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
+              <div>
+                <strong>Local Experts</strong>
+                <div className="text-gray-600 text-sm">Trusted in Sebastopol for decades</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section className="py-16 bg-green-700 text-white">

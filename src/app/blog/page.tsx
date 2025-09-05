@@ -178,12 +178,14 @@ export default function BlogPage() {
             Kelly&apos;s Appliance Center has been serving the Bay Area since 1975
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
+            <a
+              href="https://booking.rossware.com/schedule/4588"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors"
             >
               Schedule Service
-            </Link>
+            </a>
             <Link
               href="/services"
               className="inline-flex items-center justify-center border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-50 transition-colors"

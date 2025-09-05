@@ -36,10 +36,10 @@ export default function DishwasherPostPage() {
       </section>
 
       {/* Content */}
-      <article className="py-16">
+      <article className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg prose-green max-w-none">
-            <p className="mb-6 text-gray-700 leading-relaxed">
+          <div className="prose prose-lg max-w-none">
+            <p className="mb-6 text-gray-800 leading-relaxed">
               Dishwashers are incredibly convenient appliances, but they can develop problems over time. At Kelly&apos;s Appliance Center, we see certain dishwasher issues more frequently than others. Here&apos;s what you need to know about the most common problems and how to prevent them.
             </p>
             
@@ -61,7 +61,7 @@ export default function DishwasherPostPage() {
             </p>
             
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Prevention Tips</h2>
-            <ul className="list-disc list-inside space-y-2 mb-6">
+            <ul className="list-disc list-inside space-y-3 mb-6 text-gray-800">
               <li>Clean the filter monthly</li>
               <li>Scrape dishes before loading</li>
               <li>Use appropriate detergent amounts</li>
@@ -86,12 +86,14 @@ export default function DishwasherPostPage() {
             Kelly&apos;s Appliance Center provides expert dishwasher repair services
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
+            <a
+              href="https://booking.rossware.com/schedule/4588"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
             >
               Schedule Service
-            </Link>
+            </a>
             <Link
               href="/blog"
               className="inline-flex items-center justify-center border border-green-600 text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"

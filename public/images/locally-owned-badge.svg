@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60" fill="none">
+  <rect width="240" height="60" rx="8" fill="#E66E3A"/>
+  <rect x="10" y="10" width="40" height="40" rx="6" fill="#2E2E2E"/>
+  <path d="M18 38 L40 22" stroke="#ffffff" stroke-width="4"/>
+  <path d="M18 28 L30 38 L42 28" stroke="#ffffff" stroke-width="4" fill="none"/>
+  <text x="120" y="24" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800" fill="#ffffff">LOCALLY OWNED & OPERATED</text>
+  <text x="120" y="42" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#ffedd5">CERTIFIED BY MAINSHARES</text>
+</svg>
+
+

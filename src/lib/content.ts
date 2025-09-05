@@ -1,10 +1,13 @@
-import { promises as fs } from 'fs';
-import path from 'path';
+// NOTE: The file-system backed content helpers are not used in production build.
+// To avoid bundling Node "fs" in the client build under Turbopack, we gate them
+// behind dynamic imports inside the functions that need them.
 import { WordPressPage, WordPressPost, ServicePage, LocationPage, CompanyInfo } from '@/types/content';
+import path from 'path';
 
 const contentDir = path.join(process.cwd(), 'content');
 
 export async function getAllPages(): Promise<WordPressPage[]> {
+  const { promises: fs } = await import('fs');
   const pagesDir = path.join(contentDir, 'pages');
   const files = await fs.readdir(pagesDir);
   
@@ -21,6 +24,7 @@ export async function getAllPages(): Promise<WordPressPage[]> {
 }
 
 export async function getAllPosts(): Promise<WordPressPost[]> {
+  const { promises: fs } = await import('fs');
   const postsDir = path.join(contentDir, 'posts');
   const files = await fs.readdir(postsDir);
   
@@ -100,7 +104,7 @@ export function getCompanyInfo(): CompanyInfo {
       state: "CA",
       zip: "94931"
     },
-    hours: "Monday - Friday: 8:00 AM - 5:00 PM",
+    hours: "Monday - Friday: 8:30 AM - 4:30 PM",
     email: "info@kellysappliancerepair.com",
     certifications: [
       "Factory Authorized Service",

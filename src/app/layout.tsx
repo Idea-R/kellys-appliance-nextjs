@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import ClientProviders from '@/components/ClientProviders'
+import Analytics from '@/components/Analytics'
+import FloatingDiamondBadge from '@/components/FloatingDiamondBadge'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -53,6 +56,17 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-site-verification-code',
   },
+  icons: {
+    icon: [
+      { url: '/images/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/favicon-120.png', sizes: '120x120', type: 'image/png' },
+      { url: '/images/favicon-152.png', sizes: '152x152', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/favicon-120.png', sizes: '120x120', type: 'image/png' },
+      { url: '/images/favicon-152.png', sizes: '152x152', type: 'image/png' },
+    ],
+  },
 }
 
 export default function RootLayout({
@@ -62,7 +76,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head></head>
       <body className={inter.className}>
+        <ClientProviders>
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -98,6 +115,8 @@ export default function RootLayout({
           }}
         />
         {children}
+        <FloatingDiamondBadge />
+        </ClientProviders>
       </body>
     </html>
   )

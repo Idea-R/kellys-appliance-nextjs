@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';

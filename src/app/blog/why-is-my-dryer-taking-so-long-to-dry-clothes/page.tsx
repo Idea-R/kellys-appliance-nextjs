@@ -96,7 +96,7 @@ export default function DryerPostPage() {
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               <strong>Solution:</strong><br />
-              If your dryer is spinning but not getting hot, it&apos;s time to <Link href="/contact" className="text-green-600 hover:text-green-700">call a technician</Link> to inspect and potentially replace the heating element or gas components.
+              If your dryer is spinning but not getting hot, it&apos;s time to <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">book a technician</a> to inspect and potentially replace the heating element or gas components.
             </p>
             
             <div className="text-center my-8">
@@ -151,7 +151,7 @@ export default function DryerPostPage() {
               Long drying times are more than just a nuisance—they&apos;re a signal that something isn&apos;t working right. Whether it&apos;s a simple maintenance issue like a clogged lint trap or a more complex problem like a failing heating element, addressing the cause promptly can save you time, energy, and money.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              If you&apos;ve tried the tips above and your dryer is still underperforming, it&apos;s time to <Link href="/contact" className="text-green-600 hover:text-green-700">call in a professional appliance technician</Link>. A fast diagnosis and repair can get your laundry routine back on track in no time.
+              If you&apos;ve tried the tips above and your dryer is still underperforming, it&apos;s time to <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">book a professional appliance technician</a>. A fast diagnosis and repair can get your laundry routine back on track in no time.
             </p>
           </div>
         </div>
@@ -175,12 +175,14 @@ export default function DryerPostPage() {
             >
               Book Appointment Online
             </a>
-            <Link
-              href="/contact"
+            <a
+              href="https://booking.rossware.com/schedule/4588"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center border border-green-600 text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
             >
-              Contact Us
-            </Link>
+              Book Online
+            </a>
           </div>
         </div>
       </section>

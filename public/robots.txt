@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kellysappliancerepair.com/sitemap.xml
+
+# Disallow specific areas
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/

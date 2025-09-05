@@ -1,7 +1,9 @@
 import React from 'react';
+import Image from 'next/image'
 import { PhoneIcon, MapPinIcon, ClockIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import ContactForm from '@/components/ContactForm'
 
 const companyInfo = getCompanyInfo();
 
@@ -25,7 +27,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Information */}
+      {/* Contact Information + Message Form */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -95,36 +97,13 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Service Areas */}
+            {/* Message Form + Storefront */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                Service Areas
-              </h2>
-              <p className="text-gray-600 mb-6">
-                We proudly serve the following areas in the Bay Area with professional appliance repair services:
-              </p>
-              
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Sonoma County</h3>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>Santa Rosa</li>
-                    <li>Petaluma</li>
-                    <li>Rohnert Park</li>
-                    <li>Sonoma</li>
-                    <li>Sebastopol</li>
-                    <li>Windsor</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Marin County & Napa</h3>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>Marin County</li>
-                    <li>San Rafael</li>
-                    <li>Novato</li>
-                    <li>Napa</li>
-                  </ul>
-                </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Send Us A Message</h2>
+              <ContactForm />
+
+              <div className="mt-8">
+                <Image src="/images/KellysStoreFront.png" alt="Kelly's Appliance Center storefront" width={800} height={450} className="rounded-lg shadow-md w-full h-auto" />
               </div>
             </div>
           </div>

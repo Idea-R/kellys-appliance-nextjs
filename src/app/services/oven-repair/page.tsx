@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import ovenContent from '../../../../content/pages/77-oven-repair.json';
 
 const companyInfo = getCompanyInfo();
 
@@ -34,12 +34,14 @@ export default function OvenRepairPage() {
                   <PhoneIcon className="h-5 w-5 mr-2" />
                   Call {companyInfo.phone}
                 </a>
-                <Link
-                  href="/contact"
+                <a
+                  href="https://booking.rossware.com/schedule/4588"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
                   Schedule Service
-                </Link>
+                </a>
               </div>
             </div>
             <div className="relative">
@@ -62,7 +64,7 @@ export default function OvenRepairPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Expert Oven Repair Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               We offer prompt service, transparent pricing, and a strong commitment to customer satisfaction. Serving a wide area, we prioritize quick response times to reduce downtime.
             </p>
           </div>
@@ -95,6 +97,58 @@ export default function OvenRepairPage() {
         </div>
       </section>
 
+      {/* Original Content (enhanced) */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+            <div className="lg:col-span-2 bg-white rounded-xl shadow p-6 wp-legacy-content">
+              <div dangerouslySetInnerHTML={{ __html: ovenContent.content }} />
+            </div>
+            <aside className="space-y-6">
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="text-xl font-bold mb-2">Why Kelly's</h3>
+                <ul className="text-gray-700 list-disc list-inside space-y-1">
+                  <li>Factory Authorized Service</li>
+                  <li>Genuine Parts Only</li>
+                  <li>90-Day Money Back Guarantee</li>
+                  <li>50+ Years in Business</li>
+                </ul>
+              </div>
+              <div className="bg-green-700 text-white rounded-lg p-6">
+                <h4 className="text-lg font-semibold mb-3">Ready to Schedule?</h4>
+                <div className="flex flex-col gap-3">
+                  <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded font-semibold">
+                    <PhoneIcon className="h-5 w-5 mr-2" /> Call {companyInfo.phone}
+                  </a>
+                  <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-4 py-2 rounded font-semibold hover:bg-gray-100">
+                    Book Appointment
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* Brands strip */}
+      <section className="py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">We Service These Range & Oven Brands</h3>
+          <div className="flex flex-wrap items-center gap-6 opacity-90">
+            {[
+              { name: 'GE', src: '/images/General_Electric_logo.webp' },
+              { name: 'Whirlpool', src: '/images/Whirlpool_2016.webp' },
+              { name: 'KitchenAid', src: '/images/kitchenaid-logo-v2.webp' },
+              { name: 'Thermador', src: '/images/brand-thermador.svg' },
+              { name: 'Viking', src: '/images/brand-viking.svg' },
+              { name: 'Wolf', src: '/images/logo-wolf-act.gif' },
+            ].map((b) => (
+              <Image key={b.name} src={b.src} alt={b.name} width={110} height={40} className="h-8 w-auto grayscale hover:grayscale-0 transition" />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -112,15 +166,36 @@ export default function OvenRepairPage() {
               <PhoneIcon className="h-6 w-6 mr-2" />
               Call {companyInfo.phone}
             </a>
-            <Link
-              href="/contact"
+            <a
+              href="https://booking.rossware.com/schedule/4588"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
               Schedule Service Online
-            </Link>
+            </a>
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Oven Repair",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": companyInfo.name,
+              "telephone": companyInfo.phone
+            },
+            "areaServed": [
+              "Santa Rosa, CA","Petaluma, CA","Rohnert Park, CA","Sonoma, CA","Sebastopol, CA","Windsor, CA","Marin County, CA","San Rafael, CA","Novato, CA","Napa, CA"
+            ],
+            "url": "https://kellysappliancerepair.com/services/oven-repair"
+          })
+        }}
+      />
     </Layout>
   );
 }

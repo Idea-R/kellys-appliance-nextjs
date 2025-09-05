@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
@@ -146,12 +145,14 @@ export default function AboutUsPage() {
               <PhoneIcon className="h-6 w-6 mr-2" />
               Call {companyInfo.phone}
             </a>
-            <Link
-              href="/contact"
+            <a
+              href="https://booking.rossware.com/schedule/4588"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
-              Contact Us Today
-            </Link>
+              Book Online
+            </a>
           </div>
         </div>
       </section>
