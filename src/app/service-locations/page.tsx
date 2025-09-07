@@ -2,9 +2,8 @@ import { MapPinIcon, CheckCircleIcon, ClockIcon, PhoneIcon } from '@heroicons/re
 import Link from 'next/link'
 import Image from 'next/image'
 import AutoAnimate from '@/components/AutoAnimate'
-import NextDynamic from 'next/dynamic'
-const Modal = NextDynamic(() => import('@/components/Modal'), { ssr: false })
 import React from 'react'
+import MapQuickModal from '@/components/MapQuickModal'
 import { getCompanyInfo } from '@/lib/content'
 import Layout from '@/components/Layout'
 
@@ -71,8 +70,6 @@ function positionFromLatLng(lat: number, lng: number) {
 }
 
 export default function ServiceLocationsPage() {
-  const [open, setOpen] = React.useState(false)
-  const [activeCity, setActiveCity] = React.useState<{name:string, slug:string} | null>(null)
   return (
     <Layout>
     <div className="min-h-screen bg-white">
@@ -238,25 +235,7 @@ export default function ServiceLocationsPage() {
         </div>
       </section>
 
-      {/* Quick City Modal trigger (example, can wire to markers later) */}
-      <section className="py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <button
-            onClick={() => { setActiveCity({ name: 'Santa Rosa', slug: 'santa-rosa' }); setOpen(true); }}
-            className="px-4 py-2 rounded-lg border border-gray-300 hover:border-green-300 hover:bg-green-50"
-          >
-            Quick view example
-          </button>
-        </div>
-      </section>
-
-      <Modal open={open} onClose={() => setOpen(false)} title={activeCity?.name ?? 'City'}>
-        <p className="text-gray-700 mb-4">View services, book, or explore community links for {activeCity?.name}.</p>
-        <div className="flex gap-3">
-          <Link href={activeCity ? `/service-locations/${activeCity.slug}` : '#'} className="inline-flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-green-700">Open City Page</Link>
-          <a href={`tel:${company.phone}`} className="inline-flex items-center justify-center bg-white text-green-800 px-4 py-2 rounded-md font-semibold border border-green-200 hover:bg-green-50">Call {company.phone}</a>
-        </div>
-      </Modal>
+      <MapQuickModal phone={company.phone} />
 
       {/* CTA */}
       <section className="py-16 bg-green-700 text-white">
