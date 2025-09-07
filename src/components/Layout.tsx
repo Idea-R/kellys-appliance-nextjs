@@ -233,11 +233,9 @@ export default function Layout({ children }: LayoutProps) {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/service-locations/santa-rosa" className="text-gray-300 hover:text-green-400">Santa Rosa</Link></li>
-                  <li><Link href="/service-locations/petaluma" className="text-gray-300 hover:text-green-400">Petaluma</Link></li>
-                  <li><Link href="/service-locations/rohnert-park" className="text-gray-300 hover:text-green-400">Rohnert Park</Link></li>
-                  <li><Link href="/service-locations/sonoma" className="text-gray-300 hover:text-green-400">Sonoma</Link></li>
+                  <li><Link href="/service-locations/sonoma-county" className="text-gray-300 hover:text-green-400">Sonoma County</Link></li>
                   <li><Link href="/service-locations/marin-county" className="text-gray-300 hover:text-green-400">Marin County</Link></li>
+                  <li><Link href="/service-locations/napa-county" className="text-gray-300 hover:text-green-400">Napa County</Link></li>
                 </ul>
               </div>
 

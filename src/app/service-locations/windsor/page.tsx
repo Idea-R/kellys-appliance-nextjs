@@ -54,6 +54,10 @@ export default function WindsorPage() {
               </div>
             </div>
           </div>
+          <div className="mt-8 bg-white border border-gray-200 rounded-lg p-6">
+            <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
+            <p className="text-gray-700 mb-2">Kelly's is a proud member of the <a href="https://www.windsorchamber.com/" className="text-green-700 underline" target="_blank" rel="noopener noreferrer">Windsor Chamber of Commerce</a>.</p>
+          </div>
         </div>
       </section>
       <section className="py-16 bg-green-700 text-white">

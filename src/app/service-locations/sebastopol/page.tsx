@@ -28,6 +28,29 @@ export default function SebastopolPage() {
         </div>
       </section>
 
+      {/* Local Highlights */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+              <p className="text-gray-700">
+                Don’t miss <strong>The Barlow</strong> — a walkable outdoor market district with breweries,
+                eateries, and artisan shops that showcases Sebastopol’s farm-to-table culture.
+              </p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
+              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                <li>Ramen Gaijin</li>
+                <li>K&L Bistro</li>
+                <li>Handline</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

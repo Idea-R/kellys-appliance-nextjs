@@ -2,6 +2,9 @@ import { MapPinIcon, CheckCircleIcon, ClockIcon, PhoneIcon } from '@heroicons/re
 import Link from 'next/link'
 import Image from 'next/image'
 import AutoAnimate from '@/components/AutoAnimate'
+import NextDynamic from 'next/dynamic'
+const Modal = NextDynamic(() => import('@/components/Modal'), { ssr: false })
+import React from 'react'
 import { getCompanyInfo } from '@/lib/content'
 import Layout from '@/components/Layout'
 
@@ -18,6 +21,7 @@ const serviceLocations = [
   { name: 'Rohnert Park', slug: 'rohnert-park', highlights: ['SSU', 'Expressway Corridor'] },
   { name: 'Sonoma', slug: 'sonoma', highlights: ['Plaza', 'Springs', 'Vineyards'] },
   { name: 'Sebastopol', slug: 'sebastopol', highlights: ['Downtown', 'Apple Hill'] },
+  { name: 'Bodega Bay', slug: 'bodega-bay', highlights: ['Harbor', 'Coastal Trails'] },
   { name: 'Windsor', slug: 'windsor', highlights: ['Town Green', 'Foothill Park'] },
   { name: 'Napa', slug: 'napa', highlights: ['Downtown', 'Browns Valley', 'Carneros'] },
   // Marin cities
@@ -28,28 +32,47 @@ const serviceLocations = [
   { name: 'Corte Madera', slug: 'corte-madera', highlights: ['The Village', 'Madera Gardens'] },
   { name: 'Tiburon', slug: 'tiburon', highlights: ['Downtown', 'Belvedere'] },
   { name: 'Sausalito', slug: 'sausalito', highlights: ['Waterfront', 'New Town'] },
-  { name: 'San Rafael', slug: 'san-rafael', highlights: ['Downtown', 'Terra Linda'] },
-  { name: 'Novato', slug: 'novato', highlights: ['Old Town', 'Hamilton'] },
+  // (deduped) San Rafael and Novato already listed above
 ]
 
-const serviceAreaMarkers = [
-  { name: 'Windsor', slug: 'windsor', top: 22, left: 45 },
-  { name: 'Santa Rosa', slug: 'santa-rosa', top: 28, left: 44 },
-  { name: 'Sebastopol', slug: 'sebastopol', top: 33, left: 38 },
-  { name: 'Rohnert Park', slug: 'rohnert-park', top: 40, left: 45 },
-  { name: 'Sonoma', slug: 'sonoma', top: 45, left: 55 },
-  { name: 'Petaluma', slug: 'petaluma', top: 50, left: 46 },
-  { name: 'Novato', slug: 'novato', top: 58, left: 52 },
-  { name: 'San Rafael', slug: 'san-rafael', top: 66, left: 51 },
-  { name: 'Napa', slug: 'napa', top: 32, left: 62 },
-  { name: 'Mill Valley', slug: 'mill-valley', top: 70, left: 49 },
-  { name: 'Larkspur', slug: 'larkspur', top: 69, left: 50 },
-  { name: 'Corte Madera', slug: 'corte-madera', top: 69, left: 50.5 },
-  { name: 'Tiburon', slug: 'tiburon', top: 71, left: 52 },
-  { name: 'Sausalito', slug: 'sausalito', top: 73, left: 52 },
+type LatLngMarker = { name: string; slug: string; lat: number; lng: number }
+
+// Bounding box for the static map image at /images/service-area.jpg
+// Adjust if the background image changes.
+const mapBounds = {
+  north: 38.80, // ~Healdsburg/Calistoga
+  south: 37.80, // ~Sausalito/Mill Valley
+  west: -123.35, // ~coast west of Jenner
+  east: -122.15, // ~east of Napa
+}
+
+const serviceAreaMarkers: LatLngMarker[] = [
+  { name: 'Windsor', slug: 'windsor', lat: 38.547, lng: -122.816 },
+  { name: 'Santa Rosa', slug: 'santa-rosa', lat: 38.440, lng: -122.714 },
+  { name: 'Sebastopol', slug: 'sebastopol', lat: 38.402, lng: -122.823 },
+  { name: 'Rohnert Park', slug: 'rohnert-park', lat: 38.339, lng: -122.701 },
+  { name: 'Sonoma', slug: 'sonoma', lat: 38.291, lng: -122.458 },
+  { name: 'Petaluma', slug: 'petaluma', lat: 38.232, lng: -122.636 },
+  { name: 'Novato', slug: 'novato', lat: 38.106, lng: -122.569 },
+  { name: 'San Rafael', slug: 'san-rafael', lat: 37.973, lng: -122.531 },
+  { name: 'Napa', slug: 'napa', lat: 38.297, lng: -122.286 },
+  { name: 'Mill Valley', slug: 'mill-valley', lat: 37.906, lng: -122.545 },
+  { name: 'Larkspur', slug: 'larkspur', lat: 37.936, lng: -122.535 },
+  { name: 'Corte Madera', slug: 'corte-madera', lat: 37.925, lng: -122.516 },
+  { name: 'Tiburon', slug: 'tiburon', lat: 37.873, lng: -122.456 },
+  { name: 'Sausalito', slug: 'sausalito', lat: 37.859, lng: -122.485 },
+  { name: 'Bodega Bay', slug: 'bodega-bay', lat: 38.333, lng: -123.048 },
 ]
+
+function positionFromLatLng(lat: number, lng: number) {
+  const left = ((lng - mapBounds.west) / (mapBounds.east - mapBounds.west)) * 100
+  const top = ((mapBounds.north - lat) / (mapBounds.north - mapBounds.south)) * 100
+  return { top, left }
+}
 
 export default function ServiceLocationsPage() {
+  const [open, setOpen] = React.useState(false)
+  const [activeCity, setActiveCity] = React.useState<{name:string, slug:string} | null>(null)
   return (
     <Layout>
     <div className="min-h-screen bg-white">
@@ -77,6 +100,30 @@ export default function ServiceLocationsPage() {
                 Book Appointment
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Browse by County */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Browse by County</h2>
+            <p className="text-gray-600">Jump to a county to see all covered cities.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link href="/service-locations/sonoma-county" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md hover:border-green-300 transition">
+              <h3 className="text-xl font-semibold text-gray-900 mb-1">Sonoma County</h3>
+              <p className="text-sm text-gray-700">Santa Rosa, Petaluma, Rohnert Park, Sonoma, Sebastopol, Windsor…</p>
+            </Link>
+            <Link href="/service-locations/marin-county" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md hover:border-green-300 transition">
+              <h3 className="text-xl font-semibold text-gray-900 mb-1">Marin County</h3>
+              <p className="text-sm text-gray-700">San Rafael, Novato, Mill Valley, Sausalito, Tiburon, Corte Madera…</p>
+            </Link>
+            <Link href="/service-locations/napa-county" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md hover:border-green-300 transition">
+              <h3 className="text-xl font-semibold text-gray-900 mb-1">Napa County</h3>
+              <p className="text-sm text-gray-700">Napa and nearby communities.</p>
+            </Link>
           </div>
         </div>
       </section>
@@ -170,23 +217,46 @@ export default function ServiceLocationsPage() {
               sizes="100vw"
               priority={false}
             />
-            {serviceAreaMarkers.map((m) => (
+            {serviceAreaMarkers.map((m) => {
+              const pos = positionFromLatLng(m.lat, m.lng)
+              return (
               <Link
                 key={m.slug}
                 href={`/service-locations/${m.slug}`}
                 aria-label={`View ${m.name} services`}
                 className="group absolute"
-                style={{ top: `${m.top}%`, left: `${m.left}%`, transform: 'translate(-50%, -100%)' }}
+                style={{ top: `${pos.top}%`, left: `${pos.left}%`, transform: 'translate(-50%, -100%)' }}
               >
                 <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-white/90 text-gray-900 text-xs px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                   {m.name}
                 </span>
                 <MapPinIcon className="h-6 w-6 text-red-600 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform" />
               </Link>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
+
+      {/* Quick City Modal trigger (example, can wire to markers later) */}
+      <section className="py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <button
+            onClick={() => { setActiveCity({ name: 'Santa Rosa', slug: 'santa-rosa' }); setOpen(true); }}
+            className="px-4 py-2 rounded-lg border border-gray-300 hover:border-green-300 hover:bg-green-50"
+          >
+            Quick view example
+          </button>
+        </div>
+      </section>
+
+      <Modal open={open} onClose={() => setOpen(false)} title={activeCity?.name ?? 'City'}>
+        <p className="text-gray-700 mb-4">View services, book, or explore community links for {activeCity?.name}.</p>
+        <div className="flex gap-3">
+          <Link href={activeCity ? `/service-locations/${activeCity.slug}` : '#'} className="inline-flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-green-700">Open City Page</Link>
+          <a href={`tel:${company.phone}`} className="inline-flex items-center justify-center bg-white text-green-800 px-4 py-2 rounded-md font-semibold border border-green-200 hover:bg-green-50">Call {company.phone}</a>
+        </div>
+      </Modal>
 
       {/* CTA */}
       <section className="py-16 bg-green-700 text-white">

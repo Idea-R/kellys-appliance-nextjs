@@ -13,13 +13,13 @@ const companyInfo = getCompanyInfo();
 const services = [
   {
     title: 'Refrigerator Repair',
-    description: 'Expert refrigerator repair services for residential and commercial clients. Our certified technicians specialize in diagnosing and fixing cooling problems, faulty compressors, and electrical faults.',
+    description: 'Expert refrigerator repair services for residential clients. Our certified technicians specialize in diagnosing and fixing cooling problems, faulty compressors, and electrical faults.',
     image: '/images/refrigerator-repair.webp',
     href: '/services/refrigerator-repair'
   },
   {
     title: 'Oven Repair', 
-    description: 'Professional oven repair services for both residential and commercial clients. Our skilled technicians are experienced in diagnosing and fixing temperature irregularities and faulty heating elements.',
+    description: 'Professional oven repair services for residential clients. Our skilled technicians are experienced in diagnosing and fixing temperature irregularities and faulty heating elements.',
     image: '/images/oven-repair.webp',
     href: '/services/oven-repair'
   },
@@ -31,7 +31,7 @@ const services = [
   },
   {
     title: 'Dishwasher Repair',
-    description: 'Experienced dishwasher repair services for residential and commercial clients. We specialize in fixing water leaks, drainage problems, faulty motors, and malfunctioning controls.',
+    description: 'Experienced dishwasher repair services for residential clients. We specialize in fixing water leaks, drainage problems, faulty motors, and malfunctioning controls.',
     image: '/images/dishwasher-repair.webp',
     href: '/services/dishwasher-repair'
   }

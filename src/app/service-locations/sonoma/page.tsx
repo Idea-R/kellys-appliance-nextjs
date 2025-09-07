@@ -28,6 +28,16 @@ export default function SonomaPage() {
         </div>
       </section>
 
+      {/* Community Links */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
+            <p className="text-gray-700">Visit the <a href="https://www.sonomachamber.org/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline">Sonoma Valley Chamber of Commerce</a> for local business resources and events.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

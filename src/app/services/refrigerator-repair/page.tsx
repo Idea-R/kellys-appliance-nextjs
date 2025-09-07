@@ -9,7 +9,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Refrigerator Repair Services - Expert Technicians',
-  description: 'Expert refrigerator repair services for residential and commercial clients. Factory authorized service with 90-day guarantee. Call (707) 664-9702',
+  description: 'Expert refrigerator repair services for residential clients. Factory authorized service with 90-day guarantee. Call (707) 664-9702',
 };
 
 const features = [
@@ -33,7 +33,7 @@ export default function RefrigeratorRepairPage() {
                 Refrigerator Repair Services
               </h1>
               <p className="text-xl mb-8">
-                Expert refrigerator repair services for residential and commercial clients. Our certified technicians specialize in diagnosing and fixing cooling problems, faulty compressors, and electrical faults.
+                Expert refrigerator repair services for residential clients. Our certified technicians specialize in diagnosing and fixing cooling problems, faulty compressors, and electrical faults.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -177,8 +177,8 @@ export default function RefrigeratorRepairPage() {
       {/* Brands strip */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">We Service These Refrigerator Brands</h3>
-          <div className="flex flex-wrap items-center gap-6 opacity-90">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Some Brands We Service</h3>
+          <div className="flex flex-wrap items-center justify-center gap-8 opacity-90">
             {[
               { name: 'GE', src: '/images/General_Electric_logo.webp' },
               { name: 'Whirlpool', src: '/images/Whirlpool_2016.webp' },
@@ -188,7 +188,7 @@ export default function RefrigeratorRepairPage() {
               { name: 'Samsung', src: '/images/brand-samsung.svg' },
               { name: 'LG', src: '/images/brand-lg.svg' },
             ].map((b) => (
-              <Image key={b.name} src={b.src} alt={b.name} width={110} height={40} className="h-8 w-auto grayscale hover:grayscale-0 transition" />
+              <Image key={b.name} src={b.src} alt={b.name} width={140} height={48} className="h-10 md:h-12 w-auto grayscale hover:grayscale-0 transition" />
             ))}
           </div>
         </div>

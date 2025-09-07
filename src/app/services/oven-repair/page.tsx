@@ -9,7 +9,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Oven Repair Services - Professional Technicians',
-  description: 'Professional oven repair services for residential and commercial clients. Expert diagnosis and repair of temperature issues, heating elements, and controls. Call (707) 664-9702',
+  description: 'Professional oven repair services for residential clients. Expert diagnosis and repair of temperature issues, heating elements, and controls. Call (707) 664-9702',
 };
 
 export default function OvenRepairPage() {
@@ -24,7 +24,7 @@ export default function OvenRepairPage() {
                 Oven Repair Services
               </h1>
               <p className="text-xl mb-8">
-                Professional oven repair services for both residential and commercial clients. Our skilled technicians are experienced in diagnosing and fixing temperature irregularities, faulty heating elements, and malfunctioning controls.
+                Professional oven repair services for residential clients. Our skilled technicians are experienced in diagnosing and fixing temperature irregularities, faulty heating elements, and malfunctioning controls.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -133,8 +133,8 @@ export default function OvenRepairPage() {
       {/* Brands strip */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">We Service These Range & Oven Brands</h3>
-          <div className="flex flex-wrap items-center gap-6 opacity-90">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Some Brands We Service</h3>
+          <div className="flex flex-wrap items-center justify-center gap-8 opacity-90">
             {[
               { name: 'GE', src: '/images/General_Electric_logo.webp' },
               { name: 'Whirlpool', src: '/images/Whirlpool_2016.webp' },
@@ -143,7 +143,7 @@ export default function OvenRepairPage() {
               { name: 'Viking', src: '/images/brand-viking.svg' },
               { name: 'Wolf', src: '/images/logo-wolf-act.gif' },
             ].map((b) => (
-              <Image key={b.name} src={b.src} alt={b.name} width={110} height={40} className="h-8 w-auto grayscale hover:grayscale-0 transition" />
+              <Image key={b.name} src={b.src} alt={b.name} width={140} height={48} className="h-10 md:h-12 w-auto grayscale hover:grayscale-0 transition" />
             ))}
           </div>
         </div>

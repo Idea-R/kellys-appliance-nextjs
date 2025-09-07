@@ -9,7 +9,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Dishwasher Repair Services - Professional Technicians',
-  description: 'Experienced dishwasher repair services for residential and commercial clients. Water leaks, drainage problems, faulty motors repair. Call (707) 664-9702',
+  description: 'Experienced dishwasher repair services for residential clients. Water leaks, drainage problems, faulty motors repair. Call (707) 664-9702',
 };
 
 export default function DishwasherRepairPage() {
@@ -24,7 +24,7 @@ export default function DishwasherRepairPage() {
                 Dishwasher Repair Services
               </h1>
               <p className="text-xl mb-8">
-                Experienced dishwasher repair services for residential and commercial clients. Our certified technicians specialize in diagnosing and fixing issues such as water leaks, drainage problems, faulty motors, and malfunctioning controls.
+                Experienced dishwasher repair services for residential clients. Our certified technicians specialize in diagnosing and fixing issues such as water leaks, drainage problems, faulty motors, and malfunctioning controls.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -93,8 +93,8 @@ export default function DishwasherRepairPage() {
       {/* Brands strip */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">We Service These Dishwasher Brands</h3>
-          <div className="flex flex-wrap items-center gap-6 opacity-90">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Some Brands We Service</h3>
+          <div className="flex flex-wrap items-center justify-center gap-8 opacity-90">
             {[
               { name: 'Bosch', src: '/images/bosch_logo_us_right.gif' },
               { name: 'KitchenAid', src: '/images/kitchenaid-logo-v2.webp' },
@@ -102,7 +102,7 @@ export default function DishwasherRepairPage() {
               { name: 'Whirlpool', src: '/images/Whirlpool_2016.webp' },
               { name: 'Maytag', src: '/images/Maytag_Logo2014-Present.webp' },
             ].map((b) => (
-              <Image key={b.name} src={b.src} alt={b.name} width={110} height={40} className="h-8 w-auto grayscale hover:grayscale-0 transition" />
+              <Image key={b.name} src={b.src} alt={b.name} width={140} height={48} className="h-10 md:h-12 w-auto grayscale hover:grayscale-0 transition" />
             ))}
           </div>
         </div>

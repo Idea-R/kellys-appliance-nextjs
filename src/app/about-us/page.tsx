@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
@@ -59,6 +60,11 @@ export default function AboutUsPage() {
                 height={400}
                 className="rounded-lg shadow-lg w-full"
               />
+              <div className="mt-4">
+                <Link href="/about-us/our-team" className="inline-flex items-center justify-center bg-green-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                  Meet Our Team →
+                </Link>
+              </div>
             </div>
           </div>
         </div>

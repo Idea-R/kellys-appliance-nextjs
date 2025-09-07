@@ -36,6 +36,16 @@ export default function TiburonPage() {
         </div>
       </section>
 
+      {/* Community Links */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
+            <p className="text-gray-700">Visit the <a href="https://www.tiburonchamber.org/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline">Tiburon Chamber of Commerce</a> for local business resources and events.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">

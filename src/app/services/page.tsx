@@ -14,14 +14,14 @@ const companyInfo = getCompanyInfo();
 const services = [
   {
     title: 'Refrigerator Repair',
-    description: 'Expert refrigerator repair services for residential and commercial clients. Our certified technicians specialize in diagnosing and fixing cooling problems, faulty compressors, and electrical faults.',
+    description: 'Expert refrigerator repair services for residential clients. Our certified technicians specialize in diagnosing and fixing cooling problems, faulty compressors, and electrical faults.',
     image: '/images/refrigerator-repair.webp',
     href: '/services/refrigerator-repair',
     features: ['Cooling System Repair', 'Compressor Replacement', 'Ice Maker Repair', 'Temperature Control Issues']
   },
   {
     title: 'Oven Repair', 
-    description: 'Professional oven repair services for both residential and commercial clients. Our skilled technicians are experienced in diagnosing and fixing temperature irregularities and faulty heating elements.',
+    description: 'Professional oven repair services for residential clients. Our skilled technicians are experienced in diagnosing and fixing temperature irregularities and faulty heating elements.',
     image: '/images/oven-repair.webp',
     href: '/services/oven-repair',
     features: ['Heating Element Replacement', 'Temperature Calibration', 'Door Seal Repair', 'Control Panel Issues']
@@ -35,7 +35,7 @@ const services = [
   },
   {
     title: 'Dishwasher Repair',
-    description: 'Experienced dishwasher repair services for residential and commercial clients. We specialize in fixing water leaks, drainage problems, faulty motors, and malfunctioning controls.',
+    description: 'Experienced dishwasher repair services for residential clients. We specialize in fixing water leaks, drainage problems, faulty motors, and malfunctioning controls.',
     image: '/images/dishwasher-repair.webp',
     href: '/services/dishwasher-repair',
     features: ['Water Leak Repair', 'Drainage Issues', 'Motor Replacement', 'Control Panel Repair']
@@ -159,6 +159,30 @@ export default function ServicesPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Counties We Serve */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Counties We Serve</h2>
+            <p className="text-lg text-gray-700">Explore services and cities by county.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link href="/service-locations/sonoma-county" className="block rounded-xl border border-gray-200 bg-white p-6 hover:border-green-300 hover:shadow-md transition">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Sonoma County</h3>
+              <p className="text-gray-700">Santa Rosa, Petaluma, Rohnert Park, Windsor, Sonoma, Sebastopol, Healdsburg...</p>
+            </Link>
+            <Link href="/service-locations/marin-county" className="block rounded-xl border border-gray-200 bg-white p-6 hover:border-green-300 hover:shadow-md transition">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Marin County</h3>
+              <p className="text-gray-700">San Rafael, Novato, Mill Valley, Sausalito, Tiburon, Corte Madera...</p>
+            </Link>
+            <Link href="/service-locations/napa-county" className="block rounded-xl border border-gray-200 bg-white p-6 hover:border-green-300 hover:shadow-md transition">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Napa County</h3>
+              <p className="text-gray-700">Napa and surrounding communities.</p>
+            </Link>
           </div>
         </div>
       </section>

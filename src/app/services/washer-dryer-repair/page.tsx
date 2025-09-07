@@ -24,7 +24,7 @@ export default function WasherDryerRepairPage() {
                 Washer & Dryer Repair
               </h1>
               <p className="text-xl mb-8">
-                At Kelly&apos;s Appliance Repair, we take pride in providing top-notch washer repair and dryer repair services for our valued residential and commercial clients.
+                At Kelly&apos;s Appliance Repair, we take pride in providing top-notch washer repair and dryer repair services for our valued residential clients.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -107,8 +107,8 @@ export default function WasherDryerRepairPage() {
       {/* Brands strip */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">We Service These Washer & Dryer Brands</h3>
-          <div className="flex flex-wrap items-center gap-6 opacity-90">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Some Brands We Service</h3>
+          <div className="flex flex-wrap items-center justify-center gap-8 opacity-90">
             {[
               { name: 'Whirlpool', src: '/images/Whirlpool_2016.webp' },
               { name: 'Maytag', src: '/images/Maytag_Logo2014-Present.webp' },
@@ -116,7 +116,7 @@ export default function WasherDryerRepairPage() {
               { name: 'LG', src: '/images/brand-lg.svg' },
               { name: 'Samsung', src: '/images/brand-samsung.svg' },
             ].map((b) => (
-              <Image key={b.name} src={b.src} alt={b.name} width={110} height={40} className="h-8 w-auto grayscale hover:grayscale-0 transition" />
+              <Image key={b.name} src={b.src} alt={b.name} width={140} height={48} className="h-10 md:h-12 w-auto grayscale hover:grayscale-0 transition" />
             ))}
           </div>
         </div>

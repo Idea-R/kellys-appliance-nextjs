@@ -24,7 +24,7 @@ export default function DiamondCertifiedPage() {
             {/* Video embeds */}
             <div className="aspect-video rounded-lg overflow-hidden shadow">
               <iframe
-                src="https://www.youtube.com/embed/23n3UL6bexample?rel=0"
+                src="https://www.youtube.com/embed/6tMW7xJ6v8I?rel=0"
                 title="Diamond Certified Experts: 3 Ways to Maintain Your Refrigerator"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -33,7 +33,7 @@ export default function DiamondCertifiedPage() {
             </div>
             <div className="aspect-video rounded-lg overflow-hidden shadow">
               <iframe
-                src="https://www.youtube.com/embed/12abCDEFexample?rel=0"
+                src="https://www.youtube.com/embed/KkQnFqUe0mY?rel=0"
                 title="Diamond Certified Experts: 2 Dishwasher Maintenance Tips"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
