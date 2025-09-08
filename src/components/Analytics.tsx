@@ -67,6 +67,47 @@ export default function Analytics() {
     }
   }, [hasAnalytics, gtmId, pathname, searchParams])
 
+  // Scroll depth tracking (25/50/75/100)
+  useEffect(() => {
+    if (!hasAnalytics) return
+    const thresholds = [25, 50, 75, 100]
+    const fired = new Set<number>()
+    const onScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop
+      const docHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.documentElement.clientHeight
+      )
+      const winHeight = window.innerHeight
+      const progress = Math.min(100, Math.round(((scrollTop + winHeight) / docHeight) * 100))
+      thresholds.forEach((t) => {
+        if (!fired.has(t) && progress >= t) {
+          fired.add(t)
+          const dl = (window as unknown as { dataLayer?: Array<Record<string, unknown>> }).dataLayer
+          dl?.push({ event: 'scroll_depth', scroll_percent: t })
+        }
+      })
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [hasAnalytics])
+
+  // Time-on-page heartbeat every 15s
+  useEffect(() => {
+    if (!hasAnalytics) return
+    let seconds = 0
+    const id = window.setInterval(() => {
+      seconds += 15
+      const dl = (window as unknown as { dataLayer?: Array<Record<string, unknown>> }).dataLayer
+      dl?.push({ event: 'heartbeat', seconds_elapsed: seconds })
+    }, 15000)
+    return () => window.clearInterval(id)
+  }, [hasAnalytics])
+
   return (
     <>
       {/* Google Tag Manager */}

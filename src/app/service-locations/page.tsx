@@ -6,6 +6,7 @@ import React from 'react'
 import ServiceAreaMap from '@/components/ServiceAreaMap'
 import { getCompanyInfo } from '@/lib/content'
 import Layout from '@/components/Layout'
+import { counties } from '@/lib/locations'
 
 export const metadata = {
   title: "Service Locations | Kelly's Appliance Center",
@@ -45,23 +46,43 @@ const mapBounds: MapBounds = {
   east: -122.15, // ~east of Napa
 }
 
-const serviceAreaMarkers: MapMarker[] = [
-  { name: 'Windsor', slug: 'windsor', lat: 38.547, lng: -122.816 },
-  { name: 'Santa Rosa', slug: 'santa-rosa', lat: 38.440, lng: -122.714 },
-  { name: 'Sebastopol', slug: 'sebastopol', lat: 38.402, lng: -122.823 },
-  { name: 'Rohnert Park', slug: 'rohnert-park', lat: 38.339, lng: -122.701 },
-  { name: 'Sonoma', slug: 'sonoma', lat: 38.291, lng: -122.458 },
-  { name: 'Petaluma', slug: 'petaluma', lat: 38.232, lng: -122.636 },
-  { name: 'Novato', slug: 'novato', lat: 38.106, lng: -122.569 },
-  { name: 'San Rafael', slug: 'san-rafael', lat: 37.973, lng: -122.531 },
-  { name: 'Napa', slug: 'napa', lat: 38.297, lng: -122.286 },
-  { name: 'Mill Valley', slug: 'mill-valley', lat: 37.906, lng: -122.545 },
-  { name: 'Larkspur', slug: 'larkspur', lat: 37.936, lng: -122.535 },
-  { name: 'Corte Madera', slug: 'corte-madera', lat: 37.925, lng: -122.516 },
-  { name: 'Tiburon', slug: 'tiburon', lat: 37.873, lng: -122.456 },
-  { name: 'Sausalito', slug: 'sausalito', lat: 37.859, lng: -122.485 },
-  { name: 'Bodega Bay', slug: 'bodega-bay', lat: 38.333, lng: -123.048 },
-]
+// Standardize markers from the centralized county/city registry and a coordinate map
+const cityCoords: Record<string, { lat: number; lng: number }> = {
+  // Sonoma
+  'santa-rosa': { lat: 38.440, lng: -122.714 },
+  'petaluma': { lat: 38.232, lng: -122.636 },
+  'rohnert-park': { lat: 38.339, lng: -122.701 },
+  'cotati': { lat: 38.327, lng: -122.707 },
+  'sebastopol': { lat: 38.402, lng: -122.823 },
+  'sonoma': { lat: 38.291, lng: -122.458 },
+  'windsor': { lat: 38.547, lng: -122.816 },
+  'healdsburg': { lat: 38.610, lng: -122.869 },
+  'forestville': { lat: 38.473, lng: -122.891 },
+  'guerneville': { lat: 38.501, lng: -123.006 },
+  'glen-ellen': { lat: 38.364, lng: -122.524 },
+  'bodega-bay': { lat: 38.333, lng: -123.048 },
+  'dillon-beach': { lat: 38.246, lng: -122.963 },
+  // Marin
+  'san-rafael': { lat: 37.973, lng: -122.531 },
+  'novato': { lat: 38.106, lng: -122.569 },
+  'mill-valley': { lat: 37.906, lng: -122.545 },
+  'sausalito': { lat: 37.859, lng: -122.485 },
+  'tiburon': { lat: 37.873, lng: -122.456 },
+  'corte-madera': { lat: 37.925, lng: -122.516 },
+  'larkspur': { lat: 37.936, lng: -122.535 },
+  // Napa
+  'napa': { lat: 38.297, lng: -122.286 },
+}
+
+const serviceAreaMarkers: MapMarker[] = Object.values(counties)
+  .flatMap((c) => c.cities)
+  .map((city) => ({
+    name: city.name,
+    slug: city.slug,
+    lat: cityCoords[city.slug]?.lat ?? 0,
+    lng: cityCoords[city.slug]?.lng ?? 0,
+  }))
+  .filter((m) => m.lat !== 0 && m.lng !== 0)
 
 function positionFromLatLng(lat: number, lng: number) {
   const left = ((lng - mapBounds.west) / (mapBounds.east - mapBounds.west)) * 100
