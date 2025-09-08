@@ -3,6 +3,8 @@ import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/re
 import Link from 'next/link';
 import Layout from '@/components/Layout';
 import ChamberLink from '@/components/ChamberLink';
+import TopPicks from '@/components/TopPicks';
+import ReferralsGrid from '@/components/ReferralsGrid';
 import { getCompanyInfo } from '@/lib/content';
 
 const companyInfo = getCompanyInfo();
@@ -24,6 +26,25 @@ export default function MarinCountyPage() {
           </a>
         </div>
       </section>
+
+      {/* Local Highlights */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+          <p className="text-gray-700">From Mount Tam’s trails to coastal towns and ferry hubs, Marin blends outdoor life with charming downtowns. We provide fast, warranty-safe repairs across the county so home routines stay smooth between hikes and commutes.</p>
+        </div>
+      </section>
+
+      {/* Kelly's Top Picks */}
+      <TopPicks
+        title="Kelly's Top 3 Eats in Marin County"
+        intro="A few favorites when we're on the road in Marin."
+        items={[
+          { name: "Sol Food", url: "https://www.solfoodrestaurant.com/", mapsUrl: "https://maps.google.com/?q=Sol+Food+San+Rafael", location: "San Rafael", person: "Team", role: "Field Crew", quote: "Plantains and pollo al horno hit the spot after a long route." },
+          { name: "Marin Joe's", url: "https://marinjoesrestaurant.com/", mapsUrl: "https://maps.google.com/?q=Marin+Joe's+Corte+Madera", location: "Corte Madera", person: "Kelly", role: "Owner", quote: "Classic steakhouse vibes and comfort." },
+          { name: "Sam's Anchor Cafe", url: "https://samscafe.com/", mapsUrl: "https://maps.google.com/?q=Sam's+Anchor+Cafe+Tiburon", location: "Tiburon", person: "Joe", role: "Tech", quote: "Views for days, seafood done right." },
+        ]}
+      />
 
       {/* Cities Grid */}
       <section className="py-12">
@@ -85,6 +106,24 @@ export default function MarinCountyPage() {
           </a>
         </div>
       </section>
+
+      {/* County Referrals */}
+      <ReferralsGrid
+        title="Marin County Referrals"
+        subtitle="Our trusted local recommendations across Marin."
+        items={[
+          { label: 'Appliance Sales' },
+          { label: 'Appliance Installation' },
+          { label: 'HVAC' },
+          { label: 'Electrician' },
+          { label: 'Plumbing' },
+          { label: 'Contractor' },
+          { label: 'Landscape' },
+          { label: 'Cleaning' },
+          { label: 'Auto Mechanic' },
+          { label: 'Pool Service' },
+        ]}
+      />
 
       {/* Local Resources */}
       <section className="py-12">

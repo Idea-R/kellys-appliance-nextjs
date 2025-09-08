@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { PhoneIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { getCompanyInfo } from '@/lib/content';
+import { counties } from '@/lib/locations';
+import GlareHover from '@/components/GlareHover';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,6 +25,7 @@ const navigation: NavItem[] = [
       { name: 'Oven Repair', href: '/services/oven-repair' },
       { name: 'Washer & Dryer Repair', href: '/services/washer-dryer-repair' },
       { name: 'Dishwasher Repair', href: '/services/dishwasher-repair' },
+      { name: 'Virtual Service Call', href: '/services/virtual' },
     ]
   },
   { 
@@ -78,8 +81,8 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-white">
         {/* Header */}
         <header className="bg-white shadow-lg">
-          {/* Top Bar */}
-          <div className="bg-green-700 text-white py-2">
+          {/* Top Bar (hidden on small screens) */}
+          <div className="bg-green-700 text-white py-2 hidden sm:block">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center text-sm">
                 <div className="flex items-center space-x-6">
@@ -136,26 +139,56 @@ export default function Layout({ children }: LayoutProps) {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium"
+                        className="text-gray-700 hover:text-green-600 px-3 py-2 text-sm font-medium link-underline"
                         data-analytics-label={`nav_${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
                         {item.name}
                       </Link>
                     )}
-                    {item.children && (
-                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <div className="py-1">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.name}
-                              href={child.href}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600"
-                            >
-                              {child.name}
-                            </Link>
+                    {item.name === 'Service Areas' ? (
+                      <div className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div className="py-1 relative">
+                          {Object.values(counties).map((county) => (
+                            <div key={county.slug} className="relative group/county">
+                              <Link
+                                href={`/service-locations/${county.slug}`}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 link-underline"
+                              >
+                                {county.name}
+                              </Link>
+                              <div className="absolute top-0 left-full ml-1 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover/county:opacity-100 group-hover/county:visible transition-all duration-200 z-50">
+                                <div className="py-1">
+                                  {county.cities.map((city) => (
+                                    <Link
+                                      key={city.slug}
+                                      href={`/service-locations/${city.slug}`}
+                                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 link-underline"
+                                    >
+                                      {city.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
                           ))}
                         </div>
                       </div>
+                    ) : (
+                      item.children && (
+                        <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                          <div className="py-1">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.name}
+                                href={child.href}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 link-underline"
+                              >
+                                {child.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )
                     )}
                   </div>
                 ))}
@@ -173,6 +206,12 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
         </header>
+        {/* Mobile floating nav toggle */}
+        <div className="fixed bottom-5 right-5 z-50 md:hidden">
+          <Link href="/service-locations" className="rounded-full shadow-lg bg-green-600 text-white px-5 py-3 font-semibold">
+            Menu
+          </Link>
+        </div>
 
         {/* Main Content */}
         <main className="page-transition">
@@ -181,23 +220,42 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Footer */}
         <footer className="bg-gray-900 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative pt-10 md:pt-14">
+            {/* Decorative footer ribbon overlay - does not affect grid layout */}
+            <div aria-hidden="true" className="absolute left-1/2 -translate-x-1/2 top-3 md:top-6 hidden md:block">
+              <GlareHover glareColor="#ffffff" glareOpacity={0.35} glareAngle={-30} glareSize={320} transitionDuration={900}>
+                <div className="plate-kelly text-shadow-strong">
+                  <span className="text-white text-2xl font-bold tracking-tight">Kelly's Appliance Repair</span>
+                  {/* corner bolts */}
+                  <span className="plate-bolt" style={{ left: 6, top: 6 }} />
+                  <span className="plate-bolt" style={{ right: 6, top: 6 }} />
+                  <span className="plate-bolt" style={{ left: 6, bottom: 6 }} />
+                  <span className="plate-bolt" style={{ right: 6, bottom: 6 }} />
+                </div>
+              </GlareHover>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-[1.25fr_1fr_1.15fr_1.35fr] gap-8 md:gap-12 items-start">
               {/* Company Info */}
-              <div className="col-span-1">
-                <Image
-                  src="/images/kellys-appliance-logo.webp"
-                  alt={companyInfo.name}
-                  width={200}
-                  height={60}
-                  className="h-12 w-auto mb-4"
-                />
-                <p className="text-gray-300 mb-4">
+              <div className="col-span-1 flex flex-col items-center text-center md:items-center md:text-center">
+                <div className="mb-4 flex justify-center md:justify-center">
+                  <div className="w-32 h-32 rounded-full ring-1 ring-white/40 bg-white/5 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                    <div className="w-28 h-28 rounded-full bg-white relative overflow-hidden">
+                      <Image
+                        src="/images/kellys-appliance-logo-mobile.webp"
+                        alt={companyInfo.name}
+                        fill
+                        sizes="112px"
+                        className="object-contain p-3"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-300 mb-4 max-w-xs">
                   Professional appliance repair services in the Bay Area since 1975.
                 </p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center">
-                    <PhoneIcon className="h-4 w-4 mr-2" />
+                <div className="space-y-2 text-sm flex flex-col items-center">
+                  <div className="flex items-start">
+                    <PhoneIcon className="h-4 w-4 mr-2 mt-0.5" />
                     <a href={`tel:${companyInfo.phone}`} className="hover:text-blue-400">
                       {companyInfo.phone}
                     </a>
@@ -211,7 +269,7 @@ export default function Layout({ children }: LayoutProps) {
                   </div>
                 </div>
                 {/* Locally Owned & Operated badge under address */}
-                <div className="mt-4">
+                <div className="mt-4 flex items-center justify-center">
                   <a href="https://locallyownedandoperated.org/" target="_blank" rel="noopener noreferrer" aria-label="Locally Owned & Operated">
                     <Image src="/images/CertifiedBanner.svg" alt="Certified Local Business" width={200} height={34} style={{ height: 'auto' }} />
                   </a>
@@ -219,53 +277,57 @@ export default function Layout({ children }: LayoutProps) {
               </div>
 
               {/* Services */}
-              <div>
+              <div className="mt-8 md:mt-10">
                 <h3 className="text-lg font-semibold mb-4">Services</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/services/refrigerator-repair" className="text-gray-300 hover:text-green-400">Refrigerator Repair</Link></li>
-                  <li><Link href="/services/oven-repair" className="text-gray-300 hover:text-green-400">Oven Repair</Link></li>
-                  <li><Link href="/services/washer-dryer-repair" className="text-gray-300 hover:text-green-400">Washer & Dryer Repair</Link></li>
-                  <li><Link href="/services/dishwasher-repair" className="text-gray-300 hover:text-green-400">Dishwasher Repair</Link></li>
+                  <li><Link href="/services/refrigerator-repair" className="footer-link">Refrigerator Repair</Link></li>
+                  <li><Link href="/services/oven-repair" className="footer-link">Oven Repair</Link></li>
+                  <li><Link href="/services/washer-dryer-repair" className="footer-link">Washer & Dryer Repair</Link></li>
+                  <li><Link href="/services/dishwasher-repair" className="footer-link">Dishwasher Repair</Link></li>
                 </ul>
               </div>
 
               {/* Service Areas */}
-              <div>
+              <div className="mt-8 md:mt-10 md:pl-6">
                 <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/service-locations/sonoma-county" className="text-gray-300 hover:text-green-400">Sonoma County</Link></li>
-                  <li><Link href="/service-locations/marin-county" className="text-gray-300 hover:text-green-400">Marin County</Link></li>
-                  <li><Link href="/service-locations/napa-county" className="text-gray-300 hover:text-green-400">Napa County</Link></li>
+                  {Object.values(counties).map((county) => (
+                    <li key={county.slug}>
+                      <Link href={`/service-locations/${county.slug}`} className="footer-link">
+                        {county.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               {/* Quick Links */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <div className="mt-8 md:mt-10 md:text-right">
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/about-us" className="text-gray-300 hover:text-green-400">About Us</Link></li>
-                  <li><Link href="/about-us/our-team" className="text-gray-300 hover:text-green-400">Our Team</Link></li>
-                  <li><Link href="/pricing" className="text-gray-300 hover:text-green-400">Pricing</Link></li>
-                  <li><Link href="/referrals" className="text-gray-300 hover:text-green-400">Referrals</Link></li>
-                  <li><Link href="/blog" className="text-gray-300 hover:text-green-400">Blog</Link></li>
-                  <li><Link href="/contact" className="text-gray-300 hover:text-green-400">Contact</Link></li>
-                  <li><Link href="/privacy-policy" className="text-gray-300 hover:text-green-400">Privacy Policy</Link></li>
+                  <li><Link href="/about-us" className="footer-link">About Us</Link></li>
+                  <li><Link href="/about-us/our-team" className="footer-link">Our Team</Link></li>
+                  <li><Link href="/pricing" className="footer-link">Pricing</Link></li>
+                  <li><Link href="/referrals" className="footer-link">Referrals</Link></li>
+                  <li><Link href="/blog" className="footer-link">Blog</Link></li>
+                  <li><Link href="/contact" className="footer-link">Contact</Link></li>
+                  <li><Link href="/privacy-policy" className="footer-link">Privacy Policy</Link></li>
                 </ul>
-                <div className="flex items-center gap-3 mt-6">
+                {/* socials relocated under privacy policy for symmetry */}
+                <div className="flex items-center gap-3 mt-6 justify-start md:justify-end">
                   <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80" data-analytics-label="footer_social_facebook">
-                    <Image src="/images/icon-facebook.svg" alt="Facebook" width={28} height={28} />
+                    <Image src="/images/icon-facebook.svg" alt="Facebook" width={40} height={40} />
                   </a>
                   <a href="https://www.yelp.com/biz/kellys-appliance-center-rohnert-park" target="_blank" rel="noopener noreferrer" aria-label="Yelp" className="hover:opacity-80" data-analytics-label="footer_social_yelp">
-                    <Image src="/images/yelp-trans.png" alt="Yelp" width={28} height={28} />
+                    <Image src="/images/yelp-trans.png" alt="Yelp" width={40} height={40} style={{ width: 'auto', height: 'auto' }} />
                   </a>
-                  <a href="https://www.diamondcertified.org/" target="_blank" rel="noopener noreferrer" aria-label="Diamond Certified" className="hover:opacity-80" data-analytics-label="footer_social_diamond">
-                    <Image src="/images/diamond-certified-logo.png" alt="Diamond Certified" width={28} height={28} />
+                  <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-80" data-analytics-label="footer_social_tiktok">
+                    <Image src="/images/icon-tiktok.svg" alt="TikTok" width={40} height={40} />
                   </a>
                   <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80" data-analytics-label="footer_social_instagram">
-                    <Image src="/images/icon-instagram.svg" alt="Instagram" width={28} height={28} />
+                    <Image src="/images/icon-instagram.svg" alt="Instagram" width={40} height={40} />
                   </a>
                   <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" className="hover:opacity-80" data-analytics-label="footer_social_x">
-                    <Image src="/images/icon-twitter-x.svg" alt="Twitter X" width={28} height={28} />
+                    <Image src="/images/icon-twitter-x.svg" alt="Twitter X" width={40} height={40} />
                   </a>
                 </div>
               </div>

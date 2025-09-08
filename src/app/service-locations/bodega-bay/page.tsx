@@ -2,6 +2,8 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import NearbyCityLinks from '@/components/NearbyCityLinks';
+import RelatedServiceLinks from '@/components/RelatedServiceLinks';
 
 const companyInfo = getCompanyInfo();
 
@@ -28,10 +30,10 @@ export default function BodegaBayPage() {
         </div>
       </section>
 
-      {/* Local Highlights */}
+      {/* Local Highlights + Related */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-3 gap-8 items-center">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
               <p className="text-gray-700">Harbor views, fresh seafood, and coastal trails make Bodega Bay a classic Sonoma Coast destination.</p>
@@ -43,6 +45,10 @@ export default function BodegaBayPage() {
                 <li>Spud Point Crab Co.</li>
                 <li>Terrapin Creek</li>
               </ul>
+            </div>
+            <div className="space-y-4">
+              <NearbyCityLinks currentSlug="bodega-bay" />
+              <RelatedServiceLinks />
             </div>
           </div>
         </div>

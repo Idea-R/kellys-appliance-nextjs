@@ -2,6 +2,8 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import NearbyCityLinks from '@/components/NearbyCityLinks';
+import RelatedServiceLinks from '@/components/RelatedServiceLinks';
 
 const companyInfo = getCompanyInfo();
 
@@ -36,6 +38,30 @@ export default function MillValleyPage() {
         </div>
       </section>
 
+      {/* Local Highlights + Eats */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+              <p className="text-gray-700">Nestled beneath Mt. Tam and close to the redwoods of Muir Woods, Mill Valley mixes outdoor living with refined dining. We keep your home’s appliances ready for post-hike meals and everyday routines.</p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
+              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                <li>Playa</li>
+                <li>Buckeye Roadhouse</li>
+                <li>Bungalow 44</li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <NearbyCityLinks currentSlug="mill-valley" />
+              <RelatedServiceLinks />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Community Links */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,9 +75,9 @@ export default function MillValleyPage() {
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="flex items-start"><CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Factory Authorized</strong><div className="text-gray-600 text-sm">Certified repair using genuine parts</div></div></div>
-            <div className="flex items-start"><ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Fast Response</strong><div className="text-gray-600 text-sm">Same-day or next-day service</div></div></div>
-            <div className="flex items-start"><MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Local Experts</strong><div className="text-gray-600 text-sm">Serving Mill Valley since 1975</div></div></div>
+            <div className="flex items-start"><CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Factory Authorized</strong><div className="text-gray-900 text-sm">Certified repair using genuine parts</div></div></div>
+            <div className="flex items-start"><ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Fast Response</strong><div className="text-gray-900 text-sm">Same-day or next-day service</div></div></div>
+            <div className="flex items-start"><MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Local Experts</strong><div className="text-gray-900 text-sm">Serving Mill Valley since 1975</div></div></div>
           </div>
         </div>
       </section>

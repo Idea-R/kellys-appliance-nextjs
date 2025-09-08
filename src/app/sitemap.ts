@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/content'
+import { allCountyPaths, allCityPaths } from '@/lib/locations'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://kellysappliancerepair.com'
@@ -28,28 +29,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/services/dishwasher-repair',
     '/services/washer-dryer-repair',
     '/service-locations',
-    '/service-locations/sonoma-county',
-    '/service-locations/marin-county',
-    '/service-locations/napa-county',
-    '/service-locations/santa-rosa',
-    '/service-locations/petaluma',
-    '/service-locations/rohnert-park',
-    '/service-locations/sonoma',
-    '/service-locations/sebastopol',
-    '/service-locations/windsor',
-    '/service-locations/novato',
-    '/service-locations/san-rafael',
-    '/service-locations/napa',
-    '/service-locations/cotati',
-    '/service-locations/healdsburg',
-    '/service-locations/forestville',
-    '/service-locations/guerneville',
-    '/service-locations/glen-ellen',
-    '/service-locations/mill-valley',
-    '/service-locations/sausalito',
-    '/service-locations/tiburon',
-    '/service-locations/corte-madera',
-    '/service-locations/dillon-beach',
     '/referrals'
   ]
 
@@ -57,7 +36,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}${page}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: page === '' ? 1 : page.includes('/appliance-repair/') || page.includes('/locations/') ? 0.8 : 0.6,
+    priority: page === '' ? 1 : page.startsWith('/services') ? 0.7 : 0.6,
+  }))
+
+  // County and City dynamic entries
+  const locationEntries = [
+    ...allCountyPaths,
+    ...allCityPaths,
+  ].map((path) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: path.includes('/service-locations/') ? 0.8 : 0.6,
   }))
 
   // Blog posts
@@ -68,5 +58,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }))
 
-  return [...staticSitemapEntries, ...blogSitemapEntries]
+  return [...staticSitemapEntries, ...locationEntries, ...blogSitemapEntries]
 }

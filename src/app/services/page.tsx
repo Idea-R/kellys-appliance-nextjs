@@ -45,7 +45,7 @@ const services = [
 const guarantees = [
   '90 Day Money Back Guarantee',
   'Factory Authorized Repair Services', 
-  'No Service Fee On Completed Jobs',
+  'Service Call Applies Toward Labor',
   '50+ Years in Business!'
 ];
 
@@ -74,7 +74,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={`tel:${companyInfo.phone}`}
-                className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors btn-animate"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill"
               >
                 <PhoneIcon className="h-6 w-6 mr-2" />
                 Call {companyInfo.phone}
@@ -83,7 +83,7 @@ export default function ServicesPage() {
                 href="https://booking.rossware.com/schedule/4588"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors btn-animate"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill alt"
               >
                 Book Appointment Now!
               </a>
@@ -92,6 +92,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Virtual Service Calls Promo */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">Virtual Service Calls</h2>
+              <p className="text-lg text-gray-700 mb-4">$40 for a 15-minute video call with a senior technician</p>
+              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                <li>Remote troubleshooting and DIY guidance</li>
+                <li>Pre-verify symptoms and parts before a visit</li>
+                <li>Decide if an onsite repair is worthwhile</li>
+              </ul>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <a href={`tel:${companyInfo.phone}`} className="btn-fill inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Call {companyInfo.phone}</a>
+                <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="btn-fill alt inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Book Virtual Call</a>
+              </div>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">What to Expect</h3>
+              <p className="text-gray-700">Share a short video of the issue, model number if available, and basic symptoms. We\'ll guide you live and let you know next steps.</p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Services Overview */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -147,7 +171,7 @@ export default function ServicesPage() {
                     <div className="mt-auto pt-2">
                       <Link
                         href={service.href}
-                        className="inline-flex items-center justify-center w-full bg-green-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors btn-animate"
+                        className="inline-flex items-center justify-center w-full px-4 py-3 rounded-lg font-semibold btn-fill"
                       >
                         Learn More About {service.title}
                         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -271,7 +295,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`tel:${companyInfo.phone}`}
-              className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors btn-animate"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill"
             >
               <PhoneIcon className="h-6 w-6 mr-2" />
               Call {companyInfo.phone}
@@ -280,7 +304,7 @@ export default function ServicesPage() {
               href="https://booking.rossware.com/schedule/4588"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors btn-animate"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill alt"
             >
               Book Online Now
             </a>

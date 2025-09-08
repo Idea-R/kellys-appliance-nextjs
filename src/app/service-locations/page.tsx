@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import AutoAnimate from '@/components/AutoAnimate'
 import React from 'react'
-import MapQuickModal from '@/components/MapQuickModal'
+import ServiceAreaMap from '@/components/ServiceAreaMap'
 import { getCompanyInfo } from '@/lib/content'
 import Layout from '@/components/Layout'
 
@@ -34,18 +34,18 @@ const serviceLocations = [
   // (deduped) San Rafael and Novato already listed above
 ]
 
-type LatLngMarker = { name: string; slug: string; lat: number; lng: number }
+import type { LatLngMarker as MapMarker, MapBounds } from '@/components/ServiceAreaMap'
 
 // Bounding box for the static map image at /images/service-area.jpg
 // Adjust if the background image changes.
-const mapBounds = {
+const mapBounds: MapBounds = {
   north: 38.80, // ~Healdsburg/Calistoga
   south: 37.80, // ~Sausalito/Mill Valley
   west: -123.35, // ~coast west of Jenner
   east: -122.15, // ~east of Napa
 }
 
-const serviceAreaMarkers: LatLngMarker[] = [
+const serviceAreaMarkers: MapMarker[] = [
   { name: 'Windsor', slug: 'windsor', lat: 38.547, lng: -122.816 },
   { name: 'Santa Rosa', slug: 'santa-rosa', lat: 38.440, lng: -122.714 },
   { name: 'Sebastopol', slug: 'sebastopol', lat: 38.402, lng: -122.823 },
@@ -200,42 +200,14 @@ export default function ServiceLocationsPage() {
         </div>
       </section>
 
-      {/* Coverage Map (Static with markers) */}
+      {/* Coverage Map (interactive with modal) */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Coverage Overview</h3>
           <p className="text-gray-600 mb-6">Hover markers to see city names. Click to open each location page.</p>
-          <div className="relative w-full h-[420px] rounded-lg shadow-lg overflow-hidden">
-            <Image
-              src="/images/service-area.jpg"
-              alt="Service area map showing Sonoma, Marin, and Napa counties"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority={false}
-            />
-            {serviceAreaMarkers.map((m) => {
-              const pos = positionFromLatLng(m.lat, m.lng)
-              return (
-              <Link
-                key={m.slug}
-                href={`/service-locations/${m.slug}`}
-                aria-label={`View ${m.name} services`}
-                className="group absolute"
-                style={{ top: `${pos.top}%`, left: `${pos.left}%`, transform: 'translate(-50%, -100%)' }}
-              >
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-white/90 text-gray-900 text-xs px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  {m.name}
-                </span>
-                <MapPinIcon className="h-6 w-6 text-red-600 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform" />
-              </Link>
-              )
-            })}
-          </div>
+          <ServiceAreaMap markers={serviceAreaMarkers} bounds={mapBounds} phone={company.phone} />
         </div>
       </section>
-
-      <MapQuickModal phone={company.phone} />
 
       {/* CTA */}
       <section className="py-16 bg-green-700 text-white">

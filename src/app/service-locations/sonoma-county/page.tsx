@@ -4,6 +4,8 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import Link from 'next/link';
 import ChamberLink from '@/components/ChamberLink';
+import TopPicks from '@/components/TopPicks';
+import ReferralsGrid from '@/components/ReferralsGrid';
 
 const companyInfo = getCompanyInfo();
 
@@ -45,6 +47,50 @@ export default function SonomaCountyPage() {
           </div>
         </div>
       </section>
+
+      {/* Local Highlights */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+          <p className="text-gray-700">Redwoods, coast, and wine country—Sonoma County has it all. We keep kitchens and laundry rooms reliable from river towns to vineyards, so your downtime stays focused on what you enjoy.</p>
+        </div>
+      </section>
+
+      {/* Kelly's Top Picks */}
+      <TopPicks
+        title="Kelly's Top 3 Eats in Sonoma County"
+        intro="Here are some of Kelly's favorite places to grab a bite!"
+        items={[
+          {
+            name: "Art's Place",
+            url: "https://www.artsplacerp.com/",
+            mapsUrl: "https://maps.google.com/?q=Art's+Place+Rohnert+Park",
+            location: "Rohnert Park",
+            person: "Shane",
+            role: "Service Manager",
+            quote:
+              "This is one of my personal favorite places to eat, host a tech meet up, or grab a drink while watching the game!",
+          },
+          {
+            name: "Sax's Joint",
+            url: "https://www.saxsjoint.com/",
+            mapsUrl: "https://maps.google.com/?q=Sax's+Joint+Petaluma",
+            location: "Petaluma",
+            person: "Bianca",
+            role: "Lead Technician",
+            quote: "Great breakfast or lunch spot!",
+          },
+          {
+            name: "The Barlow",
+            url: "https://thebarlow.net/",
+            mapsUrl: "https://maps.google.com/?q=The+Barlow+Sebastopol",
+            location: "Sebastopol",
+            person: "Joe",
+            role: "Technician",
+            quote: "Good brew, good food, a great local hang out spot to relax after work.",
+          },
+        ]}
+      />
 
       {/* City Grid */}
       <section className="py-12">
@@ -108,6 +154,24 @@ export default function SonomaCountyPage() {
           </div>
         </div>
       </section>
+
+      {/* County Referrals */}
+      <ReferralsGrid
+        title="Sonoma County Referrals"
+        subtitle="Trusted local recommendations for other trades and services."
+        items={[
+          { label: 'Appliance Sales' },
+          { label: 'Appliance Installation' },
+          { label: 'HVAC' },
+          { label: 'Electrician' },
+          { label: 'Plumbing' },
+          { label: 'Contractor' },
+          { label: 'Landscape' },
+          { label: 'Cleaning' },
+          { label: 'Auto Mechanic' },
+          { label: 'Pool Service' },
+        ]}
+      />
 
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

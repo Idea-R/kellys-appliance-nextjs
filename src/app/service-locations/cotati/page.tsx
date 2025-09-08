@@ -2,6 +2,8 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import NearbyCityLinks from '@/components/NearbyCityLinks';
+import RelatedServiceLinks from '@/components/RelatedServiceLinks';
 
 const companyInfo = getCompanyInfo();
 
@@ -106,6 +108,30 @@ export default function CotatiPage() {
                 <p className="text-gray-600 text-sm">Professional repair services with factory authorized parts</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Local Highlights + Eats */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+              <p className="text-gray-700">Cotati’s hexagon plaza and music-friendly vibe make it a unique North Bay stop. We keep home appliances performing—perfect for easy weeknight meals between concerts and campus events.</p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
+              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                <li>Tony's of North Beach (nearby)</li>
+                <li>Redwood Cafe</li>
+                <li>Down To Earth Cafe</li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <NearbyCityLinks currentSlug="cotati" />
+              <RelatedServiceLinks />
+            </div>
           </div>
         </div>
       </section>

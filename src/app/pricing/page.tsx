@@ -8,7 +8,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Pricing - Kelly\'s Appliance Center',
-  description: 'Transparent pricing for appliance repair services. No service fee on completed jobs. 90-day guarantee on all repairs. Call (707) 664-9702 for estimate.',
+  description: 'Transparent appliance repair pricing. Service call $129-$149 applies toward labor if you proceed. Additional appliance +$60. 90-day money-back guarantee.',
 };
 
 const services = [
@@ -37,13 +37,13 @@ const services = [
 const guarantees = [
   {
     icon: <ShieldCheckIcon className="h-8 w-8" />,
-    title: '90-Day Guarantee',
-    description: 'All repairs backed by our comprehensive 90-day warranty'
+    title: '90-Day Money Back Guarantee',
+    description: "If we fix it and it fails again within 90 days, we'll return to diagnose at no charge. If it's not worth further repair, we refund the repair cost less the regular service charge."
   },
   {
     icon: <CheckCircleIcon className="h-8 w-8" />,
-    title: 'No Service Fee',
-    description: 'No service charge when you complete the repair with us'
+    title: 'Service Call Applies Toward Labor',
+    description: 'Your diagnostic fee is credited toward labor when you approve the repair.'
   },
   {
     icon: <CheckCircleIcon className="h-8 w-8" />,
@@ -53,7 +53,7 @@ const guarantees = [
   {
     icon: <CheckCircleIcon className="h-8 w-8" />,
     title: 'Upfront Pricing',
-    description: 'Clear estimates before any work begins'
+    description: 'Flat-rate pricing from the MASPG flat-rate guide'
   }
 ];
 
@@ -81,6 +81,42 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Pricing Details (moved just below hero) */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-green-50 rounded-lg p-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Service Call & Flat-Rate Pricing
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">$</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Service Call Fee</h3>
+                <p className="text-gray-700">$129 – $149 to travel to your location and diagnose the problem. The technician explains the reason for the needed repair and quotes a flat price from the Major Appliance Service National Price Guide (MASPG).</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">→</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Applied to Labor</h3>
+                <p className="text-gray-700">If you decide to proceed with the repair, the entire service call fee is applied toward the labor.</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">+A</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Additional Appliance</h3>
+                <p className="text-gray-700">+$60 for each additional appliance diagnosed during the same visit.</p>
+              </div>
+            </div>
+
+            <div className="mt-8 text-sm text-gray-700">
+              <p><strong>Emergency / Weekend Calls:</strong> Subject to availability. Additional charges may apply. Please call for details.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
       {/* Pricing Philosophy */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,52 +190,22 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Details */}
-      <section className="py-16">
+      {/* Virtual Service Calls */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-green-50 rounded-lg p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                How Our Pricing Works
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                  1
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Free Estimate
-                </h3>
-                <p className="text-gray-600">
-                  We provide a detailed estimate before starting any work
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                  2
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Transparent Costs
-                </h3>
-                <p className="text-gray-600">
-                  All labor and parts costs are clearly itemized
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                  3
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  No Hidden Fees
-                </h3>
-                <p className="text-gray-600">
-                  What we quote is what you pay - no surprises
-                </p>
-              </div>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Virtual Service Calls</h2>
+            <p className="text-gray-700 text-lg">$40 for a 15-minute video call with a senior service technician</p>
+          </div>
+          <div className="mx-auto max-w-3xl bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+            <ul className="text-gray-700 list-disc pl-5 space-y-2">
+              <li>Quick remote troubleshooting and DIY guidance</li>
+              <li>Verify symptoms and parts before an in-person visit</li>
+              <li>Decide if an onsite repair is worthwhile</li>
+            </ul>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+              <a href={`tel:${companyInfo.phone}`} className="btn-fill inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Call {companyInfo.phone}</a>
+              <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="btn-fill alt inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Book Virtual Call</a>
             </div>
           </div>
         </div>
@@ -216,7 +222,7 @@ export default function PricingPage() {
               90-Day Money Back Guarantee
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              We stand behind our work. If you&apos;re not completely satisfied with our repair, we&apos;ll make it right or refund your money.
+              If we fix your appliance and it breaks down again during the 90 day period following our repair, we will return for free to determine the problem. If the machine is not worth spending any additional money on, we&apos;ll give you back the original repair cost, less the regular service charge.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

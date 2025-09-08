@@ -2,14 +2,15 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import NearbyCityLinks from '@/components/NearbyCityLinks';
-import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd'
+import NearbyCityLinks from '@/components/NearbyCityLinks'
+import RelatedServiceLinks from '@/components/RelatedServiceLinks'
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: "Appliance Repair Corte Madera - Kelly's Appliance Center",
-  description: 'Professional appliance repair services in Corte Madera, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 for same-day service.',
+  title: "Appliance Repair Larkspur - Kelly's Appliance Center",
+  description: 'Professional appliance repair services in Larkspur, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 for same-day service.',
 };
 
 const services = [
@@ -19,14 +20,14 @@ const services = [
   { name: 'Dishwasher Repair', icon: '🍽️' }
 ];
 
-export default function CorteMaderaPage() {
+export default function LarkspurPage() {
   return (
     <Layout>
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Corte Madera</h1>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">Professional appliance repair services in Corte Madera, CA. Factory authorized service with 90-day guarantee.</p>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Larkspur</h1>
+            <p className="text-xl mb-8 max-w-3xl mx-auto">Professional appliance repair services in Larkspur, CA. Factory authorized service with 90-day guarantee.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
                 <PhoneIcon className="h-5 w-5 mr-2" />
@@ -37,26 +38,7 @@ export default function CorteMaderaPage() {
           </div>
         </div>
       </section>
-
-      {/* Community Links */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
-            <p className="text-gray-700">Visit the <a href="http://www.cortemadera.org/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline">Corte Madera Chamber of Commerce</a> for local business resources and events.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="flex items-start"><CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Factory Authorized</strong><div className="text-gray-600 text-sm">Certified repair using genuine parts</div></div></div>
-            <div className="flex items-start"><ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Fast Response</strong><div className="text-gray-600 text-sm">Same-day or next-day service</div></div></div>
-            <div className="flex items-start"><MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Local Experts</strong><div className="text-gray-600 text-sm">Serving Corte Madera since 1975</div></div></div>
-          </div>
-        </div>
-      </section>
+      <CityJsonLd city="Larkspur" slug="larkspur" />
 
       {/* Local Highlights + Eats */}
       <section className="py-12">
@@ -64,7 +46,7 @@ export default function CorteMaderaPage() {
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-              <p className="text-gray-700">Corte Madera pairs easy shopping at The Village with access to trails and the Bay. We provide fast, authorized appliance repair so home life runs like clockwork.</p>
+              <p className="text-gray-700">From the historic downtown to nearby ferry access, Larkspur offers easy Bay connections and neighborhood charm. We provide prompt appliance repair so your routine stays smooth in the heart of Marin.</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
@@ -75,16 +57,26 @@ export default function CorteMaderaPage() {
               </ul>
             </div>
             <div className="space-y-4">
-              <NearbyCityLinks currentSlug="corte-madera" />
+              <NearbyCityLinks currentSlug="larkspur" />
               <RelatedServiceLinks />
             </div>
           </div>
         </div>
       </section>
 
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex items-start"><CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Factory Authorized</strong><div className="text-gray-900 text-sm">Certified repair using genuine parts</div></div></div>
+            <div className="flex items-start"><ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Fast Response</strong><div className="text-gray-900 text-sm">Same-day or next-day service</div></div></div>
+            <div className="flex items-start"><MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Local Experts</strong><div className="text-gray-900 text-sm">Serving Larkspur since 1975</div></div></div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services in Corte Madera</h2></div>
+          <div className="text-center mb-12"><h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services in Larkspur</h2></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -99,8 +91,8 @@ export default function CorteMaderaPage() {
 
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair in Corte Madera?</h2>
-          <p className="text-xl mb-8">Serving Corte Madera with professional appliance repair services since 1975</p>
+          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair in Larkspur?</h2>
+          <p className="text-xl mb-8">Serving Larkspur with professional appliance repair services since 1975</p>
           <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors">
             <PhoneIcon className="h-6 w-6 mr-2" />
             Call {companyInfo.phone} Now

@@ -2,6 +2,9 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import CityJsonLd from '@/components/CityJsonLd'
+import NearbyCityLinks from '@/components/NearbyCityLinks'
+import RelatedServiceLinks from '@/components/RelatedServiceLinks'
 
 const companyInfo = getCompanyInfo();
 
@@ -31,6 +34,41 @@ export default function GlenEllenPage() {
                 Call {companyInfo.phone}
               </a>
               <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <CityJsonLd city="Glen Ellen" slug="glen-ellen" />
+
+      {/* Community Links */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
+            <p className="text-gray-700">Visit the <a href="https://www.sonomachamber.org/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline">Sonoma Valley Chamber of Commerce</a> for nearby business resources and events.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Local Highlights + Eats */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+              <p className="text-gray-700">Between Jack London State Historic Park and quiet valley vineyards, Glen Ellen is laid-back wine country. We deliver dependable repairs that fit your tasting-room schedule.</p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
+              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                <li>Glen Ellen Star</li>
+                <li>Fig Cafe & Wine Bar (Glen Ellen)</li>
+                <li>El Dorado Kitchen (nearby Sonoma)</li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <NearbyCityLinks currentSlug="glen-ellen" />
+              <RelatedServiceLinks />
             </div>
           </div>
         </div>

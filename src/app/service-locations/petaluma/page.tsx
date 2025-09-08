@@ -2,6 +2,8 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import NearbyCityLinks from '@/components/NearbyCityLinks';
+import RelatedServiceLinks from '@/components/RelatedServiceLinks';
 
 const companyInfo = getCompanyInfo();
 
@@ -46,6 +48,30 @@ export default function PetalumaPage() {
               >
                 Book Appointment
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Local Highlights + Eats */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+              <p className="text-gray-700">Historic Downtown Petaluma, riverfront walks, and classic Victorian neighborhoods define the city’s charm. We support homes from the East Side to West Side with fast, factory-authorized appliance repair—so dinner at home or a day at the river never misses a beat.</p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
+              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                <li>Risibisi</li>
+                <li>Cucina Paradiso</li>
+                <li>The Shuckery</li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <NearbyCityLinks currentSlug="petaluma" />
+              <RelatedServiceLinks />
             </div>
           </div>
         </div>

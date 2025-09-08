@@ -2,6 +2,8 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import ChamberLink from '@/components/ChamberLink';
+import TopPicks from '@/components/TopPicks';
+import ReferralsGrid from '@/components/ReferralsGrid';
 import { getCompanyInfo } from '@/lib/content';
 import Link from 'next/link';
 
@@ -34,6 +36,25 @@ export default function NapaCountyPage() {
           </div>
         </div>
       </section>
+
+      {/* Local Highlights */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+          <p className="text-gray-700">From Silverado Trail to downtown tasting rooms, Napa County runs on hospitality. We keep appliances dependable across kitchens and guest spaces—so every pour and plate lands on time.</p>
+        </div>
+      </section>
+
+      {/* Kelly's Top Picks */}
+      <TopPicks
+        title="Kelly's Top 3 Eats in Napa County"
+        intro="When in Napa, these are easy wins."
+        items={[
+          { name: "The Charter Oak", url: "https://thecharteroak.com/", mapsUrl: "https://maps.google.com/?q=The+Charter+Oak+St+Helena", location: "St. Helena", person: "Kelly", role: "Owner", quote: "Live-fire cooking, seasonal, simple and perfect." },
+          { name: "Bottega", url: "https://www.botteganapavalley.com/", mapsUrl: "https://maps.google.com/?q=Bottega+Yountville", location: "Yountville", person: "Shane", role: "Service Manager", quote: "Michael Chiarello’s Italian comfort in wine country." },
+          { name: "Oenotri", url: "https://www.oenotri.com/", mapsUrl: "https://maps.google.com/?q=Oenotri+Napa", location: "Napa", person: "Team", role: "Field Crew", quote: "Neapolitan pies and seasonal plates to end the day." },
+        ]}
+      />
 
       {/* City Grid */}
       <section className="py-12">
@@ -102,6 +123,24 @@ export default function NapaCountyPage() {
           </a>
         </div>
       </section>
+
+      {/* County Referrals */}
+      <ReferralsGrid
+        title="Napa County Referrals"
+        subtitle="Trusted local recommendations in Napa."
+        items={[
+          { label: 'Appliance Sales' },
+          { label: 'Appliance Installation' },
+          { label: 'HVAC' },
+          { label: 'Electrician' },
+          { label: 'Plumbing' },
+          { label: 'Contractor' },
+          { label: 'Landscape' },
+          { label: 'Cleaning' },
+          { label: 'Auto Mechanic' },
+          { label: 'Pool Service' },
+        ]}
+      />
 
       {/* County SEO JSON-LD */}
       <script

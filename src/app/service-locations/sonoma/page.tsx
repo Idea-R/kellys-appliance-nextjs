@@ -2,6 +2,8 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import NearbyCityLinks from '@/components/NearbyCityLinks';
+import RelatedServiceLinks from '@/components/RelatedServiceLinks';
 
 const companyInfo = getCompanyInfo();
 
@@ -28,6 +30,30 @@ export default function SonomaPage() {
         </div>
       </section>
 
+      {/* Local Highlights + Eats */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+              <p className="text-gray-700">Centered around the historic Sonoma Plaza and mission, Sonoma offers a walkable destination of tasting rooms, cafes, and parks. From Springs to the Vineyards, we keep your home’s appliances in peak condition so entertaining stays effortless.</p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
+              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                <li>The Girl &amp; The Fig</li>
+                <li>LaSalette</li>
+                <li>OSO Sonoma</li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <NearbyCityLinks currentSlug="sonoma" />
+              <RelatedServiceLinks />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Community Links */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,21 +72,21 @@ export default function SonomaPage() {
               <CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
               <div>
                 <strong>Factory Authorized</strong>
-                <div className="text-gray-600 text-sm">Certified repair using genuine parts</div>
+                <div className="text-gray-900 text-sm">Certified repair using genuine parts</div>
               </div>
             </div>
             <div className="flex items-start">
               <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
               <div>
                 <strong>Fast Response</strong>
-                <div className="text-gray-600 text-sm">Same-day or next-day service</div>
+                <div className="text-gray-900 text-sm">Same-day or next-day service</div>
               </div>
             </div>
             <div className="flex items-start">
               <MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
               <div>
                 <strong>Local Experts</strong>
-                <div className="text-gray-600 text-sm">Trusted in Sonoma for decades</div>
+                <div className="text-gray-900 text-sm">Trusted in Sonoma for decades</div>
               </div>
             </div>
           </div>

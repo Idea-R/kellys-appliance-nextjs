@@ -2,6 +2,8 @@ import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import NearbyCityLinks from '@/components/NearbyCityLinks';
+import RelatedServiceLinks from '@/components/RelatedServiceLinks';
 
 const companyInfo = getCompanyInfo();
 
@@ -24,6 +26,34 @@ export default function RohnertParkPage() {
             <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Book Appointment
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Local Highlights + Related */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div className="md:col-span-2">
+              <div className="grid md:grid-cols-2 gap-8 items-start">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
+                  <p className="text-gray-700">Home to SSU and family-friendly neighborhoods, Rohnert Park offers parks, paths, and convenience. We keep your home’s appliances dependable for busy school weeks and easy weekends.</p>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-lg p-6">
+                  <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
+                  <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                    <li>Hana Japanese</li>
+                    <li>Bear Republic Lakeside</li>
+                    <li>Mi Ranchito</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <NearbyCityLinks currentSlug="rohnert-park" />
+              <RelatedServiceLinks />
+            </div>
           </div>
         </div>
       </section>

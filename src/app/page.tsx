@@ -75,15 +75,16 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative text-white py-24">
         <div className="absolute inset-0">
-          <Image
-            src="/images/47805405_ml.jpg"
-            alt="Modern kitchen background"
-            fill
-            priority
-            sizes="100vw"
-            quality={70}
-            className="object-cover"
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/47805405_ml.jpg"
+              alt="Modern kitchen background"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
           {/* Removed overlay for clean, uncluttered hero */}
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
