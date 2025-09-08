@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import ClientProviders from '@/components/ClientProviders'
@@ -80,7 +81,9 @@ export default function RootLayout({
       <head></head>
       <body className={inter.className}>
         <ClientProviders>
-        <Analytics />
+        <Suspense>
+          <Analytics />
+        </Suspense>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

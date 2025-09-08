@@ -55,12 +55,15 @@ export default function Analytics() {
       page_title: document.title,
     })
     // If using GA4 directly without GTM
-    if (!gtmId && (window as any).gtag) {
-      ;(window as any).gtag('event', 'page_view', {
-        page_path: url,
-        page_location: window.location.href,
-        page_title: document.title,
-      })
+    if (!gtmId) {
+      const win = window as unknown as { gtag?: (...args: unknown[]) => void }
+      if (win.gtag) {
+        win.gtag('event', 'page_view', {
+          page_path: url,
+          page_location: window.location.href,
+          page_title: document.title,
+        })
+      }
     }
   }, [hasAnalytics, gtmId, pathname, searchParams])
 

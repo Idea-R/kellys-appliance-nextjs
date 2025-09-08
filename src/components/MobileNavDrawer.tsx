@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { counties } from '@/lib/locations'
 
-export default function MobileNavDrawer(): JSX.Element {
+export default function MobileNavDrawer() {
   const [open, setOpen] = useState(false)
   const drawerRef = useRef<HTMLDivElement | null>(null)
 

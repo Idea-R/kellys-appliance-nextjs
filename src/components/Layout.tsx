@@ -309,10 +309,10 @@ export default function Layout({ children }: LayoutProps) {
                 </ul>
                 {/* socials relocated under privacy policy for symmetry */}
                 <div className="flex items-center gap-3 mt-6 justify-start md:justify-end">
-                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80" data-analytics-label="footer_social_facebook">
+                  <a href="https://www.facebook.com/KellysAppliance" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80" data-analytics-label="footer_social_facebook">
                     <Image src="/images/icon-facebook.svg" alt="Facebook" width={40} height={40} />
                   </a>
-                  <a href="https://www.yelp.com/biz/kellys-appliance-center-rohnert-park" target="_blank" rel="noopener noreferrer" aria-label="Yelp" className="hover:opacity-80" data-analytics-label="footer_social_yelp">
+                  <a href="https://www.yelp.com/biz/kellys-appliance-center-cotati-2" target="_blank" rel="noopener noreferrer" aria-label="Yelp" className="hover:opacity-80" data-analytics-label="footer_social_yelp">
                     <Image src="/images/yelp-trans.png" alt="Yelp" width={40} height={40} style={{ width: 'auto', height: 'auto' }} />
                   </a>
                   <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-80" data-analytics-label="footer_social_tiktok">
