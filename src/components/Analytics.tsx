@@ -2,12 +2,15 @@
 
 import Script from 'next/script'
 import { useEffect } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 export default function Analytics() {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
   const cfToken = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN
   const hasAnalytics = Boolean(gtmId || gaId)
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
 
   useEffect(() => {
     if (!hasAnalytics) return
@@ -39,6 +42,27 @@ export default function Analytics() {
     document.addEventListener('click', handler, true)
     return () => document.removeEventListener('click', handler, true)
   }, [hasAnalytics])
+
+  // SPA page_view tracking on route changes (App Router)
+  useEffect(() => {
+    if (!hasAnalytics) return
+    const url = `${window.location.pathname}${window.location.search}`
+    const dl = (window as unknown as { dataLayer?: Array<Record<string, unknown>> }).dataLayer
+    dl?.push({
+      event: 'page_view',
+      page_path: url,
+      page_location: window.location.href,
+      page_title: document.title,
+    })
+    // If using GA4 directly without GTM
+    if (!gtmId && (window as any).gtag) {
+      ;(window as any).gtag('event', 'page_view', {
+        page_path: url,
+        page_location: window.location.href,
+        page_title: document.title,
+      })
+    }
+  }, [hasAnalytics, gtmId, pathname, searchParams])
 
   return (
     <>

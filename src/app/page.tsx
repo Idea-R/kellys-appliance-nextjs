@@ -362,7 +362,7 @@ export default function HomePage() {
                     zIndex: arr.length - idx,
                   }}
                 >
-                  <Image src={p.src} alt={p.label} fill className="object-cover" sizes="100vw" priority={idx === 0} />
+                  <Image src={p.src} alt={p.label} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" priority={idx === 0} />
                 </div>
               )
             })}

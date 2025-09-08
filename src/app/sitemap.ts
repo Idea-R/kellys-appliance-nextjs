@@ -24,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/resources/referrals',
     '/scheduler-confirmation',
     '/services',
+    '/services/virtual',
     '/services/refrigerator-repair',
     '/services/oven-repair',
     '/services/dishwasher-repair',

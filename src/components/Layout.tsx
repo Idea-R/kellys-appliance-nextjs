@@ -206,12 +206,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
         </header>
-        {/* Mobile floating nav toggle */}
-        <div className="fixed bottom-5 right-5 z-50 md:hidden">
-          <Link href="/service-locations" className="rounded-full shadow-lg bg-green-600 text-white px-5 py-3 font-semibold">
-            Menu
-          </Link>
-        </div>
+        {/* Mobile floating nav toggle removed; use MobileNavDrawer instead */}
 
         {/* Main Content */}
         <main className="page-transition">
