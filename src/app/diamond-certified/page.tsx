@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import Layout from '@/components/Layout'
+import VideoEmbedCard from '@/components/VideoEmbedCard'
 
 export const metadata: Metadata = {
   title: 'Diamond Certified | Kelly\'s Appliance Center',
@@ -9,6 +10,28 @@ export const metadata: Metadata = {
 }
 
 export default function DiamondCertifiedPage() {
+  const videos: Array<{ title: string; youtubeId: string; description?: string }> = [
+    {
+      title: 'Diamond Certified Video Profile',
+      youtubeId: 'GOKwpttxafw',
+      description: 'Kelly’s Appliance Center performs major household appliance repairs across Marin and Sonoma Counties, prioritizing fast, reliable service and fair pricing.',
+    },
+    {
+      title: 'How to Clean Your Stove Top',
+      youtubeId: 'buuadR74Vdg',
+      description: 'Service Manager Dane Marcy demonstrates the correct way to clean a stovetop to protect finishes and extend longevity.',
+    },
+    {
+      title: 'Diamond Certified Experts: 3 Ways to Maintain Your Refrigerator',
+      youtubeId: 'YCWtsR1DLJs',
+      description: 'Owner Mark Kelly shares three simple steps to extend the life and efficiency of your refrigerator.',
+    },
+    {
+      title: 'Diamond Certified Experts: Dishwasher Maintenance Tips',
+      youtubeId: 'Qe25IAfHeEE',
+      description: 'Mark Kelly covers easy ways to keep your dishwasher efficient and reduce repairs.',
+    },
+  ]
   return (
     <Layout>
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
@@ -20,26 +43,10 @@ export default function DiamondCertifiedPage() {
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-          <div className="lg:col-span-2 space-y-8">
-            {/* Video embeds */}
-            <div className="aspect-video rounded-lg overflow-hidden shadow">
-              <iframe
-                src="https://www.youtube.com/embed/6tMW7xJ6v8I?rel=0"
-                title="Diamond Certified Experts: 3 Ways to Maintain Your Refrigerator"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-            <div className="aspect-video rounded-lg overflow-hidden shadow">
-              <iframe
-                src="https://www.youtube.com/embed/KkQnFqUe0mY?rel=0"
-                title="Diamond Certified Experts: 2 Dishwasher Maintenance Tips"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
+          <div className="lg:col-span-2 space-y-10">
+            {videos.map((v, idx) => (
+              <VideoEmbedCard key={idx} title={v.title} youtubeId={v.youtubeId} description={v.description} />
+            ))}
           </div>
 
           <aside className="space-y-6">

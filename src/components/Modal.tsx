@@ -58,7 +58,7 @@ export default function Modal({ open, onClose, title, children, widthClassName =
             ×
           </button>
         </div>
-        <div className="p-5">
+        <div className="p-5" inert={undefined}>
           {children}
         </div>
       </div>
