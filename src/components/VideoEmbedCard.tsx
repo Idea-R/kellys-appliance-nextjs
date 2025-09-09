@@ -11,12 +11,18 @@ type Props = {
 export default function VideoEmbedCard({ title, youtubeId, description }: Props) {
   const [open, setOpen] = useState(false)
   const playerHostRef = useRef<HTMLDivElement | null>(null)
-  const playerInstanceRef = useRef<{ setVolume: (n: number) => void; unMute: () => void; playVideo: () => void; destroy: () => void } | null>(null)
+  interface YTIframePlayer {
+    setVolume: (n: number) => void
+    unMute: () => void
+    playVideo: () => void
+    destroy: () => void
+  }
+  const playerInstanceRef = useRef<YTIframePlayer | null>(null)
 
   // When modal opens, load YT Iframe API (once) and autoplay at 50% volume unmuted
   useEffect(() => {
     if (!open) return
-    const win = window as unknown as { YT?: { Player?: new (el: HTMLElement | string, opts: Record<string, unknown>) => any }; onYouTubeIframeAPIReady?: () => void }
+    const win = window as unknown as { YT?: { Player?: new (el: HTMLElement | string, opts: Record<string, unknown>) => YTIframePlayer }; onYouTubeIframeAPIReady?: () => void }
     const mountPlayer = () => {
       if (!playerHostRef.current || !win.YT || !win.YT.Player) return
       if (playerInstanceRef.current) return
@@ -33,7 +39,7 @@ export default function VideoEmbedCard({ title, youtubeId, description }: Props)
           },
         },
       } as unknown as Record<string, unknown>)
-      playerInstanceRef.current = player as unknown as { setVolume: (n: number) => void; unMute: () => void; playVideo: () => void; destroy: () => void }
+      playerInstanceRef.current = player as unknown as YTIframePlayer
     }
     if (win.YT && win.YT.Player) {
       mountPlayer()

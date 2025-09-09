@@ -4,11 +4,6 @@ import type { Metadata } from 'next'
 import Layout from '@/components/Layout'
 import VideoEmbedCard from '@/components/VideoEmbedCard'
 
-export const metadata: Metadata = {
-  title: 'Diamond Certified | Kelly\'s Appliance Center',
-  description: 'Learn why Kelly\'s Appliance Center is Diamond Certified. Watch expert videos and see highlights from our certification profile.',
-}
-
 export default function DiamondCertifiedPage() {
   const videos: Array<{ title: string; youtubeId: string; description?: string }> = [
     {

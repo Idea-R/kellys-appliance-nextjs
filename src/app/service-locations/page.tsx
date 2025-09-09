@@ -1,6 +1,5 @@
 import { MapPinIcon, CheckCircleIcon, ClockIcon, PhoneIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
-import Image from 'next/image'
 import AutoAnimate from '@/components/AutoAnimate'
 import React from 'react'
 import ServiceAreaMap from '@/components/ServiceAreaMap'
@@ -84,11 +83,7 @@ const serviceAreaMarkers: MapMarker[] = Object.values(counties)
   }))
   .filter((m) => m.lat !== 0 && m.lng !== 0)
 
-function positionFromLatLng(lat: number, lng: number) {
-  const left = ((lng - mapBounds.west) / (mapBounds.east - mapBounds.west)) * 100
-  const top = ((mapBounds.north - lat) / (mapBounds.north - mapBounds.south)) * 100
-  return { top, left }
-}
+// retained from earlier version; no longer used after switching to ServiceAreaMap positioning
 
 export default function ServiceLocationsPage() {
   return (

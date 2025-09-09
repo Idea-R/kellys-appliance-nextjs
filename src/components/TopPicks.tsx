@@ -1,4 +1,4 @@
-import Link from 'next/link'
+// no Link used; keep component lean
 
 export interface TopPickItem {
   name: string

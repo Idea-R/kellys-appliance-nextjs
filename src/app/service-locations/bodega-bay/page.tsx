@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
+import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';

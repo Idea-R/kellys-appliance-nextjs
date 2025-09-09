@@ -110,7 +110,7 @@ export default function HomePage() {
                     aria-label="Certified Local Business by Mainshare"
                     data-analytics-label="hero_certified_icon"
                   >
-                    <Image src="/images/CertifiedIcon.svg" alt="Certified Local Business by Mainshare" width={96} height={96} style={{ width: 'auto', height: 'auto' }} className="h-24 w-auto" />
+                    <Image src="/images/CertifiedIcon.svg" alt="Certified Local Business by Mainshare" width={96} height={96} className="h-24 w-auto" />
                   </a>
                 </div>
               </div>
