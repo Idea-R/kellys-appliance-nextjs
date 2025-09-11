@@ -66,13 +66,11 @@ export default function VideoEmbedCard({ title, youtubeId, description }: Props)
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 items-start">
       <div className="lg:col-span-3">
-        <div
-          className="video-frame cursor-pointer"
+        <button
+          type="button"
+          className="video-frame cursor-pointer block text-left p-0 bg-transparent"
           onClick={() => setOpen(true)}
           data-analytics-label="video_open_modal"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setOpen(true) }}
           aria-label={`Open ${title} video`}
         >
           <div className="aspect-video video-inner relative">
@@ -84,7 +82,7 @@ export default function VideoEmbedCard({ title, youtubeId, description }: Props)
               allowFullScreen
             />
           </div>
-        </div>
+        </button>
       </div>
       <div className="lg:col-span-2">
         <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-4">

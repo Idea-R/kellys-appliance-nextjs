@@ -80,24 +80,24 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-white">
         {/* Header */}
-        <header className="bg-white shadow-lg">
+        <header className="bg-white shadow-lg" role="banner" aria-label="Site header">
           {/* Top Bar (hidden on small screens) */}
           <div className="bg-green-700 text-white py-2 hidden sm:block">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center text-sm">
                 <div className="flex items-center space-x-6">
                   <div className="flex items-center">
-                    <PhoneIcon className="h-4 w-4 mr-1" />
+                    <PhoneIcon className="h-4 w-4 mr-1" aria-hidden="true" />
                     <a href={`tel:${companyInfo.phone}`} className="hover:text-blue-200" data-analytics-label="topbar_call">
                       {companyInfo.phone}
                     </a>
                   </div>
                   <div className="flex items-center">
-                    <MapPinIcon className="h-4 w-4 mr-1" />
+                    <MapPinIcon className="h-4 w-4 mr-1" aria-hidden="true" />
                     <span>{companyInfo.address.city}, {companyInfo.address.state}</span>
                   </div>
                   <div className="flex items-center">
-                    <ClockIcon className="h-4 w-4 mr-1" />
+                    <ClockIcon className="h-4 w-4 mr-1" aria-hidden="true" />
                     <span>{companyInfo.hours}</span>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function Layout({ children }: LayoutProps) {
                 </Link>
               </div>
               
-              <nav className="hidden md:flex space-x-8">
+              <nav className="hidden md:flex space-x-8" role="navigation" aria-label="Primary">
                 {navigation.map((item) => (
                   <div key={item.name} className="relative group">
                     {item.external ? (
@@ -146,7 +146,7 @@ export default function Layout({ children }: LayoutProps) {
                       </Link>
                     )}
                     {item.name === 'Service Areas' ? (
-                      <div className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" role="menu" aria-label="Service Areas">
                         <div className="py-1 relative">
                           {Object.values(counties).map((county) => (
                             <div key={county.slug} className="relative group/county">
@@ -156,7 +156,7 @@ export default function Layout({ children }: LayoutProps) {
                               >
                                 {county.name}
                               </Link>
-                              <div className="absolute top-0 left-full ml-1 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover/county:opacity-100 group-hover/county:visible transition-all duration-200 z-50">
+                              <div className="absolute top-0 left-full ml-1 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover/county:opacity-100 group-hover/county:visible transition-all duration-200 z-50" role="menu" aria-label={`${county.name} cities`}>
                                 <div className="py-1">
                                   {county.cities.map((city) => (
                                     <Link
@@ -175,7 +175,7 @@ export default function Layout({ children }: LayoutProps) {
                       </div>
                     ) : (
                       item.children && (
-                        <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" role="menu" aria-label={`${item.name} menu`}>
                           <div className="py-1">
                             {item.children.map((child) => (
                               <Link
@@ -250,13 +250,13 @@ export default function Layout({ children }: LayoutProps) {
                 </p>
                 <div className="space-y-2 text-sm flex flex-col items-center">
                   <div className="flex items-start">
-                    <PhoneIcon className="h-4 w-4 mr-2 mt-0.5" />
+                    <PhoneIcon className="h-4 w-4 mr-2 mt-0.5" aria-hidden="true" />
                     <a href={`tel:${companyInfo.phone}`} className="hover:text-blue-400">
                       {companyInfo.phone}
                     </a>
                   </div>
                   <div className="flex items-start">
-                    <MapPinIcon className="h-4 w-4 mr-2 mt-0.5" />
+                    <MapPinIcon className="h-4 w-4 mr-2 mt-0.5" aria-hidden="true" />
                     <div>
                       <div>{companyInfo.address.street}</div>
                       <div>{companyInfo.address.city}, {companyInfo.address.state} {companyInfo.address.zip}</div>

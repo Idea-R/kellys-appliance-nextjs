@@ -35,6 +35,8 @@ export default function MobileNavDrawer() {
       {/* Edge tab trigger */}
       <button
         aria-label="Open navigation"
+        aria-controls="mobile-drawer"
+        aria-expanded={open}
         onClick={() => setOpen(true)}
         className="fixed left-0 top-1/2 -translate-y-1/2 md:hidden z-[55] bg-green-600 text-white px-3 py-2 rounded-r-lg shadow-lg font-semibold"
       >
@@ -58,6 +60,7 @@ export default function MobileNavDrawer() {
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
+        id="mobile-drawer"
       >
         <div className="p-4 border-b border-gray-200 flex items-center justify-between">
           <span className="font-bold text-gray-900">Navigation</span>

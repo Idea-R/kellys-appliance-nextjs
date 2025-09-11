@@ -121,7 +121,7 @@ export default function Analytics() {
             })(window,document,'script','dataLayer','${gtmId}');`}
           </Script>
           <noscript>
-            <iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" style={{ display: 'none', visibility: 'hidden' }} />
+            <iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} title="GTM noscript" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }} />
           </noscript>
         </>
       )}

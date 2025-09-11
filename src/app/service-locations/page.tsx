@@ -207,6 +207,7 @@ export default function ServiceLocationsPage() {
               width="100%"
               height="400"
               style={{ border: 0 }}
+              title="Map: Service area overview"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

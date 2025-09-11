@@ -36,10 +36,10 @@ export default function EmblaBrandCarousel({ brands, direction = 'left' }: Embla
 
   return (
     <div className="relative mask-fade-x">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-16 items-center will-change-transform">
+      <div className="overflow-hidden" ref={emblaRef} aria-roledescription="carousel" aria-label="Brand logos" role="region">
+        <div className="flex gap-16 items-center will-change-transform" role="list">
           {slides.map((brand, idx) => (
-            <div key={`${brand.name}-${idx}`} className="flex items-center justify-center flex-shrink-0">
+            <div key={`${brand.name}-${idx}`} className="flex items-center justify-center flex-shrink-0" role="listitem">
               <Image
                 src={brand.image}
                 alt={brand.name}

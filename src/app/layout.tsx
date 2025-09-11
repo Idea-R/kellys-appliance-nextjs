@@ -80,6 +80,7 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body className={inter.className}>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white text-green-800 px-3 py-2 rounded shadow">Skip to content</a>
         <ClientProviders>
         <Suspense>
           <Analytics />
@@ -118,7 +119,9 @@ export default function RootLayout({
             })
           }}
         />
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
         <MobileNavDrawer />
         <FloatingDiamondBadge />
         </ClientProviders>

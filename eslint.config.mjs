@@ -10,11 +10,14 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends("next/core-web-vitals", "next/typescript", "plugin:jsx-a11y/recommended"),
   {
     rules: {
       "react/no-unescaped-entities": "off",
       "@typescript-eslint/no-unused-vars": "warn",
+      // Allow strategic use of non-interactive roles when paired with explicit aria-labels
+      "jsx-a11y/no-noninteractive-element-interactions": "warn",
+      "jsx-a11y/click-events-have-key-events": "warn",
     },
     ignores: [
       "node_modules/**",

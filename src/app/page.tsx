@@ -329,6 +329,7 @@ export default function HomePage() {
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
+                title="Map: Kelly's Appliance Center location"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
