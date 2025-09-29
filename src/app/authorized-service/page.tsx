@@ -105,7 +105,7 @@ export default function AuthorizedServicePage() {
                   rel="noopener noreferrer"
                   aria-label="Certified Local Business by Mainshare"
                 >
-                  <Image src="/images/CertifiedIcon.svg" alt="Certified Local Business by Mainshare" width={72} height={72} className="h-18 w-auto" />
+                  <Image src="/images/CertifiedIcon.svg" alt="Certified Local Business by Mainshare" width={72} height={72} className="h-18 w-18" />
                 </a>
               </div>
             </div>

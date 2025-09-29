@@ -37,12 +37,12 @@ const serviceLocations = [
 import type { LatLngMarker as MapMarker, MapBounds } from '@/components/ServiceAreaMap'
 
 // Bounding box for the static map image at /images/service-area.jpg
-// Adjust if the background image changes.
+// Updated to cover actual service area: Bodega Bay to Guerneville, Healdsburg, Santa Rosa, Sonoma, Napa, Petaluma, Marin (Sausalito, Mill Valley, Novato)
 const mapBounds: MapBounds = {
-  north: 38.80, // ~Healdsburg/Calistoga
-  south: 37.80, // ~Sausalito/Mill Valley
-  west: -123.35, // ~coast west of Jenner
-  east: -122.15, // ~east of Napa
+  north: 38.65, // ~Healdsburg
+  south: 37.85, // ~Sausalito/Mill Valley
+  west: -123.10, // ~coast west of Bodega Bay
+  east: -122.25, // ~east of Napa
 }
 
 // Standardize markers from the centralized county/city registry and a coordinate map

@@ -79,6 +79,7 @@ export default function MobileNavDrawer() {
                 <li><Link href="/services/oven-repair" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_oven">Oven Repair</Link></li>
                 <li><Link href="/services/washer-dryer-repair" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_washer_dryer">Washer & Dryer Repair</Link></li>
                 <li><Link href="/services/dishwasher-repair" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_dishwasher">Dishwasher Repair</Link></li>
+                <li><Link href="/services/parts" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_parts">Appliance Parts</Link></li>
                 <li><Link href="/services/virtual" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_virtual">Virtual Service Call</Link></li>
               </ul>
             </li>

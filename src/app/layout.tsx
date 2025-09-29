@@ -80,6 +80,8 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body className={inter.className}>
+        {/* Preload hero background for LCP */}
+        <link rel="preload" as="image" href="/images/47805405_ml.jpg" />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white text-green-800 px-3 py-2 rounded shadow">Skip to content</a>
         <ClientProviders>
         <Suspense>

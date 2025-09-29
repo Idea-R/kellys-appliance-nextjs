@@ -25,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/scheduler-confirmation',
     '/blog',
     '/services',
+    '/services/parts',
     '/services/virtual',
     '/services/refrigerator-repair',
     '/services/oven-repair',

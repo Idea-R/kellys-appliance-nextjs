@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   pageExtensions: ["ts", "tsx", "mdx"],
+  images: {
+    qualities: [25, 50, 75, 100],
+  },
   async redirects() {
     return [
       {

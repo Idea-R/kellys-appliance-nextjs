@@ -25,6 +25,7 @@ const navigation: NavItem[] = [
       { name: 'Oven Repair', href: '/services/oven-repair' },
       { name: 'Washer & Dryer Repair', href: '/services/washer-dryer-repair' },
       { name: 'Dishwasher Repair', href: '/services/dishwasher-repair' },
+      { name: 'Appliance Parts', href: '/services/parts' },
       { name: 'Virtual Service Call', href: '/services/virtual' },
     ]
   },
@@ -279,6 +280,7 @@ export default function Layout({ children }: LayoutProps) {
                   <li><Link href="/services/oven-repair" className="footer-link">Oven Repair</Link></li>
                   <li><Link href="/services/washer-dryer-repair" className="footer-link">Washer & Dryer Repair</Link></li>
                   <li><Link href="/services/dishwasher-repair" className="footer-link">Dishwasher Repair</Link></li>
+                  <li><Link href="/services/parts" className="footer-link">Appliance Parts</Link></li>
                 </ul>
               </div>
 

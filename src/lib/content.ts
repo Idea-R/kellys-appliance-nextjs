@@ -7,6 +7,9 @@ import path from 'path';
 const contentDir = path.join(process.cwd(), 'content');
 
 export async function getAllPages(): Promise<WordPressPage[]> {
+  // Return empty array for client-side builds
+  if (typeof window !== 'undefined') return [];
+  
   const { promises: fs } = await import('fs');
   const pagesDir = path.join(contentDir, 'pages');
   let files: string[] = []
@@ -31,6 +34,9 @@ export async function getAllPages(): Promise<WordPressPage[]> {
 }
 
 export async function getAllPosts(): Promise<WordPressPost[]> {
+  // Return empty array for client-side builds
+  if (typeof window !== 'undefined') return [];
+  
   const { promises: fs } = await import('fs');
   const postsDir = path.join(contentDir, 'posts');
   let files: string[] = []

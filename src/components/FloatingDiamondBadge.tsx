@@ -14,7 +14,7 @@ export default function FloatingDiamondBadge() {
       rel="noopener noreferrer"
       aria-label="Diamond Certified"
       data-analytics-label="badge_diamond_right"
-      className={`fixed z-40 bottom-6 right-6 group select-none`}>
+      className={`fixed z-10 bottom-6 right-6 group select-none`}>
       <div className={`relative w-16 h-16 md:w-20 md:h-20 ${mounted ? 'badge-enter' : 'opacity-0'}`}>
         <Image
           src="/images/diamond-certified-logo.png"

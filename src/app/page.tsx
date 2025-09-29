@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import GoogleReviews from '@/components/GoogleReviews'
 import Image from 'next/image';
@@ -6,7 +8,8 @@ import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 // import AutoAnimate from '@/components/AutoAnimate'
-import EmblaBrandCarousel from '@/components/EmblaBrandCarousel'
+import dynamic from 'next/dynamic'
+const EmblaBrandCarousel = dynamic(() => import('@/components/EmblaBrandCarousel'), { ssr: false })
 
 const companyInfo = getCompanyInfo();
 
@@ -81,6 +84,7 @@ export default function HomePage() {
               alt="Modern kitchen background"
               fill
               priority
+              quality={75}
               sizes="100vw"
               className="object-cover"
             />
@@ -110,7 +114,7 @@ export default function HomePage() {
                     aria-label="Certified Local Business by Mainshare"
                     data-analytics-label="hero_certified_icon"
                   >
-                    <Image src="/images/CertifiedIcon.svg" alt="Certified Local Business by Mainshare" width={96} height={96} className="h-24 w-auto" />
+                    <Image src="/images/CertifiedIcon.svg" alt="Certified Local Business by Mainshare" width={96} height={96} className="h-24 w-24" />
                   </a>
                 </div>
               </div>
@@ -229,8 +233,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Brand Partners Section */}
-      <section className="py-16 bg-gray-50 overflow-hidden">
+      {/* DIY Parts Promo (carousel style) */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900">DIY Parts</h2>
+              <p className="text-gray-600">Water filters, air filters, dryer belts, hoses, venting</p>
+            </div>
+            <Link href="/services/parts" className="inline-flex items-center justify-center bg-green-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+              Order Parts →
+            </Link>
+          </div>
+
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2" role="region" aria-label="Homepage DIY parts carousel">
+            {[
+              { name: 'Refrigerator Water Filters', blurb: 'OEM filters for clean water' },
+              { name: 'Fridge Air Filters', blurb: 'Reduce odors, keep air fresh' },
+              { name: 'Dryer Vent Hose', blurb: 'UL-listed venting for safety' },
+              { name: 'Dryer Belt', blurb: 'Correct belt for your model' },
+              { name: 'Washer Hoses', blurb: 'OEM or braided replacements' },
+              { name: 'Dishwasher Drain Hose', blurb: 'Proper fit and length' },
+            ].map((p, i) => (
+              <div key={i} className="min-w-[240px] snap-start bg-white rounded-xl shadow p-5 border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">{p.name}</h3>
+                <p className="text-gray-600 text-sm mb-4">{p.blurb}</p>
+                <Link href="/services/parts" className="inline-flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded font-semibold hover:bg-green-700 transition-colors">
+                  View Parts
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Partners Section (deferred render work) */}
+      <section className="py-16 bg-gray-50 overflow-hidden" style={{ contentVisibility: 'auto' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -268,8 +306,8 @@ export default function HomePage() {
 
       {/* Google Reviews Section (removed duplicate; kept single component above) */}
 
-      {/* Service Area Map Section with diagonally clipped scenic background */}
-      <section className="relative py-16 bg-gray-50 overflow-hidden">
+      {/* Service Area Map Section with diagonally clipped scenic background (deferred) */}
+      <section className="relative py-16 bg-gray-50 overflow-hidden" style={{ contentVisibility: 'auto' }}>
         <div className="absolute inset-0" aria-hidden="true" style={{ zIndex: 0, pointerEvents: 'none' }}>
           <div className="flex h-full w-full">
             {[
@@ -293,7 +331,7 @@ export default function HomePage() {
                     zIndex: arr.length - idx,
                   }}
                 >
-                  <Image src={p.src} alt={p.label} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" priority={idx === 0} />
+                  <Image src={p.src} alt={p.label} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" />
                 </div>
               )
             })}

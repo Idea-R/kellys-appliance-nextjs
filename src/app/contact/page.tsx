@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image'
 import { PhoneIcon, MapPinIcon, ClockIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
@@ -103,7 +102,22 @@ export default function ContactPage() {
               <ContactForm />
 
               <div className="mt-8">
-                <Image src="/images/KellysStoreFront.png" alt="Kelly's Appliance Center storefront" width={800} height={450} className="rounded-lg shadow-md w-full h-auto" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Visit Our Location</h3>
+                <div className="rounded-lg shadow-md overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3130.123456789!2d-122.7123456!3d38.3456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8084a1234567890%3A0x1234567890abcdef!2s466%20Primero%20Ct%20Suite%20H%2C%20Cotati%2C%20CA%2094931!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Kelly's Appliance Center Location"
+                  ></iframe>
+                </div>
+                <p className="text-sm text-gray-600 mt-2">
+                  Located in Cotati, CA - Easy access from Highway 101
+                </p>
               </div>
             </div>
           </div>
