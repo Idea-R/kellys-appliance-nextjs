@@ -27,7 +27,7 @@ const blogPosts = [
   },
   {
     title: 'What Is the Best Way to Clean Stainless Steel Appliances?',
-    slug: 'what-is-the-best-way-to-clean-a-stainless-steel-appliances',
+    slug: 'what-is-the-best-way-to-clean-stainless-steel-appliances',
     excerpt: 'Professional tips for keeping your stainless steel appliances spotless and maintaining their appearance with the right cleaning products and techniques.',
     date: '2025-01-05',
     readTime: '3 min read',
