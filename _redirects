@@ -1,0 +1,34 @@
+# Cloudflare Pages redirects (backup to next.config.ts)
+# Note: Next.js redirects in next.config.ts should take precedence
+
+# Service page redirects
+/appliance-repair/* /services/:splat 301
+/locations/* /service-locations/:splat 301
+
+# Page redirects  
+/about /about-us 301
+/brands/* /authorized-service 301
+
+# Location redirects
+/appliance-repair-santa-rosa /service-locations/santa-rosa 301
+/appliance-repair-petaluma /service-locations/petaluma 301
+/appliance-repair-rohnert-park /service-locations/rohnert-park 301
+/appliance-repair-sonoma /service-locations/sonoma 301
+/appliance-repair-sebastopol /service-locations/sebastopol 301
+/appliance-repair-windsor /service-locations/windsor 301
+/appliance-repair-novato /service-locations/novato 301
+/appliance-repair-san-rafael /service-locations/san-rafael 301
+/appliance-repair-napa /service-locations/napa 301
+/appliance-repair-marin-county /service-locations/marin-county 301
+
+# Blog redirects
+/why-is-my-dryer-taking-so-long-to-dry-clothes /blog/why-is-my-dryer-taking-so-long-to-dry-clothes 301
+/common-dishwasher-problems-and-how-to-prevent-them /blog/common-dishwasher-problems-and-how-to-prevent-them 301
+/what-is-the-best-way-to-clean-stainless-steel-appliances /blog/what-is-the-best-way-to-clean-stainless-steel-appliances 301
+/why-you-should-call-a-professional-to-repair-your-appliances /blog/why-you-should-call-a-professional-to-repair-your-appliances 301
+/top-5-tips-for-buying-a-home-appliance /blog/top-5-tips-for-buying-a-home-appliance 301
+/avoid-appliance-repair-scams /blog/what-is-the-best-way-to-avoid-appliance-repair-scams 301
+
+# Other redirects
+/resources/blog /blog 301
+/resources/scheduler-confirmation /scheduler-confirmation 301
