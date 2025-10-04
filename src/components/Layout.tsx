@@ -265,7 +265,7 @@ export default function Layout({ children }: LayoutProps) {
                   </div>
                 </div>
                 {/* Locally Owned & Operated badge under address */}
-                <div className="mt-4 flex items-center justify-center">
+                <div className="mt-6 flex items-center justify-center">
                   <a href="https://locallyownedandoperated.org/" target="_blank" rel="noopener noreferrer" aria-label="Locally Owned & Operated">
                     <Image src="/images/CertifiedBanner.svg" alt="Certified Local Business" width={200} height={34} style={{ height: 'auto' }} />
                   </a>
@@ -315,7 +315,7 @@ export default function Layout({ children }: LayoutProps) {
                     <Image src="/images/icon-facebook.svg" alt="Facebook" width={40} height={40} />
                   </a>
                   <a href="https://www.yelp.com/biz/kellys-appliance-center-cotati-2" target="_blank" rel="noopener noreferrer" aria-label="Yelp" className="hover:opacity-80" data-analytics-label="footer_social_yelp">
-                    <Image src="/images/yelp-trans.png" alt="Yelp" width={40} height={40} style={{ width: 'auto', height: 'auto' }} />
+                    <Image src="/images/yelp-trans.png" alt="Yelp" width={40} height={40} className="w-10 h-10 object-contain" />
                   </a>
                   <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-80" data-analytics-label="footer_social_tiktok">
                     <Image src="/images/icon-tiktok.svg" alt="TikTok" width={40} height={40} />
