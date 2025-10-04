@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "export": "next export",
     "preview": "wrangler pages dev out",
     "deploy": "wrangler pages deploy out --project-name=kellys-appliance-nextjs",
     "start": "next start",

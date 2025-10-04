@@ -15,11 +15,11 @@ const nextConfig: NextConfig = {
   output: "export",
   
   images: {
-    qualities: [25, 50, 75, 100],
-    formats: ["image/avif", "image/webp"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: true, // Required for static export (no image optimization server)
   },
+  
+  // Optional: add trailing slashes for cleaner URLs
+  // trailingSlash: true,
   
   // Security headers
   poweredByHeader: false,

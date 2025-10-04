@@ -26,16 +26,19 @@
 
 ## 🚀 Current Working Configuration
 
-### Cloudflare Pages Settings (Official Oct 2025):
+### Cloudflare Pages Settings (Official Oct 2025 - Next.js 15.5):
 ```
 Framework preset: Next.js (Static HTML Export)
-Build command: npm ci && npm run build && npx next export
+Build command: npm ci && npm run build
 Build output directory: out
 Root directory: /
 Node version: Pinned via .nvmrc (22.16.0)
 Environment variables:
   - NEXT_TELEMETRY_DISABLED=1
 ```
+
+**Important:** Next.js 15.5 removed `next export` CLI command. 
+Use `output: 'export'` in `next.config.ts` instead.
 
 **Reference:** [Cloudflare Pages - Next.js Static](https://developers.cloudflare.com/pages/framework-guides/nextjs/)
 
