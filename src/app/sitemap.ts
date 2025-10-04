@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/content'
 import { allCountyPaths, allCityPaths } from '@/lib/locations'
 
+export const dynamic = 'force-static'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://kellysappliancerepair.com'
   const posts = await getAllPosts()

@@ -11,8 +11,8 @@ const nextConfig: NextConfig = {
   },
   pageExtensions: ["ts", "tsx", "mdx"],
   
-  // Cloudflare Pages optimizations
-  output: "standalone",
+  // Cloudflare Pages static export
+  output: "export",
   
   images: {
     qualities: [25, 50, 75, 100],

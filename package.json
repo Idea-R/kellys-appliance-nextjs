@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "build:cloudflare": "opennextjs-cloudflare build",
-    "preview": "wrangler pages dev .open-next/cloudflare",
-    "deploy": "npm run build && npm run build:cloudflare && wrangler pages deploy .open-next/cloudflare --project-name=kellys-nextjs",
+    "export": "next export",
+    "preview": "wrangler pages dev out",
+    "deploy": "wrangler pages deploy out --project-name=kellys-appliance-nextjs",
     "start": "next start",
     "lint": "next lint",
     "report:summary": "node scripts/report.mjs summary --days=7",
@@ -34,7 +34,6 @@
     "next-seo": "^6.8.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "server-only": "^0.0.1",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
@@ -43,7 +42,6 @@
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^15.5.2",
-    "@opennextjs/cloudflare": "^1.9.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
