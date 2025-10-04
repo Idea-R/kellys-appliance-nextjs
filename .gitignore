@@ -7,6 +7,7 @@ out
 # Env
 .env*
 !.env.example
+!.env.local.example
 
 # Logs (track keep files only)
 logs/*
@@ -55,6 +56,13 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# OpenNext build output
+.open-next/
+
+# Cloudflare
+.wrangler/
+.dev.vars
 
 # typescript
 *.tsbuildinfo

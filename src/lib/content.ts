@@ -1,16 +1,22 @@
-// NOTE: The file-system backed content helpers are not used in production build.
-// To avoid bundling Node "fs" in the client build under Turbopack, we gate them
-// behind dynamic imports inside the functions that need them.
 import { WordPressPage, WordPressPost, ServicePage, LocationPage, CompanyInfo } from '@/types/content';
-import path from 'path';
 
-const contentDir = path.join(process.cwd(), 'content');
+// Dynamic imports for Node.js modules (server-side only)
+const getServerModules = async () => {
+  if (typeof window !== 'undefined') {
+    return { fs: null, path: null, contentDir: '' };
+  }
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const fs = require('fs').promises;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const path = require('path');
+  const contentDir = path.join(process.cwd(), 'content');
+  return { fs, path, contentDir };
+};
 
 export async function getAllPages(): Promise<WordPressPage[]> {
-  // Return empty array for client-side builds
-  if (typeof window !== 'undefined') return [];
+  const { fs, path, contentDir } = await getServerModules();
+  if (!fs || !path || !contentDir) return [];
   
-  const { promises: fs } = await import('fs');
   const pagesDir = path.join(contentDir, 'pages');
   let files: string[] = []
   try {
@@ -34,10 +40,9 @@ export async function getAllPages(): Promise<WordPressPage[]> {
 }
 
 export async function getAllPosts(): Promise<WordPressPost[]> {
-  // Return empty array for client-side builds
-  if (typeof window !== 'undefined') return [];
+  const { fs, path, contentDir } = await getServerModules();
+  if (!fs || !path || !contentDir) return [];
   
-  const { promises: fs } = await import('fs');
   const postsDir = path.join(contentDir, 'posts');
   let files: string[] = []
   try {

@@ -10,8 +10,30 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   pageExtensions: ["ts", "tsx", "mdx"],
+  
+  // Cloudflare Pages optimizations
+  output: "standalone",
+  
   images: {
     qualities: [25, 50, 75, 100],
+    formats: ["image/avif", "image/webp"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+  
+  // Security headers
+  poweredByHeader: false,
+  
+  // Webpack config for Node.js polyfills
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+      };
+    }
+    return config;
   },
   async redirects() {
     return [
