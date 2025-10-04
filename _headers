@@ -13,9 +13,10 @@
 /images/*
   Cache-Control: public, max-age=86400
 
-# Cache other static files
-*.css
+# Cache CSS files
+/*.css
   Cache-Control: public, max-age=31536000
 
-*.js
+# Cache JS files
+/*.js
   Cache-Control: public, max-age=31536000
