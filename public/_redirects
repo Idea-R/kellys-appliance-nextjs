@@ -32,3 +32,6 @@
 
 # Scheduler confirmation redirect
 /resources/scheduler-confirmation /scheduler-confirmation 301
+
+# WordPress sitemap redirect
+/sitemap_index.xml /sitemap.xml 301
