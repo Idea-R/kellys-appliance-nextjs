@@ -30,23 +30,23 @@ export default function ContactForm() {
       <p id="contact-form-desc" className="sr-only">All fields marked with an asterisk are required.</p>
       <div className="col-span-1">
         <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-1">Name *</label>
-        <input id="name" name="name" required type="text" className="w-full rounded-md border-gray-300 focus:border-green-600 focus:ring-green-600" placeholder="Your name" />
+        <input id="name" name="name" required type="text" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-colors" placeholder="Your name" />
       </div>
       <div className="col-span-1">
         <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-1">Email *</label>
-        <input id="email" name="email" required type="email" className="w-full rounded-md border-gray-300 focus:border-green-600 focus:ring-green-600" placeholder="you@example.com" />
+        <input id="email" name="email" required type="email" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-colors" placeholder="you@example.com" />
       </div>
       <div className="col-span-1">
         <label htmlFor="zip" className="block text-sm font-medium text-gray-900 mb-1">Zip Code *</label>
-        <input id="zip" name="zip" required type="text" className="w-full rounded-md border-gray-300 focus:border-green-600 focus:ring-green-600" placeholder="94931" />
+        <input id="zip" name="zip" required type="text" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-colors" placeholder="94931" />
       </div>
       <div className="col-span-1">
         <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-1">Phone *</label>
-        <input id="phone" name="phone" required type="tel" className="w-full rounded-md border-gray-300 focus:border-green-600 focus:ring-green-600" placeholder="(707) 555-1234" />
+        <input id="phone" name="phone" required type="tel" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-colors" placeholder="(707) 555-1234" />
       </div>
       <div className="col-span-2">
         <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-1">Message *</label>
-        <textarea id="message" name="message" required rows={5} className="w-full rounded-md border-gray-300 focus:border-green-600 focus:ring-green-600" placeholder="How can we help?" />
+        <textarea id="message" name="message" required rows={5} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-colors resize-none" placeholder="How can we help?" />
       </div>
       <div className="col-span-2 flex items-center gap-3">
         <button type="submit" className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold btn-fill" data-analytics-label="contact_form_submit" disabled={status==='sending'} aria-live="polite">
