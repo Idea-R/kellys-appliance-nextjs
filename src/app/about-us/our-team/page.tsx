@@ -4,12 +4,9 @@ import Link from 'next/link';
 import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import { Playfair_Display } from 'next/font/google';
 import TeamGrid, { TeamMember } from './TeamGrid'
 
 const companyInfo = getCompanyInfo();
-// Reserved for future typographic accents; intentionally unused
-const playfair = Playfair_Display({ subsets: ['latin'], weight: ['700'] });
 
 export const metadata = {
   title: 'Our Team - Kelly\'s Appliance Center',

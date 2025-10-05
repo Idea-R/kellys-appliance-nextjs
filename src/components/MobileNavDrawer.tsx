@@ -32,13 +32,13 @@ export default function MobileNavDrawer() {
 
   return (
     <>
-      {/* Edge tab trigger */}
+      {/* Edge tab trigger - Top left, quarter way down */}
       <button
         aria-label="Open navigation"
         aria-controls="mobile-drawer"
         aria-expanded={open}
         onClick={() => setOpen(true)}
-        className="fixed left-0 top-1/2 -translate-y-1/2 md:hidden z-[55] bg-green-600 text-white px-3 py-2 rounded-r-lg shadow-lg font-semibold"
+        className="fixed left-0 top-[25vh] md:hidden z-[55] bg-green-700 text-white px-4 py-3 rounded-r-lg shadow-xl font-semibold border-2 border-white/20 hover:bg-green-800 transition-colors"
       >
         Menu
       </button>
@@ -67,7 +67,12 @@ export default function MobileNavDrawer() {
           <button onClick={() => setOpen(false)} className="rounded px-3 py-1 text-sm bg-white/20 hover:bg-white/30 backdrop-blur-sm transition-colors" data-analytics-label="drawer_close">Close</button>
         </div>
 
-        <nav className="p-3 space-y-1">
+        <nav className="p-3 space-y-1" onClick={(e) => {
+          // Close drawer when clicking any link
+          if ((e.target as HTMLElement).tagName === 'A') {
+            setOpen(false)
+          }
+        }}>
           <ul className="space-y-0.5 text-gray-800">
             <li>
               <Link href="/" className="block px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_home">Home</Link>

@@ -3,7 +3,6 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import Image from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
-import { Dancing_Script } from 'next/font/google'
 import { WrenchScrewdriverIcon, SparklesIcon } from '@heroicons/react/24/solid'
 import { Crown } from 'lucide-react'
 import YearsOfServiceBadge from '@/components/YearsOfServiceBadge'
@@ -24,7 +23,6 @@ export type TeamMember = {
   quotes?: string[]               // Array of quotes/philosophies
 }
 
-const dancing = Dancing_Script({ subsets: ['latin'], weight: ['700'] })
 
 function getVariant(role: string) {
   const r = role.toLowerCase()
@@ -72,7 +70,7 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
                         <Icon className="h-4 w-4 text-white" />
                       </div>
                       <div className={`${v.bg} text-white shadow-lg ring-1 ring-black/20 rounded-r-md px-4 py-1`}>
-                        <span className={`${dancing.className} text-2xl leading-none`}>{member.name.split(' ')[0]}</span>
+                        <span className="text-2xl leading-none font-bold">{member.name.split(' ')[0]}</span>
                       </div>
                       <span aria-hidden className={`h-[34px] w-3 ${v.accent}`} style={{ clipPath: 'polygon(0 0, 100% 50%, 0 100%)' }} />
                     </>
