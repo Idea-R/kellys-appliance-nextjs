@@ -3,3 +3,7 @@ compatibility_date = "2025-10-03"
 
 # Next.js static export output
 pages_build_output_dir = "out"
+
+# Public environment variables (visible in client-side code)
+[vars]
+NEXT_PUBLIC_GA_MEASUREMENT_ID = "G-6NW7LJG197"

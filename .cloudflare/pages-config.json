@@ -10,7 +10,8 @@
       "compatibility_flags": ["nodejs_compat"],
       "env_vars": {
         "NODE_VERSION": "22",
-        "NEXT_TELEMETRY_DISABLED": "1"
+        "NEXT_TELEMETRY_DISABLED": "1",
+        "NEXT_PUBLIC_GA_MEASUREMENT_ID": "G-6NW7LJG197"
       }
     }
   },
@@ -24,7 +25,8 @@
       "compatibility_flags": ["nodejs_compat"],
       "env_vars": {
         "NODE_VERSION": "22",
-        "NEXT_TELEMETRY_DISABLED": "1"
+        "NEXT_TELEMETRY_DISABLED": "1",
+        "NEXT_PUBLIC_GA_MEASUREMENT_ID": "G-6NW7LJG197"
       }
     }
   }
