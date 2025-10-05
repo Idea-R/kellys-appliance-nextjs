@@ -255,10 +255,10 @@ export default function HomePage() {
               { name: 'Washer Hoses', blurb: 'OEM or braided replacements' },
               { name: 'Dishwasher Drain Hose', blurb: 'Proper fit and length' },
             ].map((p, i) => (
-              <div key={i} className="min-w-[240px] snap-start bg-white rounded-xl shadow p-5 border border-gray-100">
+              <div key={i} className="min-w-[240px] snap-start bg-white rounded-xl shadow p-5 border border-gray-100 flex flex-col">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{p.name}</h3>
-                <p className="text-gray-600 text-sm mb-4">{p.blurb}</p>
-                <Link href="/services/parts" className="inline-flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded font-semibold hover:bg-green-700 transition-colors">
+                <p className="text-gray-600 text-sm mb-4 flex-grow">{p.blurb}</p>
+                <Link href="/services/parts" className="inline-flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded font-semibold hover:bg-green-700 transition-colors w-full">
                   View Parts
                 </Link>
               </div>

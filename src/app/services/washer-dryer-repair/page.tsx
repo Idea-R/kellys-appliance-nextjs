@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import wdContent from '@/content/pages/79-washer-and-dryer-repair.json';
+import ContentSection from '@/components/ContentSection';
 
 const companyInfo = getCompanyInfo();
 
@@ -71,16 +71,74 @@ export default function WasherDryerRepairPage() {
         </div>
       </section>
 
-      {/* Original Content (enhanced) */}
+      {/* Detailed Content */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-            <div className="lg:col-span-2 bg-white rounded-xl shadow p-6 wp-legacy-content">
-              <div dangerouslySetInnerHTML={{ __html: wdContent.content }} />
+            <div className="lg:col-span-2 space-y-8">
+              <ContentSection title="Skilled Washer/Dryer Repair in Sonoma County & Novato">
+                <p>
+                  Washing machines and clothes dryers are marvels of modern technology. Think about what your washing machine does with a big heavy load of wet clothes. It takes a lot of energy to spin, twist and agitate your clothing and linens to get them sparkling clean. The same goes for your electric or gas clothes dryer.
+                </p>
+                <p className="mt-4">
+                  With such a demanding job, it&apos;s no wonder that these workhorse appliances need some occasional repair or maintenance. Whether it&apos;s a top load or front load washing machine, gas or electric clothes dryer, our guys know how to get to the root of problem quickly and get you up and running.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Common Washing Machine Problems We Fix">
+                <p>Are you having any of these problems with your washing machine?</p>
+                <ul className="list-disc list-inside space-y-2 mt-4">
+                  <li>Washing machine has unusual shaking and wobbling</li>
+                  <li>Washing machine leaks water</li>
+                  <li>Washing machine smells bad</li>
+                  <li>Water won&apos;t drain from the washing machine</li>
+                  <li>Detergent or bleach not dispensing</li>
+                  <li>Washing machine making unusual noise</li>
+                </ul>
+              </ContentSection>
+
+              <ContentSection title="Common Clothes Dryer Problems We Fix">
+                <p>Is your clothes dryer not quite getting it done?</p>
+                <ul className="list-disc list-inside space-y-2 mt-4">
+                  <li>Clothes dryer won&apos;t turn on</li>
+                  <li>Clothes dryer takes too long to dry</li>
+                  <li>Clothes dryer not tumbling clothes</li>
+                  <li>Clothes dryer not heating</li>
+                  <li>Clothes dryer making strange noises</li>
+                </ul>
+              </ContentSection>
+
+              <ContentSection title="Expert Diagnosis and Repair">
+                <p>
+                  For these symptoms or any other problems with your washer or dryer, turn to the pros at Kelly&apos;s Appliance Repair. We&apos;ll diagnose the problem, provide options to fix the issue and get you going again in no time!
+                </p>
+                <p className="mt-4">
+                  Our certified technicians are well-versed in diagnosing and resolving issues such as drum problems, electrical faults, and water leaks. We ensure your appliances run smoothly by using high-quality, genuine replacement parts.
+                </p>
+              </ContentSection>
+
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                <a
+                  href={`tel:${companyInfo.phone}`}
+                  className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-2" />
+                  Call {companyInfo.phone}
+                </a>
+                <a
+                  href="https://booking.rossware.com/schedule/4588"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                >
+                  Book Appointment
+                </a>
+              </div>
             </div>
+            
             <aside className="space-y-6">
               <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="text-xl font-bold mb-2">Why Kelly's</h3>
+                <h3 className="text-xl font-bold mb-2">Why Kelly&apos;s</h3>
                 <ul className="text-gray-700 list-disc list-inside space-y-1">
                   <li>Factory Authorized Service</li>
                   <li>Genuine Parts Only</li>

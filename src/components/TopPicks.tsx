@@ -71,14 +71,14 @@ export default function TopPicks({
                 </div>
               )}
               {(item.url || item.mapsUrl) && (
-                <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
+                <div className="mt-6 flex gap-3 text-sm">
                   {item.url && (
-                    <a href={item.url} target="_blank" rel="nofollow noopener noreferrer" className="btn-fill alt w-full text-center">
+                    <a href={item.url} target="_blank" rel="nofollow noopener noreferrer" className="btn-fill alt flex-1 text-center">
                       Website
                     </a>
                   )}
                   {item.mapsUrl && (
-                    <a href={item.mapsUrl} target="_blank" rel="nofollow noopener noreferrer" className="btn-fill alt w-full text-center">
+                    <a href={item.mapsUrl} target="_blank" rel="nofollow noopener noreferrer" className="btn-fill alt flex-1 text-center">
                       Google Maps
                     </a>
                   )}

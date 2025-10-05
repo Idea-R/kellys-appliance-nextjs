@@ -80,10 +80,10 @@ export default function PartsPage() {
             {popularParts.map((item, idx) => (
               <div
                 key={idx}
-                className="min-w-[240px] snap-start bg-white rounded-xl shadow p-5 border border-gray-100"
+                className="min-w-[240px] snap-start bg-white rounded-xl shadow p-5 border border-gray-100 flex flex-col"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{item.name}</h3>
-                <p className="text-gray-600 text-sm mb-4">{item.blurb}</p>
+                <p className="text-gray-600 text-sm mb-4 flex-grow">{item.blurb}</p>
                 <div className="flex flex-col gap-2">
                   <a
                     href={`tel:${mpcHotline}`}

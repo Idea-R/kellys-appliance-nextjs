@@ -56,46 +56,57 @@ export default function MobileNavDrawer() {
       <aside
         ref={drawerRef}
         tabIndex={-1}
-        className={`fixed left-0 top-0 h-full w-[85%] max-w-xs bg-white z-[61] md:hidden transition-transform duration-300 ease-out shadow-2xl overflow-y-auto ${open ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed left-0 top-0 h-full w-[85%] max-w-xs bg-gradient-to-br from-gray-50 to-white z-[61] md:hidden transition-transform duration-300 ease-out shadow-2xl overflow-y-auto ${open ? 'translate-x-0' : '-translate-x-full'}`}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
         id="mobile-drawer"
       >
-        <div className="p-4 border-b border-gray-200 flex items-center justify-between">
-          <span className="font-bold text-gray-900">Navigation</span>
-          <button onClick={() => setOpen(false)} className="rounded px-2 py-1 text-sm bg-gray-100 hover:bg-gray-200" data-analytics-label="drawer_close">Close</button>
+        <div className="px-4 py-3 border-b border-gray-200 flex items-center justify-between bg-green-600 text-white">
+          <span className="font-bold text-lg">Navigation</span>
+          <button onClick={() => setOpen(false)} className="rounded px-3 py-1 text-sm bg-white/20 hover:bg-white/30 backdrop-blur-sm transition-colors" data-analytics-label="drawer_close">Close</button>
         </div>
 
-        <nav className="p-4 space-y-4">
-          <ul className="space-y-2 text-gray-800">
+        <nav className="p-3 space-y-1">
+          <ul className="space-y-0.5 text-gray-800">
             <li>
-              <Link href="/" className="block px-2 py-2 rounded hover:bg-gray-100" data-analytics-label="drawer_home">Home</Link>
+              <Link href="/" className="block px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_home">Home</Link>
             </li>
             <li>
-              <Link href="/services" className="block px-2 py-2 rounded hover:bg-gray-100" data-analytics-label="drawer_services">Services</Link>
-              <ul className="mt-1 ml-3 space-y-1 text-sm">
-                <li><Link href="/services/refrigerator-repair" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_refrigerator">Refrigerator Repair</Link></li>
-                <li><Link href="/services/oven-repair" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_oven">Oven Repair</Link></li>
-                <li><Link href="/services/washer-dryer-repair" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_washer_dryer">Washer & Dryer Repair</Link></li>
-                <li><Link href="/services/dishwasher-repair" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_dishwasher">Dishwasher Repair</Link></li>
-                <li><Link href="/services/parts" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_parts">Appliance Parts</Link></li>
-                <li><Link href="/services/virtual" className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label="drawer_services_virtual">Virtual Service Call</Link></li>
+              <div className="px-3 py-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">Services</div>
+              <ul className="ml-2 space-y-0.5 text-sm">
+                <li><Link href="/services/refrigerator-repair" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_services_refrigerator">Refrigerator Repair</Link></li>
+                <li><Link href="/services/oven-repair" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_services_oven">Oven Repair</Link></li>
+                <li><Link href="/services/washer-dryer-repair" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_services_washer_dryer">Washer & Dryer Repair</Link></li>
+                <li><Link href="/services/dishwasher-repair" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_services_dishwasher">Dishwasher Repair</Link></li>
+                <li><Link href="/services/parts" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_services_parts">Appliance Parts</Link></li>
+                <li><Link href="/services/virtual" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_services_virtual">Virtual Service Call</Link></li>
               </ul>
             </li>
             <li>
-              <Link href="/service-locations" className="block px-2 py-2 rounded hover:bg-gray-100" data-analytics-label="drawer_service_areas">Service Areas</Link>
-              <ul className="mt-1 ml-3 space-y-1 text-sm">
+              <div className="px-3 py-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wide mt-2">Service Areas</div>
+              <ul className="ml-2 space-y-0.5 text-sm">
                 {Object.values(counties).map((c) => (
-                  <li key={c.slug}><Link href={`/service-locations/${c.slug}`} className="block px-2 py-1 rounded hover:bg-gray-100" data-analytics-label={`drawer_county_${c.slug}`}>{c.name}</Link></li>
+                  <li key={c.slug}><Link href={`/service-locations/${c.slug}`} className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label={`drawer_county_${c.slug}`}>{c.name}</Link></li>
                 ))}
               </ul>
             </li>
-            <li><Link href="/about-us" className="block px-2 py-2 rounded hover:bg-gray-100" data-analytics-label="drawer_about">About Us</Link></li>
-            <li><Link href="/pricing" className="block px-2 py-2 rounded hover:bg-gray-100" data-analytics-label="drawer_pricing">Pricing</Link></li>
-            <li><Link href="/resources" className="block px-2 py-2 rounded hover:bg-gray-100" data-analytics-label="drawer_resources">Resources</Link></li>
-            <li><Link href="/contact" className="block px-2 py-2 rounded hover:bg-gray-100" data-analytics-label="drawer_contact">Contact</Link></li>
-            <li><Link href="/diamond-certified" className="block px-2 py-2 rounded hover:bg-gray-100" data-analytics-label="drawer_diamond">Diamond Certified</Link></li>
+            <li className="pt-2 border-t border-gray-200 mt-2">
+              <Link href="/about-us" className="block px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_about">About Us</Link>
+            </li>
+            <li><Link href="/pricing" className="block px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_pricing">Pricing</Link></li>
+            <li>
+              <div className="px-3 py-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wide mt-2">Resources</div>
+              <ul className="ml-2 space-y-0.5 text-sm">
+                <li><Link href="/blog" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_blog">Blog</Link></li>
+                <li><Link href="/referrals" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_referrals">Referrals</Link></li>
+                <li><Link href="/resources/where-is-my-model-number" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_model_number">Model Number Guide</Link></li>
+              </ul>
+            </li>
+            <li className="pt-2 border-t border-gray-200 mt-2">
+              <Link href="/contact" className="block px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_contact">Contact</Link>
+            </li>
+            <li><Link href="/diamond-certified" className="block px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_diamond">Diamond Certified</Link></li>
           </ul>
         </nav>
       </aside>

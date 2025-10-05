@@ -43,34 +43,36 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* WordPress legacy content normalization */
-.wp-legacy-content :where(h1,h2,h3,h4,h5,h6) {
-  color: #0f172a; /* slate-900 */
+
+/* Thin scrollbar for modal content */
+.scrollbar-thin {
+  scrollbar-width: thin;
 }
-.wp-legacy-content :where(p, li) {
-  color: #111827; /* gray-900 */
-  line-height: 1.7;
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
 }
-.wp-legacy-content a {
-  color: #166534; /* green-700 */
-  text-decoration: underline;
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
 }
-.wp-legacy-content ul {
-  list-style: disc;
-  padding-left: 1.25rem;
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 10px;
 }
-.wp-legacy-content ol {
-  list-style: decimal;
-  padding-left: 1.25rem;
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
 }
-.wp-legacy-content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+.scrollbar-track-gray-100::-webkit-scrollbar-track {
+  background: #f3f4f6;
 }
-.wp-legacy-content .fusion-aligncenter, .wp-legacy-content .call-button {
-  display: inline-flex;
+
+.scrollbar-thumb-gray-400::-webkit-scrollbar-thumb {
+  background: #9ca3af;
 }
 
 /* Visually hidden but focusable (used by skip link) */

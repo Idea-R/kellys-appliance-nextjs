@@ -21,13 +21,46 @@ const teamMembers: TeamMember[] = [
     name: 'Mark Kelly',
     role: 'Owner',
     image: '/images/mark-kelly.jpg',
-    bio: 'Mark Kelly took over full ownership of the business in 1990, maintaining customer service as the number one priority. He joined the company in 1983.'
+    bio: 'Owner since 1990, joined the company in 1983. With over 40 years in the appliance repair industry, Mark has built Kelly\'s Appliance Center into one of the most trusted names in the Bay Area.',
+    bioFull: 'Mark Kelly took over full ownership of the business in 1990, maintaining customer service as the number one priority. He joined the company in 1983. With over 40 years in the appliance repair industry, Mark has built Kelly\'s Appliance Center into one of the most trusted names in Sonoma, Marin, and Napa counties. His commitment to excellence and customer satisfaction has been the cornerstone of the company\'s success and longevity.',
+    yearsExperience: 40,
+    specialties: [
+      'Business operations & customer service',
+      'Factory authorized service programs',
+      'Team leadership & training'
+    ],
+    certifications: [
+      'Factory Authorized Service Provider',
+      'Diamond Certified Business'
+    ],
+    quote: 'Customer service isn\'t just our priority—it\'s our foundation. Every decision we make starts with asking: "What\'s best for our customers?"',
+    funFact: 'Started in the appliance business at age 18 and has never looked back!'
   },
   {
     name: 'Shane Spencer',
     role: 'Tech Service Manager',
-    image: '/images/Shane-23-scaled.jpg',
-    bio: 'Experienced leader and technician specializing in all major appliance brands and models.'
+    image: '/images/Shane-3.jpg',
+    bio: 'Ten years with Kelly\'s Appliance, started as a technician and worked my way up to Tech Service Manager. I support our amazing customers and provide rapid technical support to field technicians.',
+    bioFull: 'I\'ve been with Kelly\'s Appliance for ten years, started as a technician, and worked my way to a desk, talking to our wonderful customers and helping technicians with rapid support! I could never imagine working for anybody else! I wish I could say I come from a background of tinkering with machines, but that\'s not the case! I did have a great passion for computers though, building my own—I was the kid\'s friend\'s parents would go to fix their computer! I went to school for graphic design originally and decided to step away from my comfort zone! What do I like about Appliance repair? Everything varies from day to day in this line of work! New machines, new customers, new locations! The work is very rewarding. You get to be the hero, saving an oven just in time for the holiday! BONUS: your family all call you more often... even if it\'s just to help with a failing refrigerator!',
+    yearsExperience: 10,
+    yearsOfService: 10,
+    specialties: [
+      'Premium residential appliances (Sub-Zero, Wolf, DCS, Fisher & Paykel, KitchenAid)',
+      'Component-based control board repair',
+      'Wiring schematics & troubleshooting best practices',
+      'Electric ovens & dryers (240V systems)',
+      'Refrigeration & thermodynamics'
+    ],
+    certifications: [
+      'Appliantology Master Samurai Tech'
+    ],
+    quotes: [
+      'Honesty above all else, this is my community and I intend to offer the best service possible here for years to come!',
+      '"I look forward to not seeing you again soon!" - Myself',
+      '"The future\'s So Bright, I gotta wear shades!" - Pat MacDonald'
+    ],
+    favoriteAppliance: 'Electric ovens/dryers - 240V makes the journey much more fun! Tech-wise: refrigerators - thermodynamics is crazy cool... get it!?',
+    funFact: 'Playing D&D for 20+ years, owned by 5 cats, builds websites & software for fun, and welcomes our AI overlords!'
   },
   {
     name: 'Kendra Hoetger',
@@ -80,7 +113,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Anthony Porter',
     role: 'Service Technician',
-    image: '/images/anthony.jpg',
+    image: '/images/Porter-1.png',
     bio: 'Experienced technician delivering reliable service across all major brands.'
   }
 ];

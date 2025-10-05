@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import ovenContent from '@/content/pages/77-oven-repair.json';
+import ContentSection from '@/components/ContentSection';
 
 const companyInfo = getCompanyInfo();
 
@@ -97,16 +97,89 @@ export default function OvenRepairPage() {
         </div>
       </section>
 
-      {/* Original Content (enhanced) */}
+      {/* Detailed Content */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-            <div className="lg:col-span-2 bg-white rounded-xl shadow p-6 wp-legacy-content">
-              <div dangerouslySetInnerHTML={{ __html: ovenContent.content }} />
+            <div className="lg:col-span-2 space-y-8">
+              <ContentSection title="About Our Oven Repair Service">
+                <p>
+                  Kelly&apos;s Appliance Repair provides expert oven repair services for both residential and commercial clients, ensuring your cooking appliance functions efficiently and safely. Our team of experienced technicians is well-versed in handling various oven brands and models, from traditional gas and electric ovens to modern convection and smart ovens.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Comprehensive Diagnostic Process">
+                <p>
+                  We begin with a thorough diagnostic assessment to accurately identify the issue. Common problems we address include:
+                </p>
+                <ul className="list-disc list-inside space-y-2 mt-4">
+                  <li>
+                    <strong>Temperature Inconsistencies:</strong> We check and calibrate thermostats, heating elements, and sensors to ensure your oven heats evenly and maintains the correct temperature.
+                  </li>
+                  <li>
+                    <strong>Electrical Issues:</strong> Faulty wiring, blown fuses, or malfunctioning control boards are inspected and repaired to restore proper operation.
+                  </li>
+                  <li>
+                    <strong>Ignition Problems:</strong> For gas ovens, we troubleshoot and fix issues with the igniter, gas valve, or pilot light to ensure safe and reliable ignition.
+                  </li>
+                  <li>
+                    <strong>Door Malfunctions:</strong> We repair or replace faulty door seals, hinges, and springs to ensure the oven door closes properly and retains heat effectively.
+                  </li>
+                  <li>
+                    <strong>Control Panel Issues:</strong> We diagnose and repair unresponsive or malfunctioning control panels, buttons, and display screens to ensure ease of use.
+                  </li>
+                </ul>
+              </ContentSection>
+
+              <ContentSection title="Quality Parts and Repairs">
+                <p>
+                  Kelly&apos;s Appliance Repair uses only high-quality, OEM (Original Equipment Manufacturer) parts for all repairs, ensuring durability and compatibility with your oven. Our goal is to restore your appliance to optimal working condition quickly and efficiently.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Preventative Maintenance">
+                <p>
+                  In addition to repairs, we offer preventative maintenance services to help extend the life of your oven and prevent future breakdowns. Regular maintenance includes cleaning and inspecting key components, checking gas lines (for gas ovens), and ensuring all electrical connections are secure.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Commitment to Customer Service">
+                <p>
+                  We understand the inconvenience a malfunctioning oven can cause in your daily life. That&apos;s why our technicians are committed to providing fast, reliable service. We offer flexible scheduling, including same-day appointments when available, and transparent pricing with no hidden fees.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Satisfaction Guarantee">
+                <p>
+                  Customer satisfaction is our top priority. We stand behind our work with a satisfaction guarantee, ensuring you are happy with the service provided. Our technicians are courteous, professional, and dedicated to resolving your appliance issues effectively.
+                </p>
+                <p className="mt-4">
+                  Kelly&apos;s Appliance Repair is your trusted partner for oven repair services, combining technical expertise with exceptional customer care. Whether you need a quick fix, routine maintenance, or emergency repair, you can rely on us to keep your oven in top working condition.
+                </p>
+              </ContentSection>
+
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                <a
+                  href={`tel:${companyInfo.phone}`}
+                  className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-2" />
+                  Call {companyInfo.phone}
+                </a>
+                <a
+                  href="https://booking.rossware.com/schedule/4588"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                >
+                  Book Appointment
+                </a>
+              </div>
             </div>
+            
             <aside className="space-y-6">
               <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="text-xl font-bold mb-2">Why Kelly's</h3>
+                <h3 className="text-xl font-bold mb-2">Why Kelly&apos;s</h3>
                 <ul className="text-gray-700 list-disc list-inside space-y-1">
                   <li>Factory Authorized Service</li>
                   <li>Genuine Parts Only</li>

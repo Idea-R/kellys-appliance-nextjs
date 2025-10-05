@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import fridgeContent from '@/content/pages/75-refrigerator-repair.json';
+import ContentSection from '@/components/ContentSection';
 
 const companyInfo = getCompanyInfo();
 
@@ -141,16 +141,86 @@ export default function RefrigeratorRepairPage() {
         </div>
       </section>
 
-      {/* Original Content (enhanced) */}
+      {/* Detailed Content */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-            <div className="lg:col-span-2 bg-white rounded-xl shadow p-6 wp-legacy-content">
-              <div dangerouslySetInnerHTML={{ __html: fridgeContent.content }} />
+            <div className="lg:col-span-2 space-y-8">
+              <ContentSection title="About Our Refrigerator Repair Service">
+                <p>
+                  Kelly&apos;s Appliance Repair offers top-quality refrigerator repair services designed to address a wide range of issues, ensuring your appliance operates efficiently and reliably. Our team of experienced technicians is trained to handle various refrigerator models and brands, from residential units to commercial refrigeration systems. We pride ourselves on providing prompt, professional service with a focus on customer satisfaction.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Diagnostic and Repair Process">
+                <p>
+                  When you contact Kelly&apos;s Appliance Repair for refrigerator service, our technicians start with a thorough diagnostic assessment to identify the root cause of the problem. Common issues we address include:
+                </p>
+                <ul className="list-disc list-inside space-y-2 mt-4">
+                  <li>
+                    <strong>Temperature Fluctuations:</strong> Inconsistent cooling can lead to spoiled food and higher energy bills. Our technicians check and repair thermostats, compressors, and other components to restore optimal cooling.
+                  </li>
+                  <li>
+                    <strong>Leaks and Water Damage:</strong> Water leaks can result from faulty door seals, clogged defrost drains, or damaged water lines. We inspect and fix these issues to prevent further damage.
+                  </li>
+                  <li>
+                    <strong>Unusual Noises:</strong> Strange sounds often indicate problems with the fan, motor, or compressor. We diagnose and resolve these noises to ensure quiet operation.
+                  </li>
+                  <li>
+                    <strong>Ice Maker Malfunctions:</strong> Whether your ice maker is not producing ice or the ice quality is poor, we troubleshoot and repair the system to ensure consistent ice production.
+                  </li>
+                </ul>
+              </ContentSection>
+
+              <ContentSection title="Parts and Replacement">
+                <p>
+                  We use only high-quality, OEM (Original Equipment Manufacturer) parts for repairs, ensuring durability and compatibility with your refrigerator. If a part replacement is necessary, we source the components quickly to minimize downtime and inconvenience.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Preventative Maintenance">
+                <p>
+                  In addition to repairs, we offer preventative maintenance services to extend the life of your refrigerator and prevent future breakdowns. Regular maintenance includes cleaning coils, checking refrigerant levels, and inspecting door seals, which can enhance efficiency and reduce energy consumption.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Customer Service Commitment">
+                <p>
+                  At Kelly&apos;s Appliance Repair, we understand the importance of a fully functioning refrigerator in your daily life. Our technicians are committed to delivering fast, reliable service, often offering same-day appointments. We provide transparent pricing with no hidden fees, so you know exactly what to expect.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Satisfaction Guarantee">
+                <p>
+                  Customer satisfaction is our top priority. We stand by our work with a satisfaction guarantee, ensuring that you are happy with the service provided. Our technicians are courteous, professional, and dedicated to resolving your appliance issues efficiently.
+                </p>
+                <p className="mt-4">
+                  Kelly&apos;s Appliance Repair is your trusted partner for refrigerator repair services, combining technical expertise with exceptional customer care. Whether you need a quick fix, routine maintenance, or emergency service, you can rely on us to keep your refrigerator running smoothly.
+                </p>
+              </ContentSection>
+
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                <a
+                  href={`tel:${companyInfo.phone}`}
+                  className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-2" />
+                  Call {companyInfo.phone}
+                </a>
+                <a
+                  href="https://booking.rossware.com/schedule/4588"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                >
+                  Book Appointment
+                </a>
+              </div>
             </div>
+            
             <aside className="space-y-6">
               <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="text-xl font-bold mb-2">Why Kelly's</h3>
+                <h3 className="text-xl font-bold mb-2">Why Kelly&apos;s</h3>
                 <ul className="text-gray-700 list-disc list-inside space-y-1">
                   <li>Factory Authorized Service</li>
                   <li>Genuine Parts Only</li>
