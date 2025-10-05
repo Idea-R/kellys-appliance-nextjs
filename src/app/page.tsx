@@ -233,36 +233,96 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* DIY Parts Promo (carousel style) */}
-      <section className="py-16 bg-gray-50">
+      {/* DIY Parts Promo - Modern elevated design */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">DIY Parts</h2>
-              <p className="text-gray-600">Water filters, air filters, dryer belts, hoses, venting</p>
-            </div>
-            <Link href="/services/parts" className="inline-flex items-center justify-center bg-green-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-              Order Parts →
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">DIY Parts & Accessories</h2>
+            <p className="text-xl text-gray-600 mb-6">Premium OEM parts delivered fast — Keep your appliances running like new</p>
+            <Link 
+              href="/services/parts" 
+              className="inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-green-700 hover:to-green-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              Order Parts Now →
             </Link>
           </div>
 
-          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2" role="region" aria-label="Homepage DIY parts carousel">
-            {[
-              { name: 'Refrigerator Water Filters', blurb: 'OEM filters for clean water' },
-              { name: 'Fridge Air Filters', blurb: 'Reduce odors, keep air fresh' },
-              { name: 'Dryer Vent Hose', blurb: 'UL-listed venting for safety' },
-              { name: 'Dryer Belt', blurb: 'Correct belt for your model' },
-              { name: 'Washer Hoses', blurb: 'OEM or braided replacements' },
-              { name: 'Dishwasher Drain Hose', blurb: 'Proper fit and length' },
-            ].map((p, i) => (
-              <div key={i} className="min-w-[240px] snap-start bg-white rounded-xl shadow p-5 border border-gray-100 flex flex-col">
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">{p.name}</h3>
-                <p className="text-gray-600 text-sm mb-4 flex-grow">{p.blurb}</p>
-                <Link href="/services/parts" className="inline-flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded font-semibold hover:bg-green-700 transition-colors w-full">
-                  View Parts
+          <div className="relative">
+            {/* Gradient fade on edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 px-2" role="region" aria-label="DIY parts categories">
+              {[
+                { 
+                  name: 'Refrigerator Water Filters', 
+                  blurb: 'OEM filters for clean, fresh water',
+                  icon: '💧',
+                  gradient: 'from-blue-500 to-cyan-500'
+                },
+                { 
+                  name: 'Fridge Air Filters', 
+                  blurb: 'Reduce odors, keep air fresh',
+                  icon: '🌬️',
+                  gradient: 'from-sky-500 to-blue-500'
+                },
+                { 
+                  name: 'Dryer Vent Hose', 
+                  blurb: 'UL-listed venting for safety',
+                  icon: '🔥',
+                  gradient: 'from-orange-500 to-red-500'
+                },
+                { 
+                  name: 'Dryer Belt', 
+                  blurb: 'Correct belt for your model',
+                  icon: '⚙️',
+                  gradient: 'from-gray-600 to-gray-700'
+                },
+                { 
+                  name: 'Washer Hoses', 
+                  blurb: 'OEM or braided replacements',
+                  icon: '🚿',
+                  gradient: 'from-teal-500 to-green-500'
+                },
+                { 
+                  name: 'Dishwasher Drain Hose', 
+                  blurb: 'Proper fit and length',
+                  icon: '🍽️',
+                  gradient: 'from-indigo-500 to-purple-500'
+                },
+              ].map((p, i) => (
+                <Link
+                  key={i}
+                  href="/services/parts"
+                  className="group min-w-[280px] snap-start bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105 hover:-translate-y-1 cursor-pointer"
+                >
+                  {/* Gradient header */}
+                  <div className={`bg-gradient-to-r ${p.gradient} p-6 text-white relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+                    <div className="relative flex items-center justify-between">
+                      <span className="text-4xl">{p.icon}</span>
+                      <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1 text-xs font-semibold">
+                        In Stock
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                      {p.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed flex-grow">
+                      {p.blurb}
+                    </p>
+                    <div className="mt-4 flex items-center text-green-600 font-semibold text-sm group-hover:gap-2 transition-all">
+                      View Details
+                      <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </div>
                 </Link>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

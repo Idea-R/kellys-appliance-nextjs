@@ -67,6 +67,16 @@
   background: #6b7280;
 }
 
+/* Hide scrollbar completely for smooth carousel experiences */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 .scrollbar-track-gray-100::-webkit-scrollbar-track {
   background: #f3f4f6;
 }
