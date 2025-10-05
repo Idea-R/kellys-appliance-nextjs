@@ -77,7 +77,7 @@ export default function Modal({ open, onClose, title, children, widthClassName =
           <button
             ref={firstFocusableRef}
             onClick={onClose}
-            className="inline-flex items-center justify-center w-8 h-8 rounded-full text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+            className="inline-flex items-center justify-center w-10 h-10 md:w-8 md:h-8 rounded-full text-gray-600 hover:text-gray-900 hover:bg-gray-100 text-2xl md:text-xl font-light"
             aria-label="Close modal"
           >
             ×
@@ -85,6 +85,15 @@ export default function Modal({ open, onClose, title, children, widthClassName =
         </div>
         <div className="p-5" inert={undefined}>
           {children}
+          {/* Mobile-friendly close button at bottom */}
+          <div className="flex justify-end mt-4 md:hidden">
+            <button
+              onClick={onClose}
+              className="inline-flex items-center justify-center bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>,

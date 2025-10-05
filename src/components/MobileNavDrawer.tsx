@@ -56,7 +56,7 @@ export default function MobileNavDrawer() {
       <aside
         ref={drawerRef}
         tabIndex={-1}
-        className={`fixed left-0 top-0 h-full w-[85%] max-w-xs bg-gradient-to-br from-gray-50 to-white z-[61] md:hidden transition-transform duration-300 ease-out shadow-2xl overflow-y-auto ${open ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed left-0 top-0 h-full w-auto min-w-[240px] max-w-[min(320px,50vw)] bg-gradient-to-br from-gray-50 to-white z-[61] md:hidden transition-transform duration-300 ease-out shadow-2xl overflow-y-auto ${open ? 'translate-x-0' : '-translate-x-full'}`}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
@@ -97,7 +97,11 @@ export default function MobileNavDrawer() {
               </ul>
             </li>
             <li className="pt-2 border-t border-gray-200 mt-2">
-              <Link href="/about-us" className="block px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_about">About Us</Link>
+              <div className="px-3 py-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">About</div>
+              <ul className="ml-2 space-y-0.5 text-sm">
+                <li><Link href="/about-us" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_about">About Us</Link></li>
+                <li><Link href="/about-us/our-team" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_about_team">Our Team</Link></li>
+              </ul>
             </li>
             <li><Link href="/pricing" className="block px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_pricing">Pricing</Link></li>
             <li>
