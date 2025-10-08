@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
+import { PhoneIcon, CheckCircleIcon, CalendarIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import ContentSection from '@/components/ContentSection';
+import { BOOKING_CONFIG } from '@/lib/booking-constants';
 
 const companyInfo = getCompanyInfo();
 
@@ -14,11 +15,11 @@ export const metadata = {
 
 const features = [
   'Cooling problems diagnosis and repair',
-  'Faulty compressor replacement',
   'Electrical fault troubleshooting',
   'Temperature control issues',
   'Ice maker and water dispenser repair',
-  'Door seal and gasket replacement'
+  'Door seal and gasket replacement',
+  'Fan motor issues'
 ];
 
 export default function RefrigeratorRepairPage() {
@@ -33,24 +34,30 @@ export default function RefrigeratorRepairPage() {
                 Refrigerator Repair Services
               </h1>
               <p className="text-xl mb-8">
-                Expert refrigerator repair services for residential clients. Our certified technicians specialize in diagnosing and fixing cooling problems, faulty compressors, and electrical faults.
+                Expert refrigerator repair services for residential clients. Our certified technicians specialize in diagnosing and fixing cooling problems and electrical faults.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href={`tel:${companyInfo.phone}`}
-                  className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
-                >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call {companyInfo.phone}
-                </a>
-                <a
-                  href="https://booking.rossware.com/schedule/4588"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-                >
-                  Schedule Service
-                </a>
+              <div className="space-y-3">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href={`tel:${companyInfo.phone}`}
+                    className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                  >
+                    <PhoneIcon className="h-5 w-5 mr-2" />
+                    Call {companyInfo.phone}
+                  </a>
+                  <a
+                    href={BOOKING_CONFIG.BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                  >
+                    <CalendarIcon className="h-5 w-5 mr-2" />
+                    Request Appointment Online
+                  </a>
+                </div>
+                <p className="text-sm text-gray-100 text-center">
+                  {BOOKING_CONFIG.DISCLAIMERS.SHORT}
+                </p>
               </div>
             </div>
             <div className="relative">
@@ -122,8 +129,8 @@ export default function RefrigeratorRepairPage() {
                     <CheckCircleIcon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">No Service Fee</h4>
-                    <p className="text-gray-600">No service fee charged on completed jobs</p>
+                    <h4 className="font-semibold text-gray-900">Service Call Fee Applied</h4>
+                    <p className="text-gray-600">Service Call Fee applies to Final repair!</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -148,7 +155,7 @@ export default function RefrigeratorRepairPage() {
             <div className="lg:col-span-2 space-y-8">
               <ContentSection title="About Our Refrigerator Repair Service">
                 <p>
-                  Kelly&apos;s Appliance Repair offers top-quality refrigerator repair services designed to address a wide range of issues, ensuring your appliance operates efficiently and reliably. Our team of experienced technicians is trained to handle various refrigerator models and brands, from residential units to commercial refrigeration systems. We pride ourselves on providing prompt, professional service with a focus on customer satisfaction.
+                  Kelly&apos;s Appliance Repair offers top-quality refrigerator repair services designed to address a wide range of issues, ensuring your appliance operates efficiently and reliably. Our team of experienced technicians is trained to handle various residential refrigerator models and brands. We pride ourselves on providing prompt, professional service with a focus on customer satisfaction.
                 </p>
               </ContentSection>
 
@@ -174,13 +181,13 @@ export default function RefrigeratorRepairPage() {
 
               <ContentSection title="Parts and Replacement">
                 <p>
-                  We use only high-quality, OEM (Original Equipment Manufacturer) parts for repairs, ensuring durability and compatibility with your refrigerator. If a part replacement is necessary, we source the components quickly to minimize downtime and inconvenience.
+                  We use high-quality parts for repairs, ensuring durability and compatibility with your refrigerator. If a part replacement is necessary, we source the components quickly to minimize downtime and inconvenience.
                 </p>
               </ContentSection>
 
               <ContentSection title="Preventative Maintenance">
                 <p>
-                  In addition to repairs, we offer preventative maintenance services to extend the life of your refrigerator and prevent future breakdowns. Regular maintenance includes cleaning coils, checking refrigerant levels, and inspecting door seals, which can enhance efficiency and reduce energy consumption.
+                  In addition to repairs, we offer preventative maintenance services to extend the life of your refrigerator and prevent future breakdowns. Regular maintenance includes cleaning coils and inspecting door seals, which can enhance efficiency and reduce energy consumption.
                 </p>
               </ContentSection>
 
@@ -208,12 +215,13 @@ export default function RefrigeratorRepairPage() {
                   Call {companyInfo.phone}
                 </a>
                 <a
-                  href="https://booking.rossware.com/schedule/4588"
+                  href={BOOKING_CONFIG.BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
                 >
-                  Book Appointment
+                  <CalendarIcon className="h-5 w-5 mr-2" />
+                  Request Appointment
                 </a>
               </div>
             </div>
@@ -234,8 +242,8 @@ export default function RefrigeratorRepairPage() {
                   <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded font-semibold">
                     <PhoneIcon className="h-5 w-5 mr-2" /> Call {companyInfo.phone}
                   </a>
-                  <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-4 py-2 rounded font-semibold hover:bg-gray-100">
-                    Book Appointment
+                  <a href={BOOKING_CONFIG.BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-4 py-2 rounded font-semibold hover:bg-gray-100">
+                    <CalendarIcon className="h-5 w-5 mr-2" /> Request Appointment
                   </a>
                 </div>
               </div>
@@ -257,6 +265,10 @@ export default function RefrigeratorRepairPage() {
               { name: 'Bosch', src: '/images/bosch_logo_us_right.gif' },
               { name: 'Samsung', src: '/images/brand-samsung.svg' },
               { name: 'LG', src: '/images/brand-lg.svg' },
+              { name: 'Sub-Zero', src: '/images/logo-subzero-on.gif' },
+              { name: 'Wolf', src: '/images/logo-wolf-act.gif' },
+              { name: 'Viking', src: '/images/brand-viking.svg' },
+              { name: 'Dacor', src: '/images/dacor.webp' },
             ].map((b) => (
               <Image key={b.name} src={b.src} alt={b.name} width={140} height={48} className="h-10 md:h-12 w-auto grayscale hover:grayscale-0 transition" />
             ))}
@@ -273,22 +285,28 @@ export default function RefrigeratorRepairPage() {
           <p className="text-xl mb-8">
             Call us today for fast, reliable refrigerator repair services
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${companyInfo.phone}`}
-              className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors"
-            >
-              <PhoneIcon className="h-6 w-6 mr-2" />
-              Call {companyInfo.phone}
-            </a>
-            <a
-              href="https://booking.rossware.com/schedule/4588"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Schedule Service Online
-            </a>
+          <div className="space-y-3">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`tel:${companyInfo.phone}`}
+                className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors"
+              >
+                <PhoneIcon className="h-6 w-6 mr-2" />
+                Call {companyInfo.phone}
+              </a>
+              <a
+                href={BOOKING_CONFIG.BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-600 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-50 transition-colors"
+              >
+                <CalendarIcon className="h-6 w-6 mr-2" />
+                Request Appointment Online
+              </a>
+            </div>
+            <p className="text-center text-white/90 text-sm px-4">
+              {BOOKING_CONFIG.DISCLAIMERS.MEDIUM}
+            </p>
           </div>
         </div>
       </section>

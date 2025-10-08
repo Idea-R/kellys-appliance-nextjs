@@ -85,7 +85,7 @@ export default function MarinCountyPage() {
               <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
               <div>
                 <strong className="text-gray-900">Fast Response</strong>
-                <div className="text-gray-700 text-sm">Same-day or next-day service</div>
+                <div className="text-gray-700 text-sm">Prompt, reliable service</div>
               </div>
             </div>
             <div className="flex items-start">

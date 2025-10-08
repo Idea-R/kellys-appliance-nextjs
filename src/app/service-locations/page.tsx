@@ -110,7 +110,7 @@ export default function ServiceLocationsPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
               >
-                Book Appointment
+                Request Appointment
               </a>
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function ServiceLocationsPage() {
                 <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
                 <div>
                   <strong>Fast Response</strong>
-                  <div className="text-gray-600">Same-day or next-day service across our coverage area</div>
+                  <div className="text-gray-600">Prompt, reliable service across our coverage area</div>
                 </div>
               </li>
               <li className="flex items-start">

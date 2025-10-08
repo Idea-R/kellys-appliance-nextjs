@@ -92,7 +92,7 @@ export default function DishwasherPostPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
             >
-              Schedule Service
+              Request Appointment
             </a>
             <Link
               href="/blog"

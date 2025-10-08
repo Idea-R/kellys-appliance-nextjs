@@ -153,16 +153,23 @@ export default function BlogPage() {
               Get the latest appliance maintenance tips and repair advice delivered to your inbox
             </p>
             <div className="max-w-md mx-auto">
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-                <button className="bg-green-600 text-white px-6 py-3 rounded-r-lg font-semibold hover:bg-green-800 transition-colors">
-                  Subscribe
-                </button>
-              </div>
+              <form className="bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-lg">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 shadow-sm"
+                    required
+                  />
+                  <button 
+                    type="submit"
+                    className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                {/* TODO: Connect to Resend email service */}
+              </form>
             </div>
           </div>
         </div>
@@ -184,7 +191,7 @@ export default function BlogPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors"
             >
-              Schedule Service
+              Request Appointment
             </a>
             <Link
               href="/services"

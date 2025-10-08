@@ -9,7 +9,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: "Appliance Repair Healdsburg - Kelly's Appliance Center",
-  description: 'Professional appliance repair services in Healdsburg, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 for same-day service.',
+  description: 'Professional appliance repair services in Healdsburg, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 .',
 };
 
 const services = [
@@ -32,7 +32,7 @@ export default function HealdsburgPage() {
                 <PhoneIcon className="h-5 w-5 mr-2" />
                 Call {companyInfo.phone}
               </a>
-              <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Book Appointment</a>
+              <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Request Appointment</a>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function HealdsburgPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">
             <div className="flex items-start"><CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Factory Authorized</strong><div className="text-gray-600 text-sm">Certified repair using genuine parts</div></div></div>
-            <div className="flex items-start"><ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Fast Response</strong><div className="text-gray-600 text-sm">Same-day or next-day service</div></div></div>
+            <div className="flex items-start"><ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Fast Response</strong><div className="text-gray-600 text-sm">Prompt, reliable service</div></div></div>
             <div className="flex items-start"><MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" /><div><strong>Local Experts</strong><div className="text-gray-600 text-sm">Serving Healdsburg since 1975</div></div></div>
           </div>
         </div>

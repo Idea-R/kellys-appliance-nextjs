@@ -5,19 +5,20 @@ export const metadata = {
 };
 import Image from 'next/image';
 import Link from 'next/link';
-import { WrenchScrewdriverIcon, PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
+import { WrenchScrewdriverIcon, PhoneIcon, CheckCircleIcon, CalendarIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import { BOOKING_CONFIG } from '@/lib/booking-constants';
 
 const companyInfo = getCompanyInfo();
 
 const services = [
   {
     title: 'Refrigerator Repair',
-    description: 'Expert refrigerator repair services for residential clients. Our certified technicians specialize in diagnosing and fixing cooling problems, faulty compressors, and electrical faults.',
+    description: 'Expert refrigerator repair services for residential clients. Our certified technicians specialize in diagnosing and fixing cooling problems and electrical faults.',
     image: '/images/refrigerator-repair.webp',
     href: '/services/refrigerator-repair',
-    features: ['Cooling System Repair', 'Compressor Replacement', 'Ice Maker Repair', 'Temperature Control Issues']
+    features: ['Cooling System Repair', 'Ice Maker Repair', 'Temperature Control Issues', 'Door Seal Replacement']
   },
   {
     title: 'Oven Repair', 
@@ -44,7 +45,7 @@ const services = [
 
 const guarantees = [
   '90 Day Money Back Guarantee',
-  'Factory Authorized Repair Services', 
+  'Factory Authorized for Many Major Brands',
   'Service Call Applies Toward Labor',
   '50+ Years in Business!'
 ];
@@ -71,22 +72,28 @@ export default function ServicesPage() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`tel:${companyInfo.phone}`}
-                className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill"
-              >
-                <PhoneIcon className="h-6 w-6 mr-2" />
-                Call {companyInfo.phone}
-              </a>
-              <a
-                href="https://booking.rossware.com/schedule/4588"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill alt"
-              >
-                Book Appointment Now!
-              </a>
+            <div className="space-y-3">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href={`tel:${companyInfo.phone}`}
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill"
+                >
+                  <PhoneIcon className="h-6 w-6 mr-2" />
+                  Call {companyInfo.phone}
+                </a>
+                <a
+                  href={BOOKING_CONFIG.BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill alt border-2 border-white"
+                >
+                  <CalendarIcon className="h-6 w-6 mr-2" />
+                  Request Appointment Online
+                </a>
+              </div>
+              <p className="text-center text-white/90 text-sm px-4">
+                {BOOKING_CONFIG.DISCLAIMERS.MEDIUM}
+              </p>
             </div>
           </div>
         </div>
@@ -106,7 +113,7 @@ export default function ServicesPage() {
               </ul>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <a href={`tel:${companyInfo.phone}`} className="btn-fill inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Call {companyInfo.phone}</a>
-                <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="btn-fill alt inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Book Virtual Call</a>
+                <a href={BOOKING_CONFIG.BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-fill alt inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Request Virtual Call</a>
               </div>
             </div>
             <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
@@ -219,7 +226,7 @@ export default function ServicesPage() {
               Factory Authorized Service
             </h2>
             <p className="text-xl text-gray-600">
-              We're factory authorized to service all major appliance brands
+              We're factory authorized to service many major appliance brands
             </p>
           </div>
           
@@ -287,27 +294,33 @@ export default function ServicesPage() {
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">
-            Ready to Schedule Your Repair?
+            Ready to Request Your Repair Appointment?
           </h2>
           <p className="text-xl mb-8">
-            Our certified technicians are standing by to help with your appliance repair needs
+            Our certified technicians are ready to help with your appliance repair needs
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${companyInfo.phone}`}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill"
-            >
-              <PhoneIcon className="h-6 w-6 mr-2" />
-              Call {companyInfo.phone}
-            </a>
-            <a
-              href="https://booking.rossware.com/schedule/4588"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill alt"
-            >
-              Book Online Now
-            </a>
+          <div className="space-y-3">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`tel:${companyInfo.phone}`}
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill"
+              >
+                <PhoneIcon className="h-6 w-6 mr-2" />
+                Call {companyInfo.phone}
+              </a>
+              <a
+                href={BOOKING_CONFIG.BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill alt border-2 border-white"
+              >
+                <CalendarIcon className="h-6 w-6 mr-2" />
+                Request Appointment Online
+              </a>
+            </div>
+            <p className="text-center text-white/90 text-sm px-4">
+              {BOOKING_CONFIG.DISCLAIMERS.MEDIUM}
+            </p>
           </div>
         </div>
       </section>

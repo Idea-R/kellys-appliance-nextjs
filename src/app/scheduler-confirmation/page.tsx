@@ -7,8 +7,8 @@ import { getCompanyInfo } from '@/lib/content';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Scheduler Confirmation | Kelly\'s Appliance Center',
-  description: 'Your appointment request has been received. We will contact you shortly to confirm your appliance repair appointment.',
+  title: 'Appointment Request Received | Kelly\'s Appliance Center',
+  description: 'Your appointment request has been received and will be confirmed within 4 hours during business hours or the next business day.',
 };
 
 export default function SchedulerConfirmationPage() {
@@ -30,8 +30,13 @@ export default function SchedulerConfirmationPage() {
 
             {/* Confirmation Message */}
             <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-8 mb-8">
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                <p className="text-sm text-blue-800">
+                  <strong>⏰ Confirmation Timeframe:</strong> We'll confirm your appointment within <strong>4 hours during business hours or the next business day</strong>.
+                </p>
+              </div>
               <p className="text-xl text-gray-700 mb-6">
-                Thank you for choosing Kelly's Appliance Center. Your appointment is currently pending confirmation. We will contact you shortly to provide further details and finalize the scheduling.
+                Thank you for choosing Kelly's Appliance Center. Your appointment <strong>request</strong> has been received and is pending confirmation. We will contact you via phone or email to confirm your time slot and provide additional details.
               </p>
 
               {/* What Happens Next */}
@@ -43,8 +48,8 @@ export default function SchedulerConfirmationPage() {
                   <div className="flex items-start">
                     <PhoneIcon className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-medium text-green-800">We'll Call You</h3>
-                      <p className="text-green-700 text-sm">Our scheduling team will contact you within 2 hours to confirm your appointment details.</p>
+                      <h3 className="font-medium text-green-800">We'll Confirm Soon</h3>
+                      <p className="text-green-700 text-sm">Our scheduling team will contact you within 4 hours (business hours) or the next business day to confirm your appointment.</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -83,20 +88,28 @@ export default function SchedulerConfirmationPage() {
                 </a>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Emergency Repairs?
+                  ⚡ Need Immediate Confirmation?
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  For urgent appliance repairs that can't wait, call us immediately for same-day service availability.
+                  Can't wait for confirmation? Call us now for <strong>immediate scheduling</strong> and our most current availability.
                 </p>
                 <a
                   href={`tel:${companyInfo.phone}`}
-                  className="inline-flex items-center justify-center bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
+                  className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                 >
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Emergency Service
+                  Call for Immediate Confirmation
                 </a>
+                <div className="mt-4 pt-4 border-t border-yellow-300 space-y-2">
+                  <p className="text-sm text-gray-700">
+                    🔴 <strong>Emergency service:</strong> Available upon request (emergency call fee applies)
+                  </p>
+                  <p className="text-sm text-gray-700">
+                    📅 <strong>Weekend/after-hours:</strong> Available upon request, subject to availability
+                  </p>
+                </div>
               </div>
             </div>
 

@@ -4,6 +4,7 @@ import { PhoneIcon } from '@heroicons/react/24/solid';
 import { SparklesIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import { BOOKING_CONFIG } from '@/lib/booking-constants';
 import ServiceProblemCard from '@/components/ServiceProblemCard';
 import ProcessTimeline from '@/components/ProcessTimeline';
 import ServiceCallout from '@/components/ServiceCallout';
@@ -89,7 +90,7 @@ export default function DishwasherRepairPage() {
                   Call {companyInfo.phone}
                 </a>
                 <a
-                  href="https://booking.rossware.com/schedule/4588"
+                  href={BOOKING_CONFIG.BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-green-700 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover-scale"
@@ -227,12 +228,12 @@ export default function DishwasherRepairPage() {
               Call {companyInfo.phone}
             </a>
             <a
-              href="https://booking.rossware.com/schedule/4588"
+              href={BOOKING_CONFIG.BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
-              Schedule Service Online
+              Request Appointment Online Online
             </a>
           </div>
         </div>

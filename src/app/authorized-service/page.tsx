@@ -227,7 +227,7 @@ export default function AuthorizedServicePage() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center justify-center bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors"
                         >
-                          Book Appointment
+                          Request Appointment
                         </a>
                       </div>
                     </div>
@@ -262,7 +262,7 @@ export default function AuthorizedServicePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
-                Schedule Service Online
+                Request Appointment Online
               </a>
             </div>
           </div>

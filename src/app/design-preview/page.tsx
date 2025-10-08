@@ -173,7 +173,7 @@ function ModernFooterPreview() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:translate-x-1 transition-transform"
                 >
-                  📅 <span>Book Online</span>
+                  📅 <span>Request Appointment</span>
                 </a>
               </div>
             </div>

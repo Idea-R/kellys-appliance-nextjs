@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
+import { PhoneIcon, CheckCircleIcon, CalendarIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import ContentSection from '@/components/ContentSection';
+import { BOOKING_CONFIG } from '@/lib/booking-constants';
 
 const companyInfo = getCompanyInfo();
 
@@ -35,12 +36,12 @@ export default function OvenRepairPage() {
                   Call {companyInfo.phone}
                 </a>
                 <a
-                  href="https://booking.rossware.com/schedule/4588"
+                  href={BOOKING_CONFIG.BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  Schedule Service
+                  Request Appointment Online
                 </a>
               </div>
             </div>
@@ -167,12 +168,12 @@ export default function OvenRepairPage() {
                   Call {companyInfo.phone}
                 </a>
                 <a
-                  href="https://booking.rossware.com/schedule/4588"
+                  href={BOOKING_CONFIG.BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
                 >
-                  Book Appointment
+                  Request Appointment
                 </a>
               </div>
             </div>
@@ -193,8 +194,8 @@ export default function OvenRepairPage() {
                   <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded font-semibold">
                     <PhoneIcon className="h-5 w-5 mr-2" /> Call {companyInfo.phone}
                   </a>
-                  <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-4 py-2 rounded font-semibold hover:bg-gray-100">
-                    Book Appointment
+                  <a href={BOOKING_CONFIG.BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-4 py-2 rounded font-semibold hover:bg-gray-100">
+                    Request Appointment
                   </a>
                 </div>
               </div>
@@ -240,12 +241,12 @@ export default function OvenRepairPage() {
               Call {companyInfo.phone}
             </a>
             <a
-              href="https://booking.rossware.com/schedule/4588"
+              href={BOOKING_CONFIG.BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
-              Schedule Service Online
+              Request Appointment Online Online
             </a>
           </div>
         </div>

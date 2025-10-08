@@ -31,7 +31,7 @@ export default function NapaCountyPage() {
               <PhoneIcon className="h-5 w-5 mr-2" />Call {companyInfo.phone}
             </a>
             <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Book Appointment
+                Request Appointment
             </a>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function NapaCountyPage() {
               <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
               <div>
                 <strong className="text-gray-900">Fast Response</strong>
-                <div className="text-gray-700 text-sm">Same-day or next-day service</div>
+                <div className="text-gray-700 text-sm">Prompt, reliable service</div>
               </div>
             </div>
             <div className="flex items-start">

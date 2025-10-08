@@ -9,7 +9,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Appliance Repair Petaluma - Kelly\'s Appliance Center',
-  description: 'Professional appliance repair services in Petaluma, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 for same-day service.',
+  description: 'Professional appliance repair services in Petaluma, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 .',
 };
 
 const services = [
@@ -46,7 +46,7 @@ export default function PetalumaPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
-                Book Appointment
+                Request Appointment
               </a>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function PetalumaPage() {
               <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
               <div>
                 <strong>Fast Response</strong>
-                <div className="text-gray-600 text-sm">Same-day or next-day service</div>
+                <div className="text-gray-600 text-sm">Prompt, reliable service</div>
               </div>
             </div>
             <div className="flex items-start">

@@ -152,7 +152,7 @@ export default function HomePage() {
                   <CheckCircleIcon className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Factory Authorized:</strong>
-                    <span className="text-gray-600 ml-1">Certified repair services for all major appliance brands</span>
+                    <span className="text-gray-600 ml-1">Certified repair services for many major appliance brands</span>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -165,8 +165,8 @@ export default function HomePage() {
                 <li className="flex items-start">
                   <CheckCircleIcon className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong className="text-gray-900">No Service Fee:</strong>
-                    <span className="text-gray-600 ml-1">No service fee charged on completed jobs</span>
+                    <strong className="text-gray-900">Service Call Fee Applied:</strong>
+                    <span className="text-gray-600 ml-1">Service Call Fee applies to Final repair!</span>
                   </div>
                 </li>
               </ul>
@@ -449,22 +449,27 @@ export default function HomePage() {
           <p className="text-xl mb-8">
             Call us today for fast, reliable, and affordable appliance repair services
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${companyInfo.phone}`}
-              className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors btn-animate"
-            >
-              <PhoneIcon className="h-6 w-6 mr-2" />
-              Call {companyInfo.phone}
-            </a>
-            <a
-              href="https://booking.rossware.com/schedule/4588"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors btn-animate"
-            >
-              Book Appointment Online
-            </a>
+          <div className="space-y-3">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`tel:${companyInfo.phone}`}
+                className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors btn-animate"
+              >
+                <PhoneIcon className="h-6 w-6 mr-2" />
+                Call {companyInfo.phone}
+              </a>
+              <a
+                href="https://booking.rossware.com/schedule/4588"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-600 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-50 transition-colors btn-animate"
+              >
+                Request Appointment Online
+              </a>
+            </div>
+            <p className="text-center text-white/90 text-sm px-4">
+              Online requests confirmed within 4 hours (business hours). <strong>Call for immediate confirmation.</strong>
+            </p>
           </div>
         </div>
       </section>

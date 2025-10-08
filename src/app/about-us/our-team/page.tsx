@@ -238,7 +238,7 @@ export default function OurTeamPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
-              Book Online
+              Request Appointment
             </a>
           </div>
         </div>

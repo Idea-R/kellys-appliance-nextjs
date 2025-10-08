@@ -64,7 +64,7 @@ export default function ServiceAreaPage() {
                 className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
               >
                 <CalendarIcon className="h-6 w-6 mr-2" />
-                Book Appointment
+                Request Appointment
               </a>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function ServiceAreaPage() {
                   className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                 >
                   <CalendarIcon className="h-5 w-5 mr-2" />
-                  Book Appointment
+                  Request Appointment
                 </a>
               </div>
             </div>
@@ -258,7 +258,7 @@ export default function ServiceAreaPage() {
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
               <CalendarIcon className="h-6 w-6 mr-2" />
-              Book Appointment Online
+              Request Appointment Online
             </a>
           </div>
         </div>

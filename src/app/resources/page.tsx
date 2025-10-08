@@ -43,7 +43,7 @@ export default async function ResourcesPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  Book Appointment
+                  Request Appointment
                 </a>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default async function ResourcesPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
-              Book Appointment Online
+              Request Appointment Online
             </a>
           </div>
         </div>

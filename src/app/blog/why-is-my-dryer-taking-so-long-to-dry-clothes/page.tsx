@@ -173,7 +173,7 @@ export default function DryerPostPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
             >
-              Book Appointment Online
+              Request Appointment Online
             </a>
             <a
               href="https://booking.rossware.com/schedule/4588"
@@ -181,7 +181,7 @@ export default function DryerPostPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center border border-green-600 text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
             >
-              Book Online
+              Request Appointment
             </a>
           </div>
         </div>

@@ -7,7 +7,7 @@ import ContactForm from '@/components/ContactForm'
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Contact Kelly\'s Appliance Center - Book Appointment',
+  title: 'Contact Kelly\'s Appliance Center - Request Appointment',
   description: 'Contact Kelly\'s Appliance Center for professional appliance repair services. Call (707) 664-9702 or visit us in Cotati, CA. Serving the Bay Area since 1975.',
 };
 
@@ -150,10 +150,10 @@ export default function ContactPage() {
             
             <div className="text-center">
               <div className="bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold">$0</span>
+                <span className="text-xl font-bold">✓</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">No Service Fee</h3>
-              <p className="text-gray-600">No service fee on completed jobs</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Service Call Fee</h3>
+              <p className="text-gray-600">Service call fee applies to final repair</p>
             </div>
             
             <div className="text-center">

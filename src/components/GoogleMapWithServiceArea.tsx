@@ -53,9 +53,8 @@ export default function GoogleMapWithServiceArea({ apiKey, businessLocation, cla
       libraries: ['places', 'geometry'],
     })
 
-    loader
-      .load()
-      .then((google) => {
+    // @ts-expect-error - Loader.load() exists but type definition may be outdated
+    loader.load().then((google) => {
         const map = new google.maps.Map(mapRef.current!, {
           center: businessLocation,
           zoom: 9,
@@ -104,7 +103,7 @@ export default function GoogleMapWithServiceArea({ apiKey, businessLocation, cla
           map,
         })
       })
-      .catch((e) => {
+      .catch((e: Error) => {
         console.error('Error loading Google Maps:', e)
         setError('Failed to load map. Please refresh the page.')
       })
