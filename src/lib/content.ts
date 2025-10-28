@@ -130,7 +130,7 @@ export function getCompanyInfo(): CompanyInfo {
       zip: "94931"
     },
     hours: "Monday - Friday: 8:30 AM - 4:30 PM",
-    email: "info@kellysappliancerepair.com",
+    email: "kellysappliance@gmail.com",
     certifications: [
       "Factory Authorized Service",
       "Rohnert Park Chamber of Commerce",
