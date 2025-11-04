@@ -156,6 +156,67 @@ const nextConfig: NextConfig = {
         destination: "/scheduler-confirmation",
         permanent: true,
       },
+
+      // Authorized service sub-paths redirects
+      {
+        source: "/authorized-service/refrigerator-repair",
+        destination: "/services/refrigerator-repair",
+        permanent: true,
+      },
+      {
+        source: "/authorized-service/washer-dryer-repair",
+        destination: "/services/washer-dryer-repair",
+        permanent: true,
+      },
+      {
+        source: "/authorized-service/range-oven-repair",
+        destination: "/services/oven-repair",
+        permanent: true,
+      },
+
+      // Additional blog post redirects
+      {
+        source: "/what-is-the-best-way-to-clean-a-stainless-steel-fridge",
+        destination: "/blog/what-is-the-best-way-to-clean-stainless-steel-appliances",
+        permanent: true,
+      },
+
+      // WordPress legacy paths
+      {
+        source: "/portfolio-items",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/contact-test",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/wp-json/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/index.php",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/author/:path*",
+        destination: "/about-us",
+        permanent: true,
+      },
+      {
+        source: "/fusion_tb_category/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/services/range-oven-repair",
+        destination: "/services/oven-repair",
+        permanent: true,
+      },
     ];
   },
 };

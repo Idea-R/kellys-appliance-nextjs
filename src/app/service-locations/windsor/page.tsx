@@ -4,12 +4,13 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Appliance Repair Windsor - Kelly\'s Appliance Center',
-  description: 'Professional appliance repair services in Windsor, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  description: 'Find local appliance repair near you in Windsor, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
 };
 
 export default function WindsorPage() {
@@ -18,7 +19,7 @@ export default function WindsorPage() {
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Windsor</h1>
-          <p className="text-xl mb-8">Professional appliance repair services in Windsor, CA.</p>
+          <p className="text-xl mb-8">Find local appliance repair near you in Windsor, CA. Professional appliance repair services with factory authorized service.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
               <PhoneIcon className="h-5 w-5 mr-2" />Call {companyInfo.phone}
@@ -38,7 +39,7 @@ export default function WindsorPage() {
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-                  <p className="text-gray-700">Town Green concerts, family parks, and nearby river access define Windsor living. We provide fast, authorized repairs so weeknight dinners and weekend plans stay on time.</p>
+                  <p className="text-gray-700">Town Green concerts, family parks, and nearby river access define Windsor living. We're your local appliance repair experts serving Windsor and surrounding areas. We provide fast, authorized repairs so weeknight dinners and weekend plans stay on time.</p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-lg p-6">
                   <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
@@ -92,12 +93,14 @@ export default function WindsorPage() {
       </section>
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair in Windsor?</h2>
+          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair Near You in Windsor?</h2>
+          <p className="text-xl mb-8">Find trusted local appliance repair services in Windsor. Serving Windsor and surrounding areas with professional appliance repair since 1975.</p>
           <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors">
             <PhoneIcon className="h-6 w-6 mr-2" />Call {companyInfo.phone} Now
           </a>
         </div>
       </section>
+      <CityJsonLd city="Windsor" slug="windsor" />
     </Layout>
   );
 }

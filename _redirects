@@ -32,3 +32,20 @@
 # Other redirects
 /resources/blog /blog 301
 /resources/scheduler-confirmation /scheduler-confirmation 301
+
+# Authorized service sub-paths redirects
+/authorized-service/refrigerator-repair /services/refrigerator-repair 301
+/authorized-service/washer-dryer-repair /services/washer-dryer-repair 301
+/authorized-service/range-oven-repair /services/oven-repair 301
+
+# Additional blog post redirects
+/what-is-the-best-way-to-clean-a-stainless-steel-fridge /blog/what-is-the-best-way-to-clean-stainless-steel-appliances 301
+
+# WordPress legacy paths
+/portfolio-items / 301
+/contact-test /contact 301
+/wp-json/* / 301
+/index.php / 301
+/author/* /about-us 301
+/fusion_tb_category/* / 301
+/services/range-oven-repair /services/oven-repair 301

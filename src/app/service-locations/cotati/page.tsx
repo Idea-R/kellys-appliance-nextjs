@@ -4,12 +4,13 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: "Appliance Repair Cotati - Kelly's Appliance Center",
-  description: 'Professional appliance repair services in Cotati, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 .',
+  description: 'Find local appliance repair near you in Cotati, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
 };
 
 const services = [
@@ -30,7 +31,7 @@ export default function CotatiPage() {
               Appliance Repair in Cotati
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Professional appliance repair services in Cotati, CA. Factory authorized service with 90-day guarantee.
+              Find local appliance repair near you in Cotati, CA. Professional appliance repair services with factory authorized service and 90-day guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -139,8 +140,8 @@ export default function CotatiPage() {
       {/* Contact CTA */}
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair in Cotati?</h2>
-          <p className="text-xl mb-8">Serving Cotati with professional appliance repair services since 1975</p>
+          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair Near You in Cotati?</h2>
+          <p className="text-xl mb-8">Find trusted local appliance repair services in Cotati. Serving Cotati and surrounding areas with professional appliance repair since 1975</p>
           <a
             href={`tel:${companyInfo.phone}`}
             className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors"
@@ -150,6 +151,7 @@ export default function CotatiPage() {
           </a>
         </div>
       </section>
+      <CityJsonLd city="Cotati" slug="cotati" />
     </Layout>
   );
 }

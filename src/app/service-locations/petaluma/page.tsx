@@ -4,12 +4,13 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Appliance Repair Petaluma - Kelly\'s Appliance Center',
-  description: 'Professional appliance repair services in Petaluma, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 .',
+  description: 'Find local appliance repair near you in Petaluma, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
 };
 
 const services = [
@@ -30,7 +31,7 @@ export default function PetalumaPage() {
               Appliance Repair in Petaluma
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Professional appliance repair services in Petaluma, CA. Factory authorized service with 90-day guarantee.
+              Find local appliance repair near you in Petaluma, CA. Professional appliance repair services with factory authorized service and 90-day guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -59,7 +60,7 @@ export default function PetalumaPage() {
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-              <p className="text-gray-700">Historic Downtown Petaluma, riverfront walks, and classic Victorian neighborhoods define the city’s charm. We support homes from the East Side to West Side with fast, factory-authorized appliance repair—so dinner at home or a day at the river never misses a beat.</p>
+              <p className="text-gray-700">Historic Downtown Petaluma, riverfront walks, and classic Victorian neighborhoods define the city's charm. We're your local appliance repair experts serving Petaluma and surrounding areas. We support homes from the East Side to West Side with fast, factory-authorized appliance repair—so dinner at home or a day at the river never misses a beat.</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
@@ -159,6 +160,7 @@ export default function PetalumaPage() {
           </div>
         </div>
       </section>
+      <CityJsonLd city="Petaluma" slug="petaluma" />
     </Layout>
   );
 }

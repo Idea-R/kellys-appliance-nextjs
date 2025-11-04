@@ -84,6 +84,12 @@ Thumbs.db
 /archive/
 /docs/
 
+# Secrets and sensitive files
+/secrets/*.json
+!/secrets/README.md
+/secrets/*.pem
+/secrets/*.key
+
 # Scraper and development tools
 scraper.js
 analyze-content.js

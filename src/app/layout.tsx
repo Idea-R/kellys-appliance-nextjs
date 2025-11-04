@@ -102,20 +102,26 @@ export default function RootLayout({
                 "addressRegion": "CA",
                 "postalCode": "94931"
               },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.327",
+                "longitude": "-122.707"
+              },
+              "serviceArea": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "38.327",
+                  "longitude": "-122.707"
+                },
+                "geoRadius": {
+                  "@type": "Distance",
+                  "value": "50",
+                  "unitCode": "MI"
+                }
+              },
               "url": "https://kellysappliancerepair.com",
               "description": "Professional appliance repair services in the Bay Area since 1975",
-              "serviceArea": [
-                "Santa Rosa, CA",
-                "Petaluma, CA", 
-                "Rohnert Park, CA",
-                "Sonoma, CA",
-                "Sebastopol, CA",
-                "Windsor, CA",
-                "Marin County, CA",
-                "San Rafael, CA",
-                "Novato, CA",
-                "Napa, CA"
-              ],
               "priceRange": "$",
               "image": "https://kellysappliancerepair.com/images/kelly-appliance-team.webp"
             })

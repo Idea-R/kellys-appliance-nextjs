@@ -4,12 +4,13 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Appliance Repair Santa Rosa - Kelly\'s Appliance Center',
-  description: 'Professional appliance repair services in Santa Rosa, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  description: 'Find local appliance repair near you in Santa Rosa, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
 };
 
 const services = [
@@ -30,7 +31,7 @@ export default function SantaRosaPage() {
               Appliance Repair in Santa Rosa
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Professional appliance repair services in Santa Rosa, CA. Factory authorized service with 90-day guarantee.
+              Find local appliance repair near you in Santa Rosa, CA. Professional appliance repair services with factory authorized service and 90-day guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -59,7 +60,7 @@ export default function SantaRosaPage() {
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-              <p className="text-gray-700">From Courthouse Square to the Luther Burbank Center and the weekly farmers markets, Santa Rosa blends a vibrant downtown with easy access to wine country. Whether you’re in Fountaingrove or Roseland, we keep your kitchen and laundry essentials running so you can enjoy more of Sonoma County.</p>
+              <p className="text-gray-700">From Courthouse Square to the Luther Burbank Center and the weekly farmers markets, Santa Rosa blends a vibrant downtown with easy access to wine country. Whether you're in Fountaingrove or Roseland, we're your local appliance repair experts serving Santa Rosa and surrounding areas. We keep your kitchen and laundry essentials running so you can enjoy more of Sonoma County.</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
@@ -145,10 +146,10 @@ export default function SantaRosaPage() {
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Need Appliance Repair in Santa Rosa?
+            Need Appliance Repair Near You in Santa Rosa?
           </h2>
           <p className="text-xl mb-8">
-            Serving Santa Rosa with professional appliance repair services since 1975
+            Find trusted local appliance repair services in Santa Rosa. Serving Santa Rosa and surrounding areas with professional appliance repair since 1975.
           </p>
           <a
             href={`tel:${companyInfo.phone}`}
@@ -159,6 +160,7 @@ export default function SantaRosaPage() {
           </a>
         </div>
       </section>
+      <CityJsonLd city="Santa Rosa" slug="santa-rosa" />
     </Layout>
   );
 }
