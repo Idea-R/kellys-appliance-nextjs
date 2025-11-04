@@ -10,7 +10,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Oven Repair Services - Professional Technicians',
-  description: 'Find oven repair near me. Professional oven repair services for residential clients. Expert diagnosis and repair of temperature issues, heating elements, and controls. Call (707) 664-9702',
+  description: 'Find oven repair near me, range repair near me, wall oven repair, cooktop repair, and vent hood repair. Professional oven and range repair services for residential clients. Expert diagnosis and repair of temperature issues, heating elements, and controls. Call (707) 664-9702',
 };
 
 export default function OvenRepairPage() {
@@ -22,10 +22,10 @@ export default function OvenRepairPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Oven Repair Services
+                Oven, Range, Wall Oven, Cooktop & Vent Hood Repair
               </h1>
               <p className="text-xl mb-8">
-                Professional oven repair services for residential clients. Our skilled technicians are experienced in diagnosing and fixing temperature irregularities, faulty heating elements, and malfunctioning controls.
+                Professional oven repair, range repair, wall oven repair, cooktop repair, and vent hood repair services. Our skilled technicians are experienced in diagnosing and fixing temperature irregularities, faulty heating elements, and malfunctioning controls for all cooking appliances.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -63,10 +63,10 @@ export default function OvenRepairPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Expert Oven Repair Services
+              Expert Oven, Range, Wall Oven, Cooktop & Vent Hood Repair
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              We offer prompt service, transparent pricing, and a strong commitment to customer satisfaction. Serving a wide area, we prioritize quick response times to reduce downtime.
+              We offer prompt service for all cooking appliances including ovens, ranges, wall ovens, cooktops, and vent hoods. Transparent pricing, quick response times, and a strong commitment to customer satisfaction.
             </p>
           </div>
           
@@ -103,9 +103,9 @@ export default function OvenRepairPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
             <div className="lg:col-span-2 space-y-8">
-              <ContentSection title="About Our Oven Repair Service">
+              <ContentSection title="About Our Oven, Range, Wall Oven, Cooktop & Vent Hood Repair Service">
                 <p>
-                  Kelly&apos;s Appliance Repair provides expert oven repair services for both residential and commercial clients, ensuring your cooking appliance functions efficiently and safely. Our team of experienced technicians is well-versed in handling various oven brands and models, from traditional gas and electric ovens to modern convection and smart ovens.
+                  Kelly&apos;s Appliance Repair provides expert repair services for all cooking appliances including ovens, ranges, wall ovens, cooktops, and vent hoods. Our team of experienced technicians is well-versed in handling various brands and models, from traditional gas and electric ovens to modern convection ovens, built-in wall ovens, induction cooktops, and range vent hoods.
                 </p>
               </ContentSection>
 
@@ -227,10 +227,10 @@ export default function OvenRepairPage() {
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Need Professional Oven Repair?
+            Need Professional Oven, Range, Wall Oven, Cooktop or Vent Hood Repair?
           </h2>
           <p className="text-xl mb-8">
-            Using genuine, high-quality parts for all repairs, we ensure your oven operates safely and efficiently.
+            Using genuine, high-quality parts for all repairs, we ensure your cooking appliances operate safely and efficiently.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -257,8 +257,8 @@ export default function OvenRepairPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "serviceType": "Oven Repair",
-            "description": "Find oven repair near me. Professional oven repair services with factory authorized technicians.",
+            "serviceType": "Oven, Range, Wall Oven, Cooktop & Vent Hood Repair",
+            "description": "Find oven repair near me, range repair near me, wall oven repair, cooktop repair, and vent hood repair. Professional oven and range repair services with factory authorized technicians.",
             "provider": {
               "@type": "LocalBusiness",
               "name": companyInfo.name,

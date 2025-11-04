@@ -10,7 +10,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Refrigerator Repair Services - Expert Technicians',
-  description: 'Find refrigerator repair near me. Expert refrigerator repair services for residential clients. Factory authorized service with 90-day guarantee. Call (707) 664-9702',
+  description: 'Find refrigerator repair near me and ice maker repair near me. Expert refrigerator repair services for residential clients. Factory authorized service with 90-day guarantee. Call (707) 664-9702',
 };
 
 const features = [
@@ -347,7 +347,7 @@ export default function RefrigeratorRepairPage() {
                 }
               }
             },
-            "description": "Find refrigerator repair near me. Professional refrigerator repair services with factory authorized technicians.",
+            "description": "Find refrigerator repair near me and ice maker repair near me. Professional refrigerator repair services with factory authorized technicians.",
             "areaServed": [
               "Santa Rosa, CA","Petaluma, CA","Rohnert Park, CA","Sonoma, CA","Sebastopol, CA","Windsor, CA","Marin County, CA","San Rafael, CA","Novato, CA","Napa, CA"
             ],
