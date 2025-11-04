@@ -32,6 +32,11 @@ export interface ConversionData {
   serviceAreaViews: number
 }
 
+export interface AnalyticsEvent {
+  eventName: string
+  [key: string]: unknown
+}
+
 // Get latest summary report
 export function getLatestSummary(): AnalyticsSummary | null {
   try {
@@ -53,7 +58,7 @@ export function getLatestSummary(): AnalyticsSummary | null {
 }
 
 // Get events data
-export function getLatestEvents(eventType?: string): any[] {
+export function getLatestEvents(eventType?: string): AnalyticsEvent[] {
   try {
     const reportsDir = path.join(process.cwd(), 'docs', 'analytics-reporting', 'daily')
     const files = fs.readdirSync(reportsDir)
@@ -64,10 +69,10 @@ export function getLatestEvents(eventType?: string): any[] {
     if (files.length === 0) return []
 
     const latestFile = path.join(reportsDir, files[0])
-    const data = JSON.parse(fs.readFileSync(latestFile, 'utf8'))
+    const data = JSON.parse(fs.readFileSync(latestFile, 'utf8')) as AnalyticsEvent[]
 
     if (eventType) {
-      return data.filter((event: any) => event.eventName === eventType)
+      return data.filter((event: AnalyticsEvent) => event.eventName === eventType)
     }
 
     return data
