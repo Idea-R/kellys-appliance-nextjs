@@ -10,7 +10,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Oven Repair Services - Professional Technicians',
-  description: 'Professional oven repair services for residential clients. Expert diagnosis and repair of temperature issues, heating elements, and controls. Call (707) 664-9702',
+  description: 'Find oven repair near me. Professional oven repair services for residential clients. Expert diagnosis and repair of temperature issues, heating elements, and controls. Call (707) 664-9702',
 };
 
 export default function OvenRepairPage() {
@@ -258,10 +258,36 @@ export default function OvenRepairPage() {
             "@context": "https://schema.org",
             "@type": "Service",
             "serviceType": "Oven Repair",
+            "description": "Find oven repair near me. Professional oven repair services with factory authorized technicians.",
             "provider": {
               "@type": "LocalBusiness",
               "name": companyInfo.name,
-              "telephone": companyInfo.phone
+              "telephone": companyInfo.phone,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": companyInfo.address.street,
+                "addressLocality": companyInfo.address.city,
+                "addressRegion": companyInfo.address.state,
+                "postalCode": companyInfo.address.zip
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.327",
+                "longitude": "-122.707"
+              },
+              "serviceArea": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "38.327",
+                  "longitude": "-122.707"
+                },
+                "geoRadius": {
+                  "@type": "Distance",
+                  "value": "50",
+                  "unitCode": "MI"
+                }
+              }
             },
             "areaServed": [
               "Santa Rosa, CA","Petaluma, CA","Rohnert Park, CA","Sonoma, CA","Sebastopol, CA","Windsor, CA","Marin County, CA","San Rafael, CA","Novato, CA","Napa, CA"

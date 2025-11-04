@@ -15,7 +15,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Dishwasher Repair Services - Professional Technicians',
-  description: 'Experienced dishwasher repair services for residential clients. Water leaks, drainage problems, faulty motors repair. Call (707) 664-9702',
+  description: 'Find dishwasher repair near me. Experienced dishwasher repair services for residential clients. Water leaks, drainage problems, faulty motors repair. Call (707) 664-9702',
 };
 
 const problems = [
@@ -245,10 +245,36 @@ export default function DishwasherRepairPage() {
             "@context": "https://schema.org",
             "@type": "Service",
             "serviceType": "Dishwasher Repair",
+            "description": "Find dishwasher repair near me. Professional dishwasher repair services with factory authorized technicians.",
             "provider": {
               "@type": "LocalBusiness",
               "name": companyInfo.name,
-              "telephone": companyInfo.phone
+              "telephone": companyInfo.phone,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": companyInfo.address.street,
+                "addressLocality": companyInfo.address.city,
+                "addressRegion": companyInfo.address.state,
+                "postalCode": companyInfo.address.zip
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.327",
+                "longitude": "-122.707"
+              },
+              "serviceArea": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "38.327",
+                  "longitude": "-122.707"
+                },
+                "geoRadius": {
+                  "@type": "Distance",
+                  "value": "50",
+                  "unitCode": "MI"
+                }
+              }
             },
             "areaServed": [
               "Santa Rosa, CA","Petaluma, CA","Rohnert Park, CA","Sonoma, CA","Sebastopol, CA","Windsor, CA","Marin County, CA","San Rafael, CA","Novato, CA","Napa, CA"

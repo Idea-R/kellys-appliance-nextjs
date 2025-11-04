@@ -10,7 +10,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Washer & Dryer Repair Services - Expert Technicians',
-  description: 'Professional washer and dryer repair services. Expert diagnosis of drum problems, electrical faults, and water leaks. Call (707) 664-9702',
+  description: 'Find washer and dryer repair near me. Professional washer and dryer repair services. Expert diagnosis of drum problems, electrical faults, and water leaks. Call (707) 664-9702',
 };
 
 export default function WasherDryerRepairPage() {
@@ -216,10 +216,36 @@ export default function WasherDryerRepairPage() {
             "@context": "https://schema.org",
             "@type": "Service",
             "serviceType": "Washer and Dryer Repair",
+            "description": "Find washer and dryer repair near me. Professional washer and dryer repair services with factory authorized technicians.",
             "provider": {
               "@type": "LocalBusiness",
               "name": companyInfo.name,
-              "telephone": companyInfo.phone
+              "telephone": companyInfo.phone,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": companyInfo.address.street,
+                "addressLocality": companyInfo.address.city,
+                "addressRegion": companyInfo.address.state,
+                "postalCode": companyInfo.address.zip
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.327",
+                "longitude": "-122.707"
+              },
+              "serviceArea": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "38.327",
+                  "longitude": "-122.707"
+                },
+                "geoRadius": {
+                  "@type": "Distance",
+                  "value": "50",
+                  "unitCode": "MI"
+                }
+              }
             },
             "areaServed": [
               "Santa Rosa, CA","Petaluma, CA","Rohnert Park, CA","Sonoma, CA","Sebastopol, CA","Windsor, CA","Marin County, CA","San Rafael, CA","Novato, CA","Napa, CA"
