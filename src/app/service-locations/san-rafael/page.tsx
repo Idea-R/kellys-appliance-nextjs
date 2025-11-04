@@ -4,12 +4,13 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Appliance Repair San Rafael - Kelly\'s Appliance Center',
-  description: 'Professional appliance repair services in San Rafael, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  description: 'Find local appliance repair near you in San Rafael, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
 };
 
 export default function SanRafaelPage() {
@@ -100,6 +101,7 @@ export default function SanRafaelPage() {
           </a>
         </div>
       </section>
+      <CityJsonLd city="San Rafael" slug="san-rafael" />
     </Layout>
   );
 }

@@ -4,12 +4,13 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: "Appliance Repair Corte Madera - Kelly's Appliance Center",
-  description: 'Professional appliance repair services in Corte Madera, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 .',
+  description: 'Find local appliance repair near you in Corte Madera, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
 };
 
 const services = [
@@ -107,6 +108,7 @@ export default function CorteMaderaPage() {
           </a>
         </div>
       </section>
+      <CityJsonLd city="Corte Madera" slug="corte-madera" />
     </Layout>
   );
 }

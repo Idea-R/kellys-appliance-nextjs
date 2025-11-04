@@ -4,12 +4,13 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: "Appliance Repair Bodega Bay - Kelly's Appliance Center",
-  description: 'Professional appliance repair services in Bodega Bay, CA. Factory authorized repairs for major brands. Call (707) 664-9702.',
+  description: 'Find local appliance repair near you in Bodega Bay, CA. Professional appliance repair services with factory authorized repairs for major brands. Call (707) 664-9702.',
 };
 
 export default function BodegaBayPage() {
@@ -53,6 +54,7 @@ export default function BodegaBayPage() {
           </div>
         </div>
       </section>
+      <CityJsonLd city="Bodega Bay" slug="bodega-bay" />
     </Layout>
   );
 }

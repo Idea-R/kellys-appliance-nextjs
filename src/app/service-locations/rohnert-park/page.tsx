@@ -4,12 +4,13 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Appliance Repair Rohnert Park - Kelly\'s Appliance Center',
-  description: 'Professional appliance repair services in Rohnert Park, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  description: 'Find local appliance repair near you in Rohnert Park, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
 };
 
 export default function RohnertParkPage() {
@@ -98,6 +99,7 @@ export default function RohnertParkPage() {
           </a>
         </div>
       </section>
+      <CityJsonLd city="Rohnert Park" slug="rohnert-park" />
     </Layout>
   );
 }

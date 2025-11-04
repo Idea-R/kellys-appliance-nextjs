@@ -4,12 +4,13 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
+import CityJsonLd from '@/components/CityJsonLd';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Appliance Repair Sonoma - Kelly\'s Appliance Center',
-  description: 'Professional appliance repair services in Sonoma, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  description: 'Find local appliance repair near you in Sonoma, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
 };
 
 export default function SonomaPage() {
@@ -100,6 +101,7 @@ export default function SonomaPage() {
           </a>
         </div>
       </section>
+      <CityJsonLd city="Sonoma" slug="sonoma" />
     </Layout>
   );
 }

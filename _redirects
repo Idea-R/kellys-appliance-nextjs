@@ -49,3 +49,6 @@
 /author/* /about-us 301
 /fusion_tb_category/* / 301
 /services/range-oven-repair /services/oven-repair 301
+
+# Service area redirect (old WordPress page)
+/service-area /service-locations 301

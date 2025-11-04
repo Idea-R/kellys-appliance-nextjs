@@ -9,6 +9,10 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Appointment Request Received | Kelly\'s Appliance Center',
   description: 'Your appointment request has been received and will be confirmed within 4 hours during business hours or the next business day.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function SchedulerConfirmationPage() {

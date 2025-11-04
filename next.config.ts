@@ -157,6 +157,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // Service area redirect (old WordPress page)
+      {
+        source: "/service-area",
+        destination: "/service-locations",
+        permanent: true,
+      },
+
       // Authorized service sub-paths redirects
       {
         source: "/authorized-service/refrigerator-repair",
