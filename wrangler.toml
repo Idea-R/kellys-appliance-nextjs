@@ -5,6 +5,6 @@ compatibility_date = "2025-10-03"
 pages_build_output_dir = "out"
 
 # Public environment variables (visible in client-side code)
+# Note: NEXT_PUBLIC_GTM_ID is defined in .cloudflare/pages-config.json to avoid Function binding conflicts
 [vars]
 NEXT_PUBLIC_GA_MEASUREMENT_ID = "G-6NW7LJG197"
-NEXT_PUBLIC_GTM_ID = "GTM-TNTGZKKZ"
