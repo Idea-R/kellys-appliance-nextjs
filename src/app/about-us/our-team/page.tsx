@@ -74,7 +74,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Laura Losh',
     role: 'Customer Service Representative',
-    image: '/images/laura.jpg',
+    image: '/images/KellysLogo3.png',
     bio: 'Customer service representative dedicated to great scheduling and support.'
   },
   {
@@ -102,9 +102,9 @@ const teamMembers: TeamMember[] = [
     bio: 'Professional field technician serving customers throughout the Bay Area.'
   },
   {
-    name: 'James Shwago',
+    name: 'James Shawgo',
     role: 'Service Technician',
-    image: '/images/james.jpg',
+    image: '/images/James3.jpg',
     bio: 'Professional service technician focused on timely, high-quality repairs.'
   },
   {

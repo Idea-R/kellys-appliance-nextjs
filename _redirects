@@ -1,15 +1,14 @@
-# Cloudflare Pages redirects (backup to next.config.ts)
-# Note: Next.js redirects in next.config.ts should take precedence
+# Cloudflare Pages Redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+# This file mirrors next.config.ts redirects for CDN-level handling
 
 # Service page redirects
 /appliance-repair/* /services/:splat 301
 /locations/* /service-locations/:splat 301
-
-# Page redirects  
 /about /about-us 301
 /brands/* /authorized-service 301
 
-# Location redirects
+# Location page redirects (WordPress pattern: /appliance-repair-[city])
 /appliance-repair-santa-rosa /service-locations/santa-rosa 301
 /appliance-repair-petaluma /service-locations/petaluma 301
 /appliance-repair-rohnert-park /service-locations/rohnert-park 301
@@ -21,7 +20,7 @@
 /appliance-repair-napa /service-locations/napa 301
 /appliance-repair-marin-county /service-locations/marin-county 301
 
-# Blog redirects
+# Blog post redirects (WordPress posts at root level)
 /why-is-my-dryer-taking-so-long-to-dry-clothes /blog/why-is-my-dryer-taking-so-long-to-dry-clothes 301
 /common-dishwasher-problems-and-how-to-prevent-them /blog/common-dishwasher-problems-and-how-to-prevent-them 301
 /what-is-the-best-way-to-clean-stainless-steel-appliances /blog/what-is-the-best-way-to-clean-stainless-steel-appliances 301
@@ -29,9 +28,14 @@
 /top-5-tips-for-buying-a-home-appliance /blog/top-5-tips-for-buying-a-home-appliance 301
 /avoid-appliance-repair-scams /blog/what-is-the-best-way-to-avoid-appliance-repair-scams 301
 
-# Other redirects
+# Blog index redirect
 /resources/blog /blog 301
+
+# Scheduler confirmation redirect (old path)
 /resources/scheduler-confirmation /scheduler-confirmation 301
+
+# Service area redirect (old WordPress page)
+/service-area /service-locations 301
 
 # Authorized service sub-paths redirects
 /authorized-service/refrigerator-repair /services/refrigerator-repair 301
@@ -48,7 +52,9 @@
 /index.php / 301
 /author/* /about-us 301
 /fusion_tb_category/* / 301
+
+# Service page redirects (internal redirects)
 /services/range-oven-repair /services/oven-repair 301
 
-# Service area redirect (old WordPress page)
-/service-area /service-locations 301
+# WordPress sitemap redirect
+/sitemap_index.xml /sitemap.xml 301
