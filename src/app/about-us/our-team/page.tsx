@@ -104,7 +104,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'James Shawgo',
     role: 'Service Technician',
-    image: '/images/James3.jpg',
+    image: '/images/James5.jpg',
     bio: 'Professional service technician focused on timely, high-quality repairs.'
   },
   {
