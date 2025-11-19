@@ -51,12 +51,12 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {members.map((member, index) => (
           <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition group flex flex-col">
-            <div className="relative w-full h-80">
+            <div className="relative w-full aspect-[3/4] overflow-hidden">
               <Image
                 src={member.image}
                 alt={member.name}
                 fill
-                className="object-cover object-top rounded-none transform group-hover:scale-[1.02] transition-transform"
+                className="object-cover object-center rounded-none transform group-hover:scale-[1.02] transition-transform"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               {/* Ribbon nameplate bottom-left */}
