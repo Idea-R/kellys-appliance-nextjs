@@ -5,6 +5,8 @@ import { getCompanyInfo } from '@/lib/content';
 import CityJsonLd from '@/components/CityJsonLd'
 import NearbyCityLinks from '@/components/NearbyCityLinks'
 import RelatedServiceLinks from '@/components/RelatedServiceLinks'
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
@@ -21,8 +23,11 @@ const services = [
 ];
 
 export default function LarkspurPage() {
+  const breadcrumbs = generateBreadcrumbs('/service-locations/larkspur', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">

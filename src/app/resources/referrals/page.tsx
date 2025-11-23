@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata = {
   title: 'Referrals & Trusted Partners | Kelly\'s Appliance Center',
@@ -40,8 +42,11 @@ const partners: Partner[] = [
 ]
 
 export default function ReferralsPage() {
+  const breadcrumbs = generateBreadcrumbs('/resources/referrals', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl lg:text-5xl font-bold mb-3">Referrals & Trusted Partners</h1>

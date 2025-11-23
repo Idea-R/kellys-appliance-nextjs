@@ -60,54 +60,14 @@ const nextConfig: NextConfig = {
       },
 
       // Location page redirects (WordPress pattern: /appliance-repair-[city])
-      {
-        source: "/appliance-repair-santa-rosa",
-        destination: "/service-locations/santa-rosa",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-petaluma",
-        destination: "/service-locations/petaluma",
-        permanent: true,
-      },
+      // Note: Pages rebuilt at old URLs - redirects removed for:
+      // - appliance-repair-novato, appliance-repair-napa, appliance-repair-san-rafael
+      // - appliance-repair-sonoma, appliance-repair-santa-rosa, appliance-repair-sebastopol
+      // - appliance-repair-windsor, appliance-repair-marin-county, appliance-repair-petaluma
+      // These pages now exist with canonical tags pointing to new URLs
       {
         source: "/appliance-repair-rohnert-park",
         destination: "/service-locations/rohnert-park",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-sonoma",
-        destination: "/service-locations/sonoma",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-sebastopol",
-        destination: "/service-locations/sebastopol",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-windsor",
-        destination: "/service-locations/windsor",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-novato",
-        destination: "/service-locations/novato",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-san-rafael",
-        destination: "/service-locations/san-rafael",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-napa",
-        destination: "/service-locations/napa",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-marin-county",
-        destination: "/service-locations/marin-county",
         permanent: true,
       },
 
@@ -146,6 +106,16 @@ const nextConfig: NextConfig = {
       // Blog index redirect
       {
         source: "/resources/blog",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/resources/blog-2",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/resources/blog-2/:path*",
         destination: "/blog",
         permanent: true,
       },

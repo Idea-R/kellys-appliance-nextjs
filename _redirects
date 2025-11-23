@@ -9,16 +9,12 @@
 /brands/* /authorized-service 301
 
 # Location page redirects (WordPress pattern: /appliance-repair-[city])
-/appliance-repair-santa-rosa /service-locations/santa-rosa 301
-/appliance-repair-petaluma /service-locations/petaluma 301
+# Note: Pages rebuilt at old URLs - redirects removed for:
+# - appliance-repair-novato, appliance-repair-napa, appliance-repair-san-rafael
+# - appliance-repair-sonoma, appliance-repair-santa-rosa, appliance-repair-sebastopol
+# - appliance-repair-windsor, appliance-repair-marin-county, appliance-repair-petaluma
+# These pages now exist with canonical tags pointing to new URLs
 /appliance-repair-rohnert-park /service-locations/rohnert-park 301
-/appliance-repair-sonoma /service-locations/sonoma 301
-/appliance-repair-sebastopol /service-locations/sebastopol 301
-/appliance-repair-windsor /service-locations/windsor 301
-/appliance-repair-novato /service-locations/novato 301
-/appliance-repair-san-rafael /service-locations/san-rafael 301
-/appliance-repair-napa /service-locations/napa 301
-/appliance-repair-marin-county /service-locations/marin-county 301
 
 # Blog post redirects (WordPress posts at root level)
 /why-is-my-dryer-taking-so-long-to-dry-clothes /blog/why-is-my-dryer-taking-so-long-to-dry-clothes 301
@@ -30,6 +26,8 @@
 
 # Blog index redirect
 /resources/blog /blog 301
+/resources/blog-2 /blog 301
+/resources/blog-2/* /blog 301
 
 # Scheduler confirmation redirect (old path)
 /resources/scheduler-confirmation /scheduler-confirmation 301

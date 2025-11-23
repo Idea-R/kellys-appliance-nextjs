@@ -11,20 +11,23 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Appliance Repair Rohnert Park - Kelly\'s Appliance Center',
-  description: 'Find local appliance repair near you in Rohnert Park, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
+  title: 'Appliance Repair Windsor - Kelly\'s Appliance Center',
+  description: 'Find local appliance repair near you in Windsor, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: 'https://kellysappliancerepair.com/service-locations/windsor',
+  },
 };
 
-export default function RohnertParkPage() {
-  const breadcrumbs = generateBreadcrumbs('/service-locations/rohnert-park', metadata.title);
+export default function WindsorPage() {
+  const breadcrumbs = generateBreadcrumbs('/appliance-repair-windsor', metadata.title);
 
   return (
     <Layout>
       <Breadcrumbs items={breadcrumbs} />
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Rohnert Park</h1>
-          <p className="text-xl mb-8">Professional appliance repair services in Rohnert Park, CA.</p>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Windsor</h1>
+          <p className="text-xl mb-8">Find local appliance repair near you in Windsor, CA. Professional appliance repair services with factory authorized service.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
               <PhoneIcon className="h-5 w-5 mr-2" />Call {companyInfo.phone}
@@ -44,20 +47,20 @@ export default function RohnertParkPage() {
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-                  <p className="text-gray-700">Home to SSU and family-friendly neighborhoods, Rohnert Park offers parks, paths, and convenience. We keep your home’s appliances dependable for busy school weeks and easy weekends.</p>
+                  <p className="text-gray-700">Town Green concerts, family parks, and nearby river access define Windsor living. We're your local appliance repair experts serving Windsor and surrounding areas. We provide fast, authorized repairs so weeknight dinners and weekend plans stay on time.</p>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-lg p-6">
                   <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
                   <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                    <li>Hana Japanese</li>
-                    <li>Bear Republic Lakeside</li>
-                    <li>Mi Ranchito</li>
+                    <li>Kin</li>
+                    <li>Khom Loi (nearby SR)</li>
+                    <li>Himalayan Restaurant</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div className="space-y-4">
-              <NearbyCityLinks currentSlug="rohnert-park" />
+              <NearbyCityLinks currentSlug="windsor" />
               <RelatedServiceLinks />
             </div>
           </div>
@@ -86,25 +89,27 @@ export default function RohnertParkPage() {
               <MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
               <div>
                 <strong>Local Experts</strong>
-                <div className="text-gray-600 text-sm">Trusted in Rohnert Park for decades</div>
+                <div className="text-gray-600 text-sm">Trusted in Windsor for decades</div>
               </div>
             </div>
           </div>
           <div className="mt-8 bg-white border border-gray-200 rounded-lg p-6">
             <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
-            <p className="text-gray-700 mb-2">Kelly's is a proud member of the <a href="https://www.rohnertparkchamber.org/" className="text-green-700 underline" target="_blank" rel="noopener noreferrer">Rohnert Park Chamber of Commerce</a>.</p>
+            <p className="text-gray-700 mb-2">Kelly's is a proud member of the <a href="https://www.windsorchamber.com/" className="text-green-700 underline" target="_blank" rel="noopener noreferrer">Windsor Chamber of Commerce</a>.</p>
           </div>
         </div>
       </section>
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair in Rohnert Park?</h2>
+          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair Near You in Windsor?</h2>
+          <p className="text-xl mb-8">Find trusted local appliance repair services in Windsor. Serving Windsor and surrounding areas with professional appliance repair since 1975.</p>
           <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors">
             <PhoneIcon className="h-6 w-6 mr-2" />Call {companyInfo.phone} Now
           </a>
         </div>
       </section>
-      <CityJsonLd city="Rohnert Park" slug="rohnert-park" />
+      <CityJsonLd city="Windsor" slug="windsor" />
     </Layout>
   );
 }
+

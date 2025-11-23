@@ -356,6 +356,17 @@ export default function Layout({ children }: LayoutProps) {
                   {' • '}
                   <a href={`tel:${companyInfo.phone}`} className="hover:text-green-400 transition-colors" data-analytics-label="footer_call">{companyInfo.phone}</a>
                 </p>
+                <p className="mt-2 text-xs text-gray-500">
+                  Created and managed by:{' '}
+                  <a 
+                    href="https://ideas-realzied.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-green-400 transition-colors"
+                  >
+                    Ideas Realized
+                  </a>
+                </p>
               </div>
             </div>
           </div>

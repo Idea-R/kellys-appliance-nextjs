@@ -1,44 +1,37 @@
 import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import ChamberLink from '@/components/ChamberLink';
 import TopPicks from '@/components/TopPicks';
 import ReferralsGrid from '@/components/ReferralsGrid';
 import { getCompanyInfo } from '@/lib/content';
-import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: "Appliance Repair Napa County - Kelly's Appliance Center",
-  description: 'Professional appliance repair services in Napa County, CA. Factory authorized repairs for major brands. Call (707) 664-9702.',
+  title: 'Appliance Repair Marin County - Kelly\'s Appliance Center',
+  description: 'Professional appliance repair services in Marin County, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: 'https://kellysappliancerepair.com/service-locations/marin-county',
+  },
 };
 
-const napaCities: { name: string; slug: string }[] = [
-  { name: 'Napa', slug: 'napa' },
-  // Add others later if pages exist
-];
-
-export default function NapaCountyPage() {
-  const breadcrumbs = generateBreadcrumbs('/service-locations/napa-county', metadata.title);
+export default function MarinCountyPage() {
+  const breadcrumbs = generateBreadcrumbs('/appliance-repair-marin-county', metadata.title);
 
   return (
     <Layout>
       <Breadcrumbs items={breadcrumbs} />
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Napa County</h1>
-          <p className="text-xl mb-8">Trusted, factory-authorized appliance repair across Napa County.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-              <PhoneIcon className="h-5 w-5 mr-2" />Call {companyInfo.phone}
-            </a>
-            <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Request Appointment
-            </a>
-          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Marin County</h1>
+          <p className="text-xl mb-8">Professional appliance repair services in Marin County, CA.</p>
+          <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+            <PhoneIcon className="h-5 w-5 mr-2" />Call {companyInfo.phone}
+          </a>
         </div>
       </section>
 
@@ -46,27 +39,34 @@ export default function NapaCountyPage() {
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-          <p className="text-gray-700">From Silverado Trail to downtown tasting rooms, Napa County runs on hospitality. We keep appliances dependable across kitchens and guest spaces—so every pour and plate lands on time.</p>
+          <p className="text-gray-700">From Mount Tam's trails to coastal towns and ferry hubs, Marin blends outdoor life with charming downtowns. We provide fast, warranty-safe repairs across the county so home routines stay smooth between hikes and commutes.</p>
         </div>
       </section>
 
       {/* Kelly's Top Picks */}
       <TopPicks
-        title="Kelly's Top 3 Eats in Napa County"
-        intro="When in Napa, these are easy wins."
+        title="Kelly's Top 3 Eats in Marin County"
+        intro="A few favorites when we're on the road in Marin."
         items={[
-          { name: "The Charter Oak", url: "https://thecharteroak.com/", mapsUrl: "https://maps.google.com/?q=The+Charter+Oak+St+Helena", location: "St. Helena", person: "Kelly", role: "Owner", quote: "Live-fire cooking, seasonal, simple and perfect." },
-          { name: "Bottega", url: "https://www.botteganapavalley.com/", mapsUrl: "https://maps.google.com/?q=Bottega+Yountville", location: "Yountville", person: "Shane", role: "Service Manager", quote: "Michael Chiarello’s Italian comfort in wine country." },
-          { name: "Oenotri", url: "https://www.oenotri.com/", mapsUrl: "https://maps.google.com/?q=Oenotri+Napa", location: "Napa", person: "Team", role: "Field Crew", quote: "Neapolitan pies and seasonal plates to end the day." },
+          { name: "Sol Food", url: "https://www.solfoodrestaurant.com/", mapsUrl: "https://maps.google.com/?q=Sol+Food+San+Rafael", location: "San Rafael", person: "Team", role: "Field Crew", quote: "Plantains and pollo al horno hit the spot after a long route." },
+          { name: "Marin Joe's", url: "https://marinjoesrestaurant.com/", mapsUrl: "https://maps.google.com/?q=Marin+Joe's+Corte+Madera", location: "Corte Madera", person: "Kelly", role: "Owner", quote: "Classic steakhouse vibes and comfort." },
+          { name: "Sam's Anchor Cafe", url: "https://samscafe.com/", mapsUrl: "https://maps.google.com/?q=Sam's+Anchor+Cafe+Tiburon", location: "Tiburon", person: "Joe", role: "Tech", quote: "Views for days, seafood done right." },
         ]}
       />
 
-      {/* City Grid */}
+      {/* Cities Grid */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Cities We Serve in Napa County</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Cities We Serve in Marin County</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {napaCities.map(({ name, slug }) => (
+            {[
+              { name: 'San Rafael', slug: 'san-rafael' },
+              { name: 'Novato', slug: 'novato' },
+              { name: 'Mill Valley', slug: 'mill-valley' },
+              { name: 'Sausalito', slug: 'sausalito' },
+              { name: 'Tiburon', slug: 'tiburon' },
+              { name: 'Corte Madera', slug: 'corte-madera' },
+            ].map(({ name, slug }) => (
               <Link key={slug} href={`/service-locations/${slug}`} className="block border border-gray-200 rounded-md p-4 hover:shadow-md hover:border-green-300 transition bg-white">
                 <div className="flex items-center">
                   <MapPinIcon className="w-5 h-5 text-green-600 mr-2" />
@@ -100,29 +100,15 @@ export default function NapaCountyPage() {
               <MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
               <div>
                 <strong className="text-gray-900">Local Experts</strong>
-                <div className="text-gray-700 text-sm">Trusted in Napa County for decades</div>
+                <div className="text-gray-700 text-sm">Trusted in Marin County for decades</div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Local Resources */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Resources</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <ChamberLink name="Napa Chamber of Commerce" url="https://napachamber.com/" />
-            <ChamberLink name="Calistoga Chamber of Commerce" url="https://calistogachamber.com/" />
-            <ChamberLink name="St. Helena Chamber of Commerce" url="https://sthelenachamber.com/" />
-            <ChamberLink name="Yountville Chamber of Commerce" url="https://www.yountvillechamber.com/" />
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair in Napa County?</h2>
+          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair in Marin County?</h2>
           <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors">
             <PhoneIcon className="h-6 w-6 mr-2" />Call {companyInfo.phone} Now
           </a>
@@ -131,8 +117,8 @@ export default function NapaCountyPage() {
 
       {/* County Referrals */}
       <ReferralsGrid
-        title="Napa County Referrals"
-        subtitle="Trusted local recommendations in Napa."
+        title="Marin County Referrals"
+        subtitle="Our trusted local recommendations across Marin."
         items={[
           { label: 'Appliance Sales' },
           { label: 'Appliance Installation' },
@@ -147,6 +133,21 @@ export default function NapaCountyPage() {
         ]}
       />
 
+      {/* Local Resources */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Resources</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <ChamberLink name="San Rafael Chamber of Commerce" url="https://www.srchamber.com/" />
+            <ChamberLink name="Novato Chamber of Commerce" url="https://www.novatochamber.com/" />
+            <ChamberLink name="Mill Valley Chamber of Commerce" url="https://www.millvalley.org/" />
+            <ChamberLink name="Sausalito Chamber of Commerce" url="https://www.sausalito.org/" />
+            <ChamberLink name="Larkspur Chamber of Commerce" url="http://larkspurchamber.org/" />
+            <ChamberLink name="Corte Madera Chamber of Commerce" url="http://www.cortemadera.org/" />
+            <ChamberLink name="Tiburon Chamber of Commerce" url="https://www.tiburonchamber.org/" />
+          </div>
+        </div>
+      </section>
       {/* County SEO JSON-LD */}
       <script
         type="application/ld+json"
@@ -160,13 +161,12 @@ export default function NapaCountyPage() {
               "name": companyInfo.name,
               "telephone": companyInfo.phone
             },
-            "areaServed": napaCities.map(c => `${c.name}, CA`),
-            "url": "https://kellysappliancerepair.com/service-locations/napa-county"
+            "areaServed": ["San Rafael, CA", "Novato, CA", "Mill Valley, CA", "Sausalito, CA", "Tiburon, CA", "Corte Madera, CA"],
+            "url": "https://kellysappliancerepair.com/service-locations/marin-county"
           })
         }}
       />
     </Layout>
   );
 }
-
 

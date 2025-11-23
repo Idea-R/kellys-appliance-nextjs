@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ArrowLeftIcon, ClockIcon, UserIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
@@ -12,42 +14,11 @@ export const metadata = {
 };
 
 export default function BlogPost() {
+  const breadcrumbs = generateBreadcrumbs('/blog/top-5-tips-for-buying-a-home-appliance', metadata.title);
+
   return (
     <Layout>
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 py-4">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex" aria-label="Breadcrumb">
-            <ol className="flex items-center space-x-4">
-              <li>
-                <Link href="/" className="text-gray-500 hover:text-gray-700">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <div className="flex items-center">
-                  <svg className="flex-shrink-0 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <Link href="/blog" className="ml-4 text-gray-500 hover:text-gray-700">
-                    Blog
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div className="flex items-center">
-                  <svg className="flex-shrink-0 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span className="ml-4 text-gray-700 font-medium">
-                    Top 5 Tips for Buying a Home Appliance
-                  </span>
-                </div>
-              </li>
-            </ol>
-          </nav>
-        </div>
-      </div>
+      <Breadcrumbs items={breadcrumbs} />
 
       {/* Article */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-white">

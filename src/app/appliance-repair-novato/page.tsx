@@ -11,8 +11,11 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: "Appliance Repair Cotati - Kelly's Appliance Center",
-  description: 'Find local appliance repair near you in Cotati, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
+  title: 'Appliance Repair Novato - Kelly\'s Appliance Center',
+  description: 'Find local appliance repair near you in Novato, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: 'https://kellysappliancerepair.com/service-locations/novato',
+  },
 };
 
 const services = [
@@ -22,8 +25,8 @@ const services = [
   { name: 'Dishwasher Repair', icon: '🍽️' }
 ];
 
-export default function CotatiPage() {
-  const breadcrumbs = generateBreadcrumbs('/service-locations/cotati', metadata.title);
+export default function NovatoPage() {
+  const breadcrumbs = generateBreadcrumbs('/appliance-repair-novato', metadata.title);
 
   return (
     <Layout>
@@ -33,10 +36,10 @@ export default function CotatiPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Appliance Repair in Cotati
+              Appliance Repair in Novato
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Find local appliance repair near you in Cotati, CA. Professional appliance repair services with factory authorized service and 90-day guarantee.
+              Professional appliance repair services in Novato, CA. Factory authorized service with 90-day guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -59,59 +62,25 @@ export default function CotatiPage() {
         </div>
       </section>
 
-      {/* Community Links */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
-            <p className="text-gray-700">Visit the <a href="https://www.cotati.org/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline">Cotati Chamber of Commerce</a> for local business resources and events.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="flex items-start">
-              <CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
-              <div>
-                <strong>Factory Authorized</strong>
-                <div className="text-gray-600 text-sm">Certified repair using genuine parts</div>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
-              <div>
-                <strong>Fast Response</strong>
-                <div className="text-gray-600 text-sm">Prompt, reliable service</div>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
-              <div>
-                <strong>Local Experts</strong>
-                <div className="text-gray-600 text-sm">Serving Cotati since 1975</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Services in Cotati
+              Our Services in Novato
             </h2>
           </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.name}</h3>
-                <p className="text-gray-600 text-sm">Professional repair services with factory authorized parts</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {service.name}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Professional repair services with factory authorized parts
+                </p>
               </div>
             ))}
           </div>
@@ -124,18 +93,18 @@ export default function CotatiPage() {
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-              <p className="text-gray-700">Cotati’s hexagon plaza and music-friendly vibe make it a unique North Bay stop. We keep home appliances performing—perfect for easy weeknight meals between concerts and campus events.</p>
+              <p className="text-gray-700">With trail access at Mount Burdell and a lively downtown, Novato balances outdoor life and neighborhood living. We offer prompt, warranty-safe repairs so your home stays ready for weeknights and weekends.</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
               <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                <li>Tony's of North Beach (nearby)</li>
-                <li>Redwood Cafe</li>
-                <li>Down To Earth Cafe</li>
+                <li>Wildfox</li>
+                <li>Grazie</li>
+                <li>HopMonk Novato</li>
               </ul>
             </div>
             <div className="space-y-4">
-              <NearbyCityLinks currentSlug="cotati" />
+              <NearbyCityLinks currentSlug="novato" />
               <RelatedServiceLinks />
             </div>
           </div>
@@ -145,8 +114,12 @@ export default function CotatiPage() {
       {/* Contact CTA */}
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair Near You in Cotati?</h2>
-          <p className="text-xl mb-8">Find trusted local appliance repair services in Cotati. Serving Cotati and surrounding areas with professional appliance repair since 1975</p>
+          <h2 className="text-3xl font-bold mb-4">
+            Need Appliance Repair in Novato?
+          </h2>
+          <p className="text-xl mb-8">
+            Serving Novato with professional appliance repair services since 1975
+          </p>
           <a
             href={`tel:${companyInfo.phone}`}
             className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors"
@@ -156,9 +129,41 @@ export default function CotatiPage() {
           </a>
         </div>
       </section>
-      <CityJsonLd city="Cotati" slug="cotati" />
+
+      {/* Why Choose Us */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex items-start">
+              <CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
+              <div>
+                <strong>Factory Authorized</strong>
+                <div className="text-gray-900 text-sm">Certified repair using genuine parts</div>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
+              <div>
+                <strong>Fast Response</strong>
+                <div className="text-gray-900 text-sm">Prompt, reliable service</div>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
+              <div>
+                <strong>Local Experts</strong>
+                <div className="text-gray-900 text-sm">Trusted in Novato for decades</div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 bg-white border border-gray-200 rounded-lg p-6">
+            <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
+            <p className="text-gray-700 mb-2">Kelly's is a proud member of the <a href="https://www.novatochamber.com/" className="text-green-700 underline" target="_blank" rel="noopener noreferrer">Novato Chamber of Commerce</a>.</p>
+          </div>
+        </div>
+      </section>
+      <CityJsonLd city="Novato" slug="novato" />
     </Layout>
   );
 }
-
 

@@ -5,6 +5,8 @@ import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo, getAllPosts } from '@/lib/content';
 import { WordPressPost } from '@/types/content';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
@@ -15,9 +17,11 @@ export const metadata = {
 
 export default async function ResourcesPage() {
   const posts = await getAllPosts();
+  const breadcrumbs = generateBreadcrumbs('/resources', metadata.title);
 
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

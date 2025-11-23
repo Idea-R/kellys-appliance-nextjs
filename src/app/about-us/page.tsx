@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
@@ -13,8 +15,11 @@ export const metadata = {
 };
 
 export default function AboutUsPage() {
+  const breadcrumbs = generateBreadcrumbs('/about-us', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

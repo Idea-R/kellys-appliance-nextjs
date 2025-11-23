@@ -13,10 +13,13 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Appliance Repair Napa - Kelly\'s Appliance Center',
   description: 'Professional appliance repair services in Napa, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: 'https://kellysappliancerepair.com/service-locations/napa',
+  },
 };
 
 export default function NapaPage() {
-  const breadcrumbs = generateBreadcrumbs('/service-locations/napa', metadata.title);
+  const breadcrumbs = generateBreadcrumbs('/appliance-repair-napa', metadata.title);
 
   return (
     <Layout>
@@ -109,3 +112,4 @@ export default function NapaPage() {
     </Layout>
   );
 }
+

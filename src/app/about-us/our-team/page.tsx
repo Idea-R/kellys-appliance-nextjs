@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { getCompanyInfo } from '@/lib/content';
 import TeamGrid, { TeamMember } from './TeamGrid'
 
@@ -116,15 +116,20 @@ const teamMembers: TeamMember[] = [
 ];
 
 export default function OurTeamPage() {
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Our Team', href: '/about-us/our-team' },
+  ];
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Link href="/about-us" className="text-green-200 hover:text-white mb-4 inline-block">
-              ← Back to About Us
-            </Link>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Meet Our Team
             </h1>

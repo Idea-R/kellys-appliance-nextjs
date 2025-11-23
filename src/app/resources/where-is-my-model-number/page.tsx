@@ -5,6 +5,8 @@ import Layout from '@/components/Layout'
 import { ChevronDownIcon, ChevronUpIcon, CameraIcon, DocumentTextIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { getCompanyInfo } from '@/lib/content'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 const companyInfo = getCompanyInfo()
 
@@ -174,8 +176,11 @@ export default function ModelNumberGuidePage() {
     },
   ]
 
+  const breadcrumbs = generateBreadcrumbs('/resources/where-is-my-model-number', 'Where Is My Model Number?');
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

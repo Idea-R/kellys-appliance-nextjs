@@ -5,6 +5,8 @@ import { getCompanyInfo } from '@/lib/content';
 import NearbyCityLinks from '@/components/NearbyCityLinks';
 import RelatedServiceLinks from '@/components/RelatedServiceLinks';
 import CityJsonLd from '@/components/CityJsonLd';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
@@ -14,8 +16,11 @@ export const metadata = {
 };
 
 export default function WindsorPage() {
+  const breadcrumbs = generateBreadcrumbs('/service-locations/windsor', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Windsor</h1>

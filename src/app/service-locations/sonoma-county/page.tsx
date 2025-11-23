@@ -6,6 +6,8 @@ import Link from 'next/link';
 import ChamberLink from '@/components/ChamberLink';
 import TopPicks from '@/components/TopPicks';
 import ReferralsGrid from '@/components/ReferralsGrid';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
@@ -31,8 +33,11 @@ const sonomaCities: { name: string; slug: string }[] = [
 ];
 
 export default function SonomaCountyPage() {
+  const breadcrumbs = generateBreadcrumbs('/service-locations/sonoma-county', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Sonoma County</h1>

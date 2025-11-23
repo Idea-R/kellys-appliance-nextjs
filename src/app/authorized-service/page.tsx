@@ -4,6 +4,8 @@ import Layout from '@/components/Layout'
 import EmblaBrandCarousel from '@/components/EmblaBrandCarousel'
 import TypewriterText from '@/components/TypewriterText'
 import RevealOnScroll from '@/components/RevealOnScroll'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Factory Authorized Appliance Repair Services | Kelly\'s Appliance Center',
@@ -12,6 +14,7 @@ export const metadata: Metadata = {
 }
 
 export default function AuthorizedServicePage() {
+  const breadcrumbs = generateBreadcrumbs('/authorized-service', metadata.title);
   const authorizedBrands = [
     {
       name: 'Maytag',
@@ -80,6 +83,7 @@ export default function AuthorizedServicePage() {
 
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-green-700 text-white py-16">

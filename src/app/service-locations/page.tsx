@@ -5,7 +5,8 @@ import React from 'react'
 import GoogleMapWithServiceArea from '@/components/GoogleMapWithServiceArea'
 import { getCompanyInfo } from '@/lib/content'
 import Layout from '@/components/Layout'
-import { counties } from '@/lib/locations'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata = {
   title: "Service Locations | Kelly's Appliance Center",
@@ -34,60 +35,62 @@ const serviceLocations = [
   // (deduped) San Rafael and Novato already listed above
 ]
 
-import type { LatLngMarker as MapMarker, MapBounds } from '@/components/ServiceAreaMap'
+// Legacy code - retained for reference but no longer used after switching to ServiceAreaMap positioning
+// import type { LatLngMarker as MapMarker, MapBounds } from '@/components/ServiceAreaMap'
 
 // Bounding box for the static map image at /images/service-area.jpg
 // Updated to cover actual service area: Bodega Bay to Guerneville, Healdsburg, Santa Rosa, Sonoma, Napa, Petaluma, Marin (Sausalito, Mill Valley, Novato)
-const mapBounds: MapBounds = {
-  north: 38.65, // ~Healdsburg
-  south: 37.85, // ~Sausalito/Mill Valley
-  west: -123.10, // ~coast west of Bodega Bay
-  east: -122.25, // ~east of Napa
-}
+// const mapBounds: MapBounds = {
+//   north: 38.65, // ~Healdsburg
+//   south: 37.85, // ~Sausalito/Mill Valley
+//   west: -123.10, // ~coast west of Bodega Bay
+//   east: -122.25, // ~east of Napa
+// }
 
 // Standardize markers from the centralized county/city registry and a coordinate map
-const cityCoords: Record<string, { lat: number; lng: number }> = {
-  // Sonoma
-  'santa-rosa': { lat: 38.440, lng: -122.714 },
-  'petaluma': { lat: 38.232, lng: -122.636 },
-  'rohnert-park': { lat: 38.339, lng: -122.701 },
-  'cotati': { lat: 38.327, lng: -122.707 },
-  'sebastopol': { lat: 38.402, lng: -122.823 },
-  'sonoma': { lat: 38.291, lng: -122.458 },
-  'windsor': { lat: 38.547, lng: -122.816 },
-  'healdsburg': { lat: 38.610, lng: -122.869 },
-  'forestville': { lat: 38.473, lng: -122.891 },
-  'guerneville': { lat: 38.501, lng: -123.006 },
-  'glen-ellen': { lat: 38.364, lng: -122.524 },
-  'bodega-bay': { lat: 38.333, lng: -123.048 },
-  'dillon-beach': { lat: 38.246, lng: -122.963 },
-  // Marin
-  'san-rafael': { lat: 37.973, lng: -122.531 },
-  'novato': { lat: 38.106, lng: -122.569 },
-  'mill-valley': { lat: 37.906, lng: -122.545 },
-  'sausalito': { lat: 37.859, lng: -122.485 },
-  'tiburon': { lat: 37.873, lng: -122.456 },
-  'corte-madera': { lat: 37.925, lng: -122.516 },
-  'larkspur': { lat: 37.936, lng: -122.535 },
-  // Napa
-  'napa': { lat: 38.297, lng: -122.286 },
-}
+// const cityCoords: Record<string, { lat: number; lng: number }> = {
+//   // Sonoma
+//   'santa-rosa': { lat: 38.440, lng: -122.714 },
+//   'petaluma': { lat: 38.232, lng: -122.636 },
+//   'rohnert-park': { lat: 38.339, lng: -122.701 },
+//   'cotati': { lat: 38.327, lng: -122.707 },
+//   'sebastopol': { lat: 38.402, lng: -122.823 },
+//   'sonoma': { lat: 38.291, lng: -122.458 },
+//   'windsor': { lat: 38.547, lng: -122.816 },
+//   'healdsburg': { lat: 38.610, lng: -122.869 },
+//   'forestville': { lat: 38.473, lng: -122.891 },
+//   'guerneville': { lat: 38.501, lng: -123.006 },
+//   'glen-ellen': { lat: 38.364, lng: -122.524 },
+//   'bodega-bay': { lat: 38.333, lng: -123.048 },
+//   'dillon-beach': { lat: 38.246, lng: -122.963 },
+//   // Marin
+//   'san-rafael': { lat: 37.973, lng: -122.531 },
+//   'novato': { lat: 38.106, lng: -122.569 },
+//   'mill-valley': { lat: 37.906, lng: -122.545 },
+//   'sausalito': { lat: 37.859, lng: -122.485 },
+//   'tiburon': { lat: 37.873, lng: -122.456 },
+//   'corte-madera': { lat: 37.925, lng: -122.516 },
+//   'larkspur': { lat: 37.936, lng: -122.535 },
+//   // Napa
+//   'napa': { lat: 38.297, lng: -122.286 },
+// }
 
-const serviceAreaMarkers: MapMarker[] = Object.values(counties)
-  .flatMap((c) => c.cities)
-  .map((city) => ({
-    name: city.name,
-    slug: city.slug,
-    lat: cityCoords[city.slug]?.lat ?? 0,
-    lng: cityCoords[city.slug]?.lng ?? 0,
-  }))
-  .filter((m) => m.lat !== 0 && m.lng !== 0)
-
-// retained from earlier version; no longer used after switching to ServiceAreaMap positioning
+// const serviceAreaMarkers: MapMarker[] = Object.values(counties)
+//   .flatMap((c) => c.cities)
+//   .map((city) => ({
+//     name: city.name,
+//     slug: city.slug,
+//     lat: cityCoords[city.slug]?.lat ?? 0,
+//     lng: cityCoords[city.slug]?.lng ?? 0,
+//   }))
+//   .filter((m) => m.lat !== 0 && m.lng !== 0)
 
 export default function ServiceLocationsPage() {
+  const breadcrumbs = generateBreadcrumbs('/service-locations', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
     <div className="min-h-screen bg-white">
       {/* Hero */}
       <section className="relative bg-gradient-to-r from-green-800 via-green-700 to-green-600 text-white py-16">

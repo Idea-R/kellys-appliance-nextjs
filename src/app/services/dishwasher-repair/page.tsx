@@ -10,6 +10,8 @@ import ProcessTimeline from '@/components/ProcessTimeline';
 import ServiceCallout from '@/components/ServiceCallout';
 import FloatingBadge from '@/components/FloatingBadge';
 import ServiceDetailSection from '@/components/ServiceDetailSection';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
@@ -53,8 +55,11 @@ const repairProcess = [
 ];
 
 export default function DishwasherRepairPage() {
+  const breadcrumbs = generateBreadcrumbs('/services/dishwasher-repair', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       {/* Enhanced Hero Section */}
       <section className="relative bg-gradient-to-r from-green-800 to-green-600 text-white py-20 overflow-hidden">
         {/* Decorative elements */}

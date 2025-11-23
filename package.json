@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:test": "next build && echo Build complete! Run 'npm run serve' to test locally.",
+    "serve": "npx serve@latest out -p 3000",
+    "test:build": "npm run build && npm run serve",
     "preview": "wrangler pages dev out",
     "deploy": "wrangler pages deploy out --project-name=kellys-appliance-nextjs",
     "start": "next start",

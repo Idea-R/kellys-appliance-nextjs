@@ -9,6 +9,8 @@ import { WrenchScrewdriverIcon, PhoneIcon, CheckCircleIcon, CalendarIcon } from 
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import { BOOKING_CONFIG } from '@/lib/booking-constants';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
@@ -51,8 +53,11 @@ const guarantees = [
 ];
 
 export default function ServicesPage() {
+  const breadcrumbs = generateBreadcrumbs('/services', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-green-800 via-green-700 to-green-600 text-white py-16">
         <div className="absolute inset-0 bg-black opacity-50"></div>

@@ -5,6 +5,8 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import ContentSection from '@/components/ContentSection';
 import { BOOKING_CONFIG } from '@/lib/booking-constants';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 
@@ -23,8 +25,11 @@ const features = [
 ];
 
 export default function RefrigeratorRepairPage() {
+  const breadcrumbs = generateBreadcrumbs('/services/refrigerator-repair', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

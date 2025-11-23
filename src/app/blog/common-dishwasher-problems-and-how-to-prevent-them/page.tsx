@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 export const metadata = {
   title: 'Common Dishwasher Problems and How to Prevent Them - Kelly\'s Appliance Center',
@@ -9,8 +11,11 @@ export const metadata = {
 };
 
 export default function DishwasherPostPage() {
+  const breadcrumbs = generateBreadcrumbs('/blog/common-dishwasher-problems-and-how-to-prevent-them', metadata.title);
+
   return (
     <Layout>
+      <Breadcrumbs items={breadcrumbs} />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
