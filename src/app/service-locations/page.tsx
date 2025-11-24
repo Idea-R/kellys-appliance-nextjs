@@ -204,19 +204,49 @@ export default function ServiceLocationsPage() {
               </li>
             </ul>
           </div>
-          <div className="relative">
-            {/* Google Business Profile Embed - Shows business location and reviews */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99154.73935582353!2d-122.8697!3d38.5816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808442c56db4e3a5%3A0x3cfe9df7b8bf0eed!2sKelly%27s%20Appliance%20Center!5e0!3m2!1sen!2sus!4v1703123456789!5m2!1sen!2sus"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              title="Kelly's Appliance Center - Google Business Profile Reviews"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg shadow-lg"
-            />
+          <div className="space-y-4">
+            {/* Google Business Profile Cards - Similar to K2 implementation */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Write a Review Card */}
+              <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                <div className="mb-3 p-3 bg-green-600 rounded-full inline-flex">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Google Reviews</h4>
+                <p className="text-sm text-gray-700 mb-4">
+                  Share your experience
+                </p>
+                <a
+                  href="https://maps.app.goo.gl/x9Uop8o7DNMfSufj9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors text-sm w-full"
+                >
+                  Write a Review
+                </a>
+              </div>
+
+              {/* View Business Profile Card */}
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                <div className="mb-3 p-3 bg-blue-600 rounded-full inline-flex">
+                  <MapPinIcon className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Business Profile</h4>
+                <p className="text-sm text-gray-700 mb-4">
+                  View hours & info
+                </p>
+                <a
+                  href="https://www.google.com/search?q=Kelly%27s+Appliance+Center+Cotati"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm w-full"
+                >
+                  View on Google
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

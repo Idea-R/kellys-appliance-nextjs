@@ -1,9 +1,12 @@
+'use client'
+
 import React from 'react'
+import { Star, MessageSquare, ExternalLink } from 'lucide-react'
 
 export default function GoogleReviews() {
-  // Google Business Profile embed URL - shows business location with reviews
-  // Using Google Maps embed with Place ID to display business profile and reviews
-  const googleBusinessEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99154.73935582353!2d-122.8697!3d38.5816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808442c56db4e3a5%3A0x3cfe9df7b8bf0eed!2sKelly%27s%20Appliance%20Center!5e0!3m2!1sen!2sus!4v1703123456789!5m2!1sen!2sus"
+  // Google Business Profile review URL
+  const googleReviewUrl = "https://maps.app.goo.gl/x9Uop8o7DNMfSufj9"
+  const googleBusinessProfileUrl = "https://www.google.com/search?q=Kelly%27s+Appliance+Center+Cotati"
 
   return (
     <section className="py-16 bg-white">
@@ -23,28 +26,61 @@ export default function GoogleReviews() {
           </div>
         </div>
 
-        {/* Google Business Profile Embed - Shows business location and reviews */}
-        <div className="rounded-lg overflow-hidden shadow-lg mb-8" style={{ minHeight: '600px' }}>
-          <iframe
-            src={googleBusinessEmbedUrl}
-            width="100%"
-            height="600"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Kelly's Appliance Center - Google Business Profile Reviews"
-            className="w-full"
-          />
+        {/* Google Business Profile Cards - Similar to K2 implementation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {/* Write a Review Card */}
+          <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 rounded-xl p-8 text-center hover:shadow-lg transition-all duration-300">
+            <div className="mb-4 p-4 bg-green-600 rounded-full inline-flex">
+              <MessageSquare className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Google Reviews</h3>
+            <p className="text-gray-700 mb-6">
+              Share your experience and help others find quality service
+            </p>
+            <a
+              href={googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors w-full"
+            >
+              <MessageSquare className="w-5 h-5 mr-2" />
+              Write a Review
+            </a>
+          </div>
+
+          {/* View Business Profile Card */}
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-8 text-center hover:shadow-lg transition-all duration-300">
+            <div className="mb-4 p-4 bg-blue-600 rounded-full inline-flex">
+              <ExternalLink className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Google Business Profile</h3>
+            <p className="text-gray-700 mb-6">
+              View our hours, location, and verified business information
+            </p>
+            <a
+              href={googleBusinessProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors w-full"
+            >
+              <ExternalLink className="w-5 h-5 mr-2" />
+              View on Google
+            </a>
+          </div>
         </div>
 
+        {/* Note about reviews */}
         <div className="text-center">
+          <p className="text-sm text-gray-600 mb-4">
+            To see all reviews, visit our Google Business Profile
+          </p>
           <a
-            href="https://maps.app.goo.gl/x9Uop8o7DNMfSufj9"
+            href={googleReviewUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
           >
+            <Star className="w-5 h-5 mr-2" />
             Read All Reviews on Google
           </a>
         </div>

@@ -16,7 +16,8 @@ export default function ServiceAreaMapCircles({
   showOfficeMarker = true 
 }: Props) {
   const mapRef = useRef<HTMLDivElement>(null)
-  const apiKeyValue = apiKey || process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  // Check both variable names for compatibility
+  const apiKeyValue = apiKey || process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || process.env.NEXT_GOOGLE_MAPS_API_KEY
   
   const { error } = useGoogleMapsCityBoundaries(
     mapRef,
@@ -41,7 +42,7 @@ export default function ServiceAreaMapCircles({
       <div className={`flex items-center justify-center bg-gray-100 rounded-lg ${className}`} style={{ minHeight: '400px', width: '100%' }}>
         <div className="text-center p-4">
           <p className="text-red-600 font-medium mb-2">Google Maps API key is required</p>
-          <p className="text-sm text-gray-600">Please set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY environment variable</p>
+          <p className="text-sm text-gray-600">Please set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY environment variable in Cloudflare Pages</p>
         </div>
       </div>
     )
