@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { Loader } from '@googlemaps/js-api-loader'
+import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 
 type ServiceAreaConfig = {
   sonomaCounty: google.maps.LatLngLiteral[]
@@ -47,15 +47,25 @@ export default function GoogleMapWithServiceArea({ apiKey, businessLocation, cla
   useEffect(() => {
     if (!mapRef.current) return
 
-    const loader = new Loader({
-      apiKey,
+    // Set options for Google Maps API (only once)
+    // Type assertion needed as setOptions types may not include apiKey in current version
+    setOptions({
+      apiKey: apiKey,
       version: 'weekly',
-      libraries: ['places', 'geometry'],
-    })
+    } as Parameters<typeof setOptions>[0])
 
-    // @ts-expect-error - Loader.load() exists but type definition may be outdated
-    loader.load().then((google) => {
-        const map = new google.maps.Map(mapRef.current!, {
+    // Load required libraries and initialize map
+    Promise.all([
+      importLibrary('maps'),
+      importLibrary('places'),
+      importLibrary('geometry'),
+    ])
+      .then(() => {
+        if (!mapRef.current || typeof window === 'undefined' || !window.google?.maps) return
+
+        const { Map, Marker, Polygon } = window.google.maps
+
+        const map = new Map(mapRef.current, {
           center: businessLocation,
           zoom: 9,
           mapTypeControl: true,
@@ -64,7 +74,7 @@ export default function GoogleMapWithServiceArea({ apiKey, businessLocation, cla
         })
 
         // Add business location marker
-        new google.maps.Marker({
+        new Marker({
           position: businessLocation,
           map,
           title: "Kelly's Appliance Center",
@@ -83,21 +93,21 @@ export default function GoogleMapWithServiceArea({ apiKey, businessLocation, cla
         }
 
         // Sonoma County overlay
-        new google.maps.Polygon({
+        new Polygon({
           paths: serviceAreas.sonomaCounty,
           ...polygonOptions,
           map,
         })
 
         // Marin County overlay
-        new google.maps.Polygon({
+        new Polygon({
           paths: serviceAreas.marinCounty,
           ...polygonOptions,
           map,
         })
 
         // Napa City overlay
-        new google.maps.Polygon({
+        new Polygon({
           paths: serviceAreas.napaCity,
           ...polygonOptions,
           map,

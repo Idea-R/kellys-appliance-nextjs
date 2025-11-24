@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState, RefObject } from 'react'
-import { Loader } from '@googlemaps/js-api-loader'
+import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 import { CityBoundariesConfig, loadCityBoundaries } from './cityBoundaries'
 
 interface UseGoogleMapsCityBoundariesOptions {
@@ -14,6 +14,7 @@ interface UseGoogleMapsCityBoundariesOptions {
 // Singleton pattern to prevent multiple script loads
 let mapsLoadingPromise: Promise<void> | null = null
 let mapsLoaded = false
+let optionsSet = false
 
 function loadGoogleMapsScript(apiKey: string): Promise<void> {
   if (mapsLoaded && typeof window !== 'undefined' && window.google?.maps) {
@@ -44,14 +45,22 @@ function loadGoogleMapsScript(apiKey: string): Promise<void> {
     return mapsLoadingPromise
   }
 
-  const loader = new Loader({
-    apiKey,
-    version: 'weekly',
-    libraries: ['places', 'geometry'],
-  })
+  // Set options if not already set
+  if (!optionsSet) {
+    // Type assertion needed as setOptions types may not include apiKey in current version
+    setOptions({
+      apiKey,
+      version: 'weekly',
+    } as Parameters<typeof setOptions>[0])
+    optionsSet = true
+  }
 
-  // @ts-expect-error - Loader.load() exists but type definition may be outdated
-  mapsLoadingPromise = loader.load().then(() => {
+  // Load required libraries
+  mapsLoadingPromise = Promise.all([
+    importLibrary('maps'),
+    importLibrary('places'),
+    importLibrary('geometry'),
+  ]).then(() => {
     mapsLoaded = true
   }).catch((error: Error) => {
     mapsLoadingPromise = null
@@ -87,9 +96,9 @@ export function useGoogleMapsCityBoundaries(
     if (mapLoaded || !mapRef.current) return
 
     loadGoogleMapsScript(apiKey)
-      .then(() => {
-        if (mapRef.current && !mapLoaded && typeof window !== 'undefined' && window.google?.maps) {
-          initializeMap()
+      .then(async () => {
+        if (mapRef.current && !mapLoaded) {
+          await initializeMap()
         }
       })
       .catch((err) => {
@@ -97,10 +106,19 @@ export function useGoogleMapsCityBoundaries(
         setError('Failed to load map. Please refresh the page.')
       })
 
-    function initializeMap() {
-      if (!mapRef.current || !window.google?.maps) return
+    async function initializeMap() {
+      if (!mapRef.current || typeof window === 'undefined') return
 
-      const map = new window.google.maps.Map(mapRef.current, {
+      // Import maps library - this loads the API and makes window.google.maps available
+      await importLibrary('maps')
+
+      if (!window.google?.maps) {
+        throw new Error('Google Maps API not loaded')
+      }
+
+      const { Map, Marker } = window.google.maps
+
+      const map = new Map(mapRef.current, {
         center: config.mapOptions.defaultCenter,
         zoom: config.mapOptions.defaultZoom,
         mapTypeId: 'roadmap',
@@ -125,7 +143,7 @@ export function useGoogleMapsCityBoundaries(
 
       // Add office marker if requested
       if (showOfficeMarker) {
-        new window.google.maps.Marker({
+        new Marker({
           position: {
             lat: config.officeLocation.lat,
             lng: config.officeLocation.lng,
