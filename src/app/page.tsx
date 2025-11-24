@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import ServiceAreaMapCircles from '@/components/ServiceAreaMapCircles';
 // import AutoAnimate from '@/components/AutoAnimate'
 import dynamic from 'next/dynamic'
 const EmblaBrandCarousel = dynamic(() => import('@/components/EmblaBrandCarousel'), { ssr: false })
@@ -422,16 +423,9 @@ export default function HomePage() {
             </div>
             
             <div className="relative">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99154.73935582353!2d-122.8697!3d38.5816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808442c56db4e3a5%3A0x3cfe9df7b8bf0eed!2sKelly&#39;s%20Appliance%20Center!5e0!3m2!1sen!2sus!4v1703123456789!5m2!1sen!2sus"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                title="Map: Kelly's Appliance Center location"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-lg shadow-lg"
+              <ServiceAreaMapCircles 
+                className="w-full h-[400px]"
+                showOfficeMarker={true}
               />
             </div>
           </div>

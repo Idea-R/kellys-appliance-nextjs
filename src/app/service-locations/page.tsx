@@ -2,7 +2,7 @@ import { MapPinIcon, CheckCircleIcon, ClockIcon, PhoneIcon } from '@heroicons/re
 import Link from 'next/link'
 import AutoAnimate from '@/components/AutoAnimate'
 import React from 'react'
-import GoogleMapWithServiceArea from '@/components/GoogleMapWithServiceArea'
+import ServiceAreaMapCircles from '@/components/ServiceAreaMapCircles'
 import { getCompanyInfo } from '@/lib/content'
 import Layout from '@/components/Layout'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -220,22 +220,15 @@ export default function ServiceLocationsPage() {
         </div>
       </section>
 
-      {/* Coverage Map (interactive with service area overlay) */}
+      {/* Coverage Map (interactive with service area circles) */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Our Service Area</h3>
-          <p className="text-gray-600 mb-6 text-center">Light blue areas show Sonoma County, Marin County, and Napa City coverage</p>
-          {process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ? (
-            <GoogleMapWithServiceArea
-              apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
-              businessLocation={{ lat: 38.327, lng: -122.707 }}
-              className="w-full h-[500px]"
-            />
-          ) : (
-            <div className="w-full h-[500px] bg-gray-100 rounded-lg flex items-center justify-center">
-              <p className="text-gray-600">Map loading... (API key required)</p>
-            </div>
-          )}
+          <p className="text-gray-600 mb-6 text-center">Green circles show our service coverage areas across Sonoma County, Marin County, and Napa County</p>
+          <ServiceAreaMapCircles 
+            className="w-full h-[500px]"
+            showOfficeMarker={true}
+          />
         </div>
       </section>
 

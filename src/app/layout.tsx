@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Kelly's Appliance Center - Appliance Repair Since 1975",
+    default: "Appliance Repair Services | Kelly's Appliance Center - Since 1975",
     template: "%s | Kelly's Appliance Center"
   },
   description: "Professional appliance repair services in the Bay Area since 1975. 90 Day Money Back Guarantee. Factory Authorized Service. Call (707) 664-9702",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Kelly's Appliance Center - Appliance Repair Since 1975",
+    title: "Appliance Repair Services | Kelly's Appliance Center - Since 1975",
     description: "Professional appliance repair services in the Bay Area since 1975. 90 Day Money Back Guarantee. Factory Authorized Service.",
     url: 'https://kellysappliancerepair.com',
     siteName: "Kelly's Appliance Center",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Kelly's Appliance Center - Appliance Repair Since 1975",
+    title: "Appliance Repair Services | Kelly's Appliance Center - Since 1975",
     description: "Professional appliance repair services in the Bay Area since 1975. 90 Day Money Back Guarantee.",
     images: ['/images/kelly-appliance-team.webp'],
   },
