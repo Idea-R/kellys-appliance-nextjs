@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState, RefObject } from 'react'
-import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 import { CityBoundariesConfig, loadCityBoundaries } from './cityBoundaries'
 
 interface UseGoogleMapsCityBoundariesOptions {
@@ -14,13 +13,17 @@ interface UseGoogleMapsCityBoundariesOptions {
 // Singleton pattern to prevent multiple script loads
 let mapsLoadingPromise: Promise<void> | null = null
 let mapsLoaded = false
-let optionsSet = false
 
+/**
+ * Load Google Maps JavaScript API script with singleton pattern
+ */
 function loadGoogleMapsScript(apiKey: string): Promise<void> {
+  // If already loaded, resolve immediately
   if (mapsLoaded && typeof window !== 'undefined' && window.google?.maps) {
     return Promise.resolve()
   }
 
+  // If already loading, return existing promise
   if (mapsLoadingPromise) {
     return mapsLoadingPromise
   }
@@ -33,8 +36,10 @@ function loadGoogleMapsScript(apiKey: string): Promise<void> {
     return Promise.reject(new Error('Google Maps API key is required'))
   }
 
+  // Check if script already exists in DOM
   const existingScript = document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]')
   if (existingScript) {
+    // Script exists but may not be loaded yet, wait for it
     mapsLoadingPromise = new Promise<void>((resolve) => {
       const checkLoaded = () => {
         if (window.google?.maps) {
@@ -49,34 +54,22 @@ function loadGoogleMapsScript(apiKey: string): Promise<void> {
     return mapsLoadingPromise
   }
 
-  // Set options FIRST - this must be called before any importLibrary calls
-  if (!optionsSet) {
-    try {
-      // Type assertion needed as setOptions types may not include apiKey in current version
-      setOptions({
-        apiKey: apiKey.trim(),
-        version: 'weekly',
-      } as Parameters<typeof setOptions>[0])
-      optionsSet = true
-    } catch (err) {
-      console.error('Failed to set Google Maps options:', err)
-      return Promise.reject(err)
+  // Create new loading promise - load script directly with API key in URL
+  mapsLoadingPromise = new Promise<void>((resolve, reject) => {
+    const script = document.createElement('script')
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey.trim()}&libraries=places,geometry&loading=async`
+    script.async = true
+    script.defer = true
+    script.onload = () => {
+      mapsLoaded = true
+      resolve()
     }
-  }
-
-  // Load required libraries (marker library needed for AdvancedMarkerElement)
-  mapsLoadingPromise = Promise.all([
-    importLibrary('maps'),
-    importLibrary('marker'),
-    importLibrary('places'),
-    importLibrary('geometry'),
-  ]).then(() => {
-    mapsLoaded = true
-  }).catch((error: Error) => {
-    mapsLoadingPromise = null
-    optionsSet = false // Reset on error so we can retry
-    throw error
-  }) as Promise<void>
+    script.onerror = () => {
+      mapsLoadingPromise = null
+      reject(new Error('Failed to load Google Maps API'))
+    }
+    document.head.appendChild(script)
+  })
 
   return mapsLoadingPromise
 }
@@ -99,51 +92,42 @@ export function useGoogleMapsCityBoundaries(
   const mapInstanceRef = useRef<google.maps.Map | null>(null)
 
   useEffect(() => {
-    if (!apiKey) {
-      console.warn('NEXT_PUBLIC_GOOGLE_MAPS_API_KEY not found - map will not load')
+    if (!apiKey || apiKey.trim() === '') {
+      const errorMsg = 'Google Maps API key is missing. Please set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY environment variable.'
+      console.error(errorMsg)
+      setError(errorMsg)
       return
     }
 
     if (mapLoaded || !mapRef.current) return
 
+    // Use singleton loader to prevent multiple script loads
     loadGoogleMapsScript(apiKey)
-      .then(async () => {
+      .then(() => {
         if (mapRef.current && !mapLoaded) {
-          await initializeMap()
+          initializeMap()
         }
       })
       .catch((err) => {
         console.error('Failed to load Google Maps:', err)
-        setError('Failed to load map. Please refresh the page.')
+        setError('Failed to load map. Please check your API key configuration and refresh the page.')
       })
 
-    async function initializeMap() {
-      if (!mapRef.current || typeof window === 'undefined') return
+    function initializeMap() {
+      if (!mapRef.current || typeof window === 'undefined' || !window.google?.maps) return
 
-      // Libraries are already loaded by loadGoogleMapsScript, just verify
-      if (!window.google?.maps) {
-        throw new Error('Google Maps API not loaded')
-      }
-
-      const { Map } = window.google.maps
-      
-      // Get marker library (already loaded, but need to access it)
-      const markerLibrary = await importLibrary('marker')
-      const { AdvancedMarkerElement, PinElement } = markerLibrary
-
-      const map = new Map(mapRef.current, {
+      const map = new window.google.maps.Map(mapRef.current, {
         center: config.mapOptions.defaultCenter,
         zoom: config.mapOptions.defaultZoom,
-        mapId: 'KELLYS_APPLIANCE_MAP', // Required for AdvancedMarkerElement
         mapTypeId: 'roadmap',
         styles: [
           {
             featureType: 'water',
-            stylers: [{ color: '#e6f3ff' }],
+            stylers: [{ color: '#d1fae5' }], // Light green-tinted water (green-100)
           },
           {
             featureType: 'landscape',
-            stylers: [{ color: '#f5f5f5' }],
+            stylers: [{ color: '#f0fdf4' }], // Very light green-tinted landscape (green-50)
           },
           ...(customMapOptions.styles || []),
         ],
@@ -155,24 +139,40 @@ export function useGoogleMapsCityBoundaries(
 
       mapInstanceRef.current = map
 
-      // Add office marker if requested (using AdvancedMarkerElement - recommended)
+      // Add office marker if requested
       if (showOfficeMarker) {
-        const pinElement = new PinElement({
-          background: '#DC2626', // red-600
-          borderColor: '#991B1B', // red-800
-          glyphColor: '#FFFFFF',
-          scale: 1.2,
-        })
-
-        new AdvancedMarkerElement({
-          map: map,
-          position: {
-            lat: config.officeLocation.lat,
-            lng: config.officeLocation.lng,
-          },
-          title: config.officeLocation.address,
-          content: pinElement.element,
-        })
+        // Use AdvancedMarkerElement if available, fallback to Marker
+        if (window.google.maps.marker && window.google.maps.marker.AdvancedMarkerElement) {
+          // Use new AdvancedMarkerElement API (if available)
+          new window.google.maps.marker.AdvancedMarkerElement({
+            position: {
+              lat: config.officeLocation.lat,
+              lng: config.officeLocation.lng,
+            },
+            map: map,
+            title: config.officeLocation.address,
+            content: (() => {
+              const div = document.createElement('div')
+              div.innerHTML = 'HQ'
+              div.style.cssText = 'background-color: #16a34a; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);'
+              return div
+            })(),
+          })
+        } else {
+          // Fallback to deprecated Marker API
+          new window.google.maps.Marker({
+            position: {
+              lat: config.officeLocation.lat,
+              lng: config.officeLocation.lng,
+            },
+            map: map,
+            title: config.officeLocation.address,
+            icon: {
+              url: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+              scaledSize: new window.google.maps.Size(40, 40),
+            },
+          })
+        }
       }
 
       // Load city boundaries (circles) if requested

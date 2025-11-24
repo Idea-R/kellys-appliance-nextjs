@@ -176,7 +176,7 @@ export default function ServiceLocationsPage() {
       </section>
 
       {/* Coverage Map + Reasons */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" style={{ minHeight: '500px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Kelly's Appliance Center?</h3>
@@ -221,14 +221,16 @@ export default function ServiceLocationsPage() {
       </section>
 
       {/* Coverage Map (interactive with service area circles) */}
-      <section className="py-16">
+      <section className="py-16" style={{ minHeight: '600px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Our Service Area</h3>
           <p className="text-gray-600 mb-6 text-center">Green circles show our service coverage areas across Sonoma County, Marin County, and Napa County</p>
-          <ServiceAreaMapCircles 
-            className="w-full h-[500px]"
-            showOfficeMarker={true}
-          />
+          <div style={{ minHeight: '500px' }}>
+            <ServiceAreaMapCircles 
+              className="w-full h-[500px]"
+              showOfficeMarker={true}
+            />
+          </div>
         </div>
       </section>
 

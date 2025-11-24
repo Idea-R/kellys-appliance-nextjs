@@ -368,7 +368,7 @@ export default function HomePage() {
       {/* Google Reviews Section (removed duplicate; kept single component above) */}
 
       {/* Service Area Map Section with diagonally clipped scenic background (deferred) */}
-      <section className="relative py-16 bg-gray-50 overflow-hidden" style={{ contentVisibility: 'auto' }}>
+      <section className="relative py-16 bg-gray-50 overflow-hidden" style={{ contentVisibility: 'auto', minHeight: '600px' }}>
         <div className="absolute inset-0" aria-hidden="true" style={{ zIndex: 0, pointerEvents: 'none' }}>
           <div className="flex h-full w-full">
             {[
@@ -422,7 +422,7 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative" style={{ minHeight: '400px' }}>
               <ServiceAreaMapCircles 
                 className="w-full h-[400px]"
                 showOfficeMarker={true}

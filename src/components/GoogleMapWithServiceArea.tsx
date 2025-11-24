@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 
 type ServiceAreaConfig = {
   sonomaCounty: google.maps.LatLngLiteral[]
@@ -50,91 +49,99 @@ export default function GoogleMapWithServiceArea({ apiKey, businessLocation, cla
       return
     }
 
-    // Set options FIRST - this must be called before any importLibrary calls
-    try {
-      // Type assertion needed as setOptions types may not include apiKey in current version
-      setOptions({
-        apiKey: apiKey.trim(),
-        version: 'weekly',
-      } as Parameters<typeof setOptions>[0])
-    } catch (err) {
-      console.error('Failed to set Google Maps options:', err)
-      setError('Failed to configure Google Maps API')
-      return
+    // Load Google Maps script directly (matching K2 implementation)
+    const existingScript = document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]')
+    
+    const loadScript = () => {
+      if (window.google?.maps && mapRef.current) {
+        initializeMap()
+        return
+      }
+
+      const script = document.createElement('script')
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey.trim()}&libraries=places,geometry&loading=async`
+      script.async = true
+      script.defer = true
+      script.onload = () => {
+        if (mapRef.current) {
+          initializeMap()
+        }
+      }
+      script.onerror = () => {
+        setError('Failed to load Google Maps API')
+      }
+      document.head.appendChild(script)
     }
 
-    // Load required libraries and initialize map
-    Promise.all([
-      importLibrary('maps'),
-      importLibrary('marker'),
-      importLibrary('places'),
-      importLibrary('geometry'),
-    ])
-      .then(async () => {
-        if (!mapRef.current || typeof window === 'undefined' || !window.google?.maps) return
-
-        const { Map, Polygon } = window.google.maps
-        const markerLibrary = await importLibrary('marker')
-        const { AdvancedMarkerElement, PinElement } = markerLibrary
-
-        const map = new Map(mapRef.current, {
-          center: businessLocation,
-          zoom: 9,
-          mapId: 'KELLYS_APPLIANCE_MAP', // Required for AdvancedMarkerElement
-          mapTypeControl: true,
-          streetViewControl: false,
-          fullscreenControl: true,
-        })
-
-        // Add business location marker (using AdvancedMarkerElement - recommended)
-        const pinElement = new PinElement({
-          background: '#DC2626', // red-600
-          borderColor: '#991B1B', // red-800
-          glyphColor: '#FFFFFF',
-          scale: 1.2,
-        })
-
-        new AdvancedMarkerElement({
-          map,
-          position: businessLocation,
-          title: "Kelly's Appliance Center",
-          content: pinElement.element,
-        })
-
-        // Add service area polygons with light blue overlay
-        const polygonOptions: google.maps.PolygonOptions = {
-          fillColor: '#4285F4',
-          fillOpacity: 0.15,
-          strokeColor: '#4285F4',
-          strokeOpacity: 0.6,
-          strokeWeight: 2,
+    if (existingScript) {
+      // Script exists, wait for it to load
+      const checkLoaded = setInterval(() => {
+        if (window.google?.maps && mapRef.current) {
+          clearInterval(checkLoaded)
+          initializeMap()
         }
+      }, 100)
+      
+      // Timeout after 10 seconds
+      setTimeout(() => {
+        clearInterval(checkLoaded)
+        if (!window.google?.maps) {
+          setError('Google Maps API failed to load')
+        }
+      }, 10000)
+    } else {
+      loadScript()
+    }
 
-        // Sonoma County overlay
-        new Polygon({
-          paths: serviceAreas.sonomaCounty,
-          ...polygonOptions,
-          map,
-        })
+    function initializeMap() {
+      if (!mapRef.current || typeof window === 'undefined' || !window.google?.maps) return
 
-        // Marin County overlay
-        new Polygon({
-          paths: serviceAreas.marinCounty,
-          ...polygonOptions,
-          map,
-        })
-
-        // Napa City overlay
-        new Polygon({
-          paths: serviceAreas.napaCity,
-          ...polygonOptions,
-          map,
-        })
+      const map = new window.google.maps.Map(mapRef.current, {
+        center: businessLocation,
+        zoom: 9,
+        mapTypeControl: true,
+        streetViewControl: false,
+        fullscreenControl: true,
       })
-      .catch((e: Error) => {
-        console.error('Error loading Google Maps:', e)
-        setError('Failed to load map. Please refresh the page.')
+
+      // Add business location marker
+      new window.google.maps.Marker({
+        position: businessLocation,
+        map,
+        title: "Kelly's Appliance Center",
+        icon: {
+          url: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+        },
       })
+
+      // Add service area polygons
+      const polygonOptions: google.maps.PolygonOptions = {
+        fillColor: '#4285F4',
+        fillOpacity: 0.15,
+        strokeColor: '#4285F4',
+        strokeOpacity: 0.6,
+        strokeWeight: 2,
+      }
+
+      new window.google.maps.Polygon({
+        paths: serviceAreas.sonomaCounty,
+        ...polygonOptions,
+        map,
+      })
+
+      new window.google.maps.Polygon({
+        paths: serviceAreas.marinCounty,
+        ...polygonOptions,
+        map,
+      })
+
+      new window.google.maps.Polygon({
+        paths: serviceAreas.napaCity,
+        ...polygonOptions,
+        map,
+      })
+    }
+
   }, [apiKey, businessLocation])
 
   if (error) {

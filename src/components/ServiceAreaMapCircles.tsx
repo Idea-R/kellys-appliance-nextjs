@@ -36,19 +36,32 @@ export default function ServiceAreaMapCircles({
     )
   }
 
-  if (!apiKeyValue) {
+  if (!apiKeyValue || apiKeyValue.trim() === '') {
     return (
-      <div className={`flex items-center justify-center bg-gray-100 rounded-lg ${className}`} style={{ minHeight: '400px' }}>
-        <p className="text-gray-600">Map loading... (API key required)</p>
+      <div className={`flex items-center justify-center bg-gray-100 rounded-lg ${className}`} style={{ minHeight: '400px', width: '100%' }}>
+        <div className="text-center p-4">
+          <p className="text-red-600 font-medium mb-2">Google Maps API key is required</p>
+          <p className="text-sm text-gray-600">Please set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY environment variable</p>
+        </div>
       </div>
     )
   }
 
+  // Ensure container has fixed dimensions to prevent CLS (Cumulative Layout Shift)
+  // Extract height from className if present (e.g., "h-[400px]"), otherwise use default
+  const defaultHeight = '400px'
+  const heightMatch = className.match(/h-\[(\d+)px\]/)
+  const containerHeight = heightMatch ? `${heightMatch[1]}px` : defaultHeight
+  
   return (
     <div 
       ref={mapRef} 
       className={`rounded-lg shadow-lg ${className}`} 
-      style={{ minHeight: '400px', width: '100%' }} 
+      style={{ 
+        minHeight: containerHeight, 
+        width: '100%',
+        backgroundColor: '#f3f4f6' // Light gray background while loading to prevent flash
+      }} 
     />
   )
 }
