@@ -45,42 +45,60 @@ export default function GoogleMapWithServiceArea({ apiKey, businessLocation, cla
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    if (!mapRef.current) return
+    if (!mapRef.current || !apiKey || apiKey.trim() === '') {
+      setError('Google Maps API key is required')
+      return
+    }
 
-    // Set options for Google Maps API (only once)
-    // Type assertion needed as setOptions types may not include apiKey in current version
-    setOptions({
-      apiKey: apiKey,
-      version: 'weekly',
-    } as Parameters<typeof setOptions>[0])
+    // Set options FIRST - this must be called before any importLibrary calls
+    try {
+      // Type assertion needed as setOptions types may not include apiKey in current version
+      setOptions({
+        apiKey: apiKey.trim(),
+        version: 'weekly',
+      } as Parameters<typeof setOptions>[0])
+    } catch (err) {
+      console.error('Failed to set Google Maps options:', err)
+      setError('Failed to configure Google Maps API')
+      return
+    }
 
     // Load required libraries and initialize map
     Promise.all([
       importLibrary('maps'),
+      importLibrary('marker'),
       importLibrary('places'),
       importLibrary('geometry'),
     ])
-      .then(() => {
+      .then(async () => {
         if (!mapRef.current || typeof window === 'undefined' || !window.google?.maps) return
 
-        const { Map, Marker, Polygon } = window.google.maps
+        const { Map, Polygon } = window.google.maps
+        const markerLibrary = await importLibrary('marker')
+        const { AdvancedMarkerElement, PinElement } = markerLibrary
 
         const map = new Map(mapRef.current, {
           center: businessLocation,
           zoom: 9,
+          mapId: 'KELLYS_APPLIANCE_MAP', // Required for AdvancedMarkerElement
           mapTypeControl: true,
           streetViewControl: false,
           fullscreenControl: true,
         })
 
-        // Add business location marker
-        new Marker({
-          position: businessLocation,
+        // Add business location marker (using AdvancedMarkerElement - recommended)
+        const pinElement = new PinElement({
+          background: '#DC2626', // red-600
+          borderColor: '#991B1B', // red-800
+          glyphColor: '#FFFFFF',
+          scale: 1.2,
+        })
+
+        new AdvancedMarkerElement({
           map,
+          position: businessLocation,
           title: "Kelly's Appliance Center",
-          icon: {
-            url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-          },
+          content: pinElement.element,
         })
 
         // Add service area polygons with light blue overlay

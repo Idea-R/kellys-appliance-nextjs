@@ -29,6 +29,10 @@ function loadGoogleMapsScript(apiKey: string): Promise<void> {
     return Promise.reject(new Error('Window object not available'))
   }
 
+  if (!apiKey || apiKey.trim() === '') {
+    return Promise.reject(new Error('Google Maps API key is required'))
+  }
+
   const existingScript = document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]')
   if (existingScript) {
     mapsLoadingPromise = new Promise<void>((resolve) => {
@@ -45,25 +49,32 @@ function loadGoogleMapsScript(apiKey: string): Promise<void> {
     return mapsLoadingPromise
   }
 
-  // Set options if not already set
+  // Set options FIRST - this must be called before any importLibrary calls
   if (!optionsSet) {
-    // Type assertion needed as setOptions types may not include apiKey in current version
-    setOptions({
-      apiKey,
-      version: 'weekly',
-    } as Parameters<typeof setOptions>[0])
-    optionsSet = true
+    try {
+      // Type assertion needed as setOptions types may not include apiKey in current version
+      setOptions({
+        apiKey: apiKey.trim(),
+        version: 'weekly',
+      } as Parameters<typeof setOptions>[0])
+      optionsSet = true
+    } catch (err) {
+      console.error('Failed to set Google Maps options:', err)
+      return Promise.reject(err)
+    }
   }
 
-  // Load required libraries
+  // Load required libraries (marker library needed for AdvancedMarkerElement)
   mapsLoadingPromise = Promise.all([
     importLibrary('maps'),
+    importLibrary('marker'),
     importLibrary('places'),
     importLibrary('geometry'),
   ]).then(() => {
     mapsLoaded = true
   }).catch((error: Error) => {
     mapsLoadingPromise = null
+    optionsSet = false // Reset on error so we can retry
     throw error
   }) as Promise<void>
 
@@ -109,18 +120,21 @@ export function useGoogleMapsCityBoundaries(
     async function initializeMap() {
       if (!mapRef.current || typeof window === 'undefined') return
 
-      // Import maps library - this loads the API and makes window.google.maps available
-      await importLibrary('maps')
-
+      // Libraries are already loaded by loadGoogleMapsScript, just verify
       if (!window.google?.maps) {
         throw new Error('Google Maps API not loaded')
       }
 
-      const { Map, Marker } = window.google.maps
+      const { Map } = window.google.maps
+      
+      // Get marker library (already loaded, but need to access it)
+      const markerLibrary = await importLibrary('marker')
+      const { AdvancedMarkerElement, PinElement } = markerLibrary
 
       const map = new Map(mapRef.current, {
         center: config.mapOptions.defaultCenter,
         zoom: config.mapOptions.defaultZoom,
+        mapId: 'KELLYS_APPLIANCE_MAP', // Required for AdvancedMarkerElement
         mapTypeId: 'roadmap',
         styles: [
           {
@@ -141,18 +155,23 @@ export function useGoogleMapsCityBoundaries(
 
       mapInstanceRef.current = map
 
-      // Add office marker if requested
+      // Add office marker if requested (using AdvancedMarkerElement - recommended)
       if (showOfficeMarker) {
-        new Marker({
+        const pinElement = new PinElement({
+          background: '#DC2626', // red-600
+          borderColor: '#991B1B', // red-800
+          glyphColor: '#FFFFFF',
+          scale: 1.2,
+        })
+
+        new AdvancedMarkerElement({
+          map: map,
           position: {
             lat: config.officeLocation.lat,
             lng: config.officeLocation.lng,
           },
-          map: map,
           title: config.officeLocation.address,
-          icon: {
-            url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-          },
+          content: pinElement.element,
         })
       }
 
