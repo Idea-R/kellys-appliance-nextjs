@@ -114,7 +114,18 @@ export function useGoogleMapsCityBoundaries(
       })
 
     function initializeMap() {
-      if (!mapRef.current || typeof window === 'undefined' || !window.google?.maps) return
+      if (!mapRef.current || typeof window === 'undefined') return
+
+      // Wait for Map constructor to be available
+      if (!window.google?.maps?.Map) {
+        // Retry after a short delay
+        setTimeout(() => {
+          if (mapRef.current && !mapLoaded) {
+            initializeMap()
+          }
+        }, 100)
+        return
+      }
 
       const map = new window.google.maps.Map(mapRef.current, {
         center: config.mapOptions.defaultCenter,
