@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import { Star, MessageSquare, ExternalLink } from 'lucide-react'
 import type { ReviewsData, Review } from '@/types/reviews'
+import CardSwap from '@/components/CardSwap'
+import { Card } from '@/components/CardSwap'
 
 export default function GoogleReviews() {
   const [data, setData] = useState<ReviewsData | null>(null)
@@ -54,7 +56,7 @@ export default function GoogleReviews() {
   }
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" style={{ minHeight: '800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
@@ -124,30 +126,44 @@ export default function GoogleReviews() {
           </div>
         ) : data && data.reviews && data.reviews.length > 0 ? (
           <>
-            {/* Scrollable Reviews List */}
-            <div className="max-w-4xl mx-auto mb-8">
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
+            {/* CardSwap Reviews Display */}
+            <div className="max-w-4xl mx-auto mb-8" style={{ minHeight: '500px', height: '500px' }}>
+              <div 
+                className="bg-gray-50 rounded-xl p-6 border border-gray-200"
+                style={{ height: '100%', position: 'relative', overflow: 'hidden' }}
+              >
+                <CardSwap
+                  cardDistance={60}
+                  verticalDistance={70}
+                  delay={5000}
+                  pauseOnHover={true}
+                >
                   {data.reviews.map((review: Review, index: number) => (
-                    <article
-                      key={index}
-                      className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow"
-                    >
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="font-semibold text-gray-900">{review.author}</span>
-                            {renderStars(review.rating)}
+                    <Card key={index}>
+                      <article className="bg-white rounded-lg border-2 border-gray-200 p-6 shadow-lg h-full flex flex-col">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="flex-shrink-0">
+                            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                              <span className="text-green-700 font-bold text-lg">
+                                {review.author.charAt(0).toUpperCase()}
+                              </span>
+                            </div>
                           </div>
-                          <p className="text-gray-700 text-sm leading-relaxed">{review.text}</p>
-                          {review.relativeTime && (
-                            <p className="mt-2 text-xs text-gray-500">{review.relativeTime}</p>
-                          )}
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-900 text-lg">{review.author}</h4>
+                            <div className="flex items-center gap-1 mt-1">
+                              {renderStars(review.rating)}
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </article>
+                        <p className="text-gray-700 leading-relaxed flex-1 mb-4">{review.text}</p>
+                        {review.relativeTime && (
+                          <p className="text-xs text-gray-500 mt-auto">{review.relativeTime}</p>
+                        )}
+                      </article>
+                    </Card>
                   ))}
-                </div>
+                </CardSwap>
               </div>
             </div>
 
