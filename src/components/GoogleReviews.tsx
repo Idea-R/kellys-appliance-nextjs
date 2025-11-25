@@ -134,14 +134,14 @@ export default function GoogleReviews() {
           <>
             {/* CardSwap Reviews Display - Dark Theme */}
             <div 
-              className="max-w-4xl mx-auto mb-8 px-2 md:px-0" 
-              style={{ minHeight: '420px', height: '420px' }}
+              className="max-w-4xl mx-auto mb-12 px-2 md:px-0 relative" 
+              style={{ minHeight: '420px', height: '420px', overflow: 'hidden', paddingBottom: '60px' }}
             >
               <CardSwap
-                cardDistance={50}
-                verticalDistance={50}
+                cardDistance={40}
+                verticalDistance={30}
                 mobileCardDistance={15}
-                mobileVerticalDistance={25}
+                mobileVerticalDistance={20}
                 delay={6000}
                 pauseOnHover={true}
               >

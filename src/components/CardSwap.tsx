@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useState, useEffect, ReactNode, useMemo } from 'react'
+import React, { useState, useEffect, ReactNode, useMemo, useRef } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 export interface CardProps {
   children: ReactNode
@@ -65,6 +66,8 @@ export default function CardSwap({
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const containerRef = React.useRef<HTMLDivElement>(null)
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
+  const touchEndRef = useRef<{ x: number; y: number } | null>(null)
   
   const isMobile = useIsMobile()
   const prefersReducedMotion = useReducedMotion()
@@ -111,9 +114,54 @@ export default function CardSwap({
     })
   }
 
-  // Navigation dots for manual control
+  // Navigation functions
   const goToCard = (index: number) => {
     setCurrentIndex(index)
+  }
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + childrenCount) % childrenCount)
+  }
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % childrenCount)
+  }
+
+  // Touch swipe handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartRef.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    }
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndRef.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    }
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStartRef.current || !touchEndRef.current) return
+
+    const deltaX = touchStartRef.current.x - touchEndRef.current.x
+    const deltaY = touchStartRef.current.y - touchEndRef.current.y
+    const minSwipeDistance = 50
+
+    // Only trigger if horizontal swipe is greater than vertical (prevent scroll conflicts)
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+      if (deltaX > 0) {
+        // Swipe left - go to next
+        goToNext()
+      } else {
+        // Swipe right - go to previous
+        goToPrevious()
+      }
+    }
+
+    touchStartRef.current = null
+    touchEndRef.current = null
   }
 
   return (
@@ -126,6 +174,9 @@ export default function CardSwap({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onWheel={handleWheel}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d' }}>
           {childrenArray.map((child, index) => {
@@ -146,8 +197,8 @@ export default function CardSwap({
             const translateX = offset * effectiveCardDistance
             const translateY = absOffset * effectiveVerticalDistance
             const translateZ = isActive ? 0 : -absOffset * 50
-            const rotate = offset * 3 // Rotation for stacking effect
-            const rotateY = offset * 2 // Subtle Y rotation for 3D
+            const rotate = offset * 1.5 // Reduced rotation for smoother effect
+            const rotateY = offset * 1 // Subtle Y rotation for 3D
             const scale = isActive ? 1 : Math.max(0.9, 1 - absOffset * 0.05)
             const opacity = isActive ? 1 : Math.max(0.4, 1 - absOffset * 0.25)
 
@@ -155,8 +206,8 @@ export default function CardSwap({
             const shadowBlur = isActive ? 30 : 15 - absOffset * 3
             const shadowOpacity = isActive ? 0.3 : 0.15 - absOffset * 0.03
 
-            const transitionDuration = prefersReducedMotion ? '0ms' : '600ms'
-            const transitionTiming = 'cubic-bezier(0.34, 1.56, 0.64, 1)' // ease-out-back
+            const transitionDuration = prefersReducedMotion ? '0ms' : '500ms'
+            const transitionTiming = 'cubic-bezier(0.4, 0, 0.2, 1)' // smoother ease-in-out
 
             return (
               <div
@@ -186,21 +237,42 @@ export default function CardSwap({
         </div>
       </div>
 
-      {/* Navigation dots */}
+      {/* Navigation controls */}
       {childrenCount > 1 && (
-        <div className="flex justify-center gap-2 mt-4 pb-2">
-          {childrenArray.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToCard(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? 'bg-green-600 scale-125'
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-              aria-label={`Go to review ${index + 1}`}
-            />
-          ))}
+        <div className="flex items-center justify-center gap-4 mt-6 pb-2">
+          {/* Previous button */}
+          <button
+            onClick={goToPrevious}
+            className="p-2 rounded-full bg-white border-2 border-green-600 text-green-600 hover:bg-green-50 transition-colors shadow-sm hover:shadow-md"
+            aria-label="Previous review"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Navigation dots */}
+          <div className="flex justify-center gap-2">
+            {childrenArray.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToCard(index)}
+                className={`rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'bg-green-600 w-8 h-3'
+                    : 'bg-gray-300 hover:bg-gray-400 w-3 h-3'
+                }`}
+                aria-label={`Go to review ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Next button */}
+          <button
+            onClick={goToNext}
+            className="p-2 rounded-full bg-white border-2 border-green-600 text-green-600 hover:bg-green-50 transition-colors shadow-sm hover:shadow-md"
+            aria-label="Next review"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       )}
     </div>
