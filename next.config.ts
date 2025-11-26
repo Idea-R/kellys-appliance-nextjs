@@ -150,6 +150,11 @@ const nextConfig: NextConfig = {
         destination: "/services/oven-repair",
         permanent: true,
       },
+      {
+        source: "/authorized-service/dishwasher-repair",
+        destination: "/services/dishwasher-repair",
+        permanent: true,
+      },
 
       // Additional blog post redirects
       {
@@ -191,6 +196,129 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/services/range-oven-repair",
+        destination: "/services/oven-repair",
+        permanent: true,
+      },
+
+      // Design preview test page cleanup
+      {
+        source: "/design-preview",
+        destination: "/",
+        permanent: true,
+      },
+
+      // Trailing slash redirects for Google-indexed 404 URLs
+      // These are needed because Cloudflare doesn't auto-strip trailing slashes on non-existent paths
+      {
+        source: "/appliance-repair-marin-county/",
+        destination: "/appliance-repair-marin-county",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-napa/",
+        destination: "/appliance-repair-napa",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-petaluma/",
+        destination: "/appliance-repair-petaluma",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-santa-rosa/",
+        destination: "/appliance-repair-santa-rosa",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-san-rafael/",
+        destination: "/appliance-repair-san-rafael",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-sebastopol/",
+        destination: "/appliance-repair-sebastopol",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-windsor/",
+        destination: "/appliance-repair-windsor",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-novato/",
+        destination: "/appliance-repair-novato",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-sonoma/",
+        destination: "/appliance-repair-sonoma",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-rohnert-park/",
+        destination: "/service-locations/rohnert-park",
+        permanent: true,
+      },
+      // Blog post trailing slash redirects
+      {
+        source: "/common-dishwasher-problems-and-how-to-prevent-them/",
+        destination: "/blog/common-dishwasher-problems-and-how-to-prevent-them",
+        permanent: true,
+      },
+      {
+        source: "/why-is-my-dryer-taking-so-long-to-dry-clothes/",
+        destination: "/blog/why-is-my-dryer-taking-so-long-to-dry-clothes",
+        permanent: true,
+      },
+      {
+        source: "/what-is-the-best-way-to-clean-stainless-steel-appliances/",
+        destination: "/blog/what-is-the-best-way-to-clean-stainless-steel-appliances",
+        permanent: true,
+      },
+      {
+        source: "/why-you-should-call-a-professional-to-repair-your-appliances/",
+        destination: "/blog/why-you-should-call-a-professional-to-repair-your-appliances",
+        permanent: true,
+      },
+      {
+        source: "/top-5-tips-for-buying-a-home-appliance/",
+        destination: "/blog/top-5-tips-for-buying-a-home-appliance",
+        permanent: true,
+      },
+      {
+        source: "/avoid-appliance-repair-scams/",
+        destination: "/blog/what-is-the-best-way-to-avoid-appliance-repair-scams",
+        permanent: true,
+      },
+      // Authorized service trailing slash redirects
+      {
+        source: "/authorized-service/dishwasher-repair/",
+        destination: "/services/dishwasher-repair",
+        permanent: true,
+      },
+      {
+        source: "/authorized-service/refrigerator-repair/",
+        destination: "/services/refrigerator-repair",
+        permanent: true,
+      },
+      {
+        source: "/authorized-service/washer-dryer-repair/",
+        destination: "/services/washer-dryer-repair",
+        permanent: true,
+      },
+      {
+        source: "/authorized-service/range-oven-repair/",
+        destination: "/services/oven-repair",
+        permanent: true,
+      },
+      // Other trailing slash redirects
+      {
+        source: "/portfolio-items/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/services/range-oven-repair/",
         destination: "/services/oven-repair",
         permanent: true,
       },
