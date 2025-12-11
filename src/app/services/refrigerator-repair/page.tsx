@@ -7,6 +7,8 @@ import ContentSection from '@/components/ContentSection';
 import { BOOKING_CONFIG } from '@/lib/booking-constants';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
+import FAQJsonLd from '@/components/FAQJsonLd';
+import { refrigeratorFaqs } from '@/data/faqs';
 
 const companyInfo = getCompanyInfo();
 
@@ -360,6 +362,7 @@ export default function RefrigeratorRepairPage() {
           })
         }}
       />
+      <FAQJsonLd faqs={refrigeratorFaqs} />
     </Layout>
   );
 }

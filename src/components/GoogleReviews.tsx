@@ -76,7 +76,7 @@ export default function GoogleReviews() {
   )
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden" style={{ minHeight: '700px' }}>
+    <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden" style={{ minHeight: '800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
@@ -109,7 +109,7 @@ export default function GoogleReviews() {
 
         {/* Reviews Display */}
         {loading ? (
-          <div className="max-w-4xl mx-auto mb-8" style={{ minHeight: '420px', height: '420px' }}>
+          <div className="max-w-4xl mx-auto mb-8" style={{ minHeight: '520px', height: '520px' }}>
             <div className="p-4 md:p-6 h-full">
               <ReviewSkeleton />
             </div>
@@ -135,7 +135,7 @@ export default function GoogleReviews() {
             {/* CardSwap Reviews Display - Dark Theme */}
             <div 
               className="max-w-4xl mx-auto mb-12 px-2 md:px-0 relative" 
-              style={{ minHeight: '420px', height: '420px', overflow: 'hidden', paddingBottom: '60px' }}
+              style={{ minHeight: '520px', height: '520px', overflow: 'hidden', paddingBottom: '60px' }}
             >
               <CardSwap
                 cardDistance={40}
@@ -150,7 +150,7 @@ export default function GoogleReviews() {
                     <article 
                       className="bg-gradient-to-br from-green-800 via-green-850 to-green-900 
                         rounded-2xl border border-green-500/20 
-                        p-5 md:p-8 h-full flex flex-col
+                        p-6 md:p-10 h-full flex flex-col
                         shadow-[0_20px_50px_rgba(0,0,0,0.3)]
                         relative overflow-hidden"
                     >
@@ -158,52 +158,52 @@ export default function GoogleReviews() {
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 via-emerald-400 to-green-400" />
                       
                       {/* Quote icon */}
-                      <Quote className="absolute top-4 right-4 md:top-6 md:right-6 w-8 h-8 md:w-12 md:h-12 text-green-600/30" />
+                      <Quote className="absolute top-6 right-6 md:top-8 md:right-8 w-10 h-10 md:w-14 md:h-14 text-green-600/30" />
                       
                       {/* Header with avatar and info */}
-                      <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6 relative z-10">
+                      <div className="flex items-center gap-4 mb-6 relative z-10">
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg ring-2 ring-green-400/30">
-                            <span className="text-green-900 font-bold text-lg md:text-xl">
+                          <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg ring-2 ring-green-400/30">
+                            <span className="text-green-900 font-bold text-xl md:text-2xl">
                               {review.author.charAt(0).toUpperCase()}
                             </span>
                           </div>
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <h4 className="font-semibold text-white text-base md:text-lg truncate">{review.author}</h4>
+                            <h4 className="font-semibold text-white text-lg md:text-xl truncate">{review.author}</h4>
                             {/* Google verified badge */}
-                            <svg className="w-4 h-4 md:w-5 md:h-5 text-blue-400 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                            <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-400 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                             </svg>
                           </div>
-                          <div className="flex items-center gap-2 mt-1">
+                          <div className="flex items-center gap-2 mt-1.5">
                             {renderStars(review.rating, 'sm')}
-                            <span className="text-green-300/70 text-xs md:text-sm">Google Review</span>
+                            <span className="text-green-300/70 text-sm">Google Review</span>
                           </div>
                         </div>
                       </div>
                       
-                      {/* Review text */}
-                      <div className="flex-1 relative z-10 overflow-hidden">
-                        <p className="text-green-50/90 leading-relaxed text-sm md:text-base line-clamp-6 md:line-clamp-5">
+                      {/* Review text - more room for content */}
+                      <div className="flex-1 relative z-10 overflow-y-auto pr-2 custom-scrollbar">
+                        <p className="text-green-50/95 leading-relaxed text-base md:text-lg">
                           &ldquo;{review.text}&rdquo;
                         </p>
                       </div>
                       
                       {/* Footer with timestamp */}
-                      <div className="flex items-center justify-between mt-4 pt-4 border-t border-green-600/30 relative z-10">
+                      <div className="flex items-center justify-between mt-6 pt-4 border-t border-green-600/30 relative z-10">
                         {review.relativeTime && (
-                          <p className="text-green-300/60 text-xs md:text-sm">{review.relativeTime}</p>
+                          <p className="text-green-300/60 text-sm">{review.relativeTime}</p>
                         )}
                         <a 
                           href={googleReviewUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-green-400 hover:text-green-300 text-xs md:text-sm font-medium transition-colors flex items-center gap-1"
+                          className="text-green-400 hover:text-green-300 text-sm font-medium transition-colors flex items-center gap-1.5"
                         >
                           View on Google
-                          <ExternalLink className="w-3 h-3" />
+                          <ExternalLink className="w-4 h-4" />
                         </a>
                       </div>
                     </article>

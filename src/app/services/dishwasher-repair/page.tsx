@@ -12,6 +12,8 @@ import FloatingBadge from '@/components/FloatingBadge';
 import ServiceDetailSection from '@/components/ServiceDetailSection';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
+import FAQJsonLd from '@/components/FAQJsonLd';
+import { dishwasherFaqs } from '@/data/faqs';
 
 const companyInfo = getCompanyInfo();
 
@@ -288,6 +290,7 @@ export default function DishwasherRepairPage() {
           })
         }}
       />
+      <FAQJsonLd faqs={dishwasherFaqs} />
     </Layout>
   );
 }

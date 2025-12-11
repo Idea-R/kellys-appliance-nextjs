@@ -47,9 +47,7 @@ export default function PetalumaPage() {
                 Call {companyInfo.phone}
               </a>
               <a
-                href="https://booking.rossware.com/schedule/4588"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/schedule-prep"
                 className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 Request Appointment
