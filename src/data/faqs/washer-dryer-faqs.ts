@@ -27,3 +27,6 @@ export const washerDryerFaqs: FAQ[] = [
   }
 ]
 
+
+
+

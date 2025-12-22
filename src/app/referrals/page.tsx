@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import Layout from '@/components/Layout'
 
 export const metadata: Metadata = {
-  title: 'Referrals & Trusted Partners | Kelly\'s Appliance Center',
+  title: 'Referrals & Trusted Partners',
   description: 'Trusted local partners for home services: contractors, HVAC, plumbing, electricians, landscaping, cleaning, mechanics, and appliance installation.',
 }
 

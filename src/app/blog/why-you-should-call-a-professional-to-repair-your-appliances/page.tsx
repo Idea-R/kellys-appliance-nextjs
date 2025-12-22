@@ -9,7 +9,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Why You Should Call a Professional to Repair Your Appliances | Kelly\'s Appliance Center',
+  title: 'Why You Should Call a Professional to Repair Your Appliances',
   description: 'Top reasons why you should call a professional for appliance repairs to protect you, your family and your wallet',
 };
 

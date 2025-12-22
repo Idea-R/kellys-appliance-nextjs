@@ -12,7 +12,7 @@ import FloatingBadge from '@/components/FloatingBadge';
 import ServiceDetailSection from '@/components/ServiceDetailSection';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
-import FAQJsonLd from '@/components/FAQJsonLd';
+import FAQSection from '@/components/FAQSection';
 import { dishwasherFaqs } from '@/data/faqs';
 
 const companyInfo = getCompanyInfo();
@@ -240,7 +240,7 @@ export default function DishwasherRepairPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
-              Request Appointment Online Online
+              Request Appointment Online
             </a>
           </div>
         </div>
@@ -290,7 +290,11 @@ export default function DishwasherRepairPage() {
           })
         }}
       />
-      <FAQJsonLd faqs={dishwasherFaqs} />
+      <FAQSection
+        title="Dishwasher Repair FAQs"
+        subtitle="Fast answers about leaks, draining issues, scheduling, and pricing."
+        faqs={dishwasherFaqs}
+      />
     </Layout>
   );
 }

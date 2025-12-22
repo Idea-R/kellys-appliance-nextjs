@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 
 export const metadata = {
-  title: 'Before Requesting an Appointment | Kelly\'s Appliance Center',
+  title: 'Before Requesting an Appointment',
   description: 'Checklist of what to have ready before requesting an appointment: model/serial, availability, issue description, and photos.',
 }
 

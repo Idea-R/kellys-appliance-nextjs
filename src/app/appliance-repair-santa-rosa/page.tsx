@@ -11,7 +11,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Appliance Repair Santa Rosa - Kelly\'s Appliance Center',
+  title: 'Appliance Repair Santa Rosa',
   description: 'Find local appliance repair near you in Santa Rosa, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
   alternates: {
     canonical: 'https://kellysappliancerepair.com/service-locations/santa-rosa',

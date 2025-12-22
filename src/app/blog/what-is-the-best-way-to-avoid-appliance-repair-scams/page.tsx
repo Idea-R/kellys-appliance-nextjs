@@ -9,7 +9,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'What is the Best Way to Avoid Appliance Repair Scams? | Kelly\'s Appliance Center',
+  title: 'What is the Best Way to Avoid Appliance Repair Scams?',
   description: 'Avoid appliance repair scams with expert tips on identifying trustworthy services, avoiding fraud, and ensuring quality repairs!',
 };
 

@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata = {
-  title: 'Referrals & Trusted Partners | Kelly\'s Appliance Center',
+  title: 'Referrals & Trusted Partners',
   description: 'Local businesses we recommend. Appliance installation, vent cleaning, plumbing & HVAC.',
 }
 

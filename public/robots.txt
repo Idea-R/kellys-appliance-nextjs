@@ -1,47 +1,11 @@
-# Kelly's Appliance Center - Robots.txt
-# Optimized for Google, Bing, and AI crawlers (ChatGPT, Perplexity, Claude)
+# Kelly's Appliance Center - robots.txt
+# Keep this file simple and standards-compliant for best crawler compatibility.
 
 User-agent: *
 Allow: /
 
+# Disallow non-public routes only
+Disallow: /api/
+
 # Sitemap
 Sitemap: https://kellysappliancerepair.com/sitemap.xml
-
-# Disallow admin and build artifacts
-Disallow: /api/
-Disallow: /_next/static/
-Disallow: /_next/image/
-
-# Allow important pages for AI
-Allow: /services/
-Allow: /service-locations/
-Allow: /blog/
-Allow: /about-us/
-Allow: /contact
-Allow: /pricing
-
-# Crawl delay for aggressive bots (optional)
-User-agent: GPTBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: ChatGPT-User
-Allow: /
-Crawl-delay: 1
-
-User-agent: PerplexityBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Claude-Web
-Allow: /
-Crawl-delay: 1
-
-# Encourage crawling of key service pages
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 0

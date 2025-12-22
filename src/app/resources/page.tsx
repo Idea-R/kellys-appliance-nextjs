@@ -11,7 +11,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Resources - Appliance Repair Tips & Blog | Kelly\'s Appliance Center',
+  title: 'Resources - Appliance Repair Tips & Blog',
   description: 'Expert appliance repair tips, maintenance guides, and helpful resources from Kelly\'s Appliance Center. Learn how to keep your appliances running efficiently.',
 };
 
@@ -108,6 +108,7 @@ export default async function ResourcesPage() {
                     <Link 
                       href={`/blog/${post.slug}`}
                       className="text-green-600 hover:text-green-700 font-medium"
+                      aria-label={`Read more: ${post.title}`}
                     >
                       Read More →
                     </Link>

@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 export const metadata = {
-  title: 'Common Dishwasher Problems and How to Prevent Them - Kelly\'s Appliance Center',
+  title: 'Common Dishwasher Problems and How to Prevent Them',
   description: 'Discover the most common dishwasher issues and preventive maintenance tips to keep your dishwasher running efficiently.',
 };
 

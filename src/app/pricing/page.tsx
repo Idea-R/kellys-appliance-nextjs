@@ -9,7 +9,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Pricing - Kelly\'s Appliance Center',
+  title: 'Pricing',
   description: 'Transparent appliance repair pricing. Service call $129-$149 applies toward labor if you proceed. Additional appliance +$60. 90-day money-back guarantee.',
 };
 
@@ -73,14 +73,14 @@ export default function PricingPage() {
               Transparent Pricing
             </h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
-              Fair, honest pricing with no hidden fees. Get a free estimate today!
+              Fair, honest pricing with no hidden fees.
             </p>
             <a
               href={`tel:${companyInfo.phone}`}
               className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors"
             >
               <PhoneIcon className="h-6 w-6 mr-2" />
-              Call {companyInfo.phone} for Free Estimate
+              Questions about pricing? Call {companyInfo.phone}
             </a>
           </div>
         </div>
@@ -185,6 +185,7 @@ export default function PricingPage() {
                   <Link
                     href={`/services/${service.name.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-').replace(/\//g, '-')}`}
                     className="text-green-600 font-semibold hover:text-green-700"
+                    aria-label={`Learn more about ${service.name}`}
                   >
                     Learn More →
                   </Link>
@@ -235,7 +236,7 @@ export default function PricingPage() {
                 className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors"
               >
                 <PhoneIcon className="h-6 w-6 mr-2" />
-                Get Your Free Estimate
+                Questions about pricing? Call us
               </a>
               <a
                 href="https://booking.rossware.com/schedule/4588"

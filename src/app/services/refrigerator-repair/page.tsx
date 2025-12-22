@@ -7,7 +7,7 @@ import ContentSection from '@/components/ContentSection';
 import { BOOKING_CONFIG } from '@/lib/booking-constants';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
-import FAQJsonLd from '@/components/FAQJsonLd';
+import FAQSection from '@/components/FAQSection';
 import { refrigeratorFaqs } from '@/data/faqs';
 
 const companyInfo = getCompanyInfo();
@@ -362,7 +362,11 @@ export default function RefrigeratorRepairPage() {
           })
         }}
       />
-      <FAQJsonLd faqs={refrigeratorFaqs} />
+      <FAQSection
+        title="Refrigerator Repair FAQs"
+        subtitle="Quick answers to common questions about service, pricing, and scheduling."
+        faqs={refrigeratorFaqs}
+      />
     </Layout>
   );
 }

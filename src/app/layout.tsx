@@ -8,6 +8,7 @@ import FloatingDiamondBadge from '@/components/FloatingDiamondBadge'
 import MobileNavDrawer from '@/components/MobileNavDrawer'
 
 const inter = Inter({ subsets: ['latin'] })
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 
 export const metadata: Metadata = {
   title: {
@@ -55,9 +56,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-site-verification-code',
-  },
+  verification: googleSiteVerification ? { google: googleSiteVerification } : undefined,
   icons: {
     icon: [
       { url: '/images/favicon.png', sizes: '32x32', type: 'image/png' },
@@ -80,8 +79,7 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body className={inter.className}>
-        {/* Preload hero background for LCP */}
-        <link rel="preload" as="image" href="/images/47805405_ml.jpg" fetchPriority="high" />
+        {/* Preload handled by next/image `priority` (and/or Cloudflare Image Resizing URLs). */}
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white text-green-800 px-3 py-2 rounded shadow">Skip to content</a>
         <ClientProviders>
         <Suspense>

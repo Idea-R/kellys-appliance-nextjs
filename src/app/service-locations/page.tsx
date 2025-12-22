@@ -9,7 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata = {
-  title: "Service Locations | Kelly's Appliance Center",
+  title: "Service Locations",
   description: 'Cities and areas we serve across Sonoma, Marin, and Napa counties.',
 };
 

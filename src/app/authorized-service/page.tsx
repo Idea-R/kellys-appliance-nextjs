@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Factory Authorized Appliance Repair Services | Kelly\'s Appliance Center',
+  title: 'Factory Authorized Appliance Repair Services',
   description: 'Factory authorized appliance repair for Maytag, Whirlpool, GE, KitchenAid, Bosch, Viking, and Dacor. Genuine parts, expert technicians, manufacturer guidelines.',
   keywords: ['factory authorized repair', 'certified appliance service', 'genuine parts', 'Maytag authorized', 'Whirlpool certified', 'GE factory trained', 'KitchenAid repair', 'Bosch service', 'Viking authorized', 'Dacor repair'],
 }

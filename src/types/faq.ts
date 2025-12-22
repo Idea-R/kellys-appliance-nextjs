@@ -7,3 +7,5 @@ export interface FAQJsonLdProps {
   faqs: FAQ[]
 }
 
+
+

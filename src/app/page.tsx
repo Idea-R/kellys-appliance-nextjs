@@ -1,15 +1,16 @@
 'use client';
 
 import React from 'react';
-import GoogleReviews from '@/components/GoogleReviews'
 import Image from 'next/image';
 import Link from 'next/link';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import ServiceAreaMapCircles from '@/components/ServiceAreaMapCircles';
-// import AutoAnimate from '@/components/AutoAnimate'
 import dynamic from 'next/dynamic'
+import LazyMount from '@/components/LazyMount'
+
+const GoogleReviews = dynamic(() => import('@/components/GoogleReviews'), { ssr: false })
+const ServiceAreaMapCircles = dynamic(() => import('@/components/ServiceAreaMapCircles'), { ssr: false })
 const EmblaBrandCarousel = dynamic(() => import('@/components/EmblaBrandCarousel'), { ssr: false })
 
 const companyInfo = getCompanyInfo();
@@ -186,7 +187,9 @@ export default function HomePage() {
       </section>
 
       {/* Google Reviews (single block) */}
-      <GoogleReviews />
+      <LazyMount minHeight={800}>
+        <GoogleReviews />
+      </LazyMount>
 
       {/* Services Section */}
       <section className="py-16">
@@ -223,6 +226,7 @@ export default function HomePage() {
                   <Link
                     href={service.href}
                     className="inline-block bg-green-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-green-700 transition-colors btn-animate w-full text-center"
+                    aria-label={`Learn more about ${service.title}`}
                   >
                     Learn More
                   </Link>
@@ -346,10 +350,12 @@ export default function HomePage() {
           </div>
           
           {/* Embla Carousels with mask fade */}
-          <div className="mb-8">
-            <EmblaBrandCarousel brands={topRowLogos} direction="left" />
-          </div>
-          <EmblaBrandCarousel brands={bottomRowLogos} direction="right" />
+          <LazyMount minHeight={220}>
+            <div className="mb-8">
+              <EmblaBrandCarousel brands={topRowLogos} direction="left" />
+            </div>
+            <EmblaBrandCarousel brands={bottomRowLogos} direction="right" />
+          </LazyMount>
 
           {/* Diamond Certified Logo */}
           <div className="text-center mt-12">
@@ -423,10 +429,12 @@ export default function HomePage() {
             </div>
             
             <div className="relative" style={{ minHeight: '400px' }}>
-              <ServiceAreaMapCircles 
-                className="w-full h-[400px]"
-                showOfficeMarker={true}
-              />
+              <LazyMount minHeight={400}>
+                <ServiceAreaMapCircles 
+                  className="w-full h-[400px]"
+                  showOfficeMarker={true}
+                />
+              </LazyMount>
             </div>
           </div>
         </div>

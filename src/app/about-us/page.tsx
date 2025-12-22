@@ -10,7 +10,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'About Us - Kelly\'s Appliance Center',
+  title: 'About Us',
   description: 'Kelly\'s Appliance Repair has been serving Sonoma County and Novato since 1975. Our expert technicians are highly-skilled. Contact us today!',
 };
 

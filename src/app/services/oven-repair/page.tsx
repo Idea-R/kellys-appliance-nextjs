@@ -7,7 +7,7 @@ import ContentSection from '@/components/ContentSection';
 import { BOOKING_CONFIG } from '@/lib/booking-constants';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
-import FAQJsonLd from '@/components/FAQJsonLd';
+import FAQSection from '@/components/FAQSection';
 import { ovenFaqs } from '@/data/faqs';
 
 const companyInfo = getCompanyInfo();
@@ -253,7 +253,7 @@ export default function OvenRepairPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
-              Request Appointment Online Online
+              Request Appointment Online
             </a>
           </div>
         </div>
@@ -303,7 +303,11 @@ export default function OvenRepairPage() {
           })
         }}
       />
-      <FAQJsonLd faqs={ovenFaqs} />
+      <FAQSection
+        title="Oven & Range Repair FAQs"
+        subtitle="Short answers to the questions we hear most about oven, range, and cooktop repairs."
+        faqs={ovenFaqs}
+      />
     </Layout>
   );
 }

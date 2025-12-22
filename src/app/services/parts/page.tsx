@@ -3,7 +3,7 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "Appliance Parts | OEM Parts Hotline (MPC) - Kelly's Appliance Center",
+  title: "Appliance Parts | OEM Parts Hotline (MPC)",
   description:
     'Order OEM appliance parts with expert help. Call the MyPartsCenter hotline 800-371-3882 for water filters, air filters, dryer belts, hoses, venting, and more.',
 };

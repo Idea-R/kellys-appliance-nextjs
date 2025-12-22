@@ -1,6 +1,6 @@
 import React from 'react';
 export const metadata = {
-  title: "Services | Kelly's Appliance Center",
+  title: "Services",
   description: 'Overview of appliance repair services we provide across major brands.',
 };
 import Image from 'next/image';

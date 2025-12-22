@@ -7,7 +7,7 @@ import { VideoCameraIcon, PhoneIcon, CheckCircleIcon, XCircleIcon, ClockIcon } f
 const companyInfo = getCompanyInfo()
 
 export const metadata = {
-  title: "Virtual Service Call | Kelly's Appliance Center",
+  title: "Virtual Service Call",
   description: '15-minute video diagnostic session with a technician. Quick troubleshooting to identify symptoms and possible causes, potentially saving time and money.',
 }
 

@@ -7,7 +7,7 @@ import { getCompanyInfo } from '@/lib/content';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Appointment Request Received | Kelly\'s Appliance Center',
+  title: 'Appointment Request Received',
   description: 'Your appointment request has been received and will be confirmed within 4 hours during business hours or the next business day.',
   robots: {
     index: false,

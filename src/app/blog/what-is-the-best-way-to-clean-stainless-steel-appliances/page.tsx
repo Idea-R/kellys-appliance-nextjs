@@ -9,7 +9,7 @@ import { getCompanyInfo } from '@/lib/content';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'What Is the Best Way to Clean Stainless Steel Appliances? | Kelly\'s Appliance Center',
+  title: 'What Is the Best Way to Clean Stainless Steel Appliances?',
   description: 'Learn the best way to clean a stainless steel fridge! Discover easy steps to remove smudges, streaks, and fingerprints for a spotless shine.',
 };
 

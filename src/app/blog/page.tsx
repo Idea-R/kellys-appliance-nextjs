@@ -4,7 +4,7 @@ import { CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
 
 export const metadata = {
-  title: 'Appliance Repair Tips & Guides - Kelly\'s Appliance Center',
+  title: 'Appliance Repair Tips & Guides',
   description: 'Expert appliance repair tips, maintenance guides, and troubleshooting advice from Kelly\'s Appliance Center professionals.',
 };
 
@@ -131,6 +131,7 @@ export default function BlogPage() {
                     <Link
                       href={`/blog/${post.slug}`}
                       className="inline-block bg-green-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-green-700 transition-colors"
+                      aria-label={`Read more: ${post.title}`}
                     >
                       Read More
                     </Link>

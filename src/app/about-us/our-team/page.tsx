@@ -9,7 +9,7 @@ import TeamGrid, { TeamMember } from './TeamGrid'
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Our Team - Kelly\'s Appliance Center',
+  title: 'Our Team',
   description: 'Meet the experienced team at Kelly\'s Appliance Center. Our skilled technicians and friendly staff are here to help with all your appliance repair needs.',
 };
 

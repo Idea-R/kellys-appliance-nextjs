@@ -359,7 +359,7 @@ export default function Layout({ children }: LayoutProps) {
                 <p className="mt-2 text-xs text-gray-500">
                   Created and managed by:{' '}
                   <a 
-                    href="https://ideas-realzied.com" 
+                    href="https://ideas-realized.com/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="hover:text-green-400 transition-colors"

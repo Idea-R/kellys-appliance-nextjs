@@ -7,7 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 export const metadata = {
-  title: 'Why Is My Dryer Taking So Long to Dry Clothes? - Kelly\'s Appliance Center',
+  title: 'Why Is My Dryer Taking So Long to Dry Clothes?',
   description: 'Learn the top causes and solutions for slow-drying dryers from our expert technicians. Common issues include clogged lint traps and blocked vents.',
 };
 

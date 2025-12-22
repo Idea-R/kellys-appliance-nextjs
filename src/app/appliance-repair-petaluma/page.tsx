@@ -11,7 +11,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Appliance Repair Petaluma - Kelly\'s Appliance Center',
+  title: 'Appliance Repair Petaluma',
   description: 'Find local appliance repair near you in Petaluma, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
   alternates: {
     canonical: 'https://kellysappliancerepair.com/service-locations/petaluma',

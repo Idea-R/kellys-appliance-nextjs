@@ -7,7 +7,7 @@ import ContentSection from '@/components/ContentSection';
 import { BOOKING_CONFIG } from '@/lib/booking-constants';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
-import FAQJsonLd from '@/components/FAQJsonLd';
+import FAQSection from '@/components/FAQSection';
 import { washerDryerFaqs } from '@/data/faqs';
 
 const companyInfo = getCompanyInfo();
@@ -211,7 +211,7 @@ export default function WasherDryerRepairPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
-              Request Appointment Online Online
+              Request Appointment Online
             </a>
           </div>
         </div>
@@ -261,7 +261,11 @@ export default function WasherDryerRepairPage() {
           })
         }}
       />
-      <FAQJsonLd faqs={washerDryerFaqs} />
+      <FAQSection
+        title="Washer & Dryer Repair FAQs"
+        subtitle="Common questions about washer and dryer repairs, costs, and scheduling."
+        faqs={washerDryerFaqs}
+      />
     </Layout>
   );
 }

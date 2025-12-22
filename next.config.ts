@@ -15,7 +15,11 @@ const nextConfig: NextConfig = {
   output: "export",
   
   images: {
-    unoptimized: true, // Required for static export (no image optimization server)
+    loader: "custom",
+    loaderFile: "./src/lib/cfImageLoader.ts",
+    // Keep sizes tight to avoid generating an excessive srcset while still covering common devices.
+    deviceSizes: [320, 375, 414, 640, 750, 828, 1080, 1200, 1440, 1920],
+    imageSizes: [16, 24, 32, 48, 64, 96, 128, 256, 384],
   },
   
   // Optional: add trailing slashes for cleaner URLs

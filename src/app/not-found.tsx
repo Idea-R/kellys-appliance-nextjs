@@ -3,7 +3,7 @@ import Layout from '@/components/Layout'
 import { PhoneIcon } from '@heroicons/react/24/solid'
 
 export const metadata = {
-  title: 'Page Not Found - Kelly\'s Appliance Center',
+  title: 'Page Not Found',
   description: 'The page you\'re looking for doesn\'t exist. Find what you need with our helpful links.',
   robots: {
     index: false,
