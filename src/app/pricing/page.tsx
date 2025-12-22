@@ -77,7 +77,7 @@ export default function PricingPage() {
             </p>
             <a
               href={`tel:${companyInfo.phone}`}
-              className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors"
+              className="btn-fill btn-animate hero inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold"
             >
               <PhoneIcon className="h-6 w-6 mr-2" />
               Questions about pricing? Call {companyInfo.phone}
@@ -221,8 +221,17 @@ export default function PricingPage() {
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="bg-yellow-500 text-yellow-900 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-              <span className="text-2xl font-bold">90</span>
+            <div className="relative w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-yellow-200 via-yellow-400 to-amber-500 ring-4 ring-white/20 shadow-[0_16px_40px_rgba(0,0,0,0.35)] flex items-center justify-center">
+              <div
+                className="pointer-events-none absolute inset-1 rounded-full bg-gradient-to-t from-amber-500/20 via-white/10 to-white/40"
+                aria-hidden="true"
+              />
+              <div className="relative text-center text-yellow-950">
+                <div className="text-2xl font-extrabold leading-none tracking-tight drop-shadow-[0_1px_0_rgba(255,255,255,0.35)]">
+                  90
+                </div>
+                <div className="mt-1 text-[10px] font-semibold tracking-[0.22em] opacity-80">DAYS</div>
+              </div>
             </div>
             <h2 className="text-3xl font-bold mb-4">
               90-Day Money Back Guarantee
@@ -233,7 +242,7 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={`tel:${companyInfo.phone}`}
-                className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors"
+                className="btn-fill btn-animate hero inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold"
               >
                 <PhoneIcon className="h-6 w-6 mr-2" />
                 Questions about pricing? Call us
