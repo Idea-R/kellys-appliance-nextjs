@@ -5,6 +5,12 @@ const withMDX = createMDX({
   extension: /\.mdx?$/,
 });
 
+const imageSizing = {
+  // Keep sizes tight to avoid generating an excessive srcset while still covering common devices.
+  deviceSizes: [320, 375, 414, 640, 750, 828, 1080, 1200, 1440, 1920],
+  imageSizes: [16, 24, 32, 48, 64, 96, 128, 256, 384],
+} satisfies NonNullable<NextConfig["images"]>
+
 const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
@@ -14,13 +20,21 @@ const nextConfig: NextConfig = {
   // Cloudflare Pages static export
   output: "export",
   
-  images: {
-    loader: "custom",
-    loaderFile: "./src/lib/cfImageLoader.ts",
-    // Keep sizes tight to avoid generating an excessive srcset while still covering common devices.
-    deviceSizes: [320, 375, 414, 640, 750, 828, 1080, 1200, 1440, 1920],
-    imageSizes: [16, 24, 32, 48, 64, 96, 128, 256, 384],
-  },
+  images:
+    process.env.NODE_ENV === "development"
+      ? {
+          // Dev server only: Turbopack currently throws `next-image-missing-loader` with `images.loaderFile`.
+          // Also disable the Image Optimization API because this repo uses `{ output: "export" }`.
+          // (Without `unoptimized: true`, Next will throw `export-image-api` on any page that renders <Image />.)
+          ...imageSizing,
+          unoptimized: true,
+        }
+      : {
+          ...imageSizing,
+          loader: "custom",
+          // Keep the loader in .mjs so it can be resolved consistently.
+          loaderFile: "./src/lib/cfImageLoader.mjs",
+        },
   
   // Optional: add trailing slashes for cleaner URLs
   // trailingSlash: true,
