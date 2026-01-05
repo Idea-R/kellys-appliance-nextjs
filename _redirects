@@ -2,6 +2,10 @@
 # https://developers.cloudflare.com/pages/configuration/redirects/
 # This file mirrors next.config.ts redirects for CDN-level handling
 
+# Redirect legacy mobile subdomain to primary domain (preserve path/query)
+https://mobile.kellysappliancerepair.com/* https://kellysappliancerepair.com/:splat 301
+http://mobile.kellysappliancerepair.com/* https://kellysappliancerepair.com/:splat 301
+
 # Service page redirects
 /appliance-repair/* /services/:splat 301
 /locations/* /service-locations/:splat 301
