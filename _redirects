@@ -26,19 +26,24 @@
 
 # Blog index redirect
 /resources/blog /blog 301
+/resources/blog/ /blog 301
 /resources/blog-2 /blog 301
+/resources/blog-2/ /blog 301
 /resources/blog-2/* /blog 301
 
 # Scheduler confirmation redirect (old path)
 /resources/scheduler-confirmation /scheduler-confirmation 301
+/resources/scheduler-confirmation/ /scheduler-confirmation 301
 
 # Service area redirect (old WordPress page)
 /service-area /service-locations 301
+/service-area/ /service-locations 301
 
 # Authorized service sub-paths redirects
 /authorized-service/refrigerator-repair /services/refrigerator-repair 301
 /authorized-service/washer-dryer-repair /services/washer-dryer-repair 301
 /authorized-service/range-oven-repair /services/oven-repair 301
+/authorized-service/dishwasher-repair /services/dishwasher-repair 301
 
 # Additional blog post redirects
 /what-is-the-best-way-to-clean-a-stainless-steel-fridge /blog/what-is-the-best-way-to-clean-stainless-steel-appliances 301
@@ -46,13 +51,57 @@
 # WordPress legacy paths
 /portfolio-items / 301
 /contact-test /contact 301
+/contact-test/ /contact 301
 /wp-json/* / 301
 /index.php / 301
 /author/* /about-us 301
 /fusion_tb_category/* / 301
 
+# Other legacy/removed URLs seen in Google Search Console
+/faq-items /resources 301
+/faq-items/ /resources 301
+/service-locations/ross /service-locations/marin-county 301
+/service-locations/ross/ /service-locations/marin-county 301
+
 # Service page redirects (internal redirects)
 /services/range-oven-repair /services/oven-repair 301
+/services/oven-range-repair /services/oven-repair 301
+/services/oven-range-repair/ /services/oven-repair 301
+
+# Design preview test page cleanup
+/design-preview / 301
+/design-preview/ / 301
+
+# Trailing slash redirects for Google-indexed 404 URLs
+# Location pages
+/appliance-repair-marin-county/ /appliance-repair-marin-county 301
+/appliance-repair-napa/ /appliance-repair-napa 301
+/appliance-repair-petaluma/ /appliance-repair-petaluma 301
+/appliance-repair-santa-rosa/ /appliance-repair-santa-rosa 301
+/appliance-repair-san-rafael/ /appliance-repair-san-rafael 301
+/appliance-repair-sebastopol/ /appliance-repair-sebastopol 301
+/appliance-repair-windsor/ /appliance-repair-windsor 301
+/appliance-repair-novato/ /appliance-repair-novato 301
+/appliance-repair-sonoma/ /appliance-repair-sonoma 301
+/appliance-repair-rohnert-park/ /service-locations/rohnert-park 301
+
+# Blog post trailing slash redirects
+/common-dishwasher-problems-and-how-to-prevent-them/ /blog/common-dishwasher-problems-and-how-to-prevent-them 301
+/why-is-my-dryer-taking-so-long-to-dry-clothes/ /blog/why-is-my-dryer-taking-so-long-to-dry-clothes 301
+/what-is-the-best-way-to-clean-stainless-steel-appliances/ /blog/what-is-the-best-way-to-clean-stainless-steel-appliances 301
+/why-you-should-call-a-professional-to-repair-your-appliances/ /blog/why-you-should-call-a-professional-to-repair-your-appliances 301
+/top-5-tips-for-buying-a-home-appliance/ /blog/top-5-tips-for-buying-a-home-appliance 301
+/avoid-appliance-repair-scams/ /blog/what-is-the-best-way-to-avoid-appliance-repair-scams 301
+
+# Authorized service trailing slash redirects
+/authorized-service/dishwasher-repair/ /services/dishwasher-repair 301
+/authorized-service/refrigerator-repair/ /services/refrigerator-repair 301
+/authorized-service/washer-dryer-repair/ /services/washer-dryer-repair 301
+/authorized-service/range-oven-repair/ /services/oven-repair 301
+
+# Other trailing slash redirects
+/portfolio-items/ / 301
+/services/range-oven-repair/ /services/oven-repair 301
 
 # WordPress sitemap redirect
 /sitemap_index.xml /sitemap.xml 301

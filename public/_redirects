@@ -26,14 +26,18 @@
 
 # Blog index redirect
 /resources/blog /blog 301
+/resources/blog/ /blog 301
 /resources/blog-2 /blog 301
+/resources/blog-2/ /blog 301
 /resources/blog-2/* /blog 301
 
 # Scheduler confirmation redirect (old path)
 /resources/scheduler-confirmation /scheduler-confirmation 301
+/resources/scheduler-confirmation/ /scheduler-confirmation 301
 
 # Service area redirect (old WordPress page)
 /service-area /service-locations 301
+/service-area/ /service-locations 301
 
 # Authorized service sub-paths redirects
 /authorized-service/refrigerator-repair /services/refrigerator-repair 301
@@ -47,16 +51,26 @@
 # WordPress legacy paths
 /portfolio-items / 301
 /contact-test /contact 301
+/contact-test/ /contact 301
 /wp-json/* / 301
 /index.php / 301
 /author/* /about-us 301
 /fusion_tb_category/* / 301
 
+# Other legacy/removed URLs seen in Google Search Console
+/faq-items /resources 301
+/faq-items/ /resources 301
+/service-locations/ross /service-locations/marin-county 301
+/service-locations/ross/ /service-locations/marin-county 301
+
 # Service page redirects (internal redirects)
 /services/range-oven-repair /services/oven-repair 301
+/services/oven-range-repair /services/oven-repair 301
+/services/oven-range-repair/ /services/oven-repair 301
 
 # Design preview test page cleanup
 /design-preview / 301
+/design-preview/ / 301
 
 # Trailing slash redirects for Google-indexed 404 URLs
 # Location pages

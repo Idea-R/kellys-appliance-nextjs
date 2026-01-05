@@ -74,7 +74,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/referrals',
     '/resources/where-is-my-model-number',
     '/resources/referrals',
-    '/scheduler-confirmation',
     '/privacy-policy', // Legal (Priority: 0.6)
   ]
 
