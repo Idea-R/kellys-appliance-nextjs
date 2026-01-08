@@ -196,13 +196,16 @@ export default function AuthorizedServicePage() {
                 <RevealOnScroll direction={index % 2 === 0 ? 'left' : 'right'} className={index % 2 === 1 ? 'lg:order-2' : ''}>
                   <div className="bg-white p-8 rounded-lg shadow-sm border overflow-hidden">
                     <div className="flex items-start justify-between gap-4">
-                    <Image
-                      src={brand.logo}
-                      alt={`${brand.name} Authorized Service`}
-                      width={200}
-                      height={100}
-                      className="h-16 w-auto mb-6 will-change-transform animate-fade-in-up"
-                    />
+                      {/* Fixed logo box to prevent ultra-wide logos (e.g., KitchenAid) from dominating the card */}
+                      <div className="relative h-16 w-full max-w-[260px] mb-6">
+                        <Image
+                          src={brand.logo}
+                          alt={`${brand.name} Authorized Service`}
+                          fill
+                          sizes="(max-width: 640px) 240px, 260px"
+                          className="object-contain object-left will-change-transform animate-fade-in-up"
+                        />
+                      </div>
                       <span className="inline-flex items-center rounded-full bg-green-50 text-green-800 border border-green-200 px-3 py-1 text-sm font-semibold">
                         Factory Authorized
                       </span>
@@ -256,8 +259,11 @@ export default function AuthorizedServicePage() {
           {/* Call to Action */}
           <div className="text-center mt-16 bg-green-700 text-white rounded-2xl p-12">
             <h2 className="text-3xl font-bold mb-4">Need Factory-Authorized Repair?</h2>
-            <p className="text-xl text-white/90 mb-8">
-              Trust your appliances to certified technicians with genuine parts and warranty-safe service
+            <p className="text-xl text-white/90 mb-2">
+              Factory-authorized for Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor.
+            </p>
+            <p className="text-white/90 mb-8">
+              Genuine parts, manufacturer guidelines, and warranty-safe repairs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

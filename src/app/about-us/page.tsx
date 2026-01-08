@@ -11,7 +11,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'About Us',
-  description: 'Kelly\'s Appliance Repair has been serving Sonoma County and Novato since 1975. Our expert technicians are highly-skilled. Contact us today!',
+  description: 'Kelly\'s Appliance Repair has been serving Sonoma, Marin, and Napa counties since 1975. Our expert technicians are highly-skilled. Contact us today!',
 };
 
 export default function AboutUsPage() {
@@ -28,7 +28,7 @@ export default function AboutUsPage() {
               About Kelly&apos;s Appliance Center
             </h1>
             <p className="text-xl max-w-3xl mx-auto">
-              Serving the Bay Area with professional appliance repair services since 1975
+              Serving Sonoma, Marin, and Napa counties with professional appliance repair services since 1975
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function AboutUsPage() {
                   Kelly&apos;s Appliance Center provides services on dishwashers, refrigerators, ovens, stoves, washers, dryers, garbage disposals and any other major household appliance. Kelly&apos;s services all makes and models including Maytag, Kenmore, Whirlpool, Jenn-Air, GE, LG and more!
                 </p>
                 <p>
-                  Give us a call and we&apos;ll show you why we&apos;ve been around for over 50 years! Serving customers throughout Sonoma and Marin counties, Kelly&apos;s Appliance Center is the name you can count on to get the job done right – on time!
+                  Give us a call and we&apos;ll show you why we&apos;ve been around for over 50 years! Serving customers throughout Sonoma, Marin, and Napa counties, Kelly&apos;s Appliance Center is the name you can count on to get the job done right – on time!
                 </p>
               </div>
             </div>
@@ -92,8 +92,8 @@ export default function AboutUsPage() {
               <div className="text-gray-700 font-semibold">Service Areas</div>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="text-4xl font-bold text-green-600 mb-2">100%</div>
-              <div className="text-gray-700 font-semibold">Factory Authorized</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">6</div>
+              <div className="text-gray-700 font-semibold">Factory-Authorized Brands</div>
             </div>
           </div>
         </div>
@@ -116,8 +116,8 @@ export default function AboutUsPage() {
               <div className="bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <CheckCircleIcon className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Factory Authorized</h3>
-              <p className="text-gray-600">Certified repair services for all major appliance brands with genuine parts</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Factory-Authorized (Select Brands)</h3>
+              <p className="text-gray-600">Factory-authorized for select manufacturers, plus service for many major appliance brands</p>
             </div>
             
             <div className="text-center">
