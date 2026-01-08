@@ -140,7 +140,11 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
                       </div>
 
                       {/* Content - Scrollable */}
-                      <div className="modal-scroll-area px-8 py-6 space-y-6 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+                      <div
+                        className="modal-scroll-area px-8 py-6 space-y-6 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
+                        // Allow native wheel scrolling inside the modal even when Lenis smoothWheel is enabled
+                        data-lenis-prevent-wheel
+                      >
                         {/* Bio */}
                         <div>
                           <h3 className="text-lg font-bold text-gray-900 mb-2">About</h3>
