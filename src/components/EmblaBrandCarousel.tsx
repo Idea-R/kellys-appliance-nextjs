@@ -12,10 +12,12 @@ type EmblaBrandCarouselProps = { brands: Brand[]; direction?: 'left' | 'right' }
 export default function EmblaBrandCarousel({ brands, direction = 'left' }: EmblaBrandCarouselProps) {
   const autoScroll = useRef(
     AutoScroll({
-      speed: 0.5,
+      // Slightly faster + more consistent feel, especially on mobile
+      speed: 0.8,
       playOnInit: true,
       stopOnInteraction: false,
-      stopOnMouseEnter: true,
+      // Keep motion continuous (hover-pause can feel "broken")
+      stopOnMouseEnter: false,
       direction: direction === 'left' ? 'forward' : 'backward',
     })
   )
@@ -25,7 +27,8 @@ export default function EmblaBrandCarousel({ brands, direction = 'left' }: Embla
       loop: true,
       align: 'start',
       dragFree: true,
-      containScroll: 'trimSnaps',
+      // Avoid subtle snapping/jitter with dragFree + auto-scroll
+      containScroll: false,
       watchDrag: true,
       inViewThreshold: 0,
     },
@@ -37,15 +40,21 @@ export default function EmblaBrandCarousel({ brands, direction = 'left' }: Embla
   return (
     <div className="relative mask-fade-x">
       <div className="overflow-hidden" ref={emblaRef} aria-roledescription="carousel" aria-label="Brand logos" role="region">
-        <div className="flex gap-16 items-center will-change-transform" role="list">
+        {/* Avoid flex gap (can cause odd spacing/jumps); use per-slide padding and fixed widths instead */}
+        <div className="flex items-center will-change-transform" role="list">
           {slides.map((brand, idx) => (
-            <div key={`${brand.name}-${idx}`} className="flex items-center justify-center flex-shrink-0" role="listitem">
+            <div
+              key={`${brand.name}-${idx}`}
+              className="flex items-center justify-center flex-shrink-0 px-6 py-2 w-[160px] sm:w-[180px] md:w-[200px]"
+              role="listitem"
+            >
               <Image
                 src={brand.image}
                 alt={brand.name}
-                width={150}
-                height={80}
-                className="h-16 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                width={220}
+                height={120}
+                draggable={false}
+                className="mx-auto h-10 sm:h-12 md:h-14 w-auto max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}

@@ -8,17 +8,17 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Factory Authorized Appliance Repair Services',
-  description: 'Factory authorized appliance repair for Maytag, Whirlpool, GE, KitchenAid, Bosch, Viking, and Dacor. Genuine parts, expert technicians, manufacturer guidelines.',
-  keywords: ['factory authorized repair', 'certified appliance service', 'genuine parts', 'Maytag authorized', 'Whirlpool certified', 'GE factory trained', 'KitchenAid repair', 'Bosch service', 'Viking authorized', 'Dacor repair'],
+  title: 'Authorized Appliance Service (Factory Authorized for Select Brands)',
+  description: 'We service many major appliance brands. Factory authorized for select brands including Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor. Genuine parts and manufacturer-guideline repairs.',
+  keywords: ['authorized appliance service', 'factory authorized repair', 'genuine parts', 'Whirlpool authorized', 'KitchenAid authorized', 'Maytag authorized', 'GE authorized service', 'Viking authorized', 'Dacor authorized'],
 }
 
 export default function AuthorizedServicePage() {
   const breadcrumbs = generateBreadcrumbs('/authorized-service', metadata.title);
-  const authorizedBrands = [
+  const factoryAuthorizedBrands = [
     {
       name: 'Maytag',
-      logo: '/images/logo_maytag.jpg',
+      logo: '/images/Maytag_Logo2014-Present.webp',
       photo: '/images/dryer2.webp',
       title: 'Maytag Authorized Appliance Repair',
       description: 'Kelly\'s Appliance is proud to offer Maytag factory-authorized appliance repair services, delivering expert care for your trusted Maytag appliances. As an authorized service provider, we use genuine Maytag parts and follow the manufacturer\'s repair guidelines to ensure the best performance and longevity.',
@@ -27,7 +27,7 @@ export default function AuthorizedServicePage() {
     },
     {
       name: 'Whirlpool',
-      logo: '/images/whirlpool_logo.gif',
+      logo: '/images/Whirlpool_2016.webp',
       photo: '/images/refrigerator.webp',
       title: 'Authorized Whirlpool Appliance Repair',
       description: 'We proudly offers Whirlpool factory-authorized repair services to keep your Whirlpool appliances running like new! As an authorized service provider, we use genuine Whirlpool parts and follow manufacturer guidelines to deliver unbeatable performance and reliability.',
@@ -36,7 +36,7 @@ export default function AuthorizedServicePage() {
     },
     {
       name: 'GE',
-      logo: '/images/ge_olympic_logo_136.gif',
+      logo: '/images/General_Electric_logo.webp',
       photo: '/images/oven-repair.webp',
       title: 'GE Factory Trained Appliance Repair',
       description: 'Kelly\'s Appliance is your trusted source for GE factory trained appliance repair services! As a factory trained service provider, we bring expert care and precision to every repair, using genuine GE parts and adhering to manufacturer guidelines for optimal performance.',
@@ -45,21 +45,12 @@ export default function AuthorizedServicePage() {
     },
     {
       name: 'KitchenAid',
-      logo: '/images/kad_logo2.gif',
+      logo: '/images/kitchenaid-logo-v2.webp',
       photo: '/images/dishwasher-repair2.webp',
       title: 'Authorized KitchenAid Repair',
       description: 'Kelly\'s Appliance is proud to offer KitchenAid factory-authorized appliance repair services for full-size residential appliances. We use genuine KitchenAid parts and follow manufacturer-approved repair processes for reliable performance.',
       specialties: ['Dishwashers', 'Refrigerators', 'Ovens & Ranges', 'Cooktops'],
       searchTerm: 'Certified KitchenAid Appliance Repair'
-    },
-    {
-      name: 'Bosch',
-      logo: '/images/bosch_logo_us_right.gif',
-      photo: '/images/dishwasher-repair.webp',
-      title: 'Bosch Factory Authorized Appliance Repair',
-      description: 'Kelly\'s Appliance provides factory-authorized Bosch appliance repair services, ensuring your premium German-engineered appliances receive the expert care they deserve. Our certified technicians use genuine Bosch parts and follow strict manufacturer guidelines to maintain optimal performance.',
-      specialties: ['Dishwashers', 'Refrigerators', 'Ovens & Ranges', 'Washers & Dryers'],
-      searchTerm: 'Authorized Bosch Appliance Repair'
     },
     {
       name: 'Viking',
@@ -90,10 +81,10 @@ export default function AuthorizedServicePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Factory Authorized Appliance Repair
+              Authorized Appliance Service
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Certified repair service for leading appliance brands using genuine parts and manufacturer guidelines
+              We service many major appliance brands. Factory-authorized for select brands (Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor).
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
@@ -122,12 +113,12 @@ export default function AuthorizedServicePage() {
         <div className="max-w-7xl mx-auto px-4">
           {/* Overview */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Authorized Repair Service</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Brands We Service</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Kelly's Appliance provides authorized appliance repair service for many manufacturers, ensuring top-quality care for your household appliances. As a certified service provider for leading appliance brands, we use genuine replacement parts and follow manufacturer guidelines to restore your appliances to peak performance. Our expert technicians are trained to diagnose and repair issues quickly, whether it's a malfunctioning refrigerator, oven, washer, dryer, or dishwasher.
+              Kelly&apos;s Appliance repairs and services a wide range of major household appliance brands. If you don&apos;t see your brand below, give us a call — we can usually still help or point you in the right direction.
             </p>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mt-4">
-              Committed to excellent service and customer satisfaction, Kelly's Appliance delivers prompt, professional repairs tailored to your specific needs. When you choose us, you're choosing certified repair backed by industry expertise and factory authorization.
+              For select manufacturers, we&apos;re factory-authorized and follow manufacturer-approved procedures with genuine parts. Those factory-authorized brands are highlighted in the section below.
             </p>
           </div>
 
@@ -158,8 +149,12 @@ export default function AuthorizedServicePage() {
             </div>
           </div>
 
-          {/* Brand Carousels (Embla) */}
+          {/* Brand Carousels (brands we service) */}
           <div className="mb-16 space-y-8">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-900">Some of the brands we service</h3>
+              <p className="text-gray-600 mt-2">These logos represent brands we commonly repair. Factory-authorized brands are shown in the cards below.</p>
+            </div>
             <EmblaBrandCarousel
               direction="left"
               brands={[
@@ -188,12 +183,19 @@ export default function AuthorizedServicePage() {
             />
           </div>
 
-          {/* Authorized Brands */}
+          {/* Factory-Authorized Brands */}
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Factory-Authorized Brands</h2>
+            <p className="text-gray-600 max-w-4xl mx-auto">
+              The brands below are the manufacturers we&apos;re factory-authorized for. This means we follow manufacturer guidelines and use genuine parts to keep your appliance warranty-safe.
+            </p>
+          </div>
           <div className="space-y-16">
-            {authorizedBrands.map((brand, index) => (
+            {factoryAuthorizedBrands.map((brand, index) => (
               <div key={brand.name} className={`grid lg:grid-cols-2 gap-12 items-center`}>
                 <RevealOnScroll direction={index % 2 === 0 ? 'left' : 'right'} className={index % 2 === 1 ? 'lg:order-2' : ''}>
                   <div className="bg-white p-8 rounded-lg shadow-sm border overflow-hidden">
+                    <div className="flex items-start justify-between gap-4">
                     <Image
                       src={brand.logo}
                       alt={`${brand.name} Authorized Service`}
@@ -201,6 +203,10 @@ export default function AuthorizedServicePage() {
                       height={100}
                       className="h-16 w-auto mb-6 will-change-transform animate-fade-in-up"
                     />
+                      <span className="inline-flex items-center rounded-full bg-green-50 text-green-800 border border-green-200 px-3 py-1 text-sm font-semibold">
+                        Factory Authorized
+                      </span>
+                    </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4"><TypewriterText text={brand.title} /></h3>
                     <p className="text-gray-600 mb-6 leading-relaxed animate-fade-in-up" style={{ animationDelay: '120ms' }}>{brand.description}</p>
                     
@@ -249,7 +255,7 @@ export default function AuthorizedServicePage() {
 
           {/* Call to Action */}
           <div className="text-center mt-16 bg-green-700 text-white rounded-2xl p-12">
-            <h2 className="text-3xl font-bold mb-4">Need Factory Authorized Repair?</h2>
+            <h2 className="text-3xl font-bold mb-4">Need Factory-Authorized Repair?</h2>
             <p className="text-xl text-white/90 mb-8">
               Trust your appliances to certified technicians with genuine parts and warranty-safe service
             </p>
