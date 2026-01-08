@@ -6,6 +6,9 @@
 https://mobile.kellysappliancerepair.com/* https://kellysappliancerepair.com/:splat 301
 http://mobile.kellysappliancerepair.com/* https://kellysappliancerepair.com/:splat 301
 
+# Clean up a common placeholder URL people sometimes try to visit directly
+/$1 / 301
+
 # Service page redirects
 /appliance-repair/* /services/:splat 301
 /locations/* /service-locations/:splat 301
