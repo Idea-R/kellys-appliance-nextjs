@@ -107,7 +107,8 @@ const teamMembers: TeamMember[] = [
     image: '/images/James5.jpg',
     bio: 'Senior appliance repair technician with 10+ years in appliance repair and 25+ years in field service. EPA certified, experienced across major and premium brands, and a Viking Authorized Servicer since 2017.',
     bioFull: 'I am a senior appliance repair technician with over 10 years of experience in the appliance repair industry and more than 25 years in the field service industry overall. My background includes residential and commercial diagnostics and repair, management experience, and specialized service on commercial ice makers and bar and restaurant beverage equipment.\n\nI am EPA certified and have extensive experience servicing a wide range of brands, including Amana, Maytag, Whirlpool, KitchenAid, JennAir, LG, Samsung, GE, Bosch, Thermador, Fisher & Paykel, Viking, Wolf, Sub-Zero, Dynasty, and Jade. Over the past eight years, my work has focused primarily on high-end and premium appliances. I have been a Viking Authorized Servicer since 2017.\n\nI service nearly all major household appliances, including refrigerators, ice makers, washers, dryers, dishwashers, ranges, wall ovens, cooktops, microwaves, trash compactors, garbage disposals, and hot water dispensers.\n\nI take pride in providing honest, reliable service backed by decades of hands-on experience.',
-    yearsExperience: 25,
+    // Badge should reflect appliance-repair experience (not total field-service years)
+    yearsExperience: 10,
     specialties: [
       'Residential and commercial diagnostics & repair',
       'High-end & premium appliances (8+ years focus)',

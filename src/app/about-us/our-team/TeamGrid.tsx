@@ -108,16 +108,6 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
 
           <div 
             className="fixed inset-0 flex items-center justify-center p-4"
-            onWheel={(e) => {
-              // Prevent background scroll when mouse is over modal area
-              const modalContent = document.querySelector('.modal-scroll-area')
-              if (modalContent) {
-                e.preventDefault()
-                e.stopPropagation()
-                // Manually scroll the modal content
-                modalContent.scrollTop += e.deltaY
-              }
-            }}
           >
             <div className="w-full max-w-2xl">
               <Transition.Child as={Fragment} enter="ease-out duration-200" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-150" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
@@ -150,7 +140,7 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
                       </div>
 
                       {/* Content - Scrollable */}
-                      <div className="modal-scroll-area px-8 py-6 space-y-6 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+                      <div className="modal-scroll-area px-8 py-6 space-y-6 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
                         {/* Bio */}
                         <div>
                           <h3 className="text-lg font-bold text-gray-900 mb-2">About</h3>
