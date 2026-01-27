@@ -11,6 +11,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'What is the Best Way to Avoid Appliance Repair Scams?',
   description: 'Avoid appliance repair scams with expert tips on identifying trustworthy services, avoiding fraud, and ensuring quality repairs!',
+  alternates: {
+    canonical: '/blog/what-is-the-best-way-to-avoid-appliance-repair-scams',
+  },
 };
 
 export default function BlogPost() {

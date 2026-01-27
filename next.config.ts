@@ -55,6 +55,18 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Host normalization: force non-www (canonical host)
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.kellysappliancerepair.com",
+          },
+        ],
+        destination: "https://kellysappliancerepair.com/:path*",
+        permanent: true,
+      },
       // Service page redirects (original)
       {
         source: "/appliance-repair/:slug*",
@@ -78,11 +90,52 @@ const nextConfig: NextConfig = {
       },
 
       // Location page redirects (WordPress pattern: /appliance-repair-[city])
-      // Note: Pages rebuilt at old URLs - redirects removed for:
-      // - appliance-repair-novato, appliance-repair-napa, appliance-repair-san-rafael
-      // - appliance-repair-sonoma, appliance-repair-santa-rosa, appliance-repair-sebastopol
-      // - appliance-repair-windsor, appliance-repair-marin-county, appliance-repair-petaluma
-      // These pages now exist with canonical tags pointing to new URLs
+      // All legacy city URLs redirect to new /service-locations/* structure (GSC shows 0 backlinks/0 clicks)
+      {
+        source: "/appliance-repair-petaluma",
+        destination: "/service-locations/petaluma",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-santa-rosa",
+        destination: "/service-locations/santa-rosa",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-san-rafael",
+        destination: "/service-locations/san-rafael",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-sonoma",
+        destination: "/service-locations/sonoma",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-sebastopol",
+        destination: "/service-locations/sebastopol",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-napa",
+        destination: "/service-locations/napa",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-novato",
+        destination: "/service-locations/novato",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-windsor",
+        destination: "/service-locations/windsor",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-marin-county",
+        destination: "/service-locations/marin-county",
+        permanent: true,
+      },
       {
         source: "/appliance-repair-rohnert-park",
         destination: "/service-locations/rohnert-park",
@@ -225,51 +278,50 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // Trailing slash redirects for Google-indexed 404 URLs
-      // These are needed because Cloudflare doesn't auto-strip trailing slashes on non-existent paths
-      {
-        source: "/appliance-repair-marin-county/",
-        destination: "/appliance-repair-marin-county",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-napa/",
-        destination: "/appliance-repair-napa",
-        permanent: true,
-      },
+      // Trailing slash redirects for legacy city URLs (redirect directly to new URLs)
       {
         source: "/appliance-repair-petaluma/",
-        destination: "/appliance-repair-petaluma",
+        destination: "/service-locations/petaluma",
         permanent: true,
       },
       {
         source: "/appliance-repair-santa-rosa/",
-        destination: "/appliance-repair-santa-rosa",
+        destination: "/service-locations/santa-rosa",
         permanent: true,
       },
       {
         source: "/appliance-repair-san-rafael/",
-        destination: "/appliance-repair-san-rafael",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-sebastopol/",
-        destination: "/appliance-repair-sebastopol",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-windsor/",
-        destination: "/appliance-repair-windsor",
-        permanent: true,
-      },
-      {
-        source: "/appliance-repair-novato/",
-        destination: "/appliance-repair-novato",
+        destination: "/service-locations/san-rafael",
         permanent: true,
       },
       {
         source: "/appliance-repair-sonoma/",
-        destination: "/appliance-repair-sonoma",
+        destination: "/service-locations/sonoma",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-sebastopol/",
+        destination: "/service-locations/sebastopol",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-napa/",
+        destination: "/service-locations/napa",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-novato/",
+        destination: "/service-locations/novato",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-windsor/",
+        destination: "/service-locations/windsor",
+        permanent: true,
+      },
+      {
+        source: "/appliance-repair-marin-county/",
+        destination: "/service-locations/marin-county",
         permanent: true,
       },
       {

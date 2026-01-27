@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Appliance Repair Napa',
   description: 'Professional appliance repair services in Napa, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: '/service-locations/napa',
+  },
 };
 
 export default function NapaPage() {

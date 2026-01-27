@@ -6,6 +6,9 @@ import Layout from '@/components/Layout';
 export const metadata = {
   title: 'Appliance Repair Tips & Guides',
   description: 'Expert appliance repair tips, maintenance guides, and troubleshooting advice from Kelly\'s Appliance Center professionals.',
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 const blogPosts = [

@@ -60,6 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/services/oven-repair',
     '/services/dishwasher-repair',
     '/services/washer-dryer-repair',
+    '/services/dryer-repair',
     '/authorized-service', // High conversion page (Priority: 0.8)
     '/contact', // High conversion page (Priority: 0.8)
     '/schedule-prep', // High conversion page (Priority: 0.8)

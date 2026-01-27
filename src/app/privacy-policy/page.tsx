@@ -8,6 +8,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Privacy Policy',
   description: 'View Kelly\'s Appliance Repair privacy policy to learn how we protect your personal information and ensure your data stays safe and secure.',
+  alternates: {
+    canonical: '/privacy-policy',
+  },
 };
 
 export default function PrivacyPolicyPage() {

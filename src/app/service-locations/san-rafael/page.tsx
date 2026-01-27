@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Appliance Repair San Rafael',
   description: 'Find local appliance repair near you in San Rafael, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: '/service-locations/san-rafael',
+  },
 };
 
 export default function SanRafaelPage() {

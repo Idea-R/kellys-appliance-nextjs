@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: "Appliance Repair Bodega Bay - Kelly's Appliance Center",
   description: 'Find local appliance repair near you in Bodega Bay, CA. Professional appliance repair services with factory authorized repairs for major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: '/service-locations/bodega-bay',
+  },
 };
 
 export default function BodegaBayPage() {

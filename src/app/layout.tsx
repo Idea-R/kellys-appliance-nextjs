@@ -20,9 +20,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Kelly's Appliance Center" }],
   creator: "Kelly's Appliance Center",
   metadataBase: new URL('https://kellysappliancerepair.com'),
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     title: "Appliance Repair Services | Kelly's Appliance Center - Since 1975",
     description: "Professional appliance repair services in the Bay Area since 1975. 90 Day Money Back Guarantee. Factory Authorized Service.",

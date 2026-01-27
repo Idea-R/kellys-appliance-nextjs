@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: "Appliance Repair Glen Ellen - Kelly's Appliance Center",
   description: 'Professional appliance repair services in Glen Ellen, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 .',
+  alternates: {
+    canonical: '/service-locations/glen-ellen',
+  },
 };
 
 const services = [

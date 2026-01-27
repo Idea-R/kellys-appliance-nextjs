@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { PhoneIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
+import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import ContentSection from '@/components/ContentSection';
@@ -8,20 +9,20 @@ import { BOOKING_CONFIG } from '@/lib/booking-constants';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 import FAQSection from '@/components/FAQSection';
-import { washerDryerFaqs } from '@/data/faqs';
+import { dryerFaqs } from '@/data/faqs';
 
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Washer & Dryer Repair Services - Expert Technicians',
-  description: 'Find washer and dryer repair near me. Professional washer and dryer repair services. Expert diagnosis of drum problems, electrical faults, and water leaks. Call (707) 664-9702',
+  title: 'Dryer Repair Services Near Me - Expert Technicians',
+  description: 'Find dryer repair near me. Professional dryer repair services for residential clients. Expert diagnosis of heating issues, vent problems, and mechanical faults. Call (707) 664-9702',
   alternates: {
-    canonical: '/services/washer-dryer-repair',
+    canonical: '/services/dryer-repair',
   },
 };
 
-export default function WasherDryerRepairPage() {
-  const breadcrumbs = generateBreadcrumbs('/services/washer-dryer-repair', metadata.title);
+export default function DryerRepairPage() {
+  const breadcrumbs = generateBreadcrumbs('/services/dryer-repair', metadata.title);
 
   return (
     <Layout>
@@ -32,10 +33,10 @@ export default function WasherDryerRepairPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Washer & Dryer Repair
+                Dryer Repair Services Near Me
               </h1>
               <p className="text-xl mb-8">
-                At Kelly&apos;s Appliance Repair, we take pride in providing top-notch washer repair and dryer repair services for our valued residential clients.
+                Professional dryer repair services for residential clients. Our certified technicians specialize in diagnosing and fixing heating problems, vent issues, and mechanical faults for all major dryer brands.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -58,7 +59,7 @@ export default function WasherDryerRepairPage() {
             <div className="relative">
               <Image
                 src="/images/dryer1.webp"
-                alt="Professional washer and dryer repair service"
+                alt="Professional dryer repair service"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-2xl"
@@ -73,11 +74,37 @@ export default function WasherDryerRepairPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Expert Washer & Dryer Repair
+              Expert Dryer Repair Services
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Our certified technicians are well-versed in diagnosing and resolving issues such as drum problems, electrical faults, and water leaks. We ensure your appliances run smoothly by using high-quality, genuine replacement parts.
+              Our skilled technicians are experienced in diagnosing and fixing temperature irregularities, vent blockages, and mechanical issues. We service both gas and electric dryers from all major brands.
             </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <CheckCircleIcon className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Heating Issues</h3>
+              <p className="text-gray-600">Expert diagnosis and repair of heating problems, faulty heating elements, and thermal fuses</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <CheckCircleIcon className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Vent & Airflow</h3>
+              <p className="text-gray-600">Professional vent cleaning and repair to restore proper airflow and prevent fire hazards</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <CheckCircleIcon className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Mechanical Repairs</h3>
+              <p className="text-gray-600">Replacement and repair of belts, drum rollers, bearings, and other mechanical components</p>
+            </div>
           </div>
         </div>
       </section>
@@ -87,44 +114,44 @@ export default function WasherDryerRepairPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
             <div className="lg:col-span-2 space-y-8">
-              <ContentSection title="Skilled Washer/Dryer Repair in Sonoma County & Novato">
+              <ContentSection title="Professional Dryer Repair in Sonoma, Marin, and Napa Counties">
                 <p>
-                  Washing machines and clothes dryers are marvels of modern technology. Think about what your washing machine does with a big heavy load of wet clothes. It takes a lot of energy to spin, twist and agitate your clothing and linens to get them sparkling clean. The same goes for your electric or gas clothes dryer.
+                  When your dryer isn&apos;t working properly, it can disrupt your daily routine and create frustration. Whether it&apos;s taking too long to dry clothes, not heating properly, or making strange noises, Kelly&apos;s Appliance Repair has the expertise to diagnose and fix the problem quickly.
                 </p>
                 <p className="mt-4">
-                  With such a demanding job, it&apos;s no wonder that these workhorse appliances need some occasional repair or maintenance. Whether it&apos;s a top load or front load washing machine, gas or electric clothes dryer, our guys know how to get to the root of problem quickly and get you up and running.
+                  Our factory-authorized technicians are trained to repair both gas and electric dryers from all major brands including Whirlpool, Maytag, GE, Samsung, LG, and more. We serve residential clients throughout Sonoma County, Marin County, and Napa County.
                 </p>
               </ContentSection>
 
-              <ContentSection title="Common Washing Machine Problems We Fix">
-                <p>Are you having any of these problems with your washing machine?</p>
+              <ContentSection title="Common Dryer Problems We Fix">
+                <p>Is your dryer experiencing any of these issues?</p>
                 <ul className="list-disc list-inside space-y-2 mt-4">
-                  <li>Washing machine has unusual shaking and wobbling</li>
-                  <li>Washing machine leaks water</li>
-                  <li>Washing machine smells bad</li>
-                  <li>Water won&apos;t drain from the washing machine</li>
-                  <li>Detergent or bleach not dispensing</li>
-                  <li>Washing machine making unusual noise</li>
+                  <li>Dryer taking too long to dry clothes</li>
+                  <li>Dryer not heating up</li>
+                  <li>Dryer won&apos;t turn on</li>
+                  <li>Dryer not tumbling clothes</li>
+                  <li>Dryer making strange noises (squealing, grinding, thumping)</li>
+                  <li>Dryer overheating or shutting off prematurely</li>
+                  <li>Dryer vent blockage or poor airflow</li>
+                  <li>Lint buildup or clogged filters</li>
                 </ul>
               </ContentSection>
 
-              <ContentSection title="Common Clothes Dryer Problems We Fix">
-                <p>Is your clothes dryer not quite getting it done?</p>
-                <ul className="list-disc list-inside space-y-2 mt-4">
-                  <li>Clothes dryer won&apos;t turn on</li>
-                  <li>Clothes dryer takes too long to dry</li>
-                  <li>Clothes dryer not tumbling clothes</li>
-                  <li>Clothes dryer not heating</li>
-                  <li>Clothes dryer making strange noises</li>
-                </ul>
-              </ContentSection>
-
-              <ContentSection title="Expert Diagnosis and Repair">
+              <ContentSection title="Why Choose Kelly&apos;s for Dryer Repair">
                 <p>
-                  For these symptoms or any other problems with your washer or dryer, turn to the pros at Kelly&apos;s Appliance Repair. We&apos;ll diagnose the problem, provide options to fix the issue and get you going again in no time!
+                  With over 50 years of experience serving the Bay Area, Kelly&apos;s Appliance Repair has built a reputation for reliable, professional service. Our technicians use genuine OEM parts and follow manufacturer guidelines to ensure your dryer is repaired correctly the first time.
                 </p>
                 <p className="mt-4">
-                  Our certified technicians are well-versed in diagnosing and resolving issues such as drum problems, electrical faults, and water leaks. We ensure your appliances run smoothly by using high-quality, genuine replacement parts.
+                  We offer flexible scheduling including same-day appointments when available, transparent pricing with no hidden fees, and a 90-day money back guarantee on all completed repairs. Your satisfaction is our top priority.
+                </p>
+              </ContentSection>
+
+              <ContentSection title="Service Areas">
+                <p>
+                  We provide dryer repair services throughout Sonoma County (including Santa Rosa, Petaluma, Rohnert Park, Sonoma, Sebastopol, Windsor, and more), Marin County (including San Rafael, Novato, Mill Valley, and surrounding areas), and Napa County (including Napa and surrounding communities).
+                </p>
+                <p className="mt-4">
+                  <Link href="/service-locations" className="text-green-600 hover:text-green-700 font-medium">View all service locations →</Link>
                 </p>
               </ContentSection>
 
@@ -195,7 +222,7 @@ export default function WasherDryerRepairPage() {
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Need Washer or Dryer Repair?
+            Need Dryer Repair Service?
           </h2>
           <p className="text-xl mb-8">
             With a focus on prompt service, transparent pricing, and exceptional customer satisfaction, we strive to minimize your downtime and inconvenience.
@@ -225,8 +252,8 @@ export default function WasherDryerRepairPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "serviceType": "Washer and Dryer Repair",
-            "description": "Find washer and dryer repair near me. Professional washer and dryer repair services with factory authorized technicians.",
+            "serviceType": "Dryer Repair",
+            "description": "Find dryer repair near me. Professional dryer repair services with factory authorized technicians for all major brands.",
             "provider": {
               "@type": "LocalBusiness",
               "name": companyInfo.name,
@@ -260,14 +287,14 @@ export default function WasherDryerRepairPage() {
             "areaServed": [
               "Santa Rosa, CA","Petaluma, CA","Rohnert Park, CA","Sonoma, CA","Sebastopol, CA","Windsor, CA","Marin County, CA","San Rafael, CA","Novato, CA","Napa, CA"
             ],
-            "url": "https://kellysappliancerepair.com/services/washer-dryer-repair"
+            "url": "https://kellysappliancerepair.com/services/dryer-repair"
           })
         }}
       />
       <FAQSection
-        title="Washer & Dryer Repair FAQs"
-        subtitle="Common questions about washer and dryer repairs, costs, and scheduling."
-        faqs={washerDryerFaqs}
+        title="Dryer Repair FAQs"
+        subtitle="Common questions about dryer repairs, costs, and scheduling."
+        faqs={dryerFaqs}
       />
     </Layout>
   );

@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: "Appliance Repair Larkspur - Kelly's Appliance Center",
   description: 'Professional appliance repair services in Larkspur, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 .',
+  alternates: {
+    canonical: '/service-locations/larkspur',
+  },
 };
 
 const services = [

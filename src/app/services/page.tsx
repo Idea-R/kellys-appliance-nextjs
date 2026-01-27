@@ -2,6 +2,9 @@ import React from 'react';
 export const metadata = {
   title: "Services",
   description: 'Overview of appliance repair services we provide across major brands.',
+  alternates: {
+    canonical: '/services',
+  },
 };
 import Image from 'next/image';
 import Link from 'next/link';
@@ -35,6 +38,13 @@ const services = [
     image: '/images/dryer1.webp', 
     href: '/services/washer-dryer-repair',
     features: ['Drum Replacement', 'Water Leak Repair', 'Electrical Issues', 'Spin Cycle Problems']
+  },
+  {
+    title: 'Dryer Repair',
+    description: 'Professional dryer repair services. Expert diagnosis of heating issues, vent problems, and mechanical faults. Fast, reliable service for all major brands.',
+    image: '/images/dryer1.webp',
+    href: '/services/dryer-repair',
+    features: ['Heating Element Repair', 'Vent Cleaning', 'Belt Replacement', 'Thermal Fuse Repair']
   },
   {
     title: 'Dishwasher Repair',

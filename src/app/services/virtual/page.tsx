@@ -9,6 +9,9 @@ const companyInfo = getCompanyInfo()
 export const metadata = {
   title: "Virtual Service Call",
   description: '15-minute video diagnostic session with a technician. Quick troubleshooting to identify symptoms and possible causes, potentially saving time and money.',
+  alternates: {
+    canonical: '/services/virtual',
+  },
 }
 
 export default function VirtualServicePage() {

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: 'Authorized Appliance Service (Factory Authorized for Select Brands)',
   description: 'We service many major appliance brands. Factory authorized for select brands including Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor. Genuine parts and manufacturer-guideline repairs.',
   keywords: ['authorized appliance service', 'factory authorized repair', 'genuine parts', 'Whirlpool authorized', 'KitchenAid authorized', 'Maytag authorized', 'GE authorized service', 'Viking authorized', 'Dacor authorized'],
+  alternates: {
+    canonical: '/authorized-service',
+  },
 }
 
 export default function AuthorizedServicePage() {

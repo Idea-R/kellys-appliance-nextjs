@@ -11,6 +11,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Top 5 Tips for Buying a Home Appliance',
   description: 'Top 5 tips for buying a home appliance from the experts at Kelly\'s Appliance Repair',
+  alternates: {
+    canonical: '/blog/top-5-tips-for-buying-a-home-appliance',
+  },
 };
 
 export default function BlogPost() {

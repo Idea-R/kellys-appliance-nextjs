@@ -15,6 +15,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Refrigerator Repair Services - Expert Technicians',
   description: 'Find refrigerator repair near me and ice maker repair near me. Expert refrigerator repair services for residential clients. Factory authorized service with 90-day guarantee. Call (707) 664-9702',
+  alternates: {
+    canonical: '/services/refrigerator-repair',
+  },
 };
 
 const features = [

@@ -4,6 +4,7 @@ const services = [
   { name: 'Refrigerator Repair', slug: 'refrigerator-repair' },
   { name: 'Oven / Range Repair', slug: 'oven-repair' },
   { name: 'Washer & Dryer Repair', slug: 'washer-dryer-repair' },
+  { name: 'Dryer Repair', slug: 'dryer-repair' },
   { name: 'Dishwasher Repair', slug: 'dishwasher-repair' },
 ]
 

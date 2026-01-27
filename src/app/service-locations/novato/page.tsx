@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Appliance Repair Novato',
   description: 'Find local appliance repair near you in Novato, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: '/service-locations/novato',
+  },
 };
 
 const services = [

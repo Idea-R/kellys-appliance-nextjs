@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: "Appliance Repair Mill Valley - Kelly's Appliance Center",
   description: 'Find local appliance repair near you in Mill Valley, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: '/service-locations/mill-valley',
+  },
 };
 
 const services = [

@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: "Appliance Repair Guerneville - Kelly's Appliance Center",
   description: 'Professional appliance repair services in Guerneville, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 .',
+  alternates: {
+    canonical: '/service-locations/guerneville',
+  },
 };
 
 const services = [

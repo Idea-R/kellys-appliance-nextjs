@@ -14,6 +14,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Appliance Repair Marin County',
   description: 'Professional appliance repair services in Marin County, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: '/service-locations/marin-county',
+  },
 };
 
 export default function MarinCountyPage() {

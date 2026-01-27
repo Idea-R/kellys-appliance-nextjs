@@ -11,6 +11,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Pricing',
   description: 'Transparent appliance repair pricing. Service call $129-$149 applies toward labor if you proceed. Additional appliance +$60. 90-day money-back guarantee.',
+  alternates: {
+    canonical: '/pricing',
+  },
 };
 
 const services = [

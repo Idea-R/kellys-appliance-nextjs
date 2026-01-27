@@ -12,6 +12,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'About Us',
   description: 'Kelly\'s Appliance Repair has been serving Sonoma, Marin, and Napa counties since 1975. Our expert technicians are highly-skilled. Contact us today!',
+  alternates: {
+    canonical: '/about-us',
+  },
 };
 
 export default function AboutUsPage() {

@@ -7,6 +7,9 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 export const metadata = {
   title: 'Referrals & Trusted Partners',
   description: 'Local businesses we recommend. Appliance installation, vent cleaning, plumbing & HVAC.',
+  alternates: {
+    canonical: '/resources/referrals',
+  },
 }
 
 type Partner = {

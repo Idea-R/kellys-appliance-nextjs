@@ -11,6 +11,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Why You Should Call a Professional to Repair Your Appliances',
   description: 'Top reasons why you should call a professional for appliance repairs to protect you, your family and your wallet',
+  alternates: {
+    canonical: '/blog/why-you-should-call-a-professional-to-repair-your-appliances',
+  },
 };
 
 export default function BlogPost() {

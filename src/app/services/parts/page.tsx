@@ -6,6 +6,9 @@ export const metadata = {
   title: "Appliance Parts | OEM Parts Hotline (MPC)",
   description:
     'Order OEM appliance parts with expert help. Call the MyPartsCenter hotline 800-371-3882 for water filters, air filters, dryer belts, hoses, venting, and more.',
+  alternates: {
+    canonical: '/services/parts',
+  },
 };
 
 const mpcHotline = '800-371-3882';

@@ -1,17 +1,20 @@
-'use client';
-
+import type { Metadata } from 'next';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
-import dynamic from 'next/dynamic'
 import LazyMount from '@/components/LazyMount'
+import GoogleReviews from '@/components/GoogleReviews'
+import ServiceAreaMapCircles from '@/components/ServiceAreaMapCircles'
+import EmblaBrandCarousel from '@/components/EmblaBrandCarousel'
 
-const GoogleReviews = dynamic(() => import('@/components/GoogleReviews'), { ssr: false })
-const ServiceAreaMapCircles = dynamic(() => import('@/components/ServiceAreaMapCircles'), { ssr: false })
-const EmblaBrandCarousel = dynamic(() => import('@/components/EmblaBrandCarousel'), { ssr: false })
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
 
 const companyInfo = getCompanyInfo();
 
@@ -89,6 +92,7 @@ export default function HomePage() {
               quality={75}
               sizes="100vw"
               className="object-cover"
+              fetchPriority="high"
             />
           </div>
           {/* Removed overlay for clean, uncluttered hero */}

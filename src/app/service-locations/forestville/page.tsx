@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: "Appliance Repair Forestville - Kelly's Appliance Center",
   description: 'Professional appliance repair services in Forestville, CA. Factory authorized repairs for all major brands. Call (707) 664-9702 .',
+  alternates: {
+    canonical: '/service-locations/forestville',
+  },
 };
 
 const services = [

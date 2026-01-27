@@ -13,6 +13,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Resources - Appliance Repair Tips & Blog',
   description: 'Expert appliance repair tips, maintenance guides, and helpful resources from Kelly\'s Appliance Center. Learn how to keep your appliances running efficiently.',
+  alternates: {
+    canonical: '/resources',
+  },
 };
 
 export default async function ResourcesPage() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
@@ -13,13 +14,17 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Appliance Repair Petaluma',
   description: 'Find local appliance repair near you in Petaluma, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
+  alternates: {
+    canonical: '/service-locations/petaluma',
+  },
 };
 
 const services = [
-  { name: 'Refrigerator Repair', icon: '🧊' },
-  { name: 'Oven Repair', icon: '🔥' },
-  { name: 'Washer & Dryer Repair', icon: '🌊' },
-  { name: 'Dishwasher Repair', icon: '🍽️' }
+  { name: 'Refrigerator Repair', icon: '🧊', href: '/services/refrigerator-repair' },
+  { name: 'Oven Repair', icon: '🔥', href: '/services/oven-repair' },
+  { name: 'Washer & Dryer Repair', icon: '🌊', href: '/services/washer-dryer-repair' },
+  { name: 'Dryer Repair', icon: '🔥', href: '/services/dryer-repair' },
+  { name: 'Dishwasher Repair', icon: '🍽️', href: '/services/dishwasher-repair' }
 ];
 
 export default function PetalumaPage() {
@@ -100,9 +105,9 @@ export default function PetalumaPage() {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <Link key={index} href={service.href} className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {service.name}
@@ -110,7 +115,7 @@ export default function PetalumaPage() {
                 <p className="text-gray-600 text-sm">
                   Professional repair services with factory authorized parts
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

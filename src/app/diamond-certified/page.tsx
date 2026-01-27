@@ -4,6 +4,14 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 import VideoEmbedCard from '@/components/VideoEmbedCard'
 
+export const metadata = {
+  title: 'Diamond Certified',
+  description: 'Diamond Certified profile and expert videos from Kelly’s Appliance Center.',
+  alternates: {
+    canonical: '/diamond-certified',
+  },
+}
+
 export default function DiamondCertifiedPage() {
   const videos: Array<{ title: string; youtubeId: string; description?: string }> = [
     {

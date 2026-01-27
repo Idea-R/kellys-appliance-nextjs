@@ -11,6 +11,9 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 export const metadata = {
   title: "Service Locations",
   description: 'Cities and areas we serve across Sonoma, Marin, and Napa counties.',
+  alternates: {
+    canonical: '/service-locations',
+  },
 };
 
 const company = getCompanyInfo()

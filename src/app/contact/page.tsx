@@ -11,6 +11,9 @@ const companyInfo = getCompanyInfo();
 export const metadata = {
   title: 'Contact - Request Appointment',
   description: 'Contact Kelly\'s Appliance Center for professional appliance repair services. Call (707) 664-9702 or visit us in Cotati, CA. Serving the Bay Area since 1975.',
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 export default function ContactPage() {

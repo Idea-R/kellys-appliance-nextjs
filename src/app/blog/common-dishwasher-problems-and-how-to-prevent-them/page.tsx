@@ -8,6 +8,9 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 export const metadata = {
   title: 'Common Dishwasher Problems and How to Prevent Them',
   description: 'Discover the most common dishwasher issues and preventive maintenance tips to keep your dishwasher running efficiently.',
+  alternates: {
+    canonical: '/blog/common-dishwasher-problems-and-how-to-prevent-them',
+  },
 };
 
 export default function DishwasherPostPage() {
