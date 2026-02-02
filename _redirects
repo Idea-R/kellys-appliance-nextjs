@@ -79,6 +79,21 @@ http://mobile.kellysappliancerepair.com/* https://kellysappliancerepair.com/:spl
 /service-locations/ross /service-locations/marin-county 301
 /service-locations/ross/ /service-locations/marin-county 301
 
+# Cloudflare email protection URL sometimes appears in crawl logs as a bare path.
+# If you enable Cloudflare "Email Address Obfuscation", remove these redirects (they will break the decode script).
+/cdn-cgi/l/email-protection / 301
+/cdn-cgi/l/email-protection/ / 301
+
+# Canonicalize top-level routes (static export often serves /route.html, so /route/ can 404)
+/authorized-service/ /authorized-service 301
+/services/ /services 301
+/service-locations/ /service-locations 301
+/resources/ /resources 301
+/contact/ /contact 301
+/about-us/ /about-us 301
+/pricing/ /pricing 301
+/blog/ /blog 301
+
 # Service page redirects (internal redirects)
 /services/range-oven-repair /services/oven-repair 301
 /services/oven-range-repair /services/oven-repair 301

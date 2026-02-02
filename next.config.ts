@@ -36,8 +36,8 @@ const nextConfig: NextConfig = {
           loaderFile: "./src/lib/cfImageLoader.mjs",
         },
   
-  // Optional: add trailing slashes for cleaner URLs
-  // trailingSlash: true,
+  // Canonical URLs should NOT have trailing slashes (matches sitemap + Cloudflare _redirects)
+  trailingSlash: false,
   
   // Security headers
   poweredByHeader: false,
@@ -65,6 +65,24 @@ const nextConfig: NextConfig = {
           },
         ],
         destination: "https://kellysappliancerepair.com/:path*",
+        permanent: true,
+      },
+      // Redirect legacy mobile subdomain to primary domain (preserve path/query)
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "mobile.kellysappliancerepair.com",
+          },
+        ],
+        destination: "https://kellysappliancerepair.com/:path*",
+        permanent: true,
+      },
+      // Clean up a common placeholder URL people sometimes try to visit directly
+      {
+        source: "/$1",
+        destination: "/",
         permanent: true,
       },
       // Service page redirects (original)
@@ -205,6 +223,41 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // Other legacy/removed URLs seen in Google Search Console
+      {
+        source: "/faq-items",
+        destination: "/resources",
+        permanent: true,
+      },
+      {
+        source: "/faq-items/",
+        destination: "/resources",
+        permanent: true,
+      },
+      {
+        source: "/service-locations/ross",
+        destination: "/service-locations/marin-county",
+        permanent: true,
+      },
+      {
+        source: "/service-locations/ross/",
+        destination: "/service-locations/marin-county",
+        permanent: true,
+      },
+
+      // Cloudflare email protection URL sometimes appears in crawl logs as a bare path.
+      // If you enable Cloudflare "Email Address Obfuscation", remove these redirects (they will break the decode script).
+      {
+        source: "/cdn-cgi/l/email-protection",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/cdn-cgi/l/email-protection/",
+        destination: "/",
+        permanent: true,
+      },
+
       // Authorized service sub-paths redirects
       {
         source: "/authorized-service/refrigerator-repair",
@@ -246,6 +299,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/contact-test/",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
         source: "/wp-json/:path*",
         destination: "/",
         permanent: true,
@@ -270,11 +328,63 @@ const nextConfig: NextConfig = {
         destination: "/services/oven-repair",
         permanent: true,
       },
+      {
+        source: "/services/oven-range-repair",
+        destination: "/services/oven-repair",
+        permanent: true,
+      },
 
       // Design preview test page cleanup
       {
         source: "/design-preview",
         destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/design-preview/",
+        destination: "/",
+        permanent: true,
+      },
+
+      // Canonicalize top-level routes (static export often serves /route.html, so /route/ can 404)
+      {
+        source: "/authorized-service/",
+        destination: "/authorized-service",
+        permanent: true,
+      },
+      {
+        source: "/services/",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/service-locations/",
+        destination: "/service-locations",
+        permanent: true,
+      },
+      {
+        source: "/resources/",
+        destination: "/resources",
+        permanent: true,
+      },
+      {
+        source: "/contact/",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/about-us/",
+        destination: "/about-us",
+        permanent: true,
+      },
+      {
+        source: "/pricing/",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/blog/",
+        destination: "/blog",
         permanent: true,
       },
 
@@ -390,6 +500,17 @@ const nextConfig: NextConfig = {
       {
         source: "/services/range-oven-repair/",
         destination: "/services/oven-repair",
+        permanent: true,
+      },
+      {
+        source: "/services/oven-range-repair/",
+        destination: "/services/oven-repair",
+        permanent: true,
+      },
+      // WordPress sitemap redirect
+      {
+        source: "/sitemap_index.xml",
+        destination: "/sitemap.xml",
         permanent: true,
       },
     ];
