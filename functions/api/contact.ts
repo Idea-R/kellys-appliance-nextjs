@@ -1,6 +1,6 @@
 // Cloudflare Pages Function for contact form
 // Handles POST requests to /api/contact
-// Uses MailChannels API for email delivery
+// Uses Resend API for email delivery
 
 interface ContactFormData {
   name: string;
@@ -10,134 +10,156 @@ interface ContactFormData {
   message: string;
 }
 
-const RECIPIENT_EMAIL = 'kellysappliance@gmail.com';
-const MAILCHANNELS_API = 'https://api.mailchannels.net/tx/v1/send';
+interface Env {
+  RESEND_API_KEY?: string;
+  CONTACT_EMAIL_TO?: string;
+  CONTACT_EMAIL_FROM?: string;
+  CONTACT_EMAIL_FROM_NAME?: string;
+  EMAIL_LOGO_URL?: string;
+  SITE_URL?: string;
+}
+
+// Field length limits to prevent abuse
+const MAX_FIELD_LENGTHS = {
+  name: 100,
+  email: 255,
+  zip: 10,
+  phone: 20,
+  message: 5000,
+};
 
 export async function onRequestPost(context: {
   request: Request;
-  env: any;
+  env: Env;
 }) {
   try {
     const data = await context.request.json() as ContactFormData;
     const { name, email, zip, phone, message } = data || {};
 
+    if (
+      typeof name !== 'string' ||
+      typeof email !== 'string' ||
+      typeof zip !== 'string' ||
+      typeof phone !== 'string' ||
+      typeof message !== 'string'
+    ) {
+      return new Response(
+        JSON.stringify({ ok: false, error: 'Invalid payload' }),
+        { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
+      );
+    }
+
+    const nameStr = name.trim();
+    const emailStr = email.trim();
+    const zipStr = zip.trim();
+    const phoneStr = phone.trim();
+    const messageStr = message.trim();
+
     // Validate required fields
-    if (!name || !email || !zip || !phone || !message) {
+    if (!nameStr || !emailStr || !zipStr || !phoneStr || !messageStr) {
       return new Response(
         JSON.stringify({ ok: false, error: 'Missing required fields' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
+        { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
+      );
+    }
+
+    // Validate field lengths
+    if (nameStr.length > MAX_FIELD_LENGTHS.name) {
+      return new Response(
+        JSON.stringify({ ok: false, error: 'Name is too long' }),
+        { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
+      );
+    }
+    if (emailStr.length > MAX_FIELD_LENGTHS.email) {
+      return new Response(
+        JSON.stringify({ ok: false, error: 'Email is too long' }),
+        { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
+      );
+    }
+    if (zipStr.length > MAX_FIELD_LENGTHS.zip) {
+      return new Response(
+        JSON.stringify({ ok: false, error: 'Zip code is too long' }),
+        { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
+      );
+    }
+    if (phoneStr.length > MAX_FIELD_LENGTHS.phone) {
+      return new Response(
+        JSON.stringify({ ok: false, error: 'Phone number is too long' }),
+        { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
+      );
+    }
+    if (messageStr.length > MAX_FIELD_LENGTHS.message) {
+      return new Response(
+        JSON.stringify({ ok: false, error: 'Message is too long' }),
+        { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
       );
     }
 
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(emailStr)) {
       return new Response(
         JSON.stringify({ ok: false, error: 'Invalid email format' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
+        { status: 400, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
       );
     }
 
-    // Send email via MailChannels
-    const emailPayload = {
-      personalizations: [
-        {
-          to: [{ email: RECIPIENT_EMAIL, name: 'Kelly\'s Appliance Repair' }],
-          dkim_domain: 'kellysappliancerepair.com',
-          dkim_selector: 'mailchannels',
-        },
-      ],
-      from: {
-        email: 'contact@kellysappliancerepair.com',
-        name: 'Kelly\'s Website Contact Form',
-      },
-      reply_to: {
-        email: email,
-        name: name,
-      },
-      subject: `New Contact Form Submission from ${name}`,
-      content: [
-        {
-          type: 'text/plain',
-          value: `New contact form submission:
-
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Zip Code: ${zip}
-
-Message:
-${message}
-
----
-Submitted from: kellysappliancerepair.com`,
-        },
-        {
-          type: 'text/html',
-          value: `<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
-    .content { background: #f4f4f4; padding: 20px; margin-top: 20px; }
-    .field { margin-bottom: 15px; }
-    .label { font-weight: bold; color: #555; }
-    .value { margin-top: 5px; }
-    .message-box { background: white; padding: 15px; margin-top: 15px; border-left: 4px solid #1a1a1a; }
-    .footer { text-align: center; color: #777; font-size: 12px; margin-top: 20px; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h2>New Contact Form Submission</h2>
-    </div>
-    <div class="content">
-      <div class="field">
-        <div class="label">Name:</div>
-        <div class="value">${name}</div>
-      </div>
-      <div class="field">
-        <div class="label">Email:</div>
-        <div class="value"><a href="mailto:${email}">${email}</a></div>
-      </div>
-      <div class="field">
-        <div class="label">Phone:</div>
-        <div class="value"><a href="tel:${phone}">${phone}</a></div>
-      </div>
-      <div class="field">
-        <div class="label">Zip Code:</div>
-        <div class="value">${zip}</div>
-      </div>
-      <div class="message-box">
-        <div class="label">Message:</div>
-        <div class="value">${message.replace(/\n/g, '<br>')}</div>
-      </div>
-    </div>
-    <div class="footer">
-      Submitted from kellysappliancerepair.com
-    </div>
-  </div>
-</body>
-</html>`,
-        },
-      ],
-    };
-
-    const mailResponse = await fetch(MAILCHANNELS_API, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(emailPayload),
-    });
-
-    if (!mailResponse.ok) {
-      const errorText = await mailResponse.text();
-      throw new Error(`MailChannels API error: ${mailResponse.status} - ${errorText}`);
+    // Get environment variables with defaults
+    const apiKey = context.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not configured');
+      return new Response(
+        JSON.stringify({ ok: false, error: 'Email service is not configured' }),
+        { status: 500, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
+      );
     }
+
+    const toEmailRaw = (context.env.CONTACT_EMAIL_TO || 'kellysappliance@gmail.com').trim();
+    const toEmailList = toEmailRaw
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const toEmail = toEmailList.length <= 1 ? (toEmailList[0] || 'kellysappliance@gmail.com') : toEmailList;
+
+    const fromEmail = context.env.CONTACT_EMAIL_FROM?.trim();
+    if (!fromEmail) {
+      console.error('CONTACT_EMAIL_FROM is not configured');
+      return new Response(
+        JSON.stringify({ ok: false, error: 'Email service is not configured' }),
+        { status: 500, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'no-store' } }
+      );
+    }
+
+    const fromName = (context.env.CONTACT_EMAIL_FROM_NAME || "Kelly's Website Contact Form").trim();
+    const logoUrl = context.env.EMAIL_LOGO_URL?.trim();
+    const requestOrigin = new URL(context.request.url).origin;
+    const siteUrl = (context.env.SITE_URL || requestOrigin || 'https://kellysappliancerepair.com').trim();
+
+    // Import email utilities
+    const { sendEmail } = await import('../../src/server/email/resend');
+    const {
+      createContactEmailHtml,
+      createContactEmailText,
+      createContactEmailSubject,
+    } = await import('../../src/server/email/templates/contact');
+
+    // Create email content
+    const payload = { name: nameStr, email: emailStr, zip: zipStr, phone: phoneStr, message: messageStr };
+    const html = createContactEmailHtml(payload, logoUrl, siteUrl);
+    const text = createContactEmailText(payload);
+    const subject = createContactEmailSubject(payload);
+
+    // Send email via Resend
+    await sendEmail({
+      apiKey,
+      from: fromEmail,
+      fromName,
+      to: toEmail,
+      subject,
+      html,
+      text,
+      replyTo: emailStr,
+    });
 
     return new Response(
       JSON.stringify({ ok: true, message: 'Email sent successfully' }),
@@ -146,19 +168,22 @@ Submitted from: kellysappliancerepair.com`,
         headers: { 
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
+          'Cache-Control': 'no-store',
         } 
       }
     );
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('Contact form error:', errorMessage);
     
     return new Response(
-      JSON.stringify({ ok: false, error: 'Failed to send email', details: errorMessage }),
+      JSON.stringify({ ok: false, error: 'Failed to send email' }),
       { 
         status: 500, 
         headers: { 
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
+          'Cache-Control': 'no-store',
         } 
       }
     );
@@ -173,6 +198,7 @@ export async function onRequestOptions() {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
+      'Cache-Control': 'no-store',
     },
   });
 }

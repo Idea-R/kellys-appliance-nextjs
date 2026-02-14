@@ -82,7 +82,7 @@ Thumbs.db
 
 # Archives and internal docs (keep local, do not track)
 /archive/
-/docs/
+# NOTE: `docs/` is tracked in this repo (SEO/email docs).
 
 # Secrets and sensitive files
 /secrets/*.json

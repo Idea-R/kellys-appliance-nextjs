@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
+import NewsletterSignupForm from '@/components/NewsletterSignupForm';
+import { blogPosts } from '@/data/blogPosts';
 
 export const metadata = {
   title: 'Appliance Repair Tips & Guides',
@@ -10,57 +12,6 @@ export const metadata = {
     canonical: '/blog',
   },
 };
-
-const blogPosts = [
-  {
-    title: 'Why Is My Dryer Taking So Long to Dry Clothes?',
-    slug: 'why-is-my-dryer-taking-so-long-to-dry-clothes',
-    excerpt: 'Learn the top causes and solutions for slow-drying dryers from our expert technicians. Common issues include clogged lint traps, blocked vents, and faulty heating elements.',
-    date: '2025-06-26',
-    readTime: '5 min read',
-    category: 'Dryer Repair'
-  },
-  {
-    title: 'Common Dishwasher Problems and How to Prevent Them',
-    slug: 'common-dishwasher-problems-and-how-to-prevent-them',
-    excerpt: 'Discover the most common dishwasher issues and preventive maintenance tips to keep your dishwasher running efficiently for years to come.',
-    date: '2025-05-23',
-    readTime: '4 min read',
-    category: 'Dishwasher Repair'
-  },
-  {
-    title: 'What Is the Best Way to Clean Stainless Steel Appliances?',
-    slug: 'what-is-the-best-way-to-clean-stainless-steel-appliances',
-    excerpt: 'Professional tips for keeping your stainless steel appliances spotless and maintaining their appearance with the right cleaning products and techniques.',
-    date: '2025-01-05',
-    readTime: '3 min read',
-    category: 'Maintenance'
-  },
-  {
-    title: 'What is the Best Way to Avoid Appliance Repair Scams?',
-    slug: 'what-is-the-best-way-to-avoid-appliance-repair-scams',
-    excerpt: 'Protect yourself from appliance repair scams with these expert tips. Learn the warning signs and how to choose a reputable repair service.',
-    date: '2024-12-09',
-    readTime: '6 min read',
-    category: 'Consumer Tips'
-  },
-  {
-    title: 'Why You Should Call a Professional to Repair Your Appliances',
-    slug: 'why-you-should-call-a-professional-to-repair-your-appliances',
-    excerpt: 'Understanding when DIY isn\'t enough and professional help is needed. Learn about the risks of DIY repairs and benefits of professional service.',
-    date: '2024-11-20',
-    readTime: '4 min read',
-    category: 'Professional Service'
-  },
-  {
-    title: 'Top 5 Tips for Buying a Home Appliance',
-    slug: 'top-5-tips-for-buying-a-home-appliance',
-    excerpt: 'Essential advice for making smart appliance purchase decisions. Consider energy efficiency, size, features, and long-term maintenance costs.',
-    date: '2019-10-23',
-    readTime: '5 min read',
-    category: 'Buying Guide'
-  }
-];
 
 const categories = ['All', 'Refrigerator', 'Dishwasher', 'Dryer Repair', 'Maintenance', 'Consumer Tips', 'Professional Service', 'Buying Guide'];
 
@@ -157,23 +108,7 @@ export default function BlogPage() {
               Get the latest appliance maintenance tips and repair advice delivered to your inbox
             </p>
             <div className="max-w-md mx-auto">
-              <form className="bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-lg">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 shadow-sm"
-                    required
-                  />
-                  <button 
-                    type="submit"
-                    className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-                {/* TODO: Connect to Resend email service */}
-              </form>
+              <NewsletterSignupForm />
             </div>
           </div>
         </div>

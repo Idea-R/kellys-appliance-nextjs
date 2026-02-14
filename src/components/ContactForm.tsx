@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState<string>('')
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
@@ -11,16 +12,25 @@ export default function ContactForm() {
     const payload = Object.fromEntries(formData.entries())
     try {
       setStatus('sending')
+      setErrorMessage('')
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       })
-      if (!res.ok) throw new Error('Network')
+
+      type ContactApiResponse = { ok?: boolean; error?: string }
+      const data: unknown = await res.json().catch(() => null)
+      const api: ContactApiResponse = typeof data === 'object' && data !== null ? (data as ContactApiResponse) : {}
+
+      if (!res.ok || api.ok === false) {
+        throw new Error(typeof api.error === 'string' && api.error ? api.error : 'Something went wrong. Please try again.')
+      }
       setStatus('sent')
       form.reset()
-    } catch {
+    } catch (error) {
       setStatus('error')
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please call us.')
     }
   }
 
@@ -52,7 +62,7 @@ export default function ContactForm() {
         <button type="submit" className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold btn-fill" data-analytics-label="contact_form_submit" disabled={status==='sending'} aria-live="polite">
           {status==='sending' ? 'Sending...' : status==='sent' ? 'Sent!' : 'Send Message'}
         </button>
-        {status==='error' && <span role="alert" className="text-sm text-red-600">Something went wrong. Please call us.</span>}
+        {status==='error' && <span role="alert" className="text-sm text-red-600">{errorMessage || 'Something went wrong. Please call us.'}</span>}
       </div>
     </form>
   )
