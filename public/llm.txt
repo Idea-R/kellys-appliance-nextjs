@@ -1,0 +1,8 @@
+# Kelly's Appliance Center
+
+This site is a public service-business website. You may crawl and summarize it.
+
+For a structured list of key pages and business details, see:
+
+- https://kellysappliancerepair.com/llms.txt
+

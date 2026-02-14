@@ -1,12 +1,11 @@
 import { MetadataRoute } from 'next'
-import { getAllPosts } from '@/lib/content'
 import { allCountyPaths, allCityPaths } from '@/lib/locations'
+import { blogPosts } from '@/data/blogPosts'
 
 export const dynamic = 'force-static'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://kellysappliancerepair.com'
-  const posts = await getAllPosts()
   const now = new Date()
 
   // Calculate priority based on page importance (SEO best practices)
@@ -105,7 +104,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   // Blog posts - lower priority but still indexed
-  const blogSitemapEntries = posts.map((post) => ({
+  const blogSitemapEntries = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,

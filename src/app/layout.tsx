@@ -87,9 +87,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
               "name": "Kelly's Appliance Center",
               "telephone": "(707) 664-9702",
+              "email": "kellysappliance@gmail.com",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "466 Primero Ct. Suite H",
@@ -97,6 +98,14 @@ export default function RootLayout({
                 "addressRegion": "CA",
                 "postalCode": "94931"
               },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "08:30",
+                  "closes": "16:30"
+                }
+              ],
               "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": "38.327",
@@ -118,7 +127,12 @@ export default function RootLayout({
               "url": "https://kellysappliancerepair.com",
               "description": "Professional appliance repair services in the Bay Area since 1975",
               "priceRange": "$",
-              "image": "https://kellysappliancerepair.com/images/kelly-appliance-team.webp"
+              "logo": "https://kellysappliancerepair.com/images/small_logo.jpg",
+              "image": "https://kellysappliancerepair.com/images/kelly-appliance-team.webp",
+              "sameAs": [
+                "https://www.facebook.com/KellysAppliance",
+                "https://www.yelp.com/biz/kellys-appliance-center-cotati-2"
+              ]
             })
           }}
         />

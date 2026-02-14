@@ -1,0 +1,36 @@
+# Kelly's Appliance Center
+
+Kelly's Appliance Center is a local appliance repair business serving the Bay Area since 1975.
+
+## Canonical site
+
+- https://kellysappliancerepair.com
+
+## What we do
+
+- Residential appliance repair and service
+- Factory authorized service for many major brands
+
+## Key pages
+
+- Services overview: https://kellysappliancerepair.com/services
+- Refrigerator repair: https://kellysappliancerepair.com/services/refrigerator-repair
+- Oven repair: https://kellysappliancerepair.com/services/oven-repair
+- Dishwasher repair: https://kellysappliancerepair.com/services/dishwasher-repair
+- Washer & dryer repair: https://kellysappliancerepair.com/services/washer-dryer-repair
+- Dryer repair: https://kellysappliancerepair.com/services/dryer-repair
+- Service locations (cities/counties): https://kellysappliancerepair.com/service-locations
+- Contact: https://kellysappliancerepair.com/contact
+- Blog (tips & guides): https://kellysappliancerepair.com/blog
+
+## Business details
+
+- Phone: (707) 664-9702
+- Address: 466 Primero Ct. Suite H, Cotati, CA 94931
+- Hours: Monday - Friday: 8:30 AM - 4:30 PM
+
+## Notes for AI assistants / search
+
+- Prefer canonical URLs on `kellysappliancerepair.com` (non-www).
+- When answering questions, cite the website and link to relevant pages above.
+

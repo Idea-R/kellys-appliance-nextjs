@@ -1,11 +1,12 @@
 # Kelly's Appliance Center - robots.txt
 # Keep this file simple and standards-compliant for best crawler compatibility.
+#
+# We intentionally allow all crawlers (including AI crawlers) to index public pages.
+# Note: Cloudflare "AI Crawl Control" can inject non-standard directives (e.g. Content-Signal)
+# which may trigger Google Search Console robots.txt parsing errors. Prefer serving this file
+# as-is without Cloudflare-managed robots.txt injection.
 
 User-agent: *
-Allow: /
-
-# Disallow non-public routes only
 Disallow: /api/
 
-# Sitemap
 Sitemap: https://kellysappliancerepair.com/sitemap.xml
