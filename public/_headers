@@ -27,6 +27,14 @@
 /*.js
   Cache-Control: public, max-age=31536000
 
+# LLM context files - no cache for freshness
+/llms.txt
+  Cache-Control: public, max-age=86400
+/llms-full.txt
+  Cache-Control: public, max-age=86400
+/llm.txt
+  Cache-Control: public, max-age=86400
+
 # Prevent Pages preview domains from being indexed (avoid duplicate content)
 https://:project.pages.dev/*
   X-Robots-Tag: noindex

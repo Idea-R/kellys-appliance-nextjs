@@ -280,9 +280,14 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // Additional blog post redirects
+      // Additional blog post redirects (alternate slug variants found in GSC)
       {
         source: "/what-is-the-best-way-to-clean-a-stainless-steel-fridge",
+        destination: "/blog/what-is-the-best-way-to-clean-stainless-steel-appliances",
+        permanent: true,
+      },
+      {
+        source: "/what-is-the-best-way-to-clean-a-stainless-steel-fridge/",
         destination: "/blog/what-is-the-best-way-to-clean-stainless-steel-appliances",
         permanent: true,
       },

@@ -8,5 +8,6 @@
 
 User-agent: *
 Disallow: /api/
+Disallow: /cdn-cgi/
 
 Sitemap: https://kellysappliancerepair.com/sitemap.xml

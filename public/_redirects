@@ -61,8 +61,9 @@ http://mobile.kellysappliancerepair.com/* https://kellysappliancerepair.com/:spl
 /authorized-service/range-oven-repair /services/oven-repair 301
 /authorized-service/dishwasher-repair /services/dishwasher-repair 301
 
-# Additional blog post redirects
+# Additional blog post redirects (alternate slug variants found in GSC)
 /what-is-the-best-way-to-clean-a-stainless-steel-fridge /blog/what-is-the-best-way-to-clean-stainless-steel-appliances 301
+/what-is-the-best-way-to-clean-a-stainless-steel-fridge/ /blog/what-is-the-best-way-to-clean-stainless-steel-appliances 301
 
 # WordPress legacy paths
 /portfolio-items / 301

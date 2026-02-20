@@ -6,3 +6,6 @@ For a structured list of key pages and business details, see:
 
 - https://kellysappliancerepair.com/llms.txt
 
+For comprehensive business info with all services, locations, and FAQs:
+
+- https://kellysappliancerepair.com/llms-full.txt

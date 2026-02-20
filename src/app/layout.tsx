@@ -88,7 +88,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+              "@id": "https://kellysappliancerepair.com/#business",
               "name": "Kelly's Appliance Center",
+              "alternateName": "Kelly's Appliance",
               "telephone": "(707) 664-9702",
               "email": "kellysappliance@gmail.com",
               "address": {
@@ -96,7 +98,8 @@ export default function RootLayout({
                 "streetAddress": "466 Primero Ct. Suite H",
                 "addressLocality": "Cotati",
                 "addressRegion": "CA",
-                "postalCode": "94931"
+                "postalCode": "94931",
+                "addressCountry": "US"
               },
               "openingHoursSpecification": [
                 {
@@ -111,6 +114,11 @@ export default function RootLayout({
                 "latitude": "38.327",
                 "longitude": "-122.707"
               },
+              "areaServed": [
+                { "@type": "AdministrativeArea", "name": "Sonoma County, CA" },
+                { "@type": "AdministrativeArea", "name": "Marin County, CA" },
+                { "@type": "AdministrativeArea", "name": "Napa County, CA" }
+              ],
               "serviceArea": {
                 "@type": "GeoCircle",
                 "geoMidpoint": {
@@ -124,14 +132,37 @@ export default function RootLayout({
                   "unitCode": "MI"
                 }
               },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Appliance Repair Services",
+                "itemListElement": [
+                  { "@type": "OfferCatalog", "name": "Refrigerator Repair", "url": "https://kellysappliancerepair.com/services/refrigerator-repair" },
+                  { "@type": "OfferCatalog", "name": "Oven & Range Repair", "url": "https://kellysappliancerepair.com/services/oven-repair" },
+                  { "@type": "OfferCatalog", "name": "Dishwasher Repair", "url": "https://kellysappliancerepair.com/services/dishwasher-repair" },
+                  { "@type": "OfferCatalog", "name": "Washer & Dryer Repair", "url": "https://kellysappliancerepair.com/services/washer-dryer-repair" },
+                  { "@type": "OfferCatalog", "name": "Dryer Repair", "url": "https://kellysappliancerepair.com/services/dryer-repair" }
+                ]
+              },
               "url": "https://kellysappliancerepair.com",
-              "description": "Professional appliance repair services in the Bay Area since 1975",
+              "description": "Professional appliance repair services in the Bay Area since 1975. Factory authorized, Diamond Certified, with a 90-day money-back guarantee.",
+              "foundingDate": "1975",
               "priceRange": "$",
+              "paymentAccepted": "Cash, Credit Card, Check",
+              "currenciesAccepted": "USD",
               "logo": "https://kellysappliancerepair.com/images/small_logo.jpg",
               "image": "https://kellysappliancerepair.com/images/kelly-appliance-team.webp",
               "sameAs": [
                 "https://www.facebook.com/KellysAppliance",
                 "https://www.yelp.com/biz/kellys-appliance-center-cotati-2"
+              ],
+              "knowsAbout": [
+                "appliance repair",
+                "refrigerator repair",
+                "oven repair",
+                "dishwasher repair",
+                "washer repair",
+                "dryer repair",
+                "factory authorized service"
               ]
             })
           }}
