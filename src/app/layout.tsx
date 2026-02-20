@@ -153,8 +153,18 @@ export default function RootLayout({
               "image": "https://kellysappliancerepair.com/images/kelly-appliance-team.webp",
               "sameAs": [
                 "https://www.facebook.com/KellysAppliance",
-                "https://www.yelp.com/biz/kellys-appliance-center-cotati-2"
+                "https://www.yelp.com/biz/kellys-appliance-center-cotati-2",
+                "https://www.bbb.org/us/ca/cotati/profile/appliance-repair/kellys-appliance-center-1116-34094133",
+                "https://www.yellowpages.com/cotati-ca/mip/kellys-appliance-center-8915058",
+                "https://www.mapquest.com/us/california/kelly-s-appliance-center-357730975"
               ],
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.88",
+                "reviewCount": "158",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
               "knowsAbout": [
                 "appliance repair",
                 "refrigerator repair",

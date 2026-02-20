@@ -21,6 +21,38 @@ export default function BlogPost() {
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "What is the Best Way to Avoid Appliance Repair Scams?",
+            "description": "Avoid appliance repair scams with expert tips on identifying trustworthy services, avoiding fraud, and ensuring quality repairs!",
+            "datePublished": "2024-12-09",
+            "dateModified": "2024-12-09",
+            "author": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "url": "https://kellysappliancerepair.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://kellysappliancerepair.com/images/small_logo.jpg"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://kellysappliancerepair.com/blog/what-is-the-best-way-to-avoid-appliance-repair-scams"
+            },
+            "articleSection": "Consumer Tips",
+            "wordCount": 800
+          })
+        }}
+      />
       <Breadcrumbs items={breadcrumbs} />
 
       {/* Article */}

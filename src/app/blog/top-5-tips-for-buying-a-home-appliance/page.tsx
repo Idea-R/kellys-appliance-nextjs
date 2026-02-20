@@ -21,6 +21,38 @@ export default function BlogPost() {
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Top 5 Tips for Buying a Home Appliance",
+            "description": "Top 5 tips for buying a home appliance from the experts at Kelly's Appliance Repair",
+            "datePublished": "2019-10-23",
+            "dateModified": "2019-10-23",
+            "author": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "url": "https://kellysappliancerepair.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://kellysappliancerepair.com/images/small_logo.jpg"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://kellysappliancerepair.com/blog/top-5-tips-for-buying-a-home-appliance"
+            },
+            "articleSection": "Buying Guide",
+            "wordCount": 800
+          })
+        }}
+      />
       <Breadcrumbs items={breadcrumbs} />
 
       {/* Article */}

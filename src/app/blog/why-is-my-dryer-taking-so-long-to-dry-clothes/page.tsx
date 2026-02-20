@@ -19,6 +19,39 @@ export default function DryerPostPage() {
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Why Is My Dryer Taking So Long to Dry Clothes?",
+            "description": "Learn the top causes and solutions for slow-drying dryers from our expert technicians. Common issues include clogged lint traps and blocked vents.",
+            "datePublished": "2025-06-26",
+            "dateModified": "2025-06-26",
+            "author": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "url": "https://kellysappliancerepair.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://kellysappliancerepair.com/images/small_logo.jpg"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://kellysappliancerepair.com/blog/why-is-my-dryer-taking-so-long-to-dry-clothes"
+            },
+            "image": "https://kellysappliancerepair.com/images/dryer1.webp",
+            "articleSection": "Dryer Repair",
+            "wordCount": 900
+          })
+        }}
+      />
       <Breadcrumbs items={breadcrumbs} />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">

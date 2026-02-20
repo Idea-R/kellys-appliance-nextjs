@@ -18,6 +18,38 @@ export default function DishwasherPostPage() {
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Common Dishwasher Problems and How to Prevent Them",
+            "description": "Discover the most common dishwasher issues and preventive maintenance tips to keep your dishwasher running efficiently.",
+            "datePublished": "2025-05-23",
+            "dateModified": "2025-05-23",
+            "author": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "url": "https://kellysappliancerepair.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://kellysappliancerepair.com/images/small_logo.jpg"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://kellysappliancerepair.com/blog/common-dishwasher-problems-and-how-to-prevent-them"
+            },
+            "articleSection": "Dishwasher Repair",
+            "wordCount": 700
+          })
+        }}
+      />
       <Breadcrumbs items={breadcrumbs} />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">

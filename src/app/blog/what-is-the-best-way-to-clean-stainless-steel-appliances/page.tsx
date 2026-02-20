@@ -25,6 +25,38 @@ export default function BlogPost() {
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "What Is the Best Way to Clean Stainless Steel Appliances?",
+            "description": "Learn the best way to clean a stainless steel fridge! Discover easy steps to remove smudges, streaks, and fingerprints for a spotless shine.",
+            "datePublished": "2025-01-05",
+            "dateModified": "2025-01-05",
+            "author": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "url": "https://kellysappliancerepair.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://kellysappliancerepair.com/images/small_logo.jpg"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://kellysappliancerepair.com/blog/what-is-the-best-way-to-clean-stainless-steel-appliances"
+            },
+            "articleSection": "Maintenance",
+            "wordCount": 600
+          })
+        }}
+      />
       <Breadcrumbs items={breadcrumbs} />
 
       {/* Article */}

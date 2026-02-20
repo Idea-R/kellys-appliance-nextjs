@@ -21,6 +21,38 @@ export default function BlogPost() {
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Why You Should Call a Professional to Repair Your Appliances",
+            "description": "Top reasons why you should call a professional for appliance repairs to protect you, your family and your wallet",
+            "datePublished": "2024-11-20",
+            "dateModified": "2024-11-20",
+            "author": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "url": "https://kellysappliancerepair.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Kelly's Appliance Center",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://kellysappliancerepair.com/images/small_logo.jpg"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://kellysappliancerepair.com/blog/why-you-should-call-a-professional-to-repair-your-appliances"
+            },
+            "articleSection": "Professional Service",
+            "wordCount": 700
+          })
+        }}
+      />
       <Breadcrumbs items={breadcrumbs} />
 
       {/* Article */}
