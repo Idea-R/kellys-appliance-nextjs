@@ -13,7 +13,7 @@ export const metadata = {
   },
 };
 
-const categories = ['All', 'Refrigerator', 'Dishwasher', 'Dryer Repair', 'Maintenance', 'Consumer Tips', 'Professional Service', 'Buying Guide'];
+const categories = ['All', 'Refrigerator Repair', 'Oven Repair', 'Dishwasher Repair', 'Washer Repair', 'Dryer Repair', 'Maintenance', 'Consumer Tips', 'Professional Service', 'Buying Guide'];
 
 export default function BlogPage() {
   return (

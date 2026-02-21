@@ -18,6 +18,42 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: 'How to Tell If Your Refrigerator Needs Professional Repair',
+    slug: 'how-to-tell-if-your-refrigerator-needs-professional-repair',
+    excerpt:
+      'Learn the warning signs that your refrigerator needs professional attention, from unusual noises to temperature fluctuations and excessive frost buildup.',
+    date: '2026-02-20',
+    readTime: '5 min read',
+    category: 'Refrigerator Repair',
+  },
+  {
+    title: 'Is Your Oven Not Heating Properly? Common Causes and Fixes',
+    slug: 'is-your-oven-not-heating-properly-common-causes-and-fixes',
+    excerpt:
+      'Discover why your oven might not be heating correctly and when you need a professional repair. Covers electric and gas oven troubleshooting.',
+    date: '2026-02-18',
+    readTime: '5 min read',
+    category: 'Oven Repair',
+  },
+  {
+    title: 'How Often Should You Service Your Home Appliances?',
+    slug: 'how-often-should-you-service-your-home-appliances',
+    excerpt:
+      'A complete maintenance schedule for refrigerators, ovens, washers, dryers, and dishwashers to extend their lifespan and avoid costly breakdowns.',
+    date: '2026-02-15',
+    readTime: '6 min read',
+    category: 'Maintenance',
+  },
+  {
+    title: 'Signs Your Washing Machine Needs Repair Before It Breaks Down',
+    slug: 'signs-your-washing-machine-needs-repair-before-it-breaks-down',
+    excerpt:
+      'Catch washing machine problems early. Learn the top warning signs that your washer needs professional repair before a small issue becomes a major breakdown.',
+    date: '2026-02-12',
+    readTime: '5 min read',
+    category: 'Washer Repair',
+  },
+  {
     title: 'Why Is My Dryer Taking So Long to Dry Clothes?',
     slug: 'why-is-my-dryer-taking-so-long-to-dry-clothes',
     excerpt:

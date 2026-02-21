@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { pushEvent } from '@/lib/track-event'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -27,9 +28,19 @@ export default function ContactForm() {
         throw new Error(typeof api.error === 'string' && api.error ? api.error : 'Something went wrong. Please try again.')
       }
       setStatus('sent')
+      pushEvent('generate_lead', {
+        method: 'contact_form',
+        form_name: 'contact',
+        page_path: window.location.pathname,
+      })
       form.reset()
     } catch (error) {
       setStatus('error')
+      pushEvent('form_error', {
+        form_name: 'contact',
+        error_message: error instanceof Error ? error.message : 'Unknown error',
+        page_path: window.location.pathname,
+      })
       setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please call us.')
     }
   }

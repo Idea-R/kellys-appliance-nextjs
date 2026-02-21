@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { pushEvent } from '@/lib/track-event'
 
 export default function NewsletterSignupForm() {
   const [email, setEmail] = useState('')
@@ -33,9 +34,18 @@ export default function NewsletterSignupForm() {
       }
 
       setStatus('success')
+      pushEvent('newsletter_signup', {
+        method: 'footer_form',
+        page_path: window.location.pathname,
+      })
       setEmail('')
     } catch (error) {
       setStatus('error')
+      pushEvent('form_error', {
+        form_name: 'newsletter',
+        error_message: error instanceof Error ? error.message : 'Unknown error',
+        page_path: window.location.pathname,
+      })
       setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again.')
     }
   }
@@ -53,8 +63,9 @@ export default function NewsletterSignupForm() {
           disabled={status === 'submitting' || status === 'success'}
           aria-label="Email address for newsletter subscription"
         />
-        <button 
+        <button
           type="submit"
+          data-analytics-label="newsletter_subscribe"
           className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={status === 'submitting' || status === 'success'}
           aria-live="polite"
