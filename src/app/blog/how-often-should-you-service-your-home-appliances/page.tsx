@@ -117,7 +117,7 @@ export default function ApplianceMaintenancePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg prose-green max-w-none">
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Your home appliances work hard every single day. The refrigerator runs around the clock, the dishwasher tackles meal after meal, and the washer and dryer power through load after load of laundry. With all that use, it&apos;s easy to take these machines for granted&mdash;until something breaks down and you&apos;re faced with an expensive repair bill or a premature replacement.
+              Your home appliances work hard every single day. The refrigerator runs around the clock, the dishwasher tackles meal after meal, and the washer and dryer power through load after load of laundry. With all that use, it&apos;s easy to take these machines for granted, at least until something breaks down and you&apos;re faced with an expensive repair bill or a premature replacement.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               The good news? Most major appliance failures are preventable. A consistent maintenance routine can extend the life of your appliances by two to five years, reduce energy costs, and help you avoid inconvenient breakdowns. At <Link href="/" className="text-green-600 hover:text-green-700">Kelly&apos;s Appliance Center</Link>, we&apos;ve been servicing homes across Sonoma, Marin, and Napa counties for over 50 years, and the most common problems we see could have been caught early with routine care. Here&apos;s your complete guide to how often each major appliance should be serviced.
@@ -138,8 +138,8 @@ export default function ApplianceMaintenancePage() {
               Your refrigerator is the hardest-working appliance in your home. It never shuts off, and neglecting its maintenance can lead to higher energy bills, food spoilage, and compressor failure. Here are the key tasks and how often to perform them:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-4 text-gray-700">
-              <li><strong>Clean the condenser coils every 6&ndash;12 months.</strong> Dust and pet hair accumulate on the coils, usually located behind or beneath the unit. Dirty coils force the compressor to work harder, driving up energy use and shortening the refrigerator&apos;s lifespan.</li>
-              <li><strong>Check door seals (gaskets) every 3&ndash;6 months.</strong> A loose or cracked gasket lets cold air escape, causing the refrigerator to run longer cycles and increasing your electricity bill. Close the door on a dollar bill&mdash;if you can pull it out easily, the seal needs attention.</li>
+              <li><strong>Clean the condenser coils every 6 to 12 months.</strong> Dust and pet hair accumulate on the coils, usually located behind or beneath the unit. Dirty coils force the compressor to work harder, driving up energy use and shortening the refrigerator&apos;s lifespan.</li>
+              <li><strong>Check door seals (gaskets) every 3 to 6 months.</strong> A loose or cracked gasket lets cold air escape, causing the refrigerator to run longer cycles and increasing your electricity bill. Close the door on a dollar bill. If you can pull it out easily, the seal needs attention.</li>
               <li><strong>Clean the drain pan and drain hole twice a year.</strong> A clogged drain can cause water to pool inside the unit or leak onto your floor, potentially leading to mold growth or water damage.</li>
             </ul>
             <p className="mb-6 text-gray-700 leading-relaxed">
@@ -151,8 +151,8 @@ export default function ApplianceMaintenancePage() {
               Whether you have a gas range or an electric oven, regular maintenance keeps your cooking appliance safe and accurate. Neglected ovens can develop uneven heating, inaccurate temperatures, and even gas leaks.
             </p>
             <ul className="list-disc list-inside space-y-2 mb-4 text-gray-700">
-              <li><strong>Clean the interior regularly.</strong> Baked-on food and grease buildup can cause smoke, odors, and even fire. Use the self-cleaning cycle sparingly (every 3&ndash;4 months) as it puts stress on the oven&apos;s components. For routine cleanups, a baking soda and vinegar solution works well.</li>
-              <li><strong>Inspect heating elements and burners annually.</strong> On electric models, look for visible damage, hot spots, or elements that don&apos;t glow evenly. For gas ranges, make sure burner flames are blue and steady&mdash;yellow or uneven flames indicate a problem with the gas-to-air ratio.</li>
+              <li><strong>Clean the interior regularly.</strong> Baked-on food and grease buildup can cause smoke, odors, and even fire. Use the self-cleaning cycle sparingly (every 3 to 4 months) as it puts stress on the oven&apos;s components. For routine cleanups, a baking soda and vinegar solution works well.</li>
+              <li><strong>Inspect heating elements and burners annually.</strong> On electric models, look for visible damage, hot spots, or elements that don&apos;t glow evenly. For gas ranges, make sure burner flames are blue and steady. Yellow or uneven flames indicate a problem with the gas-to-air ratio.</li>
               <li><strong>Check the door seal annually.</strong> A damaged oven door gasket lets heat escape, resulting in longer cooking times and wasted energy.</li>
             </ul>
             <p className="mb-6 text-gray-700 leading-relaxed">
@@ -165,7 +165,7 @@ export default function ApplianceMaintenancePage() {
             </p>
             <ul className="list-disc list-inside space-y-2 mb-4 text-gray-700">
               <li><strong>Clean the filter monthly.</strong> Most modern dishwashers have a removable filter at the bottom of the tub. Food particles trapped here reduce cleaning performance and can cause unpleasant odors.</li>
-              <li><strong>Check the spray arms every 2&ndash;3 months.</strong> Mineral deposits and food debris can clog the small holes in the spray arms. Remove them and clear any blockages with a toothpick or small brush.</li>
+              <li><strong>Check the spray arms every 2 to 3 months.</strong> Mineral deposits and food debris can clog the small holes in the spray arms. Remove them and clear any blockages with a toothpick or small brush.</li>
               <li><strong>Run a cleaning cycle monthly.</strong> Place a cup of white vinegar on the top rack and run a hot cycle with the dishwasher empty. This dissolves grease, removes odors, and clears mineral buildup from internal components.</li>
             </ul>
             <p className="mb-6 text-gray-700 leading-relaxed">
@@ -187,7 +187,7 @@ export default function ApplianceMaintenancePage() {
               Washing machines handle heavy loads and constant exposure to water and detergent. Without regular upkeep, they&apos;re prone to mold, leaks, and mechanical failures that can damage your laundry room.
             </p>
             <ul className="list-disc list-inside space-y-2 mb-4 text-gray-700">
-              <li><strong>Run a clean cycle monthly.</strong> Use a washing machine cleaner or a cup of baking soda on a hot cycle to remove detergent residue, mold, and odor-causing bacteria&mdash;especially important for front-loading models.</li>
+              <li><strong>Run a clean cycle monthly.</strong> Use a washing machine cleaner or a cup of baking soda on a hot cycle to remove detergent residue, mold, and odor-causing bacteria. This is especially important for front-loading models.</li>
               <li><strong>Inspect water supply hoses every 6 months.</strong> Check for bulges, cracks, or signs of wear. Rubber hoses deteriorate over time and a burst hose can cause serious flooding. Consider upgrading to braided stainless steel hoses for added durability.</li>
               <li><strong>Check for leaks regularly.</strong> Look under and behind the machine for signs of moisture. Even small leaks can lead to mold growth and floor damage if left unaddressed.</li>
             </ul>
@@ -197,7 +197,7 @@ export default function ApplianceMaintenancePage() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Dryer Maintenance</h2>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              Dryer maintenance isn&apos;t just about performance&mdash;it&apos;s a matter of safety. Clogged dryer vents are one of the leading causes of house fires in the United States. A proper maintenance routine protects your family and your home.
+              Dryer maintenance isn&apos;t just about performance. It&apos;s a matter of safety. Clogged dryer vents are one of the leading causes of house fires in the United States. A proper maintenance routine protects your family and your home.
             </p>
             <ul className="list-disc list-inside space-y-2 mb-4 text-gray-700">
               <li><strong>Clean the lint trap after every single load.</strong> This is the simplest and most important thing you can do. A clogged lint screen restricts airflow, increases drying time, and creates a fire hazard.</li>
@@ -210,7 +210,7 @@ export default function ApplianceMaintenancePage() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">The Bottom Line</h2>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Preventive maintenance is the single best investment you can make in your home appliances. A few minutes of routine care each month&mdash;combined with an annual professional inspection&mdash;can save you hundreds or even thousands of dollars in repair and replacement costs. Appliances that receive regular service run more efficiently, consume less energy, and last significantly longer than those that are neglected until something goes wrong.
+              Preventive maintenance is the single best investment you can make in your home appliances. A few minutes of routine care each month, combined with an annual professional inspection, can save you hundreds or even thousands of dollars in repair and replacement costs. Appliances that receive regular service run more efficiently, consume less energy, and last significantly longer than those that are neglected until something goes wrong.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               At Kelly&apos;s Appliance Center, we&apos;ve earned our Diamond Certified rating by delivering expert, honest service to homeowners across Sonoma, Marin, and Napa counties for over 50 years. Our factory-authorized technicians are trained to work on all major brands and can spot potential problems before they become expensive emergencies. Whether you need a routine maintenance visit or a specific repair, we&apos;re here to help you get the most out of every appliance in your home.
@@ -226,7 +226,7 @@ export default function ApplianceMaintenancePage() {
               >
                 Schedule your professional appliance maintenance today
               </a>{' '}
-              and enjoy the peace of mind that comes with knowing your home is running at its best.
+              and rest easy knowing your home is running at its best.
             </p>
           </div>
         </div>
@@ -272,7 +272,7 @@ export default function ApplianceMaintenancePage() {
             Schedule Professional Appliance Maintenance
           </h2>
           <p className="text-gray-600 mb-8">
-            Kelly&apos;s Appliance Center &mdash; Diamond Certified, factory authorized, and trusted by homeowners since 1975.
+            Kelly&apos;s Appliance Center: Diamond Certified, factory authorized, and trusted by homeowners since 1975.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

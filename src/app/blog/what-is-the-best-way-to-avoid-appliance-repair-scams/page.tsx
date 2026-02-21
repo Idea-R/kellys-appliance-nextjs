@@ -88,7 +88,7 @@ export default function BlogPost() {
         {/* Content */}
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-800 mb-8">
-            Appliance repair scams can cost you time, money, and peace of mind. Fortunately, with a little knowledge and awareness, you can protect yourself from unscrupulous repair services. Here are some practical tips to ensure you hire a trustworthy professional and avoid falling victim to scams.
+            Appliance repair scams can cost you time and money. Fortunately, with a little knowledge and awareness, you can protect yourself from unscrupulous repair services. Here are some practical tips to ensure you hire a trustworthy professional and avoid falling victim to scams.
           </p>
 
           <h3>1. Verify Credentials</h3>
@@ -123,17 +123,17 @@ export default function BlogPost() {
 
           <h3>7. Trust Your Instincts</h3>
           <p>
-            If something feels off—whether it's vague answers to questions, unprofessional behavior, or high-pressure tactics—don't hesitate to walk away. Trustworthy companies value transparency and professionalism.
+            If something feels off (vague answers to questions, unprofessional behavior, or high-pressure tactics), don't hesitate to walk away. Trustworthy companies value transparency and professionalism.
           </p>
 
           <h3>8. Use Trusted Resources</h3>
           <p>
-            Leverage resources like the Better Business Bureau (BBB), Yelp, Diamond Certified or manufacturer websites to find reliable repair services in your area. These sources often list approved technicians and customer reviews to help guide your decision.
+            Use resources like the Better Business Bureau (BBB), Yelp, Diamond Certified or manufacturer websites to find reliable repair services in your area. These sources often list approved technicians and customer reviews to help guide your decision.
           </p>
 
           <h3>9. Ask About Warranties</h3>
           <p>
-            A reliable repair company stands by its work. Ask if they offer warranties on parts and labor to ensure peace of mind after the job is done.
+            A reliable repair company stands by its work. Ask if they offer warranties on parts and labor so you know you&apos;re covered after the job is done.
           </p>
 
           <h3>10. Document Everything</h3>
@@ -142,7 +142,7 @@ export default function BlogPost() {
           </p>
 
           <p>
-            By following these tips, you can safeguard yourself against appliance repair scams and ensure your appliances are in good hands. When in doubt, rely on factory-authorized repair services like those offered by Kelly's Appliance to ensure professional, high-quality repairs every time!
+            By following these tips, you can safeguard yourself against appliance repair scams and ensure your appliances are in good hands. When in doubt, rely on factory-authorized repair services like those offered by Kelly's Appliance to ensure professional, high-quality repairs every time.
           </p>
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-6 mt-8">

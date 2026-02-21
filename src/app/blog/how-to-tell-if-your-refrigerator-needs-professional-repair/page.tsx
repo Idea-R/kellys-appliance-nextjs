@@ -135,7 +135,7 @@ export default function RefrigeratorRepairPostPage() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">1. Unusual Noises</h2>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              Every refrigerator makes some noise &mdash; a gentle hum from the compressor or an occasional click as the defrost cycle kicks in is perfectly normal. However, if you start hearing loud buzzing, persistent clicking, grinding, or a rattling sound that wasn&apos;t there before, something may be wrong. These noises can indicate a failing compressor motor, a malfunctioning evaporator fan, or a condenser fan blade that has become obstructed by dust or debris.
+              Every refrigerator makes some noise. A gentle hum from the compressor or an occasional click as the defrost cycle kicks in is perfectly normal. However, if you start hearing loud buzzing, persistent clicking, grinding, or a rattling sound that wasn&apos;t there before, something may be wrong. These noises can indicate a failing compressor motor, a malfunctioning evaporator fan, or a condenser fan blade that has become obstructed by dust or debris.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               <strong>Solution:</strong> Don&apos;t ignore new or worsening noises. While cleaning dust from the condenser coils at the back or bottom of the unit can sometimes resolve a buzzing sound, persistent or loud noises typically require a trained technician to inspect the motor components and fan assemblies before a full failure occurs.
@@ -146,7 +146,7 @@ export default function RefrigeratorRepairPostPage() {
               Your refrigerator should maintain a consistent internal temperature between 35&deg;F and 38&deg;F. If you notice that your milk is not as cold as it should be, your lettuce is wilting faster than usual, or items in certain parts of the fridge are freezing while others remain warm, you likely have a temperature regulation issue. This can be caused by a faulty thermostat, a failing compressor, damaged door gaskets that allow warm air to seep in, or a blocked air vent inside the unit.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>Solution:</strong> Start by checking that the temperature dial hasn&apos;t been accidentally bumped and that nothing is blocking the internal air vents. Inspect the door gaskets for cracks or gaps. If the temperature remains inconsistent, schedule a professional diagnostic &mdash; a technician can test the thermostat, sealed system, and airflow components to pinpoint the root cause.
+              <strong>Solution:</strong> Start by checking that the temperature dial hasn&apos;t been accidentally bumped and that nothing is blocking the internal air vents. Inspect the door gaskets for cracks or gaps. If the temperature remains inconsistent, schedule a professional diagnostic. A technician can test the thermostat, sealed system, and airflow components to pinpoint the root cause.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">3. Excessive Frost or Ice Buildup</h2>
@@ -180,7 +180,7 @@ export default function RefrigeratorRepairPostPage() {
               Your refrigerator&apos;s compressor is designed to cycle on and off throughout the day to maintain the set temperature. If you notice the motor running nonstop without ever cycling off, the unit is working far harder than it should. This places enormous strain on the compressor and drives up your electricity bill. Possible causes include dirty condenser coils that reduce heat dissipation, a failing compressor relay, low refrigerant levels, or a thermostat that is not reading the temperature correctly.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>Solution:</strong> Clean the condenser coils with a brush or vacuum to remove dust and pet hair &mdash; this is a simple maintenance step that many homeowners overlook. If the compressor continues to run without stopping, a technician will need to evaluate the electrical components and refrigerant charge to determine the appropriate repair.
+              <strong>Solution:</strong> Clean the condenser coils with a brush or vacuum to remove dust and pet hair. This is a simple maintenance step that many homeowners overlook. If the compressor continues to run without stopping, a technician will need to evaluate the electrical components and refrigerant charge to determine the appropriate repair.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">6. Warm Exterior Panels</h2>
@@ -188,7 +188,7 @@ export default function RefrigeratorRepairPostPage() {
               It&apos;s normal for the sides or back of a refrigerator to feel slightly warm, as heat is released during the refrigeration cycle. However, if the exterior panels feel noticeably hot to the touch, this could indicate that the condenser is overworking, the ventilation around the unit is inadequate, or the condenser fan motor is failing. In some cases, a deteriorating door gasket allows warm air in, forcing the system to run harder and generate excess heat.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>Solution:</strong> Ensure there is adequate clearance around your refrigerator &mdash; most manufacturers recommend at least one inch of space on each side and at the top for airflow. If the panels remain excessively warm after improving ventilation, schedule a service call to inspect the condenser fan and sealed system.
+              <strong>Solution:</strong> Ensure there is adequate clearance around your refrigerator. Most manufacturers recommend at least one inch of space on each side and at the top for airflow. If the panels remain excessively warm after improving ventilation, schedule a service call to inspect the condenser fan and sealed system.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">7. Food Spoiling Before Expiration Date</h2>
@@ -205,7 +205,7 @@ export default function RefrigeratorRepairPostPage() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Final Thoughts</h2>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Your refrigerator is a major investment, and catching problems early can save you hundreds or even thousands of dollars in repair costs and spoiled food. If you&apos;ve noticed any of the warning signs above &mdash; unusual noises, temperature swings, frost buildup, water leaks, a constantly running compressor, hot exterior panels, or food spoiling prematurely &mdash; don&apos;t wait for the problem to get worse.
+              Your refrigerator is a major investment, and catching problems early can save you hundreds or even thousands of dollars in repair costs and spoiled food. If you&apos;ve noticed any of the warning signs above (unusual noises, temperature swings, frost buildup, water leaks, a constantly running compressor, hot exterior panels, or food spoiling prematurely), don&apos;t wait for the problem to get worse.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               Kelly&apos;s Appliance Center is Diamond Certified and has served homeowners in Cotati, Petaluma, Santa Rosa, Rohnert Park, and the surrounding Sonoma, Marin, and Napa county communities for over 50 years. Our experienced, factory-authorized technicians will diagnose the issue quickly, explain your options clearly, and get your refrigerator running reliably again. <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" data-analytics-label="book_appointment" className="text-green-600 hover:text-green-700">Book your appointment today</a> or call us at <a href="tel:7076649702" className="text-green-600 hover:text-green-700">(707) 664-9702</a> to speak with a member of our team.

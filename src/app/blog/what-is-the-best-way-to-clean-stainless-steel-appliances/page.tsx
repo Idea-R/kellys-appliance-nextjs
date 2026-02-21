@@ -92,7 +92,7 @@ export default function BlogPost() {
         {/* Content */}
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-700 mb-8">
-            Stainless steel appliances add a sleek and modern look to your kitchen, but keeping them spotless can be a challenge. Fingerprints, smudges, and streaks often stand out, making regular cleaning a necessity. With the right approach, you can maintain your appliance's pristine shine effortlessly. Here's the best way to clean appliances including:
+            Stainless steel appliances add a sleek and modern look to your kitchen, but keeping them spotless can be a challenge. Fingerprints, smudges, and streaks often stand out, making regular cleaning a necessity. With the right approach, you can keep your appliances looking great without much effort. Here's the best way to clean appliances including:
           </p>
 
           <ul className="list-disc pl-6 mb-8">
@@ -155,7 +155,7 @@ export default function BlogPost() {
           </ul>
 
           <p>
-            With these simple steps, your stainless steel appliance will stay clean, shiny, and free from streaks, enhancing your kitchen's overall look. Happy cleaning!
+            With these simple steps, your stainless steel appliances will stay clean, shiny, and free from streaks.
           </p>
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-6 mt-8">

@@ -82,7 +82,7 @@ export default function DryerPostPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg prose-green max-w-none">
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Wondering why your dryer is taking so long to dry a simple load of laundry? You&apos;re not alone. This is one of the most common issues homeowners face – and it&apos;s more than just a minor inconvenience. Long drying times can lead to higher energy bills, increased wear on your clothes, and may signal a more serious problem with your appliance.
+              Wondering why your dryer is taking so long to dry a simple load of laundry? You&apos;re not alone. This is one of the most common issues homeowners face, and it&apos;s more than just a minor inconvenience. Long drying times can lead to higher energy bills, increased wear on your clothes, and may signal a more serious problem with your appliance.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               Let&apos;s take a closer look at the top reasons your dryer might be underperforming and what you can do to fix it.
@@ -100,7 +100,7 @@ export default function DryerPostPage() {
             
             <h2 className="text-3xl font-bold text-gray-900 mb-4">1. Clogged Dryer Vent</h2>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              One of the most common – and potentially dangerous—reasons for long drying times is a clogged dryer vent. Over time, lint and debris build up in the vent duct, restricting airflow. Without proper ventilation, hot air gets trapped, preventing your clothes from drying efficiently.
+              One of the most common, and potentially dangerous, reasons for long drying times is a clogged dryer vent. Over time, lint and debris build up in the vent duct, restricting airflow. Without proper ventilation, hot air gets trapped, preventing your clothes from drying efficiently.
             </p>
             <p className="mb-4 text-gray-700 font-semibold">Warning signs include:</p>
             <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
@@ -124,7 +124,7 @@ export default function DryerPostPage() {
             
             <h2 className="text-3xl font-bold text-gray-900 mb-4">3. Overloaded Dryer</h2>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Packing your dryer too full is tempting, especially on laundry day—but it can backfire. Overloading prevents warm air from circulating evenly around your clothes.
+              Packing your dryer too full is tempting, especially on laundry day, but it can backfire. Overloading prevents warm air from circulating evenly around your clothes.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               <strong>Solution:</strong><br />
@@ -152,7 +152,7 @@ export default function DryerPostPage() {
             
             <h2 className="text-3xl font-bold text-gray-900 mb-4">5. Moisture Sensor Malfunction</h2>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Many modern dryers use moisture sensors to determine when clothes are dry. If the sensor is dirty or defective, the dryer might stop too early – or run too long, thinking your clothes are still damp.
+              Many modern dryers use moisture sensors to determine when clothes are dry. If the sensor is dirty or defective, the dryer might stop too early or run too long, thinking your clothes are still damp.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               <strong>Solution:</strong><br />
@@ -189,7 +189,7 @@ export default function DryerPostPage() {
             
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Final Thoughts</h2>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Long drying times are more than just a nuisance—they&apos;re a signal that something isn&apos;t working right. Whether it&apos;s a simple maintenance issue like a clogged lint trap or a more complex problem like a failing heating element, addressing the cause promptly can save you time, energy, and money.
+              Long drying times are more than just a nuisance. They&apos;re a signal that something isn&apos;t working right. Whether it&apos;s a simple maintenance issue like a clogged lint trap or a more complex problem like a failing heating element, addressing the cause promptly can save you time, energy, and money.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               If you&apos;ve tried the tips above and your dryer is still underperforming, it&apos;s time to <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">book a professional appliance technician</a>. A fast diagnosis and repair can get your laundry routine back on track in no time.

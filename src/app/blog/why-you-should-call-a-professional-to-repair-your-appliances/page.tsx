@@ -118,7 +118,7 @@ export default function BlogPost() {
 
           <h2>6. Long-Term Savings</h2>
           <p>
-            While a DIY repair might save money upfront, mistakes can lead to costlier repairs – or even replacement – down the road. Professional repairs are designed to last and <Link href="/pricing" className="text-green-600 hover:text-green-700">reasonably priced</Link>, helping you avoid repeated breakdowns and expenses.
+            While a DIY repair might save money upfront, mistakes can lead to costlier repairs, or even a full replacement, down the road. Professional repairs are designed to last and <Link href="/pricing" className="text-green-600 hover:text-green-700">reasonably priced</Link>, helping you avoid repeated breakdowns and expenses.
           </p>
 
           <h2>7. Comprehensive Diagnoses</h2>
@@ -128,7 +128,7 @@ export default function BlogPost() {
 
           <h2>When to Call a Pro</h2>
           <p>
-            If your appliance isn't working as it should, resist the urge to grab a wrench. Instead, call a <Link href="/about-us" className="text-green-600 hover:text-green-700">professional repair technician</Link> for expert help. They'll ensure your appliance is back in top shape quickly and safely, giving you peace of mind and reliable performance.
+            If your appliance isn't working as it should, resist the urge to grab a wrench. Instead, call a <Link href="/about-us" className="text-green-600 hover:text-green-700">professional repair technician</Link> for expert help. They'll ensure your appliance is back in top shape quickly and safely, so you can count on reliable performance going forward.
           </p>
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-6 mt-8">
