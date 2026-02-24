@@ -1,115 +1,97 @@
-import React from 'react';
-import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
-import Layout from '@/components/Layout';
-import { getCompanyInfo } from '@/lib/content';
-import NearbyCityLinks from '@/components/NearbyCityLinks';
-import RelatedServiceLinks from '@/components/RelatedServiceLinks';
-import CityJsonLd from '@/components/CityJsonLd';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import { generateBreadcrumbs } from '@/lib/breadcrumbs';
+import React from 'react'
+import Layout from '@/components/Layout'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { generateBreadcrumbs } from '@/lib/breadcrumbs'
+import CTA from '@/components/CTA'
+import ServicesGrid from '@/components/ServicesGrid'
+import MidPageCTA from '@/components/MidPageCTA'
+import WhyChooseUs from '@/components/WhyChooseUs'
+import BottomCTA from '@/components/BottomCTA'
+import NearbyCityLinks from '@/components/NearbyCityLinks'
+import RelatedServiceLinks from '@/components/RelatedServiceLinks'
+import CityJsonLd from '@/components/CityJsonLd'
+import { getCityContent } from '@/data/cityContent'
 
-const companyInfo = getCompanyInfo();
+const city = getCityContent('san-rafael')
 
 export const metadata = {
-  title: 'Appliance Repair San Rafael',
-  description: 'Find local appliance repair near you in San Rafael, CA. Professional appliance repair services with factory authorized repairs for all major brands. Call (707) 664-9702.',
-  alternates: {
-    canonical: '/service-locations/san-rafael',
-  },
-};
+  title: city.metaTitle,
+  description: city.metaDescription,
+  alternates: { canonical: `/service-locations/${city.slug}` },
+}
 
 export default function SanRafaelPage() {
-  const breadcrumbs = generateBreadcrumbs('/service-locations/san-rafael', metadata.title);
+  const breadcrumbs = generateBreadcrumbs(`/service-locations/${city.slug}`, city.metaTitle)
 
   return (
     <Layout>
       <Breadcrumbs items={breadcrumbs} />
+
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in San Rafael</h1>
-          <p className="text-xl mb-8">Professional appliance repair services in San Rafael, CA.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-              <PhoneIcon className="h-5 w-5 mr-2" />Call {companyInfo.phone}
-            </a>
-            <a href="/schedule-prep" className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Request Appointment
-            </a>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in {city.name}</h1>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">{city.heroSubtitle}</p>
+          <CTA className="flex flex-col sm:flex-row gap-4 justify-center" disclaimerVariant="short" callLabel="hero_cta_call" bookLabel="hero_cta_book" disclaimerClassName="text-sm text-green-100 text-center mt-1" />
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{city.trustHeading}</h2>
+          <div className="prose prose-gray max-w-none space-y-4">
+            {city.trustContent.map((p, i) => <p key={i} className="text-gray-700">{p}</p>)}
           </div>
         </div>
       </section>
 
-      {/* Local Highlights + Eats */}
+      <ServicesGrid cityName={city.name} />
+      <MidPageCTA heading={city.midCtaHeading} />
+
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-              <p className="text-gray-700">From the Frank Lloyd Wright–designed Civic Center to vibrant downtown dining, San Rafael is a hub for Marin. We deliver fast, reliable appliance repair to keep your home ready for busy weeks and relaxed weekends alike.</p>
+              <p className="text-gray-700">{city.localHighlights}</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
               <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                <li>Sol Food</li>
-                <li>State Room</li>
-                <li>Il Davide</li>
+                {city.topEats.map((eat) => <li key={eat}>{eat}</li>)}
               </ul>
             </div>
             <div className="space-y-4">
-              <NearbyCityLinks currentSlug="san-rafael" />
+              <NearbyCityLinks currentSlug={city.slug} />
               <RelatedServiceLinks />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Community Links */}
-      <section className="py-12">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
-            <p className="text-gray-700">Visit the <a href="https://www.srchamber.com/" target="_blank" rel="noopener noreferrer" className="text-green-700 underline">San Rafael Chamber of Commerce</a> for local business resources and events.</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{city.issuesHeading}</h2>
+          <div className="prose prose-gray max-w-none space-y-4">
+            {city.issuesContent.map((p, i) => <p key={i} className="text-gray-700">{p}</p>)}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="flex items-start">
-              <CheckCircleIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
-              <div>
-                <strong>Factory Authorized</strong>
-                <div className="text-gray-900 text-sm">Certified repair using genuine parts</div>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <ClockIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
-              <div>
-                <strong>Fast Response</strong>
-                <div className="text-gray-900 text-sm">Prompt, reliable service</div>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <MapPinIcon className="w-6 h-6 text-green-600 mr-3 mt-0.5" />
-              <div>
-                <strong>Local Experts</strong>
-                <div className="text-gray-900 text-sm">Trusted in San Rafael for decades</div>
-              </div>
+      <WhyChooseUs localExpertsText={city.localExpertsText} />
+
+      {city.communityLink && (
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
+              <p className="text-gray-700">Visit the{' '}<a href={city.communityLink.href} target="_blank" rel="noopener noreferrer" data-analytics-label="community_link" className="text-green-700 underline">{city.communityLink.label}</a>{' '}for local business resources and events.</p>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="py-16 bg-green-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Need Appliance Repair in San Rafael?</h2>
-          <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-800 transition-colors">
-            <PhoneIcon className="h-6 w-6 mr-2" />Call {companyInfo.phone} Now
-          </a>
-        </div>
-      </section>
-      <CityJsonLd city="San Rafael" slug="san-rafael" />
+        </section>
+      )}
+
+      <BottomCTA cityName={city.name} />
+      <CityJsonLd city={city.name} slug={city.slug} />
     </Layout>
-  );
+  )
 }

@@ -1,70 +1,97 @@
-import React from 'react';
-import { PhoneIcon } from '@heroicons/react/24/solid';
-import Layout from '@/components/Layout';
-import { getCompanyInfo } from '@/lib/content';
-import NearbyCityLinks from '@/components/NearbyCityLinks';
-import RelatedServiceLinks from '@/components/RelatedServiceLinks';
-import CityJsonLd from '@/components/CityJsonLd';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import { generateBreadcrumbs } from '@/lib/breadcrumbs';
+import React from 'react'
+import Layout from '@/components/Layout'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { generateBreadcrumbs } from '@/lib/breadcrumbs'
+import CTA from '@/components/CTA'
+import ServicesGrid from '@/components/ServicesGrid'
+import MidPageCTA from '@/components/MidPageCTA'
+import WhyChooseUs from '@/components/WhyChooseUs'
+import BottomCTA from '@/components/BottomCTA'
+import NearbyCityLinks from '@/components/NearbyCityLinks'
+import RelatedServiceLinks from '@/components/RelatedServiceLinks'
+import CityJsonLd from '@/components/CityJsonLd'
+import { getCityContent } from '@/data/cityContent'
 
-const companyInfo = getCompanyInfo();
+const city = getCityContent('bodega-bay')
 
 export const metadata = {
-  title: "Appliance Repair Bodega Bay - Kelly's Appliance Center",
-  description: 'Find local appliance repair near you in Bodega Bay, CA. Professional appliance repair services with factory authorized repairs for major brands. Call (707) 664-9702.',
-  alternates: {
-    canonical: '/service-locations/bodega-bay',
-  },
-};
+  title: city.metaTitle,
+  description: city.metaDescription,
+  alternates: { canonical: `/service-locations/${city.slug}` },
+}
 
 export default function BodegaBayPage() {
-  const breadcrumbs = generateBreadcrumbs('/service-locations/bodega-bay', metadata.title);
+  const breadcrumbs = generateBreadcrumbs(`/service-locations/${city.slug}`, city.metaTitle)
 
   return (
     <Layout>
       <Breadcrumbs items={breadcrumbs} />
+
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in Bodega Bay</h1>
-          <p className="text-xl mb-8">Trusted, factory-authorized appliance repair on the Sonoma Coast.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-              <PhoneIcon className="h-5 w-5 mr-2" />Call {companyInfo.phone}
-            </a>
-            <a href="/schedule-prep" className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Request Appointment
-            </a>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in {city.name}</h1>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">{city.heroSubtitle}</p>
+          <CTA className="flex flex-col sm:flex-row gap-4 justify-center" disclaimerVariant="short" callLabel="hero_cta_call" bookLabel="hero_cta_book" disclaimerClassName="text-sm text-green-100 text-center mt-1" />
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{city.trustHeading}</h2>
+          <div className="prose prose-gray max-w-none space-y-4">
+            {city.trustContent.map((p, i) => <p key={i} className="text-gray-700">{p}</p>)}
           </div>
         </div>
       </section>
 
-      {/* Local Highlights + Related */}
+      <ServicesGrid cityName={city.name} />
+      <MidPageCTA heading={city.midCtaHeading} />
+
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 items-center">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-              <p className="text-gray-700">Harbor views, fresh seafood, and coastal trails make Bodega Bay a classic Sonoma Coast destination.</p>
+              <p className="text-gray-700">{city.localHighlights}</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-gray-900 mb-3">Top 3 Eats</h3>
               <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                <li>Fisherman's Cove</li>
-                <li>Spud Point Crab Co.</li>
-                <li>Terrapin Creek</li>
+                {city.topEats.map((eat) => <li key={eat}>{eat}</li>)}
               </ul>
             </div>
             <div className="space-y-4">
-              <NearbyCityLinks currentSlug="bodega-bay" />
+              <NearbyCityLinks currentSlug={city.slug} />
               <RelatedServiceLinks />
             </div>
           </div>
         </div>
       </section>
-      <CityJsonLd city="Bodega Bay" slug="bodega-bay" />
+
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{city.issuesHeading}</h2>
+          <div className="prose prose-gray max-w-none space-y-4">
+            {city.issuesContent.map((p, i) => <p key={i} className="text-gray-700">{p}</p>)}
+          </div>
+        </div>
+      </section>
+
+      <WhyChooseUs localExpertsText={city.localExpertsText} />
+
+      {city.communityLink && (
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-2">Community Links</h3>
+              <p className="text-gray-700">Visit the{' '}<a href={city.communityLink.href} target="_blank" rel="noopener noreferrer" data-analytics-label="community_link" className="text-green-700 underline">{city.communityLink.label}</a>{' '}for local business resources and events.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <BottomCTA cityName={city.name} />
+      <CityJsonLd city={city.name} slug={city.slug} />
     </Layout>
-  );
+  )
 }
-
-

@@ -5,6 +5,7 @@ import './globals.css'
 import ClientProviders from '@/components/ClientProviders'
 import Analytics from '@/components/Analytics'
 import FloatingDiamondBadge from '@/components/FloatingDiamondBadge'
+import StickyMobileCTA from '@/components/StickyMobileCTA'
 import MobileNavDrawer from '@/components/MobileNavDrawer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -181,6 +182,7 @@ export default function RootLayout({
           {children}
         </main>
         <MobileNavDrawer />
+        <StickyMobileCTA />
         <FloatingDiamondBadge />
         </ClientProviders>
       </body>

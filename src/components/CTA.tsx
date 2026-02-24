@@ -9,14 +9,20 @@ type Props = {
   className?: string
   showDisclaimer?: boolean
   disclaimerVariant?: 'full' | 'medium' | 'short'
+  callLabel?: string
+  bookLabel?: string
+  disclaimerClassName?: string
 }
 
-export default function CTA({ 
-  phone, 
-  bookingUrl, 
+export default function CTA({
+  phone,
+  bookingUrl,
   className,
   showDisclaimer = true,
-  disclaimerVariant = 'medium'
+  disclaimerVariant = 'medium',
+  callLabel = 'cta_call',
+  bookLabel = 'book_appointment',
+  disclaimerClassName,
 }: Props) {
   const company = getCompanyInfo()
   const tel = phone || company.phone
@@ -33,7 +39,7 @@ export default function CTA({
       <div className={className || 'flex flex-col sm:flex-row gap-4'}>
         <a
           href={`tel:${tel}`}
-          data-analytics-label="cta_call"
+          data-analytics-label={callLabel}
           className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
         >
           <PhoneIcon className="h-5 w-5 mr-2" />
@@ -43,7 +49,7 @@ export default function CTA({
           href={booking}
           target="_blank"
           rel="noopener noreferrer"
-          data-analytics-label="book_appointment"
+          data-analytics-label={bookLabel}
           className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
         >
           <CalendarIcon className="h-5 w-5 mr-2" />
@@ -51,7 +57,7 @@ export default function CTA({
         </a>
       </div>
       {showDisclaimer && (
-        <p className="text-sm text-gray-600 text-center sm:text-left">
+        <p className={disclaimerClassName || "text-sm text-gray-600 text-center sm:text-left"}>
           {disclaimerText}
         </p>
       )}
