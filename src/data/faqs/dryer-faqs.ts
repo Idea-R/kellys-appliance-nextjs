@@ -27,7 +27,7 @@ export const dryerFaqs: FAQ[] = [
   },
   {
     question: "How much does dryer repair cost?",
-    answer: "Service call fee ($129-$149) applies toward labor if you proceed with repair. Additional appliance +$60. We provide transparent pricing with no hidden fees and offer a 90-day money back guarantee."
+    answer: "Service call fee ($149-$169) applies toward labor if you proceed with repair. Additional appliance +$75. We provide transparent pricing with no hidden fees and offer a 90-day money back guarantee."
   },
   {
     question: "Do you offer same-day dryer repair?",

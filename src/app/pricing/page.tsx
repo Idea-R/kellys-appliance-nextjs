@@ -10,7 +10,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Pricing',
-  description: 'Transparent appliance repair pricing. Service call $129-$149 applies toward labor if you proceed. Additional appliance +$60. 90-day money-back guarantee.',
+  description: 'Transparent appliance repair pricing. Service call $149-$169 applies toward labor if you proceed. Additional appliance +$75. 90-day money-back guarantee.',
   alternates: {
     canonical: '/pricing',
   },
@@ -103,7 +103,7 @@ export default function PricingPage() {
               <div className="text-center">
                 <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">$</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Service Call Fee</h3>
-                <p className="text-gray-700">$129 – $149 to travel to your location and diagnose the problem. The technician explains the reason for the needed repair and quotes a flat price from the Major Appliance Service National Price Guide (MASPG).</p>
+                <p className="text-gray-700">$149 – $169 to travel to your location and diagnose the problem. The technician explains the reason for the needed repair and quotes a flat price from the Major Appliance Service National Price Guide (MASPG).</p>
               </div>
               <div className="text-center">
                 <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">→</div>
@@ -113,7 +113,7 @@ export default function PricingPage() {
               <div className="text-center">
                 <div className="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">+A</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Additional Appliance</h3>
-                <p className="text-gray-700">+$60 for each additional appliance diagnosed during the same visit.</p>
+                <p className="text-gray-700">+$75 for each additional appliance diagnosed during the same visit.</p>
               </div>
             </div>
 
@@ -160,7 +160,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Service Areas
+              What We Repair
             </h2>
             <p className="text-xl text-gray-600">
               Professional repair services for all major appliance types
