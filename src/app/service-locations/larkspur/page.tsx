@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import Layout from '@/components/Layout'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
@@ -27,11 +28,35 @@ export default function LarkspurPage() {
     <Layout>
       <Breadcrumbs items={breadcrumbs} />
 
+      {/* 1. Hero */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Appliance Repair in {city.name}</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">{city.heroSubtitle}</p>
-          <CTA className="flex flex-col sm:flex-row gap-4 justify-center" disclaimerVariant="short" callLabel="hero_cta_call" bookLabel="hero_cta_book" disclaimerClassName="text-sm text-green-100 text-center mt-1" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
+            <div className="text-center lg:text-left lg:flex-1">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+                Appliance Repair in {city.name}
+              </h1>
+              <p className="text-xl mb-8 max-w-3xl mx-auto lg:mx-0">{city.heroSubtitle}</p>
+              <CTA
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                disclaimerVariant="short"
+                callLabel="hero_cta_call"
+                bookLabel="hero_cta_book"
+                disclaimerClassName="text-sm text-green-100 text-center lg:text-left mt-1"
+              />
+            </div>
+            <div className="hidden lg:block lg:flex-shrink-0 lg:w-[400px]">
+              <Image
+                src={city.heroImage}
+                alt={city.heroImageAlt}
+                width={400}
+                height={300}
+                className="rounded-lg shadow-xl object-cover w-full h-auto"
+                priority
+                sizes="400px"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

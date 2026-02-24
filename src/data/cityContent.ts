@@ -38,6 +38,12 @@ export interface CityContent {
 
   /** Optional custom MidPageCTA heading */
   midCtaHeading?: string
+
+  /** Hero section van image path (relative to /public) */
+  heroImage: string
+
+  /** City-specific alt text for the hero van image */
+  heroImageAlt: string
 }
 
 // ---------------------------------------------------------------------------
@@ -74,6 +80,8 @@ const santaRosa: CityContent = {
   localExpertsText: 'Our Cotati shop is about 15 minutes south on 101. We service Santa Rosa homes every single day.',
   neighborhoods: ['Fountaingrove', 'Rincon Valley', 'Bennett Valley', 'Roseland', 'Oakmont', 'South Park'],
   midCtaHeading: 'Ready for Fast Appliance Repair in Santa Rosa?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Santa Rosa and Sonoma County',
 }
 
 const petaluma: CityContent = {
@@ -106,6 +114,8 @@ const petaluma: CityContent = {
   localExpertsText: 'Just 10 minutes south from our Cotati shop. We\u2019re in Petaluma daily.',
   neighborhoods: ['East Side', 'West Side', 'Downtown', 'Casa Grande', 'Lakeville'],
   midCtaHeading: 'Need Appliance Repair in Petaluma Today?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Petaluma and Sonoma County',
 }
 
 const rohnertPark: CityContent = {
@@ -138,6 +148,8 @@ const rohnertPark: CityContent = {
   localExpertsText: 'We\u2019re literally next door. Our Cotati shop is 5 minutes away.',
   neighborhoods: ['SSU area', 'Mountain Shadows', 'Southwest', 'Northeast', 'Roberts Lake'],
   midCtaHeading: 'Need a Fast Fix in Rohnert Park?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Rohnert Park and Sonoma County',
 }
 
 const cotati: CityContent = {
@@ -170,6 +182,8 @@ const cotati: CityContent = {
   localExpertsText: 'This is our home base. We are located right here at 466 Primero Ct, Suite H.',
   neighborhoods: ['Downtown Cotati', 'Old Redwood Highway', 'East Cotati Avenue'],
   midCtaHeading: 'Need Your Neighbor\u2019s Help With an Appliance?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Cotati and Sonoma County',
 }
 
 const sebastopol: CityContent = {
@@ -201,6 +215,8 @@ const sebastopol: CityContent = {
   localExpertsText: 'About 20 minutes from our Cotati shop via the Gravenstein Highway.',
   neighborhoods: ['Downtown Sebastopol', 'Graton', 'The Barlow area', 'Gold Ridge'],
   midCtaHeading: 'Ready for Appliance Repair in West County?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Sebastopol and Sonoma County',
 }
 
 const sonoma: CityContent = {
@@ -233,6 +249,8 @@ const sonoma: CityContent = {
   localExpertsText: 'We drive through the Sonoma Valley regularly. About 25 minutes from our Cotati shop.',
   neighborhoods: ['Sonoma Plaza', 'Springs', 'Vineyard area', 'Boyes Hot Springs'],
   midCtaHeading: 'Need Appliance Repair in Sonoma Valley?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Sonoma and the surrounding wine country',
 }
 
 const windsor: CityContent = {
@@ -265,6 +283,8 @@ const windsor: CityContent = {
   localExpertsText: 'About 20 minutes north of our Cotati shop on 101.',
   neighborhoods: ['Town Green', 'Windsor Creek', 'Shiloh', 'Star Road area'],
   midCtaHeading: 'Need an Appliance Fix in Windsor?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Windsor and Sonoma County',
 }
 
 const healdsburg: CityContent = {
@@ -297,6 +317,8 @@ const healdsburg: CityContent = {
   localExpertsText: 'About 30 minutes north from our Cotati shop. We schedule Healdsburg visits multiple days a week.',
   neighborhoods: ['Plaza area', 'Dry Creek', 'Alexander Valley', 'Fitch Mountain'],
   midCtaHeading: 'Need Appliance Repair in Wine Country?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Healdsburg and Sonoma County',
 }
 
 const forestville: CityContent = {
@@ -329,6 +351,8 @@ const forestville: CityContent = {
   localExpertsText: 'About 25 minutes from our Cotati shop through Sebastopol.',
   neighborhoods: ['Downtown Forestville', 'River Road corridor', 'Mirabel Road area'],
   midCtaHeading: 'Need Appliance Repair Along the River?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Forestville and the Russian River area',
 }
 
 const guerneville: CityContent = {
@@ -361,6 +385,8 @@ const guerneville: CityContent = {
   localExpertsText: 'About 35 minutes from our Cotati shop. We schedule the Russian River area regularly.',
   neighborhoods: ['Downtown Guerneville', 'Rio Nido', 'Monte Rio area', 'Vacation Beach'],
   midCtaHeading: 'Need Appliance Repair on the Russian River?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Guerneville and the Russian River',
 }
 
 const glenEllen: CityContent = {
@@ -393,6 +419,8 @@ const glenEllen: CityContent = {
   localExpertsText: 'About 30 minutes from Cotati through the Sonoma Valley.',
   neighborhoods: ['Village center', 'Arnold Drive corridor', 'Sonoma Mountain area'],
   midCtaHeading: 'Need Appliance Repair in Glen Ellen?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Glen Ellen and Sonoma Valley',
 }
 
 const bodegaBay: CityContent = {
@@ -424,6 +452,8 @@ const bodegaBay: CityContent = {
   localExpertsText: 'About 40 minutes from our Cotati shop. We service the Sonoma Coast regularly.',
   neighborhoods: ['Harbor area', 'Bodega Harbour', 'Salmon Creek', 'Bodega village'],
   midCtaHeading: 'Need Appliance Repair on the Coast?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Bodega Bay and the Sonoma Coast',
 }
 
 const dillonBeach: CityContent = {
@@ -455,6 +485,8 @@ const dillonBeach: CityContent = {
   localExpertsText: 'About 45 minutes from our Cotati shop. We schedule the coastal route regularly.',
   neighborhoods: ['Dillon Beach village', 'Oceana Marin', 'Lawson\u2019s Landing area'],
   midCtaHeading: 'Need Appliance Repair at the Beach?',
+  heroImage: '/images/SonomaVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van overlooking Dillon Beach and the Sonoma Coast',
 }
 
 // ---------------------------------------------------------------------------
@@ -491,6 +523,8 @@ const sanRafael: CityContent = {
   localExpertsText: 'About 30 minutes south from our Cotati shop on 101.',
   neighborhoods: ['Downtown', 'Terra Linda', 'Sun Valley', 'Dominican', 'Gerstle Park', 'Peacock Gap'],
   midCtaHeading: 'Ready for Appliance Repair in San Rafael?',
+  heroImage: '/images/MarinVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
 }
 
 const novato: CityContent = {
@@ -523,6 +557,8 @@ const novato: CityContent = {
   localExpertsText: 'About 20 minutes south on 101. We are in Novato multiple times a week.',
   neighborhoods: ['Downtown', 'Hamilton', 'Bel Marin Keys', 'Indian Valley', 'Ignacio'],
   midCtaHeading: 'Need Appliance Repair in Novato?',
+  heroImage: '/images/MarinVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
 }
 
 const millValley: CityContent = {
@@ -555,6 +591,8 @@ const millValley: CityContent = {
   localExpertsText: 'About 40 minutes from Cotati. We group south Marin appointments for consistent availability.',
   neighborhoods: ['Downtown', 'Tam Valley', 'Strawberry', 'Alto', 'Homestead Valley'],
   midCtaHeading: 'Need Appliance Repair in Mill Valley?',
+  heroImage: '/images/MarinVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
 }
 
 const sausalito: CityContent = {
@@ -587,6 +625,8 @@ const sausalito: CityContent = {
   localExpertsText: 'About 45 minutes from Cotati. We schedule south Marin appointments regularly.',
   neighborhoods: ['Downtown', 'Caledonia', 'Marinship', 'Floating homes'],
   midCtaHeading: 'Need Appliance Repair in Sausalito?',
+  heroImage: '/images/MarinVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
 }
 
 const tiburon: CityContent = {
@@ -619,6 +659,8 @@ const tiburon: CityContent = {
   localExpertsText: 'About 45 minutes from Cotati. Part of our regular south Marin schedule.',
   neighborhoods: ['Downtown', 'Belvedere', 'Paradise Drive', 'Reed Heights'],
   midCtaHeading: 'Need Appliance Repair in Tiburon?',
+  heroImage: '/images/MarinVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
 }
 
 const corteMadera: CityContent = {
@@ -651,6 +693,8 @@ const corteMadera: CityContent = {
   localExpertsText: 'About 35 minutes from Cotati. Part of our regular central Marin route.',
   neighborhoods: ['The Village area', 'Christmas Tree Hill', 'Madera Gardens', 'Mariner Cove'],
   midCtaHeading: 'Need Appliance Repair in Corte Madera?',
+  heroImage: '/images/MarinVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
 }
 
 const larkspur: CityContent = {
@@ -682,6 +726,8 @@ const larkspur: CityContent = {
   localExpertsText: 'About 35 minutes from Cotati. Part of our regular central Marin schedule.',
   neighborhoods: ['Downtown Larkspur', 'Greenbrae', 'Kentfield', 'Murray Park'],
   midCtaHeading: 'Need Appliance Repair in Larkspur?',
+  heroImage: '/images/MarinVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
 }
 
 // ---------------------------------------------------------------------------
@@ -718,6 +764,8 @@ const napa: CityContent = {
   localExpertsText: 'About 30 minutes east from our Cotati shop, crossing into Napa County.',
   neighborhoods: ['Downtown', 'Browns Valley', 'Silverado', 'Old Town', 'Westwood'],
   midCtaHeading: 'Need Appliance Repair in Napa Valley?',
+  heroImage: '/images/SonomaVan2.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service vans in wine country, serving Napa Valley',
 }
 
 // ---------------------------------------------------------------------------

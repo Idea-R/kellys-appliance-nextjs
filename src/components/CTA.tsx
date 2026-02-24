@@ -40,7 +40,7 @@ export default function CTA({
         <a
           href={`tel:${tel}`}
           data-analytics-label={callLabel}
-          className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+          className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors shadow-sm"
         >
           <PhoneIcon className="h-5 w-5 mr-2" />
           Call {tel}
@@ -50,7 +50,7 @@ export default function CTA({
           target="_blank"
           rel="noopener noreferrer"
           data-analytics-label={bookLabel}
-          className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+          className="inline-flex items-center justify-center bg-green-600 text-white border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
         >
           <CalendarIcon className="h-5 w-5 mr-2" />
           Request Appointment Online
