@@ -32,26 +32,14 @@ const testimonials = [
 export default function SchedulePrepPage() {
   return (
     <Layout>
-      {/* Hero with van image */}
+      {/* Hero — attention-grabbing "wait" feel */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
-            <div className="lg:flex-1">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-3">Before You Request an Appointment</h1>
-              <p className="text-lg opacity-95 max-w-3xl">Have these details handy to speed up your appointment request and diagnosis.</p>
-            </div>
-            <div className="hidden lg:block lg:flex-shrink-0 lg:w-[360px]">
-              <Image
-                src="/images/SonomaVan2.jpg"
-                alt="Kelly's Appliance service vans ready for dispatch in Sonoma County"
-                width={360}
-                height={270}
-                className="rounded-lg shadow-xl object-cover w-full h-auto"
-                priority
-                sizes="360px"
-              />
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-yellow-400 rounded-full mb-6 shadow-lg">
+            <span className="text-4xl font-extrabold text-yellow-900" aria-hidden="true">!</span>
           </div>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-3">Before You Request an Appointment</h1>
+          <p className="text-lg opacity-95 max-w-2xl mx-auto">Have these details handy to speed up your request and help us diagnose the problem faster.</p>
         </div>
       </section>
 
@@ -61,7 +49,7 @@ export default function SchedulePrepPage() {
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium">
             <span className="flex items-center gap-1.5">
               <ClockIcon className="h-4 w-4 text-green-300" />
-              Serving Sonoma, Marin & Napa Since 1975
+              Serving Sonoma, Marin &amp; Napa Since 1975
             </span>
             <span className="flex items-center gap-1.5">
               <CheckBadgeIcon className="h-4 w-4 text-green-300" />
@@ -168,8 +156,20 @@ export default function SchedulePrepPage() {
             <p className="text-xs text-center text-gray-600">Online requests confirmed within 4 hours (business hours)</p>
             <Link href="/resources/where-is-my-model-number" className="block text-center bg-white text-gray-700 px-6 py-3 rounded-lg font-semibold border hover:bg-gray-50" data-analytics-label="schedule_prep_model_number">Where is my model number?</Link>
 
-            {/* Testimonials in sidebar */}
-            <div className="mt-6 space-y-3">
+            {/* Van image */}
+            <div className="mt-4 overflow-hidden rounded-lg shadow-md">
+              <Image
+                src="/images/SonomaVan2.jpg"
+                alt="Kelly's Appliance service vans ready for dispatch in Sonoma County"
+                width={400}
+                height={300}
+                className="w-full h-auto object-cover"
+                sizes="(max-width: 1024px) 100vw, 400px"
+              />
+            </div>
+
+            {/* Testimonials */}
+            <div className="mt-2 space-y-3">
               <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide text-center">What Our Customers Say</h3>
               {testimonials.map((t, i) => (
                 <div key={i} className="bg-white border rounded-lg p-4">
