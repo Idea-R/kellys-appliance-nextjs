@@ -27,6 +27,7 @@ export default function CTA({
   const company = getCompanyInfo()
   const tel = phone || company.phone
   const booking = bookingUrl || BOOKING_CONFIG.BOOKING_URL
+  const isExternal = booking.startsWith('http')
 
   const disclaimerText = {
     full: BOOKING_CONFIG.DISCLAIMERS.FULL,
@@ -47,8 +48,7 @@ export default function CTA({
         </a>
         <a
           href={booking}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           data-analytics-label={bookLabel}
           className="inline-flex items-center justify-center bg-green-600 text-white border-2 border-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
         >

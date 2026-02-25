@@ -7,7 +7,8 @@
 
 export const BOOKING_CONFIG = {
   PHONE: '(707) 664-9702',
-  BOOKING_URL: 'https://booking.rossware.com/schedule/4588',
+  BOOKING_URL: '/schedule-prep',
+  DIRECT_BOOKING_URL: 'https://booking.rossware.com/schedule/4588',
   SCHEDULE_PREP_URL: '/schedule-prep',
   
   // Confirmation timeframe messaging

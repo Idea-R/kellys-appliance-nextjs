@@ -238,9 +238,7 @@ export default function AuthorizedServicePage() {
                           Call (707) 664-9702
                         </a>
                         <a
-                          href="https://booking.rossware.com/schedule/4588"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href="/schedule-prep"
                           className="inline-flex items-center justify-center bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors"
                         >
                           Request Appointment
@@ -276,9 +274,7 @@ export default function AuthorizedServicePage() {
                 📞 Call (707) 664-9702 Now
               </a>
               <a
-                href="https://booking.rossware.com/schedule/4588"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/schedule-prep"
                 className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 Request Appointment Online

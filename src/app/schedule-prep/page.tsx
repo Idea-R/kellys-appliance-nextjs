@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Layout from '@/components/Layout'
 import AnimatedExclamation from '@/components/AnimatedExclamation'
 import { ShieldCheckIcon, ClockIcon, CheckBadgeIcon, StarIcon } from '@heroicons/react/24/solid'
+import { BOOKING_CONFIG } from '@/lib/booking-constants'
 
 export const metadata = {
   title: 'Before Requesting an Appointment',
@@ -41,7 +42,7 @@ export default function SchedulePrepPage() {
               <h1 className="text-4xl lg:text-5xl font-bold mb-3">Before You Request an Appointment</h1>
               <p className="text-lg opacity-95 max-w-3xl">Have these details handy to speed up your request and help us diagnose the problem faster.</p>
             </div>
-            <div className="hidden lg:flex lg:flex-shrink-0 lg:items-center lg:justify-center" style={{ perspective: '600px' }}>
+            <div className="hidden lg:flex lg:flex-shrink-0 lg:items-center lg:justify-center">
               <AnimatedExclamation />
             </div>
           </div>
@@ -155,7 +156,7 @@ export default function SchedulePrepPage() {
               <a href="tel:7076649702" className="block text-center bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 mb-2" data-analytics-label="schedule_prep_call">Call (707) 664-9702</a>
               <p className="text-xs text-gray-700">Immediate confirmation &amp; current availability</p>
             </div>
-            <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="block text-center bg-white text-green-800 px-6 py-4 rounded-lg font-semibold border-2 border-green-600 hover:bg-green-50" data-analytics-label="schedule_prep_book">
+            <a href={BOOKING_CONFIG.DIRECT_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-white text-green-800 px-6 py-4 rounded-lg font-semibold border-2 border-green-600 hover:bg-green-50" data-analytics-label="schedule_prep_book">
               Request Appointment Online
             </a>
             <p className="text-xs text-center text-gray-600">Online requests confirmed within 4 hours (business hours)</p>

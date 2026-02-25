@@ -125,9 +125,7 @@ export default function BlogPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://booking.rossware.com/schedule/4588"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule-prep"
               className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors"
             >
               Request Appointment

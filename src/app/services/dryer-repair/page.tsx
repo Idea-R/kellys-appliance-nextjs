@@ -48,8 +48,6 @@ export default function DryerRepairPage() {
                 </a>
                 <a
                   href={BOOKING_CONFIG.BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
                   Request Appointment Online
@@ -165,8 +163,6 @@ export default function DryerRepairPage() {
                 </a>
                 <a
                   href={BOOKING_CONFIG.BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
                 >
                   Request Appointment
@@ -190,7 +186,7 @@ export default function DryerRepairPage() {
                   <a href={`tel:${companyInfo.phone}`} className="inline-flex items-center justify-center bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded font-semibold">
                     <PhoneIcon className="h-5 w-5 mr-2" /> Call {companyInfo.phone}
                   </a>
-                  <a href={BOOKING_CONFIG.BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-green-800 px-4 py-2 rounded font-semibold hover:bg-gray-100">
+                  <a href={BOOKING_CONFIG.BOOKING_URL} className="inline-flex items-center justify-center bg-white text-green-800 px-4 py-2 rounded font-semibold hover:bg-gray-100">
                     Request Appointment
                   </a>
                 </div>
@@ -237,8 +233,6 @@ export default function DryerRepairPage() {
             </a>
             <a
               href={BOOKING_CONFIG.BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
               Request Appointment Online

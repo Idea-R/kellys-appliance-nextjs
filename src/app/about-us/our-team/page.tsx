@@ -37,8 +37,14 @@ const teamMembers: TeamMember[] = [
     funFact: 'Started in the appliance business at age 18 and has never looked back!'
   },
   {
+    name: 'Kendra Hoetger',
+    role: 'General Manager',
+    image: '/images/Kendra-23-scaled.jpg',
+    bio: 'General manager handling appointments, billing, and customer communications.'
+  },
+  {
     name: 'Shane Spencer',
-    role: 'Tech Service Manager',
+    role: 'Operations and Growth Manager',
     image: '/images/Shane-3.jpg',
     bio: 'Ten years with Kelly\'s Appliance, started as a technician and worked my way up to Tech Service Manager. I support our amazing customers and provide rapid technical support to field technicians.',
     bioFull: 'I\'ve been with Kelly\'s Appliance for ten years, started as a technician, and worked my way to a desk, talking to our wonderful customers and helping technicians with rapid support! I could never imagine working for anybody else! I wish I could say I come from a background of tinkering with machines, but that\'s not the case! I did have a great passion for computers though, building my own—I was the kid\'s friend\'s parents would go to fix their computer! I went to school for graphic design originally and decided to step away from my comfort zone! What do I like about Appliance repair? Everything varies from day to day in this line of work! New machines, new customers, new locations! The work is very rewarding. You get to be the hero, saving an oven just in time for the holiday! BONUS: your family all call you more often... even if it\'s just to help with a failing refrigerator!',
@@ -63,10 +69,25 @@ const teamMembers: TeamMember[] = [
     funFact: 'Playing D&D for 20+ years, owned by 5 cats, builds websites & software for fun, and welcomes our AI overlords!'
   },
   {
-    name: 'Kendra Hoetger',
-    role: 'Office Manager',
-    image: '/images/Kendra-23-scaled.jpg',
-    bio: 'Office manager handling appointments, billing, and customer communications.'
+    name: 'James Shawgo',
+    role: 'Service Manager',
+    image: '/images/James5.jpg',
+    bio: 'Senior appliance repair technician with 10+ years in appliance repair and 25+ years in field service. EPA certified, experienced across major and premium brands, and a Viking Authorized Servicer since 2017.',
+    bioFull: 'I am a senior appliance repair technician with over 10 years of experience in the appliance repair industry and more than 25 years in the field service industry overall. My background includes residential and commercial diagnostics and repair, management experience, and specialized service on commercial ice makers and bar and restaurant beverage equipment.\n\nI am EPA certified and have extensive experience servicing a wide range of brands, including Amana, Maytag, Whirlpool, KitchenAid, JennAir, LG, Samsung, GE, Bosch, Thermador, Fisher & Paykel, Viking, Wolf, Sub-Zero, Dynasty, and Jade. Over the past eight years, my work has focused primarily on high-end and premium appliances. I have been a Viking Authorized Servicer since 2017.\n\nI service nearly all major household appliances, including refrigerators, ice makers, washers, dryers, dishwashers, ranges, wall ovens, cooktops, microwaves, trash compactors, garbage disposals, and hot water dispensers.\n\nI take pride in providing honest, reliable service backed by decades of hands-on experience.',
+    // Badge should reflect appliance-repair experience (not total field-service years)
+    yearsExperience: 10,
+    specialties: [
+      'Residential and commercial diagnostics & repair',
+      'High-end & premium appliances (8+ years focus)',
+      'Commercial ice makers and bar/restaurant beverage equipment',
+      'Refrigeration and ice maker systems',
+      'Broad multi-brand experience (major + premium)'
+    ],
+    certifications: [
+      'EPA Certified',
+      'Viking Authorized Servicer (since 2017)'
+    ],
+    quote: 'I take pride in providing honest, reliable service backed by decades of hands-on experience.'
   },
   {
     name: 'Abby Jensen',
@@ -82,9 +103,9 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Bianca Bonila',
-    role: 'Lead Technician',
+    role: 'Service Technician',
     image: '/images/Bianca-scaled.jpg',
-    bio: 'Lead technician supporting complex diagnostics and service excellence.'
+    bio: 'Service technician supporting complex diagnostics and service excellence.'
   },
   {
     name: 'Ricardo Ramos',
@@ -103,27 +124,6 @@ const teamMembers: TeamMember[] = [
     role: 'Service Technician',
     image: '/images/Sean-23-scaled.jpg',
     bio: 'Professional field technician serving customers throughout the Bay Area.'
-  },
-  {
-    name: 'James Shawgo',
-    role: 'Senior Service Technician',
-    image: '/images/James5.jpg',
-    bio: 'Senior appliance repair technician with 10+ years in appliance repair and 25+ years in field service. EPA certified, experienced across major and premium brands, and a Viking Authorized Servicer since 2017.',
-    bioFull: 'I am a senior appliance repair technician with over 10 years of experience in the appliance repair industry and more than 25 years in the field service industry overall. My background includes residential and commercial diagnostics and repair, management experience, and specialized service on commercial ice makers and bar and restaurant beverage equipment.\n\nI am EPA certified and have extensive experience servicing a wide range of brands, including Amana, Maytag, Whirlpool, KitchenAid, JennAir, LG, Samsung, GE, Bosch, Thermador, Fisher & Paykel, Viking, Wolf, Sub-Zero, Dynasty, and Jade. Over the past eight years, my work has focused primarily on high-end and premium appliances. I have been a Viking Authorized Servicer since 2017.\n\nI service nearly all major household appliances, including refrigerators, ice makers, washers, dryers, dishwashers, ranges, wall ovens, cooktops, microwaves, trash compactors, garbage disposals, and hot water dispensers.\n\nI take pride in providing honest, reliable service backed by decades of hands-on experience.',
-    // Badge should reflect appliance-repair experience (not total field-service years)
-    yearsExperience: 10,
-    specialties: [
-      'Residential and commercial diagnostics & repair',
-      'High-end & premium appliances (8+ years focus)',
-      'Commercial ice makers and bar/restaurant beverage equipment',
-      'Refrigeration and ice maker systems',
-      'Broad multi-brand experience (major + premium)'
-    ],
-    certifications: [
-      'EPA Certified',
-      'Viking Authorized Servicer (since 2017)'
-    ],
-    quote: 'I take pride in providing honest, reliable service backed by decades of hands-on experience.'
   },
   {
     name: 'Anthony Porter',
@@ -256,9 +256,7 @@ export default function OurTeamPage() {
               Call {companyInfo.phone}
             </a>
             <a
-              href="https://booking.rossware.com/schedule/4588"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule-prep"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
               Request Appointment

@@ -64,10 +64,8 @@ export default function ServiceDetailSection({ title, intro, children }: Service
                   <PhoneIcon className="h-5 w-5 mr-2" /> 
                   Call {companyInfo.phone}
                 </a>
-                <a 
-                  href="https://booking.rossware.com/schedule/4588" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="/schedule-prep"
                   className="inline-flex items-center justify-center bg-green-800 text-white px-4 py-3 rounded-lg font-bold hover:bg-green-900 transition-colors"
                 >
                   Book Online

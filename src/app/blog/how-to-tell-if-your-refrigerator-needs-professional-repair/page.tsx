@@ -208,7 +208,7 @@ export default function RefrigeratorRepairPostPage() {
               Your refrigerator is a major investment, and catching problems early can save you hundreds or even thousands of dollars in repair costs and spoiled food. If you&apos;ve noticed any of the warning signs above (unusual noises, temperature swings, frost buildup, water leaks, a constantly running compressor, hot exterior panels, or food spoiling prematurely), don&apos;t wait for the problem to get worse.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Kelly&apos;s Appliance Center is Diamond Certified and has served homeowners in Cotati, Petaluma, Santa Rosa, Rohnert Park, and the surrounding Sonoma, Marin, and Napa county communities for over 50 years. Our experienced, factory-authorized technicians will diagnose the issue quickly, explain your options clearly, and get your refrigerator running reliably again. <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" data-analytics-label="book_appointment" className="text-green-600 hover:text-green-700">Book your appointment today</a> or call us at <a href="tel:7076649702" className="text-green-600 hover:text-green-700">(707) 664-9702</a> to speak with a member of our team.
+              Kelly&apos;s Appliance Center is Diamond Certified and has served homeowners in Cotati, Petaluma, Santa Rosa, Rohnert Park, and the surrounding Sonoma, Marin, and Napa county communities for over 50 years. Our experienced, factory-authorized technicians will diagnose the issue quickly, explain your options clearly, and get your refrigerator running reliably again. <a href="/schedule-prep" data-analytics-label="book_appointment" className="text-green-600 hover:text-green-700">Book your appointment today</a> or call us at <a href="tel:7076649702" className="text-green-600 hover:text-green-700">(707) 664-9702</a> to speak with a member of our team.
             </p>
           </div>
         </div>
@@ -256,9 +256,7 @@ export default function RefrigeratorRepairPostPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://booking.rossware.com/schedule/4588"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule-prep"
               data-analytics-label="book_appointment"
               className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
             >

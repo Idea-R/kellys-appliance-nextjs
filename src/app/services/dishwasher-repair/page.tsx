@@ -101,8 +101,6 @@ export default function DishwasherRepairPage() {
                 </a>
                 <a
                   href={BOOKING_CONFIG.BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-green-700 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover-scale"
                 >
                   Schedule Online
@@ -239,8 +237,6 @@ export default function DishwasherRepairPage() {
             </a>
             <a
               href={BOOKING_CONFIG.BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-green-800 px-8 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors"
             >
               Request Appointment Online

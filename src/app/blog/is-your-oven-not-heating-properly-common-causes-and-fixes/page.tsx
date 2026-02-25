@@ -180,7 +180,7 @@ export default function OvenHeatingPostPage() {
               Modern ovens rely on an electronic control board to manage heating cycles, temperature regulation, and cooking programs. When the control board fails, you may see error codes on the digital display, experience unresponsive buttons, or find that the oven shuts off unexpectedly mid-cycle. Electrical surges, moisture exposure, and general wear can all cause control board failures. In some cases, the oven may appear completely dead even though it&apos;s receiving power.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>Solution:</strong> Start by resetting the oven: turn off the circuit breaker for one minute, then turn it back on. If error codes persist or the oven remains unresponsive, the control board likely needs professional diagnosis. Control board replacement requires specialized knowledge and precise wiring, so this is a repair best left to an experienced technician. <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" data-analytics-label="book_appointment" className="text-green-600 hover:text-green-700">Schedule a service call</a> to get an accurate diagnosis.
+              <strong>Solution:</strong> Start by resetting the oven: turn off the circuit breaker for one minute, then turn it back on. If error codes persist or the oven remains unresponsive, the control board likely needs professional diagnosis. Control board replacement requires specialized knowledge and precise wiring, so this is a repair best left to an experienced technician. <a href="/schedule-prep" data-analytics-label="book_appointment" className="text-green-600 hover:text-green-700">Schedule a service call</a> to get an accurate diagnosis.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">6. Self-Cleaning Cycle Damage</h2>
@@ -199,7 +199,7 @@ export default function OvenHeatingPostPage() {
               At Kelly&apos;s Appliance Center in Cotati, California, we&apos;ve been the trusted appliance repair choice for families across Sonoma, Marin, and Napa counties for more than 50 years. As a Diamond Certified company with factory-authorized technician status for all major brands, we have the training, tools, and genuine parts to get your oven back to peak performance quickly.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Don&apos;t let a malfunctioning oven disrupt your kitchen. <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" data-analytics-label="book_appointment" className="text-green-600 hover:text-green-700">Book an appointment online</a> or give us a call to schedule a convenient service visit. Our experienced technicians will diagnose the issue, explain your options, and complete the repair right the first time.
+              Don&apos;t let a malfunctioning oven disrupt your kitchen. <a href="/schedule-prep" data-analytics-label="book_appointment" className="text-green-600 hover:text-green-700">Book an appointment online</a> or give us a call to schedule a convenient service visit. Our experienced technicians will diagnose the issue, explain your options, and complete the repair right the first time.
             </p>
           </div>
         </div>
@@ -245,9 +245,7 @@ export default function OvenHeatingPostPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://booking.rossware.com/schedule/4588"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule-prep"
               data-analytics-label="book_appointment"
               className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
             >

@@ -38,8 +38,6 @@ export default function StickyMobileCTA() {
         </a>
         <a
           href={BOOKING_CONFIG.BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           data-analytics-label="sticky_cta_book"
           className="flex-1 inline-flex items-center justify-center bg-white text-green-800 border-2 border-green-600 px-4 py-2.5 rounded-lg font-semibold text-sm hover:bg-green-50 transition-colors"
         >

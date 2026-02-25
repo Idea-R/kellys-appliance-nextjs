@@ -148,7 +148,7 @@ export default function WasherRepairSignsPostPage() {
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               <strong>Solution:</strong><br />
-              Don&apos;t ignore unusual sounds, even if the washer still seems to work. Bearing failures in particular can escalate quickly, potentially damaging the outer tub and turning a $200 repair into a $600 one. <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700" data-analytics-label="book_appointment">Schedule a diagnostic appointment</a> as soon as you notice new or worsening sounds.
+              Don&apos;t ignore unusual sounds, even if the washer still seems to work. Bearing failures in particular can escalate quickly, potentially damaging the outer tub and turning a $200 repair into a $600 one. <a href="/schedule-prep" className="text-green-600 hover:text-green-700" data-analytics-label="book_appointment">Schedule a diagnostic appointment</a> as soon as you notice new or worsening sounds.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">3. Water Not Filling or Draining Properly</h2>
@@ -204,7 +204,7 @@ export default function WasherRepairSignsPostPage() {
               Kelly&apos;s Appliance Center has been the trusted choice for appliance repair in Cotati, CA and throughout Sonoma, Marin, and Napa counties for over 50 years. Our factory-authorized, Diamond Certified technicians have the expertise and genuine parts to fix your washer right the first time. Whether it&apos;s a noisy spin cycle, a persistent leak, or an error code you can&apos;t clear, we&apos;re here to help. Don&apos;t forget that a healthy washer also means less strain on your <Link href="/services/dryer-repair" className="text-green-600 hover:text-green-700">dryer</Link>, since clothes that aren&apos;t properly spun out arrive in the dryer much wetter, forcing it to work harder and wear out faster.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <a href="https://booking.rossware.com/schedule/4588" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">Book your washer repair appointment online</a> or call us at (707) 664-9702 to schedule a convenient service visit. Early action today prevents an expensive emergency tomorrow.
+              <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">Book your washer repair appointment online</a> or call us at (707) 664-9702 to schedule a convenient service visit. Early action today prevents an expensive emergency tomorrow.
             </p>
           </div>
         </div>
@@ -252,9 +252,7 @@ export default function WasherRepairSignsPostPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://booking.rossware.com/schedule/4588"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule-prep"
               className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
               data-analytics-label="book_appointment"
             >

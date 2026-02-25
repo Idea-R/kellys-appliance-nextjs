@@ -218,9 +218,7 @@ export default function ApplianceMaintenancePage() {
             <p className="mb-6 text-gray-700 leading-relaxed">
               Don&apos;t wait for a breakdown to take action.{' '}
               <a
-                href="https://booking.rossware.com/schedule/4588"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/schedule-prep"
                 className="text-green-600 hover:text-green-700"
                 data-analytics-label="book_appointment"
               >
@@ -276,9 +274,7 @@ export default function ApplianceMaintenancePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://booking.rossware.com/schedule/4588"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/schedule-prep"
               className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
               data-analytics-label="book_appointment"
             >

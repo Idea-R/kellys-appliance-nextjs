@@ -98,8 +98,6 @@ export default function ServicesPage() {
                 </a>
                 <a
                   href={BOOKING_CONFIG.BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill alt border-2 border-white"
                 >
                   <CalendarIcon className="h-6 w-6 mr-2" />
@@ -128,7 +126,7 @@ export default function ServicesPage() {
               </ul>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <a href={`tel:${companyInfo.phone}`} className="btn-fill inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Call {companyInfo.phone}</a>
-                <a href={BOOKING_CONFIG.BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-fill alt inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Request Virtual Call</a>
+                <a href={BOOKING_CONFIG.BOOKING_URL} className="btn-fill alt inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold">Request Virtual Call</a>
               </div>
             </div>
             <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
@@ -325,8 +323,6 @@ export default function ServicesPage() {
               </a>
               <a
                 href={BOOKING_CONFIG.BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill alt border-2 border-white"
               >
                 <CalendarIcon className="h-6 w-6 mr-2" />
