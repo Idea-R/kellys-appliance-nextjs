@@ -1,13 +1,13 @@
 import React from 'react';
 import { PhoneIcon, MapPinIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 import ChamberLink from '@/components/ChamberLink';
 import TopPicks from '@/components/TopPicks';
 import ReferralsGrid from '@/components/ReferralsGrid';
 import { getCompanyInfo } from '@/lib/content';
 import Link from 'next/link';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 const companyInfo = getCompanyInfo();
 

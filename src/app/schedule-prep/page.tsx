@@ -2,12 +2,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
 import AnimatedExclamation from '@/components/AnimatedExclamation'
-import { ShieldCheckIcon, ClockIcon, CheckBadgeIcon, StarIcon } from '@heroicons/react/24/solid'
-import { BOOKING_CONFIG } from '@/lib/booking-constants'
+import AppointmentForm from '@/components/AppointmentForm'
+import { ShieldCheckIcon, ClockIcon, CheckBadgeIcon, StarIcon, PhoneIcon, ChatBubbleLeftIcon } from '@heroicons/react/24/solid'
 
 export const metadata = {
-  title: 'Before Requesting an Appointment',
-  description: 'Checklist of what to have ready before requesting an appointment: model/serial, availability, issue description, and photos. Trusted since 1975 with a 90-day money-back guarantee.',
+  title: 'Schedule Appliance Repair | Kelly\u2019s Appliance Center',
+  description: 'Request appliance repair service in Sonoma, Marin & Napa counties. Call for immediate scheduling or fill out our quick form. Diamond Certified, 90-day guarantee.',
   alternates: {
     canonical: '/schedule-prep',
   },
@@ -34,13 +34,13 @@ const testimonials = [
 export default function SchedulePrepPage() {
   return (
     <Layout>
-      {/* Hero — left-aligned text with animated exclamation */}
-      <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
+      {/* Hero — punchy, conversion-focused */}
+      <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
             <div className="lg:flex-1">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-3">Before You Request an Appointment</h1>
-              <p className="text-lg opacity-95 max-w-3xl">Have these details handy to speed up your request and help us diagnose the problem faster.</p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3">Get Your Appliance Fixed</h1>
+              <p className="text-lg opacity-95 max-w-2xl">Call us for immediate scheduling or fill out the quick form below. We&apos;ll get back to you within 4 hours.</p>
             </div>
             <div className="hidden lg:flex lg:flex-shrink-0 lg:items-center lg:justify-center">
               <AnimatedExclamation />
@@ -73,110 +73,99 @@ export default function SchedulePrepPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-          <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white rounded-xl shadow p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Scheduling Checklist</h2>
-              <ul className="space-y-3 text-gray-800">
-                <li>• Model and Serial Number (see <Link href="/resources/where-is-my-model-number" className="text-green-700 underline">Where is my model number?</Link>)</li>
-                <li>• Appliance Type and Brand</li>
-                <li>• Clear Issue Description (symptoms, noises, leaks, error codes)</li>
-                <li>• Photos or short video if available (helps us pre-diagnose)</li>
-                <li>• Address and Gate/Access Info (if any)</li>
-                <li>• Preferred Availability (2&ndash;3 windows that work for you)</li>
-                <li>• Purchase Date/Warranty Status if known</li>
-              </ul>
-            </div>
+      {/* Main Content — Two Paths */}
+      <section className="py-12 lg:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
 
-            <div className="bg-gray-50 border rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Pro Tip</h3>
-              <p className="text-gray-700">Snapping a photo of the rating plate (with model/serial) saves time and avoids typos.</p>
-            </div>
+            {/* Left Column — Call / Text CTA */}
+            <div className="lg:col-span-2 space-y-6">
+              {/* Fastest option — Call */}
+              <div className="bg-white rounded-xl shadow-lg border-2 border-green-600 p-6 text-center">
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-green-100 rounded-full mb-4">
+                  <PhoneIcon className="h-7 w-7 text-green-700" />
+                </div>
+                <h2 className="text-xl font-bold text-gray-900 mb-2">Fastest Option: Call Us</h2>
+                <p className="text-gray-600 text-sm mb-4">Get immediate confirmation and our most current availability.</p>
+                <a
+                  href="tel:7076649702"
+                  className="block bg-green-600 text-white px-6 py-4 rounded-lg font-bold text-lg hover:bg-green-700 transition-colors shadow-md"
+                  data-analytics-label="schedule_call_cta"
+                >
+                  Call (707) 664-9702
+                </a>
+                <p className="text-xs text-gray-500 mt-3">Mon&ndash;Fri 8am&ndash;5pm &bull; Emergency service available</p>
+              </div>
 
-            {/* What to Expect */}
-            <div className="bg-white rounded-xl shadow p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">What to Expect from Kelly&apos;s</h2>
-              <p className="text-gray-600 mb-5">Here&apos;s what happens after you schedule:</p>
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-700 font-bold text-sm">1</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Confirmation Call</h4>
-                    <p className="text-gray-600 text-sm">We confirm your appointment and give you a service window. Our tech calls about 30 minutes before arrival so you&apos;re not waiting around.</p>
-                  </div>
+              {/* Text option */}
+              <div className="bg-white rounded-xl shadow p-6 text-center">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-3">
+                  <ChatBubbleLeftIcon className="h-6 w-6 text-blue-700" />
                 </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-700 font-bold text-sm">2</span>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Don&apos;t Want to Call?</h3>
+                <p className="text-gray-600 text-sm mb-3">Shoot us a text at our work number&mdash;we&apos;ll get back to you quickly.</p>
+                <a
+                  href="sms:7076649702"
+                  className="block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold border-2 border-blue-300 hover:bg-blue-50 transition-colors"
+                  data-analytics-label="schedule_text_cta"
+                >
+                  Text (707) 664-9702
+                </a>
+              </div>
+
+              {/* Van image — desktop only */}
+              <div className="hidden lg:block overflow-hidden rounded-xl shadow-md">
+                <Image
+                  src="/images/SonomaVan2.jpg"
+                  alt="Kelly's Appliance service vans ready for dispatch in Sonoma County"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                  sizes="400px"
+                />
+              </div>
+
+              {/* Desktop testimonials */}
+              <div className="hidden lg:block space-y-3">
+                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide text-center">What Our Customers Say</h3>
+                {testimonials.map((t, i) => (
+                  <div key={i} className="bg-white border rounded-lg p-4">
+                    <div className="flex gap-0.5 mb-2">
+                      {[...Array(5)].map((_, s) => (
+                        <StarIcon key={s} className="h-4 w-4 text-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-gray-700 text-sm italic">&ldquo;{t.quote}&rdquo;</p>
+                    <p className="text-gray-500 text-xs mt-2 font-medium">&mdash; {t.author}, {t.source}</p>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Professional Diagnosis</h4>
-                    <p className="text-gray-600 text-sm">A uniformed, factory-authorized technician arrives, diagnoses the issue, and explains the problem in plain English before any work begins.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-700 font-bold text-sm">3</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Flat-Rate Quote &mdash; No Surprises</h4>
-                    <p className="text-gray-600 text-sm">You get a flat-rate price from the national price guide before we start. The service call fee ($149&ndash;$169) is applied toward labor if you proceed.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-700 font-bold text-sm">4</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Genuine Parts, Guaranteed Work</h4>
-                    <p className="text-gray-600 text-sm">We use OEM parts and back every repair with a 90-day money-back guarantee. If it fails again, we return at no charge.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">About Online Appointment Requests</h3>
-              <p className="text-gray-700 mb-3">
-                Online appointments are <strong>requests</strong> that require confirmation. We&apos;ll confirm your appointment within 4 hours during business hours or the next business day.
-              </p>
-              <p className="text-gray-700">
-                <strong>Need immediate confirmation?</strong> Call us at (707) 664-9702 for guaranteed scheduling and our most up-to-date availability.
-              </p>
+            {/* Right Column — Appointment Form */}
+            <div className="lg:col-span-3">
+              <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-1">Request Service Online</h2>
+                <p className="text-gray-600 text-sm mb-6">Fill out this quick form and we&apos;ll call you within 4 hours (business hours) to confirm your appointment.</p>
+                <AppointmentForm />
+              </div>
+
+              {/* Model number helper — below form */}
+              <div className="mt-4 bg-gray-50 border rounded-lg p-4 text-center">
+                <p className="text-sm text-gray-600">
+                  Not sure where to find your model number?{' '}
+                  <Link href="/resources/where-is-my-model-number" className="text-green-700 font-semibold underline">
+                    Check our guide
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Sidebar */}
-          <aside className="space-y-4">
-            <div className="bg-green-50 border-2 border-green-600 rounded-lg p-4 text-center">
-              <p className="text-sm font-semibold text-green-900 mb-2">&#9889; IMMEDIATE CONFIRMATION</p>
-              <a href="tel:7076649702" className="block text-center bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 mb-2" data-analytics-label="schedule_prep_call">Call (707) 664-9702</a>
-              <p className="text-xs text-gray-700">Immediate confirmation &amp; current availability</p>
-            </div>
-            <a href={BOOKING_CONFIG.DIRECT_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-white text-green-800 px-6 py-4 rounded-lg font-semibold border-2 border-green-600 hover:bg-green-50" data-analytics-label="schedule_prep_book">
-              Request Appointment Online
-            </a>
-            <p className="text-xs text-center text-gray-600">Online requests confirmed within 4 hours (business hours)</p>
-            <Link href="/resources/where-is-my-model-number" className="block text-center bg-white text-gray-700 px-6 py-3 rounded-lg font-semibold border hover:bg-gray-50" data-analytics-label="schedule_prep_model_number">Where is my model number?</Link>
-
-            {/* Van image */}
-            <div className="mt-4 overflow-hidden rounded-lg shadow-md">
-              <Image
-                src="/images/SonomaVan2.jpg"
-                alt="Kelly's Appliance service vans ready for dispatch in Sonoma County"
-                width={400}
-                height={300}
-                className="w-full h-auto object-cover"
-                sizes="(max-width: 1024px) 100vw, 400px"
-              />
-            </div>
-
-            {/* Testimonials */}
-            <div className="mt-2 space-y-3">
-              <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide text-center">What Our Customers Say</h3>
+          {/* Mobile testimonials — below both columns */}
+          <div className="lg:hidden mt-10 space-y-3">
+            <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide text-center">What Our Customers Say</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {testimonials.map((t, i) => (
                 <div key={i} className="bg-white border rounded-lg p-4">
                   <div className="flex gap-0.5 mb-2">
@@ -189,7 +178,7 @@ export default function SchedulePrepPage() {
                 </div>
               ))}
             </div>
-          </aside>
+          </div>
         </div>
       </section>
     </Layout>

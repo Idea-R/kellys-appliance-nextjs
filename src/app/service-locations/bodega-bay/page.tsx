@@ -1,8 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
-import Breadcrumbs from '@/components/Breadcrumbs'
-import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 import CTA from '@/components/CTA'
 import ServicesGrid from '@/components/ServicesGrid'
 import MidPageCTA from '@/components/MidPageCTA'
@@ -11,6 +9,8 @@ import BottomCTA from '@/components/BottomCTA'
 import NearbyCityLinks from '@/components/NearbyCityLinks'
 import RelatedServiceLinks from '@/components/RelatedServiceLinks'
 import CityJsonLd from '@/components/CityJsonLd'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 import { getCityContent } from '@/data/cityContent'
 
 const city = getCityContent('bodega-bay')
@@ -27,7 +27,6 @@ export default function BodegaBayPage() {
   return (
     <Layout>
       <Breadcrumbs items={breadcrumbs} />
-
       {/* 1. Hero */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

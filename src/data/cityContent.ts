@@ -746,7 +746,7 @@ const napa: CityContent = {
   trustHeading: 'Why Napa Residents Trust Kelly\u2019s',
   trustContent: [
     'Napa kitchens are built for entertaining, and many homes feature commercial-grade appliances from brands like Viking, Wolf, Sub-Zero, and Thermador. Our factory authorizations ensure these investments get proper expert care.',
-    'We cross the county line from Cotati to Napa in about 30 minutes, and we schedule Napa visits multiple days a week. Same-day availability is often possible.',
+    'We cross the county line from Cotati to Napa in about 30 minutes, and we schedule Napa visits multiple days a week. Call us to check our next available appointment.',
     'Whether you live near downtown\u2019s Oxbow Public Market or in a vineyard estate along the Silverado Trail, we bring the same reliable, guaranteed service to every Napa address.',
   ],
 

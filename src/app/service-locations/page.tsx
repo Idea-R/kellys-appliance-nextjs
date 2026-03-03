@@ -93,7 +93,7 @@ export default function ServiceLocationsPage() {
 
   return (
     <Layout>
-      <Breadcrumbs items={breadcrumbs} />
+    <Breadcrumbs items={breadcrumbs} />
     <div className="min-h-screen bg-white">
       {/* Hero */}
       <section className="relative bg-gradient-to-r from-green-800 via-green-700 to-green-600 text-white py-16">
