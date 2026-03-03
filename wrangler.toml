@@ -9,3 +9,8 @@ pages_build_output_dir = "out"
 [vars]
 NEXT_PUBLIC_GA_MEASUREMENT_ID = "G-6NW7LJG197"
 NEXT_PUBLIC_GTM_ID = "GTM-TNTGZKKZ"
+
+# Email configuration for contact & appointment forms (via Resend)
+CONTACT_EMAIL_TO = "kellysappliance@gmail.com"
+CONTACT_EMAIL_FROM = "noreply@kellysappliancerepair.com"
+CONTACT_EMAIL_FROM_NAME = "Kelly's Appliance"
