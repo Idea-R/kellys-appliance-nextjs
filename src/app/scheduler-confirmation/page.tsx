@@ -5,7 +5,7 @@ import { CheckCircleIcon, PhoneIcon, ClockIcon, CameraIcon, WrenchScrewdriverIco
 import { StarIcon } from '@heroicons/react/24/solid'
 
 export const metadata = {
-  title: 'Request Received \u2014 What to Have Ready | Kelly\u2019s Appliance Center',
+  title: 'Request Received | Kelly\u2019s Appliance Center',
   description: 'Your appointment request has been received. Here\u2019s what to have ready for your technician visit: model/serial numbers, photos, and access details.',
   robots: {
     index: false,
@@ -90,7 +90,7 @@ export default function SchedulerConfirmationPage() {
               <p className="text-green-900 text-sm">
                 <strong>Pro Tip:</strong> Snapping a photo of the rating plate (with model/serial number) saves time and avoids typos. Text it to us at{' '}
                 <a href="sms:7076649702" className="font-semibold underline">(707) 664-9702</a>{' '}
-                &mdash; include your reference number so we can match it to your request.
+                and include your reference number so we can match it to your request.
               </p>
             </div>
           </div>
@@ -122,8 +122,8 @@ export default function SchedulerConfirmationPage() {
                   <span className="text-green-700 font-bold text-sm">3</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Flat-Rate Quote &mdash; No Surprises</h4>
-                  <p className="text-gray-600 text-sm">You get a flat-rate price from the national price guide before we start. The service call fee ($149&ndash;$169) is applied toward labor if you proceed.</p>
+                  <h4 className="font-semibold text-gray-900">Flat-Rate Quote, No Surprises</h4>
+                  <p className="text-gray-600 text-sm">You get a flat-rate price from the national price guide before we start. The service call fee ($149-$169) is applied toward labor if you proceed.</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -170,7 +170,7 @@ export default function SchedulerConfirmationPage() {
                     ))}
                   </div>
                   <p className="text-gray-700 text-sm italic">&ldquo;{t.quote}&rdquo;</p>
-                  <p className="text-gray-500 text-xs mt-1">&mdash; {t.author}</p>
+                  <p className="text-gray-500 text-xs mt-1">- {t.author}</p>
                 </div>
               ))}
             </div>

@@ -59,7 +59,7 @@ export default function SchedulePrepPage() {
             </span>
             <span className="flex items-center gap-1.5">
               <CheckBadgeIcon className="h-4 w-4 text-green-300" />
-              Diamond Certified &mdash; Highest in Quality
+              Diamond Certified, Highest in Quality
             </span>
             <span className="flex items-center gap-1.5">
               <StarIcon className="h-4 w-4 text-yellow-400" />
@@ -103,7 +103,7 @@ export default function SchedulePrepPage() {
                   <ChatBubbleLeftIcon className="h-6 w-6 text-blue-700" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Don&apos;t Want to Call?</h3>
-                <p className="text-gray-600 text-sm mb-3">Shoot us a text at our work number&mdash;we&apos;ll get back to you quickly.</p>
+                <p className="text-gray-600 text-sm mb-3">Shoot us a text at our work number. We&apos;ll get back to you quickly.</p>
                 <a
                   href="sms:7076649702"
                   className="block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold border-2 border-blue-300 hover:bg-blue-50 transition-colors"
@@ -136,7 +136,7 @@ export default function SchedulePrepPage() {
                       ))}
                     </div>
                     <p className="text-gray-700 text-sm italic">&ldquo;{t.quote}&rdquo;</p>
-                    <p className="text-gray-500 text-xs mt-2 font-medium">&mdash; {t.author}, {t.source}</p>
+                    <p className="text-gray-500 text-xs mt-2 font-medium">- {t.author}, {t.source}</p>
                   </div>
                 ))}
               </div>
@@ -174,7 +174,7 @@ export default function SchedulePrepPage() {
                     ))}
                   </div>
                   <p className="text-gray-700 text-sm italic">&ldquo;{t.quote}&rdquo;</p>
-                  <p className="text-gray-500 text-xs mt-2 font-medium">&mdash; {t.author}, {t.source}</p>
+                  <p className="text-gray-500 text-xs mt-2 font-medium">- {t.author}, {t.source}</p>
                 </div>
               ))}
             </div>

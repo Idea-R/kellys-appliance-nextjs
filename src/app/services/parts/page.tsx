@@ -115,7 +115,7 @@ export default function PartsPage() {
             <div className="lg:col-span-2 bg-white rounded-xl shadow p-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Order Through Our MPC Hotline?</h2>
               <ul className="space-y-3 text-gray-700">
-                <li>OEM parts matched to your exact model — fewer returns, correct fit.</li>
+                <li>OEM parts matched to your exact model. Fewer returns, correct fit.</li>
                 <li>Expert verification of symptoms to ensure you get the right part the first time.</li>
                 <li>Advice on related accessories (water lines, clamps, fittings) to complete the job.</li>
                 <li>Quarterly rebate program that supports our local service business.</li>

@@ -118,7 +118,7 @@ export default function AuthorizedServicePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Brands We Service</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Kelly&apos;s Appliance repairs and services a wide range of major household appliance brands. If you don&apos;t see your brand below, give us a call — we can usually still help or point you in the right direction.
+              Kelly&apos;s Appliance repairs and services a wide range of major household appliance brands. If you don&apos;t see your brand below, give us a call. We can usually still help or point you in the right direction.
             </p>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mt-4">
               For select manufacturers, we&apos;re factory-authorized and follow manufacturer-approved procedures with genuine parts. Those factory-authorized brands are highlighted in the section below.

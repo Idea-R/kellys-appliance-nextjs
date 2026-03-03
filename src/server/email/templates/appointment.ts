@@ -151,7 +151,7 @@ export function createAppointmentEmailHtml(data: AppointmentFormData, refNumber:
   `;
 
   return createEmailLayout({
-    title: `New Appointment Request ${refNumber} — ${appliance}`,
+    title: `New Appointment Request ${refNumber} | ${appliance}`,
     content,
     logoUrl,
     siteUrl,
@@ -186,5 +186,5 @@ Submitted from: kellysappliancerepair.com`;
 export function createAppointmentEmailSubject(data: AppointmentFormData, refNumber: string): string {
   const safeName = data.name.replace(/[\r\n]+/g, ' ').trim();
   const safeAppliance = data.appliance.replace(/[\r\n]+/g, ' ').trim();
-  return `🔧 ${refNumber} — ${safeAppliance} — ${safeName}`;
+  return `🔧 ${refNumber} | ${safeAppliance} | ${safeName}`;
 }

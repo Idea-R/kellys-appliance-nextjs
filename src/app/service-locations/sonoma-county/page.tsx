@@ -60,7 +60,7 @@ export default function SonomaCountyPage() {
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Local Highlights</h2>
-          <p className="text-gray-700">Redwoods, coast, and wine country—Sonoma County has it all. We keep kitchens and laundry rooms reliable from river towns to vineyards, so your downtime stays focused on what you enjoy.</p>
+          <p className="text-gray-700">Redwoods, coast, and wine country. Sonoma County has it all. We keep kitchens and laundry rooms reliable from river towns to vineyards, so your downtime stays focused on what you enjoy.</p>
         </div>
       </section>
 

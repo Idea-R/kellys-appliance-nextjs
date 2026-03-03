@@ -170,7 +170,7 @@ export default function AppointmentForm() {
           required
           rows={3}
           className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-colors text-base resize-none"
-          placeholder="Describe the issue in a few words — noises, leaks, error codes, not cooling, etc."
+          placeholder="Describe the issue in a few words: noises, leaks, error codes, not cooling, etc."
         />
       </div>
 

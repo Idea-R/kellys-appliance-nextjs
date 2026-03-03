@@ -33,7 +33,7 @@ const teamMembers: TeamMember[] = [
       'Factory Authorized Service Provider',
       'Diamond Certified Business'
     ],
-    quote: 'Customer service isn\'t just our priority—it\'s our foundation. Every decision we make starts with asking: "What\'s best for our customers?"',
+    quote: 'Customer service isn\'t just our priority, it\'s our foundation. Every decision we make starts with asking: "What\'s best for our customers?"',
     funFact: 'Started in the appliance business at age 18 and has never looked back!'
   },
   {
@@ -47,7 +47,7 @@ const teamMembers: TeamMember[] = [
     role: 'Operations and Growth Manager',
     image: '/images/Shane-3.jpg',
     bio: 'Ten years with Kelly\'s Appliance, started as a technician and worked my way up to Tech Service Manager. I support our amazing customers and provide rapid technical support to field technicians.',
-    bioFull: 'I\'ve been with Kelly\'s Appliance for ten years, started as a technician, and worked my way to a desk, talking to our wonderful customers and helping technicians with rapid support! I could never imagine working for anybody else! I wish I could say I come from a background of tinkering with machines, but that\'s not the case! I did have a great passion for computers though, building my own—I was the kid\'s friend\'s parents would go to fix their computer! I went to school for graphic design originally and decided to step away from my comfort zone! What do I like about Appliance repair? Everything varies from day to day in this line of work! New machines, new customers, new locations! The work is very rewarding. You get to be the hero, saving an oven just in time for the holiday! BONUS: your family all call you more often... even if it\'s just to help with a failing refrigerator!',
+    bioFull: 'I\'ve been with Kelly\'s Appliance for ten years, started as a technician, and worked my way to a desk, talking to our wonderful customers and helping technicians with rapid support! I could never imagine working for anybody else! I wish I could say I come from a background of tinkering with machines, but that\'s not the case! I did have a great passion for computers though, building my own. I was the kid\'s friend\'s parents would go to fix their computer! I went to school for graphic design originally and decided to step away from my comfort zone! What do I like about Appliance repair? Everything varies from day to day in this line of work! New machines, new customers, new locations! The work is very rewarding. You get to be the hero, saving an oven just in time for the holiday! BONUS: your family all call you more often... even if it\'s just to help with a failing refrigerator!',
     yearsExperience: 10,
     yearsOfService: 10,
     specialties: [

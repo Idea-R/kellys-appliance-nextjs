@@ -87,7 +87,7 @@ export default function ModelNumberGuideClient({ companyInfo, appliances }: Prop
               <DocumentTextIcon className="h-8 w-8 text-blue-600 mb-3" aria-hidden="true" />
               <h3 className="font-semibold text-gray-900 mb-2">Check Paperwork</h3>
               <p className="text-gray-600 text-sm">
-                Look for your <strong>user manual or purchase receipt</strong> — they often list the model number.
+                Look for your <strong>user manual or purchase receipt</strong>. They often list the model number.
               </p>
             </div>
             <div className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-purple-600" role="listitem">
@@ -272,7 +272,7 @@ export default function ModelNumberGuideClient({ companyInfo, appliances }: Prop
             </div>
             <div className="bg-white p-4 rounded-lg">
               <p className="text-gray-700">
-                <strong>Under warranty?</strong> Don&apos;t disassemble — contact manufacturer first
+                <strong>Under warranty?</strong> Don&apos;t disassemble. Contact the manufacturer first.
               </p>
             </div>
             <div className="bg-white p-4 rounded-lg">

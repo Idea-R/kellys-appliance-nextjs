@@ -158,7 +158,7 @@ export default function HomePage() {
                   <CheckCircleIcon className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Factory-Authorized (Select Brands):</strong>
-                    <span className="text-gray-600 ml-1">Factory-authorized for Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor — plus service for many other major brands</span>
+                    <span className="text-gray-600 ml-1">Factory-authorized for Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor. We also service many other major brands.</span>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -247,7 +247,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">DIY Parts & Accessories</h2>
-            <p className="text-xl text-gray-600 mb-6">Premium OEM parts delivered fast — Keep your appliances running like new</p>
+            <p className="text-xl text-gray-600 mb-6">Premium OEM parts delivered fast. Keep your appliances running like new.</p>
             <Link 
               href="/services/parts" 
               className="inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-green-700 hover:to-green-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
