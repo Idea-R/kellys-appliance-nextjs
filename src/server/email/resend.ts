@@ -41,6 +41,7 @@ export async function sendEmail({
   const fromAddress = fromName ? `${fromName} <${from}>` : from;
 
   // Convert base64 strings to Buffers for Resend SDK
+  // Buffer available via nodejs_compat flag in Cloudflare Workers
   const resendAttachments = attachments?.length
     ? attachments.map((a) => ({
         filename: a.filename,
