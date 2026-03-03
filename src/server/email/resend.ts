@@ -5,6 +5,11 @@
 
 import { Resend } from 'resend';
 
+export interface EmailAttachment {
+  filename: string;
+  content: string; // base64-encoded
+}
+
 export interface SendEmailOptions {
   apiKey: string;
   from: string;
@@ -14,6 +19,7 @@ export interface SendEmailOptions {
   html: string;
   text?: string;
   replyTo?: string;
+  attachments?: EmailAttachment[];
 }
 
 /**
@@ -28,10 +34,19 @@ export async function sendEmail({
   html,
   text,
   replyTo,
+  attachments,
 }: SendEmailOptions): Promise<{ id: string }> {
   const resend = new Resend(apiKey);
 
   const fromAddress = fromName ? `${fromName} <${from}>` : from;
+
+  // Convert base64 strings to Buffers for Resend SDK
+  const resendAttachments = attachments?.length
+    ? attachments.map((a) => ({
+        filename: a.filename,
+        content: Buffer.from(a.content, 'base64'),
+      }))
+    : undefined;
 
   const { data, error } = await resend.emails.send({
     from: fromAddress,
@@ -40,6 +55,7 @@ export async function sendEmail({
     html,
     text: text || undefined,
     replyTo: replyTo || undefined,
+    attachments: resendAttachments,
   });
 
   if (error) {

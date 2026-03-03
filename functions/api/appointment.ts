@@ -1,5 +1,6 @@
 // Cloudflare Pages Function for appointment request form
 // Handles POST requests to /api/appointment
+// Accepts multipart FormData (text fields + optional photo attachments)
 // Uses Resend API for email delivery
 
 interface AppointmentFormData {
@@ -9,6 +10,17 @@ interface AppointmentFormData {
   appliance: string;
   brand?: string;
   issue: string;
+  modelNumber?: string;
+  serialNumber?: string;
+  address?: string;
+  city?: string;
+  zip?: string;
+}
+
+interface FileAttachment {
+  filename: string;
+  content: string; // base64
+  size: number;
 }
 
 /** Generate a short reference number: KAC-MMDD-XXXX */
@@ -16,7 +28,7 @@ function generateRefNumber(): string {
   const now = new Date();
   const mm = String(now.getMonth() + 1).padStart(2, '0');
   const dd = String(now.getDate()).padStart(2, '0');
-  const rand = String(Math.floor(1000 + Math.random() * 9000)); // 4-digit random
+  const rand = String(Math.floor(1000 + Math.random() * 9000));
   return `KAC-${mm}${dd}-${rand}`;
 }
 
@@ -36,97 +48,124 @@ const MAX_FIELD_LENGTHS = {
   appliance: 100,
   brand: 100,
   issue: 3000,
+  modelNumber: 50,
+  serialNumber: 50,
+  address: 200,
+  city: 100,
+  zip: 10,
 };
+
+const MAX_FILES = 3;
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB per file
+const ACCEPTED_MIME = ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'];
+
+const headers = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+  'Cache-Control': 'no-store',
+};
+
+function badRequest(msg: string) {
+  return new Response(JSON.stringify({ ok: false, error: msg }), { status: 400, headers });
+}
+
+/** Read a FormData text field, trimmed. Returns '' if missing. */
+function field(fd: FormData, key: string): string {
+  const v = fd.get(key);
+  return typeof v === 'string' ? v.trim() : '';
+}
+
+/** Convert a File to a base64 attachment object */
+async function fileToAttachment(file: File): Promise<FileAttachment> {
+  const buffer = await file.arrayBuffer();
+  const bytes = new Uint8Array(buffer);
+  // Convert to base64 in chunks to avoid call-stack limits
+  let binary = '';
+  for (let i = 0; i < bytes.length; i += 8192) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + 8192));
+  }
+  const base64 = btoa(binary);
+  return { filename: file.name || 'photo.jpg', content: base64, size: file.size };
+}
 
 export async function onRequestPost(context: {
   request: Request;
   env: Env;
 }) {
-  const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Cache-Control': 'no-store',
-  };
-
   try {
-    const data = await context.request.json() as AppointmentFormData;
-    const { name, phone, email, appliance, brand, issue } = data || {};
+    // Parse multipart form data
+    const fd = await context.request.formData();
 
-    // Validate required string fields
-    if (
-      typeof name !== 'string' ||
-      typeof phone !== 'string' ||
-      typeof appliance !== 'string' ||
-      typeof issue !== 'string'
-    ) {
-      return new Response(
-        JSON.stringify({ ok: false, error: 'Invalid payload' }),
-        { status: 400, headers }
-      );
-    }
-
-    const nameStr = name.trim();
-    const phoneStr = phone.trim();
-    const emailStr = (typeof email === 'string' ? email.trim() : '') || undefined;
-    const applianceStr = appliance.trim();
-    const brandStr = (typeof brand === 'string' ? brand.trim() : '') || undefined;
-    const issueStr = issue.trim();
+    // Extract text fields
+    const name = field(fd, 'name');
+    const phone = field(fd, 'phone');
+    const emailStr = field(fd, 'email') || undefined;
+    const appliance = field(fd, 'appliance');
+    const brand = field(fd, 'brand') || undefined;
+    const issue = field(fd, 'issue');
+    const modelNumber = field(fd, 'modelNumber') || undefined;
+    const serialNumber = field(fd, 'serialNumber') || undefined;
+    const address = field(fd, 'address') || undefined;
+    const city = field(fd, 'city') || undefined;
+    const zip = field(fd, 'zip') || undefined;
 
     // Validate required fields
-    if (!nameStr || !phoneStr || !applianceStr || !issueStr) {
-      return new Response(
-        JSON.stringify({ ok: false, error: 'Please fill in all required fields' }),
-        { status: 400, headers }
-      );
+    if (!name || !phone || !appliance || !issue) {
+      return badRequest('Please fill in all required fields.');
     }
 
     // Validate field lengths
-    if (nameStr.length > MAX_FIELD_LENGTHS.name) {
-      return new Response(JSON.stringify({ ok: false, error: 'Name is too long' }), { status: 400, headers });
-    }
-    if (phoneStr.length > MAX_FIELD_LENGTHS.phone) {
-      return new Response(JSON.stringify({ ok: false, error: 'Phone number is too long' }), { status: 400, headers });
-    }
-    if (emailStr && emailStr.length > MAX_FIELD_LENGTHS.email) {
-      return new Response(JSON.stringify({ ok: false, error: 'Email is too long' }), { status: 400, headers });
-    }
-    if (applianceStr.length > MAX_FIELD_LENGTHS.appliance) {
-      return new Response(JSON.stringify({ ok: false, error: 'Appliance type is too long' }), { status: 400, headers });
-    }
-    if (brandStr && brandStr.length > MAX_FIELD_LENGTHS.brand) {
-      return new Response(JSON.stringify({ ok: false, error: 'Brand name is too long' }), { status: 400, headers });
-    }
-    if (issueStr.length > MAX_FIELD_LENGTHS.issue) {
-      return new Response(JSON.stringify({ ok: false, error: 'Issue description is too long' }), { status: 400, headers });
-    }
+    if (name.length > MAX_FIELD_LENGTHS.name) return badRequest('Name is too long.');
+    if (phone.length > MAX_FIELD_LENGTHS.phone) return badRequest('Phone number is too long.');
+    if (emailStr && emailStr.length > MAX_FIELD_LENGTHS.email) return badRequest('Email is too long.');
+    if (appliance.length > MAX_FIELD_LENGTHS.appliance) return badRequest('Appliance type is too long.');
+    if (brand && brand.length > MAX_FIELD_LENGTHS.brand) return badRequest('Brand name is too long.');
+    if (issue.length > MAX_FIELD_LENGTHS.issue) return badRequest('Issue description is too long.');
+    if (modelNumber && modelNumber.length > MAX_FIELD_LENGTHS.modelNumber) return badRequest('Model number is too long.');
+    if (serialNumber && serialNumber.length > MAX_FIELD_LENGTHS.serialNumber) return badRequest('Serial number is too long.');
+    if (address && address.length > MAX_FIELD_LENGTHS.address) return badRequest('Address is too long.');
+    if (city && city.length > MAX_FIELD_LENGTHS.city) return badRequest('City name is too long.');
+    if (zip && zip.length > MAX_FIELD_LENGTHS.zip) return badRequest('Zip code is too long.');
 
-    // Basic email validation (optional field)
+    // Email format
     if (emailStr) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(emailStr)) {
-        return new Response(
-          JSON.stringify({ ok: false, error: 'Invalid email format' }),
-          { status: 400, headers }
-        );
+      if (!emailRegex.test(emailStr)) return badRequest('Invalid email format.');
+    }
+
+    // Phone format
+    const digitsOnly = phone.replace(/[^0-9]/g, '');
+    if (digitsOnly.length < 7 || digitsOnly.length > 15) {
+      return badRequest('Please enter a valid phone number.');
+    }
+
+    // Extract and validate photo files
+    const photoEntries = fd.getAll('photos').filter((v): v is File => v instanceof File && v.size > 0);
+    if (photoEntries.length > MAX_FILES) {
+      return badRequest(`Maximum ${MAX_FILES} photos allowed.`);
+    }
+    for (const f of photoEntries) {
+      if (!ACCEPTED_MIME.includes(f.type)) {
+        return badRequest(`${f.name}: unsupported image type. Use JPG, PNG, or WebP.`);
+      }
+      if (f.size > MAX_FILE_SIZE) {
+        return badRequest(`${f.name}: exceeds 5 MB limit.`);
       }
     }
 
-    // Basic phone validation
-    const digitsOnly = phoneStr.replace(/[^0-9]/g, '');
-    if (digitsOnly.length < 7 || digitsOnly.length > 15) {
-      return new Response(
-        JSON.stringify({ ok: false, error: 'Please enter a valid phone number' }),
-        { status: 400, headers }
-      );
+    // Convert files to base64 attachments
+    const attachments: FileAttachment[] = [];
+    for (const f of photoEntries) {
+      attachments.push(await fileToAttachment(f));
     }
 
-    // Get environment variables
+    // Environment variables
     const apiKey = context.env.RESEND_API_KEY;
     if (!apiKey) {
       console.error('RESEND_API_KEY is not configured');
       return new Response(
         JSON.stringify({ ok: false, error: 'Email service is not configured' }),
-        { status: 500, headers }
+        { status: 500, headers },
       );
     }
 
@@ -139,7 +178,7 @@ export async function onRequestPost(context: {
       console.error('CONTACT_EMAIL_FROM is not configured');
       return new Response(
         JSON.stringify({ ok: false, error: 'Email service is not configured' }),
-        { status: 500, headers }
+        { status: 500, headers },
       );
     }
 
@@ -159,20 +198,17 @@ export async function onRequestPost(context: {
     // Generate reference number
     const refNumber = generateRefNumber();
 
-    // Create email content
-    const payload = {
-      name: nameStr,
-      phone: phoneStr,
-      email: emailStr,
-      appliance: applianceStr,
-      brand: brandStr,
-      issue: issueStr,
+    // Build payload
+    const payload: AppointmentFormData = {
+      name, phone, email: emailStr, appliance, brand, issue,
+      modelNumber, serialNumber, address, city, zip,
     };
-    const html = createAppointmentEmailHtml(payload, refNumber, logoUrl, siteUrl);
-    const text = createAppointmentEmailText(payload, refNumber);
+
+    const html = createAppointmentEmailHtml(payload, refNumber, attachments.length, logoUrl, siteUrl);
+    const text = createAppointmentEmailText(payload, refNumber, attachments.length);
     const subject = createAppointmentEmailSubject(payload, refNumber);
 
-    // Send email via Resend
+    // Send email with attachments
     await sendEmail({
       apiKey,
       from: fromEmail,
@@ -182,11 +218,14 @@ export async function onRequestPost(context: {
       html,
       text,
       replyTo: emailStr,
+      attachments: attachments.length
+        ? attachments.map((a) => ({ filename: a.filename, content: a.content }))
+        : undefined,
     });
 
     return new Response(
       JSON.stringify({ ok: true, message: 'Appointment request sent successfully', refNumber }),
-      { status: 200, headers }
+      { status: 200, headers },
     );
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
@@ -194,7 +233,7 @@ export async function onRequestPost(context: {
 
     return new Response(
       JSON.stringify({ ok: false, error: 'Failed to send request. Please call us instead.' }),
-      { status: 500, headers }
+      { status: 500, headers },
     );
   }
 }
