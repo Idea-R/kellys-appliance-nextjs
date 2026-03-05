@@ -83,6 +83,24 @@ export default function RootLayout({
         <Suspense>
           <Analytics />
         </Suspense>
+        {/* WebSite schema – helps Google understand the site and potentially display sitelinks */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Kelly's Appliance Center",
+              "alternateName": "Kelly's Appliance",
+              "url": "https://kellysappliancerepair.com",
+              "publisher": {
+                "@type": "Organization",
+                "@id": "https://kellysappliancerepair.com/#business"
+              }
+            })
+          }}
+        />
+        {/* LocalBusiness schema – primary structured data for local search */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

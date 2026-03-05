@@ -6,6 +6,7 @@ import { ChevronDown } from 'lucide-react'
 
 export default function MobileNavDrawer() {
   const [open, setOpen] = useState(false)
+  const [hasOpened, setHasOpened] = useState(false) // Lazy-render nav content after first open
   const drawerRef = useRef<HTMLDivElement | null>(null)
   const [expandedCounties, setExpandedCounties] = useState<Record<string, boolean>>({})
 
@@ -17,22 +18,25 @@ export default function MobileNavDrawer() {
     }))
   }
 
+  // Only register Escape listener while drawer is open (avoids per-keystroke overhead when closed)
   useEffect(() => {
+    if (!open) return
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setOpen(false)
     }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
-  }, [])
+  }, [open])
 
   useEffect(() => {
     if (open) {
+      if (!hasOpened) setHasOpened(true)
       drawerRef.current?.focus()
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
     }
-  }, [open])
+  }, [open, hasOpened])
 
   // Tracking: emit open/close events to dataLayer
   useEffect(() => {
@@ -72,6 +76,8 @@ export default function MobileNavDrawer() {
         aria-label="Mobile navigation"
         id="mobile-drawer"
       >
+        {/* Only render drawer content after first open to reduce initial DOM size & JS overhead */}
+        {hasOpened && (<>
         <div className="px-4 py-3 border-b border-gray-200 flex items-center justify-between bg-green-600 text-white">
           <span className="font-bold text-lg">Navigation</span>
           <button onClick={() => setOpen(false)} className="rounded px-3 py-1 text-sm bg-white/20 hover:bg-white/30 backdrop-blur-sm motion-safe:transition-colors" data-analytics-label="drawer_close">Close</button>
@@ -173,6 +179,7 @@ export default function MobileNavDrawer() {
             <li><Link href="/diamond-certified" className="block px-3 py-2 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_diamond">Diamond Certified</Link></li>
           </ul>
         </nav>
+        </>)}
       </aside>
     </>
   )
