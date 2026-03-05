@@ -230,9 +230,8 @@ export default function HomePage() {
                   <Link
                     href={service.href}
                     className="inline-block bg-green-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-green-700 transition-colors btn-animate w-full text-center"
-                    aria-label={`Learn more about ${service.title}`}
                   >
-                    Learn More
+                    {service.title} →
                   </Link>
                   </div>
                 </div>

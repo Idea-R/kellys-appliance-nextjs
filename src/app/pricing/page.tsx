@@ -188,9 +188,8 @@ export default function PricingPage() {
                   <Link
                     href={`/services/${service.name.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-').replace(/\//g, '-')}`}
                     className="text-green-600 font-semibold hover:text-green-700"
-                    aria-label={`Learn more about ${service.name}`}
                   >
-                    Learn More →
+                    {service.name} Details →
                   </Link>
                 </div>
               </div>
