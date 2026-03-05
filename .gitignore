@@ -89,6 +89,8 @@ Thumbs.db
 !/docs/newsletter/**
 !/docs/seo/
 !/docs/seo/**
+!/docs/research/
+!/docs/research/**
 
 # Secrets and sensitive files
 /secrets/*.json
