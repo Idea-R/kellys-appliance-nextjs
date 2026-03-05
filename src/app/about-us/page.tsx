@@ -10,7 +10,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'About Us',
+  title: 'About Kelly\'s Appliance Center',
   description: 'Kelly\'s Appliance Repair has been serving Sonoma, Marin, and Napa counties since 1975. Our expert technicians are highly-skilled. Contact us today!',
   alternates: {
     canonical: '/about-us',

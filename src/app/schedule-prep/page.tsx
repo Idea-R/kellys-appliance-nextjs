@@ -6,7 +6,7 @@ import AppointmentForm from '@/components/AppointmentForm'
 import { ShieldCheckIcon, ClockIcon, CheckBadgeIcon, StarIcon, PhoneIcon, ChatBubbleLeftIcon } from '@heroicons/react/24/solid'
 
 export const metadata = {
-  title: 'Schedule Appliance Repair | Kelly\u2019s Appliance Center',
+  title: 'Schedule Appliance Repair Service',
   description: 'Request appliance repair service in Sonoma, Marin & Napa counties. Call for immediate scheduling or fill out our quick form. Diamond Certified, 90-day guarantee.',
   alternates: {
     canonical: '/schedule-prep',

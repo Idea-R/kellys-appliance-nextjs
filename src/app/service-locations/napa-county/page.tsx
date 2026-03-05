@@ -12,7 +12,7 @@ import Link from 'next/link';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: "Appliance Repair Napa County - Kelly's Appliance Center",
+  title: 'Appliance Repair Napa County',
   description: 'Professional appliance repair services in Napa County, CA. Factory authorized repairs for major brands. Call (707) 664-9702.',
   alternates: {
     canonical: '/service-locations/napa-county',

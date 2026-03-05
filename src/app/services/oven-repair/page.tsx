@@ -14,7 +14,7 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Oven Repair Services - Professional Technicians',
-  description: 'Find oven repair near me, range repair near me, wall oven repair, cooktop repair, and vent hood repair. Professional oven and range repair services for residential clients. Expert diagnosis and repair of temperature issues, heating elements, and controls. Call (707) 664-9702',
+  description: 'Professional oven, range, wall oven, cooktop, and vent hood repair. Expert diagnosis of temperature issues, heating elements, and controls. Call (707) 664-9702.',
   alternates: {
     canonical: '/services/oven-repair',
   },

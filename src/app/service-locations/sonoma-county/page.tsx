@@ -12,7 +12,7 @@ import ReferralsGrid from '@/components/ReferralsGrid';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: "Appliance Repair Sonoma County - Kelly's Appliance Center",
+  title: 'Appliance Repair Sonoma County',
   description: 'Professional appliance repair services in Sonoma County, CA. Factory authorized repairs for major brands. Call (707) 664-9702.',
   alternates: {
     canonical: '/service-locations/sonoma-county',

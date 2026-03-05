@@ -1,7 +1,7 @@
 import React from 'react';
 export const metadata = {
-  title: "Services",
-  description: 'Overview of appliance repair services we provide across major brands.',
+  title: 'Appliance Repair Services We Offer',
+  description: 'Professional appliance repair for refrigerators, ovens, dishwashers, washers, and dryers. Factory authorized technicians serving Sonoma, Marin, and Napa counties since 1975.',
   alternates: {
     canonical: '/services',
   },

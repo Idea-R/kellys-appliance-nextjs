@@ -9,7 +9,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Pricing',
+  title: 'Appliance Repair Pricing',
   description: 'Transparent appliance repair pricing. Service call $149-$169 applies toward labor if you proceed. Additional appliance +$75. 90-day money-back guarantee.',
   alternates: {
     canonical: '/pricing',

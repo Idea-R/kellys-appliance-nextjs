@@ -9,8 +9,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata = {
-  title: "Service Locations",
-  description: 'Cities and areas we serve across Sonoma, Marin, and Napa counties.',
+  title: 'Appliance Repair Service Areas',
+  description: 'Appliance repair in Sonoma, Marin, and Napa counties. We serve Santa Rosa, Petaluma, Novato, Napa, San Rafael, and 20+ Bay Area cities. Call (707) 664-9702.',
   alternates: {
     canonical: '/service-locations',
   },
