@@ -56,7 +56,7 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
                 src={member.image}
                 alt={member.name}
                 fill
-                className="object-cover object-center rounded-none transform group-hover:scale-[1.02] transition-transform"
+                className="object-cover object-[center_20%] rounded-none transform group-hover:scale-[1.02] transition-transform"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               {/* Ribbon nameplate bottom-left */}
@@ -118,7 +118,7 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
                       <div className={`relative ${getVariant(selected.role).bg} text-white px-8 py-6`}>
                         <div className="flex items-start gap-6">
                           <div className="relative h-32 w-32 shrink-0 rounded-xl overflow-hidden ring-4 ring-white/30">
-                            <Image src={selected.image} alt={selected.name} fill className="object-cover object-top" />
+                            <Image src={selected.image} alt={selected.name} fill className="object-cover object-[center_20%]" />
                           </div>
                           <div className="flex-1">
                             <Dialog.Title className="text-3xl font-bold mb-2">{selected.name}</Dialog.Title>
