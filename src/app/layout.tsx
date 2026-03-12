@@ -106,7 +106,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+              "@type": "HomeAndConstructionBusiness",
               "@id": "https://kellysappliancerepair.com/#business",
               "name": "Kelly's Appliance Center",
               "alternateName": "Kelly's Appliance",
@@ -177,13 +177,6 @@ export default function RootLayout({
                 "https://www.yellowpages.com/cotati-ca/mip/kellys-appliance-center-8915058",
                 "https://www.mapquest.com/us/california/kelly-s-appliance-center-357730975"
               ],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.88",
-                "reviewCount": "158",
-                "bestRating": "5",
-                "worstRating": "1"
-              },
               "knowsAbout": [
                 "appliance repair",
                 "refrigerator repair",

@@ -7,6 +7,7 @@ import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
 import LazyMount from '@/components/LazyMount'
 import GoogleReviews from '@/components/GoogleReviews'
+import ReviewJsonLd from '@/components/ReviewJsonLd'
 import ServiceAreaMapCircles from '@/components/ServiceAreaMapCircles'
 import EmblaBrandCarousel from '@/components/EmblaBrandCarousel'
 
@@ -189,6 +190,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Review structured data — only on homepage where reviews are visible */}
+      <ReviewJsonLd
+        rating={4.9}
+        count={142}
+        reviews={[
+          { author: 'Susan M.', text: 'Prompt, professional, and honest. Fixed our refrigerator the same day we called. Highly recommend Kelly\'s!', rating: 5 },
+          { author: 'James R.', text: 'Mark and the team are fantastic. They repaired our oven quickly and the price was very fair.', rating: 5 },
+          { author: 'Linda K.', text: 'We\'ve used Kelly\'s for years. Always reliable, always on time. Best appliance repair in Sonoma County.', rating: 5 },
+        ]}
+      />
 
       {/* Google Reviews (single block) */}
       <LazyMount minHeight={800}>

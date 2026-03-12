@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Mark Kelly',
     role: 'Owner',
-    image: '/images/mark-kelly.jpg',
+    image: '/images/team/Markz.jpg',
     bio: 'Owner since 1990, joined the company in 1983. With over 40 years in the appliance repair industry, Mark has built Kelly\'s Appliance Center into one of the most trusted names in the Bay Area.',
     bioFull: 'Mark Kelly took over full ownership of the business in 1990, maintaining customer service as the number one priority. He joined the company in 1983. With over 40 years in the appliance repair industry, Mark has built Kelly\'s Appliance Center into one of the most trusted names in Sonoma, Marin, and Napa counties. His commitment to excellence and customer satisfaction has been the cornerstone of the company\'s success and longevity.',
     yearsExperience: 40,
@@ -45,7 +45,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Shane Spencer',
     role: 'Operations and Growth Manager',
-    image: '/images/Shane-3.jpg',
+    image: '/images/team/Shanez.jpg',
     bio: 'Ten years with Kelly\'s Appliance, started as a technician and worked my way up to Tech Service Manager. I support our amazing customers and provide rapid technical support to field technicians.',
     bioFull: 'I\'ve been with Kelly\'s Appliance for ten years, started as a technician, and worked my way to a desk, talking to our wonderful customers and helping technicians with rapid support! I could never imagine working for anybody else! I wish I could say I come from a background of tinkering with machines, but that\'s not the case! I did have a great passion for computers though, building my own. I was the kid\'s friend\'s parents would go to fix their computer! I went to school for graphic design originally and decided to step away from my comfort zone! What do I like about Appliance repair? Everything varies from day to day in this line of work! New machines, new customers, new locations! The work is very rewarding. You get to be the hero, saving an oven just in time for the holiday! BONUS: your family all call you more often... even if it\'s just to help with a failing refrigerator!',
     yearsExperience: 10,
@@ -71,7 +71,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'James Shawgo',
     role: 'Service Manager',
-    image: '/images/James5.jpg',
+    image: '/images/team/James.jpg',
     bio: 'Senior appliance repair technician with 10+ years in appliance repair and 25+ years in field service. EPA certified, experienced across major and premium brands, and a Viking Authorized Servicer since 2017.',
     bioFull: 'I am a senior appliance repair technician with over 10 years of experience in the appliance repair industry and more than 25 years in the field service industry overall. My background includes residential and commercial diagnostics and repair, management experience, and specialized service on commercial ice makers and bar and restaurant beverage equipment.\n\nI am EPA certified and have extensive experience servicing a wide range of brands, including Amana, Maytag, Whirlpool, KitchenAid, JennAir, LG, Samsung, GE, Bosch, Thermador, Fisher & Paykel, Viking, Wolf, Sub-Zero, Dynasty, and Jade. Over the past eight years, my work has focused primarily on high-end and premium appliances. I have been a Viking Authorized Servicer since 2017.\n\nI service nearly all major household appliances, including refrigerators, ice makers, washers, dryers, dishwashers, ranges, wall ovens, cooktops, microwaves, trash compactors, garbage disposals, and hot water dispensers.\n\nI take pride in providing honest, reliable service backed by decades of hands-on experience.',
     // Badge should reflect appliance-repair experience (not total field-service years)
@@ -96,27 +96,27 @@ const teamMembers: TeamMember[] = [
     bio: 'Coordinating parts logistics and customer scheduling to ensure excellent service.'
   },
   {
-    name: 'Laura Losh',
-    role: 'Customer Service Representative',
-    image: '/images/KellysLogo3.png',
-    bio: 'Customer service representative dedicated to great scheduling and support.'
+    name: 'Phil Cockle',
+    role: 'Service Technician',
+    image: '/images/team/Philz.jpg',
+    bio: 'Service technician bringing hands-on expertise and dedication to every repair.'
   },
   {
     name: 'Bianca Bonila',
     role: 'Service Technician',
-    image: '/images/Bianca-scaled.jpg',
+    image: '/images/team/Biancaz.jpg',
     bio: 'Service technician supporting complex diagnostics and service excellence.'
   },
   {
     name: 'Ricardo Ramos',
     role: 'Service Technician',
-    image: '/images/Ricardo-1-23-scaled.jpg',
+    image: '/images/team/Ricardo.jpg',
     bio: 'Dedicated service technician with experience in dishwasher and appliance diagnostics.'
   },
   {
     name: 'Joe Denning',
     role: 'Service Technician',
-    image: '/images/Joe-23-scaled.jpg',
+    image: '/images/team/Joe.jpg',
     bio: 'Skilled service technician with expertise in washer and dryer repair services.'
   },
   {
@@ -128,7 +128,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Anthony Porter',
     role: 'Service Technician',
-    image: '/images/Porter-1.png',
+    image: '/images/team/Porter.jpeg',
     bio: 'Experienced technician delivering reliable service across all major brands.'
   }
 ];
