@@ -1,15 +1,12 @@
 // Cloudflare Pages Function for parts request form
 // Handles POST requests to /api/parts-request
+// Accepts multipart FormData (text fields + optional photo attachments)
 // Uses Resend API for email delivery
 
-interface PartsRequestData {
-  name: string
-  phone: string
-  email?: string
-  appliance?: string
-  brand?: string
-  modelNumber?: string
-  partDescription: string
+interface FileAttachment {
+  filename: string
+  content: string // base64
+  size: number
 }
 
 interface Env {
@@ -31,6 +28,10 @@ const MAX_FIELD_LENGTHS = {
   partDescription: 3000,
 }
 
+const MAX_FILES = 3
+const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5 MB per file
+const ACCEPTED_MIME = ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']
+
 const CORS_HEADERS = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Origin': '*',
@@ -39,6 +40,12 @@ const CORS_HEADERS = {
 
 function jsonResponse(body: Record<string, unknown>, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: CORS_HEADERS })
+}
+
+/** Read a FormData text field, trimmed. Returns '' if missing. */
+function field(fd: FormData, key: string): string {
+  const v = fd.get(key)
+  return typeof v === 'string' ? v.trim() : ''
 }
 
 /** Generate a reference number like KAP-0312-4521 */
@@ -50,27 +57,32 @@ function generateRefNumber(): string {
   return `KAP-${mm}${dd}-${rand}`
 }
 
+/** Convert a File to a base64 attachment object */
+async function fileToAttachment(file: File): Promise<FileAttachment> {
+  const buffer = await file.arrayBuffer()
+  const bytes = new Uint8Array(buffer)
+  // Convert to base64 in chunks to avoid call-stack limits
+  let binary = ''
+  for (let i = 0; i < bytes.length; i += 8192) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + 8192))
+  }
+  const base64 = btoa(binary)
+  return { filename: file.name || 'photo.jpg', content: base64, size: file.size }
+}
+
 export async function onRequestPost(context: { request: Request; env: Env }) {
   try {
-    const data = (await context.request.json()) as PartsRequestData
-    const { name, phone, email, appliance, brand, modelNumber, partDescription } = data || {}
+    // Parse multipart form data
+    const fd = await context.request.formData()
 
-    // Validate required fields exist and are strings
-    if (
-      typeof name !== 'string' ||
-      typeof phone !== 'string' ||
-      typeof partDescription !== 'string'
-    ) {
-      return jsonResponse({ ok: false, error: 'Invalid payload' }, 400)
-    }
-
-    const nameStr = name.trim()
-    const phoneStr = phone.trim()
-    const descStr = partDescription.trim()
-    const emailStr = typeof email === 'string' ? email.trim() : ''
-    const applianceStr = typeof appliance === 'string' ? appliance.trim() : ''
-    const brandStr = typeof brand === 'string' ? brand.trim() : ''
-    const modelStr = typeof modelNumber === 'string' ? modelNumber.trim() : ''
+    // Extract text fields
+    const nameStr = field(fd, 'name')
+    const phoneStr = field(fd, 'phone')
+    const descStr = field(fd, 'partDescription')
+    const emailStr = field(fd, 'email')
+    const applianceStr = field(fd, 'appliance')
+    const brandStr = field(fd, 'brand')
+    const modelStr = field(fd, 'modelNumber')
 
     // Required fields
     if (!nameStr || !phoneStr || !descStr) {
@@ -98,6 +110,26 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
       if (!emailRegex.test(emailStr)) {
         return jsonResponse({ ok: false, error: 'Invalid email format' }, 400)
       }
+    }
+
+    // Extract and validate photo files
+    const photoEntries = fd.getAll('photos').filter((v): v is File => v instanceof File && v.size > 0)
+    if (photoEntries.length > MAX_FILES) {
+      return jsonResponse({ ok: false, error: `Maximum ${MAX_FILES} photos allowed.` }, 400)
+    }
+    for (const f of photoEntries) {
+      if (!ACCEPTED_MIME.includes(f.type)) {
+        return jsonResponse({ ok: false, error: `${f.name}: unsupported image type. Use JPG, PNG, or WebP.` }, 400)
+      }
+      if (f.size > MAX_FILE_SIZE) {
+        return jsonResponse({ ok: false, error: `${f.name}: exceeds 5 MB limit.` }, 400)
+      }
+    }
+
+    // Convert files to base64 attachments
+    const attachments: FileAttachment[] = []
+    for (const f of photoEntries) {
+      attachments.push(await fileToAttachment(f))
     }
 
     // Check Resend config
@@ -144,11 +176,11 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
       partDescription: descStr,
     }
 
-    const html = createPartsRequestEmailHtml(formData, refNumber, logoUrl, siteUrl)
-    const text = createPartsRequestEmailText(formData, refNumber)
+    const html = createPartsRequestEmailHtml(formData, refNumber, attachments.length, logoUrl, siteUrl)
+    const text = createPartsRequestEmailText(formData, refNumber, attachments.length)
     const subject = createPartsRequestEmailSubject(formData, refNumber)
 
-    // Send email via Resend
+    // Send email via Resend (with attachments if any)
     await sendEmail({
       apiKey,
       from: fromEmail,
@@ -158,6 +190,9 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
       html,
       text,
       replyTo: emailStr || undefined,
+      attachments: attachments.length
+        ? attachments.map((a) => ({ filename: a.filename, content: a.content }))
+        : undefined,
     })
 
     return jsonResponse({ ok: true, message: 'Parts request submitted', refNumber })

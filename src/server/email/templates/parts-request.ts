@@ -45,11 +45,18 @@ function infoRow(label: string, value: string, isLink?: { type: 'tel' | 'email' 
 export function createPartsRequestEmailHtml(
   data: PartsRequestFormData,
   refNumber: string,
+  photoCount: number,
   logoUrl?: string,
   siteUrl?: string,
 ): string {
   const { name, phone, email, appliance, brand, modelNumber, partDescription } = data
   const safeDescription = escapeHtmlWithBreaks(partDescription)
+
+  const photoNote = photoCount > 0
+    ? `<div style="background-color: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px 16px; margin-bottom: 24px; border-radius: 4px;">
+        <p style="margin: 0; font-size: 14px; color: #1e40af; font-weight: 600;">📎 ${photoCount} photo${photoCount > 1 ? 's' : ''} attached to this email.</p>
+      </div>`
+    : ''
 
   const content = `
     <div style="color: #1f2937; line-height: 1.6;">
@@ -61,6 +68,8 @@ export function createPartsRequestEmailHtml(
           A customer needs help finding a part. Please look it up and call them back with pricing and availability.
         </p>
       </div>
+
+      ${photoNote}
 
       <div style="background-color: #ecfdf5; border: 2px solid #059669; padding: 14px 20px; margin-bottom: 24px; border-radius: 8px; text-align: center;">
         <p style="margin: 0; font-size: 12px; color: #065f46; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Reference Number</p>
@@ -119,7 +128,7 @@ export function createPartsRequestEmailHtml(
 /**
  * Creates plain text version of parts request email
  */
-export function createPartsRequestEmailText(data: PartsRequestFormData, refNumber: string): string {
+export function createPartsRequestEmailText(data: PartsRequestFormData, refNumber: string, photoCount: number): string {
   const { name, phone, email, appliance, brand, modelNumber, partDescription } = data
 
   return [
@@ -136,6 +145,7 @@ export function createPartsRequestEmailText(data: PartsRequestFormData, refNumbe
     '',
     'Part Needed:',
     partDescription,
+    photoCount > 0 ? `\n📎 ${photoCount} photo${photoCount > 1 ? 's' : ''} attached.` : '',
     '',
     '---',
     'Please look up the part and call the customer with pricing/availability.',
