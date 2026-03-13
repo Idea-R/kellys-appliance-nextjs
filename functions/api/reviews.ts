@@ -6,6 +6,8 @@
 interface GoogleReview {
   authorAttribution?: {
     displayName?: string
+    uri?: string
+    photoUri?: string
   }
   originalText?: {
     text?: string
@@ -15,6 +17,7 @@ interface GoogleReview {
   }
   rating?: number
   relativePublishTimeDescription?: string
+  publishTime?: string
 }
 
 interface GooglePlacesResponse {
@@ -88,9 +91,11 @@ export async function onRequestGet(context: { env: { GOOGLE_PLACES_API_KEY?: str
       count: data.userRatingCount || 0,
       reviews: (data.reviews || []).map((r: GoogleReview) => ({
         author: r.authorAttribution?.displayName || 'Google user',
+        photoUrl: r.authorAttribution?.photoUri || '',
         text: r.originalText?.text || r.text?.text || '',
         rating: r.rating || 0,
         relativeTime: r.relativePublishTimeDescription || '',
+        publishTime: r.publishTime || '',
       })),
     }
 

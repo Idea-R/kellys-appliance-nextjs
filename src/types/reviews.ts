@@ -1,8 +1,10 @@
 export interface Review {
   author: string
+  photoUrl?: string
   text: string
   rating: number
   relativeTime: string
+  publishTime?: string
 }
 
 export interface ReviewsData {
