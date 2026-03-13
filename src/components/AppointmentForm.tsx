@@ -3,21 +3,7 @@
 import React, { useState, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { pushEvent } from '@/lib/track-event'
-
-const APPLIANCE_OPTIONS = [
-  'Refrigerator',
-  'Washer',
-  'Dryer',
-  'Dishwasher',
-  'Oven / Range',
-  'Cooktop',
-  'Microwave',
-  'Ice Maker',
-  'Freezer',
-  'Trash Compactor',
-  'Garbage Disposal',
-  'Other',
-]
+import { APPLIANCE_OPTIONS } from '@/lib/appliance-options'
 
 const MAX_FILES = 3
 const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5 MB
