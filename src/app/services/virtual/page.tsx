@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '@/components/Layout'
 import Link from 'next/link'
 import { getCompanyInfo } from '@/lib/content'
-import { VideoCameraIcon, PhoneIcon, CheckCircleIcon, XCircleIcon, ClockIcon } from '@heroicons/react/24/outline'
+import { VideoCameraIcon, PhoneIcon, CheckCircleIcon, XCircleIcon, ClockIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
 
 const companyInfo = getCompanyInfo()
 
@@ -158,6 +158,28 @@ export default function VirtualServicePage() {
               <p className="text-gray-600 text-sm">
                 At your chosen time, you&apos;ll receive a video call invite via email or text
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Parts Cross-Sell */}
+      <section className="py-14 bg-green-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-xl shadow-sm border border-green-200 p-8 flex flex-col sm:flex-row items-center gap-6">
+            <WrenchScrewdriverIcon className="w-14 h-14 text-green-600 flex-shrink-0" />
+            <div className="text-center sm:text-left">
+              <h2 className="text-xl font-bold text-gray-900 mb-2">Need Parts for a DIY Fix?</h2>
+              <p className="text-gray-700 mb-4">
+                If your virtual call reveals a part you can replace yourself, we&apos;ve got you covered. We source genuine OEM parts for every major brand — matched to your exact model.
+              </p>
+              <Link
+                href="/services/parts"
+                className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+              >
+                <WrenchScrewdriverIcon className="w-5 h-5 mr-2" />
+                Browse Appliance Parts
+              </Link>
             </div>
           </div>
         </div>

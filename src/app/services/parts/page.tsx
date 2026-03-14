@@ -11,6 +11,7 @@ import {
   ClockIcon,
   MapPinIcon,
   CheckIcon,
+  VideoCameraIcon,
 } from '@heroicons/react/24/outline'
 
 export const metadata = {
@@ -27,13 +28,13 @@ const kellysPhoneDisplay = '(707) 664-9702'
 
 const popularParts: Array<{ name: string; blurb: string }> = [
   { name: 'Refrigerator Water Filters', blurb: 'OEM filters for clean, safe drinking water' },
-  { name: 'Fridge Air Filters', blurb: 'Helps reduce odors and keep air fresh' },
-  { name: 'Dryer Vent Hose', blurb: 'UL-listed venting to maintain airflow and safety' },
-  { name: 'Dryer Belt', blurb: 'OEM belts for proper drum drive and long life' },
-  { name: 'Washer Hoses', blurb: 'Stainless braided or OEM replacements' },
-  { name: 'Dishwasher Drain Hose', blurb: 'Correct diameter and length for your model' },
-  { name: 'Range Igniter', blurb: 'Genuine parts for reliable ignition' },
-  { name: 'Ice Maker Kits', blurb: 'OEM kits for compatible refrigerator models' },
+  { name: 'Fridge Air Filters', blurb: 'Keeps odors down and air fresh inside the fridge' },
+  { name: 'Dryer Vent Hose', blurb: 'UL-listed venting for proper airflow and safety' },
+  { name: 'Dryer Belt', blurb: 'OEM belts that fit right and last' },
+  { name: 'Washer Hoses', blurb: 'Stainless braided or OEM — we match your model' },
+  { name: 'Dishwasher Drain Hose', blurb: 'Correct diameter and length for your unit' },
+  { name: 'Range Igniter', blurb: 'Genuine igniters for reliable startup every time' },
+  { name: 'Ice Maker Kits', blurb: 'OEM kits matched to your refrigerator model' },
 ]
 
 export default function PartsPage() {
@@ -45,14 +46,14 @@ export default function PartsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-green-200 font-semibold mb-2 text-sm uppercase tracking-wide">
-                Sonoma County&apos;s Appliance Parts Source
+                Your Local Appliance Parts Shop — Since 1974
               </p>
               <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-                Appliance Parts — Sourced&nbsp;Locally
+                Need a Part? We&apos;ve Got&nbsp;You&nbsp;Covered.
               </h1>
               <p className="text-lg opacity-95 mb-6">
-                Over 50 years of parts expertise. We source genuine OEM parts for every major brand
-                and verify compatibility before you buy — so you get the right part the first time.
+                We&apos;ve been sourcing appliance parts for Sonoma County for over 50 years. Tell us what you need — we&apos;ll
+                track it down, verify it fits your model, and get it to you. No guessing. No wrong parts. No runaround.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -82,9 +83,9 @@ export default function PartsPage() {
                   <div>
                     <p className="font-semibold">Find Your Model Number</p>
                     <p className="text-sm text-white/85">
-                      Check the label inside the door or on the back.{' '}
+                      It&apos;s usually on a label inside the door or on the back.{' '}
                       <Link href="/resources/where-is-my-model-number" className="underline text-white hover:text-green-200">
-                        Need help?
+                        Not sure? We&apos;ll help.
                       </Link>
                     </p>
                   </div>
@@ -94,9 +95,9 @@ export default function PartsPage() {
                     2
                   </div>
                   <div>
-                    <p className="font-semibold">Call Us or Fill Out the Form</p>
+                    <p className="font-semibold">Give Us a Call or Drop Us a Line</p>
                     <p className="text-sm text-white/85">
-                      Tell us the part you need — we&apos;ll verify compatibility with your exact model.
+                      Tell us what part you need. We&apos;ll check compatibility with your exact model before anything else.
                     </p>
                   </div>
                 </div>
@@ -105,9 +106,9 @@ export default function PartsPage() {
                     3
                   </div>
                   <div>
-                    <p className="font-semibold">We Source &amp; Call You Back</p>
+                    <p className="font-semibold">We Find It and Call You Back</p>
                     <p className="text-sm text-white/85">
-                      We confirm the part, pricing, and lead time — then you pick up or we ship.
+                      We confirm the part, pricing, and lead time — then you pick up in Cotati or we ship it to you.
                     </p>
                   </div>
                 </div>
@@ -117,12 +118,12 @@ export default function PartsPage() {
         </div>
       </section>
 
-      {/* Popular DIY Parts */}
+      {/* Popular Parts */}
       <section id="popular" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Popular DIY Parts</h2>
-            <p className="text-gray-600">Fast-moving items homeowners request most</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Parts People Ask Us About Most</h2>
+            <p className="text-gray-600">These are the ones we get calls about every week.</p>
           </div>
 
           <div
@@ -163,9 +164,10 @@ export default function PartsPage() {
       <section id="parts-form" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Request a Part</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Tell Us What You Need</h2>
             <p className="text-gray-600">
-              Fill out the form and we&apos;ll call you back within 1 business day with pricing and availability.
+              Not sure exactly what part it is? That&apos;s fine — describe what&apos;s going on and we&apos;ll figure it out.
+              We&apos;ll call you back within 1 business day with pricing and availability.
             </p>
           </div>
 
@@ -178,20 +180,20 @@ export default function PartsPage() {
             {/* Benefits sidebar */}
             <div className="space-y-5">
               <div className="bg-green-50 rounded-xl border border-green-200 p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Why Kelly&apos;s for Parts?</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Why Folks Come to Us for Parts</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <ShieldCheckIcon className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold text-gray-900 text-sm">Genuine OEM Parts</p>
-                      <p className="text-gray-600 text-sm">Matched to your exact model — no guessing.</p>
+                      <p className="text-gray-600 text-sm">Matched to your exact model. No guessing.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <WrenchScrewdriverIcon className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-gray-900 text-sm">50+ Years Expertise</p>
-                      <p className="text-gray-600 text-sm">We know appliances — we can help you find the right fix.</p>
+                      <p className="font-semibold text-gray-900 text-sm">50+ Years of Know-How</p>
+                      <p className="text-gray-600 text-sm">We&apos;ve been doing this since 1974. We know appliances.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -211,7 +213,7 @@ export default function PartsPage() {
                   <li className="flex items-start gap-3">
                     <MapPinIcon className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-gray-900 text-sm">Locally Owned</p>
+                      <p className="font-semibold text-gray-900 text-sm">Locally Owned. Not Going Anywhere.</p>
                       <p className="text-gray-600 text-sm">Serving Sonoma County from our Cotati shop since 1974.</p>
                     </div>
                   </li>
@@ -237,35 +239,57 @@ export default function PartsPage() {
         </div>
       </section>
 
+      {/* Virtual Service Cross-Sell */}
+      <section className="py-14 bg-blue-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <VideoCameraIcon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Not Sure What Part You Need?</h2>
+          <p className="text-gray-700 mb-2 max-w-2xl mx-auto">
+            If you&apos;re not sure what&apos;s wrong — or which part to order — we can help you figure it out before you spend a dime on parts.
+          </p>
+          <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+            Our <strong>$40 virtual service call</strong> is a 15-minute video session where a technician looks at your appliance
+            remotely and helps diagnose the issue. Know what you need before you buy.
+          </p>
+          <Link
+            href="/services/virtual"
+            className="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            <VideoCameraIcon className="w-5 h-5 mr-2" />
+            Learn About Virtual Service Calls
+          </Link>
+        </div>
+      </section>
+
       {/* Why OEM Parts */}
       <section id="why-oem" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Why OEM Parts Matter</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Why We Stick with OEM Parts</h2>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
                   <CheckIcon className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>
-                    <strong>Exact fit guaranteed</strong> — OEM parts are made for your specific model. No shimming, trimming, or hoping it works.
+                    <strong>They fit. Period.</strong> OEM parts are made for your specific model. No shimming, no trimming, no hoping it works.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckIcon className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>
-                    <strong>Manufacturer warranty safe</strong> — Generic parts can void your appliance warranty. OEM keeps it intact.
+                    <strong>Won&apos;t void your warranty.</strong> Generic parts can void your appliance warranty. OEM keeps it intact.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckIcon className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>
-                    <strong>Longer lifespan</strong> — Built to the same spec as the original. One repair, done right.
+                    <strong>Built to the same spec as the original.</strong> One repair, done right. That&apos;s how we like it.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckIcon className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>
-                    <strong>Expert verification</strong> — We cross-reference your model number to confirm compatibility before ordering.
+                    <strong>We double-check everything.</strong> We cross-reference your model number to confirm compatibility before we order.
                   </span>
                 </li>
               </ul>
@@ -292,9 +316,9 @@ export default function PartsPage() {
       {/* Final CTA */}
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-3">Ready to Order a Part?</h2>
+          <h2 className="text-3xl font-bold mb-3">Let&apos;s Find Your Part</h2>
           <p className="text-lg mb-6 max-w-2xl mx-auto">
-            Call us directly or submit a request online — we&apos;ll get back to you with pricing, availability, and lead time.
+            Give us a call or submit a request online. We&apos;ll get back to you with pricing, availability, and lead time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

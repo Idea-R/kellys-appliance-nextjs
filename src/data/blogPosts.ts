@@ -18,6 +18,15 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: "APE Appliance Parts Is Closing — Kelly's Expands Parts Department",
+    slug: 'ape-closing-kellys-parts-expansion',
+    excerpt:
+      "After 50 years, APE on Petaluma Hill Road is closing. Kelly's is growing our parts department to help fill the gap for Sonoma County homeowners and DIYers.",
+    date: '2026-03-12',
+    readTime: '4 min read',
+    category: 'Community',
+  },
+  {
     title: 'How to Tell If Your Refrigerator Needs Professional Repair',
     slug: 'how-to-tell-if-your-refrigerator-needs-professional-repair',
     excerpt:
