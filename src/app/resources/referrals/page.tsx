@@ -25,7 +25,7 @@ const partners: Partner[] = [
   {
     name: 'K2 Appliance Installation',
     url: 'https://k2appliance.com/',
-    description: 'Professional appliance installation, delivery, and haul-away. Streamlined coordination with our service team.',
+    description: 'Professional appliance installation, delivery, and haul-away. Works closely with our service team.',
     phone: '(510) 225-5831',
     logoSrc: '/images/k2_logo_recolor.png',
     utm: 'ref=kellys-referrals'

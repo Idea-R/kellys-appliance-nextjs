@@ -22,7 +22,7 @@ const teamMembers: TeamMember[] = [
     role: 'Owner',
     image: '/images/team/Markz.jpg',
     bio: 'Owner since 1990, joined the company in 1983. With over 40 years in the appliance repair industry, Mark has built Kelly\'s Appliance Center into one of the most trusted names in the Bay Area.',
-    bioFull: 'Mark Kelly took over full ownership of the business in 1990, maintaining customer service as the number one priority. He joined the company in 1983. With over 40 years in the appliance repair industry, Mark has built Kelly\'s Appliance Center into one of the most trusted names in Sonoma, Marin, and Napa counties. His commitment to excellence and customer satisfaction has been the cornerstone of the company\'s success and longevity.',
+    bioFull: 'Mark Kelly took over full ownership of the business in 1990, maintaining customer service as the number one priority. He joined the company in 1983. With over 40 years in the appliance repair industry, Mark has built Kelly\'s Appliance Center into one of the most trusted names in Sonoma, Marin, and Napa counties. His commitment to customers has driven the company\'s success for over four decades.',
     yearsExperience: 40,
     specialties: [
       'Business operations & customer service',

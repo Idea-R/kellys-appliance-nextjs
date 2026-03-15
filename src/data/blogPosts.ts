@@ -18,7 +18,7 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
-    title: "APE Appliance Parts Is Closing — Kelly's Expands Parts Department",
+    title: "APE Appliance Parts Is Closing. Kelly's Expands Parts Department",
     slug: 'ape-closing-kellys-parts-expansion',
     excerpt:
       "After 50 years, APE on Petaluma Hill Road is closing. Kelly's is growing our parts department to help fill the gap for Sonoma County homeowners and DIYers.",

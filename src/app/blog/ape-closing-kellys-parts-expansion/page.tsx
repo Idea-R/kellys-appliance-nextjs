@@ -7,7 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata = {
-  title: "APE Appliance Parts Is Closing — Kelly's Expands Parts Department",
+  title: "APE Appliance Parts Is Closing. Kelly's Expands Parts Department",
   description:
     "After 50 years on Petaluma Hill Road, APE Appliance Parts Equipment is closing. Kelly's Appliance Center is growing our parts department to help fill the gap for Sonoma County homeowners and DIYers.",
   alternates: {
@@ -30,7 +30,7 @@ export default function ApeClosingBlogPage() {
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
             headline:
-              "APE Appliance Parts Is Closing — Kelly's Expands Parts Department",
+              "APE Appliance Parts Is Closing. Kelly's Expands Parts Department",
             description:
               "After 50 years on Petaluma Hill Road, APE Appliance Parts Equipment is closing. Kelly's Appliance Center is growing our parts department to help fill the gap for Sonoma County homeowners and DIYers.",
             datePublished: '2026-03-12',
@@ -73,7 +73,7 @@ export default function ApeClosingBlogPage() {
               &larr; Back to Blog
             </Link>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              APE Appliance Parts Is Closing — Kelly&apos;s Is Stepping Up
+              APE Appliance Parts Is Closing. Kelly&apos;s Is Stepping Up.
             </h1>
             <div className="flex items-center justify-center gap-6 text-green-200">
               <div className="flex items-center">
@@ -95,14 +95,14 @@ export default function ApeClosingBlogPage() {
           <div className="prose prose-lg prose-green max-w-none">
             <p className="mb-6 text-gray-700 leading-relaxed">
               If you&apos;ve lived in Sonoma County for any amount of time and ever needed an appliance part, you&apos;ve
-              probably been to APE — Appliance Parts Equipment on Petaluma Hill Road. After 50 years in business,
+              probably been to APE, Appliance Parts Equipment on Petaluma Hill Road. After 50 years in business,
               they&apos;re closing their doors. And honestly, it hits hard.
             </p>
 
             <p className="mb-6 text-gray-700 leading-relaxed">
               We stopped by to pay our respects this week. Cecil Perkins started APE back in the mid-&apos;70s and built it
               into the go-to spot for appliance parts in the county. Roger Briggs carried that tradition forward for years.
-              And most recently, Dylan kept it going — carrying on the same old-school service where you could walk in,
+              And most recently, Dylan kept it going. Same old-school service where you could walk in,
               describe what was broken, and walk out with the right part. No guessing. No ordering the wrong thing off the
               internet. Just people who knew appliances, helping other people fix theirs.
             </p>
@@ -116,7 +116,7 @@ export default function ApeClosingBlogPage() {
                 className="rounded-lg shadow-lg mx-auto"
               />
               <p className="text-sm text-gray-500 mt-3 italic">
-                APE Appliance Parts Equipment — Petaluma Hill Road. 50 years serving Sonoma County.
+                APE Appliance Parts Equipment, Petaluma Hill Road. 50 years serving Sonoma County.
               </p>
             </div>
 
@@ -127,7 +127,7 @@ export default function ApeClosingBlogPage() {
             <p className="mb-6 text-gray-700 leading-relaxed">
               APE was one of the last local spots where a homeowner, a landlord, or a property manager could
               walk in and get a genuine appliance part the same day. Refrigerator water filters. Dryer belts.
-              Range igniters. Washer hoses. The kind of stuff that keeps households running — and the kind of
+              Range igniters. Washer hoses. The stuff that keeps households running. And the kind of
               stuff that&apos;s getting harder to find locally.
             </p>
 
@@ -143,7 +143,7 @@ export default function ApeClosingBlogPage() {
             </h2>
 
             <p className="mb-6 text-gray-700 leading-relaxed">
-              We&apos;ve been in the appliance business since 1974 — the same era Cecil started APE. For decades
+              We&apos;ve been in the appliance business since 1974, the same era Cecil started APE. For decades
               we&apos;ve worked side by side, us on the repair side, them on the parts counter. Now that APE is
               closing, we&apos;re expanding our parts department to help fill the gap.
             </p>
@@ -154,7 +154,7 @@ export default function ApeClosingBlogPage() {
 
             <ul className="mb-6 text-gray-700 leading-relaxed list-disc pl-6 space-y-2">
               <li>
-                <strong>OEM parts for every major brand.</strong> We source genuine manufacturer parts —
+                <strong>OEM parts for every major brand.</strong> We source genuine manufacturer parts,
                 not generic knockoffs. Samsung, Sub-Zero, GE, Whirlpool, LG, KitchenAid, and more.
               </li>
               <li>
@@ -178,13 +178,13 @@ export default function ApeClosingBlogPage() {
 
             <p className="mb-6 text-gray-700 leading-relaxed">
               One of the best things about APE was that you could describe a symptom and they&apos;d help you
-              figure out the part. We do the same thing — and we&apos;ve added a way to do it remotely.
+              figure out the part. We do the same thing, and we&apos;ve added a way to do it remotely.
             </p>
 
             <p className="mb-6 text-gray-700 leading-relaxed">
               Our <Link href="/services/virtual" className="text-green-600 hover:text-green-700">virtual service call</Link> is
               a $40, 15-minute video session where one of our technicians looks at your appliance over video and helps
-              diagnose the issue. It&apos;s a smart move before ordering parts — especially if you&apos;re not
+              diagnose the issue. It&apos;s a smart move before ordering parts, especially if you&apos;re not
               100% sure what&apos;s failing. Know what you need before you spend.
             </p>
 
@@ -194,7 +194,7 @@ export default function ApeClosingBlogPage() {
 
             <p className="mb-6 text-gray-700 leading-relaxed">
               APE closing is a loss for this community. There&apos;s no sugarcoating that. Cecil and Roger built
-              something that mattered to a lot of people — and the response we&apos;ve seen online proves it.
+              something that mattered to a lot of people, and the response we&apos;ve seen online proves it.
               Hundreds of folks sharing memories and saying thanks. That&apos;s 50 years of showing up and doing
               right by people.
             </p>
@@ -230,7 +230,7 @@ export default function ApeClosingBlogPage() {
                     How to Tell If Your Refrigerator Needs Professional Repair
                   </h4>
                   <p className="text-gray-600 text-sm">
-                    Warning signs that your fridge needs a technician — unusual noises, temperature swings, and frost buildup.
+                    Warning signs that your fridge needs a technician: unusual noises, temperature swings, and frost buildup.
                   </p>
                 </div>
               </Link>
@@ -260,7 +260,7 @@ export default function ApeClosingBlogPage() {
           </h2>
           <p className="text-gray-600 mb-8">
             Kelly&apos;s Appliance Center sources genuine OEM parts for every major brand.
-            Call us or submit a request online — we&apos;ll get back to you with pricing and availability.
+            Call us or submit a request online. We&apos;ll get back to you with pricing and availability.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

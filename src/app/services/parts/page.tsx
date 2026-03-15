@@ -15,9 +15,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata = {
-  title: "Appliance Parts | Kelly's Appliance Center — Cotati, CA",
+  title: "Appliance Parts | Kelly's Appliance Center, Cotati CA",
   description:
-    "Need an appliance part? Kelly's sources OEM parts for every major brand. Call (707) 664-9702 or submit a request online — we'll call you back with pricing and availability.",
+    "Need an appliance part? Kelly's sources OEM parts for every major brand. Call (707) 664-9702 or submit a request online. We'll call you back with pricing and availability.",
   alternates: {
     canonical: '/services/parts',
   },
@@ -31,7 +31,7 @@ const popularParts: Array<{ name: string; blurb: string }> = [
   { name: 'Fridge Air Filters', blurb: 'Keeps odors down and air fresh inside the fridge' },
   { name: 'Dryer Vent Hose', blurb: 'UL-listed venting for proper airflow and safety' },
   { name: 'Dryer Belt', blurb: 'OEM belts that fit right and last' },
-  { name: 'Washer Hoses', blurb: 'Stainless braided or OEM — we match your model' },
+  { name: 'Washer Hoses', blurb: 'Stainless braided or OEM. We match your model.' },
   { name: 'Dishwasher Drain Hose', blurb: 'Correct diameter and length for your unit' },
   { name: 'Range Igniter', blurb: 'Genuine igniters for reliable startup every time' },
   { name: 'Ice Maker Kits', blurb: 'OEM kits matched to your refrigerator model' },
@@ -46,13 +46,13 @@ export default function PartsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-green-200 font-semibold mb-2 text-sm uppercase tracking-wide">
-                Your Local Appliance Parts Shop — Since 1974
+                Your Local Appliance Parts Shop, Since 1974
               </p>
               <h1 className="text-4xl lg:text-5xl font-bold mb-4">
                 Need a Part? We&apos;ve Got&nbsp;You&nbsp;Covered.
               </h1>
               <p className="text-lg opacity-95 mb-6">
-                We&apos;ve been sourcing appliance parts for Sonoma County for over 50 years. Tell us what you need — we&apos;ll
+                We&apos;ve been sourcing appliance parts for Sonoma County for over 50 years. Tell us what you need. We&apos;ll
                 track it down, verify it fits your model, and get it to you. No guessing. No wrong parts. No runaround.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -108,7 +108,7 @@ export default function PartsPage() {
                   <div>
                     <p className="font-semibold">We Find It and Call You Back</p>
                     <p className="text-sm text-white/85">
-                      We confirm the part, pricing, and lead time — then you pick up in Cotati or we ship it to you.
+                      We confirm the part, pricing, and lead time. Then you pick up in Cotati or we ship it to you.
                     </p>
                   </div>
                 </div>
@@ -166,7 +166,7 @@ export default function PartsPage() {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">Tell Us What You Need</h2>
             <p className="text-gray-600">
-              Not sure exactly what part it is? That&apos;s fine — describe what&apos;s going on and we&apos;ll figure it out.
+              Not sure exactly what part it is? That&apos;s fine. Describe what&apos;s going on and we&apos;ll figure it out.
               We&apos;ll call you back within 1 business day with pricing and availability.
             </p>
           </div>
@@ -245,7 +245,7 @@ export default function PartsPage() {
           <VideoCameraIcon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Not Sure What Part You Need?</h2>
           <p className="text-gray-700 mb-2 max-w-2xl mx-auto">
-            If you&apos;re not sure what&apos;s wrong — or which part to order — we can help you figure it out before you spend a dime on parts.
+            If you&apos;re not sure what&apos;s wrong, or which part to order, we can help you figure it out before you spend a dime on parts.
           </p>
           <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
             Our <strong>$40 virtual service call</strong> is a 15-minute video session where a technician looks at your appliance

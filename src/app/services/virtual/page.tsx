@@ -171,7 +171,7 @@ export default function VirtualServicePage() {
             <div className="text-center sm:text-left">
               <h2 className="text-xl font-bold text-gray-900 mb-2">Need Parts for a DIY Fix?</h2>
               <p className="text-gray-700 mb-4">
-                If your virtual call reveals a part you can replace yourself, we&apos;ve got you covered. We source genuine OEM parts for every major brand — matched to your exact model.
+                If your virtual call reveals a part you can replace yourself, we&apos;ve got you covered. We source genuine OEM parts for every major brand, matched to your exact model.
               </p>
               <Link
                 href="/services/parts"
