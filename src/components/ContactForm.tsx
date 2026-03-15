@@ -65,11 +65,11 @@ export default function ContactForm() {
         <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-1">Phone *</label>
         <input id="phone" name="phone" required type="tel" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-colors" placeholder="(707) 555-1234" />
       </div>
-      <div className="col-span-2">
+      <div className="col-span-1 md:col-span-2">
         <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-1">Message *</label>
         <textarea id="message" name="message" required rows={5} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-colors resize-none" placeholder="How can we help?" />
       </div>
-      <div className="col-span-2 flex items-center gap-3">
+      <div className="col-span-1 md:col-span-2 flex items-center gap-3">
         <button type="submit" className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold btn-fill" data-analytics-label="contact_form_submit" disabled={status==='sending'} aria-live="polite">
           {status==='sending' ? 'Sending...' : status==='sent' ? 'Sent!' : 'Send Message'}
         </button>

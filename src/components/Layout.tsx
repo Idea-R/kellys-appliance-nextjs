@@ -210,9 +210,9 @@ export default function Layout({ children }: LayoutProps) {
         {/* Mobile floating nav toggle removed; use MobileNavDrawer instead */}
 
         {/* Main Content */}
-        <main className="page-transition">
+        <div className="page-transition">
           {children}
-        </main>
+        </div>
 
         {/* Footer */}
         <footer className="bg-gray-900 text-white">
@@ -311,20 +311,14 @@ export default function Layout({ children }: LayoutProps) {
                 </ul>
                 {/* socials relocated under privacy policy for symmetry */}
                 <div className="flex items-center gap-3 mt-6 justify-start md:justify-end">
-                  <a href="https://www.facebook.com/KellysAppliance" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-80" data-analytics-label="footer_social_facebook">
+                  <a href="https://www.facebook.com/KellysAppliance" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="p-1 hover:opacity-80" data-analytics-label="footer_social_facebook">
                     <Image src="/images/icon-facebook.svg" alt="Facebook" width={40} height={40} />
                   </a>
-                  <a href="https://www.yelp.com/biz/kellys-appliance-center-cotati-2" target="_blank" rel="noopener noreferrer" aria-label="Yelp" className="hover:opacity-80" data-analytics-label="footer_social_yelp">
+                  <a href="https://www.yelp.com/biz/kellys-appliance-center-cotati-2" target="_blank" rel="noopener noreferrer" aria-label="Yelp" className="p-1 hover:opacity-80" data-analytics-label="footer_social_yelp">
                     <Image src="/images/yelp-trans.png" alt="Yelp" width={40} height={40} className="w-10 h-10 object-contain" />
                   </a>
-                  <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:opacity-80" data-analytics-label="footer_social_tiktok">
-                    <Image src="/images/icon-tiktok.svg" alt="TikTok" width={40} height={40} />
-                  </a>
-                  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-80" data-analytics-label="footer_social_instagram">
+                  <a href="https://www.instagram.com/kellysappliancerepair/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-1 hover:opacity-80" data-analytics-label="footer_social_instagram">
                     <Image src="/images/icon-instagram.svg" alt="Instagram" width={40} height={40} />
-                  </a>
-                  <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" className="hover:opacity-80" data-analytics-label="footer_social_x">
-                    <Image src="/images/icon-twitter-x.svg" alt="Twitter X" width={40} height={40} />
                   </a>
                 </div>
               </div>
@@ -350,7 +344,7 @@ export default function Layout({ children }: LayoutProps) {
                 </div>
               </div>
               <div className="text-center text-sm text-gray-400">
-                <p>&copy; 2025 {companyInfo.name}. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} {companyInfo.name}. All rights reserved.</p>
                 <p className="mt-2">
                   <Link href="/privacy-policy" className="hover:text-green-400 transition-colors">Privacy Policy</Link>
                   {' • '}
