@@ -91,6 +91,9 @@ Thumbs.db
 !/docs/seo/**
 !/docs/research/
 !/docs/research/**
+!/docs/BLOG-CONTENT-STRATEGY.md
+!/docs/SITE-AUDIT-2026-03.md
+!/docs/FUTURE-ROADMAP.md
 
 # Secrets and sensitive files
 /secrets/*.json
