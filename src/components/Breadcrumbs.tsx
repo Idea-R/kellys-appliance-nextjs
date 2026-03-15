@@ -15,7 +15,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
 
   // Avoid rendering a "secondary nav" for top-level pages (e.g. "Home > Authorized Service").
   // Keep breadcrumbs for nested pages where they add real navigational value (e.g. "Home > Service Locations > Santa Rosa").
-  if (!items || items.length <= 2) {
+  if (!items || items.length <= 1) {
     return null;
   }
   

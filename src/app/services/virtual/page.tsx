@@ -8,15 +8,38 @@ const companyInfo = getCompanyInfo()
 
 export const metadata = {
   title: "Virtual Service Call",
-  description: '15-minute video diagnostic session with a technician. Quick troubleshooting to identify symptoms and possible causes, potentially saving time and money.',
+  description: '15-minute video diagnostic with a Kelly\'s technician for $40. Identify symptoms and possible causes before scheduling an in-home visit.',
   alternates: {
     canonical: '/services/virtual',
+  },
+  openGraph: {
+    title: "Virtual Service Call | Kelly's Appliance Center",
+    description: '15-minute video diagnostic with a technician for $40. Identify symptoms before scheduling an in-home visit.',
+    url: 'https://kellysappliancerepair.com/services/virtual',
+    type: 'website' as const,
   },
 }
 
 export default function VirtualServicePage() {
   return (
     <Layout>
+      {/* Service JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Virtual Appliance Diagnostic",
+          "provider": { "@id": "https://kellysappliancerepair.com/#business" },
+          "url": "https://kellysappliancerepair.com/services/virtual",
+          "description": "15-minute video diagnostic session with a Kelly's technician. Identify symptoms and possible causes remotely.",
+          "offers": {
+            "@type": "Offer",
+            "price": "40.00",
+            "priceCurrency": "USD"
+          }
+        }) }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -15,9 +15,15 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Dryer Repair Services Near Me - Expert Technicians',
-  description: 'Find dryer repair near me. Professional dryer repair services for residential clients. Expert diagnosis of heating issues, vent problems, and mechanical faults. Call (707) 664-9702',
+  description: 'Professional dryer repair for heating issues, vent problems, and mechanical faults. Factory authorized technicians in Sonoma County. Call (707) 664-9702.',
   alternates: {
     canonical: '/services/dryer-repair',
+  },
+  openGraph: {
+    title: "Dryer Repair Services | Kelly's Appliance Center",
+    description: 'Professional dryer repair for heating issues, vent problems, and mechanical faults. Factory authorized technicians in Sonoma County.',
+    url: 'https://kellysappliancerepair.com/services/dryer-repair',
+    type: 'website' as const,
   },
 };
 

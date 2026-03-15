@@ -19,9 +19,15 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Dishwasher Repair Services - Professional Technicians',
-  description: 'Find dishwasher repair near me. Experienced dishwasher repair services for residential clients. Water leaks, drainage problems, faulty motors repair. Call (707) 664-9702',
+  description: 'Professional dishwasher repair for leaks, drainage issues, and faulty motors. Factory authorized service in Sonoma County. Call (707) 664-9702.',
   alternates: {
     canonical: '/services/dishwasher-repair',
+  },
+  openGraph: {
+    title: "Dishwasher Repair Services | Kelly's Appliance Center",
+    description: 'Professional dishwasher repair for leaks, drainage issues, and faulty motors. Factory authorized service in Sonoma County.',
+    url: 'https://kellysappliancerepair.com/services/dishwasher-repair',
+    type: 'website' as const,
   },
 };
 

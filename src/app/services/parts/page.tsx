@@ -21,6 +21,12 @@ export const metadata = {
   alternates: {
     canonical: '/services/parts',
   },
+  openGraph: {
+    title: "Appliance Parts | Kelly's Appliance Center",
+    description: "Need an appliance part? Kelly's sources OEM parts for every major brand. Call or submit a request online.",
+    url: 'https://kellysappliancerepair.com/services/parts',
+    type: 'website' as const,
+  },
 }
 
 const kellysPhone = '7076649702'
@@ -40,6 +46,23 @@ const popularParts: Array<{ name: string; blurb: string }> = [
 export default function PartsPage() {
   return (
     <Layout>
+      {/* Service JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Appliance Parts Sales",
+          "provider": { "@id": "https://kellysappliancerepair.com/#business" },
+          "url": "https://kellysappliancerepair.com/services/parts",
+          "description": "OEM appliance parts for every major brand. Call or submit a request online for pricing and availability.",
+          "areaServed": [
+            { "@type": "AdministrativeArea", "name": "Sonoma County, CA" },
+            { "@type": "AdministrativeArea", "name": "Marin County, CA" },
+            { "@type": "AdministrativeArea", "name": "Napa County, CA" }
+          ]
+        }) }}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-r from-green-800 to-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

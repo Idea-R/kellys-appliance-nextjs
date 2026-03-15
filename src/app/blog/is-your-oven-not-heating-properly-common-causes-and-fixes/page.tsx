@@ -12,6 +12,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/is-your-oven-not-heating-properly-common-causes-and-fixes',
   },
+  openGraph: {
+    title: 'Is Your Oven Not Heating Properly? Common Causes and Fixes',
+    description: 'Why your oven might not be heating correctly and when you need a professional repair. Covers electric and gas oven troubleshooting.',
+    url: 'https://kellysappliancerepair.com/blog/is-your-oven-not-heating-properly-common-causes-and-fixes',
+    type: 'article' as const,
+  },
 };
 
 export default function OvenHeatingPostPage() {

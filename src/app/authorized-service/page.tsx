@@ -9,10 +9,15 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Authorized Appliance Service (Factory Authorized for Select Brands)',
-  description: 'We service many major appliance brands. Factory authorized for select brands including Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor. Genuine parts and manufacturer-guideline repairs.',
-  keywords: ['authorized appliance service', 'factory authorized repair', 'genuine parts', 'Whirlpool authorized', 'KitchenAid authorized', 'Maytag authorized', 'GE authorized service', 'Viking authorized', 'Dacor authorized'],
+  description: 'Factory authorized repair for Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor. Genuine parts and manufacturer-guideline service in Sonoma County.',
   alternates: {
     canonical: '/authorized-service',
+  },
+  openGraph: {
+    title: "Authorized Appliance Service | Kelly's Appliance Center",
+    description: 'Factory authorized repair for Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor. Genuine parts and manufacturer-guideline service.',
+    url: 'https://kellysappliancerepair.com/authorized-service',
+    type: 'website' as const,
   },
 }
 

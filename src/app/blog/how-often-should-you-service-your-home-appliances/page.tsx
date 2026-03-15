@@ -12,6 +12,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/how-often-should-you-service-your-home-appliances',
   },
+  openGraph: {
+    title: 'How Often Should You Service Your Home Appliances?',
+    description: 'A complete maintenance schedule for refrigerators, ovens, washers, dryers, and dishwashers to extend their lifespan and avoid costly breakdowns.',
+    url: 'https://kellysappliancerepair.com/blog/how-often-should-you-service-your-home-appliances',
+    type: 'article' as const,
+  },
 };
 
 export default function ApplianceMaintenancePage() {

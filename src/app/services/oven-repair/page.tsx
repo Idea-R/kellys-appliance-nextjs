@@ -18,6 +18,12 @@ export const metadata = {
   alternates: {
     canonical: '/services/oven-repair',
   },
+  openGraph: {
+    title: "Oven & Range Repair Services | Kelly's Appliance Center",
+    description: 'Professional oven, range, cooktop, and vent hood repair. Expert diagnosis of temperature issues, heating elements, and controls.',
+    url: 'https://kellysappliancerepair.com/services/oven-repair',
+    type: 'website' as const,
+  },
 };
 
 export default function OvenRepairPage() {

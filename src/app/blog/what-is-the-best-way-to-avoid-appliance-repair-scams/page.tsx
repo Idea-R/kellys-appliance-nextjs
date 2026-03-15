@@ -14,6 +14,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/what-is-the-best-way-to-avoid-appliance-repair-scams',
   },
+  openGraph: {
+    title: 'What is the Best Way to Avoid Appliance Repair Scams?',
+    description: 'Expert tips on identifying trustworthy appliance repair services, avoiding fraud, and ensuring quality repairs.',
+    url: 'https://kellysappliancerepair.com/blog/what-is-the-best-way-to-avoid-appliance-repair-scams',
+    type: 'article' as const,
+  },
 };
 
 export default function BlogPost() {

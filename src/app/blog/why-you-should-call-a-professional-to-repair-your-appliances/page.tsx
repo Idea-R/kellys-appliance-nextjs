@@ -14,6 +14,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/why-you-should-call-a-professional-to-repair-your-appliances',
   },
+  openGraph: {
+    title: 'Why You Should Call a Professional to Repair Your Appliances',
+    description: 'Top reasons to call a professional for appliance repairs, from safety concerns to warranty protection.',
+    url: 'https://kellysappliancerepair.com/blog/why-you-should-call-a-professional-to-repair-your-appliances',
+    type: 'article' as const,
+  },
 };
 
 export default function BlogPost() {

@@ -12,6 +12,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/signs-your-washing-machine-needs-repair-before-it-breaks-down',
   },
+  openGraph: {
+    title: 'Signs Your Washing Machine Needs Repair Before It Breaks Down',
+    description: 'Catch washing machine problems early. Warning signs your washer needs professional repair before a small issue becomes a major breakdown.',
+    url: 'https://kellysappliancerepair.com/blog/signs-your-washing-machine-needs-repair-before-it-breaks-down',
+    type: 'article' as const,
+  },
 };
 
 export default function WasherRepairSignsPostPage() {

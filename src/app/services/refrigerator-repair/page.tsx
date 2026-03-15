@@ -14,9 +14,15 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Refrigerator Repair Services - Expert Technicians',
-  description: 'Find refrigerator repair near me and ice maker repair near me. Expert refrigerator repair services for residential clients. Factory authorized service with 90-day guarantee. Call (707) 664-9702',
+  description: 'Expert refrigerator and ice maker repair in Sonoma, Marin, and Napa counties. Factory authorized service with a 90-day guarantee. Call (707) 664-9702.',
   alternates: {
     canonical: '/services/refrigerator-repair',
+  },
+  openGraph: {
+    title: "Refrigerator Repair Services | Kelly's Appliance Center",
+    description: 'Expert refrigerator and ice maker repair in Sonoma, Marin, and Napa counties. Factory authorized service with a 90-day guarantee.',
+    url: 'https://kellysappliancerepair.com/services/refrigerator-repair',
+    type: 'website' as const,
   },
 };
 

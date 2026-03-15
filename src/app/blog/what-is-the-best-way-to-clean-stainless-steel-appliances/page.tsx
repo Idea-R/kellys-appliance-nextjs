@@ -14,6 +14,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/what-is-the-best-way-to-clean-stainless-steel-appliances',
   },
+  openGraph: {
+    title: 'What Is the Best Way to Clean Stainless Steel Appliances?',
+    description: 'Easy steps to remove smudges, streaks, and fingerprints from stainless steel appliances for a spotless shine.',
+    url: 'https://kellysappliancerepair.com/blog/what-is-the-best-way-to-clean-stainless-steel-appliances',
+    type: 'article' as const,
+  },
 };
 
 export default function BlogPost() {

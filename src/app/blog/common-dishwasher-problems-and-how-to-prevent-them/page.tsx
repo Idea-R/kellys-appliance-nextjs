@@ -11,6 +11,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/common-dishwasher-problems-and-how-to-prevent-them',
   },
+  openGraph: {
+    title: 'Common Dishwasher Problems and How to Prevent Them',
+    description: 'Discover the most common dishwasher issues and preventive maintenance tips to keep your dishwasher running efficiently.',
+    url: 'https://kellysappliancerepair.com/blog/common-dishwasher-problems-and-how-to-prevent-them',
+    type: 'article' as const,
+  },
 };
 
 export default function DishwasherPostPage() {

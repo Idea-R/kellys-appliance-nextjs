@@ -12,6 +12,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/how-to-tell-if-your-refrigerator-needs-professional-repair',
   },
+  openGraph: {
+    title: 'How to Tell If Your Refrigerator Needs Professional Repair',
+    description: 'Warning signs your refrigerator needs professional attention: unusual noises, temperature issues, and frost buildup.',
+    url: 'https://kellysappliancerepair.com/blog/how-to-tell-if-your-refrigerator-needs-professional-repair',
+    type: 'article' as const,
+  },
 };
 
 export default function RefrigeratorRepairPostPage() {

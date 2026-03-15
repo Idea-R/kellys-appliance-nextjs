@@ -37,14 +37,6 @@ export default function CityJsonLd({ city, slug }: Props) {
     '@type': 'Service',
     serviceType: 'Appliance repair',
     description: `Professional appliance repair services in ${city}, CA. Find local appliance repair near you with factory authorized service.`,
-    keywords: [
-      `appliance repair ${city}`,
-      `appliance repair ${city} near me`,
-      `appliance repair near me ${city}`,
-      `appliance repair near me`,
-      `local appliance repair ${city}`,
-      `appliance repair ${city} CA`,
-    ],
     provider: {
       '@type': 'LocalBusiness',
       name: company.name,

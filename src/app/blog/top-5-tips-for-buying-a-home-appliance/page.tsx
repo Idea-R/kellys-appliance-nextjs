@@ -14,6 +14,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/top-5-tips-for-buying-a-home-appliance',
   },
+  openGraph: {
+    title: "Top 5 Tips for Buying a Home Appliance | Kelly's Appliance Center",
+    description: 'Expert tips for buying a home appliance, from sizing and energy ratings to brand reliability and warranty coverage.',
+    url: 'https://kellysappliancerepair.com/blog/top-5-tips-for-buying-a-home-appliance',
+    type: 'article' as const,
+  },
 };
 
 export default function BlogPost() {

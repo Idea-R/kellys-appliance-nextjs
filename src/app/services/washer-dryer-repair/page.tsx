@@ -14,9 +14,15 @@ const companyInfo = getCompanyInfo();
 
 export const metadata = {
   title: 'Washer & Dryer Repair Services - Expert Technicians',
-  description: 'Find washer and dryer repair near me. Professional washer and dryer repair services. Expert diagnosis of drum problems, electrical faults, and water leaks. Call (707) 664-9702',
+  description: 'Professional washer and dryer repair for drum problems, electrical faults, and leaks. Serving Sonoma, Marin, and Napa counties. Call (707) 664-9702.',
   alternates: {
     canonical: '/services/washer-dryer-repair',
+  },
+  openGraph: {
+    title: "Washer & Dryer Repair Services | Kelly's Appliance Center",
+    description: 'Professional washer and dryer repair for drum problems, electrical faults, and leaks. Serving Sonoma, Marin, and Napa counties.',
+    url: 'https://kellysappliancerepair.com/services/washer-dryer-repair',
+    type: 'website' as const,
   },
 };
 

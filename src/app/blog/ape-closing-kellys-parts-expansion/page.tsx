@@ -13,6 +13,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/ape-closing-kellys-parts-expansion',
   },
+  openGraph: {
+    title: "APE Appliance Parts Is Closing. Kelly's Expands Parts Department",
+    description: "APE Appliance Parts Equipment is closing after 50 years. Kelly's Appliance Center is expanding our parts department for Sonoma County homeowners and DIYers.",
+    url: 'https://kellysappliancerepair.com/blog/ape-closing-kellys-parts-expansion',
+    type: 'article' as const,
+  },
 }
 
 export default function ApeClosingBlogPage() {

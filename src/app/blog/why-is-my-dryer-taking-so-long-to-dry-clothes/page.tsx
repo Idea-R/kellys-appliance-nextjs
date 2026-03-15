@@ -12,6 +12,12 @@ export const metadata = {
   alternates: {
     canonical: '/blog/why-is-my-dryer-taking-so-long-to-dry-clothes',
   },
+  openGraph: {
+    title: 'Why Is My Dryer Taking So Long to Dry Clothes?',
+    description: 'Top causes and solutions for slow-drying dryers: clogged lint traps, blocked vents, and more.',
+    url: 'https://kellysappliancerepair.com/blog/why-is-my-dryer-taking-so-long-to-dry-clothes',
+    type: 'article' as const,
+  },
 };
 
 export default function DryerPostPage() {
