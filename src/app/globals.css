@@ -196,13 +196,15 @@
   animation: slideInFromBottom 0.7s ease-out;
 }
 
-/* Custom hover effects */
+/* Custom hover effects (only on devices that support hover) */
 .hover-scale {
   transition: transform 0.3s ease;
 }
 
-.hover-scale:hover {
-  transform: scale(1.05);
+@media (hover: hover) {
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
 }
 
 /* Enhanced button animations */
@@ -455,8 +457,16 @@
   .animate-scroll-right,
   .animate-scroll-left,
   .animate-fade-in-up,
-  .page-transition {
+  .page-transition,
+  .badge-enter,
+  .badge-hover,
+  .animate-slide-in-left,
+  .animate-slide-in-right {
     animation: none;
+  }
+
+  .hover-scale {
+    transition: none;
   }
 
   html {

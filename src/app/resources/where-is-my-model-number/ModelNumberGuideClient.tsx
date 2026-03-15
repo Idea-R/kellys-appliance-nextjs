@@ -309,17 +309,7 @@ export default function ModelNumberGuideClient({ companyInfo, appliances }: Prop
         </div>
       </section>
 
-      {/* Mobile sticky CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-gray-200 p-3 pb-[calc(12px+env(safe-area-inset-bottom))]">
-        <a
-          href={`tel:${companyInfo.phone}`}
-          className="w-full inline-flex items-center justify-center bg-green-600 text-white px-4 py-3 rounded-lg font-semibold"
-          aria-label={`Call ${companyInfo.phone}`}
-        >
-          <PhoneIcon className="h-5 w-5 mr-2" />
-          Call {companyInfo.phone}
-        </a>
-      </div>
+      {/* Page-specific sticky CTA removed — global StickyMobileCTA handles this */}
     </>
   )
 }

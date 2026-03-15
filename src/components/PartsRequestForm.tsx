@@ -289,7 +289,7 @@ export default function PartsRequestForm() {
                 <button
                   type="button"
                   onClick={() => removePhoto(i)}
-                  className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs leading-none shadow hover:bg-red-600"
+                  className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm leading-none shadow hover:bg-red-600"
                   aria-label={`Remove photo ${i + 1}`}
                 >
                   &times;

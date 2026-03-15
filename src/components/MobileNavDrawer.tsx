@@ -38,6 +38,13 @@ export default function MobileNavDrawer() {
     }
   }, [open, hasOpened])
 
+  // Listen for external open trigger (hamburger button in header)
+  useEffect(() => {
+    const onToggle = () => setOpen(true)
+    document.addEventListener('toggle-mobile-nav', onToggle)
+    return () => document.removeEventListener('toggle-mobile-nav', onToggle)
+  }, [])
+
   // Tracking: emit open/close events to dataLayer
   useEffect(() => {
     const dl = (window as unknown as { dataLayer?: Array<Record<string, unknown>> }).dataLayer
@@ -142,7 +149,7 @@ export default function MobileNavDrawer() {
                           <li key={city.slug}>
                             <Link 
                               href={`/service-locations/${city.slug}`} 
-                              className="block px-3 py-1 text-xs text-gray-600 rounded hover:bg-green-50 hover:text-green-700 transition-colors" 
+                              className="block px-3 py-2 text-sm text-gray-600 rounded hover:bg-green-50 hover:text-green-700 transition-colors"
                               data-analytics-label={`drawer_city_${city.slug}`}
                             >
                               {city.name}

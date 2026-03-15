@@ -5,6 +5,7 @@ import { PhoneIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { getCompanyInfo } from '@/lib/content';
 import { counties } from '@/lib/locations';
 import GlareHover from '@/components/GlareHover';
+import HamburgerButton from '@/components/HamburgerButton';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -196,6 +197,8 @@ export default function Layout({ children }: LayoutProps) {
               </nav>
 
               <div className="flex items-center space-x-4">
+                {/* Hamburger menu button for mobile */}
+                <HamburgerButton />
                 <Link
                   href="/schedule-prep"
                   className="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors"
