@@ -213,6 +213,12 @@ export default function ApeClosingBlogPage() {
             </p>
 
             <p className="mb-6 text-gray-700 leading-relaxed">
+              If you need to reach APE for any reason, they&apos;ll still be checking in occasionally.
+              Correspondence or payments can be sent to: Appliance Parts Equipment, P.O. Box 326,
+              Santa Rosa, CA 95402.
+            </p>
+
+            <p className="mb-6 text-gray-700 leading-relaxed">
               Need a part? <Link href="/services/parts" className="text-green-600 hover:text-green-700">Tell us what you need</Link> or
               call us at <a href="tel:7076649702" className="text-green-600 hover:text-green-700">(707) 664-9702</a>.
               We&apos;ve got you covered.
