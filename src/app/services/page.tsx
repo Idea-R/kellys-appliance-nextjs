@@ -52,6 +52,20 @@ const services = [
     image: '/images/dishwasher-repair.webp',
     href: '/services/dishwasher-repair',
     features: ['Water Leak Repair', 'Drainage Issues', 'Motor Replacement', 'Control Panel Repair']
+  },
+  {
+    title: 'Appliance Parts',
+    description: 'OEM appliance parts for every major brand, matched to your exact model. Call or submit a request online for pricing and availability.',
+    image: '/images/refrigerator-repair.webp',
+    href: '/services/parts',
+    features: ['Genuine OEM Parts', 'All Major Brands', 'Model-Matched Orders', 'Online Parts Request']
+  },
+  {
+    title: 'Virtual Service Call',
+    description: 'A 15-minute video session with a technician to diagnose your appliance remotely. Identify symptoms and decide if an in-home visit is needed.',
+    image: '/images/kelly-appliance-team.webp',
+    href: '/services/virtual',
+    features: ['15-Minute Video Call', 'Remote Diagnosis', 'Pre-Visit Triage', 'Just $40']
   }
 ];
 

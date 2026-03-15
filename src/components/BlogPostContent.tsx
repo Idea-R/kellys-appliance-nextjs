@@ -67,7 +67,7 @@ export default function BlogPostContent({ children, title, date, author = "Kelly
         <h3 className="text-2xl font-bold text-gray-900 mb-2">Need Appliance Repair?</h3>
         <p className="text-gray-600 mb-6">Our team is here to help with all your appliance repair needs.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:(707)664-9702" className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+          <a href="tel:7076649702" className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
             Call (707) 664-9702
           </a>
           <a href="/schedule-prep" className="inline-flex items-center justify-center bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors border-2 border-green-600">

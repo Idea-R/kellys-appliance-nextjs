@@ -96,7 +96,7 @@ export default function AuthorizedServicePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="tel:(707) 664-9702"
+                href="tel:7076649702"
                 className="inline-flex items-center justify-center bg-white text-green-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 📞 Call (707) 664-9702
@@ -237,7 +237,7 @@ export default function AuthorizedServicePage() {
                       <p className="text-sm text-gray-500 mb-4">"{brand.searchTerm}"</p>
                       <div className="flex flex-col sm:flex-row gap-3">
                         <a
-                          href="tel:(707) 664-9702"
+                          href="tel:7076649702"
                           className="inline-flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
                         >
                           Call (707) 664-9702
@@ -273,7 +273,7 @@ export default function AuthorizedServicePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:(707) 664-9702"
+                href="tel:7076649702"
                 className="inline-flex items-center justify-center bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors"
               >
                 📞 Call (707) 664-9702 Now
