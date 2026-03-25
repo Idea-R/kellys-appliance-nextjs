@@ -3,7 +3,7 @@
 import React, { useState, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { pushEvent } from '@/lib/track-event'
+import { pushEvent, pushAdsConversion } from '@/lib/track-event'
 import { APPLIANCE_OPTIONS } from '@/lib/appliance-options'
 
 const MAX_FILES = 3
@@ -117,6 +117,7 @@ export default function PartsRequestForm() {
         ref_number: json.refNumber,
         has_photos: photos.length > 0 ? 'yes' : 'no',
       })
+      pushAdsConversion('AW-10866866733/qP8LCKDa_44cEK303L0o', 50.0)
 
       // Redirect to confirmation
       router.push(`/parts-confirmation?ref=${encodeURIComponent(json.refNumber)}`)

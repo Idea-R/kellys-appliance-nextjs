@@ -15,3 +15,22 @@ export function pushEvent(
     ...params,
   })
 }
+
+/**
+ * Fire a Google Ads conversion event via gtag.
+ * No-ops if gtag isn't loaded or no Ads ID is configured.
+ */
+export function pushAdsConversion(
+  sendTo: string,
+  value?: number,
+  currency = 'USD'
+): void {
+  if (typeof window === 'undefined') return
+  const win = window as unknown as { gtag?: (...args: unknown[]) => void }
+  if (!win.gtag) return
+  win.gtag('event', 'conversion', {
+    send_to: sendTo,
+    value,
+    currency,
+  })
+}

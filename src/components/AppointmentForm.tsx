@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { pushEvent } from '@/lib/track-event'
+import { pushEvent, pushAdsConversion } from '@/lib/track-event'
 import { APPLIANCE_OPTIONS } from '@/lib/appliance-options'
 
 const MAX_FILES = 3
@@ -137,6 +137,7 @@ export default function AppointmentForm() {
         has_address: address ? 'yes' : 'no',
         page_path: window.location.pathname,
       })
+      pushAdsConversion('AW-10866866733/qP8LCKDa_44cEK303L0o', 50.0)
 
       router.push(`/scheduler-confirmation${ref ? `?ref=${encodeURIComponent(ref)}` : ''}`)
     } catch (error) {

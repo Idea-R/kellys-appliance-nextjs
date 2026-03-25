@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { pushEvent } from '@/lib/track-event'
+import { pushEvent, pushAdsConversion } from '@/lib/track-event'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -33,6 +33,7 @@ export default function ContactForm() {
         form_name: 'contact',
         page_path: window.location.pathname,
       })
+      pushAdsConversion('AW-10866866733/qP8LCKDa_44cEK303L0o', 50.0)
       form.reset()
     } catch (error) {
       setStatus('error')

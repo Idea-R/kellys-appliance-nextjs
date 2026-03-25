@@ -7,8 +7,9 @@ import { usePathname, useSearchParams } from 'next/navigation'
 export default function Analytics() {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+  const gadsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
   const cfToken = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN
-  const hasAnalytics = Boolean(gtmId || gaId)
+  const hasAnalytics = Boolean(gtmId || gaId || gadsId)
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -131,7 +132,17 @@ export default function Analytics() {
         <>
           <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
           <Script id="ga4-init" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config','${gaId}',{anonymize_ip:true});`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config','${gaId}',{anonymize_ip:true});${gadsId ? `gtag('config','${gadsId}');` : ''}`}
+          </Script>
+        </>
+      )}
+
+      {/* Google Ads (standalone — loads gtag if GA4 isn't present) */}
+      {!gtmId && !gaId && gadsId && (
+        <>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${gadsId}`} strategy="afterInteractive" />
+          <Script id="gads-init" strategy="afterInteractive">
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config','${gadsId}');`}
           </Script>
         </>
       )}
