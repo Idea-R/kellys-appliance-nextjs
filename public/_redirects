@@ -136,3 +136,18 @@ http://mobile.kellysappliancerepair.com/* https://kellysappliancerepair.com/:spl
 
 # WordPress sitemap redirect
 /sitemap_index.xml /sitemap.xml 301
+
+# WordPress legacy feed URLs (Search Console 404s)
+/feed/ / 301
+/comments/feed/ / 301
+/home/feed/ / 301
+/appliance-repair-marin-county/feed/ / 301
+
+# Old WordPress media/uploads (Search Console 404s)
+/wp-content/uploads/* / 301
+/wp-content/themes/* / 301
+/wp-admin/* / 301
+/images/laura.jpg / 301
+
+# Old newsletter PDF
+/config/newsletters/* / 301

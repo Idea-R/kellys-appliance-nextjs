@@ -35,6 +35,17 @@
 /llm.txt
   Cache-Control: public, max-age=86400
 
+# Apple App Site Association - correct content type
+/apple-app-site-association
+  Content-Type: application/json
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+
+# ads.txt - correct content type
+/ads.txt
+  Content-Type: text/plain
+  Cache-Control: public, max-age=86400
+
 # Prevent Pages preview domains from being indexed (avoid duplicate content)
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
