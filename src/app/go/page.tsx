@@ -99,18 +99,15 @@ export default function GoPage() {
           href="/schedule-prep"
           data-analytics-label="go_schedule"
           onClick={() => trackCtaClick('schedule')}
-          className="group flex items-center gap-4 bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98] mb-4"
+          className="group flex items-center justify-center gap-3 bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98] mb-4"
         >
           <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center group-hover:bg-green-200 transition-colors">
             <CalendarDaysIcon className="h-6 w-6 text-green-700" />
           </div>
-          <div className="flex-1 min-w-0">
+          <div className="text-left">
             <h2 className="text-lg font-bold text-gray-900">Schedule My Repair</h2>
             <p className="text-sm text-gray-500">Book online &middot; Next-day available</p>
           </div>
-          <svg className="h-5 w-5 text-gray-400 group-hover:text-green-600 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-          </svg>
         </Link>
 
         {/* Tertiary — Parts & Review row */}
