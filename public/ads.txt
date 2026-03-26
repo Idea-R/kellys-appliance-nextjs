@@ -1,1 +1,2 @@
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+# Kelly's Appliance Center does not participate in programmatic advertising.
+# This file exists to prevent repeated 404 crawl errors in Search Console.
