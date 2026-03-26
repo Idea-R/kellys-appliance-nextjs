@@ -32,7 +32,7 @@ const partners: Partner[] = [
   },
   {
     name: 'Dryer Vent Wizard',
-    url: 'http://dryerventwizard.com/dryer-vent-cleaning',
+    url: 'https://dryerventwizard.com/dryer-vent-cleaning',
     description: 'Residential dryer vent cleaning and repairs to improve safety and efficiency. See service details and request scheduling.',
     utm: 'ref=kellys-referrals'
   },

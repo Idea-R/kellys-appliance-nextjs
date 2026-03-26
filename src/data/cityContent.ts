@@ -682,7 +682,7 @@ const corteMadera: CityContent = {
   localHighlights:
     'Corte Madera pairs easy shopping at The Village with access to trails and the Bay. We provide fast, authorized appliance repair so home life runs like clockwork.',
   topEats: ['Picco', 'Farmshop', 'Marin Joe\u2019s'],
-  communityLink: { label: 'Corte Madera Chamber of Commerce', href: 'http://www.cortemadera.org/' },
+  communityLink: { label: 'Corte Madera Chamber of Commerce', href: 'https://cortemadera.org/' },
 
   issuesHeading: 'Common Appliance Issues in Corte Madera',
   issuesContent: [

@@ -142,8 +142,8 @@ export default function MarinCountyPage() {
             <ChamberLink name="Novato Chamber of Commerce" url="https://www.novatochamber.com/" />
             <ChamberLink name="Mill Valley Chamber of Commerce" url="https://www.millvalley.org/" />
             <ChamberLink name="Sausalito Chamber of Commerce" url="https://www.sausalito.org/" />
-            <ChamberLink name="Larkspur Chamber of Commerce" url="http://larkspurchamber.org/" />
-            <ChamberLink name="Corte Madera Chamber of Commerce" url="http://www.cortemadera.org/" />
+            <ChamberLink name="Larkspur Chamber of Commerce" url="https://larkspurchamber.org/" />
+            <ChamberLink name="Corte Madera Chamber of Commerce" url="https://cortemadera.org/" />
             <ChamberLink name="Tiburon Chamber of Commerce" url="https://www.tiburonchamber.org/" />
           </div>
         </div>
