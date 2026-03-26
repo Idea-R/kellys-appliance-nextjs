@@ -73,7 +73,7 @@ export default function GoPage() {
         <div className="flex items-center justify-center gap-2 text-green-100 text-sm mb-6">
           <span className="text-yellow-300">&#9733; 4.8</span>
           <span className="text-green-300/50">&#8226;</span>
-          <span>500+ Reviews</span>
+          <span>400+ Reviews</span>
           <span className="text-green-300/50">&#8226;</span>
           <span>Diamond Certified</span>
         </div>
