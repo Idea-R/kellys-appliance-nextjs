@@ -125,7 +125,7 @@ export default function Layout({ children }: LayoutProps) {
                 </Link>
               </div>
               
-              <nav className="hidden md:flex space-x-8" role="navigation" aria-label="Primary">
+              <nav className="hidden lg:flex space-x-8" role="navigation" aria-label="Primary">
                 {navigation.map((item) => (
                   <div key={item.name} className="relative group">
                     {item.external ? (

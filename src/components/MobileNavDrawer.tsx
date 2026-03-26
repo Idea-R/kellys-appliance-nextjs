@@ -3,8 +3,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { counties, CountyKey } from '@/lib/locations'
 import { ChevronDown } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 export default function MobileNavDrawer() {
+  const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [hasOpened, setHasOpened] = useState(false) // Lazy-render nav content after first open
   const drawerRef = useRef<HTMLDivElement | null>(null)
@@ -51,6 +53,9 @@ export default function MobileNavDrawer() {
     dl?.push({ event: open ? 'menu_open' : 'menu_close', menu: 'mobile_drawer' })
   }, [open])
 
+  // Hide on the QR landing page to keep it distraction-free
+  if (pathname === '/go') return null
+
   return (
     <>
       {/* Edge tab trigger - Top left, quarter way down */}
@@ -59,7 +64,7 @@ export default function MobileNavDrawer() {
         aria-controls="mobile-drawer"
         aria-expanded={open}
         onClick={() => setOpen(true)}
-        className="fixed left-0 top-[25vh] md:hidden z-[55] bg-green-700 text-white px-4 py-3 rounded-r-lg shadow-xl font-semibold border-2 border-white/20 hover:bg-green-800 transition-colors"
+        className="fixed left-0 top-[25vh] lg:hidden z-[55] bg-green-700 text-white px-4 py-3 rounded-r-lg shadow-xl font-semibold border-2 border-white/20 hover:bg-green-800 transition-colors"
       >
         Menu
       </button>
@@ -67,7 +72,7 @@ export default function MobileNavDrawer() {
       {/* Overlay */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/50 z-[60] md:hidden"
+          className="fixed inset-0 bg-black/50 z-[60] lg:hidden"
           onClick={() => setOpen(false)}
           aria-hidden
         />
@@ -77,7 +82,7 @@ export default function MobileNavDrawer() {
       <aside
         ref={drawerRef}
         tabIndex={-1}
-        className={`fixed left-0 top-0 h-full w-auto min-w-[240px] max-w-[min(320px,50vw)] bg-gradient-to-br from-gray-50 to-white z-[61] md:hidden motion-safe:transition-transform motion-safe:duration-300 ease-out shadow-2xl overflow-y-auto ${open ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed left-0 top-0 h-full w-auto min-w-[240px] max-w-[min(320px,50vw)] bg-gradient-to-br from-gray-50 to-white z-[61] lg:hidden motion-safe:transition-transform motion-safe:duration-300 ease-out shadow-2xl overflow-y-auto ${open ? 'translate-x-0' : '-translate-x-full'}`}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"

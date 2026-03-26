@@ -33,7 +33,7 @@ export default function ContactForm() {
         form_name: 'contact',
         page_path: window.location.pathname,
       })
-      pushAdsConversion('AW-10866866733/qP8LCKDa_44cEK303L0o', 50.0)
+      pushAdsConversion('AW-10866866733/1L-TCPmLzY8cEK303L0o', 200.0)
       form.reset()
     } catch (error) {
       setStatus('error')

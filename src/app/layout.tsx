@@ -192,7 +192,7 @@ export default function RootLayout({
             })
           }}
         />
-        <main id="main-content" className="pb-20 md:pb-0">
+        <main id="main-content" className="pb-20 lg:pb-0">
           {children}
         </main>
         <MobileNavDrawer />

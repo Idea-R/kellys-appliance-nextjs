@@ -117,7 +117,7 @@ export default function PartsRequestForm() {
         ref_number: json.refNumber,
         has_photos: photos.length > 0 ? 'yes' : 'no',
       })
-      pushAdsConversion('AW-10866866733/qP8LCKDa_44cEK303L0o', 50.0)
+      pushAdsConversion('AW-10866866733/1L-TCPmLzY8cEK303L0o', 200.0)
 
       // Redirect to confirmation
       router.push(`/parts-confirmation?ref=${encodeURIComponent(json.refNumber)}`)

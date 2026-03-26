@@ -4,7 +4,7 @@ export default function HamburgerButton() {
   return (
     <button
       type="button"
-      className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
+      className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
       aria-label="Open navigation menu"
       onClick={() => document.dispatchEvent(new CustomEvent('toggle-mobile-nav'))}
     >
