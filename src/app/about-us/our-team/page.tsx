@@ -102,7 +102,7 @@ const teamMembers: TeamMember[] = [
     bio: 'Service technician bringing hands-on expertise and dedication to every repair.'
   },
   {
-    name: 'Bianca Bonila',
+    name: 'Bianca Bonilla',
     role: 'Service Technician',
     image: '/images/team/Biancaz.jpg',
     bio: 'Service technician supporting complex diagnostics and service excellence.'
