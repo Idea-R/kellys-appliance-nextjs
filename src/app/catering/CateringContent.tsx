@@ -12,7 +12,7 @@ const menuItems = [
     description: 'Slow-smoked St. Louis ribs, 12-hour brisket, pulled pork, mac & cheese, cornbread, coleslaw, and baked beans. Everything you need, one visit.',
     serves: '20-50 guests',
     price: 'From $35/person',
-    image: '/images/catering/BrisketCloseup.jpg',
+    image: '/images/catering/menu-service-call.jpg',
     backstory: 'Just like a real service call, we show up on time, get the job done right, and leave you wondering why you didn\'t call sooner. This package started when Mark catered his first neighborhood block party in 2019. He brought everything in the service van and smoked it all on-site. The neighbors still talk about it.',
     funFact: 'The coleslaw recipe is Bob Kelly\'s. He brought it to every company potluck from 1975 until he retired. Mark swore he\'d never change it, and he hasn\'t.',
   },
