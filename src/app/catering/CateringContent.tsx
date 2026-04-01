@@ -50,7 +50,7 @@ const merchItems = [
     name: 'The Pitmaster Apron',
     image: '/images/catering/merch-apron.jpg',
     label: 'Coming Soon',
-    backstory: 'Heavy-duty canvas, the same green as the Kelly\'s polo. Adjustable neck strap because Mark is 6\'2" and Shane is not. Front pocket fits a meat thermometer and a multimeter, depending on whether you\'re smoking ribs or diagnosing a range. Every apron is hand-stamped with the Kelly\'s Appliance logo. We\'re not saying it makes food taste better, but we\'re not NOT saying that.',
+    backstory: 'Heavy-duty canvas, the same green as the Kelly\'s polo. Adjustable neck strap because James is 6\'7" and Shane is not. Front pocket fits a meat thermometer and a multimeter, depending on whether you\'re smoking ribs or diagnosing a range. Every apron is hand-stamped with the Kelly\'s Appliance logo. We\'re not saying it makes food taste better, but we\'re not NOT saying that.',
   },
   {
     name: 'The Repair Kit (BBQ Edition)',
