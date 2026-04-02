@@ -85,48 +85,50 @@ type ModalItem = { name: string; image: string; backstory: string; funFact?: str
 
 function Modal({ item, onClose }: { item: ModalItem; onClose: () => void }) {
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={item.name}>
+    <div className="fixed inset-0 z-[60]" role="dialog" aria-modal="true" aria-label={item.name}>
       <button className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} aria-label="Close backdrop" />
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto overscroll-contain">
-        <div className="sticky top-0 z-10">
-          <button
-            onClick={onClose}
-            className="absolute top-3 right-3 bg-black/50 text-white rounded-full p-1.5 hover:bg-black/70 transition-colors z-20"
-            aria-label="Close"
-          >
-            <XMarkIcon className="h-5 w-5" />
-          </button>
-        </div>
-        <Image
-          src={item.image}
-          alt={item.name}
-          width={600}
-          height={300}
-          className="w-full h-48 sm:h-56 object-cover rounded-t-2xl"
-          sizes="600px"
-        />
-        <div className="p-6 pb-16">
-          <h3 className="text-2xl font-extrabold text-gray-900 mb-1">{item.name}</h3>
-          {item.price && (
-            <div className="flex gap-3 mb-3 text-sm text-gray-500">
-              <span className="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">{item.price}</span>
-              {item.serves && <span>Serves {item.serves}</span>}
+      <div className="absolute inset-0 overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: 'touch' }}>
+        <div className="flex min-h-full items-center justify-center p-4">
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={onClose}
+              className="absolute top-3 right-3 bg-black/50 text-white rounded-full p-1.5 hover:bg-black/70 transition-colors z-20"
+              aria-label="Close"
+            >
+              <XMarkIcon className="h-5 w-5" />
+            </button>
+            <Image
+              src={item.image}
+              alt={item.name}
+              width={600}
+              height={300}
+              className="w-full h-48 sm:h-56 object-cover rounded-t-2xl pointer-events-none"
+              sizes="600px"
+            />
+            <div className="p-6 pb-16">
+              <h3 className="text-2xl font-extrabold text-gray-900 mb-1">{item.name}</h3>
+              {item.price && (
+                <div className="flex gap-3 mb-3 text-sm text-gray-500">
+                  <span className="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">{item.price}</span>
+                  {item.serves && <span>Serves {item.serves}</span>}
+                </div>
+              )}
+              {item.label && (
+                <span className="inline-block bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold text-sm mb-3">{item.label}</span>
+              )}
+              {item.description && <p className="text-gray-600 mb-4">{item.description}</p>}
+              <div className="border-t pt-4">
+                <h4 className="font-bold text-gray-900 mb-2">The Backstory</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.backstory}</p>
+              </div>
+              {item.funFact && (
+                <div className="mt-4 bg-amber-50 border border-amber-200 rounded-lg p-4">
+                  <h4 className="font-bold text-amber-800 text-sm mb-1">Kelly Family Lore</h4>
+                  <p className="text-amber-900 text-sm">{item.funFact}</p>
+                </div>
+              )}
             </div>
-          )}
-          {item.label && (
-            <span className="inline-block bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold text-sm mb-3">{item.label}</span>
-          )}
-          {item.description && <p className="text-gray-600 mb-4">{item.description}</p>}
-          <div className="border-t pt-4">
-            <h4 className="font-bold text-gray-900 mb-2">The Backstory</h4>
-            <p className="text-gray-600 text-sm leading-relaxed">{item.backstory}</p>
           </div>
-          {item.funFact && (
-            <div className="mt-4 bg-amber-50 border border-amber-200 rounded-lg p-4">
-              <h4 className="font-bold text-amber-800 text-sm mb-1">Kelly Family Lore</h4>
-              <p className="text-amber-900 text-sm">{item.funFact}</p>
-            </div>
-          )}
         </div>
       </div>
     </div>
