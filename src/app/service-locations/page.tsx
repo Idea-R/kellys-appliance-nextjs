@@ -26,6 +26,7 @@ const serviceLocations = [
   { name: 'Sebastopol', slug: 'sebastopol', highlights: ['Downtown', 'Apple Hill'] },
   { name: 'Bodega Bay', slug: 'bodega-bay', highlights: ['Harbor', 'Coastal Trails'] },
   { name: 'Windsor', slug: 'windsor', highlights: ['Town Green', 'Foothill Park'] },
+  { name: 'Healdsburg', slug: 'healdsburg', highlights: ['Plaza', 'Dry Creek', 'Westside'] },
   { name: 'Napa', slug: 'napa', highlights: ['Downtown', 'Browns Valley', 'Carneros'] },
   // Marin cities
   { name: 'San Rafael', slug: 'san-rafael', highlights: ['Downtown', 'Terra Linda'] },
