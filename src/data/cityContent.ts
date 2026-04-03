@@ -527,6 +527,40 @@ const sanRafael: CityContent = {
   heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
 }
 
+const sanAnselmo: CityContent = {
+  slug: 'san-anselmo',
+  name: 'San Anselmo',
+  metaTitle: 'Appliance Repair San Anselmo - Refrigerator, Oven, Washer & Dryer Service',
+  metaDescription:
+    'Factory-authorized appliance repair in San Anselmo, CA. Serving Downtown, Sleepy Hollow, and Seminary area since 1975. 90-day guarantee. Call (707) 664-9702.',
+  heroSubtitle:
+    'Professional appliance repair for San Anselmo homes. Factory-authorized service with a 90-day money-back guarantee.',
+
+  trustHeading: 'Why San Anselmo Residents Trust Kelly\u2019s',
+  trustContent: [
+    'San Anselmo is one of Marin County\u2019s most charming small towns, and we have been servicing homes here since 1975. From the cozy bungalows along San Anselmo Avenue to the hillside estates in Sleepy Hollow, we know the appliance mix well.',
+    'Our drive from Cotati to San Anselmo takes about 35 minutes via 101 and Sir Francis Drake Boulevard. We schedule Marin appointments multiple days a week, and same-day availability is often possible.',
+    'San Anselmo kitchens often feature a blend of vintage charm and modern upgrades. Whether it\u2019s a classic range in a 1920s Craftsman or a new built-in refrigerator in a remodeled kitchen, our factory authorizations cover every major brand.',
+  ],
+
+  localHighlights:
+    'Known for its independent shops and restaurants along San Anselmo Avenue, Creek Park strolls, and the leafy neighborhoods of Sleepy Hollow, San Anselmo has a welcoming small-town character. We keep your kitchen and laundry running so you can enjoy everything this community has to offer.',
+  topEats: ['Insalata\u2019s', 'Cucina Restaurant', 'Comforts'],
+  communityLink: { label: 'San Anselmo Chamber of Commerce', href: 'https://www.sananselmochamber.org/' },
+
+  issuesHeading: 'Common Appliance Issues in San Anselmo',
+  issuesContent: [
+    'Many San Anselmo homes date to the 1920s through 1960s and have older electrical panels that may not fully support modern high-draw appliances. If your appliance trips breakers frequently, the issue may be circuit capacity rather than the machine itself.',
+    'The shaded, tree-lined neighborhoods in areas like Sleepy Hollow can experience higher humidity, which promotes mold on refrigerator gaskets and inside front-load washers. Regular gasket cleaning and leaving washer doors ajar between loads prevents odor and seal damage.',
+  ],
+
+  localExpertsText: 'About 35 minutes south from our Cotati shop via 101 and Sir Francis Drake.',
+  neighborhoods: ['Downtown', 'Sleepy Hollow', 'Seminary', 'San Anselmo Ave Corridor', 'Robson-Harrington Park area'],
+  midCtaHeading: 'Ready for Appliance Repair in San Anselmo?',
+  heroImage: '/images/MarinVan.jpg',
+  heroImageAlt: 'Kelly\'s Appliance service van in Marin County serving San Anselmo',
+}
+
 const novato: CityContent = {
   slug: 'novato',
   name: 'Novato',
@@ -787,6 +821,7 @@ export const cityContentMap: Record<string, CityContent> = {
   'bodega-bay': bodegaBay,
   'dillon-beach': dillonBeach,
   'san-rafael': sanRafael,
+  'san-anselmo': sanAnselmo,
   'novato': novato,
   'mill-valley': millValley,
   'sausalito': sausalito,

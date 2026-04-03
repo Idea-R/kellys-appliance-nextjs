@@ -23,12 +23,19 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.label,
-      item: `${baseUrl}${item.href}`,
-    })),
+    itemListElement: items.map((item, index) => {
+      const isLast = index === items.length - 1;
+      const entry: Record<string, unknown> = {
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.label,
+      };
+      // Per schema.org spec, the last item (current page) should NOT have an "item" URL
+      if (!isLast) {
+        entry.item = `${baseUrl}${item.href}`;
+      }
+      return entry;
+    }),
   };
 
   return (

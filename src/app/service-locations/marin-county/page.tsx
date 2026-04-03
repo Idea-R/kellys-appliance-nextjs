@@ -76,6 +76,7 @@ export default function MarinCountyPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
               { name: 'San Rafael', slug: 'san-rafael' },
+              { name: 'San Anselmo', slug: 'san-anselmo' },
               { name: 'Novato', slug: 'novato' },
               { name: 'Mill Valley', slug: 'mill-valley' },
               { name: 'Sausalito', slug: 'sausalito' },

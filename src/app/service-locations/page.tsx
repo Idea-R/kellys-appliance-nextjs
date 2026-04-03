@@ -30,6 +30,7 @@ const serviceLocations = [
   { name: 'Napa', slug: 'napa', highlights: ['Downtown', 'Browns Valley', 'Carneros'] },
   // Marin cities
   { name: 'San Rafael', slug: 'san-rafael', highlights: ['Downtown', 'Terra Linda'] },
+  { name: 'San Anselmo', slug: 'san-anselmo', highlights: ['Downtown', 'Sleepy Hollow'] },
   { name: 'Novato', slug: 'novato', highlights: ['Old Town', 'Hamilton'] },
   { name: 'Mill Valley', slug: 'mill-valley', highlights: ['Downtown', 'Tamalpais Valley'] },
   { name: 'Larkspur', slug: 'larkspur', highlights: ['Downtown', 'Greenbrae'] },

@@ -30,6 +30,7 @@ export const counties: Record<CountyKey, { name: string; slug: string; cities: C
     slug: 'marin-county',
     cities: [
       { name: 'San Rafael', slug: 'san-rafael' },
+      { name: 'San Anselmo', slug: 'san-anselmo' },
       { name: 'Novato', slug: 'novato' },
       { name: 'Mill Valley', slug: 'mill-valley' },
       { name: 'Sausalito', slug: 'sausalito' },
