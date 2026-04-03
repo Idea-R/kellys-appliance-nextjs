@@ -89,7 +89,7 @@ function Modal({ item, onClose }: { item: ModalItem; onClose: () => void }) {
       <button className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} aria-label="Close backdrop" />
       <div className="absolute inset-0 overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: 'touch' }}>
         <div className="flex min-h-full items-center justify-center p-4">
-          <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full" onClick={(e) => e.stopPropagation()}>
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full">
             <button
               onClick={onClose}
               className="absolute top-3 right-3 bg-black/50 text-white rounded-full p-1.5 hover:bg-black/70 transition-colors z-20"

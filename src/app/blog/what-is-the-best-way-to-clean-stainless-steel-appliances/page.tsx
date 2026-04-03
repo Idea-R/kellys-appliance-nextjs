@@ -102,10 +102,10 @@ export default function BlogPost() {
           </p>
 
           <ul className="list-disc pl-6 mb-8">
-            <li>stainless steel refrigerators</li>
-            <li>stainless steel dishwashers</li>
-            <li>stainless steel ovens</li>
-            <li>stainless steel washers & dryers</li>
+            <li>stainless steel <Link href="/services/refrigerator-repair" className="text-green-600 hover:text-green-700">refrigerators</Link></li>
+            <li>stainless steel <Link href="/services/dishwasher-repair" className="text-green-600 hover:text-green-700">dishwashers</Link></li>
+            <li>stainless steel <Link href="/services/oven-repair" className="text-green-600 hover:text-green-700">ovens</Link></li>
+            <li>stainless steel <Link href="/services/washer-dryer-repair" className="text-green-600 hover:text-green-700">washers</Link> & <Link href="/services/dryer-repair" className="text-green-600 hover:text-green-700">dryers</Link></li>
           </ul>
 
           <h2>1. Gather Your Supplies</h2>
@@ -161,7 +161,7 @@ export default function BlogPost() {
           </ul>
 
           <p>
-            With these simple steps, your stainless steel appliances will stay clean, shiny, and free from streaks.
+            With these simple steps, your stainless steel appliances will stay clean, shiny, and free from streaks. Regular cleaning is just one part of keeping your appliances in top shape. Check out our guide on <Link href="/blog/how-often-should-you-service-your-home-appliances" className="text-green-600 hover:text-green-700">how often to service your home appliances</Link> for a full maintenance schedule.
           </p>
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-6 mt-8">

@@ -17,6 +17,21 @@ export const metadata = {
   alternates: {
     canonical: '/service-locations/marin-county',
   },
+  openGraph: {
+    title: 'Appliance Repair Marin County',
+    description: 'Professional appliance repair services in Marin County, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+    url: 'https://kellysappliancerepair.com/service-locations/marin-county',
+    siteName: "Kelly's Appliance Center",
+    images: [
+      {
+        url: '/images/kelly-appliance-team.webp',
+        width: 1200,
+        height: 630,
+        alt: "Kelly's Appliance Center Team",
+      },
+    ],
+    type: 'website',
+  },
 };
 
 export default function MarinCountyPage() {

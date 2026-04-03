@@ -18,6 +18,15 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: 'Why Is There Frost or Moisture in My Refrigerator? Causes and Fixes',
+    slug: 'why-is-there-frost-or-moisture-in-my-refrigerator',
+    excerpt:
+      'Frost buildup, condensation, or water inside your fridge is not normal. Learn the most common causes, from worn door gaskets to a failed defrost system, and what you can do about each one.',
+    date: '2026-04-02',
+    readTime: '6 min read',
+    category: 'Refrigerator Repair',
+  },
+  {
     title: "APE Appliance Parts Is Closing. Kelly's Expands Parts Department",
     slug: 'ape-closing-kellys-parts-expansion',
     excerpt:

@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import { washerDryerFaqs } from '@/data/faqs';
+import RelatedServices from '@/components/RelatedServices';
 
 const companyInfo = getCompanyInfo();
 
@@ -192,6 +193,27 @@ export default function WasherDryerRepairPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices
+        services={[
+          {
+            title: 'Dryer Repair',
+            href: '/services/dryer-repair',
+            description: 'Dedicated dryer repair for heating issues, vent problems, and mechanical faults. Gas and electric dryers.',
+          },
+          {
+            title: 'Appliance Parts',
+            href: '/services/parts',
+            description: 'Need a replacement part? We source genuine OEM parts matched to your exact model.',
+          },
+          {
+            title: 'Virtual Service Call',
+            href: '/services/virtual',
+            description: 'Not sure what\'s wrong? A 15-minute video diagnostic can help identify the issue remotely.',
+          },
+        ]}
+      />
 
       {/* CTA Section */}
       <section className="py-16 bg-green-700 text-white">

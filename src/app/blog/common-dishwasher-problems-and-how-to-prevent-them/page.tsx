@@ -103,7 +103,7 @@ export default function DishwasherPostPage() {
             
             <h3 className="text-2xl font-bold text-gray-900 mb-4">3. Dishwasher Won&apos;t Start</h3>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              This could be due to a faulty door latch, control panel issues, or electrical problems. These typically require professional diagnosis and repair.
+              This could be due to a faulty door latch, control panel issues, or electrical problems. These typically require <Link href="/services/dishwasher-repair" className="text-green-600 hover:text-green-700">professional dishwasher repair</Link> to diagnose and fix safely.
             </p>
             
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Prevention Tips</h2>
@@ -116,7 +116,7 @@ export default function DishwasherPostPage() {
             
             <h2 className="text-3xl font-bold text-gray-900 mb-4">When to Call the Professionals</h2>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              If these basic maintenance steps don&apos;t solve your dishwasher problems, it&apos;s time to call Kelly&apos;s Appliance Center. Our experienced technicians can diagnose and repair more complex issues with pumps, motors, and control systems.
+              If these basic maintenance steps don&apos;t solve your dishwasher problems, it&apos;s time to call Kelly&apos;s Appliance Center. Our experienced technicians can diagnose and repair more complex issues with pumps, motors, and control systems. Visit our <Link href="/services/dishwasher-repair" className="text-green-600 hover:text-green-700">dishwasher repair service page</Link> to learn what we cover, or <a href="/schedule-prep" className="text-green-600 hover:text-green-700">request an appointment online</a>.
             </p>
           </div>
         </div>

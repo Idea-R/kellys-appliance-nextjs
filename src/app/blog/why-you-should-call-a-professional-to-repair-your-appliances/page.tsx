@@ -104,7 +104,7 @@ export default function BlogPost() {
 
           <h2>2. Proper Tools, Parts and Equipment</h2>
           <p>
-            Appliance repair often requires specialized tools that most people don't have in their homes. Professionals come equipped with the right parts and tools to handle complex repairs safely and efficiently, eliminating the need for you to invest in expensive equipment.
+            Appliance repair often requires specialized tools that most people don&apos;t have in their homes. Professionals come equipped with the right <Link href="/services/parts" className="text-green-600 hover:text-green-700">genuine manufacturer parts</Link> and tools to handle complex repairs safely and efficiently, eliminating the need for you to invest in expensive equipment.
           </p>
 
           <h2>3. Safety First</h2>
@@ -134,7 +134,7 @@ export default function BlogPost() {
 
           <h2>When to Call a Pro</h2>
           <p>
-            If your appliance isn't working as it should, resist the urge to grab a wrench. Instead, call a <Link href="/about-us" className="text-green-600 hover:text-green-700">professional repair technician</Link> for expert help. They'll ensure your appliance is back in top shape quickly and safely, so you can count on reliable performance going forward.
+            If your appliance isn&apos;t working as it should, resist the urge to grab a wrench. Instead, call a <Link href="/about-us" className="text-green-600 hover:text-green-700">professional repair technician</Link> for expert help. Whether it&apos;s a <Link href="/services/refrigerator-repair" className="text-green-600 hover:text-green-700">refrigerator that&apos;s not cooling</Link>, an <Link href="/services/oven-repair" className="text-green-600 hover:text-green-700">oven that won&apos;t heat</Link>, or a <Link href="/services/dryer-repair" className="text-green-600 hover:text-green-700">dryer that takes forever</Link>, our factory-authorized technicians will get it back in top shape quickly and safely.
           </p>
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-6 mt-8">

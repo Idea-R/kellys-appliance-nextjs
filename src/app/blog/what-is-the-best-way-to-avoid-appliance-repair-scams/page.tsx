@@ -148,7 +148,7 @@ export default function BlogPost() {
           </p>
 
           <p>
-            By following these tips, you can safeguard yourself against appliance repair scams and ensure your appliances are in good hands. When in doubt, rely on factory-authorized repair services like those offered by Kelly's Appliance to ensure professional, high-quality repairs every time.
+            By following these tips, you can safeguard yourself against appliance repair scams and ensure your appliances are in good hands. When in doubt, rely on factory-authorized repair services like those offered by Kelly&apos;s Appliance to ensure professional, high-quality repairs every time. Whether you need <Link href="/services/refrigerator-repair" className="text-green-600 hover:text-green-700">refrigerator repair</Link>, <Link href="/services/oven-repair" className="text-green-600 hover:text-green-700">oven repair</Link>, <Link href="/services/dishwasher-repair" className="text-green-600 hover:text-green-700">dishwasher repair</Link>, or <Link href="/services/washer-dryer-repair" className="text-green-600 hover:text-green-700">washer and dryer service</Link>, our Diamond Certified team has been trusted by Sonoma County homeowners for over 50 years.
           </p>
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-6 mt-8">

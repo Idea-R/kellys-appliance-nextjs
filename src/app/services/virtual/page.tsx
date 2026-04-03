@@ -3,6 +3,7 @@ import Layout from '@/components/Layout'
 import Link from 'next/link'
 import { getCompanyInfo } from '@/lib/content'
 import { VideoCameraIcon, PhoneIcon, CheckCircleIcon, XCircleIcon, ClockIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
+import RelatedServices from '@/components/RelatedServices'
 
 const companyInfo = getCompanyInfo()
 
@@ -207,6 +208,29 @@ export default function VirtualServicePage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices
+        services={[
+          {
+            title: 'Refrigerator Repair',
+            href: '/services/refrigerator-repair',
+            description: 'Expert refrigerator and ice maker repair. Cooling problems, temperature issues, and more.',
+          },
+          {
+            title: 'Dishwasher Repair',
+            href: '/services/dishwasher-repair',
+            description: 'Professional dishwasher repair for leaks, drainage issues, and faulty motors.',
+          },
+          {
+            title: 'Appliance Parts',
+            href: '/services/parts',
+            description: 'Need a replacement part? We source genuine OEM parts for every major brand.',
+          },
+        ]}
+        authorizedServiceLink={true}
+        modelNumberLink={false}
+      />
 
       {/* Scheduling CTA Section */}
       <section className="py-16 bg-green-700 text-white">

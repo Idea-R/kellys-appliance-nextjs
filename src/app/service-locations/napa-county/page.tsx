@@ -17,6 +17,21 @@ export const metadata = {
   alternates: {
     canonical: '/service-locations/napa-county',
   },
+  openGraph: {
+    title: 'Appliance Repair Napa County',
+    description: 'Professional appliance repair services in Napa County, CA. Factory authorized repairs for major brands. Call (707) 664-9702.',
+    url: 'https://kellysappliancerepair.com/service-locations/napa-county',
+    siteName: "Kelly's Appliance Center",
+    images: [
+      {
+        url: '/images/kelly-appliance-team.webp',
+        width: 1200,
+        height: 630,
+        alt: "Kelly's Appliance Center Team",
+      },
+    ],
+    type: 'website',
+  },
 };
 
 const napaCities: { name: string; slug: string }[] = [

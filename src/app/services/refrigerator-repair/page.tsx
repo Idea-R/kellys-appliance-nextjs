@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import { refrigeratorFaqs } from '@/data/faqs';
+import RelatedServices from '@/components/RelatedServices';
 
 const companyInfo = getCompanyInfo();
 
@@ -287,6 +288,27 @@ export default function RefrigeratorRepairPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices
+        services={[
+          {
+            title: 'Dishwasher Repair',
+            href: '/services/dishwasher-repair',
+            description: 'Expert dishwasher repair for leaks, drainage issues, and faulty motors. Keep your kitchen running smoothly.',
+          },
+          {
+            title: 'Oven & Range Repair',
+            href: '/services/oven-repair',
+            description: 'Professional oven, range, cooktop, and vent hood repair. Temperature issues, heating elements, and more.',
+          },
+          {
+            title: 'Appliance Parts',
+            href: '/services/parts',
+            description: 'Need a replacement part? We source genuine OEM parts for every major brand.',
+          },
+        ]}
+      />
 
       {/* CTA Section */}
       <section className="py-16 bg-green-700 text-white">

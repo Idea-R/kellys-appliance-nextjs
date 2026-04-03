@@ -19,6 +19,21 @@ export const metadata = {
   title: city.metaTitle,
   description: city.metaDescription,
   alternates: { canonical: `/service-locations/${city.slug}` },
+  openGraph: {
+    title: city.metaTitle,
+    description: city.metaDescription,
+    url: `https://kellysappliancerepair.com/service-locations/${city.slug}`,
+    siteName: "Kelly's Appliance Center",
+    images: [
+      {
+        url: '/images/kelly-appliance-team.webp',
+        width: 1200,
+        height: 630,
+        alt: "Kelly's Appliance Center Team",
+      },
+    ],
+    type: 'website',
+  },
 }
 
 export default function CorteMaderaPage() {

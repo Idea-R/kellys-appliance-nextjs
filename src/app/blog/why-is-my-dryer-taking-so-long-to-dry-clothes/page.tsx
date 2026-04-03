@@ -139,7 +139,7 @@ export default function DryerPostPage() {
             
             <h2 className="text-3xl font-bold text-gray-900 mb-4">4. Worn-Out Heating Element</h2>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              If your dryer runs but doesn&apos;t produce enough heat, a faulty heating element could be the culprit. This is more common in electric dryers, but gas models can experience burner or igniter issues as well.
+              If your dryer runs but doesn&apos;t produce enough heat, a faulty heating element could be the culprit. This is more common in electric dryers, but gas models can experience burner or igniter issues as well. A worn-out heating element is one of the most frequent issues our <Link href="/services/dryer-repair" className="text-green-600 hover:text-green-700">dryer repair</Link> technicians encounter.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               <strong>Solution:</strong><br />
@@ -198,7 +198,7 @@ export default function DryerPostPage() {
               Long drying times are more than just a nuisance. They&apos;re a signal that something isn&apos;t working right. Whether it&apos;s a simple maintenance issue like a clogged lint trap or a more complex problem like a failing heating element, addressing the cause promptly can save you time, energy, and money.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              If you&apos;ve tried the tips above and your dryer is still underperforming, it&apos;s time to <a href="/schedule-prep" className="text-green-600 hover:text-green-700">book a professional appliance technician</a>. A fast diagnosis and repair can get your laundry routine back on track in no time.
+              If you&apos;ve tried the tips above and your dryer is still underperforming, it&apos;s time to call in the experts. Our <Link href="/services/dryer-repair" className="text-green-600 hover:text-green-700">professional dryer repair team</Link> can diagnose and fix the problem, often in a single visit. Kelly&apos;s Appliance Center has been serving Sonoma, Marin, and Napa counties since 1975, and our factory-authorized technicians carry the genuine <Link href="/services/parts" className="text-green-600 hover:text-green-700">replacement parts</Link> needed to get your laundry routine back on track.
             </p>
           </div>
         </div>

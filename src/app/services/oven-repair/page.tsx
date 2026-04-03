@@ -9,6 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import { ovenFaqs } from '@/data/faqs';
+import RelatedServices from '@/components/RelatedServices';
 
 const companyInfo = getCompanyInfo();
 
@@ -234,6 +235,27 @@ export default function OvenRepairPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices
+        services={[
+          {
+            title: 'Refrigerator Repair',
+            href: '/services/refrigerator-repair',
+            description: 'Expert refrigerator and ice maker repair. Cooling problems, temperature issues, and more.',
+          },
+          {
+            title: 'Dishwasher Repair',
+            href: '/services/dishwasher-repair',
+            description: 'Professional dishwasher repair for leaks, drainage issues, and faulty motors.',
+          },
+          {
+            title: 'Appliance Parts',
+            href: '/services/parts',
+            description: 'Need a replacement part? We source genuine OEM parts for every major brand.',
+          },
+        ]}
+      />
 
       {/* CTA Section */}
       <section className="py-16 bg-green-700 text-white">

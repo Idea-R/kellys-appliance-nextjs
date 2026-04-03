@@ -13,6 +13,7 @@ import {
   CheckIcon,
   VideoCameraIcon,
 } from '@heroicons/react/24/outline'
+import RelatedServices from '@/components/RelatedServices'
 
 export const metadata = {
   title: "Appliance Parts | Kelly's Appliance Center, Cotati CA",
@@ -335,6 +336,29 @@ export default function PartsPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices
+        services={[
+          {
+            title: 'Refrigerator Repair',
+            href: '/services/refrigerator-repair',
+            description: 'Expert refrigerator and ice maker repair. Cooling problems, temperature issues, and more.',
+          },
+          {
+            title: 'Oven & Range Repair',
+            href: '/services/oven-repair',
+            description: 'Professional oven, range, cooktop, and vent hood repair for all major brands.',
+          },
+          {
+            title: 'Washer & Dryer Repair',
+            href: '/services/washer-dryer-repair',
+            description: 'Complete washer and dryer repair services for drum problems, electrical faults, and leaks.',
+          },
+        ]}
+        authorizedServiceLink={true}
+        modelNumberLink={false}
+      />
 
       {/* Final CTA */}
       <section className="py-16 bg-green-700 text-white">
