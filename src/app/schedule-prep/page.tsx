@@ -80,7 +80,7 @@ export default function SchedulePrepPage() {
                   <PhoneIcon className="h-5 w-5 inline-block mr-2 -mt-0.5" />
                   (707) 664-9702
                 </a>
-                <p className="text-xs text-gray-500 mt-2">Mon&ndash;Fri 8am&ndash;5pm</p>
+                <p className="text-xs text-gray-500 mt-2">Mon&ndash;Fri 8:30am&ndash;4:30pm</p>
               </div>
 
               {/* Desktop: full call card */}
@@ -97,7 +97,7 @@ export default function SchedulePrepPage() {
                 >
                   Call (707) 664-9702
                 </a>
-                <p className="text-xs text-gray-500 mt-2">Mon&ndash;Fri 8am&ndash;5pm &bull; Emergency service available</p>
+                <p className="text-xs text-gray-500 mt-2">Mon&ndash;Fri 8:30am&ndash;4:30pm &bull; Emergency service available</p>
               </div>
 
               {/* Text option */}
