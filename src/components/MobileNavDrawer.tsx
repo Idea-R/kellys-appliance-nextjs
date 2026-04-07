@@ -53,21 +53,27 @@ export default function MobileNavDrawer() {
     dl?.push({ event: open ? 'menu_open' : 'menu_close', menu: 'mobile_drawer' })
   }, [open])
 
-  // Hide on the QR landing page to keep it distraction-free
-  if (pathname === '/go') return null
+  // Hide the floating edge tab — the hamburger menu in the header serves the same purpose,
+  // and this tab overlaps content on mobile (blocks form fields, covers hero text).
+  // Keep the drawer itself functional for programmatic opens, just remove the edge trigger.
+  const hideEdgeTab = true
 
   return (
     <>
-      {/* Edge tab trigger - Top left, quarter way down */}
-      <button
-        aria-label="Open navigation"
-        aria-controls="mobile-drawer"
-        aria-expanded={open}
-        onClick={() => setOpen(true)}
-        className="fixed left-0 top-[25vh] lg:hidden z-[55] bg-green-700 text-white px-4 py-3 rounded-r-lg shadow-xl font-semibold border-2 border-white/20 hover:bg-green-800 transition-colors"
-      >
-        Menu
-      </button>
+      {/* Edge tab trigger — hidden because the hamburger menu in the header
+          already provides the same function, and this tab overlaps content on mobile
+          (blocks form fields on /schedule-prep, covers hero text on /services, etc.) */}
+      {!hideEdgeTab && (
+        <button
+          aria-label="Open navigation"
+          aria-controls="mobile-drawer"
+          aria-expanded={open}
+          onClick={() => setOpen(true)}
+          className="fixed left-0 top-[25vh] lg:hidden z-[55] bg-green-700 text-white px-4 py-3 rounded-r-lg shadow-xl font-semibold border-2 border-white/20 hover:bg-green-800 transition-colors"
+        >
+          Menu
+        </button>
+      )}
 
       {/* Overlay */}
       {open && (
