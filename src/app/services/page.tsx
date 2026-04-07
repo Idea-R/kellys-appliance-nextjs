@@ -82,46 +82,62 @@ export default function ServicesPage() {
   return (
     <Layout>
       <Breadcrumbs items={breadcrumbs} />
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-green-800 via-green-700 to-green-600 text-white py-16">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+      {/* Hero Section — with background image */}
+      <section className="relative text-white py-16 lg:py-20 overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/techs-vans-2-23-scaled.jpg"
+          alt="Kelly's Appliance Center service team and fleet"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        {/* Gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-800/85 to-green-700/80" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-              Our Appliance Repair Services
+          <div className="max-w-3xl">
+            <p className="text-green-300 font-semibold text-sm uppercase tracking-wider mb-2">Serving the North Bay Since 1975</p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+              Appliance Repair You Can<br className="hidden sm:block" /> Actually Count On
             </h1>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Professional appliance repair services for all major home appliances. Factory authorized repairs with genuine parts and expert technicians since 1975.
+            <p className="text-lg text-white/90 mb-6 max-w-2xl">
+              We fix refrigerators, ovens, dishwashers, washers, and dryers for families across Sonoma, Marin, and Napa counties. Factory authorized. Genuine parts. No guesswork.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
-              {guarantees.map((guarantee, index) => (
-                <div key={index} className="flex items-center justify-center">
-                  <CheckCircleIcon className="h-5 w-5 text-green-400 mr-2 flex-shrink-0" />
-                  <span className="text-sm lg:text-base">{guarantee}</span>
-                </div>
-              ))}
+            {/* Trust pills — more visual than checkmarks */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              <span className="bg-white/15 backdrop-blur-sm border border-white/20 text-white px-3 py-1.5 rounded-full text-sm font-medium">
+                ✓ 90-Day Guarantee
+              </span>
+              <span className="bg-white/15 backdrop-blur-sm border border-white/20 text-white px-3 py-1.5 rounded-full text-sm font-medium">
+                ✓ Factory Authorized
+              </span>
+              <span className="bg-white/15 backdrop-blur-sm border border-white/20 text-white px-3 py-1.5 rounded-full text-sm font-medium">
+                ★ 4.8 Stars, 400+ Reviews
+              </span>
+              <span className="bg-white/15 backdrop-blur-sm border border-white/20 text-white px-3 py-1.5 rounded-full text-sm font-medium">
+                ✓ 50+ Years in Business
+              </span>
             </div>
-            <div className="space-y-3">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href={`tel:${companyInfo.phone}`}
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill"
-                >
-                  <PhoneIcon className="h-6 w-6 mr-2" />
-                  Call {companyInfo.phone}
-                </a>
-                <a
-                  href={BOOKING_CONFIG.BOOKING_URL}
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-xl font-semibold btn-fill alt border-2 border-white"
-                >
-                  <CalendarIcon className="h-6 w-6 mr-2" />
-                  Request Appointment Online
-                </a>
-              </div>
-              <p className="text-center text-white/90 text-sm px-4">
-                {BOOKING_CONFIG.DISCLAIMERS.MEDIUM}
-              </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={`tel:${companyInfo.phone}`}
+                className="inline-flex items-center justify-center bg-white text-green-800 px-7 py-3.5 rounded-lg text-lg font-bold hover:bg-green-50 transition-colors shadow-lg"
+              >
+                <PhoneIcon className="h-5 w-5 mr-2" />
+                Call {companyInfo.phone}
+              </a>
+              <a
+                href={BOOKING_CONFIG.BOOKING_URL}
+                className="inline-flex items-center justify-center bg-green-600 text-white px-7 py-3.5 rounded-lg text-lg font-bold hover:bg-green-500 transition-colors border-2 border-white/20 shadow-lg"
+              >
+                <CalendarIcon className="h-5 w-5 mr-2" />
+                Book Online
+              </a>
             </div>
+            <p className="text-white/70 text-xs mt-3">
+              {BOOKING_CONFIG.DISCLAIMERS.MEDIUM}
+            </p>
           </div>
         </div>
       </section>
