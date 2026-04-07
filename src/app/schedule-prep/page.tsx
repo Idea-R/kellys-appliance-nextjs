@@ -186,30 +186,24 @@ export default function SchedulePrepPage() {
       </section>
 
       {/* Why Kelly's — Conversion Support Section */}
-      <section className="py-8 bg-white border-t">
+      <section className="py-10 bg-white border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-bold text-gray-900 text-center mb-6">Why 400+ Families Choose Kelly&apos;s</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                <ClockIcon className="h-6 w-6 text-green-700" />
-              </div>
-              <h3 className="font-bold text-gray-900 mb-1">50+ Years, Same Family</h3>
-              <p className="text-gray-600 text-sm">We&apos;ve been fixing appliances in Sonoma County since 1975. Three generations of the Kelly family have worked on your neighbors&apos; fridges, ovens, and washers.</p>
+          <h2 className="text-xl font-bold text-gray-900 text-center mb-8">Why 400+ Families Choose Kelly&apos;s</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div className="relative bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <div className="text-4xl font-extrabold text-green-600 mb-2">50+</div>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">Years, Same Family</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">We&apos;ve been fixing appliances in Sonoma County since 1975. Three generations of the Kelly family have worked on your neighbors&apos; fridges, ovens, and washers.</p>
             </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                <ShieldCheckIcon className="h-6 w-6 text-green-700" />
-              </div>
-              <h3 className="font-bold text-gray-900 mb-1">90-Day Money Back Guarantee</h3>
-              <p className="text-gray-600 text-sm">If the same problem comes back within 90 days, we come back and fix it. No questions, no runaround, no extra charge.</p>
+            <div className="relative bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <div className="text-4xl font-extrabold text-green-600 mb-2">90</div>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">Day Money Back Guarantee</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">If the same problem comes back within 90 days, we come back and fix it. No questions, no runaround, no extra charge.</p>
             </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                <CheckBadgeIcon className="h-6 w-6 text-green-700" />
-              </div>
-              <h3 className="font-bold text-gray-900 mb-1">Factory Authorized</h3>
-              <p className="text-gray-600 text-sm">We&apos;re authorized to work on Whirlpool, KitchenAid, Maytag, GE, Viking, Dacor, and more. We use genuine OEM parts, not knockoffs.</p>
+            <div className="relative bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <div className="text-4xl font-extrabold text-green-600 mb-2">18+</div>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">Brands We&apos;re Authorized For</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Whirlpool, KitchenAid, Maytag, GE, Viking, Dacor, and more. We use genuine OEM parts, not knockoffs. Factory trained technicians.</p>
             </div>
           </div>
         </div>
