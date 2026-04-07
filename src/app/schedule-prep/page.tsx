@@ -184,6 +184,71 @@ export default function SchedulePrepPage() {
           </div>
         </div>
       </section>
+
+      {/* Why Kelly's — Conversion Support Section */}
+      <section className="py-8 bg-white border-t">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-bold text-gray-900 text-center mb-6">Why 400+ Families Choose Kelly&apos;s</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
+                <ClockIcon className="h-6 w-6 text-green-700" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-1">50+ Years, Same Family</h3>
+              <p className="text-gray-600 text-sm">We&apos;ve been fixing appliances in Sonoma County since 1975. Three generations of the Kelly family have worked on your neighbors&apos; fridges, ovens, and washers.</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
+                <ShieldCheckIcon className="h-6 w-6 text-green-700" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-1">90-Day Money Back Guarantee</h3>
+              <p className="text-gray-600 text-sm">If the same problem comes back within 90 days, we come back and fix it. No questions, no runaround, no extra charge.</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
+                <CheckBadgeIcon className="h-6 w-6 text-green-700" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-1">Factory Authorized</h3>
+              <p className="text-gray-600 text-sm">We&apos;re authorized to work on Whirlpool, KitchenAid, Maytag, GE, Viking, Dacor, and more. We use genuine OEM parts, not knockoffs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brands Strip */}
+      <section className="py-6 bg-gray-50 border-t">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">We Service All Major Brands</p>
+          <p className="text-sm text-gray-500">
+            Whirlpool &bull; KitchenAid &bull; Maytag &bull; GE &bull; Samsung &bull; LG &bull; Viking &bull; Dacor &bull; Sub-Zero &bull; Bosch &bull; Miele &bull; Thermador &bull; Frigidaire &bull; Kenmore &bull; and more
+          </p>
+        </div>
+      </section>
+
+      {/* Service Area Reminder + Final CTA */}
+      <section className="py-8 bg-green-700 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-xl font-bold mb-2">Serving Sonoma, Marin &amp; Napa Counties</h2>
+          <p className="text-green-100 text-sm mb-4">
+            Santa Rosa &bull; Petaluma &bull; Rohnert Park &bull; Novato &bull; San Rafael &bull; Napa &bull; Sebastopol &bull; Windsor &bull; Healdsburg &bull; Mill Valley &bull; and 15+ more cities
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="tel:7076649702"
+              className="inline-flex items-center justify-center bg-white text-green-800 px-6 py-3 rounded-lg font-bold hover:bg-green-50 transition-colors shadow-lg"
+            >
+              <PhoneIcon className="h-5 w-5 mr-2" />
+              Call (707) 664-9702
+            </a>
+            <Link
+              href="/service-locations"
+              className="inline-flex items-center justify-center border-2 border-white/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              View All Service Areas
+            </Link>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }
