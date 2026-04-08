@@ -19,6 +19,7 @@ export default function AppointmentForm() {
   const [photos, setPhotos] = useState<File[]>([])
   const [previews, setPreviews] = useState<string[]>([])
   const [dragOver, setDragOver] = useState(false)
+  const [isPropertyManager, setIsPropertyManager] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   /* ---- photo helpers ---- */
@@ -176,6 +177,49 @@ export default function AppointmentForm() {
         </label>
         <input id="appt-email" name="email" type="email" autoComplete="email" className={inputClass} placeholder="you@example.com" />
       </div>
+
+      {/* Owner/PM Toggle */}
+      <div className="flex items-center gap-3 py-1">
+        <button
+          type="button"
+          role="switch"
+          aria-checked={isPropertyManager}
+          aria-label="I am an owner or property manager booking for a tenant"
+          onClick={() => setIsPropertyManager(!isPropertyManager)}
+          className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-green-300 ${
+            isPropertyManager ? 'bg-green-600' : 'bg-gray-200'
+          }`}
+        >
+          <span className={`inline-block h-4 w-4 transform rounded-full bg-white border border-gray-300 transition-transform ${
+            isPropertyManager ? 'translate-x-4' : 'translate-x-0.5'
+          }`} />
+        </button>
+        <span className="text-sm text-gray-600">
+          I&apos;m an owner or property manager booking for a tenant
+        </span>
+      </div>
+
+      {/* Tenant Info — revealed when PM toggle is on */}
+      {isPropertyManager && (
+        <div className="bg-green-50 border border-green-200 rounded-lg p-4 space-y-3">
+          <p className="text-xs font-semibold text-green-800 uppercase tracking-wide">Tenant / On-Site Contact</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label htmlFor="appt-tenant-name" className="block text-sm text-gray-700 mb-1">Tenant Name</label>
+              <input id="appt-tenant-name" name="tenantName" type="text" className={inputClass} placeholder="Tenant or on-site contact" />
+            </div>
+            <div>
+              <label htmlFor="appt-tenant-phone" className="block text-sm text-gray-700 mb-1">Tenant Phone</label>
+              <input id="appt-tenant-phone" name="tenantPhone" type="tel" className={inputClass} placeholder="(707) 555-0000" />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="appt-pm-notes" className="block text-sm text-gray-700 mb-1">Notes for our team</label>
+            <input id="appt-pm-notes" name="pmNotes" type="text" className={inputClass} placeholder="e.g. Tenant available after 2pm, gate code 1234" />
+          </div>
+          <input type="hidden" name="submittedBy" value="property_manager" />
+        </div>
+      )}
 
       {/* Appliance & Brand */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
