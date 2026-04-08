@@ -367,9 +367,6 @@ export default function AppointmentForm() {
         </div>
       )}
 
-      <p className="text-xs text-gray-500 text-center">
-        We&apos;ll call you within 4 hours (business hours) to confirm your appointment.
-      </p>
     </form>
   )
 }
