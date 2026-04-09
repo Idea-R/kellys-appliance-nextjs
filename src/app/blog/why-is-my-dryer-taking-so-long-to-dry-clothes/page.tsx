@@ -7,14 +7,14 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 export const metadata = {
-  title: 'Why Is My Dryer Taking So Long to Dry Clothes?',
-  description: 'Learn the top causes and solutions for slow-drying dryers from our expert technicians. Common issues include clogged lint traps and blocked vents.',
+  title: 'Why Is My Dryer Taking So Long? 7 Causes and Easy Fixes',
+  description: 'Your dryer should not take 2+ hours per load. Here are the 7 most common reasons it runs too long and which ones you can fix yourself vs. when to call a pro.',
   alternates: {
     canonical: '/blog/why-is-my-dryer-taking-so-long-to-dry-clothes',
   },
   openGraph: {
-    title: 'Why Is My Dryer Taking So Long to Dry Clothes?',
-    description: 'Top causes and solutions for slow-drying dryers: clogged lint traps, blocked vents, and more.',
+    title: 'Why Is My Dryer Taking So Long? 7 Causes and Easy Fixes',
+    description: 'Your dryer should not take 2+ hours. 7 common causes and which you can fix yourself vs. when to call a pro.',
     url: 'https://kellysappliancerepair.com/blog/why-is-my-dryer-taking-so-long-to-dry-clothes',
     type: 'article' as const,
   },

@@ -9,8 +9,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata = {
-  title: 'Appliance Repair Service Areas',
-  description: 'Appliance repair in Sonoma, Marin, and Napa counties. We serve Santa Rosa, Petaluma, Novato, Napa, San Rafael, and 20+ Bay Area cities. Call (707) 664-9702.',
+  title: 'Appliance Repair Near You | 22+ Cities We Serve',
+  description: 'Appliance repair across Sonoma, Marin, and Napa counties. Santa Rosa, Petaluma, Novato, Napa, San Rafael, and 17 more cities. Family-owned since 1975, 90-day guarantee.',
   alternates: {
     canonical: '/service-locations',
   },

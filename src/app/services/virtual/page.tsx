@@ -8,8 +8,8 @@ import RelatedServices from '@/components/RelatedServices'
 const companyInfo = getCompanyInfo()
 
 export const metadata = {
-  title: "Virtual Service Call",
-  description: '15-minute video diagnostic with a Kelly\'s technician for $40. Identify symptoms and possible causes before scheduling an in-home visit.',
+  title: "Virtual Appliance Diagnosis | $40 Video Call | Kelly's",
+  description: 'Skip the guesswork. A Kelly\'s technician will diagnose your appliance over a 15-minute video call for just $40. Know exactly what\'s wrong before booking a visit.',
   alternates: {
     canonical: '/services/virtual',
   },

@@ -9,9 +9,9 @@ import { appliances } from './modelNumberData'
 const companyInfo = getCompanyInfo()
 
 export const metadata: Metadata = {
-  title: 'How to Find Appliance Model Numbers | Complete Guide',
+  title: 'Where Is My Appliance Model Number? Quick Photo Guide',
   description:
-    "Find your appliance model number fast with our step-by-step guide. Covers refrigerators, ovens, washers, dryers, dishwashers, microwaves, and cooktops. Call (707) 664-9702 for help.",
+    "Find your model number in 30 seconds. Photo guides for every appliance type — refrigerators, washers, dryers, ovens, dishwashers, and more. Every major brand covered.",
   alternates: {
     canonical: '/resources/where-is-my-model-number',
   },

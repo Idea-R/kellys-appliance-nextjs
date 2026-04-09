@@ -53,9 +53,9 @@ export interface CityContent {
 const santaRosa: CityContent = {
   slug: 'santa-rosa',
   name: 'Santa Rosa',
-  metaTitle: 'Appliance Repair Santa Rosa - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Santa Rosa | Diamond Certified | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in Santa Rosa, CA. Serving Fountaingrove, Rincon Valley, Bennett Valley, and Roseland since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Santa Rosa families have called Kelly\'s first since 1975. Refrigerator, washer, dryer, oven, and dishwasher repair across Fountaingrove, Rincon Valley, Bennett Valley, and Roseland. 90-day guarantee.',
   heroSubtitle:
     'Factory-authorized appliance repair for Santa Rosa homes. Serving neighborhoods from Fountaingrove to Roseland with a 90-day money-back guarantee.',
 
@@ -87,9 +87,9 @@ const santaRosa: CityContent = {
 const petaluma: CityContent = {
   slug: 'petaluma',
   name: 'Petaluma',
-  metaTitle: 'Appliance Repair Petaluma - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Petaluma | Trusted Since 1975 | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in Petaluma, CA. Serving East Side, West Side, and downtown homes since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Petaluma\'s trusted appliance repair for 50+ years. East Side, West Side, and downtown. Diamond Certified technicians, 90-day guarantee on parts and labor. Book online today.',
   heroSubtitle:
     'Trusted appliance repair for Petaluma homes since 1975. Factory-authorized service with a 90-day money-back guarantee.',
 
@@ -121,9 +121,9 @@ const petaluma: CityContent = {
 const rohnertPark: CityContent = {
   slug: 'rohnert-park',
   name: 'Rohnert Park',
-  metaTitle: 'Appliance Repair Rohnert Park - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Rohnert Park | Your Neighbor in Cotati | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in Rohnert Park, CA. Serving SSU-area homes and neighborhoods since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Just down the road in Cotati. Kelly\'s has been the neighborhood appliance repair shop for Rohnert Park since 1975. 90-day guarantee, all major brands. Book online.',
   heroSubtitle:
     'Professional appliance repair in Rohnert Park. Factory-authorized service, genuine parts, and a 90-day money-back guarantee.',
 
@@ -155,9 +155,9 @@ const rohnertPark: CityContent = {
 const cotati: CityContent = {
   slug: 'cotati',
   name: 'Cotati',
-  metaTitle: 'Appliance Repair Cotati - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Cotati | Our Home Base | Kelly\'s',
   metaDescription:
-    'Appliance repair in Cotati, CA, right from our home base. Factory-authorized, Diamond Certified service since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'This is where Kelly\'s lives. Appliance repair right from our Cotati headquarters since 1975. Diamond Certified, 90-day guarantee on parts and labor. Call (707) 664-9702.',
   heroSubtitle:
     'Appliance repair from your neighborhood shop. Our headquarters is right here in Cotati, so we are always close by.',
 
@@ -191,7 +191,7 @@ const sebastopol: CityContent = {
   name: 'Sebastopol',
   metaTitle: 'Appliance Repair Sebastopol - Refrigerator, Oven, Washer & Dryer Service',
   metaDescription:
-    'Factory-authorized appliance repair in Sebastopol, CA. Serving Graton, The Barlow area, and west county homes since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Factory-authorized appliance repair in Sebastopol, CA. Serving Graton, The Barlow area, and west county homes since 1975. Diamond Certified, 90-day guarantee. Call (707) 664-9702.',
   heroSubtitle:
     'Factory-authorized appliance repair for Sebastopol and west Sonoma County. 90-day guarantee on every repair.',
 
@@ -222,9 +222,9 @@ const sebastopol: CityContent = {
 const sonoma: CityContent = {
   slug: 'sonoma',
   name: 'Sonoma',
-  metaTitle: 'Appliance Repair Sonoma - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Sonoma | Family-Owned Since 1975 | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in Sonoma, CA. Serving the Plaza, Springs, and vineyard homes since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Sonoma\'s go-to for appliance repair. Plaza, Springs, and vineyard homes served by the same family-owned team for 50+ years. Diamond Certified, 90-day guarantee on parts and labor.',
   heroSubtitle:
     'Professional appliance repair for Sonoma homes and vacation properties. Factory-authorized with a 90-day money-back guarantee.',
 
@@ -256,9 +256,9 @@ const sonoma: CityContent = {
 const windsor: CityContent = {
   slug: 'windsor',
   name: 'Windsor',
-  metaTitle: 'Appliance Repair Windsor - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Windsor CA | 90-Day Guarantee | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in Windsor, CA. Serving Town Green area and surrounding neighborhoods since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Windsor homeowners have trusted Kelly\'s with their appliances since 1975. Refrigerator, washer, dryer, and oven repair. Town Green area and all surrounding neighborhoods. Book online today.',
   heroSubtitle:
     'Factory-authorized appliance repair for Windsor homes. 90-day money-back guarantee on every repair.',
 
@@ -292,7 +292,7 @@ const healdsburg: CityContent = {
   name: 'Healdsburg',
   metaTitle: 'Appliance Repair Healdsburg - Refrigerator, Oven, Washer & Dryer Service',
   metaDescription:
-    'Factory-authorized appliance repair in Healdsburg, CA. Serving Plaza area, Dry Creek, and Alexander Valley homes since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Factory-authorized appliance repair in Healdsburg, CA. Serving Plaza area, Dry Creek, and Alexander Valley homes since 1975. Diamond Certified, 90-day guarantee. Call (707) 664-9702.',
   heroSubtitle:
     'Professional appliance repair for Healdsburg homes and estates. Factory-authorized service with a 90-day guarantee.',
 
@@ -326,7 +326,7 @@ const forestville: CityContent = {
   name: 'Forestville',
   metaTitle: 'Appliance Repair Forestville - Refrigerator, Oven, Washer & Dryer Service',
   metaDescription:
-    'Factory-authorized appliance repair in Forestville, CA. Serving Russian River area homes since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Factory-authorized appliance repair in Forestville, CA. Serving Russian River area homes since 1975. Diamond Certified, 90-day guarantee. Call (707) 664-9702.',
   heroSubtitle:
     'Professional appliance repair for Forestville and the Russian River corridor. Factory-authorized with a 90-day guarantee.',
 
@@ -394,7 +394,7 @@ const glenEllen: CityContent = {
   name: 'Glen Ellen',
   metaTitle: 'Appliance Repair Glen Ellen - Refrigerator, Oven, Washer & Dryer Service',
   metaDescription:
-    'Factory-authorized appliance repair in Glen Ellen, CA. Serving Sonoma Valley homes and estates since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Factory-authorized appliance repair in Glen Ellen, CA. Serving Sonoma Valley homes and estates since 1975. Diamond Certified, 90-day guarantee. Call (707) 664-9702.',
   heroSubtitle:
     'Professional appliance repair for Glen Ellen homes and valley estates. Factory-authorized with a 90-day guarantee.',
 
@@ -496,9 +496,9 @@ const dillonBeach: CityContent = {
 const sanRafael: CityContent = {
   slug: 'san-rafael',
   name: 'San Rafael',
-  metaTitle: 'Appliance Repair San Rafael - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair San Rafael | Marin County | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in San Rafael, CA. Serving downtown, Terra Linda, Sun Valley, and Dominican area since 1975. 90-day guarantee. Call (707) 664-9702.',
+    'Marin County\'s trusted appliance repair team. Serving San Rafael, Terra Linda, Sun Valley, and the Dominican area since 1975. Diamond Certified, 90-day guarantee on every repair.',
   heroSubtitle:
     'Professional appliance repair for San Rafael homes. Factory-authorized service with a 90-day money-back guarantee.',
 
@@ -564,9 +564,9 @@ const sanAnselmo: CityContent = {
 const novato: CityContent = {
   slug: 'novato',
   name: 'Novato',
-  metaTitle: 'Appliance Repair Novato - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Novato | Diamond Certified | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in Novato, CA. Serving downtown, Hamilton, and Bel Marin Keys since 1975. Same-day scheduling, 90-day guarantee. Call (707) 664-9702.',
+    'Novato\'s highest-rated appliance repair team. Downtown, Hamilton, Bel Marin Keys, and all surrounding areas. Family-owned since 1975 with a 90-day money-back guarantee.',
   heroSubtitle:
     'Factory-authorized appliance repair for Novato homes. 90-day money-back guarantee on every repair.',
 
@@ -598,9 +598,9 @@ const novato: CityContent = {
 const millValley: CityContent = {
   slug: 'mill-valley',
   name: 'Mill Valley',
-  metaTitle: 'Appliance Repair Mill Valley - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Mill Valley | Marin County | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in Mill Valley, CA. Serving Tam Valley, Strawberry, and downtown homes since 1975. 90-day guarantee. Call (707) 664-9702.',
+    'Mill Valley families trust Kelly\'s for every appliance repair. Tam Valley, Strawberry, and downtown. Diamond Certified, family-owned since 1975, 90-day guarantee.',
   heroSubtitle:
     'Professional appliance repair for Mill Valley homes. Factory-authorized with a 90-day money-back guarantee.',
 
@@ -700,9 +700,9 @@ const tiburon: CityContent = {
 const corteMadera: CityContent = {
   slug: 'corte-madera',
   name: 'Corte Madera',
-  metaTitle: 'Appliance Repair Corte Madera - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Corte Madera | Diamond Certified | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in Corte Madera, CA. Serving The Village area, Christmas Tree Hill, and surrounding neighborhoods since 1975. 90-day guarantee. Call (707) 664-9702.',
+    'Trusted by Corte Madera families for 50+ years. Refrigerator, washer, dryer, and oven repair with a 90-day guarantee. The Village, Christmas Tree Hill, and all nearby neighborhoods.',
   heroSubtitle:
     'Factory-authorized appliance repair for Corte Madera homes. 90-day money-back guarantee on every repair.',
 
@@ -771,9 +771,9 @@ const larkspur: CityContent = {
 const napa: CityContent = {
   slug: 'napa',
   name: 'Napa',
-  metaTitle: 'Appliance Repair Napa - Refrigerator, Oven, Washer & Dryer Service',
+  metaTitle: 'Appliance Repair Napa | Trusted Since 1975 | Kelly\'s',
   metaDescription:
-    'Factory-authorized appliance repair in Napa, CA. Serving downtown, Browns Valley, Silverado, and vineyard homes since 1975. 90-day guarantee. Call (707) 664-9702.',
+    'Napa\'s trusted appliance repair since 1975. Downtown, Browns Valley, Silverado, and vineyard homes. Diamond Certified technicians, genuine parts, 90-day money-back guarantee.',
   heroSubtitle:
     'Professional appliance repair for Napa homes and vineyard properties. Factory-authorized with a 90-day money-back guarantee.',
 

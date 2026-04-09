@@ -9,8 +9,8 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Contact - Request Appointment',
-  description: 'Contact Kelly\'s Appliance Center for professional appliance repair services. Call (707) 664-9702 or visit us in Cotati, CA. Serving the Bay Area since 1975.',
+  title: 'Book Appliance Repair | (707) 664-9702 | Kelly\'s',
+  description: 'Schedule your repair online or call (707) 664-9702. Appointments available Mon-Fri 8:30-4:30. Serving Sonoma, Marin, and Napa counties since 1975.',
   alternates: {
     canonical: '/contact',
   },

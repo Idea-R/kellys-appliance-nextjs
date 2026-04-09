@@ -12,8 +12,8 @@ import { getCompanyInfo } from '@/lib/content';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Appliance Repair Marin County',
-  description: 'Professional appliance repair services in Marin County, CA. Factory authorized repairs for all major brands. Call (707) 664-9702.',
+  title: 'Appliance Repair Marin County | Kelly\'s Since 1975',
+  description: 'The North Bay\'s trusted appliance repair team, now serving all of Marin County. San Rafael, Novato, Mill Valley, Corte Madera, and more. Diamond Certified, 90-day guarantee.',
   alternates: {
     canonical: '/service-locations/marin-county',
   },

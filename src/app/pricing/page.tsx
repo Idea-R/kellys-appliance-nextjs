@@ -9,8 +9,8 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'Appliance Repair Pricing',
-  description: 'Transparent appliance repair pricing. Service call $149-$169 applies toward labor if you proceed. Additional appliance +$75. 90-day money-back guarantee.',
+  title: 'Appliance Repair Cost | $149 Service Call | Kelly\'s',
+  description: 'Honest, upfront pricing. $149-$169 service call includes full diagnosis and applies toward your repair. No hidden fees. 90-day money-back guarantee on every job.',
   alternates: {
     canonical: '/pricing',
   },

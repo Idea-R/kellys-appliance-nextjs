@@ -91,6 +91,10 @@ Thumbs.db
 !/docs/seo/**
 !/docs/research/
 !/docs/research/**
+!/docs/ops/
+!/docs/ops/**
+!/docs/chat-prompts/
+!/docs/chat-prompts/**
 !/docs/BLOG-CONTENT-STRATEGY.md
 !/docs/SITE-AUDIT-2026-03.md
 !/docs/FUTURE-ROADMAP.md

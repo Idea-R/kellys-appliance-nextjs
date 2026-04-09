@@ -1,7 +1,7 @@
 import React from 'react';
 export const metadata = {
-  title: 'Appliance Repair Services We Offer',
-  description: 'Professional appliance repair for refrigerators, ovens, dishwashers, washers, and dryers. Factory authorized technicians serving Sonoma, Marin, and Napa counties since 1975.',
+  title: 'Appliance Repair Services | Diamond Certified | Kelly\'s',
+  description: 'Refrigerator, washer, dryer, oven, and dishwasher repair from technicians who have been doing this for 50+ years. Diamond Certified with a 90-day guarantee. Sonoma, Marin, and Napa counties.',
   alternates: {
     canonical: '/services',
   },

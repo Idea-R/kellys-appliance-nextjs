@@ -10,8 +10,8 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 const companyInfo = getCompanyInfo();
 
 export const metadata = {
-  title: 'About Kelly\'s Appliance Center',
-  description: 'Kelly\'s Appliance Repair has been serving Sonoma, Marin, and Napa counties since 1975. Our expert technicians are highly-skilled. Contact us today!',
+  title: 'About Kelly\'s Appliance Center | Family-Owned Since 1975',
+  description: 'Three generations keeping North Bay appliances running. Diamond Certified, factory authorized for all major brands. Meet the team behind 50+ years of trusted repairs.',
   alternates: {
     canonical: '/about-us',
   },
