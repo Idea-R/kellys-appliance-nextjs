@@ -1,11 +1,11 @@
 # Mailchimp
 
-**Last Updated:** April 9, 2026
-**Status:** ACTIVE (configured, needs testing)
+**Last Updated:** April 11, 2026
+**Status:** ACTIVE
 **Account:** Kelly's Appliance Center
 **Login:** Via API key (datacenter: us2)
 **Monthly Budget:** Free tier (up to 500 contacts)
-**MCP Connected:** Yes (configured, needs testing)
+**MCP Connected:** Yes (tested and working April 11, 2026)
 
 ---
 
@@ -14,7 +14,7 @@
 - **MCP Server:** @agentx-ai/mailchimp-mcp-server via npx
 - **Auth:** API key stored at C:\Users\palli\mcp-marketing\mailchimp.json
 - **Email Template:** Welcome offer email built (docs/email/welcome-campaign-v1.html)
-- **Lists:** Unknown (needs MCP test to enumerate)
+- **Lists:** 1 list — "Kelly's Appliance" (ID: be358dce9f), 1 member, created Dec 15, 2025
 - **Automations:** None set up yet
 
 ## Planned Email Workflows
@@ -39,8 +39,8 @@
 
 ## Q2 Priorities
 
-- [ ] **TEST MCP CONNECTION** (high priority)
-- [ ] Enumerate existing lists and subscribers
+- [x] ~~TEST MCP CONNECTION~~ — Confirmed working April 11, 2026
+- [x] ~~Enumerate existing lists~~ — 1 list "Kelly's Appliance" (be358dce9f), 1 subscriber
 - [ ] Upgrade to Standard plan ($20/mo) if on free tier
 - [ ] Upload welcome-campaign-v1.html template
 - [ ] Create subscriber signup form (embed on website footer)

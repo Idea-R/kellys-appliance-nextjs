@@ -18,6 +18,15 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: 'Fridge Water Tastes Bad? Ice Maker Not Working? What to Check First',
+    slug: 'fridge-water-tastes-bad-ice-maker-not-working',
+    excerpt:
+      'Your refrigerator water tastes funny, ice production is low, or the dispenser is painfully slow. Here are the most common causes and when it\'s time to call a repair pro.',
+    date: '2026-04-12',
+    readTime: '7 min read',
+    category: 'Refrigerator Repair',
+  },
+  {
     title: 'Why Is There Frost or Moisture in My Refrigerator? Causes and Fixes',
     slug: 'why-is-there-frost-or-moisture-in-my-refrigerator',
     excerpt:

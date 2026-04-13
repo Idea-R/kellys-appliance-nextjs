@@ -138,7 +138,7 @@ export default function AppointmentForm() {
         has_address: address ? 'yes' : 'no',
         page_path: window.location.pathname,
       })
-      pushAdsConversion('AW-10866866733/1L-TCPmLzY8cEK303L0o', 200.0)
+      pushAdsConversion('AW-10866866733/1L-TCPmLzY8cEK303L0o', 200.0, 'USD')
 
       router.push(`/scheduler-confirmation${ref ? `?ref=${encodeURIComponent(ref)}` : ''}`)
     } catch (error) {

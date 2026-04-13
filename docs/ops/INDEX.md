@@ -21,6 +21,7 @@
 |----------|---------|
 | [CONVENTIONS.md](CONVENTIONS.md) | How docs are organized, naming rules, templates |
 | [Q2-2026-ROADMAP.md](Q2-2026-ROADMAP.md) | Current quarter action plan with priorities |
+| [blog-operations.md](blog-operations.md) | Blog publishing schedule, post queue, image strategy |
 | [automations/overview.md](automations/overview.md) | All automations (active + planned) |
 | [platforms/platform-research-april-2026.md](platforms/platform-research-april-2026.md) | Deep research on all 17 platforms evaluated |
 | [PRIORITY-LIST-APRIL-2026.md](PRIORITY-LIST-APRIL-2026.md) | Ranked improvements: GBP expansion, CTR fixes, meta rewrites |
@@ -71,10 +72,10 @@
 
 | Server | Status | Auth | Last Tested |
 |--------|--------|------|-------------|
-| Google Ads | Connected | OAuth2 refresh token | Apr 7, 2026 |
-| Google Search Console | Connected | ADC (shane@ideas-realized.com) | Apr 8, 2026 |
-| Google Analytics | Configured | ADC (needs testing) | Not tested |
-| Mailchimp | Configured | API key | Not tested |
+| Google Ads | Connected | OAuth2 refresh token | Apr 11, 2026 |
+| Google Search Console | Connected | ADC (shane@ideas-realized.com) | Apr 8, 2026 (needs re-auth) |
+| Google Analytics | **DISABLED** | ADC (hangs, crashes servers) | Apr 11, 2026 — disabled in .mcp.json, use browser |
+| Mailchimp | Connected | API key | Apr 11, 2026 |
 | Cloudflare | Connected | API token | Active |
 | Claude in Chrome | Connected | Browser extension | Active |
 | Slack | Connected | OAuth | Active |

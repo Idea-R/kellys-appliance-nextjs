@@ -44,6 +44,26 @@ export default function Analytics() {
     return () => document.removeEventListener('click', handler, true)
   }, [hasAnalytics])
 
+  // Capture UTM parameters on first page load and store in sessionStorage
+  useEffect(() => {
+    if (!hasAnalytics) return
+    const params = new URLSearchParams(window.location.search)
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'gbraid', 'wbraid'] as const
+    const captured: Record<string, string> = {}
+    let hasUtm = false
+    utmKeys.forEach((key) => {
+      const val = params.get(key)
+      if (val) { captured[key] = val; hasUtm = true }
+    })
+    if (hasUtm) {
+      // Store for session attribution (forms can read this later)
+      try { sessionStorage.setItem('kellys_utm', JSON.stringify(captured)) } catch { /* noop */ }
+      const dl = (window as unknown as { dataLayer?: Array<Record<string, unknown>> }).dataLayer
+      dl?.push({ event: 'utm_captured', ...captured })
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []) // Only on mount — captures landing page UTMs once
+
   // SPA page_view tracking on route changes (App Router)
   useEffect(() => {
     if (!hasAnalytics) return

@@ -1,11 +1,11 @@
 # Google Search Console
 
-**Last Updated:** April 9, 2026
-**Status:** ACTIVE
+**Last Updated:** April 11, 2026
+**Status:** ACTIVE (MCP needs re-auth)
 **Account:** shane@ideas-realized.com (Full User)
 **Property:** sc-domain:kellysappliancerepair.com
 **Monthly Budget:** Free
-**MCP Connected:** Yes
+**MCP Connected:** BROKEN — `invalid_rapt` error (ADC credentials expired/insufficient)
 
 ---
 
@@ -34,8 +34,18 @@
 - `index_inspect` — Check URL indexing status
 - `list_sitemaps` / `submit_sitemap` — Sitemap management
 
+## MCP Auth Issue (April 11, 2026)
+
+**Error:** `invalid_grant: reauth related error (invalid_rapt)`
+**Same fix as GA4** — re-auth ADC with all needed scopes:
+```
+gcloud auth application-default login --scopes="https://www.googleapis.com/auth/analytics.readonly,https://www.googleapis.com/auth/webmasters.readonly,https://www.googleapis.com/auth/cloud-platform"
+```
+This single command fixes BOTH Search Console AND GA4 MCP servers.
+
 ## Q2 Priorities
 
+- [ ] **FIX MCP AUTH** — run gcloud re-auth command above
 - [ ] Weekly quick-wins detection (every Monday)
 - [ ] Monitor Santa Rosa position (currently 9.1, target top 5)
 - [ ] Monitor Marin cities (San Rafael, Mill Valley — high impressions, low clicks)

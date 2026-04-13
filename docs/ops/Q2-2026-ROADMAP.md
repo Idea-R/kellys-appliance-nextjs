@@ -21,11 +21,12 @@
 
 | # | Task | Owner | Status | Platform File |
 |---|------|-------|--------|--------------|
-| 1 | Get first Google Ads conversion (unlock $600 credit, deadline Apr 23) | Ads agent | IN PROGRESS | google-ads.md |
+| 1 | Get first Google Ads conversion (unlock $600 credit, deadline Apr 23) | Ads agent | **DONE** — 6 conversions, $17.11 CPA | google-ads.md |
+| 1b | **REDEEM $600 credit** (code: 6LEJG-TLAN6-DWR3, deadline Apr 23) | Shane (manual) | **TODO — URGENT** | google-ads.md |
 | 2 | Change location targeting to "Presence only" in Google Ads UI | Shane (manual) | TODO | google-ads.md |
 | 3 | Complete Google Ads advertiser verification | Shane (manual) | TODO | google-ads.md |
-| 4 | Test GA4 MCP connection, verify property access | Any agent | TODO | google-analytics.md |
-| 5 | Test Mailchimp MCP connection, enumerate lists | Any agent | TODO | mailchimp.md |
+| 4 | Test GA4 MCP connection, verify property access | Any agent | **BLOCKED** — MCP hangs, needs GCP API fix | google-analytics.md |
+| 5 | Test Mailchimp MCP connection, enumerate lists | Any agent | **DONE** — 1 list, 1 member | mailchimp.md |
 
 ### P1 — Quick Wins (Free, <30 min each)
 
