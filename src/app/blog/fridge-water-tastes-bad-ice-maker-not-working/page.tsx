@@ -52,7 +52,7 @@ export default function FridgeWaterIceMakerPostPage() {
               "@type": "WebPage",
               "@id": "https://kellysappliancerepair.com/blog/fridge-water-tastes-bad-ice-maker-not-working"
             },
-            "image": "https://kellysappliancerepair.com/images/Blogs/Dispenser.jpg",
+            "image": "https://kellysappliancerepair.com/images/Blogs/Dispenser.webp",
             "articleSection": "Refrigerator Repair",
             "wordCount": 1400
           })
@@ -142,7 +142,7 @@ export default function FridgeWaterIceMakerPostPage() {
 
             <div className="text-center my-8">
               <Image
-                src="/images/Blogs/Dispenser.jpg"
+                src="/images/Blogs/Dispenser.webp"
                 alt="Person filling a glass of water from a French door refrigerator water dispenser in a warm kitchen"
                 width={1200}
                 height={630}
@@ -178,7 +178,7 @@ export default function FridgeWaterIceMakerPostPage() {
 
             <div className="text-center my-8">
               <Image
-                src="/images/Blogs/IceMaker.jpg"
+                src="/images/Blogs/IceMaker.webp"
                 alt="Woman scooping ice from a French door refrigerator freezer drawer into a Kelly's Appliance branded glass"
                 width={1000}
                 height={667}
@@ -227,7 +227,7 @@ export default function FridgeWaterIceMakerPostPage() {
 
             <div className="text-center my-8">
               <Image
-                src="/images/Blogs/Water filter..jpg"
+                src="/images/Blogs/water-filter.webp"
                 alt="Kenmore Premium Refrigerator Filter showing model number, specifications, and replacement instructions"
                 width={800}
                 height={1067}
