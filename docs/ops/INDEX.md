@@ -22,6 +22,14 @@
 | [CONVENTIONS.md](CONVENTIONS.md) | How docs are organized, naming rules, templates |
 | [Q2-2026-ROADMAP.md](Q2-2026-ROADMAP.md) | Current quarter action plan with priorities |
 | [blog-operations.md](blog-operations.md) | Blog publishing schedule, post queue, image strategy |
+| [interactive-tools-strategy.md](interactive-tools-strategy.md) | Calculators, quizzes, engagement widgets — build plan |
+| [lsa-lead-validation-sop.md](lsa-lead-validation-sop.md) | LSA lead validation: Google API → SCS calls → CRM jobs |
+| [lsa-lead-validation-report-2026-04-13.md](lsa-lead-validation-report-2026-04-13.md) | 2026 YTD LSA audit — 79 leads, 28 matched (47%), ~26x ROI |
+| [reporting-system.md](reporting-system.md) | Cross-platform reporting framework — weekly/monthly/quarterly templates |
+| [google-ads-search-attribution-plan.md](google-ads-search-attribution-plan.md) | D1 form logging plan to unlock Google Ads attribution |
+| [reports/weekly/](reports/weekly/) | Weekly marketing reports (wins, losses, actions) |
+| [reports/monthly/](reports/monthly/) | Monthly performance reviews |
+| [reports/quarterly/](reports/quarterly/) | Quarterly strategic reviews |
 | [automations/overview.md](automations/overview.md) | All automations (active + planned) |
 | [platforms/platform-research-april-2026.md](platforms/platform-research-april-2026.md) | Deep research on all 17 platforms evaluated |
 | [PRIORITY-LIST-APRIL-2026.md](PRIORITY-LIST-APRIL-2026.md) | Ranked improvements: GBP expansion, CTR fixes, meta rewrites |
@@ -119,7 +127,7 @@ Full details: `docs/research/mcp-connections-and-api-status.md`
 | Owner | Mark Kelly |
 | Service Area | Sonoma, Marin, Napa counties |
 | Certifications | Diamond Certified |
-| Services | Refrigerator, Washer, Dryer, Dishwasher, Oven/Range/Stove, Garbage Disposal, Ice Machine repair |
+| Services | Refrigerator, Washer, Dryer, Dishwasher, Oven/Range/Stove, Microwave, Garbage Disposal, Ice Machine, Freezer, Trash Compactor repair |
 | Does NOT do | HVAC/AC, plumbing, small appliances, sewing machines, commercial |
 
 ---
