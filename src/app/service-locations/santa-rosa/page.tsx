@@ -9,6 +9,7 @@ import BottomCTA from '@/components/BottomCTA'
 import NearbyCityLinks from '@/components/NearbyCityLinks'
 import RelatedServiceLinks from '@/components/RelatedServiceLinks'
 import CityJsonLd from '@/components/CityJsonLd'
+import FAQSection from '@/components/FAQSection'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 import { getCityContent } from '@/data/cityContent'
@@ -130,6 +131,15 @@ export default function SantaRosaPage() {
 
       {/* 7. Why Choose Us */}
       <WhyChooseUs localExpertsText={city.localExpertsText} />
+
+      {/* 7b. FAQs (renders + emits FAQPage JSON-LD when 2+ FAQs defined) */}
+      {city.faqs && city.faqs.length >= 2 && (
+        <FAQSection
+          title={`Frequently Asked Questions — Appliance Repair in ${city.name}`}
+          faqs={city.faqs}
+          id={`${city.slug}-faqs`}
+        />
+      )}
 
       {/* 8. Community Links */}
       {city.communityLink && (

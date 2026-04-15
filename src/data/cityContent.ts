@@ -6,6 +6,43 @@
  * locations.ts (Sonoma -> Marin -> Napa).
  */
 
+import type { FAQ } from '@/types/faq'
+
+/**
+ * Shared FAQ builder for cities that don't have fully custom FAQ content yet.
+ * Produces 4 generic questions keyed to the city name. Tier 1 cities should
+ * define their own detailed `faqs` array with local specifics.
+ */
+export function buildStandardFaqs(cityName: string, opts?: {
+  driveTime?: string
+  neighborhoodList?: string
+  localIssue?: { question: string; answer: string }
+}): FAQ[] {
+  const driveTime = opts?.driveTime ?? 'a short drive from our Cotati shop'
+  const faqs: FAQ[] = [
+    {
+      question: `How much does appliance repair cost in ${cityName}?`,
+      answer: `Our service call fee is $149, which includes full diagnosis and is applied toward the repair if you proceed. Most ${cityName} repairs range from $200 to $450 depending on the appliance and parts needed. We provide an upfront estimate before any work begins, and there are no surprise charges.`,
+    },
+    {
+      question: `Do you offer same-day appliance repair in ${cityName}?`,
+      answer: `${cityName} is ${driveTime}, so we can often schedule same-day or next-day appointments for urgent refrigerator, washer, and dryer issues. Call (707) 664-9702 to check today\u2019s availability.`,
+    },
+    {
+      question: `What appliance brands do you service in ${cityName}?`,
+      answer: `We are factory-authorized for most major brands including Whirlpool, GE, Maytag, Samsung, LG, Kenmore, Frigidaire, Bosch, KitchenAid, JennAir, Sub-Zero, Viking, Wolf, and Thermador. Our technicians carry genuine OEM parts on the truck for most common repairs.`,
+    },
+    {
+      question: `Are you licensed and insured in ${cityName}?`,
+      answer: `Yes. Kelly\u2019s Appliance Center has been operating since 1975, we are fully licensed and insured, Diamond Certified by American Ratings, and factory-authorized for most major appliance brands. Every repair comes with our 90-day money-back guarantee.`,
+    },
+  ]
+  if (opts?.localIssue) {
+    faqs.splice(3, 0, opts.localIssue)
+  }
+  return faqs
+}
+
 export interface CityContent {
   slug: string
   name: string
@@ -44,6 +81,9 @@ export interface CityContent {
 
   /** City-specific alt text for the hero van image */
   heroImageAlt: string
+
+  /** Optional FAQ section with FAQPage schema (minimum 2 required for JSON-LD) */
+  faqs?: FAQ[]
 }
 
 // ---------------------------------------------------------------------------
@@ -53,17 +93,20 @@ export interface CityContent {
 const santaRosa: CityContent = {
   slug: 'santa-rosa',
   name: 'Santa Rosa',
-  metaTitle: 'Appliance Repair Santa Rosa | Diamond Certified | Kelly\'s',
+  metaTitle: 'Santa Rosa Appliance Repair \u2014 50 Years, 90-Day Guarantee',
   metaDescription:
-    'Santa Rosa families have called Kelly\'s first since 1975. Refrigerator, washer, dryer, oven, and dishwasher repair across Fountaingrove, Rincon Valley, Bennett Valley, and Roseland. 90-day guarantee.',
+    '50 years fixing refrigerators, washers, dryers, ovens, and dishwashers for Santa Rosa homes. Diamond Certified technicians, factory-authorized parts, 90-day money-back guarantee. Schedule online or call (707) 664-9702.',
   heroSubtitle:
     'Factory-authorized appliance repair for Santa Rosa homes. Serving neighborhoods from Fountaingrove to Roseland with a 90-day money-back guarantee.',
 
   trustHeading: 'Why Santa Rosa Residents Trust Kelly\u2019s',
   trustContent: [
-    'Santa Rosa is the largest city in Sonoma County, and we have been its go-to appliance repair team since 1975. Our techs drive up Highway 101 from Cotati every day, so response times are among our fastest in the service area.',
-    'We work on every major brand you will find in Santa Rosa kitchens and laundry rooms, from entry-level Whirlpool and GE sets in Roseland bungalows to premium Sub-Zero and Viking installs in Fountaingrove. Every repair uses genuine OEM parts and comes with our 90-day money-back guarantee.',
-    'Santa Rosa homeowners deal with hard municipal water that can shorten dishwasher and washing machine life. We see it constantly and know the fixes that last.',
+    'Santa Rosa is the largest city in Sonoma County with over 180,000 residents, and we have been its go-to appliance repair team since 1975. Our technicians drive up Highway 101 from Cotati every single day, so Santa Rosa response times are among the fastest in our service area.',
+    'We work on every major brand you will find in Santa Rosa kitchens and laundry rooms. That includes entry-level Whirlpool, GE, and Maytag sets in Roseland and Coffey Park bungalows, mid-range LG, Samsung, and Frigidaire units in Rincon Valley homes, and premium Sub-Zero, Viking, Thermador, and Wolf installs in Fountaingrove and Skyhawk estates. Every repair uses genuine OEM parts and comes with our 90-day money-back guarantee.',
+    'Santa Rosa homeowners deal with hard municipal water that can shorten the life of dishwashers, washing machines, ice makers, and water filters. We see mineral buildup constantly, know the fixes that last, and stock the replacement valves and spray arms that most competitors have to order.',
+    'After the 2017 Tubbs Fire, we watched Santa Rosa rebuild from Coffey Park to Fountaingrove. Many homes that were rebuilt have newer appliance installations, and we have been the trusted service partner for homeowners dealing with warranty claims, smart appliance quirks, and the adjustment period that comes with any new kitchen.',
+    'Our Cotati headquarters is 15 minutes south on 101, which means we can typically get a technician to Santa Rosa within a few hours for urgent calls. We also service neighboring communities like Windsor, Healdsburg, Sebastopol, Rohnert Park, and Cotati, so our team is already in the area most days.',
+    'We are Diamond Certified, a rating reserved for businesses with a proven track record of customer satisfaction based on independent research. That certification is renewed annually, and we have held it for years.',
   ],
 
   localHighlights:
@@ -78,26 +121,71 @@ const santaRosa: CityContent = {
   ],
 
   localExpertsText: 'Our Cotati shop is about 15 minutes south on 101. We service Santa Rosa homes every single day.',
-  neighborhoods: ['Fountaingrove', 'Rincon Valley', 'Bennett Valley', 'Roseland', 'Oakmont', 'South Park'],
+  neighborhoods: [
+    'Fountaingrove',
+    'Rincon Valley',
+    'Bennett Valley',
+    'Roseland',
+    'Oakmont',
+    'South Park',
+    'Coffey Park',
+    'Rincon Ridge',
+    'Skyhawk',
+    'Montecito Heights',
+    'Proctor Terrace',
+    'Junior College',
+    'West End',
+    'Cherry Valley',
+    'Burbank Gardens',
+    'Hidden Valley',
+  ],
   midCtaHeading: 'Ready for Fast Appliance Repair in Santa Rosa?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Santa Rosa and Sonoma County',
+  faqs: [
+    {
+      question: 'How much does appliance repair cost in Santa Rosa?',
+      answer: 'Our standard service call fee is $149, which includes diagnosis and gets applied toward the repair if you proceed. Most Santa Rosa repairs range from $200 to $450 depending on the appliance and parts needed. We give you an upfront estimate before any work begins, and there are no surprise charges.',
+    },
+    {
+      question: 'Do you offer same-day appliance repair in Santa Rosa?',
+      answer: 'We frequently have same-day availability for Santa Rosa, especially for urgent refrigerator or washer issues. Our Cotati shop is only 15 minutes south on Highway 101, so response times here are among our fastest in the service area. Call (707) 664-9702 to check today\u2019s schedule.',
+    },
+    {
+      question: 'What appliance brands do you repair in Santa Rosa?',
+      answer: 'We are factory-authorized for most major brands including Whirlpool, GE, Maytag, Samsung, LG, Kenmore, Frigidaire, Bosch, KitchenAid, JennAir, Sub-Zero, Viking, Wolf, and Thermador. Whether your kitchen has entry-level appliances or premium installs in Fountaingrove or Skyhawk, we carry genuine OEM parts for the job.',
+    },
+    {
+      question: 'Do you service my Santa Rosa neighborhood?',
+      answer: 'Yes. We service every Santa Rosa neighborhood including Fountaingrove, Rincon Valley, Bennett Valley, Roseland, Oakmont, South Park, Coffey Park, Rincon Ridge, and Skyhawk. We also cover surrounding communities in Sonoma County like Windsor, Sebastopol, and Healdsburg.',
+    },
+    {
+      question: 'Why does my dishwasher keep getting clogged in Santa Rosa?',
+      answer: 'Santa Rosa\u2019s municipal water is relatively hard, meaning it carries minerals that build up inside dishwasher spray arms, drain pumps, and water inlet valves over time. Regular cleaning and timely part replacement prevent most issues. If your dishes are still coming out spotted after a cleaning cycle, call us for a diagnostic.',
+    },
+    {
+      question: 'Are you licensed and insured in Santa Rosa?',
+      answer: 'Yes. Kelly\u2019s Appliance Center has been operating since 1975, we are fully licensed and insured, Diamond Certified by American Ratings, and factory-authorized for most major appliance brands. Every repair comes with our 90-day money-back guarantee.',
+    },
+  ],
 }
 
 const petaluma: CityContent = {
   slug: 'petaluma',
   name: 'Petaluma',
-  metaTitle: 'Appliance Repair Petaluma | Trusted Since 1975 | Kelly\'s',
+  metaTitle: 'Petaluma Appliance Repair \u2014 50 Years, 90-Day Guarantee',
   metaDescription:
-    'Petaluma\'s trusted appliance repair for 50+ years. East Side, West Side, and downtown. Diamond Certified technicians, 90-day guarantee on parts and labor. Book online today.',
+    '50 years fixing refrigerators, washers, dryers, ovens, and dishwashers for Petaluma homes. 10 minutes from our Cotati shop, Diamond Certified, 90-day money-back guarantee. Schedule online or call (707) 664-9702.',
   heroSubtitle:
     'Trusted appliance repair for Petaluma homes since 1975. Factory-authorized service with a 90-day money-back guarantee.',
 
   trustHeading: 'Why Petaluma Residents Trust Kelly\u2019s',
   trustContent: [
-    'Petaluma is just a short drive south from our Cotati shop, which means we are in town fast. We have been servicing Petaluma homes for decades, from the Victorian beauties downtown to the newer builds on the east side.',
-    'Our technicians are factory-authorized for every major brand, and they carry common parts on the truck so many repairs finish in one visit. Whether your fridge quit cooling or your dryer is tumbling without heat, we diagnose accurately and fix it right.',
-    'Petaluma\u2019s older homes sometimes have quirks like tight laundry closets or non-standard electrical. We\u2019ve seen it all and bring the right tools and know-how.',
+    'Petaluma is just 10 minutes south of our Cotati shop, which means we are in town fast. We have been servicing Petaluma homes since 1975, from the Victorian beauties downtown and the riverfront Craftsmans on the West Side to the newer builds on the East Side and out toward Casa Grande.',
+    'Our technicians are factory-authorized for every major brand: Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, Bosch, KitchenAid, Sub-Zero, Viking, and more. They carry common parts on the truck so many Petaluma repairs finish in a single visit.',
+    'Petaluma\u2019s older homes have quirks. Tight laundry closets in West Side Victorians trap dryer heat. 1950s-era electrical panels on some Historic Downtown streets can\u2019t handle modern high-draw appliances. We\u2019ve seen it all and bring the tools and know-how to diagnose whether it\u2019s the appliance or the installation.',
+    'Many Petaluma homes sit in low-lying areas near the river where humidity stays high year-round. That moisture accelerates rust on dryer drums and corrodes refrigerator condenser coils faster than in drier areas. We know where to look first.',
+    'Every repair comes with our 90-day money-back guarantee, and we are Diamond Certified by American Ratings for consistent customer satisfaction.',
   ],
 
   localHighlights:
@@ -112,10 +200,36 @@ const petaluma: CityContent = {
   ],
 
   localExpertsText: 'Just 10 minutes south from our Cotati shop. We\u2019re in Petaluma daily.',
-  neighborhoods: ['East Side', 'West Side', 'Downtown', 'Casa Grande', 'Lakeville'],
+  neighborhoods: ['East Side', 'West Side', 'Downtown', 'Casa Grande', 'Lakeville', 'McDowell', 'Penngrove', 'Oakhill-Brewster', 'Sunnyslope', 'Victoria'],
   midCtaHeading: 'Need Appliance Repair in Petaluma Today?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Petaluma and Sonoma County',
+  faqs: [
+    {
+      question: 'How much does appliance repair cost in Petaluma?',
+      answer: 'Our service call fee is $149, which includes full diagnosis and is applied toward the repair if you proceed. Most Petaluma repairs range from $200 to $450 depending on the appliance and parts needed. We provide an upfront estimate before any work begins.',
+    },
+    {
+      question: 'Do you offer same-day appliance repair in Petaluma?',
+      answer: 'Yes, often. Petaluma is only 10 minutes south of our Cotati headquarters, so our techs are in town daily and same-day calls are common. Call (707) 664-9702 to check today\u2019s availability.',
+    },
+    {
+      question: 'What appliance brands do you service in Petaluma?',
+      answer: 'We are factory-authorized for Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, Bosch, KitchenAid, JennAir, Kenmore, Sub-Zero, Viking, Wolf, and Thermador. Our technicians carry genuine OEM parts on the truck for most common repairs.',
+    },
+    {
+      question: 'Do you service my Petaluma neighborhood?',
+      answer: 'Yes. We service all Petaluma neighborhoods including East Side, West Side, Downtown, Casa Grande, Lakeville, McDowell, Penngrove, Oakhill-Brewster, and Sunnyslope. We also cover nearby Cotati, Rohnert Park, and north Marin.',
+    },
+    {
+      question: 'Why does my dryer keep tripping the breaker in my older Petaluma home?',
+      answer: 'Many West Side and Historic Downtown homes have 1950s-era electrical panels that cannot handle the draw of a modern dryer, especially if the dryer shares a circuit with other appliances. The issue may not be your dryer at all. We can diagnose whether the problem is the appliance or the circuit.',
+    },
+    {
+      question: 'Are you licensed and insured?',
+      answer: 'Yes. Kelly\u2019s Appliance Center has been operating since 1975, we are fully licensed and insured, Diamond Certified, and factory-authorized for most major brands. Every repair comes with our 90-day money-back guarantee.',
+    },
+  ],
 }
 
 const rohnertPark: CityContent = {
@@ -150,6 +264,13 @@ const rohnertPark: CityContent = {
   midCtaHeading: 'Need a Fast Fix in Rohnert Park?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Rohnert Park and Sonoma County',
+  faqs: buildStandardFaqs('Rohnert Park', {
+    driveTime: '5 minutes from our Cotati shop \u2014 we are literally next door',
+    localIssue: {
+      question: 'Why does my dishwasher keep getting spotty glassware in Rohnert Park?',
+      answer: 'Rohnert Park shares its municipal water system with Cotati, and that water is fairly hard. Mineral deposits build up on dishwasher spray arms and inside water inlet valves, which leaves spots on glassware and reduces cleaning power. Regular descaling helps, and when it doesn\u2019t, we know exactly which parts to replace.',
+    },
+  }),
 }
 
 const cotati: CityContent = {
@@ -184,6 +305,13 @@ const cotati: CityContent = {
   midCtaHeading: 'Need Your Neighbor\u2019s Help With an Appliance?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Cotati and Sonoma County',
+  faqs: buildStandardFaqs('Cotati', {
+    driveTime: 'our home base \u2014 we\u2019re located right here at 466 Primero Ct, Suite H',
+    localIssue: {
+      question: 'Do you really do same-day repair in Cotati?',
+      answer: 'For Cotati calls, often yes. Our shop is here, our techs live and work here, and Cotati customers get priority scheduling when we can make it happen. Call (707) 664-9702 first thing in the morning for the best chance at a same-day slot.',
+    },
+  }),
 }
 
 const sebastopol: CityContent = {
@@ -217,6 +345,13 @@ const sebastopol: CityContent = {
   midCtaHeading: 'Ready for Appliance Repair in West County?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Sebastopol and Sonoma County',
+  faqs: buildStandardFaqs('Sebastopol', {
+    driveTime: 'about 20 minutes from our Cotati shop via the Gravenstein Highway',
+    localIssue: {
+      question: 'Why is my dishwasher running slow in rural Sebastopol?',
+      answer: 'Many Sebastopol and Graton properties run on well water, which carries much more iron and calcium than city supplies. Those minerals clog dishwasher spray arms and restrict water inlet valves over time. Periodic descaling helps, and when parts need replacing we carry them for most major brands.',
+    },
+  }),
 }
 
 const sonoma: CityContent = {
@@ -251,6 +386,13 @@ const sonoma: CityContent = {
   midCtaHeading: 'Need Appliance Repair in Sonoma Valley?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Sonoma and the surrounding wine country',
+  faqs: buildStandardFaqs('Sonoma', {
+    driveTime: 'about 25 minutes from our Cotati shop through the Sonoma Valley',
+    localIssue: {
+      question: 'Do you service Sonoma vacation rentals and second homes?',
+      answer: 'Yes, and we understand the urgency. Many Sonoma properties are vacation rentals or second homes where a broken appliance means lost bookings or ruined plans. Tell us the situation when you call and we will prioritize getting someone out fast.',
+    },
+  }),
 }
 
 const windsor: CityContent = {
@@ -285,6 +427,13 @@ const windsor: CityContent = {
   midCtaHeading: 'Need an Appliance Fix in Windsor?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Windsor and Sonoma County',
+  faqs: buildStandardFaqs('Windsor', {
+    driveTime: 'about 20 minutes north of our Cotati shop on 101',
+    localIssue: {
+      question: 'My stacked washer-dryer overheats in my Windsor home. What\u2019s wrong?',
+      answer: 'Many Windsor subdivisions have compact laundry closets with stacked washer-dryer units. Limited airflow around the dryer traps heat and lint, which makes the dryer work harder and wear out faster. Clean the lint trap after every load, check the vent line behind the unit annually, and call us if cycles start getting longer.',
+    },
+  }),
 }
 
 const healdsburg: CityContent = {
@@ -319,6 +468,13 @@ const healdsburg: CityContent = {
   midCtaHeading: 'Need Appliance Repair in Wine Country?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Healdsburg and Sonoma County',
+  faqs: buildStandardFaqs('Healdsburg', {
+    driveTime: 'about 30 minutes north from Cotati. We schedule Healdsburg visits multiple days a week',
+    localIssue: {
+      question: 'Do you repair Sub-Zero and Viking in Healdsburg wine country homes?',
+      answer: 'Yes. We are factory-authorized for Sub-Zero, Viking, Wolf, Thermador, and Miele \u2014 common in Dry Creek and Alexander Valley estates. We stock or quickly source the genuine OEM parts these premium brands require.',
+    },
+  }),
 }
 
 const forestville: CityContent = {
@@ -353,6 +509,13 @@ const forestville: CityContent = {
   midCtaHeading: 'Need Appliance Repair Along the River?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Forestville and the Russian River area',
+  faqs: buildStandardFaqs('Forestville', {
+    driveTime: 'about 25 minutes from Cotati through Sebastopol',
+    localIssue: {
+      question: 'My fridge is rusting near the coils in Forestville. Why?',
+      answer: 'Forestville\u2019s proximity to the Russian River brings persistent humidity into homes, and that moisture accelerates corrosion on refrigerator condenser coils and dryer drums faster than in drier parts of the county. Keeping these areas clean and dry extends their life significantly.',
+    },
+  }),
 }
 
 const guerneville: CityContent = {
@@ -387,6 +550,13 @@ const guerneville: CityContent = {
   midCtaHeading: 'Need Appliance Repair on the Russian River?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Guerneville and the Russian River',
+  faqs: buildStandardFaqs('Guerneville', {
+    driveTime: 'about 35 minutes from Cotati. We schedule the Russian River regularly',
+    localIssue: {
+      question: 'Do you service Guerneville vacation rentals?',
+      answer: 'Yes. A lot of our Guerneville calls come from rental owners who need fast turnaround between guests. Washers and dryers in rentals often see 3x normal use, and we know the common failure points. Let us know if it\u2019s urgent and we will prioritize the call.',
+    },
+  }),
 }
 
 const glenEllen: CityContent = {
@@ -421,6 +591,13 @@ const glenEllen: CityContent = {
   midCtaHeading: 'Need Appliance Repair in Glen Ellen?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Glen Ellen and Sonoma Valley',
+  faqs: buildStandardFaqs('Glen Ellen', {
+    driveTime: 'about 30 minutes from Cotati through the Sonoma Valley',
+    localIssue: {
+      question: 'Why does my dishwasher run slowly in Glen Ellen?',
+      answer: 'Many Glen Ellen properties run on well water with high mineral content, which builds up inside dishwasher spray arms, water inlet valves, and drain pumps. Periodic descaling and timely part replacement keep things flowing. We see this constantly and know which parts fail first on which brands.',
+    },
+  }),
 }
 
 const bodegaBay: CityContent = {
@@ -454,6 +631,13 @@ const bodegaBay: CityContent = {
   midCtaHeading: 'Need Appliance Repair on the Coast?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Bodega Bay and the Sonoma Coast',
+  faqs: buildStandardFaqs('Bodega Bay', {
+    driveTime: 'about 40 minutes from Cotati, and we service the Sonoma Coast regularly',
+    localIssue: {
+      question: 'How does salt air affect my appliances in Bodega Bay?',
+      answer: 'Salt air is tough on appliances. It corrodes refrigerator condenser coils, rusts dryer drums, and degrades electrical connections faster than any inland location. Regular cleaning of exposed metal, keeping coils dust-free, and running a monthly hot wash on your washer helps. We know what to look for on coastal properties.',
+    },
+  }),
 }
 
 const dillonBeach: CityContent = {
@@ -487,6 +671,13 @@ const dillonBeach: CityContent = {
   midCtaHeading: 'Need Appliance Repair at the Beach?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Dillon Beach and the Sonoma Coast',
+  faqs: buildStandardFaqs('Dillon Beach', {
+    driveTime: 'about 45 minutes from Cotati along the coastal route',
+    localIssue: {
+      question: 'Why do my appliances get musty in my Dillon Beach house?',
+      answer: 'Beach houses that sit empty for weeks develop musty refrigerator interiors and washer drum odors because of the combination of coastal humidity and low use. Leave fridge and washer doors slightly ajar during extended absences and run a cleaning cycle before you leave. If the smell persists, the gasket or internal components may need cleaning or replacement.',
+    },
+  }),
 }
 
 // ---------------------------------------------------------------------------
@@ -496,17 +687,20 @@ const dillonBeach: CityContent = {
 const sanRafael: CityContent = {
   slug: 'san-rafael',
   name: 'San Rafael',
-  metaTitle: 'Appliance Repair San Rafael | Marin County | Kelly\'s',
+  metaTitle: 'San Rafael Appliance Repair \u2014 Marin\u2019s Trusted Choice Since 1975',
   metaDescription:
-    'Marin County\'s trusted appliance repair team. Serving San Rafael, Terra Linda, Sun Valley, and the Dominican area since 1975. Diamond Certified, 90-day guarantee on every repair.',
+    '50 years of factory-authorized appliance repair for Marin County homes. Refrigerators, washers, dryers, ovens, and dishwashers. Diamond Certified, 90-day guarantee. Call (707) 664-9702 or schedule online.',
   heroSubtitle:
     'Professional appliance repair for San Rafael homes. Factory-authorized service with a 90-day money-back guarantee.',
 
   trustHeading: 'Why San Rafael Residents Trust Kelly\u2019s',
   trustContent: [
-    'San Rafael is the largest city in Marin County, and we have been servicing homes here since 1975. From the older homes in the downtown area to the mid-century ranches in Terra Linda and Sun Valley, we know the appliance mix well.',
-    'Our drive from Cotati to San Rafael takes about 30 minutes via 101. We schedule Marin appointments multiple days a week, and same-day availability is often possible.',
-    'Marin kitchens often feature higher-end built-in appliances. Our factory authorizations for Sub-Zero, Viking, Thermador, and other premium brands mean your investment gets proper care.',
+    'San Rafael is the largest city in Marin County, and we have been servicing homes here since 1975. From the Victorian homes near the Mission to the mid-century ranches in Terra Linda and Sun Valley, plus the hillside estates in Dominican and Peacock Gap, we know the appliance mix well.',
+    'Our drive from Cotati to San Rafael takes about 30 minutes via 101, and we schedule Marin appointments multiple days a week. Same-day availability is often possible for morning calls, especially for urgent refrigerator or washer issues.',
+    'Marin kitchens often feature higher-end built-in appliances. Our factory authorizations for Sub-Zero, Viking, Thermador, Wolf, Miele, and other premium brands mean your investment gets proper expert care. We also service standard brands like Whirlpool, GE, Samsung, LG, Maytag, and Frigidaire across every San Rafael neighborhood.',
+    'Hillside neighborhoods like Sun Valley, Dominican, and Peacock Gap experience higher humidity from their proximity to the bay and the surrounding terrain. That moisture promotes mold on refrigerator gaskets and inside front-load washer drums, which is one of the most common calls we get from this area. We know the cleaning techniques and replacement parts that actually fix the problem.',
+    'San Rafael\u2019s older neighborhoods, particularly around the downtown core and Gerstle Park, sometimes have undersized 1950s-70s electrical panels that cannot handle modern high-draw appliances. If your new induction range or professional refrigerator keeps tripping breakers, the real problem is usually the circuit, not the appliance. We help you figure out which it is before you spend money on unnecessary repairs.',
+    'Every repair comes with our 90-day money-back guarantee, and we are Diamond Certified by American Ratings for consistent customer satisfaction year after year.',
   ],
 
   localHighlights:
@@ -521,10 +715,36 @@ const sanRafael: CityContent = {
   ],
 
   localExpertsText: 'About 30 minutes south from our Cotati shop on 101.',
-  neighborhoods: ['Downtown', 'Terra Linda', 'Sun Valley', 'Dominican', 'Gerstle Park', 'Peacock Gap'],
+  neighborhoods: ['Downtown', 'Terra Linda', 'Sun Valley', 'Dominican', 'Gerstle Park', 'Peacock Gap', 'Glenwood', 'Bret Harte', 'Picnic Valley', 'Lucas Valley', 'Marinwood', 'Santa Venetia'],
   midCtaHeading: 'Ready for Appliance Repair in San Rafael?',
   heroImage: '/images/MarinVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
+  faqs: [
+    {
+      question: 'How much does appliance repair cost in San Rafael?',
+      answer: 'Our service call fee is $149, which includes full diagnosis and is applied toward the repair if you proceed. Most San Rafael repairs range from $200 to $500 depending on the appliance, brand, and parts needed. Premium brand repairs (Sub-Zero, Viking, Wolf) can run higher due to specialty parts. We always give you an upfront estimate before any work begins.',
+    },
+    {
+      question: 'Do you offer same-day repair in San Rafael?',
+      answer: 'Often, yes. We schedule Marin appointments multiple days per week and same-day calls are possible for morning inquiries. The drive from our Cotati shop takes about 30 minutes on 101. Call (707) 664-9702 as early as possible to check today\u2019s schedule.',
+    },
+    {
+      question: 'What appliance brands do you service in San Rafael?',
+      answer: 'We are factory-authorized for Sub-Zero, Viking, Wolf, Thermador, Miele, JennAir, KitchenAid, Bosch, Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, and most other major brands. We understand Marin kitchens often have premium built-in appliances, and we carry genuine OEM parts for the repairs they need.',
+    },
+    {
+      question: 'Do you service my San Rafael neighborhood?',
+      answer: 'Yes. We service all San Rafael neighborhoods including Downtown, Terra Linda, Sun Valley, Dominican, Gerstle Park, Peacock Gap, Glenwood, Bret Harte, Lucas Valley, Marinwood, and Santa Venetia. We also cover nearby San Anselmo, Novato, Larkspur, Corte Madera, and Mill Valley.',
+    },
+    {
+      question: 'Why does my front-load washer smell in my San Rafael home?',
+      answer: 'Marin\u2019s higher humidity, especially in hillside and bayside neighborhoods, promotes mildew and mold growth in the rubber door gasket, drum, and detergent dispenser of front-load washers. Regular cleaning of the gasket and running a monthly hot wash with a washer cleaner helps. If the smell persists, the gasket or internal components may need replacement.',
+    },
+    {
+      question: 'Are you licensed and insured in Marin County?',
+      answer: 'Yes. Kelly\u2019s Appliance Center has been operating since 1975, we are fully licensed, insured, Diamond Certified by American Ratings, and factory-authorized for most major appliance brands. Every repair comes with our 90-day money-back guarantee regardless of where you live in our service area.',
+    },
+  ],
 }
 
 const sanAnselmo: CityContent = {
@@ -559,6 +779,13 @@ const sanAnselmo: CityContent = {
   midCtaHeading: 'Ready for Appliance Repair in San Anselmo?',
   heroImage: '/images/MarinVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van in Marin County serving San Anselmo',
+  faqs: buildStandardFaqs('San Anselmo', {
+    driveTime: 'about 35 minutes south from Cotati via 101 and Sir Francis Drake',
+    localIssue: {
+      question: 'Does San Anselmo\u2019s shaded neighborhoods cause more appliance mold?',
+      answer: 'Yes. Tree-lined neighborhoods like Sleepy Hollow hold more humidity, which promotes mold growth on refrigerator door gaskets and inside front-load washers. Regular gasket cleaning and leaving washer doors ajar between loads prevents odor and seal damage. We also replace gaskets when the mold has gone beyond cleaning.',
+    },
+  }),
 }
 
 const novato: CityContent = {
@@ -589,10 +816,17 @@ const novato: CityContent = {
   ],
 
   localExpertsText: 'About 20 minutes south on 101. We are in Novato multiple times a week.',
-  neighborhoods: ['Downtown', 'Hamilton', 'Bel Marin Keys', 'Indian Valley', 'Ignacio'],
+  neighborhoods: ['Downtown', 'Hamilton', 'Bel Marin Keys', 'Indian Valley', 'Ignacio', 'Pointe Marin', 'Black Point'],
   midCtaHeading: 'Need Appliance Repair in Novato?',
   heroImage: '/images/MarinVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
+  faqs: buildStandardFaqs('Novato', {
+    driveTime: 'about 20 minutes south on 101. We are in Novato multiple times a week',
+    localIssue: {
+      question: 'My appliance in Bel Marin Keys keeps getting damp. Why?',
+      answer: 'Bel Marin Keys sits near sea level where humidity and occasional flood risk create a tough environment for appliances. Elevated washer and dryer installations, good ventilation, and dehumidifiers in laundry areas all help protect your appliances. We also know which parts fail first in these coastal-flat conditions.',
+    },
+  }),
 }
 
 const millValley: CityContent = {
@@ -623,10 +857,17 @@ const millValley: CityContent = {
   ],
 
   localExpertsText: 'About 40 minutes from Cotati. We group south Marin appointments for consistent availability.',
-  neighborhoods: ['Downtown', 'Tam Valley', 'Strawberry', 'Alto', 'Homestead Valley'],
+  neighborhoods: ['Downtown', 'Tam Valley', 'Strawberry', 'Alto', 'Homestead Valley', 'Scott Valley', 'Cascade Canyon'],
   midCtaHeading: 'Need Appliance Repair in Mill Valley?',
   heroImage: '/images/MarinVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
+  faqs: buildStandardFaqs('Mill Valley', {
+    driveTime: 'about 40 minutes from Cotati. We group south Marin appointments for consistent availability',
+    localIssue: {
+      question: 'Do you service Mill Valley hillside and canyon homes with tough access?',
+      answer: 'Yes. Many Mill Valley homes have steep driveways, tight utility closets, or custom cabinetry installations that require extra care. Our technicians bring the right tools and experience for these challenging setups, and we factor the canyon microclimate (cooler, more humid) into our diagnostics.',
+    },
+  }),
 }
 
 const sausalito: CityContent = {
@@ -657,10 +898,17 @@ const sausalito: CityContent = {
   ],
 
   localExpertsText: 'About 45 minutes from Cotati. We schedule south Marin appointments regularly.',
-  neighborhoods: ['Downtown', 'Caledonia', 'Marinship', 'Floating homes'],
+  neighborhoods: ['Downtown', 'Caledonia', 'Marinship', 'Floating homes', 'Old Town', 'Banana Belt'],
   midCtaHeading: 'Need Appliance Repair in Sausalito?',
   heroImage: '/images/MarinVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
+  faqs: buildStandardFaqs('Sausalito', {
+    driveTime: 'about 45 minutes from Cotati on our regular south Marin route',
+    localIssue: {
+      question: 'Do you repair appliances in Sausalito\u2019s floating homes?',
+      answer: 'Yes. Floating homes often have compact or European-style appliances with unique part requirements. Our factory authorizations cover brands like Bosch, Miele, and Fisher & Paykel that are common in smaller waterfront spaces. We also account for salt-air exposure in every coastal diagnosis.',
+    },
+  }),
 }
 
 const tiburon: CityContent = {
@@ -691,10 +939,17 @@ const tiburon: CityContent = {
   ],
 
   localExpertsText: 'About 45 minutes from Cotati. Part of our regular south Marin schedule.',
-  neighborhoods: ['Downtown', 'Belvedere', 'Paradise Drive', 'Reed Heights'],
+  neighborhoods: ['Downtown', 'Belvedere', 'Paradise Drive', 'Reed Heights', 'Strawberry Point', 'Hawthorne Terrace'],
   midCtaHeading: 'Need Appliance Repair in Tiburon?',
   heroImage: '/images/MarinVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
+  faqs: buildStandardFaqs('Tiburon', {
+    driveTime: 'about 45 minutes from Cotati on our regular south Marin schedule',
+    localIssue: {
+      question: 'Do you repair Sub-Zero and Wolf in Tiburon and Belvedere waterfront homes?',
+      answer: 'Yes. We are factory-authorized for Sub-Zero, Wolf, Viking, Dacor, Thermador, and Miele, which are common in Tiburon and Belvedere estates. We also factor salt-air exposure into every diagnosis, since waterfront homes see accelerated corrosion on coils and connections.',
+    },
+  }),
 }
 
 const corteMadera: CityContent = {
@@ -725,10 +980,17 @@ const corteMadera: CityContent = {
   ],
 
   localExpertsText: 'About 35 minutes from Cotati. Part of our regular central Marin route.',
-  neighborhoods: ['The Village area', 'Christmas Tree Hill', 'Madera Gardens', 'Mariner Cove'],
+  neighborhoods: ['The Village area', 'Christmas Tree Hill', 'Madera Gardens', 'Mariner Cove', 'Chapman Park', 'Mariner Green'],
   midCtaHeading: 'Need Appliance Repair in Corte Madera?',
   heroImage: '/images/MarinVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
+  faqs: buildStandardFaqs('Corte Madera', {
+    driveTime: 'about 35 minutes from Cotati on our regular central Marin route',
+    localIssue: {
+      question: 'Why is my front-load washer getting musty in Corte Madera?',
+      answer: 'Corte Madera\u2019s proximity to the bay means slightly higher humidity in many neighborhoods. Front-loaders are particularly prone to gasket mold and odor if the door is kept closed between washes. Leave the door ajar, run a monthly hot-water cleaning cycle with vinegar or a washer cleaner, and wipe the gasket dry. If the smell persists, the gasket may need replacement.',
+    },
+  }),
 }
 
 const larkspur: CityContent = {
@@ -758,10 +1020,17 @@ const larkspur: CityContent = {
   ],
 
   localExpertsText: 'About 35 minutes from Cotati. Part of our regular central Marin schedule.',
-  neighborhoods: ['Downtown Larkspur', 'Greenbrae', 'Kentfield', 'Murray Park'],
+  neighborhoods: ['Downtown Larkspur', 'Greenbrae', 'Kentfield', 'Murray Park', 'Madrone Park', 'Baltimore Canyon'],
   midCtaHeading: 'Need Appliance Repair in Larkspur?',
   heroImage: '/images/MarinVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
+  faqs: buildStandardFaqs('Larkspur', {
+    driveTime: 'about 35 minutes from Cotati on our regular central Marin schedule',
+    localIssue: {
+      question: 'My dryer is taking extra-long to dry in my Greenbrae home. Why?',
+      answer: 'Many Greenbrae and Kentfield homes built in the 1950s and 1960s have compact utility spaces that restrict dryer airflow. If your dryer is taking extra-long cycles, check the vent path first \u2014 look for kinks, lint buildup, or crushing behind the dryer. Clean the lint trap after every load and have the vent line professionally cleaned annually. If the issue persists, the heating element or thermal fuse may need replacement.',
+    },
+  }),
 }
 
 // ---------------------------------------------------------------------------
@@ -771,17 +1040,20 @@ const larkspur: CityContent = {
 const napa: CityContent = {
   slug: 'napa',
   name: 'Napa',
-  metaTitle: 'Appliance Repair Napa | Trusted Since 1975 | Kelly\'s',
+  metaTitle: 'Napa Appliance Repair \u2014 Factory Authorized Since 1975',
   metaDescription:
-    'Napa\'s trusted appliance repair since 1975. Downtown, Browns Valley, Silverado, and vineyard homes. Diamond Certified technicians, genuine parts, 90-day money-back guarantee.',
+    '50 years of factory-authorized appliance repair for Napa Valley homes. Sub-Zero, Viking, Wolf, Thermador, and every major brand. Diamond Certified, 90-day guarantee. Call (707) 664-9702 or book online.',
   heroSubtitle:
     'Professional appliance repair for Napa homes and vineyard properties. Factory-authorized with a 90-day money-back guarantee.',
 
   trustHeading: 'Why Napa Residents Trust Kelly\u2019s',
   trustContent: [
-    'Napa kitchens are built for entertaining, and many homes feature commercial-grade appliances from brands like Viking, Wolf, Sub-Zero, and Thermador. Our factory authorizations ensure these investments get proper expert care.',
-    'We cross the county line from Cotati to Napa in about 30 minutes, and we schedule Napa visits multiple days a week. Call us to check our next available appointment.',
-    'Whether you live near downtown\u2019s Oxbow Public Market or in a vineyard estate along the Silverado Trail, we bring the same reliable, guaranteed service to every Napa address.',
+    'Napa kitchens are built for entertaining, and many homes feature commercial-grade appliances from brands like Viking, Wolf, Sub-Zero, Thermador, and Miele. Our factory authorizations ensure these premium investments get proper expert care with genuine OEM parts.',
+    'We cross the county line from Cotati to Napa in about 30 minutes, and we schedule Napa visits multiple days a week. Whether your call comes from Downtown, Browns Valley, the Silverado Trail, or the vineyards toward Yountville, we bring the same reliable, guaranteed service.',
+    'Napa Valley\u2019s groundwater is notoriously hard, with high calcium and mineral content. This takes a serious toll on dishwashers, ice makers, water filters, and washing machine valves over time. Homes on well water are especially affected. We see the pattern constantly and know how to fix it.',
+    'Wine-lifestyle kitchens with professional ranges, multiple refrigerators, and built-in wine coolers put heavy demands on home electrical systems. If your breaker trips when two large appliances run simultaneously, the issue may be circuit capacity rather than the appliance itself. We help you figure out which it is.',
+    'Many Napa properties are second homes, vacation rentals, or host guests regularly. A broken appliance before a dinner party or a rental turnover can mean lost revenue. We understand the urgency and work to get you back online fast.',
+    'Every repair comes with our 90-day money-back guarantee, and we are Diamond Certified for consistent quality across every Napa address we visit.',
   ],
 
   localHighlights:
@@ -796,10 +1068,36 @@ const napa: CityContent = {
   ],
 
   localExpertsText: 'About 30 minutes east from our Cotati shop, crossing into Napa County.',
-  neighborhoods: ['Downtown', 'Browns Valley', 'Silverado', 'Old Town', 'Westwood'],
+  neighborhoods: ['Downtown', 'Browns Valley', 'Silverado', 'Old Town', 'Westwood', 'Alta Heights', 'Bel Aire Park', 'Linda Vista', 'Trancas Crossing', 'Napa Valley'],
   midCtaHeading: 'Need Appliance Repair in Napa Valley?',
   heroImage: '/images/SonomaVan2.jpg',
   heroImageAlt: 'Kelly\'s Appliance service vans in wine country, serving Napa Valley',
+  faqs: [
+    {
+      question: 'How much does appliance repair cost in Napa?',
+      answer: 'Our service call fee is $149, which includes full diagnosis and is applied toward the repair if you proceed. Standard Napa repairs range from $200 to $500, while premium brand work on Sub-Zero, Viking, Wolf, or Thermador can run higher due to specialty parts. We always provide an upfront estimate before any work begins.',
+    },
+    {
+      question: 'Do you repair Sub-Zero, Viking, and Wolf in Napa?',
+      answer: 'Yes. We are factory-authorized for Sub-Zero, Viking, Wolf, Thermador, Miele, and most other premium brands common in Napa Valley kitchens. Our technicians are trained on these specific models and we stock or can quickly order the genuine OEM parts they require.',
+    },
+    {
+      question: 'Do you offer same-day repair in Napa?',
+      answer: 'Often, yes. We schedule Napa visits multiple days per week and same-day calls are possible, especially for urgent refrigerator, ice maker, or wine cooler issues. The drive from Cotati takes about 30 minutes across the county line. Call (707) 664-9702 to check availability.',
+    },
+    {
+      question: 'Why does my dishwasher keep getting clogged in Napa?',
+      answer: 'Napa Valley\u2019s groundwater is extremely hard with high calcium and mineral content. Mineral deposits build up inside dishwasher spray arms, drain pumps, and water inlet valves faster than in most other areas. Homes on well water are especially affected. Regular cleaning and part replacement prevents most issues, and we know exactly which parts fail most often on which brands.',
+    },
+    {
+      question: 'Do you service my Napa neighborhood?',
+      answer: 'Yes. We service all Napa neighborhoods including Downtown, Browns Valley, Silverado, Old Town, Westwood, Alta Heights, Bel Aire Park, Linda Vista, and the vineyard properties along the Silverado Trail. If you\u2019re in the greater Napa Valley, we cover you.',
+    },
+    {
+      question: 'Can you repair appliances in my Napa vacation rental fast?',
+      answer: 'Yes, and we understand the urgency. Many Napa properties are second homes, vacation rentals, or event venues. We prioritize calls where a broken appliance could mean lost bookings or ruined plans. Let us know the situation when you call and we\u2019ll do our best to get someone out quickly.',
+    },
+  ],
 }
 
 // ---------------------------------------------------------------------------

@@ -9,6 +9,7 @@ import BottomCTA from '@/components/BottomCTA'
 import NearbyCityLinks from '@/components/NearbyCityLinks'
 import RelatedServiceLinks from '@/components/RelatedServiceLinks'
 import CityJsonLd from '@/components/CityJsonLd'
+import FAQSection from '@/components/FAQSection'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 import { getCityContent } from '@/data/cityContent'
@@ -117,6 +118,14 @@ export default function SanAnselmoPage() {
       </section>
 
       <WhyChooseUs localExpertsText={city.localExpertsText} />
+
+      {city.faqs && city.faqs.length >= 2 && (
+        <FAQSection
+          title={`Frequently Asked Questions — Appliance Repair in ${city.name}`}
+          faqs={city.faqs}
+          id={`${city.slug}-faqs`}
+        />
+      )}
 
       {city.communityLink && (
         <section className="py-12">
