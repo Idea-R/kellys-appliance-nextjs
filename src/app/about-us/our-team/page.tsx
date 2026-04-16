@@ -130,6 +130,18 @@ const teamMembers: TeamMember[] = [
     role: 'Service Technician',
     image: '/images/team/Porter.jpeg',
     bio: 'Experienced technician delivering reliable service across all major brands.'
+  },
+  {
+    name: 'Ismael Gutierrez',
+    role: 'Service Technician',
+    image: '/images/team/Ismael.jpg',
+    bio: 'Service technician bringing careful, reliable work to every home we visit.'
+  },
+  {
+    name: 'Liam Melendez',
+    role: 'Service Technician',
+    image: '/images/team/Liam.jpg',
+    bio: 'Service technician focused on quality diagnostics and honest repairs.'
   }
 ];
 

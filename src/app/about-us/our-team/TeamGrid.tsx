@@ -3,8 +3,6 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import Image from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
-import { WrenchScrewdriverIcon, SparklesIcon } from '@heroicons/react/24/solid'
-import { Crown } from 'lucide-react'
 import YearsOfServiceBadge from '@/components/YearsOfServiceBadge'
 
 export type TeamMember = {
@@ -26,9 +24,9 @@ export type TeamMember = {
 
 function getVariant(role: string) {
   const r = role.toLowerCase()
-  if (r.includes('owner')) return { bg: 'bg-amber-600/95', accent: 'bg-amber-700', Icon: Crown }
-  if (r.includes('technician')) return { bg: 'bg-emerald-700/95', accent: 'bg-emerald-800', Icon: WrenchScrewdriverIcon }
-  return { bg: 'bg-sky-700/95', accent: 'bg-sky-800', Icon: SparklesIcon }
+  if (r.includes('owner')) return { bg: 'bg-amber-600/95' }
+  if (r.includes('technician')) return { bg: 'bg-emerald-700/95' }
+  return { bg: 'bg-sky-700/95' }
 }
 
 export default function TeamGrid({ members }: { members: TeamMember[] }) {
@@ -59,25 +57,6 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
                 className="object-cover object-[center_20%] rounded-none transform group-hover:scale-[1.02] transition-transform"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              {/* Ribbon nameplate bottom-left */}
-              <div className="absolute bottom-3 left-3 z-10 flex items-stretch">
-                {(() => {
-                  const v = getVariant(member.role)
-                  const Icon = v.Icon
-                  return (
-                    <>
-                      <div className="self-center mr-1 rounded-full bg-black/45 backdrop-blur p-1 ring-1 ring-white/30">
-                        <Icon className="h-4 w-4 text-white" />
-                      </div>
-                      <div className={`${v.bg} text-white shadow-lg ring-1 ring-black/20 rounded-r-md px-4 py-1`}>
-                        <span className="text-2xl leading-none font-bold">{member.name.split(' ')[0]}</span>
-                      </div>
-                      <span aria-hidden className={`h-[34px] w-3 ${v.accent}`} style={{ clipPath: 'polygon(0 0, 100% 50%, 0 100%)' }} />
-                    </>
-                  )
-                })()}
-              </div>
-              
               {/* Years of Service badge - bottom right */}
               {member.yearsOfService && member.yearsOfService >= 1 && (
                 <YearsOfServiceBadge years={member.yearsOfService} position="corner" />
