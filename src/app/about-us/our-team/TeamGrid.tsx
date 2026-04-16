@@ -3,6 +3,8 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import Image from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
+import { WrenchScrewdriverIcon, SparklesIcon } from '@heroicons/react/24/solid'
+import { Crown } from 'lucide-react'
 import YearsOfServiceBadge from '@/components/YearsOfServiceBadge'
 
 export type TeamMember = {
@@ -24,9 +26,9 @@ export type TeamMember = {
 
 function getVariant(role: string) {
   const r = role.toLowerCase()
-  if (r.includes('owner')) return { bg: 'bg-amber-600/95' }
-  if (r.includes('technician')) return { bg: 'bg-emerald-700/95' }
-  return { bg: 'bg-sky-700/95' }
+  if (r.includes('owner')) return { bg: 'bg-amber-600/95', Icon: Crown }
+  if (r.includes('technician')) return { bg: 'bg-emerald-700/95', Icon: WrenchScrewdriverIcon }
+  return { bg: 'bg-sky-700/95', Icon: SparklesIcon }
 }
 
 export default function TeamGrid({ members }: { members: TeamMember[] }) {
@@ -57,22 +59,40 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
                 className="object-cover object-[center_20%] rounded-none transform group-hover:scale-[1.02] transition-transform"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              {/* Years of Service badge - bottom right */}
-              {member.yearsOfService && member.yearsOfService >= 1 && (
-                <YearsOfServiceBadge years={member.yearsOfService} position="corner" />
-              )}
             </div>
             <div className="p-6 flex flex-col flex-grow">
               <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
               <p className="text-green-600 font-semibold mb-3">{member.role}</p>
               <p className="text-gray-600 text-sm flex-grow">{member.bio}</p>
-              <div className="mt-4 pt-4">
+              <div className="mt-4 pt-4 flex items-center justify-between gap-3 flex-wrap">
                 <button
                   onClick={() => setSelected(member)}
                   className="inline-flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded font-semibold hover:bg-green-700 transition-colors"
                 >
                   Learn More
                 </button>
+
+                <div className="flex items-center gap-2">
+                  {/* Role icon badge */}
+                  {(() => {
+                    const v = getVariant(member.role)
+                    const Icon = v.Icon
+                    return (
+                      <div
+                        className={`${v.bg} rounded-full p-2 ring-1 ring-black/10 shadow-sm`}
+                        title={member.role}
+                        aria-label={member.role}
+                      >
+                        <Icon className="h-4 w-4 text-white" />
+                      </div>
+                    )
+                  })()}
+
+                  {/* Years of Service badge - card variant */}
+                  {member.yearsOfService && member.yearsOfService >= 1 && (
+                    <YearsOfServiceBadge years={member.yearsOfService} position="card" />
+                  )}
+                </div>
               </div>
             </div>
           </div>

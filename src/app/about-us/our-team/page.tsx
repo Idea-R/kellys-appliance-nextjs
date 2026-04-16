@@ -40,7 +40,8 @@ const teamMembers: TeamMember[] = [
     name: 'Kendra Hoetger',
     role: 'General Manager',
     image: '/images/Kendra-23-scaled.jpg',
-    bio: 'General manager handling appointments, billing, and customer communications.'
+    bio: 'General manager handling appointments, billing, and customer communications.',
+    yearsOfService: 10
   },
   {
     name: 'Shane Spencer',

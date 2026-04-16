@@ -3,7 +3,7 @@ import { Trophy, Award, Star, Sparkles } from 'lucide-react';
 
 interface YearsOfServiceBadgeProps {
   years: number;
-  position?: 'corner' | 'inline';
+  position?: 'corner' | 'inline' | 'card';
 }
 
 // Determine milestone tier and styling
@@ -106,7 +106,37 @@ export default function YearsOfServiceBadge({ years, position = 'corner' }: Year
           pointer-events-none
         ">
           <div className="bg-gray-900 text-white text-xs rounded-lg px-3 py-2 whitespace-nowrap shadow-xl">
-            {years} Years of Service
+            {years} Years with Kelly&apos;s Appliance
+            <div className="absolute top-full right-4 -mt-1 w-2 h-2 bg-gray-900 transform rotate-45"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (position === 'card') {
+    // Compact in-flow badge for card footer (same visual as corner, no absolute positioning)
+    return (
+      <div className="relative group/badge inline-block">
+        <div className={`
+          ${milestone.bg} ${milestone.text} ${milestone.ring} ${milestone.glow}
+          rounded-full px-3 py-1.5
+          inline-flex items-center gap-1.5
+          transition-all duration-300 hover:scale-105
+        `}>
+          <Icon className="h-4 w-4" />
+          <span className="text-xs font-bold whitespace-nowrap">{milestone.label}</span>
+        </div>
+
+        {/* Tooltip on hover */}
+        <div className="
+          absolute bottom-full right-0 mb-2 z-20
+          opacity-0 group-hover/badge:opacity-100
+          transition-opacity duration-200
+          pointer-events-none
+        ">
+          <div className="bg-gray-900 text-white text-xs rounded-lg px-3 py-2 whitespace-nowrap shadow-xl">
+            {years} Years with Kelly&apos;s Appliance
             <div className="absolute top-full right-4 -mt-1 w-2 h-2 bg-gray-900 transform rotate-45"></div>
           </div>
         </div>
