@@ -40,7 +40,7 @@ const teamMembers: TeamMember[] = [
     name: 'Kendra Hoetger',
     role: 'General Manager',
     image: '/images/Kendra-23-scaled.jpg',
-    bio: 'General manager handling appointments, billing, and customer communications.',
+    bio: '',
     yearsOfService: 10
   },
   {
@@ -94,55 +94,55 @@ const teamMembers: TeamMember[] = [
     name: 'Abby Jensen',
     role: 'Parts Coordinator/CSR',
     image: '/images/Abby-2-23-scaled.jpg',
-    bio: 'Coordinating parts logistics and customer scheduling to ensure excellent service.'
+    bio: ''
   },
   {
     name: 'Phil Cockle',
     role: 'Service Technician',
     image: '/images/team/Philz.jpg',
-    bio: 'Service technician bringing hands-on expertise and dedication to every repair.'
+    bio: ''
   },
   {
     name: 'Bianca Bonilla',
     role: 'Service Technician',
     image: '/images/team/Biancaz.jpg',
-    bio: 'Service technician supporting complex diagnostics and service excellence.'
+    bio: ''
   },
   {
     name: 'Ricardo Ramos',
     role: 'Service Technician',
     image: '/images/team/Ricardo.jpg',
-    bio: 'Dedicated service technician with experience in dishwasher and appliance diagnostics.'
+    bio: ''
   },
   {
     name: 'Joe Denning',
     role: 'Service Technician',
     image: '/images/team/Joe.jpg',
-    bio: 'Skilled service technician with expertise in washer and dryer repair services.'
+    bio: ''
   },
   {
     name: 'Sean Foley',
     role: 'Service Technician',
     image: '/images/team/Sean.jpeg',
-    bio: 'Professional field technician serving customers throughout the Bay Area.'
+    bio: ''
   },
   {
     name: 'Anthony Porter',
     role: 'Service Technician',
     image: '/images/team/Porter.jpeg',
-    bio: 'Experienced technician delivering reliable service across all major brands.'
+    bio: ''
   },
   {
     name: 'Ismael Gutierrez',
     role: 'Service Technician',
     image: '/images/team/Ismael.jpg',
-    bio: 'Service technician bringing careful, reliable work to every home we visit.'
+    bio: ''
   },
   {
     name: 'Liam Melendez',
     role: 'Service Technician',
     image: '/images/team/Liam.jpg',
-    bio: 'Service technician focused on quality diagnostics and honest repairs.'
+    bio: ''
   }
 ];
 
