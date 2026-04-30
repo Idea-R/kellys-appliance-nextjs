@@ -234,15 +234,15 @@ export default function ApeClosingBlogPage() {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Link
-                href="/blog/how-to-tell-if-your-refrigerator-needs-professional-repair"
+                href="/blog/right-to-repair-why-kellys-rebuilds-control-boards"
                 className="group"
               >
                 <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
                   <h4 className="text-lg font-semibold text-gray-900 group-hover:text-green-600 mb-2">
-                    How to Tell If Your Refrigerator Needs Professional Repair
+                    Right to Repair: Why Kelly&apos;s Rebuilds Control Boards Instead of Replacing Them
                   </h4>
                   <p className="text-gray-600 text-sm">
-                    Warning signs that your fridge needs a technician: unusual noises, temperature swings, and frost buildup.
+                    Most shops just swap a $400 control board. We rebuild them. Here&apos;s what right to repair actually means.
                   </p>
                 </div>
               </Link>

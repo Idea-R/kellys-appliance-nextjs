@@ -18,6 +18,15 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: "Right to Repair: Why Kelly's Rebuilds Control Boards Instead of Replacing Them",
+    slug: 'right-to-repair-why-kellys-rebuilds-control-boards',
+    excerpt:
+      "Most shops just swap a $400 control board. We rebuild them. Here's why right to repair matters, what California's 2024 law actually does, and how component-level repair saves your appliance and your wallet.",
+    date: '2026-04-16',
+    readTime: '8 min read',
+    category: 'Professional Service',
+  },
+  {
     title: 'Fridge Water Tastes Bad? Ice Maker Not Working? What to Check First',
     slug: 'fridge-water-tastes-bad-ice-maker-not-working',
     excerpt:
