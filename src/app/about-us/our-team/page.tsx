@@ -109,6 +109,12 @@ const teamMembers: TeamMember[] = [
     funFact: 'Off the clock: suspenseful mystery novels and experimenting in the kitchen.'
   },
   {
+    name: 'Amanda',
+    role: 'Customer Service Representative',
+    image: '/images/team/Amanda.jpg',
+    bio: 'Our newest CSR. Helping customers schedule repairs and tracking down answers when they need them.'
+  },
+  {
     name: 'Phil Cockle',
     role: 'Service Technician',
     image: '/images/team/Philz.jpg',
