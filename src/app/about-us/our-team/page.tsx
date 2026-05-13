@@ -21,8 +21,8 @@ const teamMembers: TeamMember[] = [
     name: 'Mark Kelly',
     role: 'Owner',
     image: '/images/team/Markz.jpg',
-    bio: 'Owner. 42+ years at Kelly\'s, 63 years in the community. Loves a difficult diagnosis.',
-    bioFull: 'Mark has been at Kelly\'s for over 42 years and still loves the technical side of the work. The harder the diagnosis, the better. He\'ll dig into a complex repair that\'s stumped someone else, and the "aha!" moment when he figures it out is what keeps him coming back. Customers leave with a working appliance. That\'s the win.\n\nHe\'s also lived in the community for 63 years, so a lot of the people he services aren\'t strangers. They\'re neighbors, families he\'s known for decades. He takes that personally.\n\nOutside of the shop, Mark\'s five grandsons run the show. He calls them the love of his life.',
+    bio: 'Owner. Master of difficult diagnoses and complex repairs. Lifelong community member with deep local roots.',
+    bioFull: 'Mark thrives on the technical side of the work. After four decades on the job, the harder the diagnosis, the better. He\'ll dig into a complex repair that\'s stumped someone else, and the "aha!" moment when he figures it out is what keeps him coming back. Customers leave with a working appliance. That\'s the win.\n\nHe\'s also lived in the community for 63 years, so a lot of the people he services aren\'t strangers. They\'re neighbors, families he\'s known for decades. He takes that personally.\n\nOutside of the shop, Mark\'s five grandsons run the show. He calls them the love of his life.',
     yearsExperience: 42,
     yearsOfService: 42,
     specialties: [
@@ -43,7 +43,7 @@ const teamMembers: TeamMember[] = [
     name: 'Kendra Hoetger',
     role: 'General Manager',
     image: '/images/Kendra-23-scaled.jpg',
-    bio: 'General Manager. Started a decade ago as a part-time CSR and worked her way up. Runs daily operations, admin, and the customer service team.',
+    bio: 'General Manager. Started as a part-time CSR and worked her way up. Runs daily operations, admin, and the customer service team.',
     bioFull: 'Kendra runs the office at Kelly\'s. She started ten years ago as a part-time CSR and worked her way up to General Manager. Today she oversees daily operations, administrative functions, and the customer service team.\n\nOver the last decade she\'s helped scale what Kelly\'s can take on without losing the 50-year reputation the company has for actually answering the phone, showing up when it says it will, and treating customers like neighbors.',
     yearsExperience: 10,
     yearsOfService: 10,
@@ -105,8 +105,8 @@ const teamMembers: TeamMember[] = [
     name: 'Abby Jensen',
     role: 'Parts Coordinator/CSR',
     image: '/images/Abby-2-23-scaled.jpg',
-    bio: 'Parts and Customer Service since 2018. The detail person who tracks down the right parts and keeps repairs moving.',
-    bioFull: 'Abby has been on the Parts and Customer Service team since 2018. She handles the nitty-gritty work: parts lookups, ordering, the small details that make sure a repair actually moves forward. Tracking down the right part for a 12-year-old fridge is more detective work than people realize, and that\'s the part she likes.\n\nOff the clock she\'s usually deep in a suspenseful mystery novel or trying out something new in the kitchen.',
+    bio: 'Parts and Customer Service. The detail person who tracks down the right parts and keeps repairs moving.',
+    bioFull: 'Abby handles the nitty-gritty work on the Parts and Customer Service team: parts lookups, ordering, the small details that make sure a repair actually moves forward. Tracking down the right part for a 12-year-old fridge is more detective work than people realize, and that\'s the part she likes.\n\nOff the clock she\'s usually deep in a suspenseful mystery novel or trying out something new in the kitchen.',
     yearsOfService: 8,
     specialties: [
       'Parts lookup and identification',
@@ -144,8 +144,8 @@ const teamMembers: TeamMember[] = [
     name: 'Joe Denning',
     role: 'Service Technician',
     image: '/images/team/Joe.jpg',
-    bio: 'Six years at Kelly\'s. Works on everything from older classics to the newest complex systems. Factory training with Whirlpool, Viking, and Bosch.',
-    bioFull: 'Joe has been at Kelly\'s for six years. He works on the full range of appliances we see, from the older classic designs to the newer complex systems that take more time to figure out.\n\nJoe goes to manufacturer training regularly. Whirlpool, Viking, Bosch. Keeps him current on the latest tech and warranty requirements. The favorite part of the job for him is solving the frustrating problems. The ones where the customer has been dealing with a broken appliance for days and just wants it fixed. Walking out leaving someone with a functioning home is the win. He also likes that no two days look alike at this job. New people, new houses, new problems.\n\nWhen he\'s not on a service call, Joe\'s at the gym, playing sports, or hanging out with friends.',
+    bio: 'Works on everything from older classics to the newest complex systems. Factory training with Whirlpool, Viking, and Bosch.',
+    bioFull: 'Joe works on the full range of appliances we see, from the older classic designs to the newer complex systems that take more time to figure out.\n\nHe goes to manufacturer training regularly. Whirlpool, Viking, Bosch. Keeps him current on the latest tech and warranty requirements. The favorite part of the job for him is solving the frustrating problems. The ones where the customer has been dealing with a broken appliance for days and just wants it fixed. Walking out leaving someone with a functioning home is the win. He also likes that no two days look alike at this job. New people, new houses, new problems.\n\nWhen he\'s not on a service call, Joe\'s at the gym, playing sports, or hanging out with friends.',
     yearsExperience: 6,
     yearsOfService: 6,
     specialties: [
@@ -173,8 +173,14 @@ const teamMembers: TeamMember[] = [
     name: 'Ismael Góngora',
     role: 'Service Technician',
     image: '/images/team/Ismael.jpg',
-    bio: 'Service technician. Takes the time to explain the work and walk customers through their options.',
-    bioFull: 'Ismael takes a careful approach to every service call. He\'ll spend the time to explain what\'s actually wrong and walk a customer through their options. No rushed jobs, no talking past people.\n\nOutside of work, he stays involved in his community. The same approach he brings to a repair shows up everywhere else. Show up, listen, do it right.'
+    bio: 'Service technician with solid technical know-how and a customer-first approach. Takes the time to explain what\'s actually wrong before he fixes it.',
+    bioFull: 'Ismael brings a careful approach to every service call. He\'ll spend the time to explain what\'s actually wrong, walk a customer through their options, and get to the right fix. No rushed jobs, no talking past people.\n\nHe\'s a trusted resource for both customers and the rest of the team. Solid technical knowledge paired with a real willingness to help, whether that\'s digging into a tricky diagnosis or giving someone practical advice on their appliance. People know what they\'re getting when Ismael\'s the one on the call.\n\nOutside of work, he stays active and involved in his community. He\'s built his approach to the job on the idea that strong relationships matter, and that shows up in how he treats every customer.',
+    specialties: [
+      'Diagnostic technical knowledge',
+      'Customer communication and education',
+      'Walking customers through repair options',
+      'Team collaboration and support'
+    ]
   },
   {
     name: 'Liam Melendez',
