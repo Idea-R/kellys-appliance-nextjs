@@ -43,8 +43,16 @@ const teamMembers: TeamMember[] = [
     name: 'Kendra Hoetger',
     role: 'General Manager',
     image: '/images/Kendra-23-scaled.jpg',
-    bio: '',
-    yearsOfService: 10
+    bio: 'General Manager. Started a decade ago as a part-time CSR and worked her way up. Runs daily operations, admin, and the customer service team.',
+    bioFull: 'Kendra runs the office at Kelly\'s. She started ten years ago as a part-time CSR and worked her way up to General Manager. Today she oversees daily operations, administrative functions, and the customer service team.\n\nOver the last decade she\'s helped scale what Kelly\'s can take on without losing the 50-year reputation the company has for actually answering the phone, showing up when it says it will, and treating customers like neighbors.',
+    yearsExperience: 10,
+    yearsOfService: 10,
+    specialties: [
+      'Daily operations management',
+      'Customer service leadership',
+      'Office administration',
+      'Scheduling & dispatch coordination'
+    ]
   },
   {
     name: 'Shane Spencer',
@@ -137,7 +145,7 @@ const teamMembers: TeamMember[] = [
     role: 'Service Technician',
     image: '/images/team/Joe.jpg',
     bio: 'Six years at Kelly\'s. Works on everything from older classics to the newest complex systems. Factory training with Whirlpool, Viking, and Bosch.',
-    bioFull: 'Joe has been at Kelly\'s for six years. He works on the full range of appliances we see, from the older classic designs to the newer complex systems that take more time to figure out.\n\nJoe goes to manufacturer training regularly. Whirlpool, Viking, Bosch. Keeps him current on the latest tech and warranty requirements. The favorite part of the job for him is solving the frustrating problems. The ones where the customer has been dealing with a broken appliance for days and just wants it fixed. Walking out leaving someone with a functioning home is the win.\n\nWhen he\'s not on a service call, Joe\'s at the gym, playing sports, or hanging out with friends.',
+    bioFull: 'Joe has been at Kelly\'s for six years. He works on the full range of appliances we see, from the older classic designs to the newer complex systems that take more time to figure out.\n\nJoe goes to manufacturer training regularly. Whirlpool, Viking, Bosch. Keeps him current on the latest tech and warranty requirements. The favorite part of the job for him is solving the frustrating problems. The ones where the customer has been dealing with a broken appliance for days and just wants it fixed. Walking out leaving someone with a functioning home is the win. He also likes that no two days look alike at this job. New people, new houses, new problems.\n\nWhen he\'s not on a service call, Joe\'s at the gym, playing sports, or hanging out with friends.',
     yearsExperience: 6,
     yearsOfService: 6,
     specialties: [
