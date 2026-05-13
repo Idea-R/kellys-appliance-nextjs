@@ -43,8 +43,8 @@ const teamMembers: TeamMember[] = [
     name: 'Kendra Hoetger',
     role: 'General Manager',
     image: '/images/Kendra-23-scaled.jpg',
-    bio: 'General Manager. Started as a part-time CSR and worked her way up. Runs daily operations, admin, and the customer service team.',
-    bioFull: 'Kendra runs the office at Kelly\'s. She started ten years ago as a part-time CSR and worked her way up to General Manager. Today she oversees daily operations, administrative functions, and the customer service team.\n\nOver the last decade she\'s helped scale what Kelly\'s can take on without losing the 50-year reputation the company has for actually answering the phone, showing up when it says it will, and treating customers like neighbors.',
+    bio: 'General Manager. Started as a part-time CSR and quickly moved up the ladder into management. Oversees daily operations, administrative functions, and customer service.',
+    bioFull: 'Kendra Hoetger is the General Manager of Kelly\'s Appliance Center. She has a decade of industry experience, starting as a part-time CSR and quickly moving up the ladder into management. She oversees the company\'s daily operations, administrative functions, and customer service departments.\n\nThroughout her tenure, Kendra has been instrumental in scaling the company\'s service capabilities while maintaining its 50-year reputation for community-focused reliability. She is recognized for her expertise in operational leadership and her commitment to professional excellence in the local business community.',
     yearsExperience: 10,
     yearsOfService: 10,
     specialties: [
