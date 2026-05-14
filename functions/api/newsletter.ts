@@ -1,9 +1,24 @@
 // Cloudflare Pages Function for newsletter signup
 // Handles POST requests to /api/newsletter
 // Uses Resend API for contact management and email delivery
+// Also fires fire-and-forget POST to OATAS for lead attribution tracking
+// (filterable via source_detail: 'newsletter' if you want to exclude these
+// from the "actual sales leads" view in OATAS)
+
+import { ingestToOatas } from '../_lib/oatas-ingest'
 
 interface NewsletterSignupData {
   email: string;
+  // Optional attribution fields appended by NewsletterSignupForm from sessionStorage
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
+  landing_url?: string;
 }
 
 interface Env {
@@ -14,6 +29,8 @@ interface Env {
   SITE_URL?: string;
   RESEND_NEWSLETTER_SEGMENT_ID?: string;
   RESEND_NEWSLETTER_TOPIC_ID?: string;
+  OATAS_INGEST_URL?: string;
+  OATAS_INGEST_KEY?: string;
 }
 
 const MAX_EMAIL_LENGTH = 255;
@@ -21,6 +38,7 @@ const MAX_EMAIL_LENGTH = 255;
 export async function onRequestPost(context: {
   request: Request;
   env: Env;
+  waitUntil: (promise: Promise<unknown>) => void;
 }) {
   try {
     const data = await context.request.json() as NewsletterSignupData;
@@ -140,10 +158,34 @@ export async function onRequestPost(context: {
       text,
     });
 
+    // Fire-and-forget: post to OATAS for lead attribution tracking.
+    // Newsletter signups land in marketing_leads with source_detail='newsletter'
+    // so they can be filtered out of the main sales-leads view.
+    context.waitUntil(
+      ingestToOatas(
+        { OATAS_INGEST_URL: context.env.OATAS_INGEST_URL, OATAS_INGEST_KEY: context.env.OATAS_INGEST_KEY },
+        {
+          source: 'website_form',
+          source_detail: 'newsletter',
+          customer_email: emailStr,
+          gclid: data.gclid,
+          gbraid: data.gbraid,
+          wbraid: data.wbraid,
+          utm_source: data.utm_source,
+          utm_medium: data.utm_medium,
+          utm_campaign: data.utm_campaign,
+          utm_term: data.utm_term,
+          utm_content: data.utm_content,
+          landing_url: data.landing_url,
+        },
+        context.request,
+      ),
+    );
+
     return new Response(
       JSON.stringify({ ok: true, message: 'Successfully subscribed to newsletter' }),
-      { 
-        status: 200, 
+      {
+        status: 200,
         headers: { 
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',

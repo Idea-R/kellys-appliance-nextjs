@@ -21,10 +21,23 @@ export default function NewsletterSignupForm() {
       setStatus('submitting')
       setErrorMessage('')
 
+      // Attribution data captured by Analytics.tsx in sessionStorage
+      const attribution: Record<string, string> = {}
+      try {
+        const utmRaw = sessionStorage.getItem('kellys_utm')
+        if (utmRaw) {
+          const utm = JSON.parse(utmRaw) as Record<string, string>
+          for (const key of ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']) {
+            if (utm[key]) attribution[key] = utm[key]
+          }
+        }
+        attribution.landing_url = window.location.href
+      } catch { /* noop */ }
+
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim() }),
+        body: JSON.stringify({ email: email.trim(), ...attribution }),
       })
 
       const data = await res.json()
@@ -51,14 +64,14 @@ export default function NewsletterSignupForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-lg">
-      <div className="flex flex-col sm:flex-row gap-3">
+    <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-lg ring-1 ring-white/15">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email address"
-          className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 shadow-sm"
+          className="flex-1 px-4 py-3 rounded-lg bg-white text-gray-900 placeholder:text-gray-400 border border-transparent focus:outline-none focus:border-green-300 focus:ring-2 focus:ring-green-300/60 shadow-sm"
           required
           disabled={status === 'submitting' || status === 'success'}
           aria-label="Email address for newsletter subscription"
@@ -66,7 +79,7 @@ export default function NewsletterSignupForm() {
         <button
           type="submit"
           data-analytics-label="newsletter_subscribe"
-          className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-green-800 hover:bg-green-900 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-sm whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={status === 'submitting' || status === 'success'}
           aria-live="polite"
         >
