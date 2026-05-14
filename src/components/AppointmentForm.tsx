@@ -110,6 +110,19 @@ export default function AppointmentForm() {
     // Attach photos
     photos.forEach((f) => body.append('photos', f, f.name))
 
+    // Attach attribution data captured by Analytics.tsx in sessionStorage
+    try {
+      const utmRaw = sessionStorage.getItem('kellys_utm')
+      if (utmRaw) {
+        const utm = JSON.parse(utmRaw) as Record<string, string>
+        for (const key of ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']) {
+          const v = utm[key]
+          if (v) body.append(key, v)
+        }
+      }
+      body.append('landing_url', window.location.href)
+    } catch { /* noop — never block form on attribution capture */ }
+
     try {
       setStatus('sending')
       setErrorMessage('')

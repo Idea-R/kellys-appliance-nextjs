@@ -2,6 +2,9 @@
 // Handles POST requests to /api/appointment
 // Accepts multipart FormData (text fields + optional photo attachments)
 // Uses Resend API for email delivery
+// Also fires fire-and-forget POST to OATAS for lead attribution tracking
+
+import { ingestToOatas, buildAttributionFromFormData } from '../_lib/oatas-ingest'
 
 interface AppointmentFormData {
   name: string;
@@ -39,6 +42,8 @@ interface Env {
   CONTACT_EMAIL_FROM_NAME?: string;
   EMAIL_LOGO_URL?: string;
   SITE_URL?: string;
+  OATAS_INGEST_URL?: string;
+  OATAS_INGEST_KEY?: string;
 }
 
 const MAX_FIELD_LENGTHS = {
@@ -91,6 +96,7 @@ async function fileToAttachment(file: File): Promise<FileAttachment> {
 export async function onRequestPost(context: {
   request: Request;
   env: Env;
+  waitUntil: (promise: Promise<unknown>) => void;
 }) {
   try {
     // Parse multipart form data
@@ -222,6 +228,27 @@ export async function onRequestPost(context: {
         ? attachments.map((a) => ({ filename: a.filename, content: a.content }))
         : undefined,
     });
+
+    // Fire-and-forget: post to OATAS for lead attribution tracking.
+    // Never blocks the user response; never throws.
+    const attribution = buildAttributionFromFormData(fd);
+    context.waitUntil(
+      ingestToOatas(
+        { OATAS_INGEST_URL: context.env.OATAS_INGEST_URL, OATAS_INGEST_KEY: context.env.OATAS_INGEST_KEY },
+        {
+          source: 'website_form',
+          source_detail: 'appointment',
+          customer_name: name,
+          customer_phone: phone,
+          customer_email: emailStr,
+          appliance_type: appliance,
+          appliance_brand: brand,
+          message: issue,
+          ...attribution,
+        },
+        context.request,
+      ),
+    );
 
     return new Response(
       JSON.stringify({ ok: true, message: 'Appointment request sent successfully', refNumber }),

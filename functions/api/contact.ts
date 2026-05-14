@@ -1,6 +1,9 @@
 // Cloudflare Pages Function for contact form
 // Handles POST requests to /api/contact
 // Uses Resend API for email delivery
+// Also fires fire-and-forget POST to OATAS for lead attribution tracking
+
+import { ingestToOatas } from '../_lib/oatas-ingest'
 
 interface ContactFormData {
   name: string;
@@ -8,6 +11,16 @@ interface ContactFormData {
   zip: string;
   phone: string;
   message: string;
+  // Optional attribution fields appended by ContactForm.tsx from sessionStorage
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
+  landing_url?: string;
 }
 
 interface Env {
@@ -17,6 +30,8 @@ interface Env {
   CONTACT_EMAIL_FROM_NAME?: string;
   EMAIL_LOGO_URL?: string;
   SITE_URL?: string;
+  OATAS_INGEST_URL?: string;
+  OATAS_INGEST_KEY?: string;
 }
 
 // Field length limits to prevent abuse
@@ -31,6 +46,7 @@ const MAX_FIELD_LENGTHS = {
 export async function onRequestPost(context: {
   request: Request;
   env: Env;
+  waitUntil: (promise: Promise<unknown>) => void;
 }) {
   try {
     const data = await context.request.json() as ContactFormData;
@@ -160,6 +176,31 @@ export async function onRequestPost(context: {
       text,
       replyTo: emailStr,
     });
+
+    // Fire-and-forget: post to OATAS for lead attribution tracking.
+    context.waitUntil(
+      ingestToOatas(
+        { OATAS_INGEST_URL: context.env.OATAS_INGEST_URL, OATAS_INGEST_KEY: context.env.OATAS_INGEST_KEY },
+        {
+          source: 'website_form',
+          source_detail: 'contact',
+          customer_name: nameStr,
+          customer_phone: phoneStr,
+          customer_email: emailStr,
+          message: messageStr,
+          gclid: data.gclid,
+          gbraid: data.gbraid,
+          wbraid: data.wbraid,
+          utm_source: data.utm_source,
+          utm_medium: data.utm_medium,
+          utm_campaign: data.utm_campaign,
+          utm_term: data.utm_term,
+          utm_content: data.utm_content,
+          landing_url: data.landing_url,
+        },
+        context.request,
+      ),
+    );
 
     return new Response(
       JSON.stringify({ ok: true, message: 'Email sent successfully' }),

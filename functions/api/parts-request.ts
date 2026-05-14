@@ -9,6 +9,8 @@ interface FileAttachment {
   size: number
 }
 
+import { ingestToOatas, buildAttributionFromFormData } from '../_lib/oatas-ingest'
+
 interface Env {
   RESEND_API_KEY?: string
   CONTACT_EMAIL_TO?: string
@@ -16,6 +18,8 @@ interface Env {
   CONTACT_EMAIL_FROM_NAME?: string
   EMAIL_LOGO_URL?: string
   SITE_URL?: string
+  OATAS_INGEST_URL?: string
+  OATAS_INGEST_KEY?: string
 }
 
 const MAX_FIELD_LENGTHS = {
@@ -70,7 +74,11 @@ async function fileToAttachment(file: File): Promise<FileAttachment> {
   return { filename: file.name || 'photo.jpg', content: base64, size: file.size }
 }
 
-export async function onRequestPost(context: { request: Request; env: Env }) {
+export async function onRequestPost(context: {
+  request: Request
+  env: Env
+  waitUntil: (promise: Promise<unknown>) => void
+}) {
   try {
     // Parse multipart form data
     const fd = await context.request.formData()
@@ -194,6 +202,26 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
         ? attachments.map((a) => ({ filename: a.filename, content: a.content }))
         : undefined,
     })
+
+    // Fire-and-forget: post to OATAS for lead attribution tracking.
+    const attribution = buildAttributionFromFormData(fd)
+    context.waitUntil(
+      ingestToOatas(
+        { OATAS_INGEST_URL: context.env.OATAS_INGEST_URL, OATAS_INGEST_KEY: context.env.OATAS_INGEST_KEY },
+        {
+          source: 'website_form',
+          source_detail: 'parts-request',
+          customer_name: nameStr,
+          customer_phone: phoneStr,
+          customer_email: emailStr || undefined,
+          appliance_type: applianceStr || undefined,
+          appliance_brand: brandStr || undefined,
+          message: descStr,
+          ...attribution,
+        },
+        context.request,
+      ),
+    )
 
     return jsonResponse({ ok: true, message: 'Parts request submitted', refNumber })
   } catch (error) {

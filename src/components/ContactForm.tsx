@@ -10,7 +10,21 @@ export default function ContactForm() {
     e.preventDefault()
     const form = e.currentTarget
     const formData = new FormData(form)
-    const payload = Object.fromEntries(formData.entries())
+    const payload: Record<string, unknown> = Object.fromEntries(formData.entries())
+
+    // Attach attribution data captured by Analytics.tsx in sessionStorage.
+    // Never blocks form on attribution capture.
+    try {
+      const utmRaw = sessionStorage.getItem('kellys_utm')
+      if (utmRaw) {
+        const utm = JSON.parse(utmRaw) as Record<string, string>
+        for (const key of ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']) {
+          if (utm[key]) payload[key] = utm[key]
+        }
+      }
+      payload.landing_url = window.location.href
+    } catch { /* noop */ }
+
     try {
       setStatus('sending')
       setErrorMessage('')
