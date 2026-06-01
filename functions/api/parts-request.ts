@@ -92,6 +92,14 @@ export async function onRequestPost(context: {
     const brandStr = field(fd, 'brand')
     const modelStr = field(fd, 'modelNumber')
 
+    // Preferred contact method
+    const preferredContactRaw = field(fd, 'preferredContact') || 'phone'
+    const preferredContact: 'phone' | 'text' | 'email' =
+      preferredContactRaw === 'text' || preferredContactRaw === 'email'
+        ? preferredContactRaw
+        : 'phone'
+    const contactPrefLabel = preferredContact === 'phone' ? 'Phone call' : preferredContact === 'text' ? 'Text' : 'Email'
+
     // Required fields
     if (!nameStr || !phoneStr || !descStr) {
       return jsonResponse({ ok: false, error: 'Name, phone, and part description are required' }, 400)
@@ -182,6 +190,7 @@ export async function onRequestPost(context: {
       brand: brandStr || undefined,
       modelNumber: modelStr || undefined,
       partDescription: descStr,
+      preferredContact,
     }
 
     const html = createPartsRequestEmailHtml(formData, refNumber, attachments.length, logoUrl, siteUrl)
@@ -216,7 +225,7 @@ export async function onRequestPost(context: {
           customer_email: emailStr || undefined,
           appliance_type: applianceStr || undefined,
           appliance_brand: brandStr || undefined,
-          message: descStr,
+          message: `Preferred contact: ${contactPrefLabel}\n\n${descStr}`,
           ...attribution,
         },
         context.request,

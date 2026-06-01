@@ -11,6 +11,7 @@ interface ContactFormData {
   zip: string;
   phone: string;
   message: string;
+  preferredContact?: 'phone' | 'text' | 'email';
   // Optional attribution fields appended by ContactForm.tsx from sessionStorage
   gclid?: string;
   gbraid?: string;
@@ -70,6 +71,12 @@ export async function onRequestPost(context: {
     const zipStr = zip.trim();
     const phoneStr = phone.trim();
     const messageStr = message.trim();
+    const preferredContactRaw = (data.preferredContact || 'phone').toString().trim();
+    const preferredContact: 'phone' | 'text' | 'email' =
+      preferredContactRaw === 'text' || preferredContactRaw === 'email'
+        ? preferredContactRaw
+        : 'phone';
+    const contactPrefLabel = preferredContact === 'phone' ? 'Phone call' : preferredContact === 'text' ? 'Text' : 'Email';
 
     // Validate required fields
     if (!nameStr || !emailStr || !zipStr || !phoneStr || !messageStr) {
@@ -160,7 +167,7 @@ export async function onRequestPost(context: {
     } = await import('../../src/server/email/templates/contact');
 
     // Create email content
-    const payload = { name: nameStr, email: emailStr, zip: zipStr, phone: phoneStr, message: messageStr };
+    const payload = { name: nameStr, email: emailStr, zip: zipStr, phone: phoneStr, message: messageStr, preferredContact };
     const html = createContactEmailHtml(payload, logoUrl, siteUrl);
     const text = createContactEmailText(payload);
     const subject = createContactEmailSubject(payload);
@@ -187,7 +194,7 @@ export async function onRequestPost(context: {
           customer_name: nameStr,
           customer_phone: phoneStr,
           customer_email: emailStr,
-          message: messageStr,
+          message: `Preferred contact: ${contactPrefLabel}\n\n${messageStr}`,
           gclid: data.gclid,
           gbraid: data.gbraid,
           wbraid: data.wbraid,

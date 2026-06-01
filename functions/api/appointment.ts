@@ -18,6 +18,7 @@ interface AppointmentFormData {
   address?: string;
   city?: string;
   zip?: string;
+  preferredContact?: 'phone' | 'text' | 'email';
 }
 
 interface FileAttachment {
@@ -115,6 +116,13 @@ export async function onRequestPost(context: {
     const city = field(fd, 'city') || undefined;
     const zip = field(fd, 'zip') || undefined;
 
+    // Preferred contact method — validate against allowed values
+    const preferredContactRaw = field(fd, 'preferredContact') || 'phone';
+    const preferredContact: 'phone' | 'text' | 'email' =
+      preferredContactRaw === 'text' || preferredContactRaw === 'email'
+        ? preferredContactRaw
+        : 'phone';
+
     // Validate required fields
     if (!name || !phone || !appliance || !issue) {
       return badRequest('Please fill in all required fields.');
@@ -208,6 +216,7 @@ export async function onRequestPost(context: {
     const payload: AppointmentFormData = {
       name, phone, email: emailStr, appliance, brand, issue,
       modelNumber, serialNumber, address, city, zip,
+      preferredContact,
     };
 
     const html = createAppointmentEmailHtml(payload, refNumber, attachments.length, logoUrl, siteUrl);
@@ -232,6 +241,7 @@ export async function onRequestPost(context: {
     // Fire-and-forget: post to OATAS for lead attribution tracking.
     // Never blocks the user response; never throws.
     const attribution = buildAttributionFromFormData(fd);
+    const contactPrefLabel = preferredContact === 'phone' ? 'Phone call' : preferredContact === 'text' ? 'Text' : 'Email';
     context.waitUntil(
       ingestToOatas(
         { OATAS_INGEST_URL: context.env.OATAS_INGEST_URL, OATAS_INGEST_KEY: context.env.OATAS_INGEST_KEY },
@@ -243,7 +253,7 @@ export async function onRequestPost(context: {
           customer_email: emailStr,
           appliance_type: appliance,
           appliance_brand: brand,
-          message: issue,
+          message: `Preferred contact: ${contactPrefLabel}\n\n${issue}`,
           ...attribution,
         },
         context.request,

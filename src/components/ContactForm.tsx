@@ -6,11 +6,14 @@ import { pushEvent, pushAdsConversion } from '@/lib/track-event'
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState<string>('')
+  const [preferredContact, setPreferredContact] = useState<'phone' | 'text' | 'email'>('phone')
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
     const formData = new FormData(form)
     const payload: Record<string, unknown> = Object.fromEntries(formData.entries())
+    payload.preferredContact = preferredContact
 
     // Attach attribution data captured by Analytics.tsx in sessionStorage.
     // Never blocks form on attribution capture.
@@ -79,6 +82,30 @@ export default function ContactForm() {
       <div className="col-span-1">
         <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-1">Phone *</label>
         <input id="phone" name="phone" required type="tel" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-colors" placeholder="(707) 555-1234" />
+      </div>
+      <div className="col-span-1 md:col-span-2" role="group" aria-labelledby="contact-pref-label">
+        <p id="contact-pref-label" className="block text-sm font-medium text-gray-900 mb-1">How should we contact you?</p>
+        <div className="inline-flex rounded-md border border-gray-300 p-0.5 bg-white flex-wrap">
+          {([
+            { value: 'phone', label: 'Phone call' },
+            { value: 'text', label: 'Text' },
+            { value: 'email', label: 'Email' },
+          ] as const).map((opt) => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => setPreferredContact(opt.value)}
+              className={`px-4 py-2 rounded text-sm font-medium transition-colors ${
+                preferredContact === opt.value
+                  ? 'bg-green-600 text-white shadow-sm'
+                  : 'text-gray-700 hover:bg-gray-50'
+              }`}
+              aria-pressed={preferredContact === opt.value}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="col-span-1 md:col-span-2">
         <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-1">Message *</label>

@@ -13,6 +13,7 @@ export interface PartsRequestFormData {
   brand?: string
   modelNumber?: string
   partDescription: string
+  preferredContact?: 'phone' | 'text' | 'email'
 }
 
 /** Helper: build a simple label/value table row */
@@ -49,8 +50,17 @@ export function createPartsRequestEmailHtml(
   logoUrl?: string,
   siteUrl?: string,
 ): string {
-  const { name, phone, email, appliance, brand, modelNumber, partDescription } = data
+  const { name, phone, email, appliance, brand, modelNumber, partDescription, preferredContact } = data
   const safeDescription = escapeHtmlWithBreaks(partDescription)
+
+  const contactPrefLabel = preferredContact === 'text' ? 'Text message' : preferredContact === 'email' ? 'Email' : 'Phone call'
+  const contactPrefIcon = preferredContact === 'text' ? '💬' : preferredContact === 'email' ? '✉️' : '📞'
+  const preferredContactBanner = `
+      <div style="background-color: #ecfdf5; border-left: 4px solid #059669; padding: 12px 16px; margin-bottom: 16px; border-radius: 4px;">
+        <p style="margin: 0; font-size: 14px; color: #065f46;">
+          <strong>${contactPrefIcon} Preferred contact method:</strong> ${escapeHtml(contactPrefLabel)}
+        </p>
+      </div>`
 
   const photoNote = photoCount > 0
     ? `<div style="background-color: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px 16px; margin-bottom: 24px; border-radius: 4px;">
@@ -71,10 +81,12 @@ export function createPartsRequestEmailHtml(
 
       ${photoNote}
 
-      <div style="background-color: #ecfdf5; border: 2px solid #059669; padding: 14px 20px; margin-bottom: 24px; border-radius: 8px; text-align: center;">
+      <div style="background-color: #ecfdf5; border: 2px solid #059669; padding: 14px 20px; margin-bottom: 16px; border-radius: 8px; text-align: center;">
         <p style="margin: 0; font-size: 12px; color: #065f46; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Reference Number</p>
         <p style="margin: 4px 0 0 0; font-size: 22px; color: #059669; font-weight: 800; font-family: monospace; letter-spacing: 2px;">${escapeHtml(refNumber)}</p>
       </div>
+
+      ${preferredContactBanner}
 
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 24px;">
         ${infoRow('Name', name)}
@@ -129,12 +141,14 @@ export function createPartsRequestEmailHtml(
  * Creates plain text version of parts request email
  */
 export function createPartsRequestEmailText(data: PartsRequestFormData, refNumber: string, photoCount: number): string {
-  const { name, phone, email, appliance, brand, modelNumber, partDescription } = data
+  const { name, phone, email, appliance, brand, modelNumber, partDescription, preferredContact } = data
+  const contactPrefLabel = preferredContact === 'text' ? 'Text message' : preferredContact === 'email' ? 'Email' : 'Phone call'
 
   return [
     '📦 NEW PARTS REQUEST FROM WEBSITE',
     '',
     `Reference: ${refNumber}`,
+    `Preferred contact: ${contactPrefLabel}`,
     '',
     `Name: ${name}`,
     `Phone: ${phone}`,

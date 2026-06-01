@@ -22,6 +22,7 @@ export default function PartsRequestForm() {
   const [photos, setPhotos] = useState<File[]>([])
   const [previews, setPreviews] = useState<string[]>([])
   const [dragOver, setDragOver] = useState(false)
+  const [preferredContact, setPreferredContact] = useState<'phone' | 'text' | 'email'>('phone')
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   /* ---- photo helpers ---- */
@@ -96,6 +97,7 @@ export default function PartsRequestForm() {
     body.append('brand', fd.get('brand') as string)
     body.append('modelNumber', fd.get('modelNumber') as string)
     body.append('partDescription', fd.get('partDescription') as string)
+    body.append('preferredContact', preferredContact)
     photos.forEach((f) => body.append('photos', f, f.name))
 
     // Attach attribution data captured by Analytics.tsx in sessionStorage
@@ -187,6 +189,34 @@ export default function PartsRequestForm() {
           className={inputClass}
           placeholder="you@example.com"
         />
+      </div>
+
+      {/* Preferred contact method */}
+      <div role="group" aria-labelledby="pr-contact-pref-label">
+        <p id="pr-contact-pref-label" className="block text-sm font-semibold text-gray-700 mb-1">
+          How should we contact you?
+        </p>
+        <div className="inline-flex rounded-lg border-2 border-gray-200 p-0.5 bg-white flex-wrap">
+          {([
+            { value: 'phone', label: 'Phone call' },
+            { value: 'text', label: 'Text' },
+            { value: 'email', label: 'Email' },
+          ] as const).map((opt) => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => setPreferredContact(opt.value)}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                preferredContact === opt.value
+                  ? 'bg-green-600 text-white shadow-sm'
+                  : 'text-gray-700 hover:bg-gray-50'
+              }`}
+              aria-pressed={preferredContact === opt.value}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Appliance + Brand */}

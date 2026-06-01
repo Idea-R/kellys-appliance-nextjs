@@ -17,6 +17,7 @@ export interface AppointmentFormData {
   address?: string;
   city?: string;
   zip?: string;
+  preferredContact?: 'phone' | 'text' | 'email';
 }
 
 /** Helper: build a simple label/value table row */
@@ -53,8 +54,18 @@ export function createAppointmentEmailHtml(
   logoUrl?: string,
   siteUrl?: string,
 ): string {
-  const { name, phone, email, appliance, brand, issue, modelNumber, serialNumber, address, city, zip } = data;
+  const { name, phone, email, appliance, brand, issue, modelNumber, serialNumber, address, city, zip, preferredContact } = data;
   const safeIssue = escapeHtmlWithBreaks(issue);
+
+  // Preferred contact method banner (high-visibility)
+  const contactPrefLabel = preferredContact === 'text' ? 'Text message' : preferredContact === 'email' ? 'Email' : 'Phone call';
+  const contactPrefIcon = preferredContact === 'text' ? '💬' : preferredContact === 'email' ? '✉️' : '📞';
+  const preferredContactBanner = `
+      <div style="background-color: #ecfdf5; border-left: 4px solid #059669; padding: 12px 16px; margin-bottom: 16px; border-radius: 4px;">
+        <p style="margin: 0; font-size: 14px; color: #065f46;">
+          <strong>${contactPrefIcon} Preferred contact method:</strong> ${escapeHtml(contactPrefLabel)}
+        </p>
+      </div>`;
 
   // Build address string
   const addressParts = [address, city, zip].filter(Boolean);
@@ -78,10 +89,12 @@ export function createAppointmentEmailHtml(
         </p>
       </div>
 
-      <div style="background-color: #ecfdf5; border: 2px solid #059669; padding: 14px 20px; margin-bottom: 24px; border-radius: 8px; text-align: center;">
+      <div style="background-color: #ecfdf5; border: 2px solid #059669; padding: 14px 20px; margin-bottom: 16px; border-radius: 8px; text-align: center;">
         <p style="margin: 0; font-size: 12px; color: #065f46; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Reference Number</p>
         <p style="margin: 4px 0 0 0; font-size: 22px; color: #059669; font-weight: 800; font-family: monospace; letter-spacing: 2px;">${escapeHtml(refNumber)}</p>
       </div>
+
+      ${preferredContactBanner}
 
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 24px;">
         ${infoRow('Name', name)}
@@ -140,15 +153,18 @@ export function createAppointmentEmailHtml(
  * Creates plain text version of appointment email
  */
 export function createAppointmentEmailText(data: AppointmentFormData, refNumber: string, photoCount: number): string {
-  const { name, phone, email, appliance, brand, issue, modelNumber, serialNumber, address, city, zip } = data;
+  const { name, phone, email, appliance, brand, issue, modelNumber, serialNumber, address, city, zip, preferredContact } = data;
 
   const addressParts = [address, city, zip].filter(Boolean);
   const fullAddress = addressParts.join(', ');
+
+  const contactPrefLabel = preferredContact === 'text' ? 'Text message' : preferredContact === 'email' ? 'Email' : 'Phone call';
 
   return [
     '⚡ NEW APPOINTMENT REQUEST FROM WEBSITE',
     '',
     `Reference: ${refNumber}`,
+    `Preferred contact: ${contactPrefLabel}`,
     '',
     `Name: ${name}`,
     `Phone: ${phone}`,
@@ -164,7 +180,7 @@ export function createAppointmentEmailText(data: AppointmentFormData, refNumber:
     photoCount > 0 ? `\n📎 ${photoCount} photo${photoCount > 1 ? 's' : ''} attached.` : '',
     '',
     '---',
-    'Please call the customer to confirm scheduling.',
+    `Please contact the customer via ${contactPrefLabel.toLowerCase()} to confirm scheduling.`,
     'Submitted from: kellysappliancerepair.com',
   ].filter(Boolean).join('\n');
 }

@@ -11,21 +11,31 @@ export interface ContactFormData {
   zip: string;
   phone: string;
   message: string;
+  preferredContact?: 'phone' | 'text' | 'email';
 }
 
 /**
  * Creates HTML email for contact form submission
  */
 export function createContactEmailHtml(data: ContactFormData, logoUrl?: string, siteUrl?: string): string {
-  const { name, email, zip, phone, message } = data;
+  const { name, email, zip, phone, message, preferredContact } = data;
   const safeMessage = escapeHtmlWithBreaks(message);
+
+  const contactPrefLabel = preferredContact === 'text' ? 'Text message' : preferredContact === 'email' ? 'Email' : 'Phone call';
+  const contactPrefIcon = preferredContact === 'text' ? '💬' : preferredContact === 'email' ? '✉️' : '📞';
 
   const content = `
     <div style="color: #1f2937; line-height: 1.6;">
-      <p style="margin: 0 0 24px 0; font-size: 16px; color: #374151;">
+      <p style="margin: 0 0 16px 0; font-size: 16px; color: #374151;">
         You have received a new contact form submission from your website.
       </p>
-      
+
+      <div style="background-color: #ecfdf5; border-left: 4px solid #059669; padding: 12px 16px; margin-bottom: 24px; border-radius: 4px;">
+        <p style="margin: 0; font-size: 14px; color: #065f46;">
+          <strong>${contactPrefIcon} Preferred contact method:</strong> ${escapeHtml(contactPrefLabel)}
+        </p>
+      </div>
+
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 24px;">
         <tr>
           <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
@@ -133,9 +143,12 @@ export function createContactEmailHtml(data: ContactFormData, logoUrl?: string, 
  * Creates plain text version of contact email
  */
 export function createContactEmailText(data: ContactFormData): string {
-  const { name, email, zip, phone, message } = data;
-  
+  const { name, email, zip, phone, message, preferredContact } = data;
+  const contactPrefLabel = preferredContact === 'text' ? 'Text message' : preferredContact === 'email' ? 'Email' : 'Phone call';
+
   return `New Contact Form Submission
+
+Preferred contact: ${contactPrefLabel}
 
 Name: ${name}
 Email: ${email}
