@@ -15,7 +15,7 @@ When OATAS, ServiceDesk, or other systems show a 2-3 letter identifier on a job/
 | Kendra Hoetger | Kendra | General Manager | — | ~2016 | `Kendra-23-scaled.jpg` |
 | Shane Spencer | Shane | Operations & Growth Manager | — | ~2016 | `team/Shanez.jpg` |
 | Abby Jensen | Abby | Parts Coordinator / CSR | — | 2018 | `Abby-2-23-scaled.jpg` |
-| Amanda | Amanda | Customer Service Rep | **AV** | May 2026 (newest hire) | `team/Amanda.jpg` |
+| Amanda Carlson | Amanda | Customer Service Rep | **AV** | May 2026 (newest hire) | `team/Amanda.jpg` |
 
 ## Service Manager / Technicians
 

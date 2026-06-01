@@ -117,10 +117,18 @@ const teamMembers: TeamMember[] = [
     funFact: 'Off the clock: suspenseful mystery novels and experimenting in the kitchen.'
   },
   {
-    name: 'Amanda',
+    name: 'Amanda Carlson',
     role: 'Customer Service Representative',
     image: '/images/team/Amanda.jpg',
-    bio: 'Our newest CSR. Helping customers schedule repairs and tracking down answers when they need them.'
+    bio: 'Customer Service Representative. First voice on the phone, first face at the door. Likes the puzzle of figuring out what someone needs and getting it sorted.',
+    bioFull: 'Amanda is the friendly voice when you call Kelly\'s and the person greeting you when you walk in. She joined the team this spring and got up to speed quickly. She\'s the kind of person who actually likes the puzzle of figuring out what a customer needs and walking them through it.\n\nWhether someone calls in confused about a part, trying to schedule, or hunting for an answer, Amanda takes the time to listen and sort it out. She\'d rather spend an extra minute making sure a customer leaves satisfied than rush through to the next call.\n\nOff the clock, Amanda is deep in world-building and strategy video games. Same brain she brings to work: pay attention to the details, solve the puzzle, get the outcome you want.',
+    specialties: [
+      'First-line customer support (phone, in-person, email)',
+      'Scheduling and intake',
+      'Walking customers through repair options',
+      'Cross-team handoff to techs and the parts desk'
+    ],
+    funFact: 'Off the clock: world-building and strategy video games.'
   },
   {
     name: 'Phil Cockle',
