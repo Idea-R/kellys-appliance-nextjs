@@ -120,15 +120,15 @@ const teamMembers: TeamMember[] = [
     name: 'Amanda Carlson',
     role: 'Customer Service Representative',
     image: '/images/team/Amanda.jpg',
-    bio: 'Customer Service Representative. First voice on the phone, first face at the door. Likes the puzzle of figuring out what someone needs and getting it sorted.',
-    bioFull: 'Amanda is the friendly voice when you call Kelly\'s and the person greeting you when you walk in. She joined the team this spring and got up to speed quickly. She\'s the kind of person who actually likes the puzzle of figuring out what a customer needs and walking them through it.\n\nWhether someone calls in confused about a part, trying to schedule, or hunting for an answer, Amanda takes the time to listen and sort it out. She\'d rather spend an extra minute making sure a customer leaves satisfied than rush through to the next call.\n\nOff the clock, Amanda is deep in world-building and strategy video games. Same brain she brings to work: pay attention to the details, solve the puzzle, get the outcome you want.',
+    bio: 'Customer Service Representative. The first voice when you call, the first reply in your inbox. Likes the puzzle of figuring out what someone needs and getting it sorted.',
+    bioFull: 'Amanda is usually the first voice you hear when you call Kelly\'s, and the first reply you get when you reach out by email. She joined the team this spring and got up to speed quickly. She\'s the kind of person who actually likes the puzzle of figuring out what a customer needs and walking them through what comes next.\n\nWhether someone is confused about which part their fridge takes, trying to find a window that works for a tenant, or just hunting for a straight answer, Amanda takes the time to listen and sort it out. She\'d rather spend an extra minute making sure a customer leaves the call satisfied than rush through to the next one.\n\nOff the clock, Amanda is deep in world-building and strategy games. Same brain she brings to work: pay attention to the details, solve the puzzle, get the outcome you want.',
     specialties: [
-      'First-line customer support (phone, in-person, email)',
+      'First-line customer support (phone and email)',
       'Scheduling and intake',
       'Walking customers through repair options',
       'Cross-team handoff to techs and the parts desk'
     ],
-    funFact: 'Off the clock: world-building and strategy video games.'
+    funFact: 'Off the clock: world-building and strategy games.'
   },
   {
     name: 'Phil Cockle',
