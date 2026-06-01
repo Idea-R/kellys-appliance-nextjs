@@ -216,13 +216,13 @@ export default function OvenHeatingPostPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link href="/blog/how-often-should-you-service-your-home-appliances" className="group">
+            <Link href="/blog/oven-not-heating-6-things-to-check" className="group">
               <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
                 <h4 className="text-lg font-semibold text-gray-900 group-hover:text-green-600 mb-2">
-                  How Often Should You Service Your Home Appliances?
+                  Oven Not Heating? 6 Things to Check Before You Call a Repair Tech
                 </h4>
                 <p className="text-gray-600 text-sm">
-                  Learn the recommended maintenance schedules for all your major home appliances.
+                  A homeowner&apos;s diagnostic checklist for ovens that won&apos;t heat. Six things to check, in order, before booking a service call.
                 </p>
               </div>
             </Link>

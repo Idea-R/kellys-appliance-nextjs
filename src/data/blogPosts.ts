@@ -18,6 +18,15 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: 'Oven Not Heating? 6 Things to Check Before You Call a Repair Tech',
+    slug: 'oven-not-heating-6-things-to-check',
+    excerpt:
+      "Your oven won't heat up and dinner is in jeopardy. Here are the 6 things to check first — which you can fix yourself, and when it's time to call a pro. Covers electric and gas, from breakers to igniters to error codes.",
+    date: '2026-06-01',
+    readTime: '9 min read',
+    category: 'Oven Repair',
+  },
+  {
     title: "Right to Repair: Why Kelly's Rebuilds Control Boards Instead of Replacing Them",
     slug: 'right-to-repair-why-kellys-rebuilds-control-boards',
     excerpt:
