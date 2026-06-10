@@ -18,6 +18,42 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: 'Washer Error Codes Decoded: LG, Samsung, Whirlpool, Maytag & GE',
+    slug: 'washer-error-codes-decoded-by-brand',
+    excerpt:
+      "Your washer is flashing an error code. Look it up here by brand — we cover the most common codes for LG, Samsung, Whirlpool, Maytag, and GE, what each one actually means, and which ones you can fix yourself.",
+    date: '2026-06-05',
+    readTime: '12 min read',
+    category: 'Washer Repair',
+  },
+  {
+    title: 'Sonoma County Heat Wave Survival: Why Your Fridge Works Twice as Hard in July',
+    slug: 'sonoma-county-heat-wave-refrigerator-survival',
+    excerpt:
+      "When inland Sonoma County hits 100°F, your fridge struggles. Here's what's normal, what's a warning sign, and how to keep your appliances alive through summer.",
+    date: '2026-06-04',
+    readTime: '7 min read',
+    category: 'Seasonal Tips',
+  },
+  {
+    title: 'Why Is My Refrigerator Making Loud Noises? 8 Sounds Explained',
+    slug: 'refrigerator-making-loud-noises-8-sounds-explained',
+    excerpt:
+      "Buzzing, clicking, knocking, hissing, rattling — your fridge makes a lot of sounds. Here's what each one means and which ones need a repair call.",
+    date: '2026-06-03',
+    readTime: '9 min read',
+    category: 'Refrigerator Repair',
+  },
+  {
+    title: '50 Years of Appliance Repair in Sonoma County: What\'s Changed (And What Hasn\'t)',
+    slug: '50-years-appliance-repair-sonoma-county',
+    excerpt:
+      "Five decades of repairing appliances in Sonoma County. How the work has changed, what stayed the same, and what we learned along the way.",
+    date: '2026-06-02',
+    readTime: '8 min read',
+    category: 'Community',
+  },
+  {
     title: 'Oven Not Heating? 6 Things to Check Before You Call a Repair Tech',
     slug: 'oven-not-heating-6-things-to-check',
     excerpt:
