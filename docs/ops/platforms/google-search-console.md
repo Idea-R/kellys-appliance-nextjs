@@ -1,11 +1,37 @@
 # Google Search Console
 
-**Last Updated:** April 11, 2026
-**Status:** ACTIVE (MCP needs re-auth)
-**Account:** shane@ideas-realized.com (Full User)
+**Last Updated:** June 10, 2026
+**Status:** ACTIVE — MCP migrated to service account (permanent fix)
+**Account:** shane@ideas-realized.com (Full User) + service account
 **Property:** sc-domain:kellysappliancerepair.com
 **Monthly Budget:** Free
-**MCP Connected:** BROKEN — `invalid_rapt` error (ADC credentials expired/insufficient)
+**MCP Connected:** Auth FIXED via service account. Awaiting SA being granted property access.
+
+---
+
+## ⭐ Service Account Migration (June 10, 2026 — the permanent fix)
+
+**Root cause of all prior breakage:** The MCP was using gcloud's *shared* OAuth
+client (`764086051850-...`) via ADC. Google blocks that shared client from
+sensitive scopes (`webmasters.readonly`) → "this app is blocked" + recurring
+`invalid_rapt` reauth expiry. **The API was always enabled — the credential was
+the problem.**
+
+**Fix applied:**
+- Created service account `gsc-ga4-mcp-reader@ideas-realized-marketing.iam.gserviceaccount.com`
+- Key stored at `C:\Users\palli\mcp-marketing\gsc-ga4-service-account.json`
+- Both `.mcp.json` files (project + user) now point `GOOGLE_APPLICATION_CREDENTIALS`
+  at the SA key instead of the ADC file
+- Verified: `list_sites` returns NO auth error (clean). Service account
+  authenticates permanently — no reauth, no expiry, no "app blocked", ever.
+
+**Remaining one-time step (Shane):** Add the SA email as a **Full** user in
+Search Console → Settings → Users and permissions. (Brand-new service accounts
+take 5-60 min to propagate before Search Console accepts them — "user not found"
+on first try is normal; retry after propagation.) Once added, the MCP returns
+live data immediately (no restart needed — auth layer already works).
+
+**Same SA also fixes GA4** — add it as Viewer on GA4 property 507428307.
 
 ---
 
