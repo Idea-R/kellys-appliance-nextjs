@@ -204,6 +204,37 @@ export default function DryerPostPage() {
         </div>
       </article>
 
+      {/* Related Posts */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link
+              href="/blog/dryer-not-heating-7-things-to-check"
+              className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Dryer Not Heating? 7 Things to Check Before You Call a Repair Tech
+              </h3>
+              <p className="text-gray-600 text-sm">
+                When the dryer runs but clothes come out cold and damp. A homeowner&apos;s diagnostic checklist.
+              </p>
+            </Link>
+            <Link
+              href="/blog/signs-your-washing-machine-needs-repair-before-it-breaks-down"
+              className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Signs Your Washing Machine Needs Repair Before It Breaks Down
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Catch laundry-room problems early, before a small issue becomes a big repair.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Related Posts CTA */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

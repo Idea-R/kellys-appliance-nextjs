@@ -18,6 +18,15 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: 'Dryer Not Heating? 7 Things to Check Before You Call a Repair Tech',
+    slug: 'dryer-not-heating-7-things-to-check',
+    excerpt:
+      "Your dryer runs but the clothes come out cold and damp. Here are the 7 things to check first — which you can fix yourself, and when it's time to call a pro. Covers electric and gas, from clogged vents to thermal fuses to igniters.",
+    date: '2026-06-10',
+    readTime: '10 min read',
+    category: 'Dryer Repair',
+  },
+  {
     title: 'Washer Error Codes Decoded: LG, Samsung, Whirlpool, Maytag & GE',
     slug: 'washer-error-codes-decoded-by-brand',
     excerpt:
