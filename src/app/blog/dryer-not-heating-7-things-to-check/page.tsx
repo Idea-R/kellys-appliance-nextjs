@@ -18,6 +18,12 @@ export const metadata = {
     description: 'Your dryer runs but clothes come out cold and damp. 7 things to check first, which you can fix yourself, and when to call a pro.',
     url: 'https://kellysappliancerepair.com/blog/dryer-not-heating-7-things-to-check',
     type: 'article' as const,
+    images: [
+      {
+        url: 'https://kellysappliancerepair.com/images/Blogs/dryer-vent-clogged.webp',
+        alt: 'A dryer exhaust outlet packed with lint, the most common cause of a dryer that runs but will not heat',
+      },
+    ],
   },
 };
 
@@ -53,9 +59,9 @@ export default function DryerNotHeatingPostPage() {
               "@type": "WebPage",
               "@id": "https://kellysappliancerepair.com/blog/dryer-not-heating-7-things-to-check"
             },
-            "image": "https://kellysappliancerepair.com/images/Blogs/dryer-not-heating-hero.webp",
+            "image": "https://kellysappliancerepair.com/images/Blogs/dryer-vent-clogged.webp",
             "articleSection": "Dryer Repair",
-            "wordCount": 2200
+            "wordCount": 2300
           })
         }}
       />
