@@ -5,6 +5,7 @@ import { CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 
 export const metadata = {
   title: 'Dryer Not Heating? 7 Things to Check Before You Call a Repair Tech',
@@ -168,16 +169,15 @@ export default function DryerNotHeatingPostPage() {
               Here are the seven things to check, in order from easiest to most involved. Work through them top to bottom.
             </p>
 
-            <div className="text-center my-8">
-              <Image
-                src="/images/Blogs/dryer-not-heating-hero.webp"
-                alt="A person pulling damp laundry out of a dryer that ran a full cycle but did not heat"
-                width={1200}
-                height={630}
-                className="rounded-lg shadow-lg mx-auto"
-                priority
-              />
-            </div>
+            <BeforeAfterSlider
+              beforeSrc="/images/Blogs/dryer-internal-dirty.webp"
+              afterSrc="/images/Blogs/dryer-internal-clean.webp"
+              beforeAlt="The inside of a dryer cabinet caked in lint around the motor, blower, and heating element"
+              afterAlt="The same area inside a dryer after a thorough cleaning, with the lint removed"
+              beforeLabel="Before"
+              afterLabel="After"
+              caption="Drag the slider: the inside of a dryer caked in lint vs. after our techs cleaned it. This is what builds up where you can't see it, and it's a big reason dryers overheat and stop drying."
+            />
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">1. Clean the Lint Trap and Check the Vent</h2>
             <p className="mb-4 text-gray-700 leading-relaxed">
@@ -195,13 +195,13 @@ export default function DryerNotHeatingPostPage() {
 
             <div className="text-center my-8">
               <Image
-                src="/images/Blogs/dryer-vent-before-after.webp"
-                alt="Before and after photos of a dryer vent cleaning, showing a duct packed with lint on the left and clean on the right"
-                width={1200}
-                height={630}
-                className="rounded-lg shadow-lg mx-auto"
+                src="/images/Blogs/dryer-vent-clogged.webp"
+                alt="A dryer exhaust outlet completely packed with lint, choking off airflow"
+                width={900}
+                height={1200}
+                className="rounded-lg shadow-lg mx-auto max-w-sm w-full"
               />
-              <p className="text-sm text-gray-500 mt-2">Before and after: a dryer vent our techs cleared on a recent Sonoma County call. The left side was choking off nearly all airflow.</p>
+              <p className="text-sm text-gray-500 mt-2">A real dryer exhaust outlet our techs found on a Sonoma County call. That round opening should be wide open. It was choking off nearly all the airflow, which is exactly why the dryer wasn&apos;t drying.</p>
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">2. Confirm the Power (Electric Dryers Need 240V)</h2>
@@ -271,6 +271,17 @@ export default function DryerNotHeatingPostPage() {
             <p className="mb-4 text-gray-700 leading-relaxed">
               It&apos;s also a genuine safety issue. The US Fire Administration attributes thousands of house fires every year to clothes dryers, and the leading factor is failure to clean them. Lint is highly flammable, and a packed vent plus a hot dryer is a real risk.
             </p>
+
+            <div className="text-center my-8">
+              <Image
+                src="/images/Blogs/dryer-lint-closeup.webp"
+                alt="A close-up of thick, matted lint pulled from inside a dryer, showing how much accumulates out of sight"
+                width={1200}
+                height={1200}
+                className="rounded-lg shadow-lg mx-auto max-w-md w-full"
+              />
+              <p className="text-sm text-gray-500 mt-2">A close-up of the lint our techs pulled from one dryer. All of this was packed inside the machine, out of sight, where it traps heat and feeds a fire risk.</p>
+            </div>
             <p className="mb-6 text-gray-700 leading-relaxed">
               Clean the lint screen every load. Clean the full vent line at least once a year. If you have a long or hard-to-reach vent run, or you just want it done right, our techs handle vent cleaning as part of a service visit.
             </p>
