@@ -8,13 +8,13 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 export const metadata = {
   title: 'Why Is My Refrigerator Making Loud Noises? 8 Sounds Explained',
-  description: 'Buzzing, clicking, knocking, hissing, rattling — your fridge makes a lot of sounds. Here\'s what each one means and which ones need a repair call.',
+  description: 'Buzzing, clicking, knocking, hissing, rattling. Your fridge makes a lot of sounds. Here\'s what each one means and which ones need a repair call.',
   alternates: {
     canonical: '/blog/refrigerator-making-loud-noises-8-sounds-explained',
   },
   openGraph: {
     title: 'Why Is My Refrigerator Making Loud Noises? 8 Sounds Explained',
-    description: 'Buzzing, clicking, knocking, hissing, rattling — your fridge makes a lot of sounds. Here\'s what each one means and which ones need a repair call.',
+    description: 'Buzzing, clicking, knocking, hissing, rattling. Your fridge makes a lot of sounds. Here\'s what each one means and which ones need a repair call.',
     url: 'https://kellysappliancerepair.com/blog/refrigerator-making-loud-noises-8-sounds-explained',
     type: 'article' as const,
   },
@@ -32,7 +32,7 @@ export default function FridgeNoisesPostPage() {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             "headline": "Why Is My Refrigerator Making Loud Noises? 8 Sounds Explained",
-            "description": "Buzzing, clicking, knocking, hissing, rattling — your fridge makes a lot of sounds. Here's what each one means and which ones need a repair call.",
+            "description": "Buzzing, clicking, knocking, hissing, rattling. Your fridge makes a lot of sounds. Here's what each one means and which ones need a repair call.",
             "datePublished": "2026-06-03",
             "dateModified": "2026-06-03",
             "author": {
@@ -233,7 +233,7 @@ export default function FridgeNoisesPostPage() {
               Common culprits: bottles in the door rattling against each other, the drain pan at the bottom of the fridge vibrating on its mount, the fridge sitting too close to a wall and transferring vibration into the drywall, the leveling feet not being adjusted so the fridge rocks on cycle, or the water line behind the fridge resonating with the compressor cycle.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>What to do:</strong> Pull the fridge out 4-6 inches from the wall. Confirm it sits level (open the door — it should swing closed under its own weight from a half-open position). Make sure nothing in the door is loose. If you can isolate the rattle to the drain pan, tightening a couple of screws usually solves it.
+              <strong>What to do:</strong> Pull the fridge out 4-6 inches from the wall. Confirm it sits level (open the door: it should swing closed under its own weight from a half-open position). Make sure nothing in the door is loose. If you can isolate the rattle to the drain pan, tightening a couple of screws usually solves it.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">8. Grinding</h2>
@@ -264,7 +264,7 @@ export default function FridgeNoisesPostPage() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Need a Diagnostic?</h2>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              If you&apos;re not sure what your fridge is doing, we have a few options. You can <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">book an in-home service call</a>, or for $40 we offer a <Link href="/services/virtual" className="text-green-600 hover:text-green-700">15-minute virtual diagnostic</Link> over video — we&apos;ll have you point your phone at the fridge while it makes the noise and we&apos;ll usually be able to tell you what&apos;s going on without an in-person visit.
+              If you&apos;re not sure what your fridge is doing, we have a few options. You can <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">book an in-home service call</a>, or for $40 we offer a <Link href="/services/virtual" className="text-green-600 hover:text-green-700">15-minute virtual diagnostic</Link> over video. We&apos;ll have you point your phone at the fridge while it makes the noise and we&apos;ll usually be able to tell you what&apos;s going on without an in-person visit.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               Kelly&apos;s Appliance Center has been repairing refrigerators in Sonoma, Marin, and Napa counties since 1975. Diamond Certified, factory authorized, and most repairs finish in a single visit. Call us at <a href="tel:7076649702" className="text-green-600 hover:text-green-700 font-semibold">(707) 664-9702</a>.
@@ -286,7 +286,7 @@ export default function FridgeNoisesPostPage() {
                 How to Tell If Your Refrigerator Needs Professional Repair
               </h3>
               <p className="text-gray-600 text-sm">
-                Warning signs beyond just sounds — temperature swings, frost, leaks.
+                Warning signs beyond just sounds: temperature swings, frost, leaks.
               </p>
             </Link>
             <Link
@@ -297,7 +297,7 @@ export default function FridgeNoisesPostPage() {
                 Why Is There Frost or Moisture in My Refrigerator?
               </h3>
               <p className="text-gray-600 text-sm">
-                Frost buildup and condensation issues — causes and fixes.
+                Frost buildup and condensation issues. Causes and fixes.
               </p>
             </Link>
           </div>

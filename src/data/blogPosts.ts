@@ -30,7 +30,7 @@ export const blogPosts: BlogPostMeta[] = [
     title: 'Dryer Not Heating? 7 Things to Check Before You Call a Repair Tech',
     slug: 'dryer-not-heating-7-things-to-check',
     excerpt:
-      "Your dryer runs but the clothes come out cold and damp. Here are the 7 things to check first — which you can fix yourself, and when it's time to call a pro. Covers electric and gas, from clogged vents to thermal fuses to igniters.",
+      "Your dryer runs but the clothes come out cold and damp. Here are the 7 things to check first, which you can fix yourself, and when it's time to call a pro. Covers electric and gas, from clogged vents to thermal fuses to igniters.",
     date: '2026-06-10',
     readTime: '10 min read',
     category: 'Dryer Repair',
@@ -39,7 +39,7 @@ export const blogPosts: BlogPostMeta[] = [
     title: 'Washer Error Codes Decoded: LG, Samsung, Whirlpool, Maytag & GE',
     slug: 'washer-error-codes-decoded-by-brand',
     excerpt:
-      "Your washer is flashing an error code. Look it up here by brand — we cover the most common codes for LG, Samsung, Whirlpool, Maytag, and GE, what each one actually means, and which ones you can fix yourself.",
+      "Your washer is flashing an error code. Look it up here by brand. We cover the most common codes for LG, Samsung, Whirlpool, Maytag, and GE, what each one actually means, and which ones you can fix yourself.",
     date: '2026-06-05',
     readTime: '12 min read',
     category: 'Washer Repair',
@@ -57,7 +57,7 @@ export const blogPosts: BlogPostMeta[] = [
     title: 'Why Is My Refrigerator Making Loud Noises? 8 Sounds Explained',
     slug: 'refrigerator-making-loud-noises-8-sounds-explained',
     excerpt:
-      "Buzzing, clicking, knocking, hissing, rattling — your fridge makes a lot of sounds. Here's what each one means and which ones need a repair call.",
+      "Buzzing, clicking, knocking, hissing, rattling. Your fridge makes a lot of sounds. Here's what each one means and which ones need a repair call.",
     date: '2026-06-03',
     readTime: '9 min read',
     category: 'Refrigerator Repair',
@@ -75,7 +75,7 @@ export const blogPosts: BlogPostMeta[] = [
     title: 'Oven Not Heating? 6 Things to Check Before You Call a Repair Tech',
     slug: 'oven-not-heating-6-things-to-check',
     excerpt:
-      "Your oven won't heat up and dinner is in jeopardy. Here are the 6 things to check first — which you can fix yourself, and when it's time to call a pro. Covers electric and gas, from breakers to igniters to error codes.",
+      "Your oven won't heat up and dinner is in jeopardy. Here are the 6 things to check first, which you can fix yourself, and when it's time to call a pro. Covers electric and gas, from breakers to igniters to error codes.",
     date: '2026-06-01',
     readTime: '9 min read',
     category: 'Oven Repair',

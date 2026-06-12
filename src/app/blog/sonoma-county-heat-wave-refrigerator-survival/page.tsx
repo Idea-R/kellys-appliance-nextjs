@@ -132,7 +132,7 @@ export default function HeatWavePostPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg prose-green max-w-none">
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Petaluma stays cool. The coastal influence keeps it in the 70s and 80s most of the year. Cloverdale doesn&apos;t. Inland valleys regularly hit 100-110°F in July and August. Sonoma, Healdsburg, parts of Santa Rosa, the Russian River corridor — all of them get hammered. And that&apos;s when our phone starts ringing about refrigerators.
+              Petaluma stays cool. The coastal influence keeps it in the 70s and 80s most of the year. Cloverdale doesn&apos;t. Inland valleys regularly hit 100-110°F in July and August. Sonoma, Healdsburg, parts of Santa Rosa, the Russian River corridor. All of them get hammered. And that&apos;s when our phone starts ringing about refrigerators.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               About a third of our summer service calls come from fridges that have been pushed past what they were designed for. Most aren&apos;t actually broken yet. They&apos;re overworked. The difference matters, because if you catch it early you can usually save the appliance. If you wait until the compressor fails, you&apos;re replacing the whole unit.
@@ -186,7 +186,7 @@ export default function HeatWavePostPage() {
               <strong>4. Stock up on bottled water in the freezer.</strong> A full freezer holds cold better than an empty one. Fill empty space with frozen water bottles. They double as ice packs when the power goes out (which it often does during Sonoma County heat waves and PG&amp;E PSPS events).
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>5. Set the thermostat correctly.</strong> Fridge: 37-38°F. Freezer: 0°F. Setting it colder doesn&apos;t help — it just makes the compressor work harder for the same outcome. Setting it warmer to &quot;save the compressor&quot; risks food safety. Stay in the recommended range.
+              <strong>5. Set the thermostat correctly.</strong> Fridge: 37-38°F. Freezer: 0°F. Setting it colder doesn&apos;t help. It just makes the compressor work harder for the same outcome. Setting it warmer to &quot;save the compressor&quot; risks food safety. Stay in the recommended range.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">The Garage Fridge Specifically</h2>
@@ -198,7 +198,7 @@ export default function HeatWavePostPage() {
             </p>
             <ul className="mb-4 text-gray-700 leading-relaxed list-disc pl-6 space-y-2">
               <li>Make sure the garage fridge is plugged into its own circuit, not sharing with a freezer or workshop tools</li>
-              <li>Insulate the garage if you can — even partial wall insulation drops peak summer temps significantly</li>
+              <li>Insulate the garage if you can. Even partial wall insulation drops peak summer temps significantly</li>
               <li>Add a small fan blowing across the back of the fridge to help airflow at the condenser coils</li>
               <li>Consider whether you actually need it running in summer, especially if you can consolidate into the kitchen unit</li>
             </ul>
@@ -217,7 +217,7 @@ export default function HeatWavePostPage() {
               <strong>Compressor running with no cycling at all for hours.</strong> Even in a heat wave, a healthy fridge should cycle off briefly every few hours. A compressor that runs nonstop is either fighting a refrigerant leak or starting to fail.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              <strong>Frost forming on freezer walls when it normally doesn&apos;t.</strong> The defrost cycle uses electricity. If the fridge is in survival mode it may skip defrost cycles to save load, which lets ice build up. Ice on walls insulates the coils and makes cooling even worse — a feedback loop.
+              <strong>Frost forming on freezer walls when it normally doesn&apos;t.</strong> The defrost cycle uses electricity. If the fridge is in survival mode it may skip defrost cycles to save load, which lets ice build up. Ice on walls insulates the coils and makes cooling even worse, a feedback loop.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
               <strong>Burning smell or a hot, almost &quot;hot tar&quot; odor near the back.</strong> Stop. Unplug the fridge. Call us. This is a compressor or motor overheating to a damaging level and continued operation will destroy it.
@@ -231,10 +231,10 @@ export default function HeatWavePostPage() {
               Briefly:
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              <strong>Air conditioners.</strong> We don&apos;t service AC, but the same principle applies — clean the filters, give the outdoor unit airflow space, and don&apos;t set the thermostat absurdly cold (it just runs harder, not better).
+              <strong>Air conditioners.</strong> We don&apos;t service AC, but the same principle applies. Clean the filters, give the outdoor unit airflow space, and don&apos;t set the thermostat absurdly cold (it just runs harder, not better).
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              <strong>Ovens.</strong> Avoid the self-clean cycle during heat waves. It runs the oven to 900°F and dumps massive heat into the kitchen for hours. Save it for cooler weather. Same with running the oven for long cooks during the worst heat — use the grill or a countertop appliance.
+              <strong>Ovens.</strong> Avoid the self-clean cycle during heat waves. It runs the oven to 900°F and dumps massive heat into the kitchen for hours. Save it for cooler weather. Same with running the oven for long cooks during the worst heat. Use the grill or a countertop appliance.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
               <strong>Wine refrigerators and beverage centers.</strong> These are often less robust than full-size fridges and can struggle badly. If you have a high-end wine fridge in a hot space, consider moving valuable bottles to a cooler interior location during the worst weeks.
@@ -248,7 +248,7 @@ export default function HeatWavePostPage() {
               Kelly&apos;s Appliance Center serves Sonoma, Marin, and Napa counties from our shop in Cotati. We&apos;ve been through every Sonoma County heat wave since 1975. If your fridge is struggling and you&apos;re not sure whether to call or wait it out, we&apos;d rather hear from you early than be the post-failure call.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">Book a service call online</a> or call <a href="tel:7076649702" className="text-green-600 hover:text-green-700 font-semibold">(707) 664-9702</a>. For quick questions, we also do <Link href="/services/virtual" className="text-green-600 hover:text-green-700">$40 virtual diagnostics</Link> over video — perfect for &quot;is this sound normal in this heat&quot; questions.
+              <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">Book a service call online</a> or call <a href="tel:7076649702" className="text-green-600 hover:text-green-700 font-semibold">(707) 664-9702</a>. For quick questions, we also do <Link href="/services/virtual" className="text-green-600 hover:text-green-700">$40 virtual diagnostics</Link> over video. Perfect for the &quot;is this sound normal in this heat&quot; questions.
             </p>
           </div>
         </div>
@@ -278,7 +278,7 @@ export default function HeatWavePostPage() {
                 Why Is There Frost or Moisture in My Refrigerator?
               </h3>
               <p className="text-gray-600 text-sm">
-                Frost and condensation issues — common in extreme weather.
+                Frost and condensation issues, common in extreme weather.
               </p>
             </Link>
           </div>

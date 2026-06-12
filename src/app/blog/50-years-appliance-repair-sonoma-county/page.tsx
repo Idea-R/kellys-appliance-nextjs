@@ -153,7 +153,7 @@ export default function FiftyYearsPostPage() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">The Customer Has Changed Too</h2>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              People used to call us when something broke. Now they Google it, watch a YouTube video, try one thing, then call us. Sometimes that goes well — they&apos;ve narrowed down the problem and can tell us exactly what code the oven threw, which saves us time on the call. Sometimes it goes badly — they&apos;ve disassembled half the dryer and lost three screws and now we have to take it further apart to find them.
+              People used to call us when something broke. Now they Google it, watch a YouTube video, try one thing, then call us. Sometimes that goes well. They&apos;ve narrowed down the problem and can tell us exactly what code the oven threw, which saves us time on the call. Sometimes it goes badly. They&apos;ve disassembled half the dryer and lost three screws and now we have to take it further apart to find them.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
               We don&apos;t mind either way. Honest. The DIY culture is good. It saves people money on the easy stuff and it makes them better informed when something is genuinely above their comfort level. Our job is to be there when they hit the limit of what they can do, not to gate-keep simple repairs.

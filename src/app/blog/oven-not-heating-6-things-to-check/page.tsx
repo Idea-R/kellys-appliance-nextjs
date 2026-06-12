@@ -105,7 +105,7 @@ export default function OvenNotHeatingPostPage() {
                 "name": "Can I replace an oven heating element myself?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "On a standard electric oven, yes — it's two screws and two wire connections, with the oven unplugged and the breaker off. The harder part is making sure you order the correct element for your specific model. Use the model number on the door frame or behind the bottom drawer, not the generic appliance type. If the element looks fine and the oven still doesn't heat, the problem is elsewhere (sensor, control board, or wiring) and a tech is the better call."
+                  "text": "On a standard electric oven, yes. It's two screws and two wire connections, with the oven unplugged and the breaker off. The harder part is making sure you order the correct element for your specific model. Use the model number on the door frame or behind the bottom drawer, not the generic appliance type. If the element looks fine and the oven still doesn't heat, the problem is elsewhere (sensor, control board, or wiring) and a tech is the better call."
                 }
               },
               {
@@ -200,7 +200,7 @@ export default function OvenNotHeatingPostPage() {
               Some ovens have a separate broil element at the top. If your oven broils fine but won&apos;t bake, the bake element is almost certainly the culprit. If neither one works, it&apos;s usually further upstream (sensor, control board, or relay).
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>When to call a pro:</strong> Replacing a bake element is straightforward — two screws and two wire connectors — but only if you have the correct part. Get the model number from the door frame or behind the bottom drawer, not just the brand. We stock common bake elements at our <Link href="/services/parts" className="text-green-600 hover:text-green-700">parts counter in Cotati</Link>, or we&apos;ll bring one with the tech if you book a <Link href="/services/oven-repair" className="text-green-600 hover:text-green-700">repair visit</Link>.
+              <strong>When to call a pro:</strong> Replacing a bake element is straightforward (two screws and two wire connectors) but only if you have the correct part. Get the model number from the door frame or behind the bottom drawer, not just the brand. We stock common bake elements at our <Link href="/services/parts" className="text-green-600 hover:text-green-700">parts counter in Cotati</Link>, or we&apos;ll bring one with the tech if you book a <Link href="/services/oven-repair" className="text-green-600 hover:text-green-700">repair visit</Link>.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">3. Watch the Igniter Glow (Gas Ovens)</h2>
@@ -219,10 +219,10 @@ export default function OvenNotHeatingPostPage() {
               This one surprises people. An oven that heats but can&apos;t hold temperature is often a door problem, not an element problem. If the rubber gasket around the oven door is cracked, compressed, or pulled loose, heat escapes faster than the element can replace it. The oven runs constantly but never quite gets to temperature.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              With the oven warm (not blazing hot), run your hand around the closed door — top, sides, bottom. You should feel essentially no warm air escaping. If there&apos;s a noticeable warm stream coming out at any point along the seal, that&apos;s your leak. Now pull the oven door open and look at the gasket. It should be soft, intact, and lay flat against the front of the oven cavity. Common problems: a piece pulled out at a corner, compression flat from years of slamming, or a crack from heat cycling.
+              With the oven warm (not blazing hot), run your hand around the closed door: top, sides, bottom. You should feel essentially no warm air escaping. If there&apos;s a noticeable warm stream coming out at any point along the seal, that&apos;s your leak. Now pull the oven door open and look at the gasket. It should be soft, intact, and lay flat against the front of the oven cavity. Common problems: a piece pulled out at a corner, compression flat from years of slamming, or a crack from heat cycling.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              Also check the door hinges. Modern oven doors are heavy, and the spring-loaded hinges weaken over time. A door that doesn&apos;t close fully square — even a quarter-inch gap at one corner — lets out a surprising amount of heat. Open the door fully and let it fall closed under its own weight. It should feel firm and close completely. If it stops short, hinges need attention.
+              Also check the door hinges. Modern oven doors are heavy, and the spring-loaded hinges weaken over time. A door that doesn&apos;t close fully square (even a quarter-inch gap at one corner) lets out a surprising amount of heat. Open the door fully and let it fall closed under its own weight. It should feel firm and close completely. If it stops short, hinges need attention.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               <strong>When to call a pro:</strong> Gaskets are model-specific and you have to feed them into the right channels around the cavity. Hinges are even more particular and require lifting the door off, which on premium brands like Wolf or Thermador can be a two-person job. We <Link href="/services/oven-repair" className="text-green-600 hover:text-green-700">replace door seals and hinges</Link> regularly and stock common parts.
@@ -249,27 +249,27 @@ export default function OvenNotHeatingPostPage() {
               Most modern ovens have a calibration setting in the menu that lets you compensate for a small drift (up to about 35°F off). If you&apos;re closer to 50°F or more out of spec, the sensor itself needs replacement. The good news is sensors are inexpensive and a quick swap.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>When to call a pro:</strong> If the sensor reads way off — like the oven thinks it&apos;s at 600°F when it&apos;s actually at room temperature — that&apos;s a wiring or board issue, not the sensor itself. Don&apos;t try to fix that one. The oven could overheat dangerously. <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">Schedule a service call</a> and stop using it until then.
+              <strong>When to call a pro:</strong> If the sensor reads way off (like the oven thinks it&apos;s at 600°F when it&apos;s actually at room temperature), that&apos;s a wiring or board issue, not the sensor itself. Don&apos;t try to fix that one. The oven could overheat dangerously. <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">Schedule a service call</a> and stop using it until then.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">6. Check for Error Codes on the Display</h2>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              If the oven&apos;s display is showing an F-code (F1, F2, F3, F0E1, etc.) or any blinking error message, write it down. Those codes are diagnostic gold. Each manufacturer has a list of what their codes mean — they&apos;re basically the oven telling you what it thinks is wrong.
+              If the oven&apos;s display is showing an F-code (F1, F2, F3, F0E1, etc.) or any blinking error message, write it down. Those codes are diagnostic gold. Each manufacturer has a list of what their codes mean. They&apos;re basically the oven telling you what it thinks is wrong.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
               Common patterns we see:
             </p>
             <ul className="mb-4 text-gray-700 leading-relaxed list-disc pl-6 space-y-2">
               <li><strong>F1 or F2:</strong> Usually a sensor or thermistor issue (see item 5)</li>
-              <li><strong>F3:</strong> Often the control board can&apos;t talk to the sensor — could be wiring</li>
+              <li><strong>F3:</strong> Often the control board can&apos;t talk to the sensor, could be wiring</li>
               <li><strong>F5:</strong> Door latch issue, common after a self-clean cycle</li>
               <li><strong>E-codes:</strong> Brand-specific. Look up your make/model online with the exact code</li>
             </ul>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              One important tip: do NOT just google &quot;F2 code&quot; — every manufacturer uses different code numbers for different things. A Whirlpool F2 and a GE F2 mean different things. Look up <em>your specific brand and model</em>. Need to find your model number? We have a <Link href="/resources/where-is-my-model-number" className="text-green-600 hover:text-green-700">quick guide for finding it</Link>.
+              One important tip: do NOT just google &quot;F2 code.&quot; Every manufacturer uses different code numbers for different things. A Whirlpool F2 and a GE F2 mean different things. Look up <em>your specific brand and model</em>. Need to find your model number? We have a <Link href="/resources/where-is-my-model-number" className="text-green-600 hover:text-green-700">quick guide for finding it</Link>.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <strong>When to call a pro:</strong> Most modern oven failures end at the control board, and on premium brands the boards can be $400-700 to replace. Before you spend that, get a tech to confirm the board is actually the issue — sometimes the code points at a different component the board can&apos;t reach. We <Link href="/blog/right-to-repair-why-kellys-rebuilds-control-boards" className="text-green-600 hover:text-green-700">rebuild boards at the component level</Link> when it makes sense, which can save you hundreds.
+              <strong>When to call a pro:</strong> Most modern oven failures end at the control board, and on premium brands the boards can be $400-700 to replace. Before you spend that, get a tech to confirm the board is actually the issue. Sometimes the code points at a different component the board can&apos;t reach. We <Link href="/blog/right-to-repair-why-kellys-rebuilds-control-boards" className="text-green-600 hover:text-green-700">rebuild boards at the component level</Link> when it makes sense, which can save you hundreds.
             </p>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">A Few Things People Try That Don&apos;t Work</h2>
@@ -277,7 +277,7 @@ export default function OvenNotHeatingPostPage() {
               Before we wrap up, three myths worth busting:
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              <strong>Running the self-clean cycle to &quot;reset&quot; the oven.</strong> Self-clean is brutal on ovens. It runs the cavity up to 900°F+ and stresses every component — sensors, gaskets, locks, control boards. We see more ovens come in for repair right after a self-clean than at any other time. If your oven is already not heating, don&apos;t add a self-clean cycle to its list of problems.
+              <strong>Running the self-clean cycle to &quot;reset&quot; the oven.</strong> Self-clean is brutal on ovens. It runs the cavity up to 900°F+ and stresses every component: sensors, gaskets, locks, control boards. We see more ovens come in for repair right after a self-clean than at any other time. If your oven is already not heating, don&apos;t add a self-clean cycle to its list of problems.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
               <strong>Unplugging the oven for a few minutes to &quot;reboot&quot; it.</strong> This sometimes clears a transient software glitch on modern ovens. Worth trying once. But if it works once and the problem comes right back, you have a real hardware issue and the reboot is just delaying the diagnosis.
@@ -291,13 +291,13 @@ export default function OvenNotHeatingPostPage() {
               Most oven repairs are quick when you know what you&apos;re looking at. A bake element swap takes 20 minutes. An igniter is 30. A sensor is 15. The slow part is figuring out which one it actually is, which is what the six checks above help you do.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              If you ran through them and you have a suspect — great, you can either tackle it yourself if it&apos;s in your comfort zone, or call us and tell us what you found. The diagnosis you did saves us time and saves you money. If you&apos;re not sure, that&apos;s fine too. That&apos;s what we&apos;re here for.
+              If you ran through them and you have a suspect, great. You can either tackle it yourself if it&apos;s in your comfort zone, or call us and tell us what you found. The diagnosis you did saves us time and saves you money. If you&apos;re not sure, that&apos;s fine too. That&apos;s what we&apos;re here for.
             </p>
             <p className="mb-4 text-gray-700 leading-relaxed">
               Kelly&apos;s Appliance Center has been repairing ovens in Sonoma, Marin, and Napa counties since 1975. We&apos;re Diamond Certified, factory authorized for Sub-Zero, Wolf, Thermador, Viking, Bosch, KitchenAid, and every major brand, and we carry common oven parts on our trucks so a lot of repairs finish in a single visit.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">Book an oven repair online</a> or call us at <a href="tel:7076649702" className="text-green-600 hover:text-green-700 font-semibold">(707) 664-9702</a>. If you&apos;re not sure whether to book yet, try a <Link href="/services/virtual" className="text-green-600 hover:text-green-700">virtual diagnostic</Link> — 15 minutes on a video call with a technician for $40, and we can usually tell you whether you need a service visit or whether there&apos;s a quick fix you can do yourself.
+              <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">Book an oven repair online</a> or call us at <a href="tel:7076649702" className="text-green-600 hover:text-green-700 font-semibold">(707) 664-9702</a>. If you&apos;re not sure whether to book yet, try a <Link href="/services/virtual" className="text-green-600 hover:text-green-700">virtual diagnostic</Link>. It&apos;s 15 minutes on a video call with a technician for $40, and we can usually tell you whether you need a service visit or whether there&apos;s a quick fix you can do yourself.
             </p>
           </div>
         </div>

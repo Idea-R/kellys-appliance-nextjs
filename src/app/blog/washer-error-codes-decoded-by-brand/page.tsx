@@ -7,7 +7,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 export const metadata = {
   title: 'Washer Error Codes Decoded: LG, Samsung, Whirlpool, Maytag & GE',
-  description: 'Your washer is flashing an error code. Look it up here by brand. We cover the most common codes for LG, Samsung, Whirlpool, Maytag, and GE — what each means and what to do about it.',
+  description: 'Your washer is flashing an error code. Look it up here by brand. We cover the most common codes for LG, Samsung, Whirlpool, Maytag, and GE. What each means and what to do about it.',
   alternates: {
     canonical: '/blog/washer-error-codes-decoded-by-brand',
   },
@@ -68,7 +68,7 @@ export default function WasherCodesPostPage() {
                 "name": "Why does my washer show an error code?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Modern washers monitor every cycle with sensors that detect water level, water temperature, drum balance, door lock, motor RPM, and drain status. When a sensor reading is outside the expected range, the control board halts the cycle and displays a code instead of risking damage. Codes are diagnostic shortcuts — they tell you which part of the system reported a problem, not necessarily which part is broken. A drain error could mean a clogged hose, a failed pump, or a faulty pressure sensor."
+                  "text": "Modern washers monitor every cycle with sensors that detect water level, water temperature, drum balance, door lock, motor RPM, and drain status. When a sensor reading is outside the expected range, the control board halts the cycle and displays a code instead of risking damage. Codes are diagnostic shortcuts. They tell you which part of the system reported a problem, not necessarily which part is broken. A drain error could mean a clogged hose, a failed pump, or a faulty pressure sensor."
                 }
               },
               {
@@ -76,7 +76,7 @@ export default function WasherCodesPostPage() {
                 "name": "Can I reset a washer error code without calling a repair tech?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Most washers will reset if you unplug them for 1-2 minutes and plug them back in. This clears transient errors caused by power glitches or one-off sensor hiccups. If the code returns when you start a new cycle, you have a real problem and a reset won't fix it. Don't keep resetting and running cycles repeatedly — you can sometimes damage components by forcing a system that has already detected a fault."
+                  "text": "Most washers will reset if you unplug them for 1-2 minutes and plug them back in. This clears transient errors caused by power glitches or one-off sensor hiccups. If the code returns when you start a new cycle, you have a real problem and a reset won't fix it. Don't keep resetting and running cycles repeatedly. You can sometimes damage components by forcing a system that has already detected a fault."
                 }
               },
               {
@@ -84,7 +84,7 @@ export default function WasherCodesPostPage() {
                 "name": "What's the most common washer error code we see?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Drain errors are by far the most common across every brand. LG OE, Samsung 5C/SC, Whirlpool F9E1, Maytag F9E1, GE drain error — they all indicate the washer can't pump water out in the expected time. About 70% of drain errors are caused by something in the drain pump filter (a sock, a hair tie, a coin), 20% by a kinked or clogged drain hose, and 10% by an actual failed drain pump. Always check the filter first."
+                  "text": "Drain errors are by far the most common across every brand. LG OE, Samsung 5C/SC, Whirlpool F9E1, Maytag F9E1, GE drain error. They all indicate the washer can't pump water out in the expected time. About 70% of drain errors are caused by something in the drain pump filter (a sock, a hair tie, a coin), 20% by a kinked or clogged drain hose, and 10% by an actual failed drain pump. Always check the filter first."
                 }
               },
               {
@@ -110,7 +110,7 @@ export default function WasherCodesPostPage() {
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Washer Error Codes Decoded
             </h1>
-            <p className="text-xl text-green-200 mb-6">LG, Samsung, Whirlpool, Maytag &amp; GE — what each code actually means.</p>
+            <p className="text-xl text-green-200 mb-6">LG, Samsung, Whirlpool, Maytag &amp; GE. What each code actually means.</p>
             <div className="flex items-center justify-center gap-6 text-green-200">
               <div className="flex items-center">
                 <CalendarIcon className="h-5 w-5 mr-2" />
@@ -153,12 +153,12 @@ export default function WasherCodesPostPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">OE</td><td className="border border-gray-300 px-4 py-2">Drain error — water won&apos;t pump out</td><td className="border border-gray-300 px-4 py-2">Clean the drain pump filter (front-loaders)</td></tr>
-                  <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">IE</td><td className="border border-gray-300 px-4 py-2">Inlet error — water won&apos;t fill</td><td className="border border-gray-300 px-4 py-2">Check water supply valves, inspect inlet hoses for kinks</td></tr>
+                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">OE</td><td className="border border-gray-300 px-4 py-2">Drain error: water won&apos;t pump out</td><td className="border border-gray-300 px-4 py-2">Clean the drain pump filter (front-loaders)</td></tr>
+                  <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">IE</td><td className="border border-gray-300 px-4 py-2">Inlet error: water won&apos;t fill</td><td className="border border-gray-300 px-4 py-2">Check water supply valves, inspect inlet hoses for kinks</td></tr>
                   <tr><td className="border border-gray-300 px-4 py-2 font-semibold">UE</td><td className="border border-gray-300 px-4 py-2">Unbalanced load</td><td className="border border-gray-300 px-4 py-2">Redistribute laundry, check for level</td></tr>
-                  <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">LE</td><td className="border border-gray-300 px-4 py-2">Motor lock — usually a Hall sensor issue</td><td className="border border-gray-300 px-4 py-2">Unplug 30 min and retry. If recurs, call</td></tr>
+                  <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">LE</td><td className="border border-gray-300 px-4 py-2">Motor lock: usually a Hall sensor issue</td><td className="border border-gray-300 px-4 py-2">Unplug 30 min and retry. If recurs, call</td></tr>
                   <tr><td className="border border-gray-300 px-4 py-2 font-semibold">dE</td><td className="border border-gray-300 px-4 py-2">Door not closed properly</td><td className="border border-gray-300 px-4 py-2">Push door firmly, check the door latch</td></tr>
-                  <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">FE</td><td className="border border-gray-300 px-4 py-2">Overfill — water level too high</td><td className="border border-gray-300 px-4 py-2">Usually a stuck water inlet valve. Service call.</td></tr>
+                  <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">FE</td><td className="border border-gray-300 px-4 py-2">Overfill: water level too high</td><td className="border border-gray-300 px-4 py-2">Usually a stuck water inlet valve. Service call.</td></tr>
                   <tr><td className="border border-gray-300 px-4 py-2 font-semibold">tE</td><td className="border border-gray-300 px-4 py-2">Heating temperature error</td><td className="border border-gray-300 px-4 py-2">Heater element or temp sensor. Service call.</td></tr>
                   <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">PE</td><td className="border border-gray-300 px-4 py-2">Water level pressure sensor error</td><td className="border border-gray-300 px-4 py-2">Air tube to sensor often loose or clogged. Service call.</td></tr>
                   <tr><td className="border border-gray-300 px-4 py-2 font-semibold">CE</td><td className="border border-gray-300 px-4 py-2">Motor circuit / overcurrent</td><td className="border border-gray-300 px-4 py-2">Service call. Motor or inverter board issue.</td></tr>
@@ -213,13 +213,13 @@ export default function WasherCodesPostPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">F9E1</td><td className="border border-gray-300 px-4 py-2">Drain error — long drain</td><td className="border border-gray-300 px-4 py-2">Drain hose, filter, drain pump</td></tr>
+                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">F9E1</td><td className="border border-gray-300 px-4 py-2">Drain error: long drain</td><td className="border border-gray-300 px-4 py-2">Drain hose, filter, drain pump</td></tr>
                   <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">F8E1 / F8E2</td><td className="border border-gray-300 px-4 py-2">Water supply / detergent dispenser</td><td className="border border-gray-300 px-4 py-2">Inlet valves and dispenser assembly</td></tr>
                   <tr><td className="border border-gray-300 px-4 py-2 font-semibold">F5E2 / F5E3</td><td className="border border-gray-300 px-4 py-2">Door lock failure</td><td className="border border-gray-300 px-4 py-2">Door latch assembly. Often replaceable.</td></tr>
                   <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">F7E1 / F7E5</td><td className="border border-gray-300 px-4 py-2">Motor / drive failure</td><td className="border border-gray-300 px-4 py-2">Service call.</td></tr>
-                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">F0E1</td><td className="border border-gray-300 px-4 py-2">Suds detected — too much detergent</td><td className="border border-gray-300 px-4 py-2">Reduce detergent, use HE-rated</td></tr>
+                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">F0E1</td><td className="border border-gray-300 px-4 py-2">Suds detected: too much detergent</td><td className="border border-gray-300 px-4 py-2">Reduce detergent, use HE-rated</td></tr>
                   <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">F0E2</td><td className="border border-gray-300 px-4 py-2">Excessive suds during drain</td><td className="border border-gray-300 px-4 py-2">Run a clean cycle, switch detergent</td></tr>
-                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">Sud or Sd</td><td className="border border-gray-300 px-4 py-2">Suds lock — too much detergent</td><td className="border border-gray-300 px-4 py-2">Same as F0E1/F0E2</td></tr>
+                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">Sud or Sd</td><td className="border border-gray-300 px-4 py-2">Suds lock: too much detergent</td><td className="border border-gray-300 px-4 py-2">Same as F0E1/F0E2</td></tr>
                   <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">F2E3</td><td className="border border-gray-300 px-4 py-2">Stuck key on control panel</td><td className="border border-gray-300 px-4 py-2">Unplug, wait 5 min. If recurs, control panel.</td></tr>
                   <tr><td className="border border-gray-300 px-4 py-2 font-semibold">F1E1 / F1E2</td><td className="border border-gray-300 px-4 py-2">Main control board failure</td><td className="border border-gray-300 px-4 py-2">Service call. Often board-rebuildable.</td></tr>
                 </tbody>
@@ -245,10 +245,10 @@ export default function WasherCodesPostPage() {
                 <tbody>
                   <tr><td className="border border-gray-300 px-4 py-2 font-semibold">F9E1</td><td className="border border-gray-300 px-4 py-2">Drain too long (same as Whirlpool)</td><td className="border border-gray-300 px-4 py-2">Drain pump filter, hose</td></tr>
                   <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">F5E2</td><td className="border border-gray-300 px-4 py-2">Door lock fault</td><td className="border border-gray-300 px-4 py-2">Door latch</td></tr>
-                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">LF / LO FL</td><td className="border border-gray-300 px-4 py-2">Long fill — water taking too long to fill</td><td className="border border-gray-300 px-4 py-2">Check supply valves and inlet screens</td></tr>
+                  <tr><td className="border border-gray-300 px-4 py-2 font-semibold">LF / LO FL</td><td className="border border-gray-300 px-4 py-2">Long fill: water taking too long to fill</td><td className="border border-gray-300 px-4 py-2">Check supply valves and inlet screens</td></tr>
                   <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">Lid / Ld</td><td className="border border-gray-300 px-4 py-2">Lid lock (top-loaders)</td><td className="border border-gray-300 px-4 py-2">Lid lock assembly. Often the magnetic switch.</td></tr>
                   <tr><td className="border border-gray-300 px-4 py-2 font-semibold">uL / UL</td><td className="border border-gray-300 px-4 py-2">Unbalanced load</td><td className="border border-gray-300 px-4 py-2">Redistribute laundry</td></tr>
-                  <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">PF</td><td className="border border-gray-300 px-4 py-2">Power failure — cycle interrupted</td><td className="border border-gray-300 px-4 py-2">Press start. If recurs, electrical.</td></tr>
+                  <tr className="bg-gray-50"><td className="border border-gray-300 px-4 py-2 font-semibold">PF</td><td className="border border-gray-300 px-4 py-2">Power failure: cycle interrupted</td><td className="border border-gray-300 px-4 py-2">Press start. If recurs, electrical.</td></tr>
                 </tbody>
               </table>
             </div>
@@ -304,7 +304,7 @@ export default function WasherCodesPostPage() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">A Note About Control Boards</h2>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              Many of the codes in this guide (especially the motor, control, and heater faults) can ultimately trace back to a failing control board. Manufacturer-replacement boards on premium washers can run $400-600. We rebuild boards at the component level when it makes sense — usually a $50-100 fix instead of $500+. <Link href="/blog/right-to-repair-why-kellys-rebuilds-control-boards" className="text-green-600 hover:text-green-700">More on that here</Link>.
+              Many of the codes in this guide (especially the motor, control, and heater faults) can ultimately trace back to a failing control board. Manufacturer-replacement boards on premium washers can run $400-600. We rebuild boards at the component level when it makes sense. Usually a $50-100 fix instead of $500+. <Link href="/blog/right-to-repair-why-kellys-rebuilds-control-boards" className="text-green-600 hover:text-green-700">More on that here</Link>.
             </p>
           </div>
         </div>
