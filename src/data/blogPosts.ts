@@ -18,6 +18,15 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: 'Getting the Most Out of Your Dishwasher: 10 Things Owners Get Wrong',
+    slug: 'getting-the-most-out-of-your-dishwasher',
+    excerpt:
+      "Cloudy glasses, dishes that come out dirty, a dishwasher that smells. Most of it traces back to 10 simple habits, and almost all of them are free to fix. Here's what owners get wrong, from never cleaning the filter to skipping rinse aid.",
+    date: '2026-06-11',
+    readTime: '10 min read',
+    category: 'Dishwasher Repair',
+  },
+  {
     title: 'Dryer Not Heating? 7 Things to Check Before You Call a Repair Tech',
     slug: 'dryer-not-heating-7-things-to-check',
     excerpt:
