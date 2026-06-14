@@ -78,11 +78,9 @@ Yelp was the second-largest lead source in May with **32 requests**, and the dem
 
 You asked specifically about Thumbtack. Here's the finding: **the lead routing system has never received a single Thumbtack or Angi lead.** The only sources flowing in are Yelp, Nextdoor, and property management (PURE Property Management work orders started June 1). First routed lead of any kind was May 19.
 
-Two possibilities:
-1. Kelly's isn't actively advertising on Thumbtack/Angi right now, or
-2. The accounts exist but the n8n routing for them was never wired.
+**Confirmed with Shane:** the accounts exist and are loggable into, but **neither Thumbtack nor Angi exposes an API** to pull leads from. That's why nothing reaches the routing system — there's no integration to wire. Capturing these leads will require **browser automation** (a scheduled headless login that scrapes the lead inbox and posts into `lead_inbox`), the same pattern we'd use for any API-less platform.
 
-Either way it's a decision point. Thumbtack in particular is a pay-per-lead model that competitors in this market use heavily. **Recommend confirming account status before deciding whether to activate, reconnect, or formally drop them** so we stop wondering.
+Thumbtack in particular is a pay-per-lead model competitors in this market use heavily, so the leads are likely real money already being spent with no measurement. **Next step: scope a browser-automation lead scraper for Thumbtack + Angi** so these stop being a blind spot. Until then, check them manually in the platform dashboards.
 
 ---
 
@@ -104,7 +102,7 @@ Even at deliberately conservative match rates, paid advertising is returning wel
 
 ### P0 — Measurement
 - [ ] **Ship the Phase A match cron** so website-form → job matching runs automatically instead of by hand. This is the difference between a manual audit and a live dashboard.
-- [ ] **Decide on Thumbtack & Angi.** Confirm whether the accounts are active. Activate, reconnect the routing, or formally drop them.
+- [ ] **Scope a Thumbtack + Angi browser-automation scraper.** Neither has an API; a scheduled headless login is the only way to capture those leads into `lead_inbox`.
 - [ ] **Close the Yelp attribution gap.** Capture phone at first Yelp reply, or build name+city+appliance matching (Phase B). 32 unmeasured leads/month is too many to keep guessing on.
 
 ### P1 — Optimization

@@ -2,97 +2,118 @@
 
 **Generated:** June 14, 2026
 **Property:** kellysappliancerepair.com (domain-level)
+**Period:** May 1–31, 2026 (exact-month pull)
+**Data source:** Google Search Console Performance report, pulled live via browser June 14, 2026
 **Prepared by:** Ideas Realized
-
-> ⚠️ **Data-window caveat.** The Google Search Console MCP server is disconnected this session, so this report does not use a clean May 1–31 slice. It draws on the **most recent successful GSC pull (June 10, 2026, a 3-month window Mar 9 – Jun 9 that fully contains May)** plus the April monthly baseline (Mar 12 – Apr 11) for trend. The dedicated service account is set up (see [`platforms/google-search-console.md`](../../platforms/google-search-console.md)); the MCP just needs a restart to resume clean monthly pulls. Treat the channel totals as directional, not exact-month.
 
 ---
 
 ## Executive Summary
 
-Organic search remains Kelly's largest traffic channel by volume and the best value on the marketing sheet: roughly **1,200 visits a month at zero marginal cost**, versus ~489 paid clicks at $1,475. The blog is the engine, ~350 organic clicks a month from informational posts, led by the washing-machine post (568 clicks over the last 3 months).
+Organic search remains Kelly's largest traffic channel by volume and the best value on the marketing sheet. In May, the site earned **639 clicks from 55,800 impressions** at a **1.1% CTR** and an **average position of 11.3** — and that position is the story: it improved from 14.2 in the April baseline, meaning rankings are climbing.
 
-The two recurring themes from the paid side show up here too:
-1. **The dryer demand is enormous and under-captured** — the old dryer post pulls 37,051 impressions at just 0.56% CTR. We shipped a new dryer post in June to attack exactly this.
-2. **Santa Rosa is the weakest major market**, in organic and paid alike. Biggest single geographic opportunity in the program.
+Two findings dominate, and both echo the paid side:
+1. **There is enormous un-captured demand the site ranks for but doesn't click.** "oven repair" alone drew **10,466 impressions and zero clicks** in May (position 22.9). Several more high-volume queries sit in the same boat.
+2. **Santa Rosa is the weakest major market** — "appliance repair santa rosa" got 604 impressions but only 9 clicks at position 9.0. Same gap we see in paid.
 
-May itself was a quiet *content* month (no new posts published); the big content push landed in June (7 new posts). So May's organic story is about how existing content held up, and the June surge is what the next report will measure.
-
----
-
-## Organic Channel Totals
-
-| Metric | Value | Window |
-|--------|-------|--------|
-| Blog organic clicks | ~1,060 | 3 months (Mar 9 – Jun 9) |
-| Blog impressions | ~102,000 | 3 months |
-| Blog avg CTR | 1.0% | 3 months |
-| Blog avg position | 6.1 | 3 months |
-| **Total site organic clicks** | **~1,200 / month** | April baseline |
-| Total site impressions | ~100,000 / month | April baseline |
-
-Blog content runs ~350 clicks/month at position 6.1. That's the strongest non-brand organic asset Kelly's has.
+May was a quiet *content* month (no new posts published). The big push landed in June (7 new posts), so the climb in rankings and the new-content payoff will show in the next report.
 
 ---
 
-## Blog Post Performance (last 3 months)
+## Top-Line Numbers (exact May 1–31)
 
-| Post | Clicks | Impressions | CTR | Read |
-|------|--------|-------------|-----|------|
-| Signs Your Washing Machine Needs Repair | **568** | 33,209 | 1.7% | Symptom listicle — the workhorse |
-| Why Is My Dryer Taking So Long to Dry | 209 | **37,051** | **0.56%** | ⚠️ Huge impressions, low CTR |
-| APE Closing / Parts Expansion | 149 | 2,039 | **7.3%** | Local/community — best CTR on the site |
-| Is Your Oven Not Heating Properly | 55 | 13,587 | 0.4% | ⚠️ High impressions, low CTR |
-| How Often to Service Appliances | 42 | 6,019 | 0.7% | Maintenance |
-| How to Tell If Fridge Needs Repair | 30 | 5,670 | 0.5% | Symptom |
+| Metric | May 2026 | April baseline | Trend |
+|--------|----------|----------------|-------|
+| Total clicks | **639** | ~1,200/mo* | — |
+| Total impressions | **55,800** | ~100,000/mo* | — |
+| Average CTR | **1.1%** | 1.2% | flat |
+| Average position | **11.3** | 14.2 | ⬆ improving |
 
-**Takeaways:**
-- **The symptom-listicle format wins.** The washing-machine post alone out-clicks most service pages. This is exactly why the June content batch (dryer, oven, washer codes, dishwasher) follows the same structure.
-- **The dryer post is the single biggest opportunity on the site.** 37K impressions, 209 clicks. It ranks for a mountain of dryer searches but the old clinical title barely earns the click. We published a new "Dryer Not Heating? 7 Things to Check" post June 10 to capture that latent demand, and refreshing the old post's title/meta is the fastest CTR win available.
-- **Local/community content has the highest CTR by far** (APE post at 7.3%, ~10x the blog average). The "50 Years in Sonoma County" post shipped June 2 to lean into this.
+\* April baseline was a rolling-30-day pull; the May figures are a clean calendar-month slice, so click/impression totals aren't directly comparable, but **average position improving from 14.2 to 11.3 is a real ranking gain.**
+
+---
+
+## Top Non-Brand Queries (May)
+
+Brand terms ("kelly's appliance center," "kelly appliance repair," and variants) take the top ~10 spots and the majority of clicks — healthy, it means the brand is searched directly. The non-brand queries are where the growth is:
+
+| Query | Clicks | Impressions | CTR | Position |
+|-------|--------|-------------|-----|----------|
+| appliance parts santa rosa | 25 | 229 | 10.9% | 4.8 |
+| washing machine repair | 22 | 925 | 2.4% | 2.5 |
+| appliance repair near me | 14 | 733 | 1.9% | 8.8 |
+| appliance repair napa | 11 | 496 | 2.2% | 10.5 |
+| appliance repair petaluma | 11 | 253 | 4.3% | 4.9 |
+| **appliance repair santa rosa** | **9** | **604** | **1.5%** | **9.0** |
+| petaluma appliance repair | 7 | 67 | 10.4% | 5.4 |
+| appliance repair (broad) | 6 | 837 | 0.7% | 17.6 |
+| washing machine repair near me | 6 | 283 | 2.1% | 30.4 |
+| napa appliance repair | 5 | 311 | 1.6% | 11.4 |
+| appliance repair sebastopol | 5 | 148 | 3.4% | 8.6 |
+
+**Notes:**
+- **"appliance parts santa rosa" converts well organically** (10.9% CTR at position 4.8) — interesting that Santa Rosa *parts* intent ranks while Santa Rosa *repair* doesn't.
+- **Petaluma is strong in organic too** (both "appliance repair petaluma" and "petaluma appliance repair" at 4–10% CTR), mirroring its dominance in paid.
+- **Washing machine repair** is the #1 non-brand winner (22 clicks at position 2.5) — exactly why the washing-machine blog post is the site's top performer.
+
+---
+
+## The Biggest Opportunity: high-impression, zero-click queries
+
+These are queries where the site is *shown* a lot but earns no clicks, because it ranks on page 2 or 3. Capturing even a slice of these is the fastest organic growth available:
+
+| Query | Impressions (May) | Clicks | Position |
+|-------|-------------------|--------|----------|
+| **oven repair** | **10,466** | 0 | 22.9 |
+| dryer service and repair | 5,726 | 0 | 62.1 |
+| fix electric oven near me | 3,495 | 0 | 66.6 |
+| appliance repair service near me | 3,320 | 0 | 48.0 |
+| washer repair | 2,824 | 0 | 18.0 |
+| oven repair service near me | 970 | 0 | 15.3 |
+| kitchen appliance repair service near me | 564 | 0 | 29.2 |
+| home appliance repair near me | 525 | 0 | 65.7 |
+| washer and dryer repair | 483 | 0 | 24.7 |
+| oven not heating | 416 | 0 | 17.4 |
+
+**"oven repair" at 10,466 impressions and zero clicks is the single biggest organic prize on the site.** It ranks at position 22.9 (page 3). The new `/services/oven-repair` page and the "Oven Not Heating" blog post (both shipped early June) are aimed squarely at this — the next report should show whether they move it up. "washer repair" (2,824 impressions, position 18) and "oven not heating" (416 impressions, position 17.4) are the next-most-winnable, sitting just off page 1.
 
 ---
 
 ## Geographic Gaps (consistent with paid)
 
 ### Santa Rosa — biggest market, weakest ranking
-Santa Rosa is the largest city in the service area and ranks below the first page for its core terms ("appliance repair santa rosa" sat around position 8 in the April pull). The paid side tells the same story: "appliance repair santa rosa" is the most expensive core keyword at $10.96 CPA. **This is the clearest cross-channel signal in the whole report.** A Santa Rosa content deep-dive plus a strengthened location page would lift both organic rank and paid Quality Score at the same time.
+"appliance repair santa rosa": **604 impressions, 9 clicks, position 9.0.** It's right on the edge of page 1 but not breaking through. Paid tells the identical story — "appliance repair santa rosa" is the most expensive core keyword at $10.96 CPA. **This is the clearest cross-channel signal in the whole report.** A Santa Rosa content deep-dive plus a strengthened location page would lift organic rank and paid Quality Score together.
 
-### Marin County — ranking but not earning clicks
-San Rafael, Mill Valley, Corte Madera, and Novato pages rank in positions 2–4 for their local terms but earn almost no clicks (0.2–1.2% CTR). That pattern points to meta titles/descriptions that show but don't compel. Meta rewrites were pushed in April; the next clean GSC pull should show whether they moved CTR.
+### Petaluma & Napa — performing
+Petaluma ranks well organically (position ~5, good CTR) and is the paid MVP. Napa is solid (position ~10–11, converting). Neither is a gap.
 
-### Napa — healthy
-Napa performs reasonably (position ~6, decent click share). Not a gap.
-
----
-
-## Quick-Win Backlog
-
-The April `detect_quick_wins` pull identified **121 opportunities** (keywords at position 2–15 with 30+ impressions). The headliners:
-
-| Query | Page | Position | Impressions | Potential +clicks |
-|-------|------|----------|-------------|-------------------|
-| oven repair service near me | Sonoma location | 14.9 | 956 | +48 |
-| washing machine repair | Washer blog | 2.2 | 411 | +15 |
-| dryer taking forever to dry | Dryer blog | 2.2 | 249 | +12 |
-| appliance repair santa rosa | Santa Rosa page | 7.2 | 194 | +10 |
-
-If even half convert, that's **200–300 extra organic clicks/month from existing rankings** — no new content required. The new `/services/oven-repair` page directly targets the top one ("oven repair service near me," 956 impressions, was getting zero clicks).
+### Marin (San Rafael, Mill Valley, etc.)
+Appears in the long tail with impressions but low clicks. The April meta-rewrites were meant to help here; worth watching CTR in coming months.
 
 ---
 
-## What Shipped & What's Next
+## Content Performance
 
-**May:** no new blog content published (quiet content month).
+The blog continues to carry non-brand organic. From the 3-month blog pull (still the best per-post view; see [`docs/ops/blog-performance-data-june-2026.md`](../../blog-performance-data-june-2026.md)):
+- Signs Your Washing Machine Needs Repair: the workhorse, ~568 clicks/3mo
+- Why Is My Dryer Taking So Long: 37,051 impressions but 0.56% CTR — huge latent demand, weak title
+- APE Closing / Parts: best CTR on the site at 7.3% (local angle wins)
 
-**June (already live, will show in next report):** seven new posts — Oven Not Heating, 50 Years in Sonoma County, Fridge Making Noises, Heat Wave Survival, Washer Error Codes, Dryer Not Heating, Getting the Most Out of Your Dishwasher. All follow the proven symptom-listicle format. Expect indexing and early traffic to appear in the late-June / July data.
+**May published no new posts.** June shipped seven (Oven Not Heating, 50 Years, Fridge Noises, Heat Wave, Washer Codes, Dryer Not Heating, Getting the Most Out of Your Dishwasher), all in the proven symptom-listicle format. Their indexing and early traffic will appear in the late-June/July data.
 
-### Recommendations
-- [ ] **Reconnect the GSC MCP** (service account is ready) so monthly reports use a clean exact-month window instead of the rolling 3-month pull.
-- [ ] **Refresh the old dryer post's title/meta** — fastest CTR win on the site (37K impressions sitting at 0.56%).
+---
+
+## Recommendations
+
+### This month
+- [ ] **Attack "oven repair" (10,466 impressions, 0 clicks).** Strengthen `/services/oven-repair` and interlink the new oven blog post. Biggest single prize on the site.
+- [ ] **Refresh the old dryer post's title/meta** — 37K impressions at 0.56% CTR is the fastest CTR win available.
 - [ ] **Build out Santa Rosa** content + location page. Biggest cross-channel gap (organic AND paid).
-- [ ] **Publish a Marin County guide** to capture the cities that rank but don't earn clicks.
-- [ ] **Work the quick-win backlog** — 121 opportunities, ~200–300 clicks/month of upside.
+
+### Quarter
+- [ ] **Publish a Marin County guide** to convert the cities that rank but don't earn clicks.
+- [ ] **Reconnect the GSC MCP** (service account is configured per task #13) so these monthly pulls are automated instead of done by hand in the browser.
+- [ ] **Keep the symptom-listicle content cadence** — it's the format that ranks and clicks for this audience.
 
 ---
 
@@ -100,19 +121,19 @@ If even half convert, that's **200–300 extra organic clicks/month from existin
 
 | Metric | Value |
 |--------|-------|
-| Monthly organic clicks | ~1,200 |
+| Monthly organic clicks | ~640 (May) |
 | Est. lead conversion rate | 2–5% |
-| Est. monthly leads | 24–60 |
+| Est. monthly leads | 13–32 |
 | Avg job value | ~$300 |
-| **Est. monthly revenue from organic** | **$7,200 – $18,000** |
+| **Est. monthly revenue from organic** | **$3,900 – $9,600** |
 
-Organic shows up as "free" but is plausibly Kelly's largest revenue channel by total value. It deserves the same attention the paid channels get.
+Even on the conservative single-month click count, organic plausibly drives mid-four-figure to low-five-figure monthly revenue at zero marginal cost. As the June content matures and the zero-click queries get captured, this should climb.
 
 ---
 
 ## Data Notes
 
-- GSC MCP disconnected this session; figures from the **June 10, 2026 pull** (3-month window) and the **April monthly baseline**. Not an exact May 1–31 slice.
-- Service account (`gsc-ga4-mcp-reader@…`) is configured per task #13; reconnecting the MCP server restores live monthly pulls.
-- Blog performance detail: [`docs/ops/blog-performance-data-june-2026.md`](../../blog-performance-data-june-2026.md).
+- Live browser pull of the GSC Performance report, June 14, 2026, custom date range May 1–31, 2026, Search type: Web.
+- Brand-term per-query click counts omitted from the table because the UI export concatenates large numbers ambiguously; non-brand and zero-click figures are individually verified (clicks/impressions reconcile to the shown CTR).
+- The GSC MCP remains disconnected this session; reconnecting it (service account ready) would replace this manual browser pull with an automated monthly export.
 - Cross-reference paid Santa Rosa underperformance in [`2026-05-google-ads.md`](2026-05-google-ads.md).
