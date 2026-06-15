@@ -9,6 +9,8 @@
 
 ---
 
+> **CORRECTION (June 14, 2026):** This report measures **website-form leads only**, which makes LSA look weak. LSA runs on **phone calls** we weren't attributing. A June 14 sample of **13 charged LSA leads found 6 (46%) booked real jobs, 4 billed** (≈4-6x ROI) by matching LSA callers to the SCS call recordings to OATAS jobs. LSA is a real converting channel. The phone-call matcher (LSA ↔ SCS ↔ jobs) is being built into OATAS. See [`LSA_CALL_ATTRIBUTION_VIA_SCS_JUN2026.md`](../../../../../../SDTriage/docs/research/LSA_CALL_ATTRIBUTION_VIA_SCS_JUN2026.md).
+
 ## Executive Summary
 
 Across every channel, Kelly's captured roughly **216 inbound touches** in May: 137 Google Ads conversions, 41 website-form leads, 32 Yelp requests, and 6 Nextdoor mentions. The standout is **Google Ads Search**, which is both the highest-volume and the most efficient paid channel at **$6.02 per conversion** and a **78% lead-to-job match rate** on the leads we can track.

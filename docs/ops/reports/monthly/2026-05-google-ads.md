@@ -7,6 +7,8 @@
 
 ---
 
+> **CORRECTION (June 14, 2026):** The "LSA is less efficient" conclusion below was a measurement blind spot, not a real result. LSA runs on **phone calls**, and our attribution was **website-form only**, so LSA's phone bookings were invisible. A June 14 sample of **13 charged LSA leads found 6 (46%) booked real jobs, 4 already billed** (≈4-6x ROI). LSA is converting fine; we just couldn't see it. Phone-call attribution via the SCS call system is now being built. Full detail: [`LSA_CALL_ATTRIBUTION_VIA_SCS_JUN2026.md`](../../../../../../SDTriage/docs/research/LSA_CALL_ATTRIBUTION_VIA_SCS_JUN2026.md). Treat the LSA efficiency commentary below as superseded.
+
 ## Executive Summary
 
 May was a strong month for paid search. **Google Ads Search nearly doubled its conversions (53 → 95, +79%) while getting more efficient ($7.38 → $6.02 CPA).** Search now carries the program: it drove 69% of all paid conversions on 39% of the spend. LSA went the other way, slipping to 42 conversions at a $21.49 CPA (its worst efficiency of the year so far).
