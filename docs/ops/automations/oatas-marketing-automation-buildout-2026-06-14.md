@@ -77,8 +77,7 @@ Everything funnels into OATAS, matches to real jobs automatically, and surfaces 
 The code is built and the crons are scheduled. Three things need credentials entered in the OATAS Integrations UI (all encrypted at rest — I never handle the plaintext):
 
 1. **Google Search Console** → paste the service-account JSON (the one we set up this session) + property `sc-domain:kellysappliancerepair.com`. The `/seo` page populates on the next daily run (or trigger it manually). **This is the high-value one** — do it first.
-2. **Thumbtack** → enter username/password, AND set the `THUMBTACK_APIFY_ACTOR` secret to your licensed authenticated-scrape actor (the default slug is a placeholder).
-3. **Angi** → enter username/password, AND set the `ANGI_APIFY_ACTOR` secret similarly.
+2. **Thumbtack / Angi** → the custom Apify actor that reads the authenticated pro inbox is now built at `C:\dev\SDTriage\apify\lead-inbox-scraper` (one actor, branches by platform). To activate: (a) `apify push` it from that folder, (b) set BOTH `THUMBTACK_APIFY_ACTOR` and `ANGI_APIFY_ACTOR` secrets to `<your-username>/lead-inbox-scraper`, (c) enter the Thumbtack/Angi username/password in the OATAS connectors, (d) tune the login/inbox selectors once via Apify Live View (they're best-guess placeholders, same as the service-sheet actor). Then leads flow hourly into `lead_inbox` → auto-matched by the Phase A cron.
 4. **Phase A matcher** → nothing to do, it's already running and matching.
 5. **Review Sources** → on the new "Review Sources" card, add each Google Maps location (Place ID or URL) for all 3 GBP locations + the Yelp business page. No credentials needed (public scraping via the already-configured Apify token). The `/reputation` page fills in on the next daily sync.
 
