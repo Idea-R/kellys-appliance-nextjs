@@ -38,6 +38,22 @@ The two API-less platforms now have a capture path.
 - **Edge functions:** `scrape-thumbtack`, `scrape-angi` (decrypt creds → run via the existing `apify-run` actor → normalize → upsert into `lead_inbox`, the same table Yelp/Nextdoor use, so the Phase A matcher and reports pick them up automatically)
 - **Crons:** `scrape-thumbtack-hourly` (jobid 61) and `scrape-angi-hourly` (jobid 62)
 
+### Prompt 5 — External review ingestion (Google + Yelp via Apify) ✅
+Public reviews now pull themselves in for reputation monitoring.
+- **Tables:** `review_sources` (one row per location+platform: Google Place ID/URL or Yelp URL) and `external_reviews` (per-org, RLS, dedup on `external_review_id`)
+- **Edge function:** `sync-external-reviews` — for each active source, calls the existing `apify-run` with `compass/google-maps-reviews-scraper` (Google) or `tri_angle/yelp-review-scraper` (Yelp), normalizes + upserts reviews
+- **Cron:** daily
+- **Management UI:** a "Review Sources" card to add the 3 GBP locations + Yelp page
+- **Note:** confirmed live via the OATAS DB — both tables exist as specified.
+
+### Prompt 6 — Reputation dashboard ✅
+- **Page + nav:** `/reputation`, "Reputation" sidebar entry (Star icon, `canViewAnalytics`)
+- **Hooks:** `useExternalReviews` (sources + 12-month reviews, org-scoped)
+- **UI:** overall cards (avg rating + stars, total, last 30d, **needs-response count**); per-location cards with sync freshness; 12-month rating trend; a **"Reviews waiting on a reply"** list sorted low-rating-first; filterable all-reviews feed
+- **Self-corrected** a regression: accidentally clobbered the internal `useReviews.ts`, restored it from git, and isolated the new hooks — the internal review-request pipeline is untouched.
+
+> These two are the highest-value ready-to-use lane: public scraping (no login), cheap, and they feed the 3-location GBP reputation push directly.
+
 ---
 
 ## The architecture now
@@ -64,6 +80,7 @@ The code is built and the crons are scheduled. Three things need credentials ent
 2. **Thumbtack** → enter username/password, AND set the `THUMBTACK_APIFY_ACTOR` secret to your licensed authenticated-scrape actor (the default slug is a placeholder).
 3. **Angi** → enter username/password, AND set the `ANGI_APIFY_ACTOR` secret similarly.
 4. **Phase A matcher** → nothing to do, it's already running and matching.
+5. **Review Sources** → on the new "Review Sources" card, add each Google Maps location (Place ID or URL) for all 3 GBP locations + the Yelp business page. No credentials needed (public scraping via the already-configured Apify token). The `/reputation` page fills in on the next daily sync.
 
 Once those are in, the next monthly report generates end-to-end with zero manual steps: GSC data flows in daily, Angi/Thumbtack/Yelp/Nextdoor leads land in the inbox hourly, and every lead auto-matches to its job every 2 hours.
 
