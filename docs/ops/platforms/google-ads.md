@@ -64,10 +64,10 @@
 - [x] ~~First conversion needed to unlock $600 credit~~ — **6 conversions as of Apr 11! Redeem code 6LEJG-TLAN6-DWR3 by April 23**
 - [ ] **REDEEM $600 CREDIT NOW** (code: 6LEJG-TLAN6-DWR3, deadline: April 23)
 - [ ] Change location targeting from "Presence or Interest" to "Presence only" (must do in UI)
-- [ ] Add second RSA for A/B testing
+- [x] ~~Add second RSA for A/B testing~~ — **DONE Apr 30** (trust/longevity angle, ad ID 807325210500, awaiting Google review)
 - [ ] Consider ad schedule for business hours (8:30am-4:30pm)
 - [ ] Add symptom keyword ad group (e.g., "washing machine won't drain")
-- [ ] Add brand keyword ad group (e.g., "Whirlpool repair near me")
+- [ ] Add brand keyword ad group (e.g., "Whirlpool repair near me") — and decide on Brand Defense campaign for `kelly's appliance` etc.
 - [ ] Complete advertiser verification
 
 ## API & MCP Details
@@ -79,6 +79,9 @@
 - **MCP Server:** C:\Users\palli\mcp-google-ads\
 - **Campaign Scripts:** C:\Users\palli\mcp-google-ads\create_kellys_campaign.py
 - **Ad Scripts:** C:\Users\palli\mcp-google-ads\create_ad_and_sitelinks.py
+- **Negative Keywords Script:** C:\Users\palli\mcp-google-ads\add_negative_keywords.py
+- **Second RSA Script:** C:\Users\palli\mcp-google-ads\add_second_rsa.py
+- **Python:** Use `C:\Users\palli\AppData\Local\Programs\Python\Python311\python.exe` (NOT the venv — google-ads v30 is installed globally only)
 
 ## History
 
@@ -93,3 +96,6 @@
 | Apr 11, 2026 | 14-day MCP pull: 6 Search conversions ($17.11 CPA), 19 LSA conversions. $600 credit unlockable. |
 | Apr 11, 2026 | Differentiated conversion values: Appointment=$200, Contact=$150, Parts=$75 |
 | Apr 11, 2026 | Added UTM parameter capture to Analytics.tsx |
+| Apr 30, 2026 | 30-day pull: 51 Search conversions ($7.41 CPA, down from $17.11) — Search now 2.4x more efficient than LSA |
+| Apr 30, 2026 | Added 8 negative keywords: espresso, midland, ukiah, vallejo, vans appliance, steam cleaner, used appliances, free repair |
+| Apr 30, 2026 | Created second RSA (trust/longevity angle): Family-Owned Since 1975, Diamond Certified, 50+ Years — for A/B test |

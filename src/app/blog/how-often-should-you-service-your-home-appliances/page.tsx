@@ -7,14 +7,14 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 export const metadata = {
-  title: 'How Often Should You Service Your Home Appliances?',
-  description: 'A complete maintenance schedule for refrigerators, ovens, washers, dryers, and dishwashers to extend their lifespan and avoid costly breakdowns.',
+  title: 'How Often Should You Service Your Appliances? A Simple Schedule',
+  description: 'How often should you really service each appliance? A simple maintenance schedule for your fridge, oven, washer, dryer, and dishwasher to avoid costly breakdowns.',
   alternates: {
     canonical: '/blog/how-often-should-you-service-your-home-appliances',
   },
   openGraph: {
-    title: 'How Often Should You Service Your Home Appliances?',
-    description: 'A complete maintenance schedule for refrigerators, ovens, washers, dryers, and dishwashers to extend their lifespan and avoid costly breakdowns.',
+    title: 'How Often Should You Service Your Appliances? A Simple Schedule',
+    description: 'A simple maintenance schedule for your fridge, oven, washer, dryer, and dishwasher to extend their lifespan and avoid costly breakdowns.',
     url: 'https://kellysappliancerepair.com/blog/how-often-should-you-service-your-home-appliances',
     type: 'article' as const,
   },
@@ -36,9 +36,11 @@ export default function ApplianceMaintenancePage() {
             "datePublished": "2026-02-15",
             "dateModified": "2026-02-15",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",

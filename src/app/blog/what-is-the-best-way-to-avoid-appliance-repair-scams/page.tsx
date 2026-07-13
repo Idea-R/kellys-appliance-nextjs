@@ -38,9 +38,11 @@ export default function BlogPost() {
             "datePublished": "2024-12-09",
             "dateModified": "2024-12-09",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",
@@ -92,57 +94,57 @@ export default function BlogPost() {
         </header>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-lg prose-green max-w-none">
           <p className="text-xl text-gray-800 mb-8">
             Appliance repair scams can cost you time and money. Fortunately, with a little knowledge and awareness, you can protect yourself from unscrupulous repair services. Here are some practical tips to ensure you hire a trustworthy professional and avoid falling victim to scams.
           </p>
 
-          <h3>1. Verify Credentials</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">1. Verify Credentials</h3>
           <p>
             Always check if the repair service is licensed, insured, and certified to work on your appliance brand. <Link href="/authorized-service" className="text-green-600 hover:text-green-700">Factory-authorized repair services</Link> are often your safest choice, as they have been vetted by the manufacturer and use genuine parts.
           </p>
 
-          <h3>2. Do Your Research</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">2. Do Your Research</h3>
           <p>
             Before hiring, read online reviews and ask for recommendations from friends or family. Look for repair companies with consistent positive feedback and a strong local reputation. Be cautious of companies with limited information or no online presence.
           </p>
 
-          <h3>3. Request a Written Estimate</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">3. Request a Written Estimate</h3>
           <p>
             Legitimate repair companies will provide a <Link href="/pricing" className="text-green-600 hover:text-green-700">clear, itemized estimate</Link> before starting any work. If a technician refuses to give you an estimate or pressures you to agree without seeing the costs, consider it a red flag.
           </p>
 
-          <h3>4. Avoid Upfront Payments</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">4. Avoid Upfront Payments</h3>
           <p>
-            Be wary of repair services that demand full payment upfront. Reputable companies usually charge after completing the job or may request a small deposit, especially for ordering parts.
+            Be wary of repair services that <strong>demand full payment upfront</strong>. Reputable companies usually charge after completing the job or may request a small deposit, especially for ordering parts.
           </p>
 
-          <h3>5. Watch Out for "Too Good to Be True" Deals</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">5. Watch Out for "Too Good to Be True" Deals</h3>
           <p>
             While everyone loves a bargain, unusually low prices can be a sign of substandard service or an outright scam. Balance affordability with <Link href="/why-you-should-call-a-professional-to-repair-your-appliances" className="text-green-600 hover:text-green-700">professionalism and reliability</Link> when making your choice.
           </p>
 
-          <h3>6. Be Wary of Door-to-Door Technicians</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">6. Be Wary of Door-to-Door Technicians</h3>
           <p>
-            Unsolicited offers for appliance repair, especially from door-to-door technicians, can often be scams. Stick with trusted <Link href="/about-us" className="text-green-600 hover:text-green-700">local companies</Link> you've researched or been referred to.
+            <strong>Unsolicited offers for appliance repair, especially from door-to-door technicians, can often be scams.</strong> Stick with trusted <Link href="/about-us" className="text-green-600 hover:text-green-700">local companies</Link> you've researched or been referred to.
           </p>
 
-          <h3>7. Trust Your Instincts</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">7. Trust Your Instincts</h3>
           <p>
             If something feels off (vague answers to questions, unprofessional behavior, or high-pressure tactics), don't hesitate to walk away. Trustworthy companies value transparency and professionalism.
           </p>
 
-          <h3>8. Use Trusted Resources</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">8. Use Trusted Resources</h3>
           <p>
             Use resources like the Better Business Bureau (BBB), Yelp, Diamond Certified or manufacturer websites to find reliable repair services in your area. These sources often list approved technicians and customer reviews to help guide your decision.
           </p>
 
-          <h3>9. Ask About Warranties</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">9. Ask About Warranties</h3>
           <p>
             A reliable repair company stands by its work. Ask if they offer warranties on parts and labor so you know you&apos;re covered after the job is done.
           </p>
 
-          <h3>10. Document Everything</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-3">10. Document Everything</h3>
           <p>
             Keep records of all communication, estimates, receipts, and warranties. This documentation can protect you in case of disputes or issues down the line.
           </p>

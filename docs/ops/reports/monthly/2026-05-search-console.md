@@ -8,12 +8,16 @@
 
 ---
 
+> **Data correction (June 15, 2026):** these figures originally came from a manual browser pull. After reconnecting the Search Console API we trued them up. The query-level numbers were partly unreliable: notably there is **no single "oven repair" query at 10,466 impressions** (the largest oven query in May was "oven repair near me" at 76 impressions, position 55). Oven demand is real but distributed across the older oven blog page (6,017 impressions, position 12.8) and a long tail of small queries. Top-line totals (639 clicks, 55,800 impressions) reconcile and stand. Verified page-level breakdown: [`2026-06-organic-keyword-targets.md`](2026-06-organic-keyword-targets.md).
+
+---
+
 ## Executive Summary
 
 Organic search remains Kelly's largest traffic channel by volume and the best value on the marketing sheet. In May, the site earned **639 clicks from 55,800 impressions** at a **1.1% CTR** and an **average position of 11.3** — and that position is the story: it improved from 14.2 in the April baseline, meaning rankings are climbing.
 
 Two findings dominate, and both echo the paid side:
-1. **There is enormous un-captured demand the site ranks for but doesn't click.** "oven repair" alone drew **10,466 impressions and zero clicks** in May (position 22.9). Several more high-volume queries sit in the same boat.
+1. **There is enormous un-captured demand the site is shown for but doesn't click.** The dryer and washing-machine blog guides pull over 20,000 impressions a month combined at page-1 positions, yet convert under 0.8%. The reach is there, the click is not.
 2. **Santa Rosa is the weakest major market** — "appliance repair santa rosa" got 604 impressions but only 9 clicks at position 9.0. Same gap we see in paid.
 
 May was a quiet *content* month (no new posts published). The big push landed in June (7 new posts), so the climb in rankings and the new-content payoff will show in the next report.
@@ -58,24 +62,20 @@ Brand terms ("kelly's appliance center," "kelly appliance repair," and variants)
 
 ---
 
-## The Biggest Opportunity: high-impression, zero-click queries
+## The Biggest Opportunity: high-impression, low-click pages
 
-These are queries where the site is *shown* a lot but earns no clicks, because it ranks on page 2 or 3. Capturing even a slice of these is the fastest organic growth available:
+These are pages the site shows a lot but barely earns clicks on, either because the title gets skipped (they already rank on page 1) or because they sit just off it. Capturing this is the fastest organic growth available:
 
-| Query | Impressions (May) | Clicks | Position |
-|-------|-------------------|--------|----------|
-| **oven repair** | **10,466** | 0 | 22.9 |
-| dryer service and repair | 5,726 | 0 | 62.1 |
-| fix electric oven near me | 3,495 | 0 | 66.6 |
-| appliance repair service near me | 3,320 | 0 | 48.0 |
-| washer repair | 2,824 | 0 | 18.0 |
-| oven repair service near me | 970 | 0 | 15.3 |
-| kitchen appliance repair service near me | 564 | 0 | 29.2 |
-| home appliance repair near me | 525 | 0 | 65.7 |
-| washer and dryer repair | 483 | 0 | 24.7 |
-| oven not heating | 416 | 0 | 17.4 |
+| Page | Impressions (May) | Clicks | CTR | Position |
+|------|-------------------|--------|-----|----------|
+| Blog: dryer taking so long | 12,613 | 83 | 0.7% | 6.3 |
+| Blog: signs your washer needs repair | 7,444 | 55 | 0.7% | 6.3 |
+| Blog: oven not heating (older) | 6,017 | 23 | 0.4% | 12.8 |
+| Blog: how often to service appliances | 3,946 | 23 | 0.6% | 9.2 |
+| Santa Rosa location page | 2,622 | 28 | 1.1% | 8.4 |
+| `/services/oven-repair` (new page) | 253 | 0 | 0% | 35.6 |
 
-**"oven repair" at 10,466 impressions and zero clicks is the single biggest organic prize on the site.** It ranks at position 22.9 (page 3). The new `/services/oven-repair` page and the "Oven Not Heating" blog post (both shipped early June) are aimed squarely at this — the next report should show whether they move it up. "washer repair" (2,824 impressions, position 18) and "oven not heating" (416 impressions, position 17.4) are the next-most-winnable, sitting just off page 1.
+**The dryer "taking so long" post is the single biggest organic prize: 12,613 impressions a month at position 6.3, clicked only 0.7% of the time.** A stronger title is the fastest win on the site. The new `/services/oven-repair` page sits at position 35 and needs interlinking from the oven blogs to climb. Full verified breakdown and the June action list: [`2026-06-organic-keyword-targets.md`](2026-06-organic-keyword-targets.md).
 
 ---
 
@@ -106,8 +106,8 @@ The blog continues to carry non-brand organic. From the 3-month blog pull (still
 ## Recommendations
 
 ### This month
-- [ ] **Attack "oven repair" (10,466 impressions, 0 clicks).** Strengthen `/services/oven-repair` and interlink the new oven blog post. Biggest single prize on the site.
-- [ ] **Refresh the old dryer post's title/meta** — 37K impressions at 0.56% CTR is the fastest CTR win available.
+- [ ] **Rewrite the dryer and washing-machine blog titles** (12,613 and 7,444 impressions at under 0.8% CTR, both on page 1). Fastest organic win on the site.
+- [ ] **Strengthen `/services/oven-repair`** (currently position 35) and interlink the oven blogs so one oven page reaches page 1.
 - [ ] **Build out Santa Rosa** content + location page. Biggest cross-channel gap (organic AND paid).
 
 ### Quarter

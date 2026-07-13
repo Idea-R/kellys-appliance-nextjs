@@ -374,6 +374,7 @@ export default function ServicesPage() {
             "serviceType": "Appliance Repair Services",
             "provider": {
               "@type": "LocalBusiness",
+              "@id": "https://kellysappliancerepair.com/#business",
               "name": companyInfo.name,
               "telephone": companyInfo.phone
             },

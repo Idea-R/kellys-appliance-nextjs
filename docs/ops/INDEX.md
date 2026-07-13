@@ -22,11 +22,19 @@
 | [CONVENTIONS.md](CONVENTIONS.md) | How docs are organized, naming rules, templates |
 | [Q2-2026-ROADMAP.md](Q2-2026-ROADMAP.md) | Current quarter action plan with priorities |
 | [blog-operations.md](blog-operations.md) | Blog publishing schedule, post queue, image strategy |
+| [referral-directory.md](referral-directory.md) | **Master referral directory** — active partners (live on site) + vetted candidate list, structured for OATAS import |
+| [../SEO-AEO-STACK-PLAYBOOK.md](../SEO-AEO-STACK-PLAYBOOK.md) | **SEO + AEO stack playbook** — connectors (GSC/Ads/GA4/BrightLocal), workflow, AI-chatbot-discovery (AEO) tactics + measurement; portable to other sites |
 | [interactive-tools-strategy.md](interactive-tools-strategy.md) | Calculators, quizzes, engagement widgets — build plan |
 | [lsa-lead-validation-sop.md](lsa-lead-validation-sop.md) | LSA lead validation: Google API → SCS calls → CRM jobs |
 | [lsa-lead-validation-report-2026-04-13.md](lsa-lead-validation-report-2026-04-13.md) | 2026 YTD LSA audit — 79 leads, 28 matched (47%), ~26x ROI |
 | [reporting-system.md](reporting-system.md) | Cross-platform reporting framework — weekly/monthly/quarterly templates |
-| [google-ads-search-attribution-plan.md](google-ads-search-attribution-plan.md) | D1 form logging plan to unlock Google Ads attribution |
+| [ads-attribution-plan.md](ads-attribution-plan.md) | **End-to-end ad → lead → job → revenue attribution** — LSA live, Search pending form-capture |
+| [ads-review-cadence.md](ads-review-cadence.md) | **Weekly/monthly/quarterly review SOP + billing checklist** |
+| [forms-capture-implementation.md](forms-capture-implementation.md) | **Form-capture pipeline build plan** (Cloudflare D1 schema + Worker code) — unblocks Search ad attribution |
+| [reports/monthly/2026-04.md](reports/monthly/2026-04.md) | April 2026 monthly performance review |
+| [reports/monthly/2026-04-lsa-attribution.md](reports/monthly/2026-04-lsa-attribution.md) | **April 2026 LSA attribution** — 57 leads, 22 matched jobs, 43% rate, $39.45 cost-per-match |
+| [reports/monthly/2026-04-lsa-actions.md](reports/monthly/2026-04-lsa-actions.md) | **April 2026 LSA dashboard action checklist** — disputes, lost-lead followups, status updates |
+| [google-ads-search-attribution-plan.md](google-ads-search-attribution-plan.md) | D1 form logging plan (superseded by forms-capture-implementation.md) |
 | [reports/weekly/](reports/weekly/) | Weekly marketing reports (wins, losses, actions) |
 | [reports/monthly/](reports/monthly/) | Monthly performance reviews |
 | [reports/quarterly/](reports/quarterly/) | Quarterly strategic reviews |
@@ -57,7 +65,7 @@
 | [Apple Business Connect](platforms/apple-business-connect.md) | PLANNED | Free | No | Siri + Apple Maps | P1 |
 | [YouTube](platforms/youtube.md) | PLANNED | Free | No | Video SEO + AEO | P2 |
 | [BBB](platforms/bbb.md) | EVALUATE | $0-600/yr | No | Trust + backlink | P3 |
-| [Thumbtack](platforms/thumbtack.md) | NOT USING | — | No | — | — |
+| [Thumbtack](platforms/thumbtack.md) | NOT USING (canceled Jun 2026) | — | No | — | — |
 
 *\* MCP configured but needs testing*
 
@@ -84,6 +92,7 @@
 | Google Search Console | Connected | ADC (shane@ideas-realized.com) | Apr 8, 2026 (needs re-auth) |
 | Google Analytics | **DISABLED** | ADC (hangs, crashes servers) | Apr 11, 2026 — disabled in .mcp.json, use browser |
 | Mailchimp | Connected | API key | Apr 11, 2026 |
+| **OATAS Bridge** (ServiceDesk Direct) | **Connected** | Bearer token (`oat_*`) | **May 5, 2026** |
 | Cloudflare | Connected | API token | Active |
 | Claude in Chrome | Connected | Browser extension | Active |
 | Slack | Connected | OAuth | Active |

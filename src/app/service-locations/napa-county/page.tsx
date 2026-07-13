@@ -5,7 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 import ChamberLink from '@/components/ChamberLink';
 import TopPicks from '@/components/TopPicks';
-import ReferralsGrid from '@/components/ReferralsGrid';
+import ReferralNetwork from '@/components/ReferralNetwork';
+import { getPartnersForCounty } from '@/data/referralPartners';
 import { getCompanyInfo } from '@/lib/content';
 import Link from 'next/link';
 
@@ -147,22 +148,12 @@ export default function NapaCountyPage() {
         </div>
       </section>
 
-      {/* County Referrals */}
-      <ReferralsGrid
-        title="Napa County Referrals"
-        subtitle="Trusted local recommendations in Napa."
-        items={[
-          { label: 'Appliance Sales' },
-          { label: 'Appliance Installation' },
-          { label: 'HVAC' },
-          { label: 'Electrician' },
-          { label: 'Plumbing' },
-          { label: 'Contractor' },
-          { label: 'Landscape' },
-          { label: 'Cleaning' },
-          { label: 'Auto Mechanic' },
-          { label: 'Pool Service' },
-        ]}
+      {/* County Referral Network */}
+      <ReferralNetwork
+        title="Napa County Referral Network"
+        subtitle="Local pros we trust and recommend in Napa. We do not take commissions; these are businesses we genuinely stand behind."
+        areaServed="Napa County"
+        partners={getPartnersForCounty('Napa')}
       />
 
       {/* County SEO JSON-LD */}

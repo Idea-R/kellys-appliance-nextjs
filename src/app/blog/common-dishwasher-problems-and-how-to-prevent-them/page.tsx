@@ -35,9 +35,11 @@ export default function DishwasherPostPage() {
             "datePublished": "2025-05-23",
             "dateModified": "2025-05-23",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",
@@ -84,7 +86,7 @@ export default function DishwasherPostPage() {
       {/* Content */}
       <article className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg prose-green max-w-none">
             <p className="mb-6 text-gray-800 leading-relaxed">
               Dishwashers are incredibly convenient appliances, but they can develop problems over time. At Kelly&apos;s Appliance Center, we see certain dishwasher issues more frequently than others. Here&apos;s what you need to know about the most common problems and how to prevent them.
             </p>
@@ -93,7 +95,7 @@ export default function DishwasherPostPage() {
             
             <h3 className="text-2xl font-bold text-gray-900 mb-4">1. Poor Cleaning Performance</h3>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              If your dishes aren&apos;t coming out clean, the problem could be clogged spray arms, a dirty filter, or using the wrong detergent. Regular cleaning of spray arms and filters can prevent this issue.
+              If your dishes aren&apos;t coming out clean, the problem could be clogged spray arms, a dirty filter, or using the wrong detergent. <strong>Regular cleaning of spray arms and filters</strong> can prevent this issue.
             </p>
             
             <h3 className="text-2xl font-bold text-gray-900 mb-4">2. Water Not Draining</h3>

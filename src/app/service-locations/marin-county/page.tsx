@@ -6,7 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 import ChamberLink from '@/components/ChamberLink';
 import TopPicks from '@/components/TopPicks';
-import ReferralsGrid from '@/components/ReferralsGrid';
+import ReferralNetwork from '@/components/ReferralNetwork';
+import { getPartnersForCounty } from '@/data/referralPartners';
 import { getCompanyInfo } from '@/lib/content';
 
 const companyInfo = getCompanyInfo();
@@ -131,22 +132,12 @@ export default function MarinCountyPage() {
         </div>
       </section>
 
-      {/* County Referrals */}
-      <ReferralsGrid
-        title="Marin County Referrals"
-        subtitle="Our trusted local recommendations across Marin."
-        items={[
-          { label: 'Appliance Sales' },
-          { label: 'Appliance Installation' },
-          { label: 'HVAC' },
-          { label: 'Electrician' },
-          { label: 'Plumbing' },
-          { label: 'Contractor' },
-          { label: 'Landscape' },
-          { label: 'Cleaning' },
-          { label: 'Auto Mechanic' },
-          { label: 'Pool Service' },
-        ]}
+      {/* County Referral Network */}
+      <ReferralNetwork
+        title="Marin County Referral Network"
+        subtitle="Local pros we trust and recommend across Marin. We do not take commissions; these are businesses we genuinely stand behind."
+        areaServed="Marin County"
+        partners={getPartnersForCounty('Marin')}
       />
 
       {/* Local Resources */}

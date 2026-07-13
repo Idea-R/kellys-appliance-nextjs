@@ -73,7 +73,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/diamond-certified',
     '/referrals',
     '/resources/where-is-my-model-number',
-    '/resources/referrals',
     '/privacy-policy', // Legal (Priority: 0.6)
   ]
 

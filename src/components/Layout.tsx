@@ -69,8 +69,7 @@ const navigation: NavItem[] = [
     href: '/resources',
     children: [
       { name: 'Blog', href: '/blog' },
-      { name: 'Referrals', href: '/referrals' },
-      { name: 'Partner Referrals', href: '/resources/referrals' },
+      { name: 'Referrals & Partners', href: '/referrals' },
       { name: 'Diamond Certified', href: '/diamond-certified' },
       { name: 'Model Number Guide', href: '/resources/where-is-my-model-number' },
     ]

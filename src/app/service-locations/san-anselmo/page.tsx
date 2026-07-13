@@ -9,6 +9,7 @@ import BottomCTA from '@/components/BottomCTA'
 import NearbyCityLinks from '@/components/NearbyCityLinks'
 import RelatedServiceLinks from '@/components/RelatedServiceLinks'
 import CityJsonLd from '@/components/CityJsonLd'
+import FeaturedReviews from '@/components/FeaturedReviews'
 import FAQSection from '@/components/FAQSection'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateBreadcrumbs } from '@/lib/breadcrumbs'
@@ -138,6 +139,7 @@ export default function SanAnselmoPage() {
         </section>
       )}
 
+      <FeaturedReviews />
       <BottomCTA cityName={city.name} />
       <CityJsonLd city={city.name} slug={city.slug} />
     </Layout>

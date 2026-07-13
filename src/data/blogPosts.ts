@@ -18,6 +18,42 @@ export type BlogPostMeta = {
  */
 export const blogPosts: BlogPostMeta[] = [
   {
+    title: 'How Long Do Major Appliances Last? A Lifespan Guide by Type',
+    slug: 'how-long-do-major-appliances-last',
+    excerpt:
+      'How long does a refrigerator, washer, dryer, dishwasher, or oven really last? Average lifespans by appliance, what shortens them, and how to get more years out of yours.',
+    date: '2026-06-16',
+    readTime: '7 min read',
+    category: 'Consumer Tips',
+  },
+  {
+    title: 'Power Outage Appliance Checklist for Sonoma County',
+    slug: 'power-outage-appliance-checklist-sonoma-county',
+    excerpt:
+      'A PSPS and power outage checklist for North Bay homeowners: what to do before, during, and after to protect your refrigerator, freezer, and electronics, plus food safety rules.',
+    date: '2026-06-16',
+    readTime: '6 min read',
+    category: 'Maintenance',
+  },
+  {
+    title: 'Appliance Repair or Replace? A 2026 Sonoma County Cost Guide',
+    slug: 'appliance-repair-or-replace-sonoma-county-cost-guide',
+    excerpt:
+      "Repair it or replace it? The 50% rule, real 2026 repair vs. replacement costs by appliance, and an age guide for Sonoma, Marin, and Napa homeowners.",
+    date: '2026-06-16',
+    readTime: '8 min read',
+    category: 'Consumer Tips',
+  },
+  {
+    title: 'Best Appliance Brands for Wine Country Living',
+    slug: 'best-appliance-brands-wine-country-living',
+    excerpt:
+      "Which appliance brands actually hold up to well water, power events, and a North Bay kitchen? A repair team's honest take, from premium built-ins to reliable mid-range.",
+    date: '2026-06-16',
+    readTime: '7 min read',
+    category: 'Buying Guide',
+  },
+  {
     title: 'Getting the Most Out of Your Dishwasher: 10 Things Owners Get Wrong',
     slug: 'getting-the-most-out-of-your-dishwasher',
     excerpt:

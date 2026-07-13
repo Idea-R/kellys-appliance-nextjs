@@ -38,9 +38,11 @@ export default function BlogPost() {
             "datePublished": "2024-11-20",
             "dateModified": "2024-11-20",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",
@@ -92,47 +94,47 @@ export default function BlogPost() {
         </header>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-lg prose-green max-w-none">
           <p className="text-xl text-gray-700 mb-8">
             When your appliances break down, it's tempting to tackle the repairs yourself or rely on a friend with a toolbox. However, while DIY repairs may seem like a cost-effective solution, they can lead to bigger problems down the road. Here are the top reasons you should call a professional for appliance repairs:
           </p>
 
-          <h2>1. Expertise and Experience</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">1. Expertise and Experience</h2>
           <p>
-            Professional <Link href="/about-us/our-team" className="text-green-600 hover:text-green-700">repair technicians</Link> are trained to diagnose and fix a wide range of appliance issues. They have the knowledge to work on all types of appliances and brands, ensuring the job is done right the first time. This expertise can save you from trial-and-error fixes that could worsen the problem.
+            Professional <Link href="/about-us/our-team" className="text-green-600 hover:text-green-700">repair technicians</Link> are trained to diagnose and fix a wide range of appliance issues. They have the knowledge to work on all types of appliances and brands, ensuring the job is <strong>done right the first time</strong>. This expertise can save you from trial-and-error fixes that could worsen the problem.
           </p>
 
-          <h2>2. Proper Tools, Parts and Equipment</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">2. Proper Tools, Parts and Equipment</h2>
           <p>
             Appliance repair often requires specialized tools that most people don&apos;t have in their homes. Professionals come equipped with the right <Link href="/services/parts" className="text-green-600 hover:text-green-700">genuine manufacturer parts</Link> and tools to handle complex repairs safely and efficiently, eliminating the need for you to invest in expensive equipment.
           </p>
 
-          <h2>3. Safety First</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">3. Safety First</h2>
           <p>
             Appliance repairs can pose safety risks, especially when dealing with electrical components, gas connections, or heavy machinery. Professionals are trained to handle these hazards and follow strict safety protocols, reducing the risk of injury or damage to your home.
           </p>
 
-          <h2>4. Save Time and Hassle</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">4. Save Time and Hassle</h2>
           <p>
             Attempting to repair an appliance yourself can be time-consuming, especially if you're unfamiliar with the process. Call a professional who can quickly identify the issue and resolve it, freeing up your time for other priorities.
           </p>
 
-          <h2>5. Warranty Protection</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">5. Warranty Protection</h2>
           <p>
-            Many appliances come with warranties that can be voided if repairs are attempted by an unlicensed individual. Calling a professional ensures your warranty remains intact, protecting your investment in the long run.
+            Many appliances come with warranties that can be voided if repairs are attempted by an unlicensed individual. Calling a professional ensures <strong>your warranty remains intact</strong>, protecting your investment in the long run.
           </p>
 
-          <h2>6. Long-Term Savings</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">6. Long-Term Savings</h2>
           <p>
-            While a DIY repair might save money upfront, mistakes can lead to costlier repairs, or even a full replacement, down the road. Professional repairs are designed to last and <Link href="/pricing" className="text-green-600 hover:text-green-700">reasonably priced</Link>, helping you avoid repeated breakdowns and expenses.
+            While a DIY repair might save money upfront, mistakes can lead to costlier repairs, or even a <Link href="/blog/appliance-repair-or-replace-sonoma-county-cost-guide" className="text-green-600 hover:text-green-700">full replacement</Link>, down the road. Professional repairs are designed to last and <Link href="/pricing" className="text-green-600 hover:text-green-700">reasonably priced</Link>, helping you avoid repeated breakdowns and expenses.
           </p>
 
-          <h2>7. Comprehensive Diagnoses</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">7. Comprehensive Diagnoses</h2>
           <p>
             A professional technician doesn't just fix the immediate problem; they also inspect your appliance for other potential issues. This preventative approach can extend the lifespan of your appliance and save you from future headaches.
           </p>
 
-          <h2>When to Call a Pro</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">When to Call a Pro</h2>
           <p>
             If your appliance isn&apos;t working as it should, resist the urge to grab a wrench. Instead, call a <Link href="/about-us" className="text-green-600 hover:text-green-700">professional repair technician</Link> for expert help. Whether it&apos;s a <Link href="/services/refrigerator-repair" className="text-green-600 hover:text-green-700">refrigerator that&apos;s not cooling</Link>, an <Link href="/services/oven-repair" className="text-green-600 hover:text-green-700">oven that won&apos;t heat</Link>, or a <Link href="/services/dryer-repair" className="text-green-600 hover:text-green-700">dryer that takes forever</Link>, our factory-authorized technicians will get it back in top shape quickly and safely.
           </p>

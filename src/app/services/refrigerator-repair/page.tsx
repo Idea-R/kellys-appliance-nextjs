@@ -10,6 +10,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import { refrigeratorFaqs } from '@/data/faqs';
 import RelatedServices from '@/components/RelatedServices';
+import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 
 const companyInfo = getCompanyInfo();
 
@@ -310,6 +311,8 @@ export default function RefrigeratorRepairPage() {
         ]}
       />
 
+      <ServiceAreaLinks />
+
       {/* CTA Section */}
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -351,6 +354,7 @@ export default function RefrigeratorRepairPage() {
             "serviceType": "Refrigerator Repair",
             "provider": {
               "@type": "LocalBusiness",
+              "@id": "https://kellysappliancerepair.com/#business",
               "name": companyInfo.name,
               "telephone": companyInfo.phone,
               "address": {

@@ -7,14 +7,14 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 
 export const metadata = {
-  title: 'Signs Your Washing Machine Needs Repair Before It Breaks Down',
-  description: 'Catch washing machine problems early. Learn the top warning signs that your washer needs professional repair before a small issue becomes a major breakdown.',
+  title: 'Washing Machine Acting Up? Warning Signs It Needs Repair',
+  description: "Strange noises, leaks, or a drum that won't spin? Here are the warning signs your washing machine needs repair, and which problems to fix before they get expensive.",
   alternates: {
     canonical: '/blog/signs-your-washing-machine-needs-repair-before-it-breaks-down',
   },
   openGraph: {
-    title: 'Signs Your Washing Machine Needs Repair Before It Breaks Down',
-    description: 'Catch washing machine problems early. Warning signs your washer needs professional repair before a small issue becomes a major breakdown.',
+    title: 'Washing Machine Acting Up? Warning Signs It Needs Repair',
+    description: "Strange noises, leaks, or a drum that won't spin? The warning signs your washer needs repair before a small problem gets expensive.",
     url: 'https://kellysappliancerepair.com/blog/signs-your-washing-machine-needs-repair-before-it-breaks-down',
     type: 'article' as const,
   },
@@ -36,9 +36,11 @@ export default function WasherRepairSignsPostPage() {
             "datePublished": "2026-02-12",
             "dateModified": "2026-02-12",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",
