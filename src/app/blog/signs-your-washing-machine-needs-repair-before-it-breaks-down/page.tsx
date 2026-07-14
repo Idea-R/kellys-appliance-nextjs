@@ -5,6 +5,26 @@ import { CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
+import FAQSection from '@/components/FAQSection';
+
+const washerSignsFaqs = [
+  {
+    question: 'What are the early warning signs a washing machine needs repair?',
+    answer: 'Watch for new leaks or dampness under the machine, loud banging or grinding during the spin cycle, a drum that will not spin or drain, heavy vibration or a machine that walks across the floor, and clothes that come out still soaking wet. Catching these early usually means a smaller, cheaper repair.',
+  },
+  {
+    question: 'Why is my washing machine leaking water?',
+    answer: 'Common causes are a worn door gasket on front-loaders, a loose or cracked fill or drain hose, a failed water inlet valve, or simply an overloaded tub. Noting exactly where the water appears helps pin down the part.',
+  },
+  {
+    question: 'Why does my washer shake or bang during the spin cycle?',
+    answer: 'First make sure the machine is level and the load is balanced. If it still shakes hard, the suspension, shock absorbers, or drum bearings are likely worn, which needs professional repair before it damages other components.',
+  },
+  {
+    question: 'Should I repair or replace my washing machine?',
+    answer: 'If the washer is under about eight years old and the fix is a hose, valve, gasket, or pump, repair is the better value. We give an upfront estimate so you can compare it against the cost of a new machine before deciding.',
+  },
+];
 
 export const metadata = {
   title: 'Washing Machine Acting Up? Warning Signs It Needs Repair',
@@ -217,6 +237,12 @@ export default function WasherRepairSignsPostPage() {
           </div>
         </div>
       </article>
+
+      <FAQSection
+        title="Washing Machine Repair: Common Questions"
+        faqs={washerSignsFaqs}
+        id="washer-signs-faqs"
+      />
 
       {/* Related Posts */}
       <section className="py-12 bg-white">
