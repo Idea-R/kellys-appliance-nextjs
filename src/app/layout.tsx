@@ -7,6 +7,7 @@ import Analytics from '@/components/Analytics'
 import FloatingDiamondBadge from '@/components/FloatingDiamondBadge'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
 import MobileNavDrawer from '@/components/MobileNavDrawer'
+import { aggregateRatingJsonLd } from '@/data/reviews'
 
 const inter = Inter({ subsets: ['latin'] })
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
@@ -165,6 +166,7 @@ export default function RootLayout({
               "url": "https://kellysappliancerepair.com",
               "description": "Professional appliance repair services in the Bay Area since 1975. Factory authorized, Diamond Certified, with a 90-day money-back guarantee.",
               "foundingDate": "1975",
+              "aggregateRating": aggregateRatingJsonLd,
               "priceRange": "$",
               "paymentAccepted": "Cash, Credit Card, Check",
               "currenciesAccepted": "USD",
@@ -176,7 +178,8 @@ export default function RootLayout({
                 "https://www.yelp.com/biz/kellys-appliance-center-cotati-2",
                 "https://maps.app.goo.gl/x9Uop8o7DNMfSufj9",
                 "https://nextdoor.com/pages/kellys-appliance-cotati-ca/",
-                "https://www.bbb.org/us/ca/cotati/profile/appliance-repair/kellys-appliance-center-1116-34094133",
+                "https://www.bbb.org/us/ca/cotati/profile/appliance-repair/kellys-appliance-center-1116-950427",
+                "https://www.diamondcertified.org/report/kellys-appliance-center/",
                 "https://www.yellowpages.com/cotati-ca/mip/kellys-appliance-center-8915058",
                 "https://www.mapquest.com/us/california/kelly-s-appliance-center-357730975"
               ],

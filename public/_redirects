@@ -51,6 +51,10 @@ http://mobile.kellysappliancerepair.com/* https://kellysappliancerepair.com/:spl
 /resources/scheduler-confirmation /scheduler-confirmation 301
 /resources/scheduler-confirmation/ /scheduler-confirmation 301
 
+# Consolidated the old duplicate referrals page into the single /referrals hub
+/resources/referrals /referrals 301
+/resources/referrals/ /referrals 301
+
 # Service area redirect (old WordPress page)
 /service-area /service-locations 301
 /service-area/ /service-locations 301

@@ -1,7 +1,7 @@
 # Thumbtack
 
-**Last Updated:** April 9, 2026
-**Status:** NOT USING
+**Last Updated:** June 21, 2026
+**Status:** NOT USING — activation CANCELED (June 2026)
 **Monthly Budget:** $0
 **MCP Connected:** No
 

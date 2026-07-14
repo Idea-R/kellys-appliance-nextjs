@@ -5,6 +5,26 @@ import { CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
+import FAQSection from '@/components/FAQSection';
+
+const ovenHeatingFaqs = [
+  {
+    question: 'Why is my oven not reaching the temperature I set?',
+    answer: 'The usual causes are a failed bake or broil element on an electric oven, a weak igniter on a gas oven, or a miscalibrated or failed temperature sensor. If the oven heats but runs cool or uneven, the sensor and the element are the first things to check.',
+  },
+  {
+    question: 'How can I tell if my oven heating element is bad?',
+    answer: 'On an electric oven, a working bake element glows bright orange along its whole length. If it stays dark, glows only in spots, or has a visible break or blister, it needs replacing. A continuity test with a multimeter confirms it.',
+  },
+  {
+    question: 'Why does my gas oven click but not light?',
+    answer: 'Repeated clicking with no flame usually means a weak or failed igniter that no longer gets hot enough to open the gas valve. It is a common, fixable repair, and it is worth handling promptly since raw gas can escape while the oven keeps trying to light.',
+  },
+  {
+    question: 'Is an oven that will not heat worth repairing?',
+    answer: 'Usually yes. Elements, igniters, and sensors are affordable, common parts, and the repair costs far less than a new range. We give an upfront estimate before any work so you can weigh it against replacement.',
+  },
+];
 
 export const metadata = {
   title: 'Is Your Oven Not Heating Properly? Common Causes and Fixes',
@@ -36,9 +56,11 @@ export default function OvenHeatingPostPage() {
             "datePublished": "2026-02-18",
             "dateModified": "2026-02-18",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",
@@ -210,6 +232,12 @@ export default function OvenHeatingPostPage() {
           </div>
         </div>
       </article>
+
+      <FAQSection
+        title="Oven Not Heating: Common Questions"
+        faqs={ovenHeatingFaqs}
+        id="oven-heating-faqs"
+      />
 
       {/* Related Posts */}
       <section className="py-16 bg-white">

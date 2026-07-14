@@ -36,9 +36,11 @@ export default function RefrigeratorRepairPostPage() {
             "datePublished": "2026-02-20",
             "dateModified": "2026-02-20",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",

@@ -8,6 +8,7 @@ import { getCompanyInfo } from '@/lib/content';
 import LazyMount from '@/components/LazyMount'
 import GoogleReviews from '@/components/GoogleReviews'
 import ReviewJsonLd from '@/components/ReviewJsonLd'
+import { reviewSummary } from '@/data/reviews'
 import ServiceAreaMapCircles from '@/components/ServiceAreaMapCircles'
 import EmblaBrandCarousel from '@/components/EmblaBrandCarousel'
 
@@ -193,8 +194,8 @@ export default function HomePage() {
 
       {/* Review structured data — only on homepage where reviews are visible */}
       <ReviewJsonLd
-        rating={4.9}
-        count={142}
+        rating={reviewSummary.rating}
+        count={reviewSummary.count}
         reviews={[
           { author: 'Susan M.', text: 'Prompt, professional, and honest. Fixed our refrigerator the same day we called. Highly recommend Kelly\'s!', rating: 5 },
           { author: 'James R.', text: 'Mark and the team are fantastic. They repaired our oven quickly and the price was very fair.', rating: 5 },

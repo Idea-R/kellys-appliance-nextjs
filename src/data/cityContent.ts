@@ -365,9 +365,12 @@ const sonoma: CityContent = {
 
   trustHeading: 'Why Sonoma Residents Trust Kelly\u2019s',
   trustContent: [
-    'Sonoma\u2019s wine-country lifestyle often means high-end kitchens with premium appliances. Our technicians are factory-authorized for brands like Viking, Sub-Zero, Wolf, and Thermador, so your investment gets the expert care it deserves.',
-    'We have been serving Sonoma Valley homes since 1975. Whether you live near the historic Plaza or out in the vineyards, we bring the same fast, dependable service.',
-    'Many Sonoma properties double as vacation rentals or second homes, and a broken appliance can mean lost revenue or ruined plans. We prioritize quick turnarounds to keep your property running.',
+    'Sonoma\u2019s wine-country lifestyle often means high-end kitchens with premium appliances, and getting them serviced right matters. Our technicians are factory-authorized for Viking, Sub-Zero, Wolf, Thermador, and Miele, along with every major standard brand, so your investment gets expert care and genuine OEM parts.',
+    'We have served Sonoma Valley homes since 1975, from the historic adobes and bungalows around the Plaza to the neighborhoods of the Springs (Boyes Hot Springs, Fetters Hot Springs, Agua Caliente, and El Verano) and the estates out in the vineyards. Our shop is about 25 minutes away in Cotati and we are through the valley regularly.',
+    'Many Sonoma properties double as vacation rentals or second homes, where a broken refrigerator or oven can mean a canceled booking or a ruined visit. We understand that urgency and prioritize quick turnarounds to keep your property earning and your guests comfortable.',
+    'Well water is common across the Sonoma Valley, and its mineral content builds up inside dishwashers, washing machines, ice makers, and water lines. We see this constantly, know the fixes that last, and stock the valves, spray arms, and filters that most competitors have to order.',
+    'Sonoma runs hot and dry in summer, and fire-season power shutoffs and storms are a regular fact of life. Both are hard on the electronic control boards in modern refrigerators, ovens, and wine coolers. When an appliance goes unresponsive after an outage, we can tell you quickly whether it needs a reset or a new board.',
+    'Every Sonoma repair comes with our 90-day money-back guarantee, and we are Diamond Certified by American Ratings, an independent rating renewed each year based on verified customer satisfaction.',
   ],
 
   localHighlights:
@@ -377,22 +380,42 @@ const sonoma: CityContent = {
 
   issuesHeading: 'Common Appliance Issues in Sonoma',
   issuesContent: [
-    'Well water is common in the Sonoma Valley, and it brings mineral content that builds up inside dishwashers, washing machines, and ice makers. Calcium deposits reduce water flow and cleaning performance over time.',
-    'Power outages during fire season and summer storms can reset modern appliance control boards. If your refrigerator or oven stops responding after an outage, a board reset or replacement usually does the trick.',
+    'Well water is common in the Sonoma Valley, and it brings mineral content that builds up inside dishwashers, washing machines, and ice makers. Calcium deposits reduce water flow and cleaning performance over time, and regular descaling plus timely part replacement keeps these appliances working well.',
+    'Power outages during fire season and summer storms can reset or damage modern appliance control boards. If your refrigerator or oven stops responding after an outage, a board diagnosis is usually the first step, and we help you decide between a reset and a replacement.',
+    'Wine refrigerators and beverage coolers are common in Sonoma homes, and the hot, dry summers push their compressors and condenser coils hard. Dusty coils and a struggling compressor are the usual reasons a wine fridge stops holding temperature, and regular coil cleaning goes a long way.',
   ],
 
   localExpertsText: 'We drive through the Sonoma Valley regularly. About 25 minutes from our Cotati shop.',
-  neighborhoods: ['Sonoma Plaza', 'Springs', 'Vineyard area', 'Boyes Hot Springs'],
+  neighborhoods: ['Sonoma Plaza', 'The Springs', 'Boyes Hot Springs', 'Fetters Hot Springs', 'Agua Caliente', 'El Verano', 'Vineyard estates'],
   midCtaHeading: 'Need Appliance Repair in Sonoma Valley?',
   heroImage: '/images/SonomaVan.jpg',
   heroImageAlt: 'Kelly\'s Appliance service van overlooking Sonoma and the surrounding wine country',
-  faqs: buildStandardFaqs('Sonoma', {
-    driveTime: 'about 25 minutes from our Cotati shop through the Sonoma Valley',
-    localIssue: {
-      question: 'Do you service Sonoma vacation rentals and second homes?',
-      answer: 'Yes, and we understand the urgency. Many Sonoma properties are vacation rentals or second homes where a broken appliance means lost bookings or ruined plans. Tell us the situation when you call and we will prioritize getting someone out fast.',
+  faqs: [
+    {
+      question: 'How much does appliance repair cost in Sonoma?',
+      answer: 'Our service call fee is $149, which includes a full diagnosis and is applied toward the repair if you proceed. Most Sonoma repairs range from $200 to $500 depending on the appliance and parts, with premium brands like Sub-Zero, Viking, and Wolf running higher due to specialty parts. You always get an upfront estimate before any work begins.',
     },
-  }),
+    {
+      question: 'Do you service Sonoma vacation rentals and second homes?',
+      answer: 'Yes, and we understand the urgency. Many Sonoma properties are vacation rentals or second homes where a broken appliance means a canceled booking or a ruined visit. Tell us the situation when you call and we will prioritize getting a technician out fast to protect your bookings.',
+    },
+    {
+      question: 'Do you repair wine refrigerators and beverage coolers in Sonoma?',
+      answer: 'Yes. Wine and beverage coolers are common in Sonoma homes, and we service them along with standard refrigerators. Hot summers push their compressors and coils hard, so temperature swings often trace back to dusty condenser coils or a struggling compressor. We carry the common parts and know these units well.',
+    },
+    {
+      question: 'My Sonoma home has well water. How does that affect my appliances?',
+      answer: 'Well water carries minerals that build up inside dishwashers, washing machines, ice makers, and water lines, reducing flow and cleaning performance over time. Regular descaling helps, and we stock the valves, spray arms, and filters these repairs need rather than making you wait on an order. A whole-house softener also extends appliance life.',
+    },
+    {
+      question: 'Do you offer same-day appliance repair in Sonoma?',
+      answer: 'Often, yes. Sonoma is about 25 minutes from our Cotati shop and we are through the valley regularly, so same-day or next-day visits are frequently possible for urgent refrigerator, washer, and dryer issues. Call (707) 664-9702 early in the day to check the schedule.',
+    },
+    {
+      question: 'Are you licensed and insured in Sonoma?',
+      answer: 'Yes. Kelly’s Appliance Center has been operating since 1975. We are fully licensed and insured, Diamond Certified by American Ratings, and factory-authorized for most major appliance brands. Every Sonoma repair comes with our 90-day money-back guarantee.',
+    },
+  ],
 }
 
 const windsor: CityContent = {
@@ -799,34 +822,57 @@ const novato: CityContent = {
 
   trustHeading: 'Why Novato Residents Trust Kelly\u2019s',
   trustContent: [
-    'Novato is the northernmost city in Marin and the closest Marin community to our Cotati shop, about 20 minutes down 101. That means fast response times for Novato homeowners.',
-    'The city\u2019s mix of housing ranges from the historic homes near downtown to the waterfront properties at Bel Marin Keys and the family neighborhoods in Hamilton. We\u2019ve worked on appliances in all of them.',
-    'Our technicians are factory-authorized for every major brand, and they carry the most common parts on the truck. Most Novato repairs finish in a single visit.',
+    'Novato is the northernmost city in Marin County and the closest Marin community to our Cotati shop, about 20 minutes down Highway 101. That proximity gives Novato homeowners some of the fastest response times in our entire service area, and our vans are through town most days of the week.',
+    'We have serviced Novato homes since 1975, across every kind of housing the city has. That includes the historic homes and bungalows near Old Town and Grant Avenue, the family neighborhoods of Hamilton and Pointe Marin, the waterfront properties at Bel Marin Keys, and the rural parcels out toward Indian Valley and Black Point.',
+    'Our technicians are factory-authorized for every major brand you will find in Novato kitchens and laundry rooms, from everyday Whirlpool, GE, Maytag, LG, and Samsung sets to premium Sub-Zero, Viking, Wolf, and Thermador built-ins. They carry the most common parts on the truck, so most Novato repairs are finished in a single visit.',
+    'The Hamilton neighborhood was built on a former Air Force base, and its mix of renovated military-era buildings and newer construction means electrical setups vary house to house. When an appliance keeps tripping a breaker there, the real problem is often the circuit rather than the machine, and we help you tell the difference before you spend money on parts you do not need.',
+    'Bel Marin Keys and the low-lying areas near the bay sit close to sea level, where salt air and humidity are hard on washers, dryers, and refrigerator components. We know which parts corrode and fail first in those conditions, and we stock the common replacements rather than making you wait on a special order.',
+    'Every Novato repair comes with our 90-day money-back guarantee, and we are Diamond Certified by American Ratings, an independent rating earned through verified customer satisfaction and renewed every year.',
   ],
 
   localHighlights:
-    'With trail access at Mount Burdell and a lively downtown, Novato balances outdoor life and neighborhood living. We offer prompt, warranty-safe repairs so your home stays ready for weeknights and weekends.',
+    'With trail access at Mount Burdell and Stafford Lake, a walkable Grant Avenue downtown, and easy 101 access, Novato balances outdoor life and neighborhood living. We keep your kitchen and laundry running so your home stays ready for busy weeknights and slow weekends alike.',
   topEats: ['Wildfox', 'Grazie', 'HopMonk Novato'],
   communityLink: { label: 'Novato Chamber of Commerce', href: 'https://www.novatochamber.com/' },
 
   issuesHeading: 'Common Appliance Issues in Novato',
   issuesContent: [
-    'Novato\u2019s Bel Marin Keys neighborhood sits near sea level, where humidity and occasional flood risk create a tough environment for appliances. Elevated units and good ventilation help protect washers and dryers in these homes.',
-    'Homes in the Hamilton redevelopment area were built on a former military base with a mix of new and renovated structures. Electrical configurations can vary, and we help diagnose whether issues are appliance-related or wiring-related.',
+    'Homes near Bel Marin Keys and the bay flats sit close to sea level, where salt air and humidity accelerate corrosion on washer and dryer components and refrigerator condenser coils. Elevated installations, good ventilation, and regular coil cleaning all extend appliance life in these homes.',
+    'The Hamilton area\u2019s mix of renovated base housing and newer builds means electrical capacity varies. Modern high-draw appliances like induction ranges and professional refrigerators can overload older circuits, so a breaker that trips repeatedly often points to the wiring rather than the appliance.',
+    'Novato summers run warmer and drier than the coast, which pushes refrigerators and freezers to work harder. Dusty condenser coils are one of the most common reasons a Novato fridge stops cooling well, and a simple cleaning often restores performance.',
   ],
 
-  localExpertsText: 'About 20 minutes south on 101. We are in Novato multiple times a week.',
-  neighborhoods: ['Downtown', 'Hamilton', 'Bel Marin Keys', 'Indian Valley', 'Ignacio', 'Pointe Marin', 'Black Point'],
+  localExpertsText: 'About 20 minutes south on 101, the closest Marin city to our shop. We are in Novato multiple times a week.',
+  neighborhoods: ['Downtown / Old Town', 'Hamilton', 'Bel Marin Keys', 'Indian Valley', 'Ignacio', 'Pointe Marin', 'Black Point', 'San Marin', 'Pleasant Valley'],
   midCtaHeading: 'Need Appliance Repair in Novato?',
   heroImage: '/images/MarinVan.jpg',
-  heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
-  faqs: buildStandardFaqs('Novato', {
-    driveTime: 'about 20 minutes south on 101. We are in Novato multiple times a week',
-    localIssue: {
-      question: 'My appliance in Bel Marin Keys keeps getting damp. Why?',
-      answer: 'Bel Marin Keys sits near sea level where humidity and occasional flood risk create a tough environment for appliances. Elevated washer and dryer installations, good ventilation, and dehumidifiers in laundry areas all help protect your appliances. We also know which parts fail first in these coastal-flat conditions.',
+  heroImageAlt: 'Kelly\'s Appliance service van serving Novato in northern Marin County',
+  faqs: [
+    {
+      question: 'How much does appliance repair cost in Novato?',
+      answer: 'Our service call fee is $149, which includes a full diagnosis and is applied toward the repair if you proceed. Most Novato repairs range from $200 to $450 depending on the appliance and parts, with premium built-in brands like Sub-Zero and Viking running higher due to specialty parts. You always get an upfront estimate before any work begins.',
     },
-  }),
+    {
+      question: 'Do you offer same-day appliance repair in Novato?',
+      answer: 'Often, yes. Novato is the closest Marin city to our Cotati shop, about 20 minutes north on 101, and our vans are in town most days. Call (707) 664-9702 early in the day and we can frequently schedule a same-day or next-day visit for urgent refrigerator, washer, or dryer problems.',
+    },
+    {
+      question: 'What appliance brands do you service in Novato?',
+      answer: 'We are factory-authorized for most major brands, including Whirlpool, GE, Maytag, Samsung, LG, Kenmore, Frigidaire, Bosch, KitchenAid, JennAir, Sub-Zero, Viking, Wolf, and Thermador. Our technicians carry genuine OEM parts on the truck for most common Novato repairs.',
+    },
+    {
+      question: 'My appliance in Bel Marin Keys keeps corroding or getting damp. Why?',
+      answer: 'Bel Marin Keys and the bay-flat neighborhoods sit near sea level, where salt air and humidity are hard on appliances. Washer and dryer components and refrigerator coils corrode faster there. Elevated installations, good ventilation, dehumidifiers in laundry areas, and regular coil cleaning all help. We also know which parts fail first in these coastal-flat conditions and stock the common replacements.',
+    },
+    {
+      question: 'Do you service my Novato neighborhood?',
+      answer: 'Yes. We service all of Novato including downtown and Old Town, Hamilton, Bel Marin Keys, Indian Valley, Ignacio, Pointe Marin, Black Point, San Marin, and Pleasant Valley. We also cover nearby San Rafael, San Anselmo, and the rest of Marin, plus our home base in southern Sonoma County.',
+    },
+    {
+      question: 'Are you licensed and insured in Novato?',
+      answer: 'Yes. Kelly\u2019s Appliance Center has been operating since 1975. We are fully licensed and insured, Diamond Certified by American Ratings, and factory-authorized for most major appliance brands. Every Novato repair comes with our 90-day money-back guarantee.',
+    },
+  ],
 }
 
 const millValley: CityContent = {
@@ -840,34 +886,57 @@ const millValley: CityContent = {
 
   trustHeading: 'Why Mill Valley Residents Trust Kelly\u2019s',
   trustContent: [
-    'Mill Valley homes tend to have well-appointed kitchens with premium built-in appliances. Our factory authorizations for Sub-Zero, Wolf, Thermador, Bosch, and other high-end brands give homeowners confidence that their appliances are in expert hands.',
-    'We make the drive from Cotati to Mill Valley regularly, about 40 minutes via 101. We group Marin south appointments to keep scheduling efficient and availability consistent.',
-    'Mill Valley\u2019s hillside and canyon homes can be challenging to access, and some have unique installation setups. We bring the right tools and experience for tight spaces, steep driveways, and custom cabinetry.',
+    'Mill Valley homes tend to have well-appointed kitchens with premium built-in appliances, and getting them serviced by a factory-authorized technician matters. Our authorizations for Sub-Zero, Wolf, Thermador, Miele, Bosch, and other high-end brands mean your investment gets expert care and genuine OEM parts, not a generic fix.',
+    'We have serviced Mill Valley since 1975 and make the drive from Cotati regularly, about 40 minutes via 101. We group our south Marin appointments together to keep scheduling efficient and availability consistent, so a Mill Valley address is never a problem to reach.',
+    'From the downtown cottages near Lytton Square to the hillside and canyon homes in Cascade Canyon, Homestead Valley, and Warner Canyon, plus the flats of Tam Valley and Strawberry, we know how Mill Valley homes are built and how their appliances are installed.',
+    'Mill Valley\u2019s canyon and hillside homes sit in a cooler, more humid microclimate than surrounding areas, tucked under Mt. Tam and near the redwoods. That extra moisture is hard on refrigerator door seals and front-load washer drums, and mold or mildew on gaskets is one of the most common calls we get from this area.',
+    'Many of these homes also have tight utility closets, custom cabinetry, steep driveways, and stacked or hidden appliance installations. Our technicians bring the right tools and the experience to work in tight spaces without damaging finishes, which not every repair company is set up to do.',
+    'Every Mill Valley repair comes with our 90-day money-back guarantee, and we are Diamond Certified by American Ratings, an independent rating renewed each year based on verified customer satisfaction.',
   ],
 
   localHighlights:
-    'Nestled beneath Mt. Tam and close to the redwoods of Muir Woods, Mill Valley mixes outdoor living with refined dining. We keep your home\u2019s appliances ready for post-hike meals and everyday routines.',
+    'Nestled beneath Mt. Tam and close to the redwoods of Muir Woods, Mill Valley mixes outdoor living with refined dining around Lytton Square. We keep your home\u2019s appliances ready for post-hike meals and everyday routines.',
   topEats: ['Playa', 'Buckeye Roadhouse', 'Bungalow 44'],
   communityLink: { label: 'Mill Valley Chamber of Commerce', href: 'https://www.millvalley.org/' },
 
   issuesHeading: 'Common Appliance Issues in Mill Valley',
   issuesContent: [
-    'Mill Valley\u2019s canyon and hillside homes sit in a microclimate that is cooler and more humid than surrounding areas. That extra moisture can promote mold growth on refrigerator door seals and inside front-load washer drums.',
-    'Many Mill Valley homes have tight utility closets or custom-built appliance alcoves. Dryers in these spaces need extra attention to venting, since restricted airflow leads to overheating and longer dry times.',
+    'Mill Valley\u2019s canyon and hillside homes sit in a microclimate that is cooler and more humid than surrounding areas. That extra moisture promotes mold and mildew on refrigerator door seals and inside front-load washer drums, so regular gasket cleaning and leaving the washer door ajar between loads make a real difference.',
+    'Many Mill Valley homes have tight utility closets or custom appliance alcoves. Dryers in these spaces need careful attention to venting, since restricted airflow leads to overheating, longer dry times, and a real fire risk if lint builds up in a long or crushed vent run.',
+    'Premium built-in refrigerators and ranges are common here, and they rely on electronic control boards that can be knocked out by the power flickers that come with storms and grid work in the hills. When a high-end appliance suddenly goes unresponsive, a board-level diagnosis is usually the right first step.',
   ],
 
   localExpertsText: 'About 40 minutes from Cotati. We group south Marin appointments for consistent availability.',
-  neighborhoods: ['Downtown', 'Tam Valley', 'Strawberry', 'Alto', 'Homestead Valley', 'Scott Valley', 'Cascade Canyon'],
+  neighborhoods: ['Downtown / Lytton Square', 'Tam Valley', 'Strawberry', 'Alto', 'Homestead Valley', 'Scott Valley', 'Cascade Canyon', 'Warner Canyon'],
   midCtaHeading: 'Need Appliance Repair in Mill Valley?',
   heroImage: '/images/MarinVan.jpg',
-  heroImageAlt: 'Kelly\'s Appliance service van in Marin County with San Francisco Bay views',
-  faqs: buildStandardFaqs('Mill Valley', {
-    driveTime: 'about 40 minutes from Cotati. We group south Marin appointments for consistent availability',
-    localIssue: {
-      question: 'Do you service Mill Valley hillside and canyon homes with tough access?',
-      answer: 'Yes. Many Mill Valley homes have steep driveways, tight utility closets, or custom cabinetry installations that require extra care. Our technicians bring the right tools and experience for these challenging setups, and we factor the canyon microclimate (cooler, more humid) into our diagnostics.',
+  heroImageAlt: 'Kelly\'s Appliance service van serving Mill Valley in southern Marin County',
+  faqs: [
+    {
+      question: 'How much does appliance repair cost in Mill Valley?',
+      answer: 'Our service call fee is $149, which includes a full diagnosis and is applied toward the repair if you proceed. Most Mill Valley repairs range from $200 to $500, though premium built-in brands like Sub-Zero, Wolf, and Thermador can run higher due to specialty parts. You always get an upfront estimate before any work begins.',
     },
-  }),
+    {
+      question: 'Do you service premium built-in brands in Mill Valley?',
+      answer: 'Yes. We are factory-authorized for Sub-Zero, Wolf, Thermador, Miele, Viking, Bosch, and JennAir, along with all the major standard brands. Mill Valley kitchens often feature high-end built-ins, and we carry genuine OEM parts and the training to service them correctly.',
+    },
+    {
+      question: 'Do you offer same-day appliance repair in Mill Valley?',
+      answer: 'We schedule south Marin appointments in grouped blocks to keep availability consistent, and same-day service is sometimes possible for morning calls. The drive from our Cotati shop is about 40 minutes on 101. Call (707) 664-9702 early to check the day\u2019s schedule.',
+    },
+    {
+      question: 'Can you service Mill Valley hillside and canyon homes with tough access?',
+      answer: 'Yes. Many Mill Valley homes have steep driveways, tight utility closets, stacked laundry, or custom cabinetry that requires extra care. Our technicians bring the right tools and experience for these setups and work carefully around finishes. We also factor the cooler, more humid canyon microclimate into our diagnostics.',
+    },
+    {
+      question: 'Why does my front-load washer or refrigerator smell in Mill Valley?',
+      answer: 'The canyon and hillside microclimate holds more moisture, which promotes mold and mildew on front-load washer gaskets and refrigerator door seals. Regular cleaning of the gasket, running a monthly hot cleaning cycle, and leaving the washer door ajar between loads all help. If the odor persists, the gasket or seal may need replacement, which we can handle.',
+    },
+    {
+      question: 'Are you licensed and insured in Mill Valley?',
+      answer: 'Yes. Kelly\u2019s Appliance Center has been operating since 1975. We are fully licensed and insured, Diamond Certified by American Ratings, and factory-authorized for most major appliance brands. Every Mill Valley repair comes with our 90-day money-back guarantee.',
+    },
+  ],
 }
 
 const sausalito: CityContent = {

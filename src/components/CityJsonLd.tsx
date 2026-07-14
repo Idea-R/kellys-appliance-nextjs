@@ -1,5 +1,6 @@
 import React from 'react'
 import { getCompanyInfo } from '@/lib/content'
+import { aggregateRatingJsonLd, featuredReviews } from '@/data/reviews'
 
 // City coordinates for geo-targeting (critical for "near me" searches)
 const cityCoordinates: Record<string, { lat: number; lng: number }> = {
@@ -39,6 +40,7 @@ export default function CityJsonLd({ city, slug }: Props) {
     description: `Professional appliance repair services in ${city}, CA. Find local appliance repair near you with factory authorized service.`,
     provider: {
       '@type': 'LocalBusiness',
+      '@id': 'https://kellysappliancerepair.com/#business',
       name: company.name,
       telephone: company.phone,
       address: {
@@ -71,6 +73,13 @@ export default function CityJsonLd({ city, slug }: Props) {
       '@type': 'City',
       name: `${city}, CA`,
     },
+    aggregateRating: aggregateRatingJsonLd,
+    review: featuredReviews.map((r) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.author },
+      reviewRating: { '@type': 'Rating', ratingValue: String(r.rating), bestRating: '5', worstRating: '1' },
+      reviewBody: r.text,
+    })),
     url: `https://kellysappliancerepair.com/service-locations/${slug}`,
   }
 

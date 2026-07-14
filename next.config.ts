@@ -215,6 +215,12 @@ const nextConfig: NextConfig = {
         destination: "/scheduler-confirmation",
         permanent: true,
       },
+      // Consolidated the old duplicate referrals page into the single /referrals hub
+      {
+        source: "/resources/referrals",
+        destination: "/referrals",
+        permanent: true,
+      },
 
       // Service area redirect (old WordPress page)
       {

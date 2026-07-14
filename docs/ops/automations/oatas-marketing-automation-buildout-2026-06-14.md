@@ -32,6 +32,9 @@ A real SEO dashboard inside OATAS.
 - **UI:** summary cards (clicks, impressions, CTR, position) with vs-prior-28d deltas; a clicks/impressions trend chart; **Zero-Click Opportunities** table (≥100 impressions, 0 clicks, position >10 — exactly the "oven repair" type win we found); top queries + top pages tables; empty state linking to Integrations.
 
 ### Prompt 4 — Angi + Thumbtack headless scrapers ✅
+
+> **Update (June 2026): Thumbtack CANCELED — no longer a focus.** Disable/remove the `scrape-thumbtack` function + `scrape-thumbtack-hourly` cron (jobid 61). Angi capture stays. Thumbtack lead-marketplace spend is off the table (see `platforms/thumbtack.md`).
+
 The two API-less platforms now have a capture path.
 - **Connectors:** `thumbtack` and `angi` (encrypted username/password), new `lead_source` category
 - **Dedup:** added `lead_inbox.external_lead_id` + partial unique index
@@ -90,3 +93,27 @@ Once those are in, the next monthly report generates end-to-end with zero manual
 - **Apify actors:** the scrapers delegate to OATAS's existing `apify-run` function. The Thumbtack/Angi actor slugs are configurable placeholders — they need to point at real authenticated-scrape actors you license, or the call returns a 404. The raw scrape is stored in `raw_payload` so field parsing can be tightened later without re-scraping.
 - **Security:** every credential field uses `encrypt_credential`/`decrypt_credential`; no secrets appear in logs or error responses; all new tables have RLS scoped by `organization_id`. This followed OATAS's own project rules and verification protocol.
 - **OATAS commits:** prompt 2 `5bac5dd`, prompt 3 `0a6540e`, prompt 4 `bc2ce22` (prompt 1 was already complete from a prior turn).
+
+---
+
+## Addendum — June 15, 2026: Prompt 10, Blog → Google Business Profile auto-posting ✅
+
+Built to close the GBP-activity gap surfaced by the BrightLocal rank pull (Kelly's holds #1 in the local pack for all core terms, so the GBP interaction decline is a freshness/measurement issue, not a ranking loss). Posting fresh content to GBP is the one lever that directly lifts the GBP number.
+
+**Two phases, one self-maintaining system:**
+1. **Backlog drip** — every existing blog post becomes a scheduled GBP Post, spread out (default 2/week, Tue + Fri). 21 posts in `blogPosts.ts` today, so the backlog clears in ~10.5 weeks at 2/week (~7 weeks at 3/week).
+2. **Ongoing** — each newly published blog post is auto-enqueued and posted at the next slot. No manual list to maintain.
+
+**What got built (verified live):**
+- **`gbp_posts` queue table** (per-org, RLS, unique on `(organization_id, blog_url)`): `blog_url`, `slug`, `title`, `snippet`, `image_url`, `cta_url`, `scheduled_for`, `status` (queued/needs_approval/published/skipped/error), `gbp_post_id`, `published_at`, `error`, timestamps. Confirmed via `get_table_schema` (15 columns, exactly to spec).
+- **`sync-blog-to-gbp-queue`** (daily cron): fetches `kellysappliancerepair.com/sitemap.xml`, finds every `/blog/` URL not already queued, pulls `og:title`/`description`/`image`, enqueues into the next open drip slot. This is what makes new posts auto-appear.
+- **`publish-gbp-posts`** (hourly cron): publishes queued posts whose `scheduled_for` has passed via the GBP API local-posts endpoint; respects the `auto_publish` org setting (queues for approval when off).
+- **`google_business_profile` connector** (OAuth, `business.manage`, encrypted refresh token + location/account id).
+- **"GBP Posts" UI**: queue + history with post preview, edit/approve/skip/post-now, cadence + post-time + `auto_publish` toggle.
+
+The two new crons won't show in `cron_health` until they fire once (fresh deploy). Sent via `send_message` (transport timed out, but the build completed — table confirmed present, same pattern as prompts 5/7/9).
+
+**Activation (user, in OATAS Integrations UI):**
+1. Connect the **Google Business Profile** connector (OAuth, `business.manage`). Shane is the GBP owner so he can authorize it. Agent never handles the token.
+2. Let the sync run once to populate the queue with all 21 drafts, **review them**, reorder (bump the **Sonoma County Heat Wave / fridge-in-July** post to the front for seasonal relevance), then flip **`auto_publish` on**. It ships OFF on purpose so nothing hits the live profile unreviewed.
+- The GBP local-posts endpoint likely needs one tuning pass on first publish (CONFIG constant, same as the BrightLocal v4 paths).

@@ -5,6 +5,26 @@ import { CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { generateBreadcrumbs } from '@/lib/breadcrumbs';
+import FAQSection from '@/components/FAQSection';
+
+const dryerSlowFaqs = [
+  {
+    question: 'How long should a dryer take to dry a normal load?',
+    answer: 'A typical full load should dry in about 30 to 45 minutes. If yours regularly runs an hour or more, or needs a second cycle to finish, something is restricting airflow or heat. The most common causes are a clogged vent, a full lint filter, or a failing heating element.',
+  },
+  {
+    question: 'Can a clogged dryer vent really make drying take longer?',
+    answer: 'Yes, it is the single most common cause. Lint builds up in the duct and traps the hot, moist air that should be carried outside, so clothes stay damp and cycles run long. It is also a fire risk, so the full vent run should be cleaned at least once a year.',
+  },
+  {
+    question: 'Why is my dryer running but not getting hot?',
+    answer: 'A dryer that spins without heat usually has a failed heating element on an electric model, or an igniter or gas valve problem on a gas model, and sometimes a blown thermal fuse. These are not DIY-friendly repairs, so it is worth having a technician diagnose and replace the part.',
+  },
+  {
+    question: 'Should I repair or replace a dryer that dries slowly?',
+    answer: 'If the dryer is under about eight years old and the problem is a vent, sensor, or heating element, repair is almost always the better value. Our technicians give an upfront estimate before any work begins, so you can decide with the numbers in front of you.',
+  },
+];
 
 export const metadata = {
   title: 'Why Is My Dryer Taking So Long? 7 Causes and Easy Fixes',
@@ -36,9 +56,11 @@ export default function DryerPostPage() {
             "datePublished": "2025-06-26",
             "dateModified": "2025-06-26",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",
@@ -203,6 +225,12 @@ export default function DryerPostPage() {
           </div>
         </div>
       </article>
+
+      <FAQSection
+        title="Dryer Drying Time: Common Questions"
+        faqs={dryerSlowFaqs}
+        id="dryer-slow-faqs"
+      />
 
       {/* Related Posts */}
       <section className="py-12 bg-white">

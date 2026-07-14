@@ -14,7 +14,8 @@
     "lint": "next lint",
     "report:summary": "node scripts/report.mjs summary --days=7",
     "report:events": "node scripts/report.mjs events --days=30",
-    "report:partners": "node scripts/report.mjs partners --days=30 --csv"
+    "report:partners": "node scripts/report.mjs partners --days=30 --csv",
+    "indexnow": "node scripts/indexnow-submit.mjs"
   },
   "dependencies": {
     "@apollo/client": "^4.0.1",

@@ -36,9 +36,11 @@ export default function FridgeNoisesPostPage() {
             "datePublished": "2026-06-03",
             "dateModified": "2026-06-03",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",

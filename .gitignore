@@ -105,6 +105,9 @@ Thumbs.db
 /secrets/*.pem
 /secrets/*.key
 
+# MCP config (contains API keys / bearer tokens)
+.mcp.json
+
 # Scraper and development tools
 scraper.js
 analyze-content.js
@@ -136,3 +139,6 @@ node_modules/
 
 # Optional REPL history
 .node_repl_history
+# Local Claude session context (may contain secrets) and build logs
+.claude/session-context-*.md
+build_output*.txt

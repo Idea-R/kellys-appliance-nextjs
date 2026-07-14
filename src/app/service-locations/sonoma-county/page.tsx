@@ -7,7 +7,8 @@ import { getCompanyInfo } from '@/lib/content';
 import Link from 'next/link';
 import ChamberLink from '@/components/ChamberLink';
 import TopPicks from '@/components/TopPicks';
-import ReferralsGrid from '@/components/ReferralsGrid';
+import ReferralNetwork from '@/components/ReferralNetwork';
+import { getPartnersForCounty } from '@/data/referralPartners';
 
 const companyInfo = getCompanyInfo();
 
@@ -178,22 +179,12 @@ export default function SonomaCountyPage() {
         </div>
       </section>
 
-      {/* County Referrals */}
-      <ReferralsGrid
-        title="Sonoma County Referrals"
-        subtitle="Trusted local recommendations for other trades and services."
-        items={[
-          { label: 'Appliance Sales' },
-          { label: 'Appliance Installation' },
-          { label: 'HVAC' },
-          { label: 'Electrician' },
-          { label: 'Plumbing' },
-          { label: 'Contractor' },
-          { label: 'Landscape' },
-          { label: 'Cleaning' },
-          { label: 'Auto Mechanic' },
-          { label: 'Pool Service' },
-        ]}
+      {/* County Referral Network */}
+      <ReferralNetwork
+        title="Sonoma County Referral Network"
+        subtitle="Local pros we trust and recommend across Sonoma County. We do not take commissions; these are businesses we genuinely stand behind."
+        areaServed="Sonoma County"
+        partners={getPartnersForCounty('Sonoma')}
       />
 
       <section className="py-16 bg-green-700 text-white">

@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { PhoneIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import FeaturedReviews from '@/components/FeaturedReviews';
+import { aggregateRatingJsonLd, featuredReviews } from '@/data/reviews';
 import ContentSection from '@/components/ContentSection';
 import { BOOKING_CONFIG } from '@/lib/booking-constants';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -10,6 +12,7 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import { washerDryerFaqs } from '@/data/faqs';
 import RelatedServices from '@/components/RelatedServices';
+import ServiceAreaLinks from '@/components/ServiceAreaLinks';
 
 const companyInfo = getCompanyInfo();
 
@@ -215,6 +218,10 @@ export default function WasherDryerRepairPage() {
         ]}
       />
 
+      <FeaturedReviews />
+
+      <ServiceAreaLinks />
+
       {/* CTA Section */}
       <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -247,10 +254,13 @@ export default function WasherDryerRepairPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
+            aggregateRating: aggregateRatingJsonLd,
+            review: featuredReviews.map((r) => ({ "@type": "Review", author: { "@type": "Person", name: r.author }, reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5", worstRating: "1" }, reviewBody: r.text })),
             "serviceType": "Washer and Dryer Repair",
             "description": "Find washer and dryer repair near me. Professional washer and dryer repair services with factory authorized technicians.",
             "provider": {
               "@type": "LocalBusiness",
+              "@id": "https://kellysappliancerepair.com/#business",
               "name": companyInfo.name,
               "telephone": companyInfo.phone,
               "address": {

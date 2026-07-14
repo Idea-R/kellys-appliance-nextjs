@@ -36,9 +36,11 @@ export default function HeatWavePostPage() {
             "datePublished": "2026-06-04",
             "dateModified": "2026-06-04",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",

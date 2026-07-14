@@ -186,8 +186,7 @@ export default function MobileNavDrawer() {
               <ul className="ml-2 space-y-0.5 text-sm">
                 <li><Link href="/resources" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors font-medium" data-analytics-label="drawer_resources_all">All Resources</Link></li>
                 <li><Link href="/blog" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_blog">Blog</Link></li>
-                <li><Link href="/referrals" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_referrals">Referrals</Link></li>
-                <li><Link href="/resources/referrals" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_partner_referrals">Partner Referrals</Link></li>
+                <li><Link href="/referrals" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_referrals">Referrals &amp; Partners</Link></li>
                 <li><Link href="/resources/where-is-my-model-number" className="block px-3 py-1.5 rounded hover:bg-green-50 hover:text-green-700 transition-colors" data-analytics-label="drawer_model_number">Model Number Guide</Link></li>
               </ul>
             </li>

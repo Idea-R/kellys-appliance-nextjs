@@ -42,9 +42,11 @@ export default function BlogPost() {
             "datePublished": "2025-01-05",
             "dateModified": "2025-01-05",
             "author": {
-              "@type": "Organization",
-              "name": "Kelly's Appliance Center",
-              "url": "https://kellysappliancerepair.com"
+              "@type": "Person",
+              "@id": "https://kellysappliancerepair.com/about-us/our-team#mark-kelly",
+              "name": "Mark Kelly",
+              "jobTitle": "Owner",
+              "url": "https://kellysappliancerepair.com/about-us/our-team"
             },
             "publisher": {
               "@type": "Organization",
@@ -96,7 +98,7 @@ export default function BlogPost() {
         </header>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-lg prose-green max-w-none">
           <p className="text-xl text-gray-700 mb-8">
             Stainless steel appliances add a sleek and modern look to your kitchen, but keeping them spotless can be a challenge. Fingerprints, smudges, and streaks often stand out, making regular cleaning a necessity. With the right approach, you can keep your appliances looking great without much effort. Here's the best way to clean appliances including:
           </p>
@@ -108,7 +110,7 @@ export default function BlogPost() {
             <li>stainless steel <Link href="/services/washer-dryer-repair" className="text-green-600 hover:text-green-700">washers</Link> & <Link href="/services/dryer-repair" className="text-green-600 hover:text-green-700">dryers</Link></li>
           </ul>
 
-          <h2>1. Gather Your Supplies</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">1. Gather Your Supplies</h2>
           <p>Regardless of which appliance you're cleaning, you'll want these items on hand:</p>
           <ul className="list-disc pl-6">
             <li>Microfiber cloths (soft and lint-free)</li>
@@ -119,11 +121,11 @@ export default function BlogPost() {
             <li>Olive oil (optional, for added shine)</li>
           </ul>
 
-          <h2>2. Start with a Basic Wipe Down</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">2. Start with a Basic Wipe Down</h2>
           <div className="flex flex-col md:flex-row gap-6 my-8">
             <div className="md:w-2/3">
               <p>
-                Use a damp microfiber cloth to remove loose dirt and grime. Wipe in the direction of the grain to avoid scratching the surface. Stainless steel ovens need extra attention here as they can collect splatters from cooking. A stainless steel fridge also is used more frequently attracting smudges.
+                Use a damp microfiber cloth to remove loose dirt and grime. <strong>Wipe in the direction of the grain</strong> to avoid scratching the surface. Stainless steel ovens need extra attention here as they can collect splatters from cooking. A stainless steel fridge also is used more frequently attracting smudges.
               </p>
             </div>
             <div className="md:w-1/3">
@@ -137,27 +139,27 @@ export default function BlogPost() {
             </div>
           </div>
 
-          <h2>3. Use a Mild Cleaning Solution</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">3. Use a Mild Cleaning Solution</h2>
           <p>
             Mix a few drops of dish soap with warm water in a spray bottle, or use white vinegar for a natural cleaner. You can also use stainless steel cleaners designed specifically for the task. Spray the solution directly onto the appliance and wipe with a clean microfiber cloth, following the grain.
           </p>
 
-          <h2>4. Rinse and Dry</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">4. Rinse and Dry</h2>
           <p>
             Dampen another microfiber cloth with water to remove any residue, then dry with a clean, dry cloth to prevent water spots.
           </p>
 
-          <h2>5. Polish for a Streak-Free Shine</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">5. Polish for a Streak-Free Shine</h2>
           <p>
             Apply a small amount of olive oil or stainless steel polish to a cloth and buff the surface in the direction of the grain for a streak-free finish.
           </p>
 
-          <h2>Tips for Maintenance</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Tips for Maintenance</h2>
           <ul className="list-disc pl-6">
             <li>Wipe away smudges daily on your stainless steel fridge to prevent buildup.</li>
             <li>Clean your stainless steel oven thoroughly after use, especially when there is a lot of splatter.</li>
             <li>Avoid abrasive sponges or cleaners that can scratch the surface.</li>
-            <li>Always test new products on a small, inconspicuous area first.</li>
+            <li><strong>Always test new products on a small, inconspicuous area first.</strong></li>
           </ul>
 
           <p>

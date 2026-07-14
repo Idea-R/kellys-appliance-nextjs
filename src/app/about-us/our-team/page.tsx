@@ -205,8 +205,37 @@ export default function OurTeamPage() {
     { label: 'Our Team', href: '/about-us/our-team' },
   ];
 
+  // Person structured data (E-E-A-T): ties each credentialed team member to the
+  // business entity so search engines can see real expertise behind the content.
+  const slugify = (n: string) =>
+    n.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+  const teamPersonJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': teamMembers
+      .filter((m) => m.bio || m.bioFull)
+      .map((m) => ({
+        '@type': 'Person',
+        '@id': `https://kellysappliancerepair.com/about-us/our-team#${slugify(m.name)}`,
+        name: m.name,
+        jobTitle: m.role,
+        worksFor: { '@id': 'https://kellysappliancerepair.com/#business' },
+        url: 'https://kellysappliancerepair.com/about-us/our-team',
+        ...(m.image ? { image: `https://kellysappliancerepair.com${m.image}` } : {}),
+        ...(m.bioFull || m.bio ? { description: m.bioFull || m.bio } : {}),
+        ...(m.specialties?.length ? { knowsAbout: m.specialties } : {}),
+        ...(m.certifications?.length
+          ? { hasCredential: m.certifications.map((c) => ({ '@type': 'EducationalOccupationalCredential', name: c })) }
+          : {}),
+      })),
+  };
+
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(teamPersonJsonLd) }}
+      />
       <Breadcrumbs items={breadcrumbs} />
       
       {/* Hero Section */}
