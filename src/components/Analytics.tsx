@@ -147,22 +147,26 @@ export default function Analytics() {
         </>
       )}
 
-      {/* Google Analytics (if using gtag directly) */}
+      {/* Google Analytics direct (only when GTM is absent; otherwise GA4 fires through GTM) */}
       {!gtmId && gaId && (
         <>
           <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
           <Script id="ga4-init" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config','${gaId}',{anonymize_ip:true});${gadsId ? `gtag('config','${gadsId}');` : ''}`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=window.gtag||gtag;gtag('js', new Date());gtag('config','${gaId}',{anonymize_ip:true});`}
           </Script>
         </>
       )}
 
-      {/* Google Ads (standalone — loads gtag if GA4 isn't present) */}
-      {!gtmId && !gaId && gadsId && (
+      {/* Google Ads tag.
+          Must load whenever an Ads ID exists, INCLUDING alongside GTM. GTM carries
+          GA4, but the Ads conversion tag needs its own gtag config or website
+          conversions ("Submit lead form", "Book appointment") can never fire.
+          This previously sat behind a !gtmId guard, so it never loaded in production. */}
+      {gadsId && (
         <>
           <Script src={`https://www.googletagmanager.com/gtag/js?id=${gadsId}`} strategy="afterInteractive" />
           <Script id="gads-init" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config','${gadsId}');`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=window.gtag||gtag;gtag('js', new Date());gtag('config','${gadsId}');`}
           </Script>
         </>
       )}

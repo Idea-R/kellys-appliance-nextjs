@@ -131,7 +131,8 @@ export default function PartsRequestForm() {
         ref_number: json.refNumber,
         has_photos: photos.length > 0 ? 'yes' : 'no',
       })
-      pushAdsConversion('AW-10866866733/1L-TCPmLzY8cEK303L0o', 75.0, 'USD')
+      // "Submit lead form" conversion action (a parts request is a lead, not a booking)
+      pushAdsConversion('AW-10866866733/qP8LCKDa_44cEK303L0o', 75.0, 'USD')
 
       // Redirect to confirmation
       router.push(`/parts-confirmation?ref=${encodeURIComponent(json.refNumber)}`)

@@ -50,7 +50,8 @@ export default function ContactForm() {
         form_name: 'contact',
         page_path: window.location.pathname,
       })
-      pushAdsConversion('AW-10866866733/1L-TCPmLzY8cEK303L0o', 150.0, 'USD')
+      // "Submit lead form" conversion action (a contact form is a lead, not a booking)
+      pushAdsConversion('AW-10866866733/qP8LCKDa_44cEK303L0o', 150.0, 'USD')
       form.reset()
     } catch (error) {
       setStatus('error')
