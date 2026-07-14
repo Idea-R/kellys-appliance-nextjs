@@ -178,7 +178,8 @@ export default function RootLayout({
                 "https://www.yelp.com/biz/kellys-appliance-center-cotati-2",
                 "https://maps.app.goo.gl/x9Uop8o7DNMfSufj9",
                 "https://nextdoor.com/pages/kellys-appliance-cotati-ca/",
-                "https://www.bbb.org/us/ca/cotati/profile/appliance-repair/kellys-appliance-center-1116-34094133",
+                "https://www.bbb.org/us/ca/cotati/profile/appliance-repair/kellys-appliance-center-1116-950427",
+                "https://www.diamondcertified.org/report/kellys-appliance-center/",
                 "https://www.yellowpages.com/cotati-ca/mip/kellys-appliance-center-8915058",
                 "https://www.mapquest.com/us/california/kelly-s-appliance-center-357730975"
               ],
