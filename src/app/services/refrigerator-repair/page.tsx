@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { PhoneIcon, CheckCircleIcon, CalendarIcon } from '@heroicons/react/24/solid';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import FeaturedReviews from '@/components/FeaturedReviews';
+import { aggregateRatingJsonLd, featuredReviews } from '@/data/reviews';
 import ContentSection from '@/components/ContentSection';
 import { BOOKING_CONFIG } from '@/lib/booking-constants';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -311,6 +313,8 @@ export default function RefrigeratorRepairPage() {
         ]}
       />
 
+      <FeaturedReviews />
+
       <ServiceAreaLinks />
 
       {/* CTA Section */}
@@ -351,6 +355,8 @@ export default function RefrigeratorRepairPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
+            aggregateRating: aggregateRatingJsonLd,
+            review: featuredReviews.map((r) => ({ "@type": "Review", author: { "@type": "Person", name: r.author }, reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5", worstRating: "1" }, reviewBody: r.text })),
             "serviceType": "Refrigerator Repair",
             "provider": {
               "@type": "LocalBusiness",

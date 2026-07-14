@@ -4,6 +4,8 @@ import { PhoneIcon } from '@heroicons/react/24/solid';
 import { SparklesIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/Layout';
 import { getCompanyInfo } from '@/lib/content';
+import FeaturedReviews from '@/components/FeaturedReviews';
+import { aggregateRatingJsonLd, featuredReviews } from '@/data/reviews';
 import { BOOKING_CONFIG } from '@/lib/booking-constants';
 import ServiceProblemCard from '@/components/ServiceProblemCard';
 import ProcessTimeline from '@/components/ProcessTimeline';
@@ -247,6 +249,8 @@ export default function DishwasherRepairPage() {
         ]}
       />
 
+      <FeaturedReviews />
+
       <ServiceAreaLinks />
 
       {/* CTA Section */}
@@ -281,6 +285,8 @@ export default function DishwasherRepairPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
+            aggregateRating: aggregateRatingJsonLd,
+            review: featuredReviews.map((r) => ({ "@type": "Review", author: { "@type": "Person", name: r.author }, reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5", worstRating: "1" }, reviewBody: r.text })),
             "serviceType": "Dishwasher Repair",
             "description": "Find dishwasher repair near me. Professional dishwasher repair services with factory authorized technicians.",
             "provider": {
