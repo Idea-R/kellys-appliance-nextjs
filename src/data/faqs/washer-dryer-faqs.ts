@@ -23,7 +23,7 @@ export const washerDryerFaqs: FAQ[] = [
   },
   {
     question: "Do you repair both gas and electric dryers?",
-    answer: "Yes, our factory-authorized technicians are trained to repair both gas and electric dryers, as well as top-load and front-load washing machines from all major brands."
+    answer: "Yes, our technicians are trained to repair both gas and electric dryers, as well as top-load and front-load washing machines from all major brands."
   }
 ]
 

@@ -104,7 +104,7 @@ export default function WineCountryBrandsPostPage() {
                 "name": "Do you service luxury appliance brands like Thermador and Viking?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Kelly's Appliance Center is factory authorized for Sub-Zero, Wolf, Thermador, Viking, Bosch, Dacor, KitchenAid, and the major mid-range brands. We've been servicing these in Sonoma, Marin, and Napa counties since 1975, and we stock or source genuine OEM parts so premium repairs are done right."
+                  "text": "Yes. Kelly's Appliance Center is factory authorized for Viking, Thermador, Bosch, Gaggenau, Dacor, KitchenAid, and the Whirlpool-family brands, and we expertly service Sub-Zero and Wolf. We've been servicing these in Sonoma, Marin, and Napa counties since 1975, and we stock or source genuine OEM parts so premium repairs are done right."
                 }
               }
             ]
@@ -226,7 +226,7 @@ export default function WineCountryBrandsPostPage() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4">However You Buy, We&apos;ll Keep It Running</h2>
             <p className="mb-4 text-gray-700 leading-relaxed">
-              Whether you go premium built-in or dependable mid-range, the appliance will eventually need service. That&apos;s where we come in. Kelly&apos;s Appliance Center is Diamond Certified, factory authorized for Sub-Zero, Wolf, Thermador, Viking, Bosch, Dacor, KitchenAid, and the major brands, and we&apos;ve served Sonoma, Marin, and Napa counties since 1975.
+              Whether you go premium built-in or dependable mid-range, the appliance will eventually need service. That&apos;s where we come in. Kelly&apos;s Appliance Center is Diamond Certified, factory authorized for Viking, Thermador, Bosch, Gaggenau, Dacor, and KitchenAid, and we expertly service Sub-Zero, Wolf, and the major brands, and we&apos;ve served Sonoma, Marin, and Napa counties since 1975.
             </p>
             <p className="mb-6 text-gray-700 leading-relaxed">
               Already have a brand in mind and want a second opinion? Call us at <a href="tel:7076649702" className="text-green-600 hover:text-green-700 font-semibold">(707) 664-9702</a> or <a href="/schedule-prep" className="text-green-600 hover:text-green-700 font-semibold" data-analytics-label="book_appointment">book a service visit</a> when you need one. You can also see what we cover on our <Link href="/services" className="text-green-600 hover:text-green-700">services page</Link>, or check whether we stock a part you need at our <Link href="/services/parts" className="text-green-600 hover:text-green-700">parts counter in Cotati</Link>.
@@ -273,7 +273,7 @@ export default function WineCountryBrandsPostPage() {
             Premium or Mid-Range, We Service It All
           </h2>
           <p className="text-gray-600 mb-8">
-            Factory authorized for Sub-Zero, Wolf, Thermador, Viking, Bosch, and every major brand. Diamond Certified, family-owned since 1975.
+            Factory authorized for Viking, Thermador, Bosch, and Dacor, and we service Sub-Zero, Wolf, and every major brand. Diamond Certified, family-owned since 1975.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

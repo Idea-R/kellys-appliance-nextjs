@@ -11,7 +11,7 @@ export const refrigeratorFaqs: FAQ[] = [
   },
   {
     question: "Are you factory authorized for refrigerator repair?",
-    answer: "Yes, Kelly's Appliance Center is factory authorized to service all major refrigerator brands including Whirlpool, Maytag, KitchenAid, Bosch, Samsung, LG, Sub-Zero, Wolf, Viking, and more."
+    answer: "Yes, Kelly's Appliance Center is factory-authorized for Whirlpool, Maytag, KitchenAid, JennAir, Bosch, Thermador, Viking, and Dacor, and we service every other major brand including GE, Samsung, LG, Sub-Zero, and Wolf."
   },
   {
     question: "How much does refrigerator repair cost?",

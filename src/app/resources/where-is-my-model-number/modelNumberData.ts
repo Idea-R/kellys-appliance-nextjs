@@ -94,7 +94,7 @@ export const appliances: ApplianceGuide[] = [
       },
     ],
     brandNotes:
-      'Bosch/Siemens: Left door side (E-Nr) | Miele: Door frame (starts with letter) | LG: Right door or under control panel | Cove: Inside left side',
+      'Bosch: Left door side (E-Nr) | Miele: Door frame (starts with letter) | LG: Right door or under control panel | Cove: Inside left side',
   },
   {
     id: 'washer',
