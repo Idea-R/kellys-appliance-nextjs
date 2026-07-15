@@ -19,7 +19,7 @@ export const ovenFaqs: FAQ[] = [
   },
   {
     question: "What brands of ovens do you service?",
-    answer: "We are factory authorized to service all major oven brands including GE, Whirlpool, KitchenAid, Thermador, Viking, Wolf, Bosch, and many more. Our technicians receive ongoing training on the latest models."
+    answer: "We are factory authorized to service all major oven brands including Whirlpool, KitchenAid, Thermador, Viking, Wolf, Bosch, and many more. Our technicians receive ongoing training on the latest models."
   },
   {
     question: "Do you offer same-day oven repair?",

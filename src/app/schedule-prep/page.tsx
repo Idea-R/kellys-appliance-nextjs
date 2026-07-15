@@ -214,7 +214,7 @@ export default function SchedulePrepPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">We Service All Major Brands</p>
           <p className="text-sm text-gray-500">
-            Whirlpool &bull; KitchenAid &bull; Maytag &bull; GE &bull; Samsung &bull; LG &bull; Viking &bull; Dacor &bull; Sub-Zero &bull; Bosch &bull; Miele &bull; Thermador &bull; Frigidaire &bull; Kenmore &bull; and more
+            Whirlpool &bull; KitchenAid &bull; Maytag &bull; GE &bull; Samsung &bull; LG &bull; Viking &bull; Dacor &bull; Sub-Zero &bull; Bosch &bull; Thermador &bull; Frigidaire &bull; Kenmore &bull; and more
           </p>
         </div>
       </section>

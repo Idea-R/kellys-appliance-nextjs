@@ -23,7 +23,7 @@ export const dryerFaqs: FAQ[] = [
   },
   {
     question: "Do you repair both gas and electric dryers?",
-    answer: "Yes, our factory-authorized technicians are trained to repair both gas and electric dryers from all major brands including Whirlpool, Maytag, GE, Samsung, LG, and more."
+    answer: "Yes, our technicians are trained to repair both gas and electric dryers from all major brands including Whirlpool, Maytag, GE, Samsung, LG, and more."
   },
   {
     question: "How much does dryer repair cost?",

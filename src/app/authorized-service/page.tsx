@@ -9,13 +9,13 @@ import { generateBreadcrumbs } from '@/lib/breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Authorized Appliance Service (Factory Authorized for Select Brands)',
-  description: 'Factory authorized repair for Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor. Genuine parts and manufacturer-guideline service in Sonoma County.',
+  description: 'Factory authorized repair for Whirlpool, KitchenAid, Maytag, Viking, and Dacor. Genuine parts and manufacturer-guideline service in Sonoma County.',
   alternates: {
     canonical: '/authorized-service',
   },
   openGraph: {
     title: "Authorized Appliance Service | Kelly's Appliance Center",
-    description: 'Factory authorized repair for Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor. Genuine parts and manufacturer-guideline service.',
+    description: 'Factory authorized repair for Whirlpool, KitchenAid, Maytag, Viking, and Dacor. Genuine parts and manufacturer-guideline service.',
     url: 'https://kellysappliancerepair.com/authorized-service',
     type: 'website' as const,
   },
@@ -92,7 +92,7 @@ export default function AuthorizedServicePage() {
               Authorized Appliance Service
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              We service many major appliance brands. Factory-authorized for select brands (Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor).
+              We service many major appliance brands. Factory-authorized for select brands (Whirlpool, KitchenAid, Maytag, Viking, and Dacor).
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
@@ -266,7 +266,7 @@ export default function AuthorizedServicePage() {
           <div className="text-center mt-16 bg-green-700 text-white rounded-2xl p-12">
             <h2 className="text-3xl font-bold mb-4">Need Factory-Authorized Repair?</h2>
             <p className="text-xl text-white/90 mb-2">
-              Factory-authorized for Whirlpool, KitchenAid, Maytag, GE, Viking, and Dacor.
+              Factory-authorized for Whirlpool, KitchenAid, Maytag, Viking, and Dacor.
             </p>
             <p className="text-white/90 mb-8">
               Genuine parts, manufacturer guidelines, and warranty-safe repairs.

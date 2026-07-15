@@ -126,7 +126,7 @@ export default function DryerRepairPage() {
                   When your dryer isn&apos;t working properly, it can disrupt your daily routine and create frustration. Whether it&apos;s taking too long to dry clothes, not heating properly, or making strange noises, Kelly&apos;s Appliance Repair has the expertise to diagnose and fix the problem quickly.
                 </p>
                 <p className="mt-4">
-                  Our factory-authorized technicians are trained to repair both gas and electric dryers from all major brands including Whirlpool, Maytag, GE, Samsung, LG, and more. We serve residential clients throughout Sonoma County, Marin County, and Napa County.
+                  Our technicians are trained to repair both gas and electric dryers from all major brands including Whirlpool, Maytag, GE, Samsung, LG, and more. We serve residential clients throughout Sonoma County, Marin County, and Napa County.
                 </p>
               </ContentSection>
 

@@ -30,7 +30,7 @@ export function buildStandardFaqs(cityName: string, opts?: {
     },
     {
       question: `What appliance brands do you service in ${cityName}?`,
-      answer: `We are factory-authorized for most major brands including Whirlpool, GE, Maytag, Samsung, LG, Kenmore, Frigidaire, Bosch, KitchenAid, JennAir, Sub-Zero, Viking, Wolf, and Thermador. Our technicians carry genuine OEM parts on the truck for most common repairs.`,
+      answer: `We are factory-authorized for most major brands including Whirlpool, Maytag, Samsung, LG, Kenmore, Frigidaire, Bosch, KitchenAid, JennAir, Sub-Zero, Viking, Wolf, and Thermador. Our technicians carry genuine OEM parts on the truck for most common repairs.`,
     },
     {
       question: `Are you licensed and insured in ${cityName}?`,
@@ -153,7 +153,7 @@ const santaRosa: CityContent = {
     },
     {
       question: 'What appliance brands do you repair in Santa Rosa?',
-      answer: 'We are factory-authorized for most major brands including Whirlpool, GE, Maytag, Samsung, LG, Kenmore, Frigidaire, Bosch, KitchenAid, JennAir, Sub-Zero, Viking, Wolf, and Thermador. Whether your kitchen has entry-level appliances or premium installs in Fountaingrove or Skyhawk, we carry genuine OEM parts for the job.',
+      answer: 'We are factory-authorized for most major brands including Whirlpool, Maytag, Samsung, LG, Kenmore, Frigidaire, Bosch, KitchenAid, JennAir, Sub-Zero, Viking, Wolf, and Thermador. Whether your kitchen has entry-level appliances or premium installs in Fountaingrove or Skyhawk, we carry genuine OEM parts for the job.',
     },
     {
       question: 'Do you service my Santa Rosa neighborhood?',
@@ -182,7 +182,7 @@ const petaluma: CityContent = {
   trustHeading: 'Why Petaluma Residents Trust Kelly\u2019s',
   trustContent: [
     'Petaluma is just 10 minutes south of our Cotati shop, which means we are in town fast. We have been servicing Petaluma homes since 1975, from the Victorian beauties downtown and the riverfront Craftsmans on the West Side to the newer builds on the East Side and out toward Casa Grande.',
-    'Our technicians are factory-authorized for every major brand: Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, Bosch, KitchenAid, Sub-Zero, Viking, and more. They carry common parts on the truck so many Petaluma repairs finish in a single visit.',
+    'Our technicians are factory-authorized for every major brand: Whirlpool, Samsung, LG, Maytag, Frigidaire, Bosch, KitchenAid, Sub-Zero, Viking, and more. They carry common parts on the truck so many Petaluma repairs finish in a single visit.',
     'Petaluma\u2019s older homes have quirks. Tight laundry closets in West Side Victorians trap dryer heat. 1950s-era electrical panels on some Historic Downtown streets can\u2019t handle modern high-draw appliances. We\u2019ve seen it all and bring the tools and know-how to diagnose whether it\u2019s the appliance or the installation.',
     'Many Petaluma homes sit in low-lying areas near the river where humidity stays high year-round. That moisture accelerates rust on dryer drums and corrodes refrigerator condenser coils faster than in drier areas. We know where to look first.',
     'Every repair comes with our 90-day money-back guarantee, and we are Diamond Certified by American Ratings for consistent customer satisfaction.',
@@ -215,7 +215,7 @@ const petaluma: CityContent = {
     },
     {
       question: 'What appliance brands do you service in Petaluma?',
-      answer: 'We are factory-authorized for Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, Bosch, KitchenAid, JennAir, Kenmore, Sub-Zero, Viking, Wolf, and Thermador. Our technicians carry genuine OEM parts on the truck for most common repairs.',
+      answer: 'We are factory-authorized for Whirlpool, Samsung, LG, Maytag, Frigidaire, Bosch, KitchenAid, JennAir, Kenmore, Sub-Zero, Viking, Wolf, and Thermador. Our technicians carry genuine OEM parts on the truck for most common repairs.',
     },
     {
       question: 'Do you service my Petaluma neighborhood?',
@@ -365,7 +365,7 @@ const sonoma: CityContent = {
 
   trustHeading: 'Why Sonoma Residents Trust Kelly\u2019s',
   trustContent: [
-    'Sonoma\u2019s wine-country lifestyle often means high-end kitchens with premium appliances, and getting them serviced right matters. Our technicians are factory-authorized for Viking, Sub-Zero, Wolf, Thermador, and Miele, along with every major standard brand, so your investment gets expert care and genuine OEM parts.',
+    'Sonoma\u2019s wine-country lifestyle often means high-end kitchens with premium appliances, and getting them serviced right matters. Our technicians are factory-authorized for Viking, Sub-Zero, Wolf, and Thermador, along with every major standard brand, so your investment gets expert care and genuine OEM parts.',
     'We have served Sonoma Valley homes since 1975, from the historic adobes and bungalows around the Plaza to the neighborhoods of the Springs (Boyes Hot Springs, Fetters Hot Springs, Agua Caliente, and El Verano) and the estates out in the vineyards. Our shop is about 25 minutes away in Cotati and we are through the valley regularly.',
     'Many Sonoma properties double as vacation rentals or second homes, where a broken refrigerator or oven can mean a canceled booking or a ruined visit. We understand that urgency and prioritize quick turnarounds to keep your property earning and your guests comfortable.',
     'Well water is common across the Sonoma Valley, and its mineral content builds up inside dishwashers, washing machines, ice makers, and water lines. We see this constantly, know the fixes that last, and stock the valves, spray arms, and filters that most competitors have to order.',
@@ -495,7 +495,7 @@ const healdsburg: CityContent = {
     driveTime: 'about 30 minutes north from Cotati. We schedule Healdsburg visits multiple days a week',
     localIssue: {
       question: 'Do you repair Sub-Zero and Viking in Healdsburg wine country homes?',
-      answer: 'Yes. We are factory-authorized for Sub-Zero, Viking, Wolf, Thermador, and Miele \u2014 common in Dry Creek and Alexander Valley estates. We stock or quickly source the genuine OEM parts these premium brands require.',
+      answer: 'Yes. We are factory-authorized for Sub-Zero, Viking, Wolf, and Thermador, common in Dry Creek and Alexander Valley estates. We stock or quickly source the genuine OEM parts these premium brands require.',
     },
   }),
 }
@@ -720,7 +720,7 @@ const sanRafael: CityContent = {
   trustContent: [
     'San Rafael is the largest city in Marin County, and we have been servicing homes here since 1975. From the Victorian homes near the Mission to the mid-century ranches in Terra Linda and Sun Valley, plus the hillside estates in Dominican and Peacock Gap, we know the appliance mix well.',
     'Our drive from Cotati to San Rafael takes about 30 minutes via 101, and we schedule Marin appointments multiple days a week. Same-day availability is often possible for morning calls, especially for urgent refrigerator or washer issues.',
-    'Marin kitchens often feature higher-end built-in appliances. Our factory authorizations for Sub-Zero, Viking, Thermador, Wolf, Miele, and other premium brands mean your investment gets proper expert care. We also service standard brands like Whirlpool, GE, Samsung, LG, Maytag, and Frigidaire across every San Rafael neighborhood.',
+    'Marin kitchens often feature higher-end built-in appliances. Our factory authorizations for Sub-Zero, Viking, Thermador, Wolf, and other premium brands mean your investment gets proper expert care. We also service standard brands like Whirlpool, GE, Samsung, LG, Maytag, and Frigidaire across every San Rafael neighborhood.',
     'Hillside neighborhoods like Sun Valley, Dominican, and Peacock Gap experience higher humidity from their proximity to the bay and the surrounding terrain. That moisture promotes mold on refrigerator gaskets and inside front-load washer drums, which is one of the most common calls we get from this area. We know the cleaning techniques and replacement parts that actually fix the problem.',
     'San Rafael\u2019s older neighborhoods, particularly around the downtown core and Gerstle Park, sometimes have undersized 1950s-70s electrical panels that cannot handle modern high-draw appliances. If your new induction range or professional refrigerator keeps tripping breakers, the real problem is usually the circuit, not the appliance. We help you figure out which it is before you spend money on unnecessary repairs.',
     'Every repair comes with our 90-day money-back guarantee, and we are Diamond Certified by American Ratings for consistent customer satisfaction year after year.',
@@ -753,7 +753,7 @@ const sanRafael: CityContent = {
     },
     {
       question: 'What appliance brands do you service in San Rafael?',
-      answer: 'We are factory-authorized for Sub-Zero, Viking, Wolf, Thermador, Miele, JennAir, KitchenAid, Bosch, Whirlpool, GE, Samsung, LG, Maytag, Frigidaire, and most other major brands. We understand Marin kitchens often have premium built-in appliances, and we carry genuine OEM parts for the repairs they need.',
+      answer: 'We are factory-authorized for Sub-Zero, Viking, Wolf, Thermador, JennAir, KitchenAid, Bosch, Whirlpool, Samsung, LG, Maytag, Frigidaire, and most other major brands. We understand Marin kitchens often have premium built-in appliances, and we carry genuine OEM parts for the repairs they need.',
     },
     {
       question: 'Do you service my San Rafael neighborhood?',
@@ -824,7 +824,7 @@ const novato: CityContent = {
   trustContent: [
     'Novato is the northernmost city in Marin County and the closest Marin community to our Cotati shop, about 20 minutes down Highway 101. That proximity gives Novato homeowners some of the fastest response times in our entire service area, and our vans are through town most days of the week.',
     'We have serviced Novato homes since 1975, across every kind of housing the city has. That includes the historic homes and bungalows near Old Town and Grant Avenue, the family neighborhoods of Hamilton and Pointe Marin, the waterfront properties at Bel Marin Keys, and the rural parcels out toward Indian Valley and Black Point.',
-    'Our technicians are factory-authorized for every major brand you will find in Novato kitchens and laundry rooms, from everyday Whirlpool, GE, Maytag, LG, and Samsung sets to premium Sub-Zero, Viking, Wolf, and Thermador built-ins. They carry the most common parts on the truck, so most Novato repairs are finished in a single visit.',
+    'Our technicians are factory-authorized for every major brand you will find in Novato kitchens and laundry rooms, from everyday Whirlpool, Maytag, LG, and Samsung sets to premium Sub-Zero, Viking, Wolf, and Thermador built-ins. They carry the most common parts on the truck, so most Novato repairs are finished in a single visit.',
     'The Hamilton neighborhood was built on a former Air Force base, and its mix of renovated military-era buildings and newer construction means electrical setups vary house to house. When an appliance keeps tripping a breaker there, the real problem is often the circuit rather than the machine, and we help you tell the difference before you spend money on parts you do not need.',
     'Bel Marin Keys and the low-lying areas near the bay sit close to sea level, where salt air and humidity are hard on washers, dryers, and refrigerator components. We know which parts corrode and fail first in those conditions, and we stock the common replacements rather than making you wait on a special order.',
     'Every Novato repair comes with our 90-day money-back guarantee, and we are Diamond Certified by American Ratings, an independent rating earned through verified customer satisfaction and renewed every year.',
@@ -858,7 +858,7 @@ const novato: CityContent = {
     },
     {
       question: 'What appliance brands do you service in Novato?',
-      answer: 'We are factory-authorized for most major brands, including Whirlpool, GE, Maytag, Samsung, LG, Kenmore, Frigidaire, Bosch, KitchenAid, JennAir, Sub-Zero, Viking, Wolf, and Thermador. Our technicians carry genuine OEM parts on the truck for most common Novato repairs.',
+      answer: 'We are factory-authorized for most major brands, including Whirlpool, Maytag, Samsung, LG, Kenmore, Frigidaire, Bosch, KitchenAid, JennAir, Sub-Zero, Viking, Wolf, and Thermador. Our technicians carry genuine OEM parts on the truck for most common Novato repairs.',
     },
     {
       question: 'My appliance in Bel Marin Keys keeps corroding or getting damp. Why?',
@@ -886,7 +886,7 @@ const millValley: CityContent = {
 
   trustHeading: 'Why Mill Valley Residents Trust Kelly\u2019s',
   trustContent: [
-    'Mill Valley homes tend to have well-appointed kitchens with premium built-in appliances, and getting them serviced by a factory-authorized technician matters. Our authorizations for Sub-Zero, Wolf, Thermador, Miele, Bosch, and other high-end brands mean your investment gets expert care and genuine OEM parts, not a generic fix.',
+    'Mill Valley homes tend to have well-appointed kitchens with premium built-in appliances, and getting them serviced by a factory-authorized technician matters. Our authorizations for Sub-Zero, Wolf, Thermador, Bosch, and other high-end brands mean your investment gets expert care and genuine OEM parts, not a generic fix.',
     'We have serviced Mill Valley since 1975 and make the drive from Cotati regularly, about 40 minutes via 101. We group our south Marin appointments together to keep scheduling efficient and availability consistent, so a Mill Valley address is never a problem to reach.',
     'From the downtown cottages near Lytton Square to the hillside and canyon homes in Cascade Canyon, Homestead Valley, and Warner Canyon, plus the flats of Tam Valley and Strawberry, we know how Mill Valley homes are built and how their appliances are installed.',
     'Mill Valley\u2019s canyon and hillside homes sit in a cooler, more humid microclimate than surrounding areas, tucked under Mt. Tam and near the redwoods. That extra moisture is hard on refrigerator door seals and front-load washer drums, and mold or mildew on gaskets is one of the most common calls we get from this area.',
@@ -918,7 +918,7 @@ const millValley: CityContent = {
     },
     {
       question: 'Do you service premium built-in brands in Mill Valley?',
-      answer: 'Yes. We are factory-authorized for Sub-Zero, Wolf, Thermador, Miele, Viking, Bosch, and JennAir, along with all the major standard brands. Mill Valley kitchens often feature high-end built-ins, and we carry genuine OEM parts and the training to service them correctly.',
+      answer: 'Yes. We are factory-authorized for Sub-Zero, Wolf, Thermador, Viking, Bosch, and JennAir, along with all the major standard brands. Mill Valley kitchens often feature high-end built-ins, and we carry genuine OEM parts and the training to service them correctly.',
     },
     {
       question: 'Do you offer same-day appliance repair in Mill Valley?',
@@ -963,7 +963,7 @@ const sausalito: CityContent = {
   issuesHeading: 'Common Appliance Issues in Sausalito',
   issuesContent: [
     'Salt air from the bay corrodes refrigerator condenser coils and dryer components faster than in inland locations. Regular coil cleaning and inspection of metal parts can add years to your appliances\u2019 lifespan.',
-    'Many Sausalito homes, especially the floating homes community, have compact or European-style appliances with unique part requirements. Our factory authorizations cover brands like Bosch, Miele, and Fisher & Paykel that are popular in smaller spaces.',
+    'Many Sausalito homes, especially the floating homes community, have compact or European-style appliances with unique part requirements. Our factory authorizations cover brands like Bosch and Fisher & Paykel that are popular in smaller spaces.',
   ],
 
   localExpertsText: 'About 45 minutes from Cotati. We schedule south Marin appointments regularly.',
@@ -975,7 +975,7 @@ const sausalito: CityContent = {
     driveTime: 'about 45 minutes from Cotati on our regular south Marin route',
     localIssue: {
       question: 'Do you repair appliances in Sausalito\u2019s floating homes?',
-      answer: 'Yes. Floating homes often have compact or European-style appliances with unique part requirements. Our factory authorizations cover brands like Bosch, Miele, and Fisher & Paykel that are common in smaller waterfront spaces. We also account for salt-air exposure in every coastal diagnosis.',
+      answer: 'Yes. Floating homes often have compact or European-style appliances with unique part requirements. Our factory authorizations cover brands like Bosch and Fisher & Paykel that are common in smaller waterfront spaces. We also account for salt-air exposure in every coastal diagnosis.',
     },
   }),
 }
@@ -1016,7 +1016,7 @@ const tiburon: CityContent = {
     driveTime: 'about 45 minutes from Cotati on our regular south Marin schedule',
     localIssue: {
       question: 'Do you repair Sub-Zero and Wolf in Tiburon and Belvedere waterfront homes?',
-      answer: 'Yes. We are factory-authorized for Sub-Zero, Wolf, Viking, Dacor, Thermador, and Miele, which are common in Tiburon and Belvedere estates. We also factor salt-air exposure into every diagnosis, since waterfront homes see accelerated corrosion on coils and connections.',
+      answer: 'Yes. We are factory-authorized for Sub-Zero, Wolf, Viking, Dacor, and Thermador, which are common in Tiburon and Belvedere estates. We also factor salt-air exposure into every diagnosis, since waterfront homes see accelerated corrosion on coils and connections.',
     },
   }),
 }
@@ -1117,7 +1117,7 @@ const napa: CityContent = {
 
   trustHeading: 'Why Napa Residents Trust Kelly\u2019s',
   trustContent: [
-    'Napa kitchens are built for entertaining, and many homes feature commercial-grade appliances from brands like Viking, Wolf, Sub-Zero, Thermador, and Miele. Our factory authorizations ensure these premium investments get proper expert care with genuine OEM parts.',
+    'Napa kitchens are built for entertaining, and many homes feature commercial-grade appliances from brands like Viking, Wolf, Sub-Zero, and Thermador. Our factory authorizations ensure these premium investments get proper expert care with genuine OEM parts.',
     'We cross the county line from Cotati to Napa in about 30 minutes, and we schedule Napa visits multiple days a week. Whether your call comes from Downtown, Browns Valley, the Silverado Trail, or the vineyards toward Yountville, we bring the same reliable, guaranteed service.',
     'Napa Valley\u2019s groundwater is notoriously hard, with high calcium and mineral content. This takes a serious toll on dishwashers, ice makers, water filters, and washing machine valves over time. Homes on well water are especially affected. We see the pattern constantly and know how to fix it.',
     'Wine-lifestyle kitchens with professional ranges, multiple refrigerators, and built-in wine coolers put heavy demands on home electrical systems. If your breaker trips when two large appliances run simultaneously, the issue may be circuit capacity rather than the appliance itself. We help you figure out which it is.',
@@ -1148,7 +1148,7 @@ const napa: CityContent = {
     },
     {
       question: 'Do you repair Sub-Zero, Viking, and Wolf in Napa?',
-      answer: 'Yes. We are factory-authorized for Sub-Zero, Viking, Wolf, Thermador, Miele, and most other premium brands common in Napa Valley kitchens. Our technicians are trained on these specific models and we stock or can quickly order the genuine OEM parts they require.',
+      answer: 'Yes. We are factory-authorized for Sub-Zero, Viking, Wolf, and Thermador, and most other premium brands common in Napa Valley kitchens. Our technicians are trained on these specific models and we stock or can quickly order the genuine OEM parts they require.',
     },
     {
       question: 'Do you offer same-day repair in Napa?',
